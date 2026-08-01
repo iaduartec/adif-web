@@ -33,4 +33,11 @@ describe("GET /auth/callback", () => {
 
     expect(response.headers.get("location")).toBe("http://localhost/");
   });
+
+  it("returns a non-sensitive login error when Google authorization is cancelled", async () => {
+    const response = await GET(new Request("http://localhost/auth/callback?error=access_denied"));
+
+    expect(response.headers.get("location")).toBe("http://localhost/login?error=oauth_cancelled");
+    expect(exchangeCodeForSession).not.toHaveBeenCalled();
+  });
 });

@@ -59,4 +59,13 @@ describe("GoogleSignIn", () => {
       "No hemos podido iniciar sesión con Google. Inténtalo de nuevo.",
     );
   });
+
+  it("explains an OAuth cancellation after returning to login", async () => {
+    window.history.replaceState({}, "", "/login?error=oauth_cancelled");
+    render(<GoogleSignIn />);
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "No se ha completado el acceso con Google. Puedes intentarlo de nuevo.",
+    );
+  });
 });

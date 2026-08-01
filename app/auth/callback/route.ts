@@ -7,6 +7,10 @@ export async function GET(request: Request) {
   const code = requestUrl.searchParams.get("code");
   const next = getSafeRedirectPath(requestUrl.searchParams.get("next")) ?? "/";
 
+  if (requestUrl.searchParams.has("error")) {
+    return NextResponse.redirect(new URL("/login?error=oauth_cancelled", requestUrl.origin));
+  }
+
   if (code) {
     try {
       const supabase = await createServerClient();

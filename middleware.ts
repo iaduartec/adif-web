@@ -7,9 +7,16 @@ export async function middleware(request: NextRequest) {
   const requestedPath = `${request.nextUrl.pathname}${request.nextUrl.search}`;
   const redirect = resolveProtectedRoute(user, requestedPath);
 
-  return redirect ? NextResponse.redirect(new URL(redirect, request.url)) : response;
+  if (!redirect) {
+    return response;
+  }
+
+  const redirectResponse = NextResponse.redirect(new URL(redirect, request.url));
+  response.cookies.getAll().forEach((cookie) => redirectResponse.cookies.set(cookie));
+
+  return redirectResponse;
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)"],
+  matcher: ["/((?!_next/|.*\\.[^/]+$).*)"],
 };

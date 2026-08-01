@@ -10,8 +10,18 @@ const unavailableMessage =
     ? "El acceso no está disponible ahora mismo. Inténtalo más tarde."
     : "Falta configurar Supabase. Añade NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_ANON_KEY.";
 
+function getInitialError() {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  return new URLSearchParams(window.location.search).get("error") === "oauth_cancelled"
+    ? "No se ha completado el acceso con Google. Puedes intentarlo de nuevo."
+    : null;
+}
+
 export function GoogleSignIn() {
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(getInitialError);
 
   async function handleSignIn() {
     setError(null);
