@@ -1,17 +1,20 @@
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-const { saveNote } = vi.hoisted(() => ({ saveNote: vi.fn() }));
+const { saveLessonProgress, saveNote } = vi.hoisted(() => ({ saveLessonProgress: vi.fn(), saveNote: vi.fn() }));
 
-vi.mock("../app/actions/lesson", () => ({ saveNote }));
+vi.mock("../app/actions/lesson", () => ({ saveLessonProgress, saveNote }));
 
 import { LessonNotes } from "../components/course/lesson-notes";
+import { LessonReader } from "../components/course/lesson-reader";
 import { OriginLabel } from "../components/course/origin-label";
+import { getLesson } from "../lib/content/repository";
 
 describe("course reader provenance and notes", () => {
   afterEach(cleanup);
 
   beforeEach(() => {
+    saveLessonProgress.mockReset();
     saveNote.mockReset();
   });
 
@@ -42,5 +45,38 @@ describe("course reader provenance and notes", () => {
       expect(saveNote).toHaveBeenCalledWith("igualdad", "Repasar la discriminación indirecta.");
     });
     expect(await screen.findByRole("status")).toHaveTextContent("Nota guardada");
+  });
+
+  it("updates the visible progress and disables completion after the server save succeeds", async () => {
+    saveLessonProgress.mockResolvedValue({ ok: true });
+    render(<LessonReader lesson={getLesson("igualdad")!} progress={10} questions={[]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Marcar como completada" }));
+
+    await waitFor(() => expect(saveLessonProgress).toHaveBeenCalledWith("igualdad", 100));
+    expect(await screen.findByText("Curso · 100% completado")).toBeVisible();
+    expect(screen.getByRole("button", { name: "Lección completada" })).toBeDisabled();
+    expect(screen.getByRole("status")).toHaveTextContent("Lección completada");
+  });
+
+  it("keeps completion retryable and reports the server error when saving fails", async () => {
+    saveLessonProgress.mockRejectedValue(new Error("No se ha podido guardar el progreso."));
+    render(<LessonReader lesson={getLesson("igualdad")!} progress={10} questions={[]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Marcar como completada" }));
+
+    await waitFor(() => expect(saveLessonProgress).toHaveBeenCalledWith("igualdad", 100));
+    expect(await screen.findByRole("status")).toHaveTextContent("No se ha podido guardar el progreso.");
+    expect(screen.getByText("Curso · 10% completado")).toBeVisible();
+    expect(screen.getByRole("button", { name: "Marcar como completada" })).toBeEnabled();
+  });
+
+  it("links each reference to its canonical source instead of a search result", () => {
+    render(<LessonReader lesson={getLesson("igualdad")!} progress={0} questions={[]} />);
+
+    expect(screen.getByRole("link", { name: /Ley Orgánica 3\/2007/i })).toHaveAttribute(
+      "href",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+    );
   });
 });

@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import { OriginLabel } from "./origin-label";
 
 export function LessonReader({ lesson, questions, progress }: { lesson: Lesson; questions: readonly Question[]; progress: number }) {
+  const [completionPercent, setCompletionPercent] = useState(progress);
   const [completionMessage, setCompletionMessage] = useState(progress === 100 ? "Lección completada" : "");
   const [isPending, startTransition] = useTransition();
 
@@ -15,6 +16,7 @@ export function LessonReader({ lesson, questions, progress }: { lesson: Lesson; 
     startTransition(async () => {
       try {
         await saveLessonProgress(lesson.slug, 100);
+        setCompletionPercent(100);
         setCompletionMessage("Lección completada");
       } catch (error) {
         setCompletionMessage(error instanceof Error ? error.message : "No se ha podido completar la lección.");
@@ -25,7 +27,7 @@ export function LessonReader({ lesson, questions, progress }: { lesson: Lesson; 
   return (
     <article className="lesson-reader">
       <header className="lesson-reader__header">
-        <p className="course-eyebrow">Curso · {progress}% completado</p>
+        <p className="course-eyebrow">Curso · {completionPercent}% completado</p>
         <div className="course-origin-list"><OriginLabel origin={lesson.origin} /></div>
         <h1>{lesson.title}</h1>
         <p className="lesson-reader__summary">{lesson.summary}</p>
@@ -49,7 +51,7 @@ export function LessonReader({ lesson, questions, progress }: { lesson: Lesson; 
         <ul className="course-rule-list">
           {lesson.officialReferences.map((reference) => (
             <li key={reference.title}>
-              <a href={`https://www.boe.es/buscar/?q=${encodeURIComponent(reference.title)}`} rel="noreferrer" target="_blank">{reference.title}</a>
+              <a href={reference.url} rel="noreferrer" target="_blank">{reference.title}</a>
               <OriginLabel origin={reference.origin} />
             </li>
           ))}
@@ -75,7 +77,7 @@ export function LessonReader({ lesson, questions, progress }: { lesson: Lesson; 
 
       <section className="lesson-completion" aria-labelledby="lesson-completion-title">
         <div><p className="course-eyebrow">Cierre de la lección</p><h2 id="lesson-completion-title">Marca la lección cuando hayas terminado el repaso</h2></div>
-        <Button disabled={isPending || progress === 100} onClick={markComplete}>{progress === 100 ? "Lección completada" : isPending ? "Guardando…" : "Marcar como completada"}</Button>
+        <Button disabled={isPending || completionPercent === 100} onClick={markComplete}>{completionPercent === 100 ? "Lección completada" : isPending ? "Guardando…" : "Marcar como completada"}</Button>
         {completionMessage && <p aria-live="polite" className={completionMessage === "Lección completada" ? "course-status" : "course-status course-status--error"} role="status">{completionMessage}</p>}
       </section>
     </article>

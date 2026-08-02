@@ -43,3 +43,9 @@ Implemented and validated. Commit: `feat: add course reader and personal notes`.
 
 - The worktree initially had a stale `node_modules/zod` junction. A lockfile-preserving offline dependency restore repaired the local installation; no dependency or lockfile changes were made.
 - Next emits the pre-existing warning that the repository uses the deprecated `middleware` file convention. This task did not modify middleware.
+
+## Review round 1
+
+- Completion now owns its persisted percentage in the client reader: after `saveLessonProgress` succeeds it renders `100%`, announces completion, and disables the action. A rejected save leaves the previous percentage and an enabled retry control with the server error.
+- Added click-path tests for the completion action, its saved state, and its retryable error state.
+- Official references now carry canonical HTTPS URLs in the validated lesson content. The reader renders the stored URL directly rather than constructing a BOE search. Sources include the direct ADIF PNI26/03 page, BOE act pages for the legal references, and the Council of Europe CEFR page.

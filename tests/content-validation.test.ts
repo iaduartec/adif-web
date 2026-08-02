@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { questionSchema, simulationSchema } from "../lib/content/schema";
+import { lessonReferenceSchema, questionSchema, simulationSchema } from "../lib/content/schema";
 import {
   createContentRepository,
   getLesson,
@@ -27,6 +27,16 @@ const validQuestion = {
 };
 
 describe("course content schemas", () => {
+  it("rejects an official lesson reference without a canonical HTTPS URL", () => {
+    expect(
+      lessonReferenceSchema.safeParse({
+        title: "Ley Orgánica 3/2007",
+        origin: "official_reference",
+        url: "http://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      }).success,
+    ).toBe(false);
+  });
+
   it("rejects questions that do not contain exactly four keyed options", () => {
     expect(
       questionSchema.safeParse({

@@ -51,6 +51,9 @@ export const questionSchema = z
 
 export const lessonReferenceSchema = z.object({
   title: z.string().trim().min(1),
+  url: z.url().refine((url) => new URL(url).protocol === "https:", {
+    message: "Official lesson references must use HTTPS.",
+  }),
   origin: z.literal("official_reference"),
 });
 
