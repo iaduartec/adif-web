@@ -11,11 +11,11 @@ const questionModules: Record<string, string> = {
   igualdad: "G1 Igualdad",
   "prevencion-riesgos-laborales": "G2 PRL",
   "estatuto-adif": "G3 Estatuto ADIF",
-  "ict-rd-346-2011": "T1 ICT",
-  "compatibilidad-electromagnetica": "T2 CEM",
-  "rcf-libro-1": "F1 RCF",
-  psicometria: "P1 Psicometría",
-  "ingles-a2": "I1 Inglés A2",
+  "ict-rd-346-2011": "E1 ICT RD 346/2011",
+  "compatibilidad-electromagnetica": "E2 Compatibilidad electromagnetica",
+  "rcf-libro-1": "E3 RCF Libro 1",
+  psicometria: "P Psicotecnicos",
+  "ingles-a2": "I Ingles A2",
 };
 
 export default async function CourseLessonPage({ params }: { params: Promise<{ slug: string }> }) {
