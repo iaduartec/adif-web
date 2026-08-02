@@ -1,0 +1,237 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { PracticeQuestion } from "./question-session";
+import { submitSimulation, type SimulationResult } from "../../app/actions/simulations";
+import { Button } from "../ui/button";
+
+type AnswerKey = "A" | "B" | "C" | "D";
+
+const STORAGE_PREFIX = "adif-sim-draft-";
+
+function getStorageKey(simulationId: string): string {
+  return `${STORAGE_PREFIX}${simulationId}`;
+}
+
+function loadDraft(simulationId: string): Record<string, AnswerKey> {
+  try {
+    const raw = sessionStorage.getItem(getStorageKey(simulationId));
+    if (!raw) return {};
+    return JSON.parse(raw) as Record<string, AnswerKey>;
+  } catch {
+    return {};
+  }
+}
+
+function saveDraft(simulationId: string, answers: Record<string, AnswerKey>): void {
+  try {
+    sessionStorage.setItem(getStorageKey(simulationId), JSON.stringify(answers));
+  } catch {
+    // sessionStorage full or unavailable — silent fail
+  }
+}
+
+function clearDraft(simulationId: string): void {
+  try {
+    sessionStorage.removeItem(getStorageKey(simulationId));
+  } catch {
+    // silent fail
+  }
+}
+
+function formatTime(totalSeconds: number): string {
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
+
+export function SimulationRunner({
+  simulationId,
+  questions,
+  durationMinutes,
+  onFinish,
+}: {
+  simulationId: string;
+  questions: readonly PracticeQuestion[];
+  durationMinutes: number;
+  onFinish: (result: SimulationResult) => void;
+}) {
+  const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, AnswerKey>>(() => loadDraft(simulationId));
+  const [remainingSeconds, setRemainingSeconds] = useState(durationMinutes * 60);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [error, setError] = useState("");
+  const startedAt = useRef(0);
+  const delivered = useRef(false);
+
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
+
+  // Timer countdown
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRemainingSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const doSubmit = useCallback(async () => {
+    if (delivered.current) return;
+    delivered.current = true;
+    setIsSubmitting(true);
+    setError("");
+    try {
+      const elapsed = Math.max(0, Date.now() - startedAt.current);
+      const result = await submitSimulation(simulationId, answers, elapsed);
+      clearDraft(simulationId);
+      onFinish(result);
+    } catch (err) {
+      delivered.current = false;
+      setIsSubmitting(false);
+      setError(err instanceof Error ? err.message : "Error al entregar el simulacro.");
+    }
+  }, [answers, onFinish, simulationId]);
+
+  // Auto-deliver when timer expires
+  useEffect(() => {
+    if (remainingSeconds <= 0 && !delivered.current) {
+      doSubmit();
+    }
+  }, [remainingSeconds, doSubmit]);
+
+  const question = questions[index];
+  if (!question) return null;
+
+  const answeredCount = Object.keys(answers).length;
+  const isUrgent = remainingSeconds <= 300;
+
+  function selectAnswer(key: AnswerKey) {
+    const next = { ...answers, [question.id]: key };
+    setAnswers(next);
+    saveDraft(simulationId, next);
+  }
+
+  function goToQuestion(targetIndex: number) {
+    if (targetIndex >= 0 && targetIndex < questions.length) {
+      setIndex(targetIndex);
+    }
+  }
+
+  return (
+    <div className="simulation-runner">
+      {/* Top bar: timer + progress */}
+      <div className="simulation-topbar">
+        <div className={`simulation-timer ${isUrgent ? "simulation-timer--urgent" : ""}`}>
+          <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="18">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l4 2" />
+          </svg>
+          <span aria-live="polite" role="timer">
+            {formatTime(remainingSeconds)}
+          </span>
+        </div>
+        <p className="simulation-progress-text">
+          Pregunta {index + 1} de {questions.length} · {answeredCount} respondidas
+        </p>
+      </div>
+
+      {/* Question navigator grid */}
+      <div className="simulation-navigator" role="navigation" aria-label="Navegador de preguntas">
+        {questions.map((q, i) => {
+          const isAnswered = q.id in answers;
+          const isCurrent = i === index;
+          return (
+            <button
+              aria-current={isCurrent ? "step" : undefined}
+              aria-label={`Pregunta ${i + 1}${isAnswered ? " (respondida)" : ""}`}
+              className={`simulation-nav-dot ${isAnswered ? "simulation-nav-dot--answered" : ""} ${isCurrent ? "simulation-nav-dot--current" : ""}`}
+              key={q.id}
+              onClick={() => goToQuestion(i)}
+              type="button"
+            >
+              {i + 1}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Question card */}
+      <section aria-labelledby="sim-question-title" className="simulation-question">
+        <p className="course-eyebrow">Pregunta {index + 1} de {questions.length}</p>
+        <h2 id="sim-question-title">{question.prompt}</h2>
+        <fieldset disabled={isSubmitting}>
+          <legend className="sr-only">Elige una respuesta</legend>
+          {question.options.map((option) => (
+            <label className="practice-option" key={option.key}>
+              <input
+                checked={answers[question.id] === option.key}
+                name={`sim-${question.id}`}
+                onChange={() => selectAnswer(option.key)}
+                type="radio"
+                value={option.key}
+              />
+              <span><strong>{option.key}.</strong> {option.text}</span>
+            </label>
+          ))}
+        </fieldset>
+      </section>
+
+      {/* Navigation buttons */}
+      <div className="simulation-actions">
+        <Button
+          disabled={index === 0}
+          onClick={() => goToQuestion(index - 1)}
+        >
+          Anterior
+        </Button>
+        {index < questions.length - 1 ? (
+          <Button onClick={() => goToQuestion(index + 1)}>
+            Siguiente
+          </Button>
+        ) : null}
+        <Button
+          className="simulation-deliver-btn"
+          disabled={isSubmitting}
+          onClick={() => setShowConfirm(true)}
+        >
+          {isSubmitting ? "Entregando…" : "Entregar simulacro"}
+        </Button>
+      </div>
+
+      {/* Confirmation dialog */}
+      {showConfirm && (
+        <div className="simulation-confirm-overlay" role="dialog" aria-modal="true" aria-label="Confirmar entrega">
+          <div className="simulation-confirm-dialog">
+            <h3>¿Entregar simulacro?</h3>
+            <p>
+              Has respondido {answeredCount} de {questions.length} preguntas.
+              {questions.length - answeredCount > 0 && (
+                <> Quedan <strong>{questions.length - answeredCount}</strong> sin responder (se contarán como omitidas).</>
+              )}
+            </p>
+            <div className="simulation-confirm-actions">
+              <Button onClick={() => setShowConfirm(false)}>Seguir revisando</Button>
+              <Button disabled={isSubmitting} onClick={() => { setShowConfirm(false); doSubmit(); }}>
+                Confirmar entrega
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {error && (
+        <p aria-live="assertive" className="course-status course-status--error" role="alert">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}

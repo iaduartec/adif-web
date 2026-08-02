@@ -79,6 +79,9 @@ export function createContentRepository({
     getSimulation(id: string): Simulation | undefined {
       return simulationById.get(id);
     },
+    listSimulations(): readonly Simulation[] {
+      return simulationList;
+    },
   };
 }
 
@@ -106,4 +109,8 @@ export function listQuestions(filter?: QuestionFilter): Question[] {
 
 export function getSimulation(id: string): Simulation | undefined {
   return repository.getSimulation(id);
+}
+
+export function listSimulations(): readonly Simulation[] {
+  return repository.listSimulations();
 }
