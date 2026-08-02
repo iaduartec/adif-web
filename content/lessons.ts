@@ -59,7 +59,7 @@ export const lessons: readonly Lesson[] = [
     title: "Psicometría",
     summary: "Práctica original de aptitudes, razonamiento y estrategias de resolución de pruebas.",
     origin: "original_explanation",
-    officialReferences: [{ title: "Bases de la convocatoria y criterios de evaluación aplicables", url: "https://www.adif.es/w/pni26-03-tecnico", origin: "official_reference" }],
+    officialReferences: [{ title: "Bases de la convocatoria y criterios de evaluación aplicables", url: "https://www.adif.es/w/pni26-01-personal-operativo", origin: "official_reference" }],
     verificationNote: finalAnnexVerification,
   },
   {

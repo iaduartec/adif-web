@@ -98,6 +98,13 @@ describe("course content repository", () => {
     expect(getLesson("missing-lesson")).toBeUndefined();
   });
 
+  it("uses the Personal Operativo PNI26/01 source for psychometric practice", () => {
+    const url = getLesson("psicometria")!.officialReferences[0].url;
+
+    expect(url).toBe("https://www.adif.es/w/pni26-01-personal-operativo");
+    expect(url).not.toContain("pni26-03");
+  });
+
   it("rejects simulations that reference questions outside the bank during repository construction", () => {
     const simulation = getSimulation("SIM-01")!;
 

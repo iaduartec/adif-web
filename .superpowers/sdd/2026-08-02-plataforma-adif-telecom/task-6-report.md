@@ -48,4 +48,9 @@ Implemented and validated. Commit: `feat: add course reader and personal notes`.
 
 - Completion now owns its persisted percentage in the client reader: after `saveLessonProgress` succeeds it renders `100%`, announces completion, and disables the action. A rejected save leaves the previous percentage and an enabled retry control with the server error.
 - Added click-path tests for the completion action, its saved state, and its retryable error state.
-- Official references now carry canonical HTTPS URLs in the validated lesson content. The reader renders the stored URL directly rather than constructing a BOE search. Sources include the direct ADIF PNI26/03 page, BOE act pages for the legal references, and the Council of Europe CEFR page.
+- Official references now carry canonical HTTPS URLs in the validated lesson content. The reader renders the stored URL directly rather than constructing a BOE search. Sources include the direct ADIF PNI26/01 Personal Operativo page, BOE act pages for the legal references, and the Council of Europe CEFR page.
+
+## Review round 2
+
+- Corrected the psychometric-course source to the exact ADIF PNI26/01 Personal Operativo URL: `https://www.adif.es/w/pni26-01-personal-operativo`.
+- Added a focused repository test that asserts this canonical URL and rejects the former incorrect category URL.
