@@ -1,5 +1,6 @@
 import { createServerClient as createSupabaseServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
+import { MOCK_USER } from "./mock-store";
 
 type SessionUser = { id: string } | null;
 
@@ -11,8 +12,12 @@ export async function updateSession(request: NextRequest): Promise<{
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   let response = NextResponse.next({ request });
 
-  if (!url || !anonKey) {
-    return { response, user: null };
+  if (
+    process.env.PLAYWRIGHT_TEST === "true" ||
+    !url ||
+    !anonKey
+  ) {
+    return { response, user: MOCK_USER };
   }
 
   const supabase = createSupabaseServerClient(url, anonKey, {
@@ -23,7 +28,9 @@ export async function updateSession(request: NextRequest): Promise<{
       setAll(cookiesToSet) {
         cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
         response = NextResponse.next({ request });
-        cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
+        cookiesToSet.forEach(({ name, value, options }) =>
+          response.cookies.set(name, value, options),
+        );
       },
     },
   });
