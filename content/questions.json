@@ -1048,7 +1048,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -1264,7 +1264,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -1453,7 +1453,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -1985,7 +1985,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -2344,7 +2344,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -2560,7 +2560,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -3277,7 +3277,7 @@
       },
       {
         "key": "B",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "C",
@@ -3613,7 +3613,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -3640,7 +3640,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -3856,7 +3856,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -3929,7 +3929,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -4936,7 +4936,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -5152,7 +5152,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -6232,7 +6232,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -6448,7 +6448,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -6637,7 +6637,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -7285,7 +7285,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -7528,7 +7528,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -7744,7 +7744,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -7821,7 +7821,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -8581,7 +8581,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -8824,7 +8824,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -9040,7 +9040,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -9113,7 +9113,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -10120,7 +10120,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -10336,7 +10336,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -11061,7 +11061,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -11416,7 +11416,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -11632,7 +11632,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -12712,7 +12712,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -12928,7 +12928,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -13981,7 +13981,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -14008,7 +14008,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -14197,7 +14197,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -14224,7 +14224,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -14845,7 +14845,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -15061,7 +15061,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -15304,7 +15304,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -15520,7 +15520,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -15709,7 +15709,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -16573,7 +16573,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -16600,7 +16600,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -16816,7 +16816,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -17005,7 +17005,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -17896,7 +17896,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -18085,7 +18085,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -18112,7 +18112,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -18733,7 +18733,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -19192,7 +19192,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -19408,7 +19408,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -20245,7 +20245,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -20488,7 +20488,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -20704,7 +20704,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -21757,7 +21757,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -21784,7 +21784,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -22000,7 +22000,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -22837,7 +22837,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -23080,7 +23080,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -23296,7 +23296,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -24376,7 +24376,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -24565,7 +24565,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -24592,7 +24592,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -24665,7 +24665,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -25672,7 +25672,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -25888,7 +25888,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -25953,7 +25953,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -26601,7 +26601,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -26968,7 +26968,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -27184,7 +27184,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -27905,7 +27905,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -28264,7 +28264,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -28480,7 +28480,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -29560,7 +29560,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -29776,7 +29776,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -30501,7 +30501,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -30829,7 +30829,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -30856,7 +30856,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -31072,7 +31072,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -31261,7 +31261,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -31693,7 +31693,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -32152,7 +32152,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -32368,7 +32368,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -33448,7 +33448,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -33664,7 +33664,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -33853,7 +33853,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -34744,7 +34744,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -34960,7 +34960,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -36040,7 +36040,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -36256,7 +36256,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -37336,7 +37336,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -37552,7 +37552,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -37617,7 +37617,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -38273,7 +38273,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -38389,7 +38389,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -38632,7 +38632,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -38821,7 +38821,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -38848,7 +38848,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -39928,7 +39928,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -40144,7 +40144,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -41224,7 +41224,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -41440,7 +41440,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -41509,7 +41509,7 @@
       },
       {
         "key": "B",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "C",
@@ -42061,7 +42061,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -42520,7 +42520,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -42736,7 +42736,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -43816,7 +43816,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -44005,7 +44005,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -44032,7 +44032,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -45112,7 +45112,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -45328,7 +45328,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -46165,7 +46165,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -46408,7 +46408,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -46597,7 +46597,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -46624,7 +46624,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -47677,7 +47677,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -47704,7 +47704,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -47920,7 +47920,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -48757,7 +48757,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -48973,7 +48973,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -49000,7 +49000,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -49216,7 +49216,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -49933,7 +49933,7 @@
       },
       {
         "key": "B",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "C",
@@ -50269,7 +50269,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -50296,7 +50296,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -50485,7 +50485,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -50512,7 +50512,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -51237,7 +51237,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -51349,7 +51349,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -51565,7 +51565,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -51592,7 +51592,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -51808,7 +51808,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -52529,7 +52529,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -52861,7 +52861,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -52888,7 +52888,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -53077,7 +53077,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -53104,7 +53104,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -54184,7 +54184,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -54400,7 +54400,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -54589,7 +54589,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -55480,7 +55480,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -55696,7 +55696,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -56317,7 +56317,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -56749,7 +56749,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -56776,7 +56776,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -56992,7 +56992,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -57705,7 +57705,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -58072,7 +58072,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -58288,7 +58288,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -58477,7 +58477,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -59125,7 +59125,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -59368,7 +59368,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -59584,7 +59584,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -60205,7 +60205,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -60664,7 +60664,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -60880,7 +60880,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -61501,7 +61501,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -61960,7 +61960,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -62149,7 +62149,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -62176,7 +62176,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -62253,7 +62253,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -63256,7 +63256,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -63472,7 +63472,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -64552,7 +64552,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -64768,7 +64768,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -64957,7 +64957,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -65389,7 +65389,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -65605,7 +65605,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -65821,7 +65821,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -65848,7 +65848,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -66064,7 +66064,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -66141,7 +66141,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -66685,7 +66685,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -67144,7 +67144,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -67333,7 +67333,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -67360,7 +67360,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -68413,7 +68413,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -68440,7 +68440,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -68629,7 +68629,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -68656,7 +68656,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -68729,7 +68729,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -69277,7 +69277,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -69736,7 +69736,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -69952,7 +69952,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -71032,7 +71032,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -71248,7 +71248,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -71321,7 +71321,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -71973,7 +71973,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -72301,7 +72301,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -72328,7 +72328,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -72544,7 +72544,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -72733,7 +72733,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -73624,7 +73624,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -73813,7 +73813,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -73840,7 +73840,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -74461,7 +74461,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -74920,7 +74920,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -75136,7 +75136,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -76189,7 +76189,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -76216,7 +76216,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -76432,7 +76432,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -77053,7 +77053,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -77512,7 +77512,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -77728,7 +77728,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -78565,7 +78565,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -78808,7 +78808,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -79024,7 +79024,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -80104,7 +80104,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -80320,7 +80320,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -81373,7 +81373,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -81400,7 +81400,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -81616,7 +81616,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -81681,7 +81681,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -82696,7 +82696,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -82912,7 +82912,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -83965,7 +83965,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -83992,7 +83992,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -84208,7 +84208,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -84273,7 +84273,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -85288,7 +85288,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -85504,7 +85504,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -85569,7 +85569,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -86341,7 +86341,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -86557,7 +86557,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -86584,7 +86584,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -86773,7 +86773,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -86800,7 +86800,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -86989,7 +86989,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -87853,7 +87853,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -87880,7 +87880,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -88069,7 +88069,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -88096,7 +88096,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -88933,7 +88933,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -89176,7 +89176,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -89365,7 +89365,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -89392,7 +89392,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -90472,7 +90472,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -90688,7 +90688,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -90877,7 +90877,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -91309,7 +91309,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -91768,7 +91768,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -91984,7 +91984,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -93064,7 +93064,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -93253,7 +93253,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -93280,7 +93280,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -93349,7 +93349,7 @@
       },
       {
         "key": "B",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "C",
@@ -94117,7 +94117,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -94360,7 +94360,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -94549,7 +94549,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -94576,7 +94576,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -95297,7 +95297,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -95656,7 +95656,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -95872,7 +95872,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -96952,7 +96952,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -97141,7 +97141,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -97168,7 +97168,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -97789,7 +97789,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -98248,7 +98248,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -98464,7 +98464,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -99544,7 +99544,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -99733,7 +99733,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -99760,7 +99760,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -99949,7 +99949,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -100485,7 +100485,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -100840,7 +100840,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -101056,7 +101056,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -102136,7 +102136,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -102352,7 +102352,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -102973,7 +102973,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -103189,7 +103189,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -103405,7 +103405,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -103432,7 +103432,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -103621,7 +103621,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -103648,7 +103648,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -103725,7 +103725,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -104485,7 +104485,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -104728,7 +104728,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -104944,7 +104944,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -105133,7 +105133,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -106024,7 +106024,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -106240,7 +106240,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -107293,7 +107293,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -107320,7 +107320,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -107536,7 +107536,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -108616,7 +108616,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Comprobar diferencias, cocientes y alternancias antes de responder.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Comprobar diferencias, cocientes y alternancias antes de responder.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -108805,7 +108805,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -108832,7 +108832,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -108909,7 +108909,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -109669,7 +109669,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -109885,7 +109885,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -109912,7 +109912,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -110128,7 +110128,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -110749,7 +110749,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -111208,7 +111208,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -111424,7 +111424,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -112145,7 +112145,7 @@
       },
       {
         "key": "C",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "D",
@@ -112261,7 +112261,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -112504,7 +112504,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -112693,7 +112693,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -112720,7 +112720,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -112797,7 +112797,7 @@
       },
       {
         "key": "D",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       }
     ],
     "answer": "D",
@@ -113800,7 +113800,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -114016,7 +114016,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -115096,7 +115096,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -115312,7 +115312,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -116392,7 +116392,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Separar giro de reflejo evita confusiones.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Separar giro de reflejo evita confusiones.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -116608,7 +116608,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -117688,7 +117688,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -117904,7 +117904,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -118621,7 +118621,7 @@
       },
       {
         "key": "B",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "C",
@@ -118984,7 +118984,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "La exactitud sostenida importa tanto como la velocidad.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: La exactitud sostenida importa tanto como la velocidad.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -119200,7 +119200,7 @@
       }
     ],
     "answer": "D",
-    "explanation": "Identificar fuerzas, apoyos y sentido antes de calcular.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Identificar fuerzas, apoyos y sentido antes de calcular.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -120280,7 +120280,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Antes de actuar, identificar el hecho, su interfaz y la regla aplicable: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -120496,7 +120496,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "Descartar opciones por categoria semantica reduce errores.",
+    "explanation": "Evitar confundir conceptos cercanos sin comprobar definiciones: Descartar opciones por categoria semantica reduce errores.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -120561,7 +120561,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Obligaciones preventivas adaptadas al puesto."
+        "text": "Informacion y formacion suficiente y adecuada sobre los riesgos del puesto."
       },
       {
         "key": "B",
@@ -121117,7 +121117,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Debe comunicarse y gestionarse con medidas proporcionadas.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; \"incidencia\" aparece solo en el Libro 3. Debe comunicarse y gestionarse con medidas proporcionadas.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
@@ -121333,7 +121333,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "Solo produce efectos dentro de competencia y con la forma prevista.",
+    "explanation": "[TERMINOLOGIA] Concepto no literal en el Libro 1 del RCF; el termino oficial es \"orden de marcha\" o \"sentido de la circulacion\". Solo produce efectos dentro de competencia y con la forma prevista.",
     "sourceNote": "Contenido didactico original basado en el bloque oficial indicado; cotejar literalidad en la fuente oficial.",
     "origin": "original_explanation"
   },
