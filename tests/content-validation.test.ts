@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { questionSchema } from "../lib/content/schema";
+import { questionSchema, simulationSchema } from "../lib/content/schema";
 import {
+  createContentRepository,
   getLesson,
   getQuestion,
   getSimulation,
@@ -40,6 +41,17 @@ describe("course content schemas", () => {
       questionSchema.safeParse({ ...validQuestion, answer: "E" }).success,
     ).toBe(false);
   });
+
+  it("rejects simulations that repeat a question ID", () => {
+    expect(
+      simulationSchema.safeParse({
+        id: "SIM-01",
+        title: "Simulacro 01",
+        questionIds: Array.from({ length: 60 }, () => "Q0001"),
+        origin: "original_explanation",
+      }).success,
+    ).toBe(false);
+  });
 });
 
 describe("course content repository", () => {
@@ -74,6 +86,35 @@ describe("course content repository", () => {
     expect(lessons.every((lesson) => lesson.origin)).toBe(true);
     expect(getLesson("igualdad")?.origin).toBe("original_explanation");
     expect(getLesson("missing-lesson")).toBeUndefined();
+  });
+
+  it("rejects simulations that reference questions outside the bank during repository construction", () => {
+    const simulation = getSimulation("SIM-01")!;
+
+    expect(() =>
+      createContentRepository({
+        lessons: listLessons(),
+        questions: listQuestions(),
+        simulations: [
+          {
+            ...simulation,
+            questionIds: [...simulation.questionIds.slice(0, 59), "Q9999"],
+          },
+        ],
+      }),
+    ).toThrow(/missing question ID/);
+  });
+
+  it("rejects malformed lessons before they reach repository consumers", () => {
+    const lesson = getLesson("igualdad")!;
+
+    expect(() =>
+      createContentRepository({
+        lessons: [{ ...lesson, officialReferences: [] }],
+        questions: listQuestions(),
+        simulations: [],
+      }),
+    ).toThrow();
   });
 
   it("provides thirty simulations containing sixty distinct existing questions", () => {

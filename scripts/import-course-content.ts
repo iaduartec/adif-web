@@ -35,6 +35,11 @@ function toQuestion(row: CsvRow, rowNumber: number): Question {
     throw new Error(`Row ${rowNumber}: expected stable ID ${expectedId}, received ${id}.`);
   }
 
+  const answer = requiredValue(row, "answer", rowNumber);
+  if (!(["A", "B", "C", "D"] as const).includes(answer as "A" | "B" | "C" | "D")) {
+    throw new Error(`Row ${rowNumber}: answer must be one of A, B, C, or D.`);
+  }
+
   const question = {
     id,
     module: requiredValue(row, "module", rowNumber),
@@ -43,7 +48,7 @@ function toQuestion(row: CsvRow, rowNumber: number): Question {
       key,
       text: requiredValue(row, key, rowNumber),
     })),
-    answer: requiredValue(row, "answer", rowNumber),
+    answer,
     explanation: requiredValue(row, "comment", rowNumber),
     sourceNote: requiredValue(row, "source", rowNumber),
     origin: "original_explanation" as const,
@@ -87,18 +92,44 @@ function createSimulations(questions: readonly Question[]): Simulation[] {
   });
 }
 
-async function main() {
-  const csv = await readFile(sourcePath, "utf8");
-  const rows = parse(csv, {
-    bom: true,
-    columns: true,
-    relax_column_count: false,
-    skip_empty_lines: true,
-    trim: false,
-  }) as CsvRow[];
+export type ParseCourseCsvOptions = {
+  expectedQuestionCount?: number;
+};
 
-  if (rows.length !== 4_500) {
-    throw new Error(`Expected 4,500 CSV rows, received ${rows.length}.`);
+export type ImportedCourseContent = {
+  questions: Question[];
+  simulations: Simulation[];
+};
+
+export function parseCourseCsv(
+  csv: string,
+  { expectedQuestionCount = 4_500 }: ParseCourseCsvOptions = {},
+): ImportedCourseContent {
+  let rows: CsvRow[];
+  try {
+    rows = parse(csv, {
+      bom: true,
+      columns: true,
+      relax_column_count: false,
+      skip_empty_lines: true,
+      trim: false,
+    }) as CsvRow[];
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    throw new Error(`Malformed CSV: ${message}`);
+  }
+
+  if (rows.length !== expectedQuestionCount) {
+    throw new Error(`Expected ${expectedQuestionCount.toLocaleString("en-US")} CSV rows, received ${rows.length}.`);
+  }
+
+  const seenIds = new Set<string>();
+  for (const [index, row] of rows.entries()) {
+    const id = requiredValue(row, "id", index + 1);
+    if (seenIds.has(id)) {
+      throw new Error(`CSV contains duplicate question IDs: ${id}.`);
+    }
+    seenIds.add(id);
   }
 
   const questions = rows.map((row, index) => toQuestion(row, index + 1));
@@ -121,15 +152,30 @@ async function main() {
     }
   }
 
-  await Promise.all([
-    writeFile(questionsTarget, `${JSON.stringify(parsedQuestions, null, 2)}\n`, "utf8"),
-    writeFile(simulationsTarget, `${JSON.stringify(parsedSimulations, null, 2)}\n`, "utf8"),
-  ]);
-
-  console.log(`Imported ${parsedQuestions.length} questions and ${parsedSimulations.length} simulations.`);
+  return { questions: parsedQuestions, simulations: parsedSimulations };
 }
 
-main().catch((error: unknown) => {
-  console.error(error instanceof Error ? error.message : error);
-  process.exitCode = 1;
-});
+export async function importCourseContent() {
+  const csv = await readFile(sourcePath, "utf8");
+  const { questions, simulations } = parseCourseCsv(csv);
+
+  await Promise.all([
+    writeFile(questionsTarget, `${JSON.stringify(questions, null, 2)}\n`, "utf8"),
+    writeFile(simulationsTarget, `${JSON.stringify(simulations, null, 2)}\n`, "utf8"),
+  ]);
+
+  return { questions, simulations };
+}
+
+const executedAsScript = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (executedAsScript) {
+  importCourseContent()
+    .then(({ questions, simulations }) => {
+      console.log(`Imported ${questions.length} questions and ${simulations.length} simulations.`);
+    })
+    .catch((error: unknown) => {
+      console.error(error instanceof Error ? error.message : error);
+      process.exitCode = 1;
+    });
+}

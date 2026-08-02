@@ -66,14 +66,25 @@ export const lessonSchema = z.object({
   }),
 });
 
-export const simulationSchema = z.object({
-  id: z.string().regex(/^SIM-(0[1-9]|[12]\d|30)$/),
-  title: z.string().trim().min(1),
-  questionIds: z.array(z.string().regex(/^Q\d{4}$/)).length(60),
-  origin: contentOriginSchema,
-});
+export const simulationSchema = z
+  .object({
+    id: z.string().regex(/^SIM-(0[1-9]|[12]\d|30)$/),
+    title: z.string().trim().min(1),
+    questionIds: z.array(z.string().regex(/^Q\d{4}$/)).length(60),
+    origin: contentOriginSchema,
+  })
+  .superRefine((simulation, context) => {
+    if (new Set(simulation.questionIds).size !== simulation.questionIds.length) {
+      context.addIssue({
+        code: "custom",
+        path: ["questionIds"],
+        message: "Simulations must not repeat question IDs.",
+      });
+    }
+  });
 
 export const questionsSchema = z.array(questionSchema);
+export const lessonsSchema = z.array(lessonSchema);
 export const simulationsSchema = z.array(simulationSchema);
 
 export type Question = z.infer<typeof questionSchema>;
