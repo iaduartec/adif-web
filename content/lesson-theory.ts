@@ -36,6 +36,18 @@ export const lessonTheories: Record<string, TheorySection> = {
         description: "Son medidas específicas, de carácter temporal, adoptadas por los Poderes Públicos y las empresas para favorecer al sexo subrepresentado (históricamente las mujeres). Su finalidad es corregir situaciones patentes de desigualdad de partida en el ámbito social, económico, educativo y laboral. Serán vigentes solo mientras persista la situación de desigualdad que las motivó."
       },
       {
+        title: "Indemnidad frente a represalias (Art. 9)",
+        description: "Se prohíbe cualquier trato adverso o efecto negativo hacia la persona que presenta una queja, reclamación, denuncia, demanda o recurso destinado a impedir su discriminación. Esta protección garantiza que nadie sufra represalias por defender la igualdad."
+      },
+      {
+        title: "Inversión de la carga de la prueba (Art. 13)",
+        description: "En los procedimientos en que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, corresponderá a la persona demandada aportar una justificación objetiva y razonable, probada suficientemente, de las medidas adoptadas y de su proporcionalidad."
+      },
+      {
+        title: "Protección frente al acoso (Arts. 7 y 12.3)",
+        description: "El acoso sexual y el acoso por razón de sexo se consideran discriminatorios (art. 7). En los procedimientos sobre acoso sexual o por razón de sexo, la legitimación activa corresponde exclusivamente a la persona acosada (art. 12.3), si bien podrán intervenir los sindicatos o asociaciones en defensa de la igualdad."
+      },
+      {
         title: "Planes de Igualdad en las Empresas (Art. 45 y 46)",
         description: "Conjunto ordenado de medidas adoptadas en una organización después de realizar un diagnóstico de situación, tendentes a alcanzar la igualdad de trato y de oportunidades. Es obligatorio en empresas con 50 o más trabajadores. Debe contemplar el acceso al empleo, clasificación profesional, formación, promoción, auditoría retributiva, conciliación y prevención del acoso."
       },
@@ -47,7 +59,7 @@ export const lessonTheories: Record<string, TheorySection> = {
     examples: [
       {
         situation: "En una convocatoria de empleo para la categoría de Oficial de Telecomunicaciones de ADIF, se establece una prueba física con una marca de tiempo idéntica para hombres y mujeres, alegando que el trabajo requiere velocidad física común.",
-        application: "Es un caso de discriminación indirecta. Aunque el baremo es aparentemente neutro e idéntico, perjudica de forma desproporcionada a la población femenina debido a diferencias biomédicas medias. La empresa debe establecer baremos diferenciados corregidos por sexo para garantizar la equidad, salvo que se demuestre una necesidad técnica crítica insalvable."
+        application: "Es un caso de discriminación indirecta. Aunque el baremo es aparentemente neutro e idéntico, puede situar a las personas de un sexo en desventaja particular. Solo será lícito si la empresa lo justifica objetivamente con una finalidad legítima y medios necesarios y adecuados (art. 6.2). Ante la alegación de discriminación, corresponde al empleador probar la justificación objetiva de la medida (art. 13)."
       },
       {
         situation: "Una empresa contratista de ADIF decide no renovar el contrato temporal de una ingeniera de sistemas tras recibir la notificación de que ha iniciado un tratamiento de reproducción asistida.",
@@ -55,7 +67,7 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         situation: "Un sindicato denuncia que el comité de valoración de una oposición de ADIF está constituido por 5 vocales masculinos y 1 vocal femenina.",
-        application: "Incumple el principio de presencia equilibrada fijado en la Ley 3/2007. La composición paritaria exige que la proporción de cada sexo se sitúe entre el 40% y el 60%. La composición correcta mínima para 6 miembros sería de al menos 2 personas de un sexo y 4 del otro."
+        application: "Incumple el principio de presencia equilibrada definido en la disposición adicional primera de la Ley 3/2007: la composición equilibrada exige que en el conjunto las personas de cada sexo no superen el 60% ni sean menos del 40%. Con 6 miembros, cada sexo debería contar con al menos 3 personas (40% de 6 = 2,4), por lo que una composición de 5-1 no cumple el mínimo."
       }
     ],
     reviewTakeaways: [
@@ -86,7 +98,11 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         title: "Derecho de Paralización de la Actividad (Art. 21)",
-        description: "Cuando el trabajador se encuentre ante una situación de riesgo grave e inminente (aquel que resulta probable racionalmente que se materialice en un futuro inmediato y pueda suponer un daño grave para la salud), tiene derecho a interrumpir su actividad y, si fuera necesario, abandonar de inmediato el lugar de trabajo."
+        description: "Cuando el trabajador se encuentre ante una situación de riesgo grave e inminente (aquel que resulta probable racionalmente que se materialice en un futuro inmediato y pueda suponer un daño grave para la salud), tiene derecho a interrumpir su actividad y, si fuera necesario, abandonar de inmediato el lugar de trabajo. Cuando concurra riesgo grave e inminente, la paralización podrá acordarla también el órgano de representación o los Delegados de Prevención, y los trabajadores podrán abandonar el puesto; salvo caso de fuerza mayor, el empresario debe comunicar la paralización a la autoridad laboral en 24 horas."
+      },
+      {
+        title: "Vigilancia de la salud (Art. 22)",
+        description: "El empresario garantizará a los trabajadores a su servicio la vigilancia periódica de su estado de salud en función de los riesgos inherentes al trabajo. Solo podrá llevarse a cabo cuando el trabajador preste su consentimiento, con las excepciones legales (por ejemplo, cuando sea imprescindible para evaluar los efectos de las condiciones de trabajo sobre la salud o verificar el estado de salud de quienes trabajen en puestos de riesgo)."
       },
       {
         title: "Delegados de Prevención y Comité de Seguridad y Salud (Art. 35 y 38)",
@@ -110,7 +126,9 @@ export const lessonTheories: Record<string, TheorySection> = {
     reviewTakeaways: [
       "La protección colectiva (redes, barandillas, extractores) siempre se antepone a la protección individual (cascos, tapones, arneses).",
       "El coste de las medidas de seguridad y salud en el trabajo nunca puede recaer sobre los hombros de los trabajadores.",
-      "El trabajador está obligado a usar correctamente los equipos y dispositivos de seguridad; el uso inadecuado u omisión constituye una falta laboral grave."
+      "El trabajador está obligado a usar correctamente los equipos y dispositivos de seguridad; el uso inadecuado u omisión constituye una falta laboral grave.",
+      "La vigilancia de la salud (art. 22) se presta con consentimiento del trabajador, salvo las excepciones legales.",
+      "Ante riesgo grave e inminente, pueden paralizar la actividad el trabajador, los Delegados de Prevención o el Comité, debiendo el empresario comunicarlo a la autoridad laboral en 24 horas salvo fuerza mayor."
     ]
   },
   "estatuto-adif": {
@@ -118,7 +136,7 @@ export const lessonTheories: Record<string, TheorySection> = {
     concepts: [
       {
         title: "Naturaleza Jurídica y Régimen de ADIF",
-        description: "ADIF se constituye como una Entidad Pública Empresarial (EPE) de las previstas en la legislación del Estado, con personalidad jurídica propia, patrimonio propio y autonomía de gestión. Está adscrita al Ministerio de Transportes y Movilidad Sostenible."
+        description: "ADIF se constituye como una Entidad Pública Empresarial (EPE) de las previstas en la legislación del Estado, con personalidad jurídica propia, patrimonio propio y autonomía de gestión. El Estatuto (RD 2395/2004) la adscribe al Ministerio de Fomento (en la actualidad, Ministerio de Transportes y Movilidad Sostenible)."
       },
       {
         title: "Objeto Principal y Competencias",
@@ -126,15 +144,19 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         title: "El Consejo de Administración",
-        description: "Es el órgano supremo de gobierno colegiado de la entidad. Está integrado por el Presidente de ADIF y un número de vocales que oscila entre un mínimo de 9 y un máximo de 10, nombrados por el Ministerio de adscripción. Se encarga de definir las directrices de explotación de la red pública y aprobar presupuestos."
+        description: "Es el órgano supremo de gobierno colegiado de la entidad. Está integrado por el Presidente de ADIF y un número de vocales que oscila entre un mínimo de 9 y un máximo de 10, nombrados por el Ministerio de Fomento. Se encarga de definir las directrices de explotación de la red pública y aprobar presupuestos."
       },
       {
         title: "El Presidente de ADIF",
-        description: "Es nombrado por el Consejo de Ministros a propuesta del Ministro de Transportes. Ostenta la representación legal y ordinaria de la entidad, dirige el funcionamiento de todos sus órganos y servicios, y convoca y preside el Consejo de Administración."
+        description: "Es nombrado por el Consejo de Ministros a propuesta del Ministro de Fomento. Ostenta la representación legal y ordinaria de la entidad, dirige el funcionamiento de todos sus órganos y servicios, y convoca y preside el Consejo de Administración."
       },
       {
         title: "Régimen Patrimonial y Financiero",
-        description: "ADIF cuenta con patrimonio propio y bienes adscritos por el Estado (que permanecen de dominio público). Sus ingresos provienen del cobro de cánones a los operadores ferroviarios por el uso de la infraestructura y estaciones, de las transferencias de los Presupuestos Generales del Estado y de la explotación de sus propios activos."
+        description: "ADIF cuenta con patrimonio propio, del que forma parte la infraestructura ferroviaria de la RFIG (salvo la que pertenece a ADIF-Alta Velocidad y la construida con recursos de terceros). Sus ingresos provienen de las tarifas y cánones por el uso de la infraestructura y las instalaciones de servicio, de las transferencias de los Presupuestos Generales del Estado y de la explotación de sus propios activos."
+      },
+      {
+        title: "Desafectación de bienes de dominio público (Art. 31)",
+        description: "Los bienes de dominio público de titularidad de ADIF que resulten innecesarios para la prestación de los servicios de interés general pueden ser desafectados por la entidad. La desafectación se lleva a cabo previa declaración de innecesariedad realizada por el Consejo de Administración y determina la incorporación de los bienes a su patrimonio, pudiendo ser objeto de enajenación o permuta."
       },
       {
         title: "Régimen del Personal",
@@ -148,13 +170,14 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         situation: "Se debate si ADIF puede hipotecar una estación de tren de su red de interés general para solicitar un crédito de financiación comercial a un banco privado.",
-        application: "No es posible. Los bienes de dominio público ferroviario que tiene adscritos ADIF son inalienables, inembargables e imprescriptibles. Su régimen patrimonial impide utilizarlos como garantía real o hipoteca, requiriendo autorización previa del Consejo de Ministros para cualquier desafectación."
+        application: "No es posible en los términos propuestos. La estación es bien de dominio público de titularidad de ADIF y, conforme al artículo 30 del Estatuto, está afecta a la prestación de los servicios de interés general. Antes de que ADIF pudiera disponer de ella como garantía real debería declararse su innecesariedad por el Consejo de Administración y acordarse su desafectación (art. 31), incorporándose al patrimonio de la entidad y pudiendo ser entonces enajenada o permutada."
       }
     ],
     reviewTakeaways: [
-      "ADIF es una EPE adscrita al Ministerio de Transportes y Movilidad Sostenible.",
-      "El Consejo de Administración aprueba los presupuestos anuales y las propuestas de tarifas y cánones ferroviarios.",
-      "La gestión de la capacidad y seguridad del tráfico ferroviario son funciones públicas exclusivas de ADIF que no pueden ser subcontratadas ni delegadas a operadores privados."
+      "ADIF es una EPE adscrita en el Estatuto al Ministerio de Fomento (hoy Ministerio de Transportes y Movilidad Sostenible).",
+      "El Consejo de Administración está integrado por el Presidente y entre 9 y 10 vocales, nombrados por el Ministerio de Fomento.",
+      "El Presidente es nombrado por el Consejo de Ministros a propuesta del Ministro de Fomento.",
+      "Los bienes de dominio público de ADIF solo pueden salir de ese régimen mediante declaración de innecesariedad del Consejo de Administración y posterior desafectación."
     ]
   },
   "ict-rd-346-2011": {
@@ -162,19 +185,19 @@ export const lessonTheories: Record<string, TheorySection> = {
     concepts: [
       {
         title: "Infraestructura Común de Telecomunicaciones (ICT)",
-        description: "La infraestructura instalada en el interior de los edificios que facilita la captación, adaptación y distribución ordenada y segura de servicios de radio, televisión terrenal y satélite, y los servicios de telefonía y banda ancha (fibra óptica, par de cobre y coaxial)."
+        description: "La infraestructura instalada en el interior de los edificios que facilita la captación, adaptación y distribución ordenada y segura de servicios de radio, televisión terrenal y satélite, y los servicios de telefonía y banda ancha (fibra óptica, par de cobre y coaxial). Sus normas técnicas se desarrollan en los Anexos del Reglamento."
       },
       {
         title: "Red de Alimentación de la ICT",
-        description: "Parte de la red propiedad de los operadores de telecomunicaciones que conecta sus centrales de servicio con el Punto de Interconexión del edificio, situado en el interior del recinto técnico."
+        description: "Parte de la red propiedad de los operadores de telecomunicaciones que conecta sus centrales de servicio con el Punto de Interconexión del edificio, situado con carácter general en el interior del recinto técnico (RITI). Se define en el apartado 2.1 del Anexo II y es responsabilidad de los operadores de servicio."
       },
       {
         title: "Red de Distribución",
-        description: "Tramo que discurre en sentido vertical por el interior del edificio (a través de los patinillos y registros secundarios) llevando las señales de telecomunicación desde los repartidores principales hasta los derivadores de planta."
+        description: "Tramo que discurre por el interior del edificio (a través de la canalización principal) llevando las señales de telecomunicación desde los repartidores principales del registro principal hasta los registros secundarios o derivadores de planta. Se define en el apartado 2.2 del Anexo II."
       },
       {
         title: "Red de Dispersión",
-        description: "Es el tramo de la red que conecta la red de distribución en el registro secundario de cada planta con el Punto de Acceso al Usuario (PAU) de cada una de las viviendas u oficinas."
+        description: "Es el tramo de la red que conecta la red de distribución en el registro secundario de cada planta con el Punto de Acceso al Usuario (PAU) de cada una de las viviendas u oficinas, configurándose en estrella desde el PAU hasta las tomas."
       },
       {
         title: "Red Interior de Usuario",
@@ -182,123 +205,149 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         title: "Recinto de Instalaciones de Telecomunicaciones Inferior (RITI)",
-        description: "Local o recinto técnico situado en la planta baja o sótano del edificio destinado a albergar los repartidores principales de los operadores de telefonía, cable y fibra óptica. Debe estar protegido frente a humedades y contar con toma de tierra."
+        description: "Local o recinto técnico situado con carácter general en la parte inferior o planta baja del edificio, destinado a albergar el punto de interconexión y los repartidores principales de los operadores de telefonía, cable y fibra óptica."
       },
       {
         title: "Recinto de Instalaciones de Telecomunicaciones Superior (RITS)",
-        description: "Local o recinto técnico situado en la planta alta, ático o azotea del edificio, destinado a alojar los equipos de adaptación y amplificación de las señales de radiodifusión sonora y televisión recibidas mediante las antenas exteriores."
+        description: "Local o recinto técnico situado en la parte superior o cubierta del edificio, destinado a alojar los elementos de captación, recepción y procesado de las señales de radiodifusión sonora y televisión recibidas mediante las antenas exteriores, desde donde parten los cables hacia el RITI."
       },
       {
         title: "Punto de Acceso al Usuario (PAU)",
-        description: "Dispositivo de interconexión que delimita la infraestructura común del edificio de la instalación privada de cada vivienda. Permite al usuario o técnico realizar pruebas de aislamiento y comprobar la calidad de señal que entra en el domicilio."
+        description: "Elemento en el que comienza la red interior del domicilio del usuario y que permite la delimitación de responsabilidades en cuanto al origen, localización y reparación de averías. Se ubica en el interior del domicilio del usuario y permite la selección del cable de la red interior."
+      },
+      {
+        title: "Proyecto técnico y régimen sancionador (Arts. 9, 10 y 15)",
+        description: "El proyecto técnico de la ICT debe acompañar la solicitud de licencia o autorización de edificación, conforme a los requisitos del Reglamento. El incumplimiento de las obligaciones del Reglamento se sanciona de acuerdo con lo previsto en el artículo 11 del Real Decreto-ley 1/1998 y en la Ley 32/2003, General de Telecomunicaciones (el propio RD 346/2011 no tipifica sanciones propias)."
       }
     ],
     examples: [
       {
         situation: "Un técnico instalador despliega una acometida de fibra óptica desde el armario RITI exterior de la calle, pasando el cable directamente a través de la fachada y la ventana de un vecino sin pasar por la canalización del edificio.",
-        application: "Es una infracción directa de las especificaciones de diseño del RD 346/2011. Toda instalación debe canalizarse internamente a través de los registros y conductos previstos de la ICT para garantizar la estética, seguridad frente a incendios y la integridad de las líneas de telecomunicación."
+        application: "Es una infracción directa de las especificaciones de diseño del RD 346/2011. Toda instalación debe canalizarse internamente a través de los registros y conductos previstos de la ICT para garantizar la estética, la seguridad y la integridad de las líneas de telecomunicación."
       },
       {
-        situation: "Una comunidad de vecinos denuncia pérdidas continuas en la señal de TV digital tras instalarse un repartidor no homologado en la red de distribución del edificio.",
-        application: "El reglamento de ICT obliga a que todos los componentes activos y pasivos utilizados en la red de distribución cuenten con la homologación CE y mantengan un blindaje mínimo de inmunidad de clase A para evitar fugas de señal e interferencias electromagnéticas."
+        situation: "Una comunidad de vecinos denuncia pérdidas continuas en la señal de TV digital tras instalarse un repartidor en la red de distribución del edificio.",
+        application: "El Anexo I del Reglamento exige que los elementos de la cabecera (amplificadores, mezcladores, repartidores) garanticen los niveles de señal adecuados a las tomas de usuario. El mantenimiento de la ICT y la correcta configuración de los equipos de distribución son responsabilidad de la comunidad, debiendo verificarse los niveles de señal que llegan a cada PAU."
       }
     ],
     reviewTakeaways: [
-      "El PAU sirve de punto de corte y prueba para deslindar responsabilidades de mantenimiento entre la comunidad de vecinos y el propietario individual.",
-      "El RITI y RITS son obligatorios en edificios de nueva construcción, debiendo poseer dimensiones mínimas normalizadas y extractores de ventilación automáticos.",
+      "El PAU delimita responsabilidades: comienza la red interior del usuario y permite localizar el origen de las averías.",
+      "Las definiciones de las redes (alimentación, distribución, dispersión, interior) y de los recintos RITI/RITS se desarrollan en los Anexos II y III del Reglamento.",
+      "El RD 346/2011 no tiene régimen sancionador propio: remite al Real Decreto-ley 1/1998 y a la Ley 32/2003 General de Telecomunicaciones.",
       "La canalización principal discurre por zonas comunes del edificio y nunca puede atravesar viviendas de propiedad privada."
     ]
   },
   "compatibilidad-electromagnetica": {
-    introduction: "La compatibilidad electromagnética (CEM o EMC, por sus siglas en inglés) es la capacidad de cualquier equipo, sistema o instalación eléctrica para funcionar de manera satisfactoria en su entorno electromagnético sin introducir perturbaciones electromagnéticas que resulten intolerables para otros equipos presentes en dicho entorno. En ADIF, donde conviven trenes de tracción eléctrica con corrientes de miles de amperios, subestaciones eléctricas de alta tensión, y delicados equipos de telecomunicación por fibra, radio y señalización ferroviaria, la CEM es una disciplina técnica indispensable para evitar fallos de seguridad críticos.",
+    introduction: "La compatibilidad electromagnética (CEM o EMC) es la capacidad de los equipos eléctricos y electrónicos para funcionar correctamente en su entorno electromagnético sin producir ni sufrir perturbaciones intolerables. En los ferrocarriles, donde los sistemas de señalización y control conviven con la propulsión eléctrica de alta potencia, la CEM es una parte esencial de los procesos de análisis de seguridad. El material de estudio se apoya en el artículo técnico 'La compatibilidad electromagnética y la seguridad en los ferrocarriles' de Francesc Daura (Cemdal), que resume la Directiva CEM y la norma europea EN 50121.",
     concepts: [
       {
-        title: "Perturbación Electromagnética",
-        description: "Cualquier fenómeno electromagnético (ruido de fondo, señal no deseada, transitorio de tensión, descarga electrostática) que sea capaz de degradar el rendimiento o provocar el fallo de funcionamiento de un equipo o circuito electrónico."
+        title: "Directiva CEM y marco normativo",
+        description: "La Directiva de Compatibilidad Electromagnética 2004/108/CE (publicada el 15 de diciembre de 2004, plenamente en vigor desde julio de 2009) se transpone en España mediante el Real Decreto 1580/2006, de 22 de diciembre. Fue sustituida por la Directiva 2014/30/UE, publicada el 29 de marzo de 2014 y en vigor desde el 20 de abril de 2016. Afecta a todos los equipos electrónicos, incluida la industria ferroviaria."
       },
       {
-        title: "Emisiones Electromagnéticas",
-        description: "La cantidad de energía electromagnética indeseada generada y liberada por un aparato al exterior. Puede transmitirse de forma conducida (a través de cables de red o señal) o de forma radiada (propagándose como ondas electromagnéticas a través del aire)."
+        title: "Norma europea EN 50121",
+        description: "Es la norma CEM específica de aplicación en los ferrocarriles, desarrollada por CENELEC. Describe las pruebas a realizar para evitar los problemas de CEM dentro del entorno ferroviario y entre la red del ferrocarril y el 'mundo exterior'. Se estructura en partes 1 a 5 (emisión e inmunidad del conjunto, del material rodante, de los aparatos de señalización y telecomunicación, etc.). Su versión española UNE-EN 50121 se presentó en 2007."
       },
       {
-        title: "Inmunidad y Susceptibilidad Electromagnética",
-        description: "La inmunidad es la aptitud de un equipo para funcionar sin degradarse en presencia de perturbaciones externas. La susceptibilidad es la incapacidad del equipo para resistir estas perturbaciones (a menor inmunidad, mayor susceptibilidad)."
+        title: "Fuentes de interferencias en el ferrocarril",
+        description: "En un ferrocarril electrificado se requieren megavatios de potencia para la propulsión, lo que genera niveles importantes de interferencias electromagnéticas (EMI). Las principales fuentes son los convertidores conmutados de alta potencia de las locomotoras (tanto de alta velocidad como de alta potencia), las subestaciones, los motores y accionamientos, y la catenaria junto con el pantógrafo."
       },
       {
-        title: "Acoplamiento Conducido",
-        description: "La perturbación viaja directamente a través de conductores metálicos compartidos (cables de alimentación, bucles de masa o cables de señal comunes). Se combate mediante el uso de filtros pasivos e inductores de choque."
+        title: "La catenaria como antena y el acoplamiento",
+        description: "Al ser prácticamente una antena de cable horizontal, la catenaria actúa como vía de propagación de las interferencias conducidas, que pueden llegar a la alimentación de la línea aérea. Existen acoplamientos inductivos, capacitivos y conductivos entre las distintas partes del sistema ferroviario y con sistemas cercanos, con consecuencias potencialmente graves para la señalización si no se gestionan."
       },
       {
-        title: "Acoplamiento Radiado",
-        description: "La perturbación se propaga por el espacio en forma de ondas electromagnéticas cruzando del elemento emisor al receptor. Se controla mediante blindajes metálicos (jaulas de Faraday) y materiales absorbentes de RF."
+        title: "Emisiones e inmunidad",
+        description: "Las normas EN 50121-2 y EN 50121-3-1 establecen las emisiones que deben medirse: por ejemplo, los límites de cuasi-pico de las emisiones radiadas a 10 metros en la prueba estacionaria del material rodante (EN 50121-3-1). La inmunidad es la capacidad de un equipo para funcionar sin degradarse en presencia de perturbaciones."
       },
       {
-        title: "Técnicas de Blindaje e Impedancia",
-        description: "El uso de carcasas conductoras continuas para aislar los circuitos delicados del ruido exterior. Para ser efectivo, el blindaje debe estar conectado a una tierra física de muy baja inductancia y baja impedancia."
+        title: "Evaluación de la conformidad y gestión de la CEM",
+        description: "Para poder venderse en la UE, todo equipo debe cumplir la Directiva de CEM, lo que requiere documentación técnica (equivalente al expediente técnico de construcción) y declaración de conformidad del fabricante. En el sector ferroviario se completa con los certificados basados en las normas TSI (Especificaciones Técnicas de Interoperabilidad), la elaboración de un Plan de Gestión de la CEM y la incorporación de la CEM como requisito en las convocatorias de licitación."
       },
       {
-        title: "Segregación de Cables",
-        description: "Práctica de diseño consistente en separar físicamente el tendido de cables según su función y nivel de señal. Los cables de alimentación de potencia y los cables de señales débiles de telecomunicación nunca deben discurrir paralelos en la misma bandeja sin una distancia de seguridad normalizada."
+        title: "Interferencias conducidas y radiadas",
+        description: "Las perturbaciones pueden transmitirse de forma conducida (a través de cables de alimentación, de señal o del propio carril como vía de retorno) o radiada (propagándose como ondas electromagnéticas por el aire). Se controlan mediante filtros, blindajes conectados a tierra, segregación de circuitos y buenas prácticas de diseño."
       }
     ],
     examples: [
       {
-        situation: "Al arrancar un motor de un ascensor en una estación de ADIF, los ordenadores de venta de billetes sufren parpadeos en pantalla y pérdidas de comunicación en la red local.",
-        application: "Es una perturbación por acoplamiento conducido provocada por el transitorio de conmutación del motor del ascensor. Se soluciona instalando un filtro de red EMI en la entrada de alimentación del ascensor o de los ordenadores para bloquear los picos de alta frecuencia."
+        situation: "Al arrancar un tren, los sistemas de señalización próximos a la catenaria sufren perturbaciones que degradan sus comunicaciones.",
+        application: "La propulsión genera EMI mediante convertidores conmutados de alta potencia que se propagan por la catenaria (que actúa como antena de cable horizontal). Deben aplicarse las normas EN 50121 y las buenas prácticas de CEM, verificando los niveles de emisión e inmunidad de los equipos de señalización."
       },
       {
-        situation: "Un técnico de ADIF debe pasar un cable de datos ethernet de par trenzado de categoría 5e junto a una línea trifásica de 400V en una bandeja metálica de telecomunicaciones.",
-        application: "Incorrecto. Se debe respetar la distancia de segregación mínima (habitualmente 20 cm) o utilizar bandejas metálicas con divisor físico continuo conectado a tierra, empleando cable blindado (STP) para asegurar la inmunidad del cable de datos."
+        situation: "Un fabricante quiere vender en la Unión Europea un equipo electrónico de señalización para el material rodante.",
+        application: "Debe evaluar la conformidad con la Directiva CEM (2004/108/CE y actual 2014/30/UE, transpuesta por el RD 1580/2006), elaborar la documentación técnica, aplicar las normas EN 50121 para las pruebas de emisión e inmunidad y declarar la conformidad. En el ámbito ferroviario europeo se completa con los certificados basados en las normas TSI."
+      },
+      {
+        situation: "Un técnico debe medir las emisiones radiadas de una locomotora en prueba estacionaria.",
+        application: "Se aplica la norma EN 50121-3-1, que fija los límites de cuasi-pico de las emisiones radiadas a 10 metros. Las mediciones deben realizarse con el instrumento de medida y el barrido adecuados, teniendo en cuenta la influencia de la antena, la distancia y la velocidad del barrido."
       }
     ],
     reviewTakeaways: [
-      "La fibra óptica (monomodo y multimodo) es totalmente inmune a las perturbaciones y ruidos electromagnéticos, ya que transmite pulsos de luz en lugar de señales eléctricas.",
-      "El apantallamiento de los cables solo es efectivo si la malla exterior metálica se conecta correctamente a tierra en ambos extremos de la canalización.",
-      "Las descargas electrostáticas (ESD) representan perturbaciones radiadas de alta tensión y baja energía que pueden destruir circuitos integrados sin dejar marcas físicas visibles."
+      "La CEM es parte esencial del análisis de seguridad ferroviario y del cumplimiento de las normas TSI.",
+      "La Directiva CEM vigente es la 2014/30/UE (en vigor desde el 20/04/2016); en España se transpone por el RD 1580/2006.",
+      "La norma europea de CEM ferroviaria es la EN 50121 (partes 1 a 5), que fija las pruebas de emisión e inmunidad.",
+      "La catenaria actúa como antena de cable horizontal, por lo que es vía principal de propagación de interferencias.",
+      "La conformidad exige documentación técnica y declaración del fabricante; en ferrocarril se refuerza con TSI y Plan de Gestión de la CEM."
     ]
   },
   "rcf-libro-1": {
-    introduction: "El Reglamento de Circulación Ferroviaria (RCF), aprobado mediante el Real Decreto 921/2015, constituye el marco normativo supremo que regula la seguridad de la circulación de los trenes en la Red Ferroviaria de Interés General (RFIG). El Libro Primero, denominado 'Reglas Generales', establece las bases éticas, las definiciones fundamentales, las responsabilidades de los agentes intervinientes y los principios operativos sobre los que se sustenta la explotación segura de la red ferroviaria.",
+    introduction: "El Reglamento de Circulación Ferroviaria (RCF), aprobado mediante el Real Decreto 664/2015, de 17 de julio, constituye el marco normativo que regula la seguridad de la circulación de los trenes en la Red Ferroviaria de Interés General (RFIG). El Libro Primero, 'Reglas Generales', establece las definiciones fundamentales, la documentación reglamentaria, las comunicaciones y las condiciones de marcha que deben conocer y aplicar todos los agentes que intervienen en la circulación ferroviaria.",
     concepts: [
       {
-        title: "El Principio de Prudencia Ferroviaria",
-        description: "Principio rector por el cual, ante cualquier duda, contradicción entre normas, señalización confusa o situación imprevista, todo el personal del sector ferroviario debe adoptar obligatoriamente la decisión más segura y restrictiva para el tráfico, primando la seguridad humana sobre los retrasos o la puntualidad."
+        title: "La seguridad como principio rector",
+        description: "La circulación debe realizarse en condiciones de seguridad. Las normas y consignas se interpretan y aplican con ese fin: ante cualquier situación que comprometa la seguridad, prevalece la protección de las personas y del tráfico sobre consideraciones de puntualidad o servicio."
       },
       {
-        title: "Personal de Circulación",
-        description: "Agentes que realizan funciones que inciden directamente en la seguridad del tráfico. Incluye a maquinistas, factores de circulación, encargados de trabajos, personal de cabina de control y pilotos de seguridad. Tienen la obligación de mantener activa su aptitud psicofísica durante la jornada laboral."
+        title: "Documentación reglamentaria",
+        description: "El Libro Primero clasifica la documentación por su origen. La elaborada y aprobada por el Administrador de Infraestructuras (AI) incluye Consignas, Avisos y Horarios de los trenes; la elaborada y aprobada por las Empresas Ferroviarias (EF) incluye el Libro de Normas del Maquinista y el Libro de Itinerarios del Maquinista. En caso de discrepancia entre documentos sobre un mismo objeto, el orden de prevalencia es: AESF y normas europeas, AI, EF."
       },
       {
-        title: "Documentación Oficial Obligatoria de Circulación",
-        description: "Documentos e información escrita o digital que deben portar y conocer los agentes de conducción de forma obligatoria, tales como el Libro de Itinerarios del tren, el Horario de Servicio de la línea y las Notificaciones vigentes."
+        title: "Habilitación",
+        description: "Documento que faculta a su titular para ejercer unas funciones cuya capacidad ha sido acreditada mediante la superación de una formación reglada. Todo el personal que interviene en la circulación debe estar habilitado y recibir de su AI o EF los útiles de servicio necesarios para desarrollar su función."
       },
       {
-        title: "Estación Ferroviaria",
-        description: "Infraestructura ferroviaria constituida por vías, agujas de desvío y señales, delimitada por sus señales de entrada, destinada a regular la circulación de trenes y permitir la subida, bajada y transbordo de viajeros o mercancías."
+        title: "Estación ferroviaria",
+        description: "Infraestructura ferroviaria consistente en una instalación de vías y sus aparatos asociados, protegida por señales, en la que se desarrollan procesos de circulación. A efectos del Reglamento se consideran estación los Puestos de Bloqueo (PB), PBA, PCA, PAET y las Bifurcaciones, así como los Cambiadores de Ancho y Bases de Mantenimiento cuando no estén integrados en otra estación."
       },
       {
-        title: "Cantón de Vía",
-        description: "Tramo de vía en el que, en condiciones normales de explotación, no puede circular de forma simultánea más de un tren. La separación de los trenes se realiza dividiendo la línea en cantones protegidos por señales fijas automáticas o bloqueos manuales."
+        title: "Cantón de bloqueo",
+        description: "El tramo de vía cuya ocupación simultánea por dos trenes se impide para garantizar la separación. Su definición depende del sistema de bloqueo: en BT (Bloqueo Telefónico) y BLA (Bloqueo Automático de vía Doble) es la parte de vía comprendida entre dos estaciones colaterales abiertas; en BA (Bloqueo Automático), la parte de vía entre dos señales de bloqueo consecutivas; en BSL, el tramo comprendido entre señales que pueden presentar parada."
       },
       {
-        title: "Aguja Ferroviaria",
-        description: "Aparato de vía móvil y metálico que permite a las ruedas de los trenes cambiar de una vía a otra de forma segura. Su correcto enclavamiento y posición es crítico para la seguridad de la circulación."
+        title: "Marcha de maniobras",
+        description: "Impone al maquinista la obligación de avanzar con prudencia, sin exceder la velocidad de 30 km/h si la locomotora va tirando del tren, o de 20 km/h si va empujándolo, de forma que pueda detener el tren ante cualquier obstáculo visible desde el puesto de conducción o ante una señal de parada."
+      },
+      {
+        title: "Marcha a la vista",
+        description: "Condición de marcha especial que impone avanzar con la precaución que requiera el caso, regulando la velocidad de acuerdo con la longitud de vía visualizada por delante del puesto de conducción, de forma que pueda detenerse el tren ante cualquier obstáculo o señal de parada. Cuando se prescriba, se indicará el motivo."
+      },
+      {
+        title: "Comunicaciones reglamentarias y telefonema",
+        description: "Las comunicaciones que inciden en la circulación tienen formato reglado. El telefonema es la comunicación reglamentaria en los procesos de circulación, caracterizada por un formato preestablecido, identificada mediante un número secuencial, la hora de transmisión y la identificación del emisor, y que queda registrada en los soportes contemplados en el Reglamento."
       }
     ],
     examples: [
       {
-        situation: "Una señal de salida de la estación muestra una luz violeta parpadeante, la cual no está contemplada en las indicaciones estándar de parada o vía libre del reglamento de señales.",
-        application: "El maquinista debe aplicar inmediatamente el principio de prudencia. Una indicación dudosa o no normalizada equivale legalmente a una señal de parada estricta. El maquinista debe detener el tren antes de rebasar la señal y notificar al Puesto de Mando."
+        situation: "Un maquinista encuentra un obstáculo o una indicación que le impide continuar con normalidad y no dispone de procedimiento específico previsto.",
+        application: "Aplica la regla de seguridad como principio rector: debe detener el tren ante cualquier obstáculo o señal de parada y comunicar la situación por el canal reglamentario. En el bloqueo telefónico (BT), la circulación se realiza mediante telefonemas registrados entre estaciones colaterales abiertas."
       },
       {
-        situation: "Un factor de circulación detecta que los sistemas informáticos de bloqueo automático de la vía se han apagado debido a un fallo eléctrico.",
-        application: "Se debe suspender el bloqueo automático e implantar el bloqueo telefónico manual de emergencia con registro de telefonemas firmados. No se autorizará la salida de ningún tren hasta confirmar verbalmente con la estación colateral que el cantón está libre."
+        situation: "Existe una discrepancia entre el Libro de Itinerarios del Maquinista (EF) y una consigna del Administrador de Infraestructuras sobre el mismo tramo.",
+        application: "Se aplica el orden de prevalencia del Reglamento: primero AESF y normas europeas, después el Administrador de Infraestructuras (consignas) y por último la Empresa Ferroviaria (Libro de Normas e Itinerarios del Maquinista)."
+      },
+      {
+        situation: "Una maniobra debe realizarse empujando una locomotora detrás de un convoy.",
+        application: "El Reglamento limita la velocidad a 20 km/h en marcha de maniobras cuando la locomotora empuja el tren, debiendo el maquinista poder detenerlo ante cualquier obstáculo visible o señal de parada. Si fuera tirando del tren, el límite sería de 30 km/h."
       }
     ],
     reviewTakeaways: [
-      "La puntualidad y rapidez comercial están subordinadas incondicionalmente a la seguridad de la vida humana y de la infraestructura ferroviaria.",
-      "Toda orden verbal que contradiga el Reglamento de Circulación es nula y no debe ser ejecutada por el agente receptor por riesgo de accidente.",
-      "Las señales fijas de parada de emergencia deben ser obedecidas de forma inmediata por cualquier tren en circulación."
+      "El RCF se aprueba por el Real Decreto 664/2015, de 17 de julio, y su Libro Primero regula las reglas generales de circulación.",
+      "La documentación reglamentaria procede del AI (consignas, avisos, horarios) y de las EF (Libro de Normas e Itinerarios del Maquinista).",
+      "La estación se define por sus vías, aparatos y señales, y comprende PB, PBA, PCA, PAET y Bifurcaciones.",
+      "El cantón de bloqueo garantiza que no circulen dos trenes en el mismo tramo; su alcance depende del sistema de bloqueo (BT, BLA, BA, BSL).",
+      "En marcha de maniobras: 30 km/h tirando, 20 km/h empujando; la marcha a la vista exige poder detener el tren ante cualquier obstáculo.",
+      "El telefonema es la comunicación reglamentaria registrada en los procesos de circulación."
     ]
   },
   psicometria: {
@@ -328,11 +377,11 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         situation: "Se plantea un problema matemático de cruce de dos trenes: el tren A sale de Madrid a 80 km/h y el tren B sale de Zaragoza a 120 km/h al mismo tiempo. Sabiendo que la distancia es de 300 km, se pide hallar a qué distancia se cruzan.",
-        application: "Uso de la ecuación de movimiento relativo: $Tiempo = Distancia / (Velocidad A + Velocidad B) = 300 / (80 + 120) = 1.5$ horas. Se cruzan a $1.5 \\times 80 = 120$ km de Madrid."
+        application: "Uso de la ecuación de movimiento relativo: Tiempo = Distancia / (Velocidad A + Velocidad B) = 300 / (80 + 120) = 1,5 horas. Se cruzan a 1,5 x 80 = 120 km de Madrid."
       }
     ],
     reviewTakeaways: [
-      "Las respuestas incorrectas restan puntuación en las oposiciones oficiales de ADIF; dejar preguntas en blanco es la opción más prudente ante dudas completas.",
+      "En pruebas psicotécnicas conviene confirmar las reglas de corrección de cada convocatoria antes de asumir que las respuestas incorrectas penalizan; ante dudas completas, dejar en blanco suele ser la opción más prudente.",
       "La gestión del tiempo es crítica: es conveniente saltarse las preguntas difíciles para asegurar primero las fáciles en la primera ronda del test.",
       "La práctica diaria y cronometrada es el método científico más eficaz para automatizar la resolución de series y razonamientos lógicos."
     ]
@@ -350,11 +399,11 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         title: "Principales agentes del sector ferroviario",
-        description: "El Ministerio de Transportes y Movilidad Sostenible planifica, regula y supervisa el sistema. De él dependen las entidades públicas empresariales Adif, Adif-Alta Velocidad, Renfe-Operadora, Puertos del Estado y Enaire. La Comisión Nacional de los Mercados y la Competencia (CNMC) actúa como órgano regulador: garantiza la pluralidad de la oferta, la igualdad de acceso al mercado, la supervisión de cánones y tarifas y la comprobación de cláusulas no discriminatorias de la DR."
+        description: "El Ministerio de Transportes y Movilidad Sostenible planifica, regula y supervisa el sistema. De él dependen las entidades públicas empresariales Adif, Adif-Alta Velocidad, Renfe-Operadora, Puertos del Estado y Enaire. La Comisión Nacional de los Mercados y la Competencia (CNMC) actúa como órgano regulador: garantiza la pluralidad de la oferta, la igualdad de acceso al mercado, la supervisión de cánones y tarifas y la comprobación de cláusulas no discriminatorias de la DR. La Agencia Estatal de Seguridad Ferroviaria (AESF), creada por el RD 1072/2014, tiene por objeto la detección, análisis y evaluación de los riesgos de seguridad del transporte por ferrocarril, como organismo público de los regulados en la Ley 40/2015."
       },
       {
         title: "Grandes cifras de la red de Adif",
-        description: "Datos referidos al ejercicio: aproximadamente 11.675 km de red titularidad de Adif (10.212 km de red convencional de ancho ibérico, 57 km de AV de ancho estándar puro, 84 km de AV de ancho ibérico, 127 km de red mixta de tercer carril y 1.195 km de vía estrecha de ancho métrico), 1.445 estaciones de viajeros, 45 terminales de mercancías y unos 13.619 empleados."
+        description: "Datos referidos al ejercicio (edición V.0, datos a 31/12/2025): aproximadamente 11.675,9 km de red titularidad de Adif, desglosados en 10.212,5 km de red convencional de ancho ibérico puro (1.668 mm), 57,2 km de AV de ancho estándar puro (1.435 mm), 84,1 km de AV de ancho ibérico, 126,8 km de red mixta de tercer carril y 1.195,3 km de vía estrecha de ancho métrico (1.000 mm). Las líneas equipadas con ERTMS suman 384,5 km. Cuenta con 1.445 estaciones, 45 terminales de mercancías y unos 13.619 empleados."
       },
       {
         title: "Marco legal y estatus jurídico de la DR",
@@ -386,7 +435,8 @@ export const lessonTheories: Record<string, TheorySection> = {
     reviewTakeaways: [
       "La DR tiene carácter vinculante y se aprueba anualmente por el Consejo de Administración de Adif.",
       "La RFIG se define en el artículo 4 de la Ley 38/2015 y sus elementos se recogen en el Catálogo de la RFIG.",
-      "Los agentes clave del sector son el Ministerio de Transportes, Adif, Adif-Alta Velocidad, Renfe-Operadora y la CNMC como regulador.",
+      "Los agentes clave del sector son el Ministerio de Transportes, Adif, Adif-Alta Velocidad, Renfe-Operadora, la CNMC como regulador y la AESF como organismo de seguridad.",
+      "Cifras 2027: 11.675,9 km de red de Adif, 1.445 estaciones, 45 terminales y 13.619 empleados.",
       "El acceso a la infraestructura se basa en los principios de objetividad, transparencia y no discriminación."
     ]
   },

@@ -30,8 +30,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0004",
     module: "G2 PRL",
-    front: "¿Cuáles son los 3 pilares de los principios de la acción preventiva según la Ley 31/1995?",
-    back: "1. Evitar los riesgos.\n2. Evaluar los riesgos que no se puedan evitar.\n3. Combatir los riesgos en su origen.",
+    front: "¿Cuáles son los primeros tres principios de la acción preventiva según el artículo 15 de la Ley 31/1995?",
+    back: "a) Evitar los riesgos.\nb) Evaluar los riesgos que no se puedan evitar.\nc) Combatir los riesgos en su origen. El artículo 15 enumera nueve principios en total, que continúan con adaptar el trabajo a la persona, tener en cuenta la evolución de la técnica, sustituir lo peligroso, planificar la prevención, anteponer la protección colectiva a la individual y dar las debidas instrucciones a los trabajadores.",
   },
   {
     id: "F0005",
@@ -51,13 +51,13 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0007",
     module: "G3 Estatuto ADIF",
     front: "¿Qué es ADIF y cuál es su adscripción ministerial?",
-    back: "ADIF es una entidad pública empresarial con personalidad jurídica y patrimonio propio, adscrita al Ministerio de Transportes y Movilidad Sostenible (o equivalente competente).",
+    back: "ADIF es una entidad pública empresarial con personalidad jurídica propia, plena capacidad de obrar y patrimonio propio, adscrita en su Estatuto (RD 2395/2004) al Ministerio de Fomento (actualmente Ministerio de Transportes y Movilidad Sostenible).",
   },
   {
     id: "F0008",
     module: "G3 Estatuto ADIF",
     front: "¿Qué competencias tiene ADIF respecto al personal a su servicio?",
-    back: "El personal de ADIF se rige por el derecho laboral, el Estatuto de los Trabajadores y los convenios colectivos aplicables, salvo los funcionarios que mantengan dicha condición de origen.",
+    back: "El personal de ADIF se rige por el derecho laboral, el Estatuto de los Trabajadores y los convenios colectivos aplicables. Los funcionarios adscritos al antiguo Gestor de Infraestructuras Ferroviarias tuvieron un derecho de opción para integrarse en la plantilla del personal laboral de ADIF, con reconocimiento de antigüedad.",
   },
   {
     id: "F0009",
@@ -77,7 +77,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0011",
     module: "E1 ICT RD 346/2011",
     front: "¿Qué es el RITI y qué significan sus siglas?",
-    back: "Registro de Instalaciones de Telecomunicación Inferior. Espacio cerrado destinado a albergar los equipos y terminaciones de red en la parte inferior del edificio.",
+    back: "Recinto de Instalaciones de Telecomunicación Inferior. Espacio cerrado destinado a albergar los equipos y terminaciones de red en la parte inferior del edificio.",
   },
   {
     id: "F0012",
@@ -96,8 +96,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0014",
     module: "E2 Compatibilidad electromagnetica",
-    front: "¿Qué marcado certifica el cumplimiento del RD 186/2016 para comercializar equipos?",
-    back: "El marcado 'CE', colocado de forma visible, legible e indeleble en el equipo o en su placa de características, garantizando la conformidad con los requisitos esenciales.",
+    front: "¿Qué marcado acredita el cumplimiento de la Directiva CEM para comercializar equipos?",
+    back: "El marcado 'CE', colocado de forma visible, legible e indeleble en el equipo o en su placa de características, que acredita la conformidad con los requisitos esenciales de la Directiva CEM (2004/108/CE y su sucesora 2014/30/UE, transpuesta en España por el RD 1580/2006). En el sector ferroviario, las pruebas de emisión e inmunidad se realizan conforme a la norma EN 50121.",
   },
   {
     id: "F0015",
@@ -111,19 +111,19 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0016",
     module: "E3 RCF Libro 1",
     front: "¿Qué define el Reglamento de Circulación Ferroviaria como 'Vía Libre'?",
-    back: "Es la indicación de una señal luminosa o mecánica (verde) que autoriza al maquinista a circular a la velocidad máxima establecida para el tramo sin restricciones inmediatas.",
+    back: "Es la indicación de una señal luminosa o mecánica (aspecto verde) que autoriza al maquinista a circular a la velocidad máxima establecida para el tramo sin restricciones inmediatas. Es un concepto de señalización del RCF complementario al estudio del Libro Primero.",
   },
   {
     id: "F0017",
     module: "E3 RCF Libro 1",
-    front: "¿Qué significa el concepto de 'cantón' en circulación ferroviaria?",
-    back: "Es el tramo de vía en el que, en condiciones normales, no debe haber más de un tren simultáneamente, garantizando el espaciamiento seguro entre convoyes.",
+    front: "¿Qué significa el concepto de 'cantón de bloqueo' en circulación ferroviaria?",
+    back: "Tramo de vía en el que, en condiciones normales de circulación, no puede haber más de un tren de forma simultánea, garantizando el espaciamiento seguro entre convoyes. Su extensión depende del sistema de bloqueo (BT, BLA, BA o BSL).",
   },
   {
     id: "F0018",
     module: "E3 RCF Libro 1",
     front: "¿Qué es un 'puesto de mando' según las definiciones del Libro Primero?",
-    back: "La oficina técnica encargada de regular, dirigir y coordinar el tráfico de trenes en un ámbito de red determinado en tiempo real.",
+    back: "Centro específico del Administrador de Infraestructuras (AI) encargado de la gestión y regulación del tráfico ferroviario en tiempo real.",
   },
 
   // P Psicotecnicos

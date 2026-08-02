@@ -1,0 +1,478 @@
+Desarrollo electrónico
+
+
+La compatibilidad electromagnética y la
+seguridad en los ferrocarriles
+Artículo cedido por Cemdal
+
+                                  La Directiva de compatibilidad
+                             electromagnética (CEM) afecta a
+                             todos los equipos electrónicos. Por
+www.cemdal.com               tanto, la industria ferroviaria tam-
+                             bién está afectada por la Directiva
+                             de CEM. Mientras que hace unos
+                             treinta años cualquier función de
+                             control ferroviario se realizaba to-
+                             davía con dispositivos electromecá-
+                             nicos, hoy en día la mayoría de fun-
+                             ciones ferroviarias se llevan a cabo a
+                             través de dispositivos electrónicos.
+                             Estas tecnologías, además de ser
+                             utilizadas en funciones lógicas, en
+                             el control, de la seguridad o en sen-
+                             sores, también se aplican en la alta
+Autor: Francesc Daura        potencia de tracción, es decir, en la
+Luna, Ingeniero Indus-       conversión de la energía, donde los
+trial. Director de la Con-   convertidores conmutados de alta
+sultoría CEMDAL, Re-         potencia se usan en las locomotoras
+presentante de Austria       eléctricas, tanto de alta velocidad
+Mikro Sisteme (ams AG)       como de alta potencia en los trenes      Figura 1. CEM en el exterior la cabina de un tren.
+para España y Portugal.      de mercancías.
+www.cemdal.com                   Otra razón del uso de los conver-    por el cableado del convertidor de                y emiten campos electromagné-
+fdaura@cemdal.com            tidores de potencia es la exigencia      potencia, induciendo así tensiones                ticos. Esto puede suponer una
+                             de poder cambiar entre dos o más         y corrientes a todo el cableado ve-               grave amenaza para las líneas
+                             tipos de líneas de suministro de         cino, pero se pueden tener peores                 de telecomunicación cercanas y
+                             energía; esta característica es extre-   efectos debidos a las perturbaciones              también puede contaminar el es-
+                             madamente importante en la Unión         conducidas hacia la alimentación de               pectro de frecuencias utilizadas
+                             Europea, donde las redes ferrovia-       la línea aérea (catenaria). Dado que              por las emisoras de radio/TV.
+                             rias utilizan varios tipos de fuentes    el nivel de estas EMI podría ser ca-            • La línea de ferrocarril también
+                             de alimentación. Esta capacidad de       tastrófico, a todos los convertidores             puede ser considerada como
+                             cambiar de nivel de tensión e inclu-     se les añaden filtros para atenuarlas.            una línea de transmisión multi-
+                             so de frecuencia sin causar ningún           El diseño de estos filtros no es              conductor, permitiendo la pro-
+                             inconveniente es importante para         sencillo, debido a la naturaleza mis-             pagación de EMIs. Como hay
+                             poder hacer circular trenes entre        ma de las EMIs debidas a las tran-                otros dispositivos y equipos co-
+                             varios sistemas de alimentación.         siciones en las conmutaciones cuya                nectados a la misma línea de
+                             Como ejemplos de sistemas de ali-        amplitud puede variar en varios                   alimentación (según la arquitec-
+                             mentación de líneas de ferrocarriles     miles de amperios en pocos na-                    tura del sistema), los disturbios
+                             en Europa se pueden citar: 600 V         nosegundos, lo que produce EMIs                   generados en un punto pueden
+                             CC, 750 V CC, 1,5 kV CC, 3 kV CC,        con un espectro muy rico, alcan-                  perturbar el buen funcionamien-
+                             3 kV CA a 16 2/3 Hz, 3 kV CA a 50        zando el rango de los GHz. En la                  to de otros dispositivos, incluso a
+                             Hz, 15 kV CA a 50 Hz y 25 kV CA          figura 1, otro aspecto se pone en                 muchos kilómetros de distancia
+                             a 50 Hz.                                 juego: dado que el tren necesita                  de la fuente de EMI.
+                                 Un tren puede consumir varios        ser alimentado, el convertidor está             • Una línea ferroviaria puede tener
+                             MW de potencia, lo que implica           conectado inevitablemente a una                   una sola vía, o puede presentar
+                             algunos miles de amperios. La            línea externa, de modo que parte de               varias vías paralelas (dos, cuatro
+                             conmutación entre sistemas de ali-       las EMI producidas por los converti-              o incluso más), que están cerca
+                             mentación se realiza en unos pocos       dores del tren se inyectan en la cate-            una de la otra. Esto puede pro-
+                             nanosegundos (con el fin de limitar      naria por conducción. Por lo tanto,               vocar acoplamientos entre las
+                             la cantidad de energía perdida du-       tienen lugar varios fenómenos:                    líneas (diafonía), presentando así
+                             rante las transiciones de tensión        • Debido a que una catenaria es                   otro posible camino de las EMIs
+                             y corriente) y genera niveles muy            prácticamente una antena de                   para perturbar a otras partes del
+                             importantes de interferencias elec-          cable horizontal, las EMIs con-               sistema ferroviario, por ejemplo,
+                             tromagnéticas (EMI). Estas EMI son,          ducidas se propagan inevitable-               las señales de control a lo largo
+                             en parte, directamente radiadas              mente a lo largo de su longitud               de las vías.
+
+
+
+80                                                                                                                                          REE • Mayo 2015
+                                                                                                                Desarrollo electrónico
+
+   Estos tres puntos requieren algún
+tipo de controles y limitaciones para
+las EMIs generadas por un tren, con
+el fin de asegurar que el sistema
+ferroviario y los equipos cercanos
+pueden funcionar correctamente.
+De hecho, las EMIs conducidas tam-
+bién pueden perturbar los circuitos
+electrónicos dedicados al control y
+la seguridad en el interior del tren
+(figura 2), así como los circuitos
+de señalización conectados a los
+carriles, afectando a la seguridad
+general de la línea ferroviaria (fi-
+gura 3). Los fallos en la detección
+de la posición del tren y su estado
+podrían provocar resultados catas-
+tróficos. Estas consideraciones son
+aún más importantes en las líneas           El circuito de potencia equiva-       la tracción y las comunicaciones. La    Figura 2. Elementos
+de alta velocidad.                       lente de un sistema eléctrico fe-        CEM entre los sistemas eléctricos y     qe generan EMIs en el
+   Por estas razones, es de suma         rroviario está constituido por las       electrónicos es un requisito esen-      interior de un tren.
+importancia considerar un conjunto       subestaciones, los motores y los         cial para el funcionamiento fiable y
+de reglas de buen diseño para ser        accionamientos del tren, así como        seguro de la red ferroviaria. Es evi-
+aplicadas por los fabricantes de to-     por la catenaria, el pantógrafo y        dente que las EMIs de los equipos
+dos los elementos que constituyen        los raíles. Los sistemas de señali-      de tracción pueden afectar a los
+una línea ferroviaria. Este objetivo     zación comparten parcialmente la         sistemas de señalización con con-
+es la razón de ser de los organis-       misma infraestructura. Entre las         secuencias potencialmente graves.
+mos de normalización de CEM, es          distintas partes del sistema, igual          También es importante destacar
+decir, la propuesta de conjuntos de      como con otros sistemas cercanos,        que una instalación ferroviaria está
+obligaciones y normas razonables         existen acoplamientos inductivos y       al aire libre y por ello puede ser
+para poner a prueba los equipos,         capacitivos.                             perturbada por rayos en caso de
+de acuerdo con las ideas básicas            El entorno ferroviario está con-      tormenta, si no está debidamente
+de la CEM.                               siderado generalmente como un            protegida. La industria ferroviaria
+   En el ámbito ferroviario, la nor-     entorno electromagnético seve-           se esfuerza por reducir el riesgo
+ma más importante en la UE, (pero        ro. En un ferrocarril electrificado,     de este tipo de incidentes. La CEM
+también fuera de la UE) es la CENE-      se requieren MW de potencia en           constituye una parte esencial de
+LEC EN 50121. Esta norma describe        la propulsión de los trenes para         los procesos de análisis de la segu-
+las pruebas a realizar con el fin de     transportar pasajeros o carga de         ridad. Por ello debe ser uno de los
+evitar los problemas de CEM dentro       un destino a otro. El ferrocarril pre-   requisitos incluidos en el estudio
+de un sistema ferroviario.               senta un entorno electromagnético        de seguridad en la introducción de
+                                         complejo compuesto de muchos sis-        nuevo material rodante, locomo-
+Aspectos de CEM en                       temas, que incluyen la señalización,     toras, vehículos de mantenimiento
+el entorno ferroviario
+
+   Hay varios aspectos a considerar
+en el entorno ferroviario que afec-
+tan a la CEM. El aspecto legal impli-
+ca que las radio-comunicaciones no
+deben ser perturbadas. Por razones
+de seguridad tampoco se puede
+perturbar la señalización ferroviaria.
+Se debe asegurar el mantenimiento
+de la funcionalidad de toda la red
+ferroviaria en todos sus elementos.
+Al mismo tiempo, la red ferrovia-
+ria está integrada en el entorno y
+debe tener una buena co-existencia
+con otros vehículos o equipos. Por
+último, a nivel biológico, los pasa-                                                                                      Figura 3. Instalaciones
+jeros y el personal no deben están                                                                                        fijas de una línea ferro-
+expuestos a campos magnéticos                                                                                             viaria que pueden tener
+demasiado altos.                                                                                                          problemas de CEM.
+
+
+
+
+REE • Mayo 2015                                                                                                                                 81
+Desarrollo electrónico
+
+                de vía en la red ferroviaria o ins-       una “instalación fija” (IF) y deben      CEM externo. Por tanto, es esencial
+                talaciones ferroviarias fijas como        documentarse las “buenas prácticas       gestionar la CEM para satisfacer los
+                sensores, señales, actuadores, etc.       de ingeniería de CEM” utilizadas         requisitos técnicos, de seguridad
+                El problema clave de la CEM en la         para la instalación de sus equipos y     y legales del proyecto mediante la
+                industria ferroviaria es el multi-uso     deben estar en poder de una “per-        preparación de un Plan de Gestión
+                funcional del propio carril. En su        sona responsable” y estar a dispo-       de la CEM. Posteriormente se deben
+                inicio, en la década de 1840 los          sición de las autoridades de la UE,      llevar a cabo las pruebas de CEM
+                raíles eran simplemente un sistema        mientras que la IF permanezca en         para verificar que el equipo o la
+                de guiado mecánico.                       funcionamiento. La definición de         instalación fija es conforme con la
+                    El advenimiento de la electri-        “persona responsable” afecta a los       Directiva de CEM.
+                cidad impulsó la ingeniería de la         contratistas y los controladores de
+                señalización para desarrollar siste-      las infraestructuras. Se requiere que    Las normas ferrovia-
+                mas de detección de trenes dentro         esta responsabilidad quede clara en      rias de CEM
+                de las secciones de vía, usando el        los contratos y la documentación
+                carril como conductor eléctrico.          de entrega de los equipos fijos y el         La Directiva de CEM es jurídi-
+                Actualmente el carril es el sistema       material rodante. En relación con        camente vinculante y ha obligado
+                de guía, el conductor de retorno          una IF, una “persona responsable”        desde hace tiempo a muchos sec-
+                de potencia en los esquemas de            significa “la persona que, en virtud     tores de la industria eléctrica / elec-
+                electrificación de los ferrocarriles de   de su control de la IF es capaz de       trónica a revisar sus procedimientos
+                corriente alterna y continua y tam-       determinar que la configuración          adoptándolos para garantizar la
+                bién se utiliza como el conductor de      de la instalación es tal que cuando      CEM en sus sistemas y productos.
+                las señales codificadas de bajo nivel     se usa cumple los requisitos esen-       La industria ferroviaria no es una
+                en el sistema de señalización (en los     ciales”.                                 excepción. Sobre la base de las nor-
+                circuitos de vía). El problema de las         La autoridad competente podrá        mas RIA 12 (“General specification
+                EMIs se complica con el uso de las        solicitar pruebas del cumplimiento       for protection of traction and rolling
+                unidades de motor de tracción de          de la IF con los requisitos de protec-   stock electronic equipment from
+                corriente alterna con inversores de       ción y, si procede, se realizará una     transients and surges in DC control
+                frecuencia que tienen que ser com-        evaluación. Si una IF se identifica      systems”) y RIA 18 (“General spe-
+                patibles con el resto de los equipos      como una fuente inaceptable de           cification for interference testing
+                e instalaciones.                          emisiones, la autoridad competente       on electronic equipment used on
+                    Los ferrocarriles con locomotoras     puede solicitar a la “persona res-       traction and rolling stock”) de la
+                diesel con tracción eléctrica tam-        ponsable” su mejora, para que sea        Asociación de la Industria Ferrovia-
+                bién pueden ser fuentes de EMIs.          conforme con los requisitos de pro-      ria, CENELEC (Comité Européen de
+                El entorno del ferrocarril contiene       tección de la seguridad y de la CEM.     Normalisation ELECtrotechnique) ha
+                muchas fuentes y receptores de            Los aparatos que constituyen la IF se    generado toda una serie de normas
+                EMIs en su proximidad y por ello          deben ajustar a la Directiva de CEM      de CEM para los ferrocarriles.
+                debe aplicarse las “buenas prácti-        y esta conformidad probablemen-              La norma europea EN 50121 con
+                cas” de CEM para evitar problemas         te se puede demostrar gracias al         sus partes 1 a 5 se introdujo en
+                de seguridad y de CEM.                    cumplimiento de las normas armo-         1995 como norma previa, y fue
+                                                          nizadas. El uso de las normas armo-      adoptada definitivamente en el año
+                La Directiva de CEM                       nizadas facilita el proceso de con-      2000. La versión de 2006 entró
+                                                          formidad de la Directiva de CEM.         plenamente en vigor a partir de julio
+                     La vigente Directiva de CEM          Mientras que la Directiva de CEM         de 2009. La versión española UNE_
+                2004/108/CE se publicó en el DOUE         no es una directiva propiamente de       EN_50121 se presentó en 2007.
+                de 15 de Diciembre de 2004 y el           “seguridad”, la gestión de la docu-          Con esta norma los fabricantes
+                RD 1580/2006 de transposición se          mentación de CEM proporciona una         pueden evaluar sus productos como
+                publicó, en el BOE del 22/12/2006,        documentación de la instalación          medio de demostrar la conformidad
+                entrando así en vigor el régimen          ferroviaria que debe mantenerse.         con la Directiva de CEM. Esta norma
+                regulatorio de las instalaciones fi-      La Directiva de CEM también afecta       también ha tenido una buena acep-
+                jas y también afecta a todos los          a los fabricantes de equipos ferro-      tación internacional fuera de la UE.
+                ferrocarriles, a sus sistemas de se-      viarios. Todo equipo está obligado           El objetivo clave de la norma EN
+                ñalización y a sus instalaciones. La      a llevar el Marcado CE para poder        50121 es lograr tener la confor-
+                nueva Directiva de compatibilidad         ser vendido en la UE y requiere “do-     midad de CEM dentro del entorno
+                electromagnética, 2014/30/UE, se          cumentación técnica”, equivalente        ferroviario y también entre la red del
+                ha publicado el 29 de Marzo de            al expediente técnico de construc-       ferrocarril y el “mundo exterior”. En
+                2014 y entrará en vigor el día 20         ción. El fabricante, a su elección,      ella se incluye la advertencia de que
+                de Abril de 2016. A nivel técnico         puede elegir voluntariamente que         es probable que se logre la confor-
+                no aporta cambios con respecto a          su producto sea evaluado por un          midad de la CEM si se cumple la
+                la presente Directiva.                    Organismo Notificado o bien puede        norma pero que, debido a la com-
+                   Como en otros tipos de aparatos        auto-certificar su producto si dispo-    plejidad del entorno, no se puede
+                o equipos, según la Directiva de          ne de los instrumentos adecuados         garantizar la CEM al 100%. La serie
+                CEM el ferrocarril se define como         o subcontrata un laboratorio de          de normas EN 50121 se subdivide
+
+
+
+82                                                                                                                         REE • Mayo 2015
+                                                                                                             Desarrollo electrónico
+
+en 6 partes, cubriendo diferentes       “locales” se basan en los requisitos      disponibilidad, mantenibilidad y
+aspectos del entorno ferroviario. La    de la norma EN 50121, de tal forma        Seguridad
+estructura de las normas y la forma     que la norma resultante refleja más     • TR50126-2: Guía de aplicación
+en que se subdividen no ha cam-         adecuadamente los requerimientos          para la seguridad
+biado desde su publicación inicial      de una parte particular del ferroca-    • ET50128: Comunicación, seña-
+y comprende las siguientes partes       rril en el país correspondiente.          lización y procesamiento – Soft-
+(traspasadas por AENOR a normas             La norma EN 50155 (UNE EN             ware para el control de trenes y
+españolas UNE):                         50155: Aplicaciones ferroviarias.         sistemas de protección
+• UNE_EN50121-1 : Aplicaciones          Equipos electrónicos utilizados so-     • EN50129: Comunicación, siste-
+   ferroviarias. Compatibilidad elec-   bre material rodante) (última ver-        mas de señalización y procesa-
+   tromagnética. Parte 1: Generali-     sión de 2007 con una corrección en        miento – Seguridad relacionada
+   dades.                               2010) es una norma que ha causa-          con sistemas electrónicos de se-
+• UNE_EN50121-2 : Aplicaciones          do confusión, sobre todo porque           ñalización
+   ferroviarias. Compatibilidad elec-   esta norma también contiene requi-      • EN50124-1: Coordinación de
+   tromagnética. Parte 2: Emisión       sitos de CEM. La norma EN 50155           aislamiento - Requisitos básicos
+   del sistema ferroviario completo     está enfocada al funcionamiento           – Distancias y líneas de fuga para
+   al mundo exterior.                   del producto, en lugar de ser una         todos los equipos eléctricos y
+• UNE_EN50121-3-1 : Aplicaciones        norma que se utilice para obtener         electrónicos
+   ferroviarias. Compatibilidad elec-   el Marcado CE, como lo es la norma      • EN50124-2: Coordinación de
+   tromagnética. Parte 3-1: Material    EN 50121. Sin embargo, la norma           aislamiento - Sobretensiones y
+   rodante. Tren y vehículo comple-     EN 50155 fue un requisito de con-         protecciones relacionados
+   to.                                  trato para algunos fabricantes, por     • EN50125-1: Condiciones am-
+• UNE_EN50121-3-2 : Aplicaciones        lo que se ha tenido que cumplir con       bientales para el equipo - Mate-
+   ferroviarias. Compatibilidad elec-   los requisitos de CEM de ambas nor-       rial a bordo - Material rodante.
+   tromagnética. Parte 3-2: Material    mas EN 50155 y EN 50121.                • EN55125-2: Condiciones am-
+   rodante. Aparatos.                                                             bientales para el equipo - Equipo
+• UNE_EN50121-4 : Aplicaciones          Otras normas ferro-                       de instalaciones fijas
+   ferroviarias. Compatibilidad elec-   viarias                                 • EN50125-3: Condiciones am-
+   tromagnética. Parte 4: Emisión                                                 bientales para el equipo - Equipo
+   e inmunidad de los aparatos de           En cuanto a las normas de CEM         para la señalización y las comu-
+   señalización y de telecomunica-      de aplicación en los ferrocarriles,       nicaciones
+   ción.                                CENELEC, a través de su sub-comité      • EN 50500: Exposición humana a
+• UNE_EN50121-5 : Aplicaciones          técnico, CLC / TC 9X, desarrolló de       campos electromagnéticos
+   ferroviarias. Compatibilidad elec-   la serie de la norma EN 50121. El       • EN 50463: Medida de energía a
+   tromagnética. Parte 5: Emisión e     sub-comité CLC / TC 9X es el órgano       bordo de trenes
+   inmunidad de las instalaciones       técnico encargado de la estanda-        • EN 50159-1: Aplicaciones ferro-
+   fijas de suministro de energía y     rización de los sistemas eléctricos       viarias - Comunicación, sistemas
+   de los equipos asociados.            y electrónicos, equipos y software        de señalización y procesamiento
+   Cada norma de las anteriores se      asociado para su uso en todas las         - Comunicación de seguridad
+dirige internamente a las normas        aplicaciones ferroviarias, ya sea en      en los sistemas de transmisión
+“básicas” de CEM para entrar en         material rodante o instalaciones          cerrados
+detalle en los métodos de medición      fijas, incluido el transporte urbano.   • EN 50159-2: Aplicaciones ferro-
+y sus límites. Cabe señalar que las     Se compone de tres sub-comités de         viarias - Comunicación, sistemas
+normas EN 50121 parte 2, parte          la siguiente manera:                      de señalización y procesamiento
+3-1 y parte 5 requieren pruebas “in     • CLC / TC 9XA: Comunicación,             - Comunicación de seguridad
+situ” para la medición y no tienen          señalización y sistemas de pro-       en los sistemas de transmisión
+el mismo grado de control que las           cesamiento;                           abiertos
+pruebas realizadas en el laboratorio    • CLC / TC 9XB: Material rodante;       • EN 50238-1: Comunicación, sis-
+de CEM.                                 • CLC / TC 9C: Instalaciones fijas.       temas de señalización y procesa-
+   La norma EN 50121 representa             El sub-comité CLC / TC 9X es          miento - La compatibilidad entre
+lo propuesto por CENELEC en rela-       responsable de la publicación y el        sistemas del material rodante y
+ción con la CEM en ferrocarriles. Del   mantenimiento de un número signi-         de detección de trenes - general
+mismo modo, la serie de normas IEC      ficativo de las normas de aplicación    • EN 50238-2: Compatibilidad con
+62236-x representa lo propuesto         al ferrocarril. A continuación hay        los circuitos de vía
+por IEC (International Electrotech-     una lista de algunas de ellas:          • EN 50238-3: Compatibilidad con
+nical Commission) a nivel interna-      • EN50261: Montaje de equipos             los contadores de ejes
+cional. Estas normas internacionales        electrónicos                        • CLC / TR 50507: límites de in-
+representan el requisito mínimo         • EN50207: Convertidores electró-         terferencia de los circuitos de
+para alcanzar la conformidad de             nicos de potencia para el mate-       vía existentes utilizados en los
+CEM, Además pueden requerirse               rial rodante                          ferrocarriles europeos
+otras normas “locales”. En muchos       • EN50126-1: Especificación y           • EN 50239: La comunicación, se-
+casos, estas normas nacionales o            demostración de la fiabilidad,        ñalización y procesamiento de
+
+
+
+REE • Mayo 2015                                                                                                                  83
+Desarrollo electrónico
+
+Figura 4. Medidas de                                                                                       proporcionar una documentación
+las emisiones radiadas                                                                                     adjunta que detalle el nombre y
+con tres antenas para                                                                                      el lugar de la IF y las precauciones
+cubrir las tres gamas de                                                                                   de CEM que se han tomado para
+frecuencias requeridas                                                                                     la incorporación a la IF con el fin
+por la norma EN 50121.                                                                                     de mantener la conformidad de la
+                                                                                                           instalación.
+                                                                                                               El fabricante también debe pro-
+                                                                                                           porcionar la identificación del apa-
+                                                                                                           rato y su nombre y dirección, o el
+                                                                                                           nombre y dirección de su repre-
+                                                                                                           sentante autorizado (si el fabrican-
+                                                                                                           te se encuentra fuera del UE) o la
+                                                                                                           persona en la UE responsable de la
+                                                                                                           comercialización del equipo en el
+                                                                                                           mercado europeo. Las autoridades
+                                                                                                           pueden exigir ver la Documentación
+                                                                                                           Técnica, no sólo una declaración de
+                                                                                                           conformidad (DoC).
+                             sistemas - sistema de control re-      de distribución de electricidad, re-        Los controladores de las in-
+                             moto de radio del vehículo de          des de telecomunicaciones, grandes     fraestructuras ferroviarias deben
+                             tracción para el transporte de         máquinas y conjuntos de máquinas       conocer las implicaciones y aplicar
+                             mercancías                             en centros de fabricación). Una IF     la correspondiente estrategia. En
+                           • EN 50163: Aplicaciones ferrovia-       debe cumplir con los requisitos de     el caso de la construcción de una
+                             rias - Tensiones de alimentación       protección de la seguridad y de la     nueva línea, la “persona respon-
+                             de sistemas de tracción                CEM.                                   sable” es el contratista principal y
+                           • UIC 737-3: La aplicación de tiris-        Las “buenas prácticas de ingenie-   debe supervisar y coordinar toda la
+                             tores en tecnología ferroviaria:       ría” se deben documentar y toda la     documentación de los colaborado-
+                             Medidas para la prevención de          documentación debe permanecer          res / proveedores, de la instalación
+                             alteraciones funcionales en Ins-       en poder de una “persona respon-       y las aprobaciones de CEM.
+                             talaciones de señalización             sable”, disponible para una inspec-        Después de la puesta en marcha
+                           • UIC 550: Instalaciones de sumi-        ción de las autoridades nacionales     y el traspaso, el controlador de la
+                             nistro de energía para los pasa-       durante el tiempo en que la IF esté    infraestructura se convierte en la
+                             jeros de stock                         en funcionamiento. El ferrocarril se   “persona responsable” que, por
+                                                                    ajusta claramente a la definición de   ejemplo, puede ser el responsable
+                           Las instalaciones fijas                  una instalación fija.                  Ingeniero Jefe / Director Técnico,
+                           ferroviarias                                Cuando un aparato está diseña-      que se debe encargar de mante-
+                                                                    do y fabricado para su incorpora-      ner toda la documentación relativa
+                                Las instalaciones fijas (IFs) son   ción en una IF específica y no está    a la CEM. Esta documentación es
+                           montajes de diversos aparatos y          disponible en el mercado fuera de      una documentación “viva”, es decir,
+                           otros dispositivos, que llevan el Mar-   esa IF, no está obligado a someterse   debe reflejar como se producen las
+                           cado CE, instalados y/o construidos      a los procedimientos formales de       actualizaciones, añadiendo la infor-
+                           aplicando las “buenas prácticas de       evaluación de la conformidad de la     mación correspondiente.
+                           ingeniería”. Las IFs se destinan a un    Directiva. El fabricante puede op-         En las instalaciones ferroviarias
+                           uso permanente en un lugar defini-       tar entre seguir los procedimientos    ya construidas, la Directiva de CEM
+                           do previamente (por ejemplo, redes       de evaluación de la conformidad o      no es retroactiva. Por lo tanto, la
+                                                                                                           documentación de CEM se puede
+                                                                                                           ir acumulando con el tiempo me-
+                                                                                                           diante la actualización de la docu-
+                                                                                                           mentación del proyecto, además
+                                                                                                           de los datos y / o documentación
+                                                                                                           existente. Una vez una nueva línea
+                                                                                                           ferroviaria ya está en activo, la ac-
+                                                                                                           ción legal de la inspección parece
+                                                                                                           poco probable ya que, en general,
+                                                                                                           las autoridades competentes han
+                                                                                                           mostrado poco interés para hacer
+Figura 5. Las medidas                                                                                      cumplir los requisitos de la CEM en
+de las emisiones radia-                                                                                    los productos ya instalados, salvo si
+das con varias antenas                                                                                     hay un accidente donde, lógicamen-
+necesitan varias pasa-                                                                                     te se analiza toda la documentación
+das del tren.                                                                                              concerniente.
+
+
+
+84                                                                                                                               REE • Mayo 2015
+                                                                                                                    Desarrollo electrónico
+
+   Los requisitos de las instalaciones   Gestión de la compa-
+ferroviarias dan peso a la necesi-       tibilidad electromag-
+dad de tener un enfoque estruc-          nética
+turado para la CEM, incluyendo
+los aspectos de la seguridad, la in-          A fin de lograr el cumplimiento
+teroperabilidad y la conformidad         de la CEM en los equipos ferroviarios
+con la Directiva de CEM. La docu-        es necesario incluir la CEM como un
+mentación de las IFs, basada en las      parámetro de diseño desde la fase
+“buenas prácticas de ingeniería”,        conceptual de un nuevo proyecto.
+debe incluir estudios del ambiente       También es necesario controlar el
+electromagnético, planes de gestión      proceso de diseño para asegurar
+de la CEM, identificación de riesgos,    que se produce la documentación
+la utilización de matrices de cum-       de apoyo y que será incluida dentro
+plimiento, en muchos casos en el         de la documentación de seguridad,
+lugar de prueba, para verificar que      para cubrir los aspectos de la segu-
+las medidas adoptadas garantizan         ridad y de la CEM que permitirá al
+el cumplimiento de la CEM.               fabricante declarar la conformidad
+                                         con la Directiva de CEM.                Figura 6. Límites de cuasi-pico de las emisiones radiadas a 10 metros:
+El material rodante                         La primera etapa de este proceso     prueba estacionaria según la norma EN 50121-3-1.
+                                         es incluir la CEM como un requisito
+      Las normas EN 50121-2 y EN         dentro de la convocatoria de licita-      mostración del cumplimiento de
+50121-3-1 establecen las emisiones       ción, incluyendo una especificación       la CEM.
+que se deben medir a partir de los       de CEM.                                 • “La gestión de CEM a nivel de
+movimientos de los trenes desde un          En esta etapa se puede definir         sistema completo”, declarando
+único punto de observación a 10          simplemente la norma EN 50121             la intención general de gestionar
+metros al lado de la vía férrea (figu-   más las normas adecuadas para la          la CEM por diseño, identificando
+ra 4). Las mediciones deben hacerse      infraestructura, por ejemplo, las         en particular las áreas de interés.
+usando un detector de pico porque        normas de grupo de la RSSB (“Rail       • La documentación entregable.
+el tiempo para hacer la medición es      Safety and Standards Board”) como       • La planificación del tiempo en la
+muy corto y se deriva de la anchura      las normas GM / RC 1500, GM /             gestión de la CEM: la identifica-
+del haz de la antena, la velocidad       RT8015. También se podría consi-          ción de hitos, por ejemplo, las
+de barrido del instrumento de me-        derar el manual de buenas prácti-         pruebas de emisión “in-situ” del
+dición y la velocidad del tren. Esto     cas 5-01018-001 / G-222 A1 del            sistema, para su incorporación
+significa que las emisiones de los       Metro de Londres, por ejemplo.            en la planificación del proyecto
+transitorios, tales como los debi-       El contratista principal, entonces        conjunto.
+dos a los rebotes del pantógrafo se      debe preparar un Plan de Gestión        • El anexo al Plan de Gestión de
+incluyen en la medición real. Estas      de la CEM que debe ser elaborado          la CEM podrá incluir las direc-
+pruebas se realizan con varias an-       al comienzo del proyecto y por lo         trices y prácticas de diseño de
+tenas a la vez para poder recibir        general incluirá:                         CEM utilizadas por el contratista
+todo el ancho de banda a medir.          • Una identificación de peligros:         principal.
+Dependiendo del tipo de antenas             una identificación de las proba-       En un sistema de gran tamaño,
+se necesitan de 2 a 3 antenas.              bles fuentes de EMI de los equi-     aunque es necesario realizar algu-
+    Los límites de las normas se de-        pos que pueden afectar a otros
+rivan de tales mediciones, lo que           equipos en el entorno operativo;
+significa que potencialmente el ma-         una identificación de las fuentes
+terial rodante puede producir emi-          de EMI en el medio ambiente
+siones continuas hasta esos límites,        que puedan afectar a la insta-
+por lo se que pueden tener trenes           lación ferroviaria o al propio fe-
+más “ruidosos” que en el pasado.            rrocarril.
+Las normas también requieren pases       • Un listado de referencias: por
+individuales del tren para diferentes       ejemplo, los reglamentos de CEM
+rangos de frecuencia (figura 5). Esto       apropiados, las especificaciones
+es una costosa y larga operación            del cliente, las normas, o especi-
+que, por lo general, requiere que las       ficaciones internas del contratis-
+mediciones se realicen en una vía de        ta principal;
+pruebas o en la red real cerrando el     • La definición de las responsabili-
+servicio por un tiempo.                     dades del contratista principal y
+    Los límites de las emisiones ra-        sus proveedores.
+diadas según la norma EN 50121-          • El control de los proveedores:
+3-1 dependen de si las pruebas se           esto puede incluir los requisitos
+hacen a nivel estacionario (figura 6)       para cada proveedor solicitando      Figura 7. Límites de cuasi-pico de las emisiones radiadas a 10 metros:
+o en movimiento lento (figura 7).           realizar un plan de CEM y la de-     prueba con movimiento lento según la norma EN 50121-3-1
+
+
+
+
+REE • Mayo 2015                                                                                                                                     85
+Desarrollo electrónico
+
+                nas mediciones electromagnéticas        Ministerio de Fomento (Ministerio        de grandes instalaciones, dentro del
+                en todo el sistema, inicialmente es     de Obras Públicas, la NSA) que ex-       entorno ferroviario, basado en prue-
+                necesario identificar los diversos      pide la autorización de puesta en        bas rigurosas de los subsistemas
+                subsistemas eléctricos/electrónicos     servicio y la segunda parte se lleva     y en la verificación de las buenas
+                y determinar la política de contra-     a cabo por parte del Administra-         prácticas de instalación y diseño,
+                tación de los proveedores. En este      dor de Infraestructuras Ferroviarias     teniendo bajo control la gestión de
+                caso es razonable solicitar a cada      (ADIF), que emite la autorización        CEM, los procedimientos de control
+                sub-contratista las pruebas docu-       de funcionamiento al confirmar la        de calidad y las pruebas de emi-
+                mentales conforme su producto           compatibilidad con la red. La do-        siones de todo el sistema desde el
+                cumple con las normas apropiadas        cumentación que detalla el proceso       principio.
+                de CEM.                                 también es doble.                           Este enfoque es adecuado para
+                    Como se debe indicar en el plan        Los procesos legales son estable-     demostrar el cumplimiento de los
+                de gestión, cada proveedor será         cidos por las Órdenes Ministeriales      requisitos de protección esenciales
+                responsable de demostrar que su         de materiales y las especificaciones     de la Directiva de CEM en Europa.
+                equipo cumple con los requisitos        técnicas de la homologación es-          Además de la Documentación Téc-
+                especificados de CEM y presenta-        tablecidas por las Especificaciones      nica de la CEM, los datos de las
+                rá su Plan de Control de CEM, los       Técnicas de Homologación (ETH).          pruebas pueden ser utilizados para
+                Planes de Pruebas y el informe de       Estos documentos pueden obte-            apoyar los aspectos de CEM en la
+                resultados informando al contratista    nerse en la página web del Boletín       documentación de seguridad del
+                del sistema, que asimismo incluirá      Oficial del Estado (www.boe.es). La      equipo y en el caso de los proyec-
+                todo dentro de la Documentación         evaluación tiene la evidencia de los     tos de señalización, por ejemplo, la
+                Técnica de la CEM del sistema. Es       resultados de las pruebas, los cálcu-    documentación se puede agregar
+                entonces necesario que el fabricante    los o simulaciones, la comparación       a la documentación de CEM de la
+                del sistema valide, desde un punto      con los trenes y la certificación de     instalación ferroviaria.
+                de vista de la CEM, las técnicas de     terceros existentes.                        Hay que destacar que las nor-
+                instalación y cableado que ha uti-         La evaluación se lleva a cabo         mas ferroviarias de CEM represen-
+                lizado.                                 por un panel externo formado por         tan un requisito técnico mínimo
+                    Esto será en parte una referencia   organismos de certificación y or-        y pueden necesitar ser tenidas en
+                para el Plan de Gestión de la CEM,      ganismos notificados. Este panel         cuenta sobre la base de la identi-
+                que establece las prácticas de CEM      proporciona un certificado basado        ficación de los peligros y riesgos.
+                de trabajo esenciales, en función       en las normas TSI (“rail Technical       Se han presentado varias normas
+                de los procedimientos de garantía       Specification Interoperability”) y las   ferroviarias relacionadas directa o
+                de calidad de la organización del       Especificaciones Técnicas de Homo-       indirectamente con la CEM. Se han
+                contratista, y también para la veri-    logación (ETH).                          abordado las dificultades técnicas
+                ficación de las pruebas de emisiones                                             de realizar mediciones de CEM en
+                de todo el sistema.                     Conclusiones                             los trenes en movimiento. Por últi-
+                    En grandes sistemas, las pruebas                                             mo, se ha presentado la gestión de
+                de inmunidad “in-situ” no son prác-        Se ha descrito un enfoque prácti-     la CEM en general y, más concreta-
+                ticas y es mejor realizar las prue-     co para asegurar la CEM en equipos       mente, en España.
+                bas de inmunidad en los aparatos
+                individuales y en las prácticas de
+                instalación utilizadas.                    REFERENCIAS
+                    Es de vital importancia que las
+                prácticas de instalación aseguren          • Ade Ogunsola, Andrea Mariscotti, “Electromagnetic Compatibility in
+                que la inmunidad integral del sub-           Railways, Anlaisys and Management”, Springer,  2013.
+                sistema se mantiene, ya sea median-        • Webs de varios fabricantes: CAF, ALSTHOM y BOMBARDIER
+                te el uso de, por ejemplo, cables          • Normas EN 50121 y EN50155
+                apantallados, la separación de los         • Chris Marshman, “EMC and Railway Safety”, In Compliance Magazine,
+                cables o la conexión a tierra y las          May 2010
+                buenas técnicas de unión de los            • Hans Bängtsson, “EMC in the railway environment”, Bombardier , May
+                chasis, armarios, etc. Por lo tanto,         2010
+                se requiere una buena comunica-            • London Underground, “Manual of Good Practice”, G-222, 2007
+                ción entre el proveedor y el con-          • EMC for European Railways, 67575_ERA_EMC_Final_Report LLoyds Re-
+                tratista principal para asegurar un          gister, 2010
+                buen flujo de información.                 • Electromagnetic Compatibility between Railway Infrastructure and Trains,
+                                                             Railway Group Standard, GE/RT8015, 2002
+                Gestión de la CEM en                       • Francesc Daura, “La Compatibilidad Electromagnética y La Seguridad
+                España                                       Funcional”, Revista Española de Electrónica, Mayo 2014
+                                                           • Francesc Daura, “Marcado CE + Marcado CE ≠ Marcado CE  Aplicado
+                   La evaluación de la CEM en los            a Máquinas, Sistemas Complejos O Instalaciones Fijas: Gestión De Los
+                ferrocarriles españoles es doble.            Componentes”, Revista Española de Electrónica, Diciembre 2013
+                La primera parte se realiza por el
+
+
+
+86                                                                                                                       REE • Mayo 2015
+

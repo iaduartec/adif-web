@@ -41,7 +41,7 @@ export const lessons: readonly Lesson[] = [
   {
     slug: "compatibilidad-electromagnetica",
     title: "Compatibilidad electromagnética",
-    summary: "Explicación de conceptos de emisión, inmunidad y control de interferencias electromagnéticas.",
+    summary: "La CEM en el sector ferroviario: Directiva CEM (2004/108/CE y 2014/30/UE, RD 1580/2006 y RD 186/2016), norma EN 50121, emisiones, inmunidad y seguridad.",
     origin: "original_explanation",
     officialReferences: [{ title: "Real Decreto 186/2016, compatibilidad electromagnética", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442", origin: "official_reference" }],
     verificationNote: finalAnnexVerification,

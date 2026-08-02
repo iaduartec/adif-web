@@ -1,0 +1,1233 @@
+                                    LEGISLACIÓN CONSOLIDADA
+
+
+
+
+         Real Decreto 664/2015, de 17 de julio, por el que se aprueba el
+                      Reglamento de Circulación Ferroviaria.
+
+
+                                              Ministerio de Fomento
+                                       «BOE» núm. 171, de 18 de julio de 2015
+                                          Referencia: BOE-A-2015-8042
+
+
+
+
+                                                   Libro Primero
+
+
+
+
+                                                                 ÍNDICE
+
+
+
+
+LIBRO PRIMERO. PRINCIPIOS FUNDAMENTALES . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                 14
+
+  CAPÍTULO 1. Generalidades . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+
+  CAPÍTULO 2. Documentación reglamentaria . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         21
+
+  CAPÍTULO 3. Distribución de documentos y útiles de servicio . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .           23
+
+  CAPÍTULO 4. Comunicaciones reglamentarias . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         23
+
+  CAPÍTULO 5. Conceptos básicos de circulación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        24
+
+
+
+
+                                                             Página 1
+                           BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+
+                                      LIBRO PRIMERO
+                              PRINCIPIOS FUNDAMENTALES
+
+                                         CAPÍTULO 1
+                                        Generalidades
+   1.1.1.1. Objeto del Reglamento.
+     1. El objeto de este Reglamento es establecer reglas operativas generales para que la
+circulación de los trenes y de las maniobras se realice de forma segura, eficiente y puntual,
+tanto en condiciones de explotación normal como degradada, incluyendo su recuperación
+efectiva tras una interrupción del servicio.
+     2. El objetivo del documento es proporcionar un marco regulador único de los procesos
+operativos en los que exista una interfaz directa entre el Administrador de Infraestructura (AI)
+y la Empresa Ferroviaria (EF), unificando los criterios de operación de los distintos AI en los
+distintos anchos de la Red.
+     3. Conforme a la Directiva europea de Seguridad Ferroviaria, la responsabilidad de la
+explotación segura del sistema ferroviario y del control de riesgos asociado corresponde a
+los AI y a las EF. Por ello están obligados a definir y aplicar las medidas necesarias de
+control de riesgos, y en su caso, a cooperar mutuamente. En consecuencia, los Sistemas de
+Gestión de la Seguridad (SGS) de los AI y de las EF deberán establecer las reglas internas,
+conformes con la normativa vigente, y los procedimientos necesarios para asegurar el
+cumplimiento de lo estipulado en este Reglamento y en el resto de la normativa de seguridad
+nacional y europea, incluyendo los Métodos Comunes de Seguridad y la ETI OPE.
+     4. El Reglamento es conforme con lo prescrito en las Especificaciones Técnicas de
+Interoperabilidad, en la Ley del Sector Ferroviario y en sus normas de desarrollo.
+     5. La terminología, abreviaturas y acrónimos empleados en este Reglamento se recoge
+en los artículos 1.1.1.3 y 1.1.1.4 de este Libro.
+   1.1.1.2. Ámbito de aplicación.
+   1. El ámbito territorial de aplicación de este Reglamento es la Red Ferroviaria de Interés
+General.
+
+
+
+
+                                           Página 14
+                            BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    2. El ámbito subjetivo de aplicación de este Reglamento es todo el personal de las EF, de
+los AI y de otras empresas, que interviene, directa o indirectamente, en los procesos de
+circulación de trenes y maniobras.
+    En particular, es de aplicación a todas las personas que desarrollan funciones de
+seguridad en la circulación, definidas en los SGS de las EF y de los AI, y que deben disponer
+de un título habilitante para el ejercicio de estas, definido en la legislación que regula las
+condiciones para su obtención, dictada en desarrollo de la LSF y conforme con la Directiva
+europea sobre certificación de Maquinistas.
+    3. El ámbito técnico de aplicación de este Reglamento lo constituyen todas las
+actividades relevantes desde el punto de vista de la seguridad que afecten a alguna interfaz
+directa entre las EF y los AI, desde la puesta a disposición del tren para circular por parte de
+la EF, hasta su llegada a la estación de destino.
+   1.1.1.3. Definiciones.
+   A efectos de este Reglamento se entiende por:
+    1. Apeadero: Infraestructura ferroviaria para la subida y bajada de viajeros.
+    2. Automotor: Tren formado por uno o más vehículos ferroviarios que no precisa de
+locomotora para su tracción ya que dispone de motor propio.
+    3. Banda de regulación: Tramo de línea, línea o conjunto de líneas a cargo de un mismo
+Responsable de Circulación de un PM.
+    4. Bifurcación: Punto de una línea, donde comienza otra o confluyen varias. Dispone de
+señales de entrada a efectos de gestión y regulación del tráfico ferroviario.
+    5. Bloqueo: Sistema o proceso cuyo objetivo es garantizar que los trenes que circulen
+por la misma vía y en el mismo sentido, lo hagan separados a una distancia que impida su
+alcance, y que cuando un tren circule por una vía, no circule otro en sentido contrario por la
+misma vía.
+    6. Cambiador de ancho: Instalación ferroviaria que facilita el cambio del ancho de la
+rodadura, a los trenes cuya tecnología lo permite.
+    7. Cantón de bloqueo: Tramo de vía en el que, en condiciones normales de circulación,
+no puede haber más de un tren de forma simultánea.
+    8. Coches: Vehículos ferroviarios sin tracción propia habilitados para el transporte de
+viajeros, así como los vehículos complementarios para su servicio.
+    9. Composición indeformable: Es aquella que solo puede variar su composición mediante
+operaciones realizadas en un taller o centro de mantenimiento.
+    10. Control, Mando y Señalización (CMS): Subsistema ferroviario definido en la Directiva
+europea de interoperabilidad ferroviaria, constituido por todo el equipamiento necesario para
+garantizar la seguridad, el mando y el control de la circulación de los trenes autorizados a
+transitar por la red. Incluye los sistemas de protección del tren (en tierra y embarcados),
+comunicación por radio y detección del tren (contadores de ejes, circuitos de vía, etc…).
+    11. Control de Tráfico Centralizado (CTC): Sistema que permite realizar desde un puesto
+central, el control y accionamiento remoto de las instalaciones de un conjunto de estaciones
+y trayectos, ordenando los movimientos y coordinando la circulación de los trenes y
+maniobras.
+    12. Derivación particular: Infraestructura ferroviaria ajena a la RFIG, pero conectada con
+esta.
+    13. Documentación de seguridad: Conjunto de documentos reglamentarios definidos en
+el capítulo 2 de este libro.
+    14. Empresa Ferroviaria (EF): La titular de una licencia con arreglo a la legislación
+aplicable, cuya actividad principal consista en prestar servicios de transporte de mercancías
+o viajeros por ferrocarril, debiendo aportar en todo caso la tracción.
+    15. Enclavamiento: Sistema que permite establecer itinerarios seguros para la circulación
+de los trenes en el ámbito de estaciones, estableciendo una relación de dependencia entre
+las posiciones de los distintos aparatos de vía, las semibarreras de PN (en su caso) y las
+órdenes que transmiten las señales.
+    16. Especificación Técnica de Interoperabilidad (ETI): Norma técnica y de seguridad
+adoptada con arreglo a las Directivas comunitarias, con vistas a satisfacer requisitos
+esenciales y garantizar la interoperabilidad del sistema ferroviario.
+
+
+                                           Página 15
+                          BOLETÍN OFICIAL DEL ESTADO
+                              LEGISLACIÓN CONSOLIDADA
+
+
+
+    17. Estación: Infraestructura ferroviaria consistente en una instalación de vías y sus
+aparatos asociados, protegida por señales, y en la que se desarrollan procesos de
+circulación.
+    A efectos de este Reglamento se consideran estación los PB, PBA, PCA, PAET y las
+Bifurcaciones. También, los Cambiadores de Ancho y las Bases de Mantenimiento, cuando
+no estén integrados dentro de otra estación.
+    18. Estación telemandada: Es aquella cuyo control y accionamiento de sus instalaciones
+se realiza a distancia.
+    19. Estaciones colaterales: Estaciones contiguas que en un momento concreto,
+intervienen en el bloqueo.
+    20. Furgón: Vehículo especialmente diseñado para circular en trenes de viajeros
+transportando mercancías.
+    21. Habilitación: Documento que faculta al titular de la misma para ejercer unas
+funciones cuya capacidad para desempeñarlas ha sido acreditada mediante la superación de
+una formación reglada.
+    22. Línea: Infraestructura ferroviaria que une dos puntos determinados. La línea puede
+tener una, dos o más vías (línea de vía única, vía doble, vía múltiple).
+    23. Locomotora: Vehículo ferroviario que, por medio de tracción térmica o eléctrica, es
+capaz de desplazarse por sí mismo, y cuya principal función, es remolcar a otros vehículos
+ferroviarios.
+    24. Locomotora aislada: Es la compuesta exclusivamente por una o varias locomotoras
+no remolcadas.
+    25. Locomotora o automotor remolcado: Locomotora o automotor incorporado en la
+composición de un tren sin suministrar tracción.
+    26. Locomotora telemandada: La que puede gobernarse a distancia, por radiocontrol,
+desde un lugar distinto de la cabina de conducción.
+    27. Mando múltiple: Dispositivo que permite el control de varias locomotoras o
+automotores desde una sola cabina de conducción.
+    28. Maniobra: Movimiento consistente en:
+    – Agregar o segregar vehículos de un tren
+    – Formar o descomponer un tren
+    – Clasificar los vehículos o cortes de material
+    – Desplazar un tren o vehículos por la misma vía o de una a otra dentro de los límites de
+maniobras.
+    – Realizar los movimientos necesarios para el cambio de ancho en los trenes cuya
+tecnología lo admite, en los cambiadores de ancho.
+    – Traer o llevar material de/a dependencias de plena vía carentes de señal de protección
+telemandada desde la estación o el CTC.
+    – Realizar movimientos de material entre dependencias colaterales que se
+complementan constituyendo un complejo ferroviario logístico.
+    29. Maquinaria de vía: Vehículo ferroviario autopropulsado utilizado en servicios de
+mantenimiento y reparación de infraestructura.
+    30. Material Rodante Auxiliar: Maquinaria de vía y resto de vehículos utilizados en
+servicios del mantenimiento de la infraestructura, incluyendo grúas, trenes taller y trenes
+auscultadores.
+    31. Paso a Nivel (PN): Intersección entre una vía férrea y un camino o carretera, en el
+cual el tráfico ferroviario tiene preferencia.
+    32. Plena vía: Parte de la vía comprendida entre las señales de entrada de dos
+estaciones colaterales, fuera del dominio de ambas estaciones.
+    Se considera que un tren se encuentra en plena vía, es decir, fuera del dominio de
+ambas estaciones cuando lo están todos los vehículos del mismo. En caso contrario, se
+entiende que se encuentra en la estación.
+    33. Puesto de adelantamiento y estacionamiento de trenes (PAET): Instalación de
+carácter técnico que permite el adelantamiento y el estacionamiento de trenes.
+    34. Puesto de bloqueo (PB): Instalación de carácter provisional situada en plena vía, que
+permite la intervención temporal en el bloqueo.
+
+
+
+                                         Página 16
+                          BOLETÍN OFICIAL DEL ESTADO
+                              LEGISLACIÓN CONSOLIDADA
+
+
+
+     35. Puesto de banalización (PBA): Instalación de carácter técnico que permite la
+banalización de la circulación de trenes.
+     36. Puesto de Cantonamiento (PCA): Instalación de señalización situada en plena vía
+que permite dividir la longitud del cantón de bloqueo.
+     37. Puesto de circulación: Sector de vías, agujas y señales de una estación.
+     38. Puesto de Mando (PM): Centro específico del AI encargado de la gestión y
+regulación del tráfico en tiempo real.
+     39. Puesto Local de Operaciones (PLO): Instalación desde la que se ejerce el mando
+local de un determinado enclavamiento, que puede incluir una o más estaciones.
+     40. Puesto Regional de Operaciones (PRO): Instalación desde la que se puede ejercer el
+mando de varios enclavamientos que forman parte de un CTC.
+     41. Radiotelefonía: Medio de comunicación entre personal de los vehículos, de las
+estaciones, del PM y de plena vía. Están incluidos en este concepto, además de los
+sistemas de Tren-Tierra y de GSM-R, aquellos otros que la Agencia Estatal de Seguridad
+Ferroviaria determine expresamente.
+     42. Telefonema: Comunicación reglamentaria en los procesos de circulación,
+caracterizada por un formato preestablecido, identificada mediante un número secuencial, la
+hora de transmisión y la identificación del emisor, y que queda registrada mediante
+cualquiera de los soportes contemplados en este Reglamento.
+     43. Tracción dual: Sistema de tracción de un vehículo que le permite funcionar
+alternativamente con tracción térmica o eléctrica.
+     44. Tracción múltiple: Tracción de un tren por varias locomotoras o automotores
+gobernados independientemente.
+     45. Trayecto: Tramo de una línea comprendida entre las señales de entrada de dos
+estaciones. Cuando el término se utiliza en forma genérica se refiere al tramo comprendido
+entre dos estaciones colaterales.
+     46. Tren: Unidad o unidades de tracción, con o sin vehículos ferroviarios acoplados,
+adecuadamente identificados, y que opera entre dos o más puntos definidos.
+     47. Tren convencional: Es el compuesto por una o más locomotoras y vehículos
+remolcados de cualquier clase.
+     48. Tren de trabajos: Es el destinado a realizar operaciones de construcción o
+mantenimiento de la infraestructura ferroviaria, pudiendo circular entre la base y el punto de
+inicio de los trabajos como tren convencional, y operar al amparo de una EVB para la
+realización de los mismos.
+     49. Tren directo: En referencia a una estación, es el que no efectúa parada en ella.
+     50. Tren empujado: Es aquel cuya tracción y gobierno están en un lugar distinto del
+primer vehículo en sentido de la marcha.
+     51. Tren reversible: Tren capaz de desplazarse en ambos sentidos con independencia
+del lugar que ocupe el vehículo o vehículos tractores, y cuyo gobierno de la tracción y del
+freno se realiza siempre desde la cabina del vehículo situado en primer lugar en el sentido
+de la marcha en cada caso.
+     52. Tren taller: Tren utilizado para la liberación de una vía interceptada. En su
+composición puede haber un vehículo grúa.
+     53. Vagones: Vehículos ferroviarios sin tracción propia habilitados para el transporte de
+mercancías.
+     54. Velocidad límite: Circulando en BCA, es la máxima permitida en cada momento por el
+sistema.
+     55. Vía de ancho mixto: Es aquella que permite la circulación de trenes de, al menos dos
+anchos distintos, con un único sistema de bloqueo.
+     56. Vías de circulación: Son las utilizadas en las estaciones para la entrada, salida o
+paso de los trenes. El resto de vías, si las hubiera, se denominan vías de servicio.
+     57. Zona de peligro eléctrico: Espacio alrededor del conductor eléctrico dentro del cual
+un trabajador (con o sin herramienta) o una máquina de trabajos podría sufrir un arco
+eléctrico o un contacto directo con el elemento en tensión. La amplitud de la zona de peligro
+eléctrico depende del voltaje del conductor.
+     58. Zona de peligro para los trabajos: Espacio alrededor de la vía en el que una persona,
+material o equipo pueden ser arrollados por un vehículo ferroviario, o ser puestos en peligro
+por la corriente de aire que genera su circulación. Dicha zona comprende la vía y los
+
+
+                                          Página 17
+                          BOLETÍN OFICIAL DEL ESTADO
+                              LEGISLACIÓN CONSOLIDADA
+
+
+
+espacios situados entre la cara externa de la cabeza del carril y una línea paralela situada a
+2 metros de la misma, a ambos lados de la vía.
+    59. Zona de riesgo para los trabajos: Es la comprendida entre la zona de peligro para los
+trabajos y la zona de seguridad para los trabajos.
+    60. Zona de seguridad para los trabajos: Espacios situados a más de 3 metros de
+distancia del borde exterior de la cabeza del carril, a ambos lados de la vía.
+   1.1.1.4. Abreviaturas y acrónimos.
+    1. AC Estación intermitente APTA para circulación.
+    2. AESF Agencia Estatal de Seguridad Ferroviaria.
+    3. AI Administrador de Infraestructura.
+    4. ASFA Anuncio de Señales y Frenado Automático. Sistema de repetición de señales en
+cabina con ciertas funciones de control sobre el tren.
+    5. ATO Automatic Train Operation. Sistema de Operación Automática de Trenes.
+    6. ATP Automatic Train Protection. Sistema de Protección Automática de Trenes.
+    7. BA Bloqueo Automático.
+    8. BAB Bloqueo Automático de vía Banalizada.
+    9. BAD Bloqueo Automático de vía Doble.
+    10. BAR Boletín de Autorización de Rebase.
+    11. BAU Bloqueo Automático de vía Única.
+    12. BCA Bloqueo de Control Automático.
+    13. BLA Bloqueo de Liberación Automática.
+    14. BLAB Bloqueo de Liberación Automática de vía Banalizada.
+    15. BLAD Bloqueo de Liberación Automática de vía Doble.
+    16. BLAU Bloqueo de Liberación Automática de vía Única.
+    17. BOI Boletín de Órdenes e Informaciones.
+    18. BSL Bloqueo de Señalización Lateral.
+    19. BT Bloqueo Telefónico.
+    20. BTV Banalización Temporal de Vía.
+    21. CCR Control de Circulación por Radio.
+    22. CMS Control-Mando y Señalización.
+    23. CSV Cambio Significativo de Velocidad.
+    24. CTC Control de Tráfico Centralizado.
+    25. DMI Driver Machine Interface. Equipo que presenta información en pantalla al
+maquinista en ETCS.
+    26. DTDO Detenido (mensaje de radiotelefonía).
+    27. EBICAB Sistema de protección automática de trenes con supervisión continua.
+    28. EF Empresa Ferroviaria.
+    29. ep Electro pneumatic brakes. Freno electroneumático.
+    30. ERTMS European Rail Traffic Management System. Sistema Europeo de Gestión de
+Tráfico Ferroviario. Agrupa al ETCS y al GSM-R.
+    31. ETCS European Train Control System. Sistema de Control de Trenes Europeo.
+    32. ETI Especificación Técnica de Interoperabilidad.
+    33. ETI CMS Especificación Técnica de Interoperabilidad para el subsistema «Control,
+Mando y Señalización».
+    34. ETI LOC&PAS Especificación Técnica de Interoperabilidad para el subsistema de
+Material Rodante, «Locomotoras y Material Rodante de Viajeros».
+    35. ETI OPE Especificación Técnica de Interoperabilidad para el subsistema
+«Explotación y Gestión del Tráfico».
+    36. EVB Entrega de Vía Bloqueada.
+    37. FS Modo de circulación en ETCS. Supervisión completa.
+    38. GSM-R Global System for Mobile-Railway. Sistema de Comunicación Digital
+Específico para Ferrocarril, que provee a los trenes de radiotelefonía y línea de datos.
+    39. JRU Juridic Register Unit. Registrador Jurídico.
+    40. L Cantón libre (anotación en el libro de telefonemas).
+    41. LSF Ley del Sector Ferroviario.
+    42. LTV Limitación Temporal de Velocidad máxima.
+
+
+
+                                          Página 18
+                           BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    43. LZB Linienzugbeeinflussung (en español: control continuo del tren). Sistema de
+Control del Tráfico Ferroviario con Supervisión Continua.
+    44. MA Movimiento Autorizado en ETCS.
+    45. MC Mando Centralizado.
+    46. mf Masa frenada.
+    47. ML Mando Local.
+    48. Modalidad A Modalidad de explotación en radiotelefonía para la comunicación del
+Maquinista con los Responsables de Circulación de las Bandas de Regulación y del CTC.
+    49. Modalidad C Modalidad de explotación de radiotelefonía para la comunicación del
+Maquinista con el Responsable de Circulación de la estación, así como para la realización de
+maniobras, comunicaciones en la prueba de freno, etc...
+    50. MRA Material Rodante Auxiliar
+    51. mt Masa total.
+    52. MT Marche el Tren.
+    53. NC Estación intermitente NO APTA para circulación.
+    54. OM Orden Ministerial.
+    55. PAET Puesto de Adelantamiento y Estacionamiento de Trenes.
+    56. PB Puesto de Bloqueo.
+    57. PBA Puesto de Banalización.
+    58. PCA Puesto de Cantonamiento.
+    59. PLO Puesto Local de Operaciones.
+    60. PM Puesto de Mando.
+    61. PN Paso a Nivel.
+    62. PRO Puesto Regional de Operaciones.
+    63. RAM Red de Ancho Métrico
+    64. RCF Reglamento de Circulación Ferroviaria.
+    65. RFIG Red Ferroviaria de Interés General.
+    66. RID Reglamento Internacional sobre el Transporte de Mercancías Peligrosas por
+Ferrocarril.
+    67. S Identificación de los medios de socorro.
+    68. SGS Sistema de Gestión de la Seguridad
+    69. SPN Señal de Paso a Nivel.
+    70. TDP Tubería de Depósitos Principales.
+    71. TFA Tubería de Freno Automático.
+   1.1.1.5. Estructura de responsabilidades y obligaciones de AI y EF.
+    Conforme a lo establecido en el artículo 1.1.1.1, punto 3, los AI y las EF deberán
+establecer en sus SGS las reglas internas y los procedimientos que garanticen un tráfico de
+trenes y maniobras seguro, eficiente y puntual, en condiciones de operación normal,
+degradada y de emergencia, incluyendo su recuperación efectiva después de una
+interrupción del servicio. Para ello, deberán desarrollar, entre otros, los siguientes aspectos:
+    • Definición de las responsabilidades y obligaciones de su personal de servicio vinculado
+con la seguridad.
+    • Metodología a seguir en la transmisión del servicio (relevos del personal).
+    • Instrucciones para la correcta aplicación de las normas de circulación.
+    • Criterios de redacción y distribución de documentos reglamentarios.
+    • Definición y disposición de los útiles de servicio para el desempeño de sus funciones,
+así como los procedimientos a seguir en caso de ausencia de algunos de ellos.
+    • Metodología de las comunicaciones relacionadas con la seguridad.
+   Además, en los respectivos SGS se incluirán las acciones y los medios necesarios para
+asegurar el cumplimiento de lo anterior.
+   Entre las obligaciones del personal ferroviario recogidas en las citadas reglas internas se
+deberán incorporar al menos, las siguientes:
+   • Presentarse a prestar servicio en buenas condiciones físicas, sin fatiga y evitando
+cualquier tipo de exceso que perjudique sus facultades durante el desempeño de su trabajo.
+
+
+
+
+                                           Página 19
+                          BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    • No prestar servicio bajo los efectos de bebidas alcohólicas, drogas de abuso u otras
+sustancias psicoactivas que puedan alterar sus capacidades psicofísicas, contempladas
+como infracciones específicas en materia de circulación y conducción en la LSF.
+    • Abstenerse de utilizar medios de distracción en el puesto de trabajo: teléfonos móviles,
+equipos electrónicos, prensa, etc…, ajenos a la actividad profesional.
+    • Prohibir la permanencia en las dependencias de circulación y en las cabinas de
+conducción de personas ajenas a las mismas, o carentes de la oportuna autorización.
+   1.1.1.6. Transmisión del servicio.
+    En la transmisión de los servicios relacionados con la seguridad en la circulación de los
+trenes y maniobras, que se realicen en estaciones, PM, trenes o en plena vía:
+    • El personal saliente deberá entregar a su relevo la documentación reglamentaria,
+impresos, registros informáticos, útiles de servicio y, toda la información necesaria
+relacionada con la seguridad, para que este último pueda desarrollar plenamente su función
+desde el mismo momento de su incorporación.
+    • El personal que toma el servicio deberá hacerse cargo de la documentación
+reglamentaria, impresos, registros informáticos y útiles de servicio. Además deberá tomar
+conocimiento de las informaciones relacionadas con la seguridad que le trasmita el personal
+saliente, y resolver con este cuantas dudas le surjan.
+   1.1.1.7. Criterios generales de operación de trenes.
+    1. Para que un tren pueda iniciar servicio, es necesario que en la estación de origen, o
+en la primera de la RFIG para trenes internacionales, disponga en la cabina de conducción y
+tenga operativos, los equipamientos siguientes:
+     a) Sistema de protección de tren compatible con alguno de los instalados en la
+infraestructura (si ésta dispone de ellos).
+     b) Dispositivo de vigilancia.
+     c) Radiotelefonía.
+   2. Cuando los sistemas de protección del tren instalados en la infraestructura y en la
+cabina de conducción sean compatibles entre sí y estén operativos, las velocidades
+máximas de circulación serán las siguientes:
+   a) 350 km/h para trenes circulando con ERTMS Nivel 2 en servicio.
+   b) 300 km/h para trenes circulando con ERTMS Nivel 1 o LZB en servicio.
+   c) 220 km/h para trenes circulando con EBICAB en servicio.
+   d) 200 km/h para trenes circulando con ASFA en servicio.
+    3. Cuando los sistemas de protección del tren instalados en la infraestructura y en la
+cabina de conducción no sean compatibles entre sí, o alguno de ellos no esté operativo, la
+velocidad máxima de circulación será: 120 km/h.
+    4. En el caso de ausencia o inoperatividad del sistema de protección del tren instalado
+en la infraestructura, la velocidad máxima de circulación será: 120 km/h.
+    5. Sin perjuicio de lo indicado en el punto 1, la dotación mínima de personal en la cabina
+de conducción del tren para que éste pueda iniciar el servicio, será:
+     a) Un Maquinista, cuando la infraestructura esté equipada con un sistema de protección
+del tren.
+     b) Un Maquinista y una segunda persona debidamente habilitada, cuando la
+infraestructura no esté equipada con un sistema de protección del tren; salvo que la EF
+establezca en su SGS otro procedimiento que mitigue el riesgo generado de forma efectiva,
+y éste procedimiento esté autorizado por la AESF.
+    6. El Material Rodante Auxiliar que no cumpla los requisitos definidos en el punto 1,
+podrá circular indistintamente entre la estación de apartado y la de inicio de la EVB en la que
+vaya a trabajar, con las prescripciones indicadas a continuación, las cuales también serán
+aplicables a los desplazamientos de dicho material desde la estación de apartado al taller de
+mantenimiento para su reparación.
+
+
+
+
+                                          Página 20
+                          BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    a) En los casos de ausencia de sistema de protección de tren compatible con alguno de
+los instalados en la infraestructura, o ausencia de dispositivo de vigilancia, o falta de
+operatividad de alguno de ellos:
+    a.1) La dotación mínima de personal en cabina de conducción será de un Maquinista y
+una segunda persona debidamente habilitada.
+    a.2) La velocidad máxima de circulación será de 80 km/h en las líneas de velocidad de
+circulación superior a 200 km/h y de 50 km/h en el resto.
+    a.3) El recorrido máximo será de 100 km en las líneas de velocidad de circulación
+superior a 200 km/h, y de 60 km en el resto. Se exceptúan los traslados desde la estación de
+apartado al taller de mantenimiento y viceversa, para los que será necesario disponer de
+autorización expresa emitida por el AI.
+    b) En ausencia de sistema de radiotelefonía, el maquinista deberá disponer de un medio
+de comunicación portátil conforme a lo indicado en el artículo 5.2.4.2.
+
+                                         CAPÍTULO 2
+                               Documentación reglamentaria
+   1.2.1.1. Clasificación de los documentos reglamentarios.
+    1. En desarrollo de este Reglamento, y con el fin de determinar con precisión las
+condiciones de operación de la infraestructura ferroviaria, la AESF, los AI y las EF, podrán
+elaborar documentación reglamentaria que de forma complementaria a este Reglamento,
+permita:
+   • Fijar criterios que faciliten su aplicación.
+   • Adaptar su aplicación a casos concretos.
+   • Identificar y reducir los riesgos, minimizando sus consecuencias.
+    2. Los documentos reglamentarios, dependiendo del organismo emisor, adoptarán la
+forma siguiente:
+   • Elaborados y aprobados por la AESF:
+
+           • Especificaciones Técnicas de Circulación de ámbito nacional.
+   • Elaborados y aprobados por los AI:
+
+           • Consignas.
+           • Avisos.
+           • Horarios de los trenes.
+   • Elaborados y aprobados por las EF:
+
+           • Libro de Normas del Maquinista.
+           • Libro de Itinerarios del Maquinista.
+     En caso de discrepancia entre documentos en referencia a un mismo objeto, se seguirá
+el siguiente orden de prevalencia: AESF y normas europeas, AI, EF.
+   1.2.1.2. Documentación competencia de la Agencia Estatal de Seguridad Ferroviaria.
+   Especificaciones Técnicas de Circulación. Establecen requisitos y condiciones generales
+que en materia de seguridad debe cumplir la infraestructura, el material rodante, y la
+operación, para permitir una explotación en condiciones seguras en materias no
+expresamente reguladas en las ETIs o en otras normas europeas.
+   1.2.1.3. Documentación competencia de los AI.
+   Los AI serán responsables de elaborar, difundir y asegurar la disponibilidad a sus
+usuarios, de los documentos siguientes:
+   Consignas. Son emitidas dentro del ámbito especificado en este Reglamento, para:
+
+
+
+                                           Página 21
+                          BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    • Regular las condiciones de aplicación del RCF en casos específicos y en ámbitos
+concretos de la infraestructura.
+    • Regular la utilización de instalaciones de seguridad concretas por modificaciones
+temporales de las mismas.
+    • Garantizar la continuidad de la circulación en casos de perturbación prolongada en el
+funcionamiento normal de la infraestructura.
+    • Regular aspectos específicos sobre gestión de la seguridad en la circulación.
+    • Regular las condiciones de realización de transportes excepcionales.
+    • Definir criterios específicos de gestión de la infraestructura, ferroviaria.
+    • Describir las características, el funcionamiento y la operación de toda clase de
+instalaciones de seguridad.
+    • Dar a conocer al personal operativo prescripciones e informaciones de carácter
+temporal, no contenidas en otros documentos.
+   Avisos. Se elaboran para:
+    • Fijar fechas de entrada en vigor o anulación de documentos, en los casos de apertura,
+cierre o modificación de líneas o dependencias, o cuando sea preciso recordar o aclarar
+normas de circulación.
+   Horarios de los trenes. Se elaboran para:
+   • Dar a conocer las marchas de los trenes, las velocidades máximas de circulación, los
+Cambios Significativos de la Velocidad máxima, las Limitaciones Temporales de Velocidad
+máxima y el resto de informaciones relevantes para la circulación de los trenes.
+    Los AI deberán incluir en sus SGS el alcance y contenido concreto de cada tipo de
+documento, el soporte empleado para su edición y los procedimientos para garantizar su
+difusión, y los modelos para el registro y transmisión de comunicaciones y órdenes escritas
+contenidas en este Reglamento.
+    Además, los AI proporcionarán a las EF, la información especificada en el artículo 1.2.1.4
+para que estas puedan elaborar los documentos de su competencia.
+   1.2.1.4. Documentación competencia de las EF.
+    Las EF serán responsables de elaborar, difundir y asegurar la disponibilidad a su
+personal de los documentos siguientes:
+   1. Libro de Normas del Maquinista.
+    Documento elaborado conforme a lo dispuesto en el ETI OPE en el que la EF recopilará
+la información reglamentaria que afecte a sus Maquinistas. Su contenido deberá
+particularizarse y adaptarse en cada caso, para recoger la información necesaria en función
+de las líneas por las que circulen. Dicha información será extraída de los documentos
+publicados por la AESF, por los AI y por la propia EF.
+    Una parte fundamental del Libro de Normas del Maquinista, la constituye el «Libro de
+Telefonemas del Maquinista», cuya estructura y contenido deberá ser definido por los AI en
+sus respectivos SGS.
+   2. Libro de Itinerarios del Maquinista.
+   Documento en el que cada EF pone a disposición de sus Maquinistas:
+   – La información que les afecte en relación con las características de las líneas por las
+que circulen.
+   – La información horaria del tren, conteniendo:
+   • Identificación del tren.
+   • Días de circulación, si procede.
+   • Puntos de parada y actividades asociadas a cada una de ellas.
+   • Horario de llegada, salida o paso del tren por cada punto característico.
+   • Velocidad máxima de circulación para cada tramo homogéneo.
+
+
+
+
+                                             Página 22
+                           BOLETÍN OFICIAL DEL ESTADO
+                                  LEGISLACIÓN CONSOLIDADA
+
+
+
+     En particular, para la elaboración del «Libro de Itinerarios del Maquinista», los AI
+facilitarán a las EF la información que sobre este aspecto define la ETI OPE.
+    Las EF deberán incluir en sus SGS el alcance y contenido concreto de cada tipo de
+documento, el soporte empleado para su edición, los procedimientos para su difusión y, los
+modelos para el registro y transmisión de comunicaciones y órdenes escritas contenidas en
+este Reglamento.
+
+                                        CAPÍTULO 3
+                     Distribución de documentos y útiles de servicio
+   1.3.1.1. Distribución de documentos.
+    1. Cada entidad responsable de la publicación de un documento reglamentario,
+garantizará la adecuada publicidad y difusión del mismo a los destinatarios afectados.
+    2. Corresponde a las EF y a los AI asegurar, en todo momento, la actualización y
+distribución de los documentos a su personal afectado.
+    3. El personal que reciba una modificación de su documentación de seguridad a título
+personal, estará obligado a acusar recibo, y acreditará conocimiento de su contenido
+conforme a lo establecido en el SGS de su empresa.
+   1.3.1.2. Útiles de servicio.
+     1. Los colectivos de personal que intervienen en la circulación recibirán de su AI o EF, a
+título individual, los útiles de servicio necesarios para desarrollar su función.
+
+                                        CAPÍTULO 4
+                              Comunicaciones reglamentarias
+   1.4.1.1. Clasificación y características de las comunicaciones.
+    Conforme a lo dispuesto en el Apéndice correspondiente a la metodología de las
+comunicaciones de la ETI OPE, las comunicaciones reglamentarias se atendrán a lo
+indicado a continuación:
+     1. Las comunicaciones podrán ser: verbales o escritas.
+     2. Las comunicaciones verbales podrán realizarse: de viva voz, por teléfono, por radio o
+por cualquier otro medio disponible al efecto.
+     3. Las comunicaciones verbales entre Maquinistas y Responsables de Circulación se
+realizarán preferentemente mediante el sistema de radiotelefonía disponible al efecto.
+     4. Las comunicaciones verbales entre Responsables de Circulación, ya sean de
+estaciones, de una banda de regulación de un PM o de un CTC se realizarán
+preferentemente mediante el sistema de telefonía fija disponible al efecto.
+     5. El personal emisor de una comunicación verbal deberá comprobar que esta ha sido
+comprendida por el receptor.
+     6. En las comunicaciones por teléfono, radio u otro medio disponible al efecto, el emisor
+y receptor deberán identificarse mutuamente.
+     7. Las comunicaciones escritas deberán realizarse mediante un impreso previsto al
+efecto, o por medios informáticos.
+     8. Las comunicaciones por telefonema consisten en la transmisión a distancia de un
+texto determinado.
+     9. Las notificaciones son comunicaciones al Maquinista realizadas mediante escrito,
+telefonema, o medios informáticos.
+     10. Cuando el Maquinista deba registrar el contenido de un telefonema, lo realizará con
+el tren parado.
+     11. Tanto este Reglamento como el resto de documentos reglamentarios prescriben la
+forma y clase de comunicación a utilizar. Cuando esta no se indique expresamente, se
+entenderá que es verbal.
+
+
+
+
+                                          Página 23
+                          BOLETÍN OFICIAL DEL ESTADO
+                                LEGISLACIÓN CONSOLIDADA
+
+
+
+   12. Las comunicaciones por radiotelefonía, a través de líneas fijas de telefonía de los
+gabinetes de circulación de las estaciones, de las bandas de regulación del PM y del CTC,
+quedarán registradas en equipos instalados al efecto.
+   1.4.1.2. Metodología de las comunicaciones relacionadas con la seguridad.
+    Los AI y las EF desarrollarán en sus respectivos SGS las normas para llevar a cabo las
+comunicaciones relacionadas con la seguridad, entre los Maquinistas y los Responsables de
+Circulación. En particular, deberán definir su estructura y metodología, que será acorde con
+lo dispuesto en la ETI OPE.
+   1.4.1.3. Registro de los telefonemas.
+    Los AI definirán en sus SGS el modelo general y el soporte de edición del «Libro de
+telefonemas», que será utilizado por los Responsables de Circulación, Maquinistas y
+Encargados de Trabajos. Su contenido será conforme con lo indicado en la ETI OPE.
+    Así mismo, los AI podrán definir un modelo específico de uso exclusivo por
+Responsables de Circulación para los telefonemas relacionados con operaciones de bloqueo
+o rebase de señales, que facilite la visualización rápida y efectiva del estado de los cantones
+de bloqueo.
+
+                                        CAPÍTULO 5
+                            Conceptos básicos de circulación
+   1.5.1.1. Señales y agujas.
+    1. Las señales tienen por objeto transmitir órdenes o informaciones desde la vía, las
+estaciones o los trenes.
+    2. Las señales se clasifican, según su función, en:
+    Señales fijas: Las que, de un modo permanente o temporal, están instaladas en puntos
+determinados de la vía o de las estaciones. Se dividen en:
+    • Fundamentales: Regulan la circulación de trenes y maniobras.
+    • Indicadoras: Complementan las órdenes de las señales fundamentales.
+    • De Velocidad Máxima: Regulan la velocidad que el tren no debe exceder en ningún
+momento.
+    • De Limitación Temporal de Velocidad Máxima: Imponen restricciones temporales en la
+velocidad máxima de los trenes por circunstancias particulares de la vía o de las
+instalaciones.
+  Señales portátiles: Las que puede utilizar o hacer el personal ferroviario en cualquier
+momento o lugar.
+  Señales de los trenes: Las que estos llevan en cabeza y cola.
+   3. Las señales fijas fundamentales, de acuerdo con el lugar en que están instaladas, se
+denominan:
+    • Señal preavanzada: La situada delante de la señal avanzada en líneas con BLA en las
+que se circule a velocidades superiores a 160 km/h.
+    • Señal avanzada: La situada delante de una señal de entrada o, en su defecto, de una
+estación.
+    • Señal de entrada: La situada a la entrada de una estación, bifurcación, PAET, PBA, PB
+o PCA, que protege agujas de entrada.
+    Una señal de entrada puede hacer funciones de señal de salida de la estación anterior o
+de señal avanzada de la siguiente.
+    • Señal de salida: La situada a la salida de una estación, que protege agujas de salida.
+    Una señal de salida puede hacer funciones de señal avanzada o de entrada de la
+estación siguiente.
+    • Señal interior: La situada en el interior de una estación para regular los movimientos de
+trenes o de maniobras. Integran esta denominación las señales:
+
+
+
+
+                                           Página 24
+                           BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    • Señal de retroceso: La situada entre la señal de entrada y las agujas situadas a
+continuación. En vía doble no banalizada, la situada en la contravía.
+    • Señal de maniobras: La que permite movimientos interiores de la estación.
+    • Señal de entrada interior: La situada en el interior de una estación, que protege agujas
+de entrada.
+    • Señal de salida interior: La situada en el interior de una estación, que protege agujas de
+salida.
+    • Señal de protección: La situada delante de una aguja en plena vía para protegerla.
+    • Señal intermedia: La situada, en líneas con BA, entre la señal de salida de una estación
+y la avanzada siguiente. Una señal intermedia puede hacer también funciones de señal de
+protección.
+    • Señal de liberación: En determinadas líneas, la situada a continuación de la señal de
+salida y relacionada con ella, para liberar la curva de control de velocidad del equipo
+embarcado.
+    • Señal de Paso a Nivel: La situada delante de un PN o grupo de PN para indicar si están
+o no protegidos.
+   4. Las agujas, según su situación, se denominan:
+    • Agujas de entrada: Las situadas entre la señal de entrada y la vía de estacionamiento.
+    • Agujas de salida: Las situadas entre la señal de salida y la plena vía. Cuando la señal
+de salida afecte a varias vías, se incluyen las agujas situadas entre la vía de
+estacionamiento y dicha señal.
+    • Agujas de plena vía: Las situadas entre las señales de entrada de dos estaciones
+colaterales.
+   5. Aparatos de vía especiales:
+    • Cambiador de hilo: Aparato de vía que, en líneas de ancho mixto equipadas con tercer
+carril, permite cambiar de lado el carril de uso común por los trenes de ambos anchos. Está
+compuesto por dos semicambios dispuestos en paralelo. Constituye una instalación de
+seguridad, que a efectos del enclavamiento, tiene el mismo tratamiento que una aguja, por lo
+que debe estar protegido por señales.
+   1.5.1.2. Instalaciones de seguridad.
+    Son componentes, equipos y sistemas instalados en tierra y a bordo de los vehículos con
+el fin de aumentar la seguridad de la circulación. Se regulan en el Libro 5 de este
+Reglamento. Los AI y las EF deben velar por su buen uso y cuidado por parte de su
+personal.
+    El software y los datos (de registro, calibración, etc.) de cada instalación, se consideran
+componentes de ella. Lo mismo sucede con los sistemas de comunicación a través de los
+que se transmiten las órdenes e informaciones relacionadas con la circulación.
+   1.5.1.3. Incorporación de nuevos sistemas auxiliares.
+    Podrán incorporarse a la gestión de la circulación, nuevos medios técnicos o sistemas
+auxiliares gestionados por el AI, previa aprobación por parte de la AESF y conformidad con
+la ETI CMS.
+   1.5.1.4. Condiciones de marcha especiales.
+    1. Marcha a la vista: Impone al maquinista la obligación de avanzar con la precaución
+que requiera el caso, regulando la velocidad de acuerdo con la longitud de vía que visualiza
+por delante del puesto de conducción, de forma que pueda detener el tren ante cualquier
+obstáculo o señal de parada. Cuando se prescriba, se indicará el motivo y, si se conoce, la
+naturaleza del obstáculo, o el tipo de reconocimiento a realizar.
+    2. Marcha de maniobras: Impone al maquinista la obligación de avanzar con prudencia,
+sin exceder la velocidad de 30 km/h si la locomotora va tirando del tren, o de 20 km/h si va
+empujándolo, de forma que pueda detener el tren ante cualquier obstáculo visible desde el
+puesto de conducción o ante una señal de parada.
+
+
+
+                                           Página 25
+                           BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    3. Si por las circunstancias ambientales y de visibilidad, o por las condiciones técnicas
+del vehículo motor o del tren, el Maquinista no puede cumplimentar las condiciones de
+marcha especial, informará al Responsable de Circulación para que este disponga lo que
+proceda según las circunstancias.
+   1.5.1.5. Identificación de los trenes.
+    Los trenes se identifican mediante códigos numéricos de forma única e inequívoca para
+cada sentido de circulación de acuerdo con lo dispuesto en la ETI OPE y en la ETI CMS. En
+función de la paridad definida en cada línea, los designados con número par circulan
+siempre en un sentido y los designados con número impar en el contrario.
+    El código de identificación de cada tren será asignado por el AI y puesto en conocimiento
+de la EF y del resto de los AI afectados por la circulación del tren.
+   1.5.1.6. Paradas de los trenes.
+    La parada de un tren puede estar prescrita en la marcha del tren, o realizarse de forma
+eventual (no prescrita) por necesidades de regulación del tráfico o por causa justificada del
+maquinista o de la EF.
+    Una parada notificada al Maquinista después de la salida del tren de su estación de
+origen tiene la consideración de “prescrita” desde el momento de su notificación.
+    La parada prescrita puede ser:
+   ▪ Considerando su duración o periodicidad:
+    – Momentánea, cuando el tren se detiene el tiempo indispensable para realizar
+operaciones.
+    – Ocasional, cuando se efectúa únicamente los días o períodos de tiempo indicados en
+la marcha.
+   ▪ Considerando su función:
+    – Comercial, la que tiene por objeto la subida y bajada de viajeros.
+    – Restringida, es una parada comercial que tiene por objeto la bajada de viajeros. El tren
+puede efectuar su salida cuando finalicen las operaciones, aún en el caso de que lo haga
+con adelanto.
+    – Técnica, la que se efectúa por cruce o adelantamiento de trenes, por operaciones a
+realizar por parte de la EF (agregar/segregar vehículos, cambios de locomotora o
+maquinista, etc.) o por cualquier otra causa derivada de la explotación.
+   1.5.1.7. Detención de los trenes.
+    1. Detención accidental, es la que efectúa el Maquinista por propia iniciativa en plena vía
+o, por anormalidad, en cualquier lugar.
+    2. Detención inmediata, es la que realiza el Maquinista para tratar de evitar un peligro
+inminente, mediante la aplicación del freno de emergencia.
+   1.5.1.8. Orden de marcha.
+   Es el conjunto de indicaciones previas que se deben dar al Maquinista para que su tren
+pueda salir o pasar por una estación.
+    1. La orden de marcha se da con la orden de la señal de salida, si existe y no hay que
+considerarla inexistente. Para ello, basta que no ordene parada o, en caso contrario, que se
+autorice su rebase por el Responsable de Circulación si procede.
+    Si la señal de salida no es visible desde el punto de estacionamiento y no existe o no
+funciona la señal indicadora de salida, el Maquinista iniciará la marcha en condiciones de
+cumplir lo que ordene la señal de salida.
+    La orden de marcha se complementará, con la señal de paso, para los trenes directos, o
+con la señal de marche el tren, para los trenes parados, en los siguientes casos:
+    ▪ Hacia un trayecto con BT.
+    ▪ Hacia un trayecto con BTV, circulando a contravía.
+    ▪ Cuando la señal de salida afecte a más de una vía, conforme a lo dispuesto en el punto
+7 del artículo 2.1.6.2.
+
+
+                                            Página 26
+                                    BOLETÍN OFICIAL DEL ESTADO
+                                         LEGISLACIÓN CONSOLIDADA
+
+
+
+       2. En BCA, la orden de marcha se da con cualquier valor de la Velocidad Límite superior
+a 0.
+     3. Si la vía o la estación no dispone de señal de salida, la orden de marcha la constituye
+la señal de “marche el tren”. Cuando la presentación de dicha señal conforme a lo dispuesto
+en el punto 4 del artículo 2.1.6.2 pueda ofrecer dudas de interpretación al Maquinista, el
+Responsable de Circulación la presentará conforme a lo dispuesto en el punto 7 del citado
+artículo.
+       1.5.1.9. Invalidación de la orden de marcha.
+       1. La orden de marcha de un tren quedará invalidada en los siguientes casos:
+   • Tren directo que quede detenido en una estación.
+   • Tren parado que no pueda salir inmediatamente después de haber recibido la orden de
+marcha.
+   • Tren directo que se detiene por alguna de las siguientes causas:
+       • Falta de la señal de paso, si procede.
+       • Cambio intempestivo de la indicación de la señal de salida.
+       • Otra causa relacionada con la orden de marcha.
+       2. En los casos anteriores, si el tren:
+    • No ha rebasado la señal de salida o el piquete de la vía por la que circula, se dará
+nuevamente al maquinista la orden de marcha, si procede.
+    • Ha rebasado la señal de salida o el piquete de la vía por la que circula, se notificará al
+maquinista la reanudación de la marcha, cuando proceda, o se ordenará el retroceso a una
+vía de la estación.
+    3. El Responsable de Circulación no autorizará la salida de la estación colateral de un
+tren en sentido contrario por la misma vía, sin haber entrado previamente en comunicación
+con el maquinista cuya orden de marcha quedó invalidada.
+       1.5.1.10. Velocidades.
+   1. Velocidad Máxima es la que el tren no debe exceder, independientemente del tipo de
+conducción utilizado. Se admite un margen de tolerancia de hasta 5 km/h (sobre lo
+observado por el Maquinista en su lector de velocidad), durante no más de 20 segundos, por
+encima del cual se considera rebase de la velocidad máxima.
+   2. Limitación Temporal de Velocidad Máxima es una reducción temporal de la velocidad
+máxima por cualquier causa. Puede estar prescrita por:
+       • La orden de las señales.
+       • Notificación al Maquinista.
+       • Una prescripción de carácter general o particular.
+       • Causas de anormalidad.
+   Cuando a un tren le afecten en un punto varias limitaciones de velocidad, el Maquinista
+cumplirá la más restrictiva.
+       1.5.1.11. Tipos de tren.
+    1. A efectos de composición, velocidad, régimen y frenado, cada tren se clasifica
+mediante un código formado por un número y una letra mayúscula. El primero representa la
+velocidad máxima en km/h a la que podría circular en las condiciones más favorables de
+trazado y clase de vía. Se expresa en números múltiplos de 10.
+    2. La letra caracteriza el tipo de tren, en función de las aceleraciones centrífugas
+máximas no compensadas que admite en las curvas1, de acuerdo con la siguiente tabla:
+
+
+       1
+           También puede ser expresado por la insuficiencia de peralte máxima que admite según Apéndice A de la ETI
+OPE.
+
+
+
+
+                                                      Página 27
+                              BOLETÍN OFICIAL DEL ESTADO
+                                  LEGISLACIÓN CONSOLIDADA
+
+
+                            Aceleración centrífuga no compensada    Insuficiencia de peralte
+            Tipos de tren                                          Ancho 1,435 Ancho 1,668
+                                          (m/seg2)
+                                                                      (mm)          (mm)
+                   (N)                     ≤ 0,65                     ≤ 100         ≤ 115
+                    A                        ≤1                       ≤ 153         ≤ 175
+                    B                       ≤ 1,2                     ≤ 183         ≤ 212
+                    C                       ≤ 1,5                     ≤ 229         ≤ 265
+                    D                       ≤ 1,8                     ≤ 275         ≤ 318
+
+
+    Cuando el tren está representado por un solo número o con la letra N, es de tipo normal,
+y es el que admite menores velocidades en curvas.
+    3. El material móvil de un tipo superior, según el orden anterior, puede circular en los
+trenes de tipo inferior, pero no al contrario.
+    4. Las marchas de los trenes que se publican en los documentos correspondientes,
+indican la velocidad máxima y el tipo de tren para el que han sido calculadas. La velocidad
+máxima podrá elevarse o reducirse, según las condiciones reales de composición y frenado
+de cada tren.
+   1.5.1.12. Sentido de la circulación.
+   1. Vía única.
+   La circulación de los trenes se realiza en ambos sentidos.
+   2. Vía doble.
+    Los trenes pares circulan en el mismo sentido por la vía par y los trenes impares en
+sentido contrario por la vía impar, salvo situaciones anormales por circulación a contravía,
+por BTV u otras causas.
+    En unas líneas se circula normalmente por la vía de la derecha en el sentido de la
+circulación y en otras por la izquierda.
+   3. Vías banalizadas.
+    Se consideran, a todos los efectos, como vías únicas independientes, es decir, los trenes
+circulan en ambos sentidos, por cada una de ellas, independientemente de su paridad.
+    A la salida de las estaciones con vías banalizadas, las vías se señalizan con unos
+cartelones que indican «Vía I», «Vía II», «Vía III» o «Vía IV».
+   4. Banalización temporal de vía.
+    En líneas de vía doble, la vía banalizada temporalmente se considera como una vía
+única independiente, es decir, los trenes circulan por ella en ambos sentidos cualquiera que
+sea su paridad. En este caso, se denomina circulación a contravía la marcha de un tren par
+por la vía impar o viceversa.
+   1.5.1.13. Bloqueo de los trenes.
+   1. El objeto del bloqueo es garantizar la seguridad de la circulación de los trenes por la
+misma vía, manteniendo entre los mismos la separación necesaria.
+   2. Se emplean los siguientes sistemas:
+   Nominales:
+   • Telefónico (BT).
+   • De Liberación automática (BLA) (*).
+   • De Liberación automática de vía única (BLAU).
+   • De Liberación automática de vía doble (BLAD).
+   • De Liberación automática de vía doble banalizada (BLAB).
+   • Automático (BA) (*).
+   • Automático de vía única (BAU).
+   • Automático de vía doble (BAD).
+   • Automático de vías banalizadas (BAB).
+
+
+
+                                               Página 28
+                             BOLETÍN OFICIAL DEL ESTADO
+                                  LEGISLACIÓN CONSOLIDADA
+
+
+
+   • De Señalización lateral (BSL).
+   • De Control automático (BCA).
+
+
+   (*) Los bloqueos BLA y BA podrán ser con y sin CTC.
+
+   Supletorios:
+   • Telefónico (BT).
+    3. El BCA, BA, BLA y BSL se emplean en las líneas dotadas de instalaciones adecuadas
+y se indican en el Libro de Itinerarios del Maquinista.
+    4. El BT se emplea con carácter supletorio cuando no funcionan los sistemas nominales.
+    5. El cantón de bloqueo se define en:
+    • BT y BLA, como la parte de la vía o de cada una de las vías, comprendida entre dos
+estaciones colaterales abiertas.
+    • BA, como la parte de vía comprendida entre dos señales consecutivas de bloqueo.
+    • BSL, como el tramo de vía comprendido entre señales que pueden presentar la
+indicación de parada y en el que, en circunstancias normales, solo puede haber un tren.
+    • BCA, como la parte de cada una de las vías comprendida entre pantallas de LZB o
+ERTMS N2, o señales que puedan presentar la indicación de parada.
+    • BTV, cuando se circule en sentido normal, será el definido para el sistema de bloqueo
+nominal de la línea. Cuando se circule a contravía, como la parte de la vía comprendida
+entre dos estaciones colaterales que intervengan en el bloqueo.
+   6. Se considera que un cantón está libre cuando:
+   • No está establecida la EVB, y además
+   • El último tren lo ha liberado totalmente.
+   1.5.1.14. Cómo se asegura el bloqueo.
+   1. En BT, con la petición, concesión de la vía y el aviso de llegada de los trenes, por
+medio de telefonemas.
+   2. En BLA, BSL y BA, por medio de las señales que protegen los cantones y por el
+sentido de la circulación de los trenes.
+   3. En BCA, respetando las velocidades ordenadas en cada momento al Maquinista,
+mediante la señalización en cabina.
+   1.5.1.15. Tipos de conducción de los trenes.
+    1. Conducción manual. La que desarrolla el maquinista bajo su responsabilidad de forma
+íntegra, con o sin ASFA.
+    2. Conducción asistida. La que desarrolla el maquinista bajo la tutela de un sistema de
+seguridad (ETCS/ERTMS, LZB o EBICAB) que le protege de posibles errores en el
+cumplimiento de las órdenes que recibe. El sistema evita que se rebasen las velocidades
+máximas en cada momento, pero no gestiona las paradas comerciales. Los dispositivos de
+velocidad prefijada no tienen la consideración de asistencia a la conducción.
+    3. Conducción automática. La que realiza el sistema sin intervención del maquinista,
+manteniendo la máxima velocidad permitida, y efectuando, de forma automática, las paradas
+comerciales programadas.
+   1.5.1.16. Estaciones de servicio intermitente.
+    1. Son aquellas que no intervienen permanentemente en el bloqueo. Durante el período
+en que intervienen, se consideran abiertas y durante el período en que no intervienen, se
+consideran cerradas.
+    2. Por las instalaciones de seguridad y comunicaciones de las que están dotadas, se
+clasifican en:
+   • Intermitentes AC.
+
+
+
+
+                                                Página 29
+                           BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+    Permiten la circulación de trenes mientras están cerradas. Para ello, es requisito
+imprescindible que las señales permitan el paso en ambos sentidos en vía única y en el
+sentido normal en vía doble, que las agujas estén encerrojadas, y que exista comunicación
+directa entre las dos estaciones colaterales abiertas.
+   • Intermitentes NC.
+    No permiten la circulación de trenes ni la realización de trabajos mientras están cerradas
+por no cumplir alguna de las condiciones anteriores.
+   3. Las estaciones donde converjan varias líneas, pueden ser simultáneamente AC para
+unas y NC para otras.
+   4. La clase de estación (AC o NC) y los períodos de cierre, en su caso, los dará a
+conocer el AI.
+   5. La presencia en las estaciones de cartelones luminosos EA/EC y la presencia o
+ausencia del cartelón C, proporcionan al Maquinista información de su estado.
+   1.5.1.17. Sistemas de ejecución de trabajos en la vía.
+   Se emplean los sistemas siguientes:
+     1. Sistema de interrupción de la circulación. Para realizar los trabajos, se suspende la
+circulación por la vía o vías afectadas.
+     La interrupción de la circulación se establece por:
+     • Intervalo de horario, determinado por los Horarios de los trenes programados.
+     En vía doble y en vía doble banalizada se establecen, normalmente, dos intervalos
+distintos, uno para cada vía.
+     • Intervalo programado, determinado en un programa de trabajos. Si estos revisten
+importancia, se regula, además, mediante Consigna al efecto.
+     • Anormalidad, determinada de forma accidental por existir un peligro para la circulación.
+    2. Sistema de liberación por tiempo. Los trabajos se realizan sin interrumpir la circulación
+por el trayecto y vía afectados, aprovechando un intervalo libre de trenes, que garantiza el
+Responsable de Circulación. Están protegidos por el tiempo concedido para su realización, y
+por la protección normal del tajo en la vía afectada durante su ejecución.
+   1.5.1.18. Comunicación de tren dispuesto para circular.
+    Cuando el tren esté dispuesto para acceder a la RFIG (o iniciar su recorrido si ya está en
+ella), la EF se lo comunicará a los AI de los tramos o líneas por los que vaya a circular. Así
+mismo, deberá informarles de cualquier anomalía, restricción o modificación que afecte al
+tren o a su funcionamiento y que pueda tener repercusión en su circulación normal, en su
+rendimiento o en su capacidad de adaptarse a su horario asignado.
+    Antes de la salida del tren la EF pondrá a disposición del AI, al menos, los siguientes
+datos:
+    a) Identificación del tren.
+    b) Identidad de la empresa ferroviaria responsable del tren.
+    c) Datos sobre la composición del tren.
+    d) Vehículos afectados, en su caso, por cualquier tipo de restricción a la explotación
+(gálibo, limitación de velocidad, ausencia de cortocircuitado de vía, etc.).
+    e) Información sobre los cargamentos y, en especial, sobre las mercancías peligrosas.
+   Las EF y los AI definirán en sus SGS el procedimiento para materializar esta
+comunicación de forma efectiva.
+   1.5.1.19. Frenado.
+   1. Freno automático.
+    Todos los trenes en circulación, salvo los autopropulsados, llevarán un sistema de freno
+automático por aire comprimido para todos los vehículos de la composición. Los vehículos
+de cabeza y cola, incluidas las locomotoras, deberán tenerlo siempre útil y en servicio.
+
+
+
+
+                                           Página 30
+                                                     BOLETÍN OFICIAL DEL ESTADO
+                                                             LEGISLACIÓN CONSOLIDADA
+
+
+
+                      Los trenes autopropulsados dispondrán de un sistema de freno automático cuyas
+                  características estarán definidas en sus Manuales de conducción.
+                      En automotores y trenes Talgo remolcados, no será imprescindible que el último vehículo
+                  tenga el freno en servicio, aunque sí debe asegurarse su continuidad.
+                      La capacidad de frenado necesaria para que un tren pueda circular, depende de su
+                  velocidad máxima y de las líneas por las que vaya a circular. En trenes convencionales se
+                  determinará por el porcentaje de frenado necesario, y en los automotores por lo establecido
+                  en sus Manuales de conducción.
+                      El freno automático apretado al máximo no perderá su eficacia hasta transcurridos como
+                  mínimo 120 minutos desde su aplicación.
+                      2. Freno de estacionamiento.
+                     El freno de estacionamiento se utilizará para asegurar la inmovilidad del tren en caso de
+                  pérdida de eficacia del freno automático.
+                     El tren quedará inmovilizado mediante los frenos de estacionamiento cuando:
+                      a) Se separe la locomotora de la composición.
+                      b) No sea posible asegurar su inmovilidad mediante el freno automático.
+                      c) Quede un corte de material fraccionado en plena vía.
+                      1.5.1.20. Masa, longitud, velocidad máxima y capacidad de frenado de los trenes.
+                      Los AI definirán para cada línea o tramo de línea que administren y en función de sus
+                  características específicas, los parámetros siguientes:
+                      ▪ Longitud máxima de los trenes.
+                      ▪ Velocidad máxima de circulación.
+                      ▪ Capacidad mínima de frenado de los trenes.
+                      Todos ellos deberán cumplir las limitaciones indicadas a continuación.
+                      1. Trenes de mercancías.
+                      Podrán estar formados por vagones, coches, furgones y locomotoras remolcadas en las
+                  condiciones indicadas en sus Manuales de conducción.
+                      Los valores máximos de la masa, longitud y velocidad de los trenes se determinarán
+                  para los distintos anchos de vía, en función del tipo de composición y de su régimen de
+                  frenado, según lo indicado en la tabla siguiente:
+
+                                                                                                                                Longitud total del tren Velocidad del tren
+Ancho de vía (mm) Régimen de frenado                          Tipo de composición                          Masa remolcada (t)
+                                                                                                                                         (m)                  (km/h)
+                                       Composición general                                                      ≤ 1.200                 ≤ 750                  ≤ 120
+                                                                                                                ≤ 1.500                 ≤ 750                  ≤ 120
+                                       Composición específica formada solo por vagones de bogies
+                            P                                                                                   ≤ 1.600                 ≤ 500                  ≤ 120
+  1.668 y 1.435
+                                       Composición específica formada solo por vagones homogéneos (*) de
+                                                                                                                ≤ 2.200                 ≤ 350                 ≤ 120
+                                       bogies cargados (**)
+                            G          Composición general                                                         –                    ≤ 750                 ≤ 100
+                                                                                                                ≤ 1.500                 ≤ 400                  ≤ 50
+                            P          Composición general
+      1.000                                                                                                     ≤ 1.200                 ≤ 330                  ≤ 70
+                            G          Composición general                                                         –                    ≤ 550                  ≤ 30
+
+
+
+                       (*) Se consideran vagones homogéneos aquellos cuyas diferencias en la longitud entre topes, en la distancia
+                  entre pivotes y en sus pesos lineales sean inferiores al 10%.
+                      (**) Se trata de una alternativa a la «Composición general», que permite aumentar la masa remolcada,
+                  reduciendo la longitud total del tren
+
+                      2. Trenes convencionales de viajeros.
+                      Podrán estar formados por coches, furgones, vagones para transporte de automóviles de
+                  los viajeros y locomotoras remolcadas en las condiciones indicadas en sus Manuales de
+                  conducción.
+                      El régimen de frenado, la velocidad máxima y el número máximo de vehículos
+                  remolcados, excluida la locomotora o locomotoras de tracción, serán los siguientes:
+
+
+
+
+                                                                             Página 31
+                          BOLETÍN OFICIAL DEL ESTADO
+                               LEGISLACIÓN CONSOLIDADA
+
+
+
+
+   3. Automotores.
+    Podrán estar formados por material autopropulsado de la misma serie o de otra con
+características técnicas compatibles, de acuerdo con lo establecido en sus Manuales de
+conducción. Podrán circular a la velocidad máxima que figure en su autorización de
+circulación.
+   1.5.1.21. Pruebas de frenado.
+    Antes de expedir un tren desde la estación o dependencia origen de su composición, o
+desde una intermedia donde se modifique, la EF o el AI (para los trenes afectos a su propia
+actividad) deberán llevar a cabo las pruebas de funcionamiento del freno.
+    Para los trenes autopropulsados, las pruebas se realizarán conforme a lo establecido en
+sus Manuales de conducción.
+    Para los trenes formados con material convencional, las pruebas se realizarán conforme
+a lo indicado a continuación:
+   1. Prueba completa.
+   a) Se realizará:
+   Antes de la salida del tren de la estación o dependencia origen de la composición.
+   b) Asegura:
+   i) La estanqueidad y continuidad de la TFA en toda la composición.
+   ii) El buen funcionamiento, al apretar y aflojar, de todos los frenos en servicio de los
+vehículos remolcados de la composición.
+   2. Prueba parcial.
+   a) Se realizará:
+   Antes de la salida del tren de una estación o dependencia en la que se agreguen
+vehículos a la composición.
+   b) Asegura:
+    i) La estanqueidad y continuidad de la TFA en toda la composición, así como el apriete y
+afloje del freno del último vehículo.
+    ii) El buen funcionamiento, al apretar y aflojar, del freno de cada vehículo que se agregue
+a la composición.
+   3. Prueba de continuidad.
+   a) Se realizará:
+
+
+
+                                          Página 32
+                          BOLETÍN OFICIAL DEL ESTADO
+                              LEGISLACIÓN CONSOLIDADA
+
+
+
+   i) Cuando se agregue una locomotora de tracción por cola.
+   ii) Cuando se segreguen uno o varios vehículos de la composición.
+   iii) Tras interrumpir la continuidad de la TFA, aunque no se haya segregado ningún
+vehículo.
+   iv) Cuando se unan dos ramas, sin modificar sus composiciones.
+   b) Asegura:
+    La estanqueidad y continuidad de la TFA en toda la composición, así como el apriete y
+afloje del freno del último vehículo.
+   4. Verificación del acoplamiento.
+   a) Se realizará:
+    i) Cuando se cambie la locomotora de cabeza, por una nueva o procedente de cola.
+    ii) Cuando se agregue o segregue una locomotora en cabeza, en caso de tracción
+múltiple o mando múltiple.
+    iii) Cuando se segreguen uno o varios de los vehículos situados tras la o las locomotoras
+de cabeza.
+   b) Asegura:
+   La continuidad de la TFA, así como el apriete y el afloje del freno del primer vehículo
+remolcado.
+   5. Supresión de las pruebas.
+   No es preciso realizar las pruebas, en los siguientes casos:
+    a) Segregación de uno o varios vehículos de cola de tren.
+    b) Cambio de posición de las palancas de los cambiadores de potencia en todos o parte
+de los vehículos remolcados.
+    c) Aislamiento del freno de algún vehículo remolcado mediante accionamiento de la llave
+correspondiente.
+    d) Reposición de un aparato de alarma.
+   6. Pruebas en automotores.
+    El Maquinista realizará la prueba de freno según lo indicado en el Manual de conducción
+del vehículo, incluyendo el uso de los sistemas auxiliares o informáticos de que disponga.
+    No es necesario realizar prueba de freno en caso de inversión de marcha o de sucesivos
+recorridos durante la misma jornada si no se ha variado la composición.
+   1.5.1.22. Mercancías peligrosas.
+    El transporte de estas mercancías por ferrocarril se rige por el Reglamento Internacional
+sobre el Transporte de Mercancías Peligrosas por Ferrocarril (RID) en vigor, sin perjuicio de
+los reglamentos nacionales y de la UE vigentes.
+    Los AI y las EF incluirán en sus SGS los procedimientos necesarios para que se cumpla
+la normativa citada.
+   1.5.1.23. Transportes Excepcionales.
+    Un transporte se considera excepcional cuando, debido a sus dimensiones, peso o
+acondicionamiento, debe realizarse con unas condiciones de transporte y unas
+prescripciones de circulación especiales.
+    Las EF comunicarán al AI los condicionantes que deban ser tenidos en cuenta para
+materializar el transporte en cada caso. Estos transportes estarán sujetos a normas
+específicas para Transportes Excepcionales, siendo necesaria una autorización del AI que
+regule sus condiciones de transporte y prescripciones de circulación.
+    Las EF deberán garantizar que las condiciones de la composición, del tren y de su
+cargamento cumplen con las condiciones de transporte y prescripciones de circulación
+específicas definidas por el AI.
+
+
+
+
+                                          Página 33
+
