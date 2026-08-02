@@ -10,3 +10,5 @@ test-results/
 .worktrees/
 work/
 outputs/
+
+.vercel
