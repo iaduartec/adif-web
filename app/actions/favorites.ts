@@ -37,3 +37,39 @@ export async function toggleFavorite(questionId: string) {
 
   return { isFavorite: true } as const;
 }
+
+export async function toggleFavoriteFlashcard(flashcardId: string) {
+  if (!/^F\d{4}$/.test(flashcardId)) {
+    throw new Error("La ficha solicitada no existe.");
+  }
+
+  const supabase = await createServerClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error("Debes iniciar sesión para guardar favoritos.");
+
+  const { data: favorite, error: lookupError } = await supabase
+    .from("favorites")
+    .select("id")
+    .eq("user_id", user.id)
+    .eq("item_type", "flashcard")
+    .eq("item_id", flashcardId)
+    .maybeSingle();
+
+  if (lookupError) throw new Error("No se ha podido actualizar el favorito.");
+
+  if (favorite) {
+    const { error } = await supabase.from("favorites").delete().eq("id", favorite.id).eq("user_id", user.id);
+    if (error) throw new Error("No se ha podido actualizar el favorito.");
+    return { isFavorite: false } as const;
+  }
+
+  const { error } = await supabase.from("favorites").insert({
+    user_id: user.id,
+    item_type: "flashcard",
+    item_id: flashcardId,
+  });
+  if (error) throw new Error("No se ha podido actualizar el favorito.");
+
+  return { isFavorite: true } as const;
+}
+

@@ -71,12 +71,18 @@ describe("course reader provenance and notes", () => {
     expect(screen.getByRole("button", { name: "Marcar como completada" })).toBeEnabled();
   });
 
-  it("links each reference to its canonical source instead of a search result", () => {
+  it("allows switching to the integrated official text tab when clicking the consult button", () => {
     render(<LessonReader lesson={getLesson("igualdad")!} progress={0} questions={[]} />);
 
-    expect(screen.getByRole("link", { name: /Ley Orgánica 3\/2007/i })).toHaveAttribute(
-      "href",
-      "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
-    );
+    // Initially we see the study guide explanation
+    expect(screen.getByText("Explicación y Teoría del Tema")).toBeVisible();
+
+    // Click on the button to check official text
+    const buttons = screen.getAllByRole("button", { name: /Consultar texto oficial/i });
+    fireEvent.click(buttons[0]);
+
+    // Now the active tab should switch to Official Text
+    expect(screen.getByRole("button", { name: /Guía de Estudio/i })).toBeVisible();
+    expect(screen.getByPlaceholderText(/Buscar artículos/i)).toBeVisible();
   });
 });
