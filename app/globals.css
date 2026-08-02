@@ -60,6 +60,7 @@ button:focus-visible,
 .user-menu-name, .user-menu-email { overflow-wrap: anywhere; margin: 0; }
 .user-menu-name { font-size: .875rem; font-weight: 700; }
 .user-menu-email { margin-top: .25rem; color: color-mix(in srgb, var(--ink) 68%, var(--paper)); font-size: .8125rem; }
+.user-menu-error { margin: .75rem 0 0; color: #9b1c1c; font-size: .8125rem; line-height: 1.45; }
 .user-menu-sign-out { width: 100%; min-height: 2.75rem; margin-top: 1rem; border: 1px solid var(--accent); padding: .5rem .75rem; background: transparent; color: var(--accent-strong); cursor: pointer; font: inherit; font-size: .8125rem; font-weight: 700; text-align: left; }
 [aria-busy="true"] { animation: shell-loading 1.2s ease-in-out infinite alternate; }
 @keyframes shell-loading { from { opacity: .55; } to { opacity: 1; } }

@@ -1,6 +1,5 @@
 import { DashboardContent } from "../../components/shell/content-width";
-import { MobileNavigation } from "../../components/shell/mobile-navigation";
-import { Sidebar } from "../../components/shell/sidebar";
+import { DashboardNavigation } from "../../components/shell/dashboard-navigation";
 import { UserMenu } from "../../components/shell/user-menu";
 import { createServerClient } from "../../lib/supabase/server";
 import { redirect } from "next/navigation";
@@ -20,10 +19,10 @@ export default async function DashboardLayout({ children }: Readonly<{ children:
 
   return (
     <div className="dashboard-shell">
-      <Sidebar currentPath="/" />
+      <DashboardNavigation placement="sidebar" />
       <div className="dashboard-surface">
         <header className="dashboard-header">
-          <MobileNavigation currentPath="/" />
+          <DashboardNavigation placement="mobile" />
           <p className="dashboard-context">Preparación ADIF Telecomunicaciones</p>
           <UserMenu profile={profile} />
         </header>

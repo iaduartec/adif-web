@@ -17,13 +17,21 @@ function initials(name?: string, email?: string) {
 export function UserMenu({ profile }: { profile: UserProfile }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSigningOut, setIsSigningOut] = useState(false);
+  const [signOutError, setSignOutError] = useState<string | null>(null);
   const name = profile.name?.trim() || profile.email?.split("@")[0] || "Usuario";
 
   async function signOut() {
     setIsSigningOut(true);
+    setSignOutError(null);
     try {
-      await createBrowserClient().auth.signOut();
+      const { error } = await createBrowserClient().auth.signOut();
+      if (error) {
+        setSignOutError(error.message || "No se pudo cerrar la sesión. Inténtalo de nuevo.");
+        return;
+      }
       window.location.assign("/login");
+    } catch {
+      setSignOutError("No se pudo cerrar la sesión. Inténtalo de nuevo.");
     } finally {
       setIsSigningOut(false);
     }
@@ -31,7 +39,7 @@ export function UserMenu({ profile }: { profile: UserProfile }) {
 
   return (
     <div className="user-menu">
-      <button className="user-menu-trigger" type="button" aria-expanded={isOpen} aria-haspopup="menu" onClick={() => setIsOpen((open) => !open)}>
+      <button className="user-menu-trigger" type="button" aria-label="Abrir menú de cuenta" aria-expanded={isOpen} aria-haspopup="menu" onClick={() => setIsOpen((open) => !open)}>
         {profile.avatarUrl ? (
           // Google profile image hosts are user-controlled and cannot be allowlisted at build time.
           // eslint-disable-next-line @next/next/no-img-element
@@ -43,6 +51,7 @@ export function UserMenu({ profile }: { profile: UserProfile }) {
         <div className="user-menu-popover" role="menu">
           <p className="user-menu-name">{name}</p>
           {profile.email ? <p className="user-menu-email">{profile.email}</p> : null}
+          {signOutError ? <p className="user-menu-error" role="alert">{signOutError}</p> : null}
           <button className="user-menu-sign-out" type="button" role="menuitem" disabled={isSigningOut} onClick={() => void signOut()}>
             {isSigningOut ? "Cerrando sesión…" : "Cerrar sesión"}
           </button>
