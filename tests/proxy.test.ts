@@ -5,9 +5,9 @@ const { updateSession } = vi.hoisted(() => ({ updateSession: vi.fn() }));
 
 vi.mock("../lib/supabase/middleware", () => ({ updateSession }));
 
-import { config, middleware } from "../middleware";
+import { config, proxy } from "../proxy";
 
-describe("middleware", () => {
+describe("proxy", () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -17,7 +17,7 @@ describe("middleware", () => {
     refreshedResponse.cookies.set("sb-access-token", "refreshed-token", { httpOnly: true });
     updateSession.mockResolvedValue({ response: refreshedResponse, user: null });
 
-    const response = await middleware(new NextRequest("http://localhost/curso"));
+    const response = await proxy(new NextRequest("http://localhost/curso"));
 
     expect(response.headers.get("location")).toBe("http://localhost/login?next=%2Fcurso");
     expect(response.headers.get("set-cookie")).toContain("sb-access-token=refreshed-token");
