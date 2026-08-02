@@ -11,9 +11,12 @@ const questionModules: Record<string, string> = {
   igualdad: "G1 Igualdad",
   "prevencion-riesgos-laborales": "G2 PRL",
   "estatuto-adif": "G3 Estatuto ADIF",
+  "codigo-conducta": "G4 Codigo de conducta",
+  incompatibilidades: "G5 Incompatibilidades",
   "ict-rd-346-2011": "E1 ICT RD 346/2011",
   "compatibilidad-electromagnetica": "E2 Compatibilidad electromagnetica",
   "rcf-libro-1": "E3 RCF Libro 1",
+  "declaracion-red-2027": "E4 Declaracion de la red",
   psicometria: "P Psicotecnicos",
   "ingles-a2": "I Ingles A2",
 };

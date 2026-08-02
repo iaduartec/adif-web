@@ -193,6 +193,106 @@ export const officialTexts: Record<string, OfficialTextSection> = {
       }
     ]
   },
+  "declaracion-red-2027": {
+    title: "Declaración sobre la Red 2027 (Adif) — Capítulos I y II",
+    articles: [
+      {
+        number: "Cap. 1 · 1.1",
+        title: "Introducción: la Declaración sobre la Red",
+        content: "La Declaración sobre la Red (DR) es el documento que expone las características de la infraestructura puesta a disposición de las empresas ferroviarias y candidatos y contiene información sobre las condiciones de acceso a la misma, así como sobre las condiciones de acceso a las instalaciones de servicio y a la prestación de servicios en dichas instalaciones. Se detallan las normas generales, plazos, procedimientos y criterios relativos a los sistemas de cánones y adjudicación de capacidad, así como la información necesaria para cursar una solicitud de capacidad de infraestructura."
+      },
+      {
+        number: "Cap. 1 · 1.2",
+        title: "Red Ferroviaria de Interés General (RFIG)",
+        content: "La RFIG está integrada por las infraestructuras ferroviarias, las estaciones de viajeros y terminales de transporte de mercancías que resulten esenciales para garantizar un sistema común de transporte ferroviario en todo el territorio del Estado o cuya administración conjunta resulte necesaria para el correcto funcionamiento del referido sistema común de transporte, conforme al artículo 4 de la Ley 38/2015, de 29 de septiembre, del Sector Ferroviario. Todos los elementos de la RFIG se incluyen en el Catálogo de la Red Ferroviaria de Interés General."
+      },
+      {
+        number: "Cap. 1 · 1.3",
+        title: "Aspectos legales y estatus jurídico de la DR",
+        content: "El marco básico legal se fundamenta en la normativa ferroviaria estatal y en los Reglamentos y Directivas de la Unión Europea traspuestos a la legislación nacional. La DR tiene carácter vinculante para las empresas ferroviarias y los candidatos, así como para el administrador de infraestructuras ferroviarias, en cuanto a los derechos y obligaciones que de ella se deriven. La presentación de la solicitud de adjudicación de capacidad conlleva la aceptación implícita de los derechos y obligaciones."
+      },
+      {
+        number: "Cap. 1 · 1.5",
+        title: "Período de validez, actualización y publicación",
+        content: "La DR se actualiza cada ejercicio e incluye el horario de servicio correspondiente, cumpliendo con lo establecido en la Orden FOM/897/2005. Aprobada por el Consejo de Administración del Administrador de infraestructuras, se publica en la web www.adif.es en formato PDF, en castellano, en las lenguas cooficiales de las comunidades autónomas y en lengua inglesa; en caso de discrepancia prevalece la versión en castellano."
+      },
+      {
+        number: "Cap. 1 · 1.7",
+        title: "Cooperación internacional",
+        content: "Adif participa en los Corredores Ferroviarios Europeos de Mercancías (RFC) y es miembro de RailNet Europe (RNE), asociación de administradores de infraestructura europeos. La estructura común y la Guía de Implementación de la Declaración sobre la Red se aprueban por la Asamblea General de RailNet Europe."
+      },
+      {
+        number: "Cap. 2",
+        title: "Descripción de las infraestructuras ferroviarias",
+        content: "El capítulo II describe las principales características técnicas y funcionales de la RFIG gestionada por el Administrador de Infraestructuras: red de alta velocidad, red convencional, red de ancho métrico, sistemas de seguridad de la circulación (ERTMS, ASFA, bloqueos automatizados y CTC), electrificación, estaciones de viajeros y terminales de transporte de mercancías, con sus correspondientes catálogos, mapas y fichas descriptivas."
+      }
+    ]
+  },
+  "codigo-conducta": {
+    title: "Real Decreto Legislativo 5/2015 — Capítulo VI (Título III): Deberes de los empleados públicos. Código de Conducta",
+    articles: [
+      {
+        number: "Artículo 52",
+        title: "Deberes de los empleados públicos. Código de Conducta",
+        content: "Los empleados públicos deberán desempeñar con diligencia las tareas que tengan asignadas y velar por los intereses generales con sujeción y observancia de la Constitución y del resto del ordenamiento jurídico, y deberán actuar con arreglo a los siguientes principios: objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez, promoción del entorno cultural y medioambiental, y respeto a la igualdad entre mujeres y hombres, que inspiran el Código de Conducta de los empleados públicos configurado por los principios éticos y de conducta regulados en los artículos siguientes.\n\nLos principios y reglas establecidos en este capítulo informarán la interpretación y aplicación del régimen disciplinario de los empleados públicos."
+      },
+      {
+        number: "Artículo 53",
+        title: "Principios éticos",
+        content: "1. Los empleados públicos respetarán la Constitución y el resto de normas que integran el ordenamiento jurídico.\n\n2. Su actuación perseguirá la satisfacción de los intereses generales de los ciudadanos y se fundamentará en consideraciones objetivas orientadas hacia la imparcialidad y el interés común.\n\n3. Ajustarán su actuación a los principios de lealtad y buena fe con la Administración en la que presten sus servicios, y con sus superiores, compañeros, subordinados y con los ciudadanos.\n\n4. Su conducta se basará en el respeto de los derechos fundamentales y libertades públicas, evitando toda actuación que pueda producir discriminación alguna.\n\n5. Se abstendrán en aquellos asuntos en los que tengan un interés personal, así como de toda actividad privada o interés que pueda suponer un riesgo de plantear conflictos de intereses con su puesto público.\n\n6. No contraerán obligaciones económicas ni intervendrán en operaciones financieras, obligaciones patrimoniales o negocios jurídicos con personas o entidades cuando pueda suponer un conflicto de intereses con las obligaciones de su puesto público.\n\n7. No aceptarán ningún trato de favor o situación que implique privilegio o ventaja injustificada, por parte de personas físicas o entidades privadas.\n\n8. Actuarán de acuerdo con los principios de eficacia, economía y eficiencia.\n\n9. No influirán en la agilización o resolución de trámite o procedimiento administrativo sin justa causa y, en ningún caso, cuando ello comporte un privilegio.\n\n10. Cumplirán con diligencia las tareas que les correspondan o se les encomienden y resolverán dentro de plazo los procedimientos o expedientes de su competencia.\n\n11. Ejercerán sus atribuciones según el principio de dedicación al servicio público.\n\n12. Guardarán secreto de las materias clasificadas u otras cuya difusión esté prohibida legalmente, y mantendrán la debida discreción sobre aquellos asuntos que conozcan por razón de su cargo, sin que puedan hacer uso de la información obtenida para beneficio propio o de terceros, o en perjuicio del interés público."
+      },
+      {
+        number: "Artículo 54",
+        title: "Principios de conducta",
+        content: "1. Tratarán con atención y respeto a los ciudadanos, a sus superiores y a los restantes empleados públicos.\n\n2. El desempeño de las tareas correspondientes a su puesto de trabajo se realizará de forma diligente y cumpliendo la jornada y el horario establecidos.\n\n3. Obedecerán las instrucciones y órdenes profesionales de los superiores, salvo que constituyan una infracción manifiesta del ordenamiento jurídico, en cuyo caso las pondrán inmediatamente en conocimiento de los órganos de inspección procedentes.\n\n4. Informarán a los ciudadanos sobre aquellas materias o asuntos que tengan derecho a conocer.\n\n5. Administrarán los recursos y bienes públicos con austeridad, y no utilizarán los mismos en provecho propio o de personas allegadas.\n\n6. Se rechazará cualquier regalo, favor o servicio en condiciones ventajosas que vaya más allá de los usos habituales, sociales y de cortesía, sin perjuicio de lo establecido en el Código Penal.\n\n7. Garantizarán la constancia y permanencia de los documentos para su transmisión y entrega a sus posteriores responsables.\n\n8. Mantendrán actualizada su formación y cualificación.\n\n9. Observarán las normas sobre seguridad y salud laboral.\n\n10. Pondrán en conocimiento de sus superiores o de los órganos competentes las propuestas que consideren adecuadas para mejorar el desarrollo de las funciones de la unidad en la que estén destinados.\n\n11. Garantizarán la atención al ciudadano en la lengua que lo solicite siempre que sea oficial en el territorio."
+      }
+    ]
+  },
+  incompatibilidades: {
+    title: "Ley 53/1984, de 26 de diciembre, de Incompatibilidades del personal al servicio de las Administraciones Públicas",
+    articles: [
+      {
+        number: "Artículo 1",
+        title: "Principios generales de dedicación",
+        content: "1. El personal comprendido en el ámbito de aplicación de esta Ley no podrá compatibilizar sus actividades con el desempeño, por sí o mediante sustitución, de un segundo puesto de trabajo, cargo o actividad en el sector público, salvo en los supuestos previstos en la misma.\n\n2. No se podrá percibir, salvo en los supuestos previstos en esta Ley, más de una remuneración con cargo a los presupuestos de las Administraciones Públicas.\n\n3. En cualquier caso, el desempeño de un puesto de trabajo será incompatible con el ejercicio de cualquier cargo, profesión o actividad, público o privado, que pueda impedir o menoscabar el estricto cumplimiento de sus deberes o comprometer su imparcialidad o independencia."
+      },
+      {
+        number: "Artículo 2",
+        title: "Ámbito de aplicación",
+        content: "1. La presente Ley será de aplicación a: a) El personal civil y militar al servicio de la Administración del Estado y de sus Organismos Públicos; b) El personal al servicio de las Administraciones de las Comunidades Autónomas; c) El personal al servicio de las Corporaciones Locales; d) El personal al servicio de Entes y Organismos públicos; e) El personal que desempeñe funciones públicas y perciba sus retribuciones mediante arancel; f) El personal al servicio de la Seguridad Social; g) El personal al servicio de entidades, corporaciones de derecho público, fundaciones y consorcios cuyos presupuestos se doten ordinariamente en más de un 50 por cien con subvenciones de las AAPP; h) El personal que preste servicios en Empresas en que la participación del capital de las AAPP sea superior al 50 por 100; i) El personal al servicio del Banco de España y de las instituciones financieras públicas; j) El restante personal al que resulte de aplicación el régimen estatutario de los funcionarios públicos."
+      },
+      {
+        number: "Artículo 3",
+        title: "Segundo puesto en el sector público",
+        content: "1. El personal comprendido en el ámbito de aplicación de esta Ley sólo podrá desempeñar un segundo puesto de trabajo o actividad en el sector público en los supuestos previstos en la misma para las funciones docente y sanitaria, en los casos a que se refieren los artículos 5 y 6, y en los que, por razón de interés público, se determine por el Consejo de Ministros mediante Real Decreto. Para el ejercicio de la segunda actividad será indispensable la previa y expresa autorización de compatibilidad, que se efectuará en razón del interés público.\n\n2. El desempeño de un puesto de trabajo en el sector público es incompatible con la percepción de pensión de jubilación o retiro por Derechos Pasivos, salvo los supuestos de pensión de jubilación parcial compatibles con puesto a tiempo parcial."
+      },
+      {
+        number: "Artículo 7",
+        title: "Límites de las retribuciones de actividades públicas",
+        content: "Será requisito necesario para autorizar la compatibilidad de actividades públicas que la cantidad total percibida por ambos puestos no supere la remuneración prevista en los Presupuestos Generales del Estado para el cargo de Director General, ni supere la correspondiente al principal incrementada en un 30 por 100 para funcionarios del grupo A, un 35 por 100 para el grupo B, un 40 por 100 para el grupo C, un 45 por 100 para el grupo D y un 50 por 100 para el grupo E. Los servicios prestados en el segundo puesto no se computarán a efectos de trienios ni de derechos pasivos."
+      },
+      {
+        number: "Artículo 11",
+        title: "Prohibición general de actividades privadas",
+        content: "El personal comprendido en el ámbito de aplicación de esta Ley no podrá ejercer, por sí o mediante sustitución, actividades privadas, incluidas las de carácter profesional, sean por cuenta propia o bajo la dependencia o al servicio de Entidades o particulares que se relacionen directamente con las que desarrolle el Departamento, Organismo o Entidad donde estuviera destinado. Se exceptúan de dicha prohibición las actividades particulares que, en ejercicio de un derecho legalmente reconocido, realicen para sí los directamente interesados."
+      },
+      {
+        number: "Artículo 12",
+        title: "Actividades privadas prohibidas en todo caso",
+        content: "1. El personal no podrá ejercer las siguientes actividades: a) El desempeño de actividades privadas, incluidas las de carácter profesional, en los asuntos en que esté interviniendo, haya intervenido en los dos últimos años o tenga que intervenir por razón del puesto público; b) La pertenencia a Consejos de Administración u órganos rectores de Empresas o Entidades privadas, siempre que la actividad de las mismas esté directamente relacionada con las que gestione el Departamento, Organismo o Entidad en que preste sus servicios; c) El desempeño, por sí o por persona interpuesta, de cargos de todo orden en Empresas o Sociedades concesionarias, contratistas de obras, servicios o suministros, arrendatarias o administradoras de monopolios, o con participación o aval del sector público; d) La participación superior al 10 por 100 en el capital de las Empresas o Sociedades a que se refiere el párrafo anterior."
+      },
+      {
+        number: "Artículo 14",
+        title: "Reconocimiento de compatibilidad para actividades privadas",
+        content: "El ejercicio de actividades profesionales, laborales, mercantiles o industriales fuera de las Administraciones Públicas requerirá el previo reconocimiento de compatibilidad. La resolución motivada reconociendo la compatibilidad o declarando la incompatibilidad se dictará en el plazo de dos meses y corresponde al Ministerio de la Presidencia, al órgano competente de la Comunidad Autónoma o al Pleno de la Corporación Local. Los reconocimientos de compatibilidad no podrán modificar la jornada de trabajo y horario del interesado y quedarán automáticamente sin efecto en caso de cambio de puesto en el sector público."
+      },
+      {
+        number: "Artículo 19",
+        title: "Actividades exceptuadas",
+        content: "Quedan exceptuadas del régimen de incompatibilidades de la presente Ley las actividades siguientes: a) Las derivadas de la Administración del patrimonio personal o familiar; b) La dirección de seminarios o el dictado de cursos o conferencias en Centros oficiales destinados a la formación de funcionarios o profesorado, cuando no tengan carácter permanente o habitual ni supongan más de setenta y cinco horas al año; c) La participación en Tribunales calificadores de pruebas selectivas para ingreso en las Administraciones Públicas; d) La participación del personal docente en exámenes, pruebas o evaluaciones distintas de las que habitualmente les correspondan; e) El ejercicio del cargo de Presidente, Vocal o miembro de Juntas rectoras de Mutualidades o Patronatos de Funcionarios, siempre que no sea retribuido; f) La producción y creación literaria, artística, científica y técnica; g) La participación ocasional en coloquios y programas en cualquier medio de comunicación social; h) La colaboración y la asistencia ocasional a Congresos, seminarios, conferencias o cursos de carácter profesional."
+      }
+    ]
+  },
   psicometria: {
     title: "Guía de Evaluación Psicotécnica y Psicométrica para el Ingreso en ADIF",
     articles: [

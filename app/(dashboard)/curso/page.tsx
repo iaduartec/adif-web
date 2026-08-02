@@ -6,9 +6,9 @@ import { OriginLabel } from "../../../components/course/origin-label";
 export const dynamic = "force-dynamic";
 
 const courseBlocks = [
-  { title: "Bloque común", slugs: ["igualdad", "prevencion-riesgos-laborales", "estatuto-adif"], minutes: [18, 20, 16] },
+  { title: "Bloque común", slugs: ["igualdad", "prevencion-riesgos-laborales", "estatuto-adif", "codigo-conducta", "incompatibilidades"], minutes: [18, 20, 16, 14, 15] },
   { title: "Telecomunicaciones", slugs: ["ict-rd-346-2011", "compatibilidad-electromagnetica"], minutes: [22, 18] },
-  { title: "Entorno ferroviario y pruebas", slugs: ["rcf-libro-1", "psicometria", "ingles-a2"], minutes: [25, 15, 14] },
+  { title: "Entorno ferroviario y pruebas", slugs: ["rcf-libro-1", "declaracion-red-2027", "psicometria", "ingles-a2"], minutes: [25, 18, 15, 14] },
 ] as const;
 
 export default async function CourseIndexPage() {
@@ -25,7 +25,7 @@ export default async function CourseIndexPage() {
       <header className="course-index__header">
         <p className="course-eyebrow">Itinerario de estudio</p>
         <h1 id="course-title">Curso ADIF Telecomunicaciones</h1>
-        <p>Ocho lecciones para estudiar con una lectura ordenada, referencias para cotejar y un registro personal de avance.</p>
+        <p>Once lecciones para estudiar con una lectura ordenada, referencias para cotejar y un registro personal de avance.</p>
       </header>
       {courseBlocks.map((block) => (
         <section className="course-block" key={block.title} aria-labelledby={`block-${block.title}`}>

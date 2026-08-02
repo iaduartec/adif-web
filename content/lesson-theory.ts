@@ -337,6 +337,153 @@ export const lessonTheories: Record<string, TheorySection> = {
       "La práctica diaria y cronometrada es el método científico más eficaz para automatizar la resolución de series y razonamientos lógicos."
     ]
   },
+  "declaracion-red-2027": {
+    introduction: "La Declaración sobre la Red (DR) es el documento que el Administrador de Infraestructuras Ferroviarias (Adif) publica cada año para exponer las características de la infraestructura ferroviaria puesta a disposición de las empresas ferroviarias y candidatos, así como las condiciones de acceso a la Red Ferroviaria de Interés General (RFIG), a las instalaciones de servicio y la prestación de servicios en dichas instalaciones. Para la oposición de Personal Operativo de Adif, el estudio se centra en los capítulos I (Información General) y II (Descripción de las Infraestructuras), que contienen la estructura del sector ferroviario español, la definición de la RFIG, los agentes intervinientes, el marco legal y los procedimientos de adjudicación de capacidad y tarificación.",
+    concepts: [
+      {
+        title: "Declaración sobre la Red (DR)",
+        description: "Documento del Administrador de Infraestructuras que expone las características de la infraestructura, las condiciones de acceso a la RFIG, las instalaciones de servicio y los servicios prestados. Detalla normas generales, plazos, procedimientos y criterios de cánones y adjudicación de capacidad. Se regula por la Ley 38/2015 del Sector Ferroviario y la Orden FOM/897/2005, y se aprueba anualmente por el Consejo de Administración de Adif."
+      },
+      {
+        title: "Red Ferroviaria de Interés General (RFIG)",
+        description: "Conjunto de infraestructuras ferroviarias, estaciones de viajeros y terminales de mercancías esenciales para garantizar un sistema común de transporte ferroviario en todo el territorio del Estado o cuya administración conjunta sea necesaria para su correcto funcionamiento, conforme al artículo 4 de la Ley 38/2015. Incluye itinerarios de tráfico internacional, enlaces entre comunidades autónomas y conexiones a núcleos de población. Todos sus elementos se recogen en el Catálogo de la RFIG."
+      },
+      {
+        title: "Principales agentes del sector ferroviario",
+        description: "El Ministerio de Transportes y Movilidad Sostenible planifica, regula y supervisa el sistema. De él dependen las entidades públicas empresariales Adif, Adif-Alta Velocidad, Renfe-Operadora, Puertos del Estado y Enaire. La Comisión Nacional de los Mercados y la Competencia (CNMC) actúa como órgano regulador: garantiza la pluralidad de la oferta, la igualdad de acceso al mercado, la supervisión de cánones y tarifas y la comprobación de cláusulas no discriminatorias de la DR."
+      },
+      {
+        title: "Grandes cifras de la red de Adif",
+        description: "Datos referidos al ejercicio: aproximadamente 11.675 km de red titularidad de Adif (10.212 km de red convencional de ancho ibérico, 57 km de AV de ancho estándar puro, 84 km de AV de ancho ibérico, 127 km de red mixta de tercer carril y 1.195 km de vía estrecha de ancho métrico), 1.445 estaciones de viajeros, 45 terminales de mercancías y unos 13.619 empleados."
+      },
+      {
+        title: "Marco legal y estatus jurídico de la DR",
+        description: "La base legal es la normativa ferroviaria estatal (Ley 38/2015 del Sector Ferroviario, Orden FOM/897/2005) y la normativa europea transpuesta. La DR tiene carácter vinculante para las empresas ferroviarias, los candidatos y el propio administrador de infraestructuras en cuanto a los derechos y obligaciones que de ella se deriven. La presentación de una solicitud de capacidad implica la aceptación implícita de sus condiciones."
+      },
+      {
+        title: "Adjudicación de capacidad",
+        description: "Proceso por el cual el Administrador de Infraestructuras asigna franjas horarias (surcos) a las empresas ferroviarias y candidatos para la prestación de servicios. Se rige por criterios objetivos, transparentes y no discriminatorios, tal y como se detalla en el capítulo 4 de la DR, y la solicitud de capacidad puede ser lineal o en instalaciones de servicio."
+      },
+      {
+        title: "Cooperación internacional",
+        description: "Adif participa en los Corredores Ferroviarios Europeos de Mercancías (RFC) y en RailNet Europe (RNE), asociación de administradores de infraestructura europeos que facilita la interoperabilidad y la publicación coordinada de las Declaraciones sobre la Red conforme a una estructura común aprobada por su Asamblea General."
+      }
+    ],
+    examples: [
+      {
+        situation: "Una empresa ferroviaria privada solicita a Adif acceso a un tramo de la RFIG para operar un servicio de transporte de viajeros en competencia con el operador público.",
+        application: "Adif debe aplicar los principios de transparencia y no discriminación: la solicitud de capacidad debe tramitarse en igualdad de condiciones para todos los candidatos, y el acceso a la infraestructura se regula por la Ley 38/2015 y la Declaración sobre la Red vigente."
+      },
+      {
+        situation: "Una empresa ferroviaria detecta que el catálogo de ejes y líneas de la RFIG no incluye un tramo que quiere utilizar.",
+        application: "Todos los elementos de la RFIG deben figurar en el Catálogo de la Red Ferroviaria de Interés General con su código oficial (Anexo F de la DR). Si el tramo no está incluido, no forma parte de la RFIG gestionada por Adif y no puede asignarse capacidad sobre él."
+      },
+      {
+        situation: "Un candidato considera que la Declaración sobre la Red contiene cláusulas que le perjudican frente a otros operadores.",
+        application: "La CNMC supervisa la DR en sus versiones provisional y definitiva, comprobando que no contenga cláusulas discriminatorias ni otorgue poderes discrecionales al administrador. El candidato puede dirigirse al órgano regulador para la resolución de la reclamación."
+      }
+    ],
+    reviewTakeaways: [
+      "La DR tiene carácter vinculante y se aprueba anualmente por el Consejo de Administración de Adif.",
+      "La RFIG se define en el artículo 4 de la Ley 38/2015 y sus elementos se recogen en el Catálogo de la RFIG.",
+      "Los agentes clave del sector son el Ministerio de Transportes, Adif, Adif-Alta Velocidad, Renfe-Operadora y la CNMC como regulador.",
+      "El acceso a la infraestructura se basa en los principios de objetividad, transparencia y no discriminación."
+    ]
+  },
+  "codigo-conducta": {
+    introduction: "El Capítulo VI del Título III del Estatuto Básico del Empleado Público (Real Decreto Legislativo 5/2015, de 30 de octubre) regula los deberes de los empleados públicos y configura el Código de Conducta, integrado por los principios éticos (artículo 53) y los principios de conducta (artículo 54). Estos principios informan la interpretación y aplicación del régimen disciplinario de los empleados públicos, por lo que constituyen un bloque esencial para la oposición de Personal Operativo de Adif, tanto en su parte de legislación general como en las situaciones prácticas del desempeño diario.",
+    concepts: [
+      {
+        title: "Deberes de los empleados públicos (Art. 52)",
+        description: "Los empleados públicos deben desempeñar con diligencia las tareas asignadas y velar por los intereses generales con sujeción a la Constitución y al ordenamiento jurídico, actuando conforme a los principios de objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez, promoción del entorno cultural y medioambiental, y respeto a la igualdad entre mujeres y hombres."
+      },
+      {
+        title: "Principios éticos (Art. 53)",
+        description: "Los empleados públicos respetarán la Constitución y el resto del ordenamiento jurídico; su actuación perseguirá el interés general con consideraciones objetivas e imparciales; se ajustarán a los principios de lealtad y buena fe; respetarán los derechos fundamentales evitando toda discriminación; se abstendrán en asuntos con interés personal y de actividades que supongan conflicto de intereses; no aceptarán tratos de favor; actuarán con eficacia, economía y eficiencia; guardarán secreto de las materias clasificadas y mantendrán discreción sobre lo conocido por razón de su cargo."
+      },
+      {
+        title: "Principios de conducta (Art. 54)",
+        description: "Tratarán con atención y respeto a ciudadanos y superiores; desempeñarán sus tareas con diligencia cumpliendo jornada y horario; obedecerán las órdenes de los superiores salvo que constituyan infracción manifiesta del ordenamiento; informarán a los ciudadanos; administrarán los recursos públicos con austeridad sin usarlos en provecho propio; rechazarán regalos o favores que vayan más allá de los usos habituales de cortesía; garantizarán la constancia de los documentos; mantendrán actualizada su formación; observarán las normas de seguridad y salud laboral; propondrán mejoras de eficacia del servicio; y atenderán al ciudadano en la lengua oficial que solicite."
+      },
+      {
+        title: "Relación con el régimen disciplinario",
+        description: "Los principios y reglas del Código de Conducta informan la interpretación y aplicación del régimen disciplinario de los empleados públicos (Título VII del EBEP), de modo que las faltas disciplinarias se valoran conforme a los deberes y principios éticos y de conducta establecidos en el capítulo."
+      }
+    ],
+    examples: [
+      {
+        situation: "Un empleado de Adif recibe una orden de su superior para favorecer a una empresa contratista en un trámite administrativo a cambio de ventajas.",
+        application: "La orden constituye una infracción manifiesta del ordenamiento jurídico. Conforme al artículo 54.3 del EBEP, el empleado no debe obedecerla y debe ponerla inmediatamente en conocimiento de los órganos de inspección procedentes."
+      },
+      {
+        situation: "Un operador de circulación conoce por razón de su cargo la planificación de una obra en la vía y la comparte con un amigo para una operación inmobiliaria.",
+        application: "Viola el artículo 53.12 del EBEP: debe guardar secreto de las materias cuya difusión esté prohibida y no puede hacer uso de la información obtenida por razón de su cargo para beneficio propio o de terceros."
+      },
+      {
+        situation: "Un maquinista recibe un obsequio de alto valor de un proveedor que mantiene contratos con Adif.",
+        application: "Conforme al artículo 54.6, se rechazará cualquier regalo, favor o servicio en condiciones ventajosas que vaya más allá de los usos habituales de cortesía, sin perjuicio de lo establecido en el Código Penal."
+      }
+    ],
+    reviewTakeaways: [
+      "El Código de Conducta se compone de los principios éticos (Art. 53) y los principios de conducta (Art. 54).",
+      "Las órdenes que constituyan infracción manifiesta del ordenamiento no deben obedecerse y deben ponerse en conocimiento de la inspección.",
+      "El empleado público no puede usar la información obtenida por su cargo en beneficio propio o de terceros.",
+      "La infracción de estos deberes se sanciona conforme al régimen disciplinario del Título VII del EBEP."
+    ]
+  },
+  incompatibilidades: {
+    introduction: "La Ley 53/1984, de 26 de diciembre, de Incompatibilidades del personal al servicio de las Administraciones Públicas parte del principio de dedicación del personal a un solo puesto de trabajo en el sector público, sin más excepciones que las que demande el propio servicio público, respetando las actividades privadas que no puedan impedir o menoscabar el estricto cumplimiento de sus deberes ni comprometer su imparcialidad o independencia. Desarrolla el mandato de los artículos 103.3 y 149.1.18 de la Constitución y resulta de aplicación directa al personal de Adif como entidad pública empresarial.",
+    concepts: [
+      {
+        title: "Principio general de dedicación (Art. 1)",
+        description: "El personal al servicio de las AAPP no podrá compatibilizar sus actividades con el desempeño de un segundo puesto de trabajo, cargo o actividad en el sector público, salvo en los supuestos previstos en la propia Ley. Tampoco podrá percibir más de una remuneración con cargo a los presupuestos de las AAPP, y el desempeño de un puesto será incompatible con cualquier cargo, profesión o actividad pública o privada que pueda impedir o menoscabar el cumplimiento de sus deberes o comprometer su imparcialidad o independencia."
+      },
+      {
+        title: "Ámbito de aplicación (Art. 2)",
+        description: "Se aplica al personal civil y militar de la Administración del Estado, de las Comunidades Autónomas, de las Corporaciones Locales, de entes y organismos públicos, de la Seguridad Social, del Banco de España, de empresas con participación pública superior al 50%, de entidades con presupuesto mayoritariamente subvencionado por las AAPP, y al personal que perciba retribuciones mediante arancel."
+      },
+      {
+        title: "Actividades públicas compatibles (Arts. 3 a 5)",
+        description: "Solo puede desempeñarse un segundo puesto en el sector público en los supuestos previstos para funciones docente y sanitaria, en los casos de los artículos 5 y 6, o cuando lo determine el Consejo de Ministros por Real Decreto. La compatibilidad requiere autorización expresa previa, se concede en razón del interés público y exige cumplir estrictamente la jornada de ambos puestos."
+      },
+      {
+        title: "Límites retributivos (Art. 7)",
+        description: "Para autorizar la compatibilidad de actividades públicas se exige que la cantidad total percibida por ambos puestos no supere la remuneración prevista para el cargo de Director General, ni supere la del puesto principal incrementada en un 30% para grupo A, 35% para grupo B, 40% para grupo C, 45% para grupo D y 50% para grupo E. Los servicios del segundo puesto no computan a efectos de trienios ni derechos pasivos."
+      },
+      {
+        title: "Actividades privadas (Arts. 11 y 12)",
+        description: "El personal no podrá ejercer actividades privadas que se relacionen directamente con las que desarrolle el departamento u organismo donde esté destinado. En todo caso, quedan prohibidas: las actividades privadas en asuntos en los que intervenga o haya intervenido en los dos últimos años por razón del puesto; la pertenencia a consejos de administración de empresas directamente relacionadas con su departamento; el desempeño de cargos en empresas concesionarias, contratistas o con participación del sector público; y la participación superior al 10% en el capital de dichas sociedades."
+      },
+      {
+        title: "Reconocimiento de compatibilidad (Art. 14)",
+        description: "El ejercicio de actividades profesionales, laborales, mercantiles o industriales fuera de las AAPP requiere el previo reconocimiento de compatibilidad, que se resuelve en el plazo de dos meses por el Ministerio de la Presidencia, el órgano competente de la Comunidad Autónoma o el Pleno de la Corporación Local. Los reconocimientos no modifican la jornada y quedan sin efecto si cambia el puesto."
+      },
+      {
+        title: "Actividades exceptuadas (Art. 19)",
+        description: "Quedan exceptuadas del régimen de incompatibilidades: la administración del patrimonio personal o familiar; la dirección de seminarios o cursos en centros oficiales de formación cuando no superen 75 horas al año; la participación en tribunales calificadores; la producción literaria, artística, científica y técnica; la participación ocasional en coloquios y medios de comunicación; y la colaboración ocasional en congresos y seminarios."
+      }
+    ],
+    examples: [
+      {
+        situation: "Un técnico de telecomunicaciones de Adif quiere montar una empresa de instalación de redes de telecomunicación que contrata con Adif como contratista.",
+        application: "Incompatible. El artículo 12.1 c) prohíbe el desempeño de cargos en empresas contratistas de obras, servicios o suministros de las AAPP, y el artículo 12.1 d) prohíbe la participación superior al 10% en su capital. La actividad se relaciona directamente con las funciones del puesto."
+      },
+      {
+        situation: "Un empleado de Adif solicita autorización para dar clases particulares de idiomas por las tardes.",
+        application: "La actividad docente privada no relacionada con su puesto no está prohibida en términos absolutos, pero el ejercicio de actividades profesionales fuera de las AAPP requiere el previo reconocimiento de compatibilidad conforme al artículo 14, siempre que no menoscabe la jornada ni comprometa la imparcialidad."
+      },
+      {
+        situation: "Un empleado público es elegido concejal de su ayuntamiento con dedicación parcial.",
+        application: "El artículo 5.1 b) permite compatibilizar el puesto con el cargo electivo de miembro de Corporación Local salvo que desempeñe cargo retribuido en régimen de dedicación exclusiva. En dedicación parcial, las retribuciones se limitan conforme al artículo 75.2 de la Ley 7/1985."
+      }
+    ],
+    reviewTakeaways: [
+      "Regla general: un solo puesto en el sector público y una sola remuneración con cargo a los presupuestos.",
+      "La compatibilidad de actividades públicas requiere autorización expresa previa, en razón del interés público.",
+      "Quedan prohibidas las actividades privadas relacionadas con el departamento y la participación superior al 10% en empresas contratistas o concesionarias.",
+      "El ejercicio de actividades privadas fuera de las AAPP exige reconocimiento previo de compatibilidad."
+    ]
+  },
   "ingles-a2": {
     introduction: "La prueba de inglés para el ingreso en ADIF corresponde al nivel de competencia A2 del Marco Común Europeo de Referencia para las Lenguas (MCER). Evalúa el dominio práctico de estructuras gramaticales cotidianas, el uso correcto de los tiempos verbales (en especial los pasados regular e irregular), el manejo de los verbos modales de obligación, permiso y prohibición, y la comprensión de un glosario de términos ferroviarios básicos.",
     concepts: [
