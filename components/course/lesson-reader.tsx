@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import { OriginLabel } from "./origin-label";
 import { officialTexts } from "../../content/official-texts";
 import { lessonTheories } from "../../content/lesson-theory";
+import { fullTexts } from "../../content/full-texts";
 
 export function LessonReader({
   lesson,
@@ -43,6 +44,9 @@ export function LessonReader({
   // Get official text sections for the current lesson slug
   const officialNorm = officialTexts[lesson.slug];
 
+  // Get the full official document text for the current lesson slug
+  const fullText = fullTexts[lesson.slug];
+
   // Get theory content for the current lesson slug
   const theory = lessonTheories[lesson.slug];
 
@@ -58,6 +62,20 @@ export function LessonReader({
         art.content.toLowerCase().includes(query),
     );
   }, [officialNorm, searchQuery]);
+
+  // Search within the full document: keep every line that matches the query
+  const fullTextLines = useMemo(() => {
+    if (!fullText) return [];
+    return fullText.split("\n");
+  }, [fullText]);
+
+  const filteredFullLines = useMemo(() => {
+    if (!searchQuery.trim()) return null;
+    const query = searchQuery.toLowerCase();
+    return fullTextLines
+      .map((line, index) => ({ line, index }))
+      .filter(({ line }) => line.toLowerCase().includes(query));
+  }, [fullTextLines, searchQuery]);
 
   return (
     <article className="lesson-reader">
@@ -233,6 +251,36 @@ export function LessonReader({
                     value={searchQuery}
                   />
                 </div>
+
+                {fullText ? (
+                  <div className="space-y-4 pt-2">
+                    <section aria-labelledby="full-doc-title" className="bg-white border border-rail p-4">
+                      <div className="flex justify-between items-center mb-2 flex-wrap gap-2">
+                        <h4 id="full-doc-title" className="font-bold text-sm text-ink">
+                          Documento completo
+                        </h4>
+                        <span className="text-xs text-gray-500">
+                          {filteredFullLines ? `${filteredFullLines.length} coincidencias` : `${fullTextLines.length} líneas`}
+                        </span>
+                      </div>
+                      <div className="max-h-[60vh] overflow-auto border border-rail bg-white text-sm text-gray-800 leading-relaxed whitespace-pre-wrap p-4 font-mono text-[13px]">
+                        {filteredFullLines
+                          ? filteredFullLines.map(({ line, index }) => (
+                              <div key={index} className="flex gap-3">
+                                <span className="text-gray-400 select-none shrink-0 w-10 text-right">{index + 1}</span>
+                                <span>{line}</span>
+                              </div>
+                            ))
+                          : fullTextLines.map((line, index) => (
+                              <div key={index} className="flex gap-3">
+                                <span className="text-gray-400 select-none shrink-0 w-10 text-right">{index + 1}</span>
+                                <span>{line}</span>
+                              </div>
+                            ))}
+                      </div>
+                    </section>
+                  </div>
+                ) : null}
 
                 <div className="space-y-4 pt-2">
                   {filteredArticles.length > 0 ? (
