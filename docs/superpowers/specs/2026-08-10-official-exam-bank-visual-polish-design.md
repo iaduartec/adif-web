@@ -42,6 +42,12 @@ Documentos de partida:
 
 La parte psicométrica no se incorporará si el cuadernillo solo está disponible en la consulta privada del candidato. La existencia de una plantilla de respuestas sin el cuadernillo legible tampoco será suficiente para importar una pregunta.
 
+### Corpus inicial aprobado
+
+La publicación inicial contiene 102 apariciones oficiales revisadas: 15 en los modelos 1433 y 4101 de 2023, y 18 en cada modelo 3403, 3413, 1131 y 4104. Las seis preguntas de reserva de 2023 sin clave A–D publicada quedan excluidas. El corpus tiene 72 huellas de contenido distintas y 30 pares de reutilización literal oficial; estas reutilizaciones se conservan como apariciones separadas de sus modelos de origen.
+
+Los seis modelos se etiquetan como `Parte específica` porque no reproducen el examen completo. El manifiesto, la transcripción y el informe de importación son el registro de publicación: un modelo solo pasa el control cuando su URL de ADIF, páginas de cuadernillo y plantilla, opciones A–D, clave y revisión visual están completos.
+
 ## 4. Modelo de datos y procedencia
 
 Cada pregunta oficial tendrá, como mínimo:
