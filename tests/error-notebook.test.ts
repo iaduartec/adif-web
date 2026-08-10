@@ -24,4 +24,16 @@ describe("deriveErrorNotebook", () => {
       expect.objectContaining({ id: "Q0002", prompt: "Segunda pregunta", module: "G2 PRL" }),
     ]);
   });
+
+  it("restores a question to the notebook when the latest attempt is wrong again", () => {
+    const items = deriveErrorNotebook(questions, [
+      { question_id: "Q0001", is_correct: false, created_at: "2026-08-01T09:00:00.000Z" },
+      { question_id: "Q0001", is_correct: true, created_at: "2026-08-01T10:00:00.000Z" },
+      { question_id: "Q0001", is_correct: false, created_at: "2026-08-01T11:00:00.000Z" },
+    ]);
+
+    expect(items).toEqual([
+      expect.objectContaining({ id: "Q0001", prompt: "Primera pregunta", module: "G1 Igualdad" }),
+    ]);
+  });
 });

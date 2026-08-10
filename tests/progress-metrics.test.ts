@@ -89,6 +89,7 @@ describe("recommendNextSession", () => {
     const rec = recommendNextSession(lessons, "G1 Igualdad");
     expect(rec.type).toBe("lesson");
     expect(rec.id).toBe("prevencion");
+    expect(rec.href).toBe("/curso/prevencion");
   });
 
   it("recommends practicing the weakest module if all lessons are completed", () => {
@@ -99,11 +100,20 @@ describe("recommendNextSession", () => {
     const rec = recommendNextSession(lessons, "G1 Igualdad");
     expect(rec.type).toBe("practice");
     expect(rec.id).toBe("G1 Igualdad");
+    expect(rec.href).toBe("/tests?module=G1%20Igualdad&practice=true");
   });
 
-  it("provides a default recommendation if everything is complete and no weakest module is set", () => {
+  it("recommends the first simulation if everything is complete and there is no weakest module", () => {
+    const rec = recommendNextSession([], null, [{ id: "SIM-07", title: "Simulacro 07" }]);
+    expect(rec.type).toBe("simulation");
+    expect(rec.id).toBe("SIM-07");
+    expect(rec.href).toBe("/simulacros/SIM-07");
+  });
+
+  it("falls back to SIM-01 when there are no simulations provided", () => {
     const rec = recommendNextSession([], null);
-    expect(rec.type).toBe("practice");
-    expect(rec.id).toBe("random");
+    expect(rec.type).toBe("simulation");
+    expect(rec.id).toBe("SIM-01");
+    expect(rec.href).toBe("/simulacros/SIM-01");
   });
 });

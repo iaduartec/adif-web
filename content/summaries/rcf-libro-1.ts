@@ -1,40 +1,42 @@
 import type { LessonSummary } from "./types";
 
 export const rcfLibro1Summary: LessonSummary = {
-  overview: "El Libro Primero del Reglamento de Circulación Ferroviaria (RCF, aprobado por RD 664/2015) establece los Principios Fundamentales para garantizar la seguridad en la circulación de los trenes y las maniobras en la Red Ferroviaria de Interés General.",
+  overview: "El Libro Primero del Reglamento de Circulación Ferroviaria (RCF, aprobado por RD 664/2015) establece los principios básicos para garantizar la seguridad en la circulación de los trenes y las maniobras en la Red Ferroviaria de Interés General. En examen interesa sobre todo el orden de prevalencia, la documentación de circulación y las reglas de marcha segura.",
   keyFacts: [
-    "Aprobación: Real Decreto 664/2015, de 17 de julio, por el que se aprueba el RCF.",
-    "Objeto: Principios fundamentales para la gestión segura del tráfico y la explotación ferroviaria en la RFIG (Sección 1.1.1.1).",
-    "Prioridad máxima: La seguridad de la circulación prevalece sobre cualquier otra consideración de regularidad u operativa.",
-    "Documentación reglamentaria básica: Consigna A (Administrador), Consigna C (Empresa Ferroviaria), Libro de Itinerarios y Horario de los Trenes.",
-    "Orden de marcha (Art. 1.5.1.8): Conjunto de indicaciones previas que autorizan y regulan la salida o paso de un tren.",
-    "Marcha de maniobras: Prescribe avanzar con prudencia, sin superar 30 km/h con locomotora tirando o 20 km/h empujando.",
-    "Uso de señalización: La orden de una señal prevalece sobre cualquier otra indicación o instrucción verbal no reglada."
+    "Aprobación: Real Decreto 664/2015, de 17 de julio.",
+    "Objeto: principios fundamentales para la gestión segura del tráfico y la explotación ferroviaria en la RFIG.",
+    "La seguridad de la circulación prevalece sobre la regularidad operativa o cualquier otra consideración.",
+    "La documentación básica incluye Consigna A, Consigna C, Libro de Itinerarios y Horario de los Trenes.",
+    "La orden de marcha autoriza y regula la salida o el paso de un tren.",
+    "La marcha de maniobras tiene límites de velocidad específicos y exige máxima prudencia.",
+    "La señal reglamentaria prevalece sobre indicaciones verbales no regladas.",
   ],
   sections: [
     {
-      title: "Principios de Seguridad y Responsabilidad del Personal",
+      title: "Qué suele caer en preguntas tipo test",
       points: [
-        "Todo el personal con funciones vinculadas a la seguridad debe mantener la capacidad física y mental requerida y la habilitación en vigor.",
-        "Ante cualquier situación de duda, incompatibilidad de normas o riesgo imprevisible, prima el criterio de máxima seguridad.",
-        "Obligación ineludible de comunicar de inmediato al Responsable de Circulación o Puesto de Mando cualquier deficiencia o anomalía observada."
+        "El principio de máxima seguridad frente a la regularidad del tráfico.",
+        "La documentación reglamentaria básica y la diferencia entre consigna del Administrador y consigna o libro de la Empresa Ferroviaria.",
+        "La orden de marcha y la circulación en maniobras.",
+        "La prevalencia de la señal reglamentaria frente a instrucciones no regladas.",
       ]
     },
     {
-      title: "Documentación Reglamentaria de Circulación",
+      title: "Cómo memorizarlo sin mezclar conceptos",
       points: [
-        "Consigna A: Documento normativo emitido por el Administrador de Infraestructuras con prescripciones específicas para un ámbito o línea.",
-        "Consigna C: Documento interno emitido por la Empresa Ferroviaria para su personal sobre la operativa de sus trenes.",
-        "Libro de Itinerarios: Contiene las velocidades máximas, esquemas de estaciones, sistemas de bloqueo y telefonía del trayecto.",
-        "Horario de los Trenes: Documento de a bordo que fija la marcha, paradas y horarios asignados al tren."
+        "Consigna A = Administrador; Consigna C = Empresa Ferroviaria.",
+        "Libro de Itinerarios = datos del trayecto; Horario = documento de marcha del tren.",
+        "Si la pregunta compara documentos, fíjate en quién lo emite y a qué ámbito afecta.",
+        "Asocia cada documento con su función y no con el nombre completo, para reconocer la respuesta correcta más rápido.",
       ]
     },
     {
-      title: "Sistemas de Bloqueo y Circulación Degradada",
+      title: "Errores típicos y repaso final",
       points: [
-        "Sistemas de Bloqueo habituales: Bloqueo Telefónico (BT), Bloqueo Automático (BA), Bloqueo de Liberación Automática (BLA) y Bloqueo de Señalización Lateral (BSL).",
-        "Régimen degradado: Situación operativa derivada de una avería en instalaciones o tren; requiere la aplicación estricta de normas específicas de atenuación del riesgo.",
-        "Protección de los trabajos en la vía: Procedimientos obligatorios para delimitar la zona de vía ocupada y proteger al personal de mantenimiento."
+        "No confundir seguridad con regularidad: la primera manda siempre.",
+        "No mezclar una consigna del Administrador con un documento interno de la Empresa Ferroviaria.",
+        "No olvidar que la maniobra exige prudencia y límites propios.",
+        "Checklist: seguridad, documentación, orden de marcha, maniobra y señalización.",
       ]
     }
   ]

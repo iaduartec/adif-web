@@ -9,6 +9,7 @@ import {
   listLessons,
   listQuestions,
 } from "../lib/content/repository";
+import { lessonSummaries } from "../content/lesson-summaries";
 
 const validQuestion = {
   id: "Q0001",
@@ -96,6 +97,14 @@ describe("course content repository", () => {
     expect(lessons.every((lesson) => lesson.origin)).toBe(true);
     expect(getLesson("igualdad")?.origin).toBe("original_explanation");
     expect(getLesson("missing-lesson")).toBeUndefined();
+  });
+
+  it("keeps structured summaries for the highest-yield lessons", () => {
+    expect(lessonSummaries.psicometria.overview).toMatch(/psicométrica/i);
+    expect(lessonSummaries["ingles-a2"].sections).toHaveLength(3);
+    expect(lessonSummaries["ict-rd-346-2011"].sections).toHaveLength(3);
+    expect(lessonSummaries["compatibilidad-electromagnetica"].sections).toHaveLength(3);
+    expect(lessonSummaries["rcf-libro-1"].sections).toHaveLength(3);
   });
 
   it("uses the Personal Operativo PNI26/01 source for psychometric practice", () => {

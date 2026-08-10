@@ -1,44 +1,40 @@
 import type { LessonSummary } from "./types";
 
 export const ictRd3462011Summary: LessonSummary = {
-  overview: "El Real Decreto 346/2011 aprueba el Reglamento regulador de las Infraestructuras Comunes de Telecomunicación (ICT) para el acceso a los servicios de telecomunicación en el interior de los edificios, definiendo la estructura de redes, recintos, canalizaciones y las obligaciones de instalación.",
+  overview: "El Real Decreto 346/2011 aprueba el Reglamento regulador de las Infraestructuras Comunes de Telecomunicación (ICT) para el acceso a los servicios de telecomunicación en el interior de los edificios. En examen interesa saber qué hace cada red, qué recinto corresponde a cada función y qué elemento marca el paso de la red común a la red privada del usuario.",
   keyFacts: [
-    "Objeto: Regular las ICT para la captación, adaptación y distribución de señales de radio, televisión y telecomunicaciones por cable y banda ancha (Art. 1).",
-    "RITI: Recinto de Instalaciones de Telecomunicación Inferior (alberga redes de operadores de telecomunicación por hilo/cable).",
-    "RITS: Recinto de Instalaciones de Telecomunicación Superior (alberga equipos de captación de RTV y enlace).",
-    "RITU: Recinto de Instalaciones de Telecomunicación Único (en edificios de hasta 10 viviendas o locales).",
-    "Red de alimentación: Enlaza las redes de los operadores con la ICT del edificio a través del registro de enlace.",
-    "Red de distribución: Tramo entre los recintos (RITI/RITS) y los registros secundarios a través de la canalización principal.",
-    "Red de dispersión: Tramo entre los registros secundarios y los Puntos de Acceso al Usuario (PAU).",
-    "Red interior de usuario: Tramo entre el PAU y las Bases de Toma de Usuario (BAT) en el interior de cada vivienda o local.",
-    "Proyecto Técnico: Exigible para la obtención de la licencia de edificación, redactado y firmado por un Ingeniero o Ingeniero Técnico de Telecomunicación."
+    "Objeto: regular las ICT para la captación, adaptación y distribución de señales de radio, televisión y telecomunicaciones por cable y banda ancha.",
+    "RITI: recinto inferior donde se concentran las redes de operadores de telecomunicación por hilo o cable.",
+    "RITS: recinto superior donde se alojan los equipos de captación de RTV y enlace.",
+    "RITU: recinto único para edificios pequeños o soluciones integradas.",
+    "La secuencia de redes es alimentación, distribución, dispersión e interior de usuario.",
+    "El PAU marca el límite entre la red común del edificio y la red privada de cada usuario.",
+    "El Proyecto Técnico es la pieza documental clave antes de la licencia de edificación.",
   ],
   sections: [
     {
-      title: "Estructura de Redes en una ICT",
+      title: "Qué te pueden pedir en el examen",
       points: [
-        "Red de alimentación: Conecta las infraestructuras de los operadores de telecomunicación con el edificio. Pertenece y es mantenida por los operadores.",
-        "Red de distribución: Parte de los recintos de telecomunicaciones (RITI/RITS/RITU), discurre por la canalización principal y distribuye las señales por la vertical del inmueble.",
-        "Red de dispersión: Conecta la canalización principal con los accesos individuales a las viviendas o locales a través de los registros de terminación de red.",
-        "Red interior de usuario: Ubicada en el interior de la propiedad privada, interconecta el PAU con las distintas BAT repartidas por las estancias."
+        "Preguntan qué recinto corresponde a cada función, cuál es el orden de las redes y dónde termina la red común.",
+        "Suelen mezclar definiciones parecidas para obligarte a distinguir distribución, dispersión e interior de usuario.",
+        "También aparece la relación entre el proyecto técnico y la licencia de edificación.",
       ]
     },
     {
-      title: "Recintos, Canalizaciones y Registros",
+      title: "Esquema mental para recordar la ICT",
       points: [
-        "RITI (Inferior): Situado en la planta baja o sótano del inmueble. RITS (Superior): Situado en la cubierta o última planta.",
-        "RITU (Único): Solución integrada para edificios pequeños o viviendas unifamiliares.",
-        "Arqueta de entrada: Punto de conexión entre la red de alimentación del operador y la canalización de enlace del edificio.",
-        "Canalización principal: Troncal vertical provista de canaletas o tubos para alojar los cables de distribución de telefonía, RTV y fibra óptica.",
-        "PAU (Punto de Acceso al Usuario): Elemento donde finaliza la red de dispersión e inicia la red interior privada de usuario."
+        "RITI y RITS son los recintos clásicos en edificios grandes; RITU simplifica la solución en edificios pequeños.",
+        "Arqueta de entrada y canalización de enlace conectan la red del operador con la infraestructura del edificio.",
+        "La canalización principal baja o sube por el edificio y reparte servicios por plantas.",
+        "El PAU separa la parte común de la privada y sirve como punto de acceso al usuario.",
       ]
     },
     {
-      title: "Servicios Obligatorios e Instalación",
+      title: "Trampas frecuentes y repaso rápido",
       points: [
-        "Captación y distribución de señales de radiodifusión sonora y televisión (RTV terrestre y satélite).",
-        "Acceso a servicios de telecomunicaciones de banda ancha mediante par trenzado, cable coaxial y fibra óptica (FTTH).",
-        "El Certificado de Fin de Obra y Boletín de Instalación garantizan que la ICT cumple con las especificaciones del Proyecto Técnico aprobado."
+        "No confundir el recinto donde se alojan equipos con la red que transporta las señales.",
+        "No invertir el orden de las redes: primero alimentación, luego distribución, después dispersión y por último interior de usuario.",
+        "Repaso final: define RITI, RITS, RITU, PAU y proyecto técnico sin mirar apuntes.",
       ]
     }
   ]

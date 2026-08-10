@@ -351,23 +351,23 @@ export const lessonTheories: Record<string, TheorySection> = {
     ]
   },
   psicometria: {
-    introduction: "La evaluación psicotécnica y psicométrica para el ingreso en ADIF mide el perfil de competencias cognitivas y aptitudinales de los candidatos a personal operativo de entrada. El examen consta de test de velocidad y precisión donde el control del tiempo, la resistencia a la fatiga visual sostenida y el razonamiento analítico rápido determinan la puntuación final del aspirante.",
+    introduction: "La evaluación psicotécnica y psicométrica para el ingreso en ADIF mide el perfil de competencias cognitivas y aptitudinales de los candidatos a personal operativo de entrada. El examen premia rapidez, atención sostenida y control del error: el objetivo no es resolverlo todo, sino acertar con consistencia, gestionar el tiempo y detectar el patrón correcto en pocos segundos.",
     concepts: [
       {
         title: "Resistencia a la Fatiga y Atención Selectiva",
-        description: "Mide la capacidad de concentrarse en tareas repetitivas y monótonas sin cometer fallos. Pruebas típicas son el tachado de símbolos específicos (test d2), detección de errores en cadenas alfanuméricas largas y verificación de correspondencia."
+        description: "Mide la capacidad de concentrarse en tareas repetitivas y monótonas sin cometer fallos. Las preguntas típicas exigen comparar cadenas, detectar cambios mínimos y sostener el ritmo sin perder exactitud, así que conviene establecer una secuencia fija de lectura y no improvisar."
       },
       {
         title: "Razonamiento Lógico-Espacial",
-        description: "Mide la aptitud para conceptualizar y manipular mentalmente formas bidimensionales (2D) y tridimensionales (3D). Incluye la resolución de giros espaciales, matrices de progresión analítica de figuras geométricas y desdoblamiento de poliedros."
+        description: "Mide la aptitud para conceptualizar y manipular mentalmente formas bidimensionales (2D) y tridimensionales (3D). Incluye giros, simetrías, matrices y desdoblamientos, y suele resolverse mejor buscando primero el elemento constante o la transformación dominante."
       },
       {
         title: "Aptitud Numérica",
-        description: "Evalúa la velocidad para realizar operaciones matemáticas básicas (fracciones, porcentajes, proporciones, sistemas de ecuaciones básicas) y resolver pequeños problemas lógicos de física elemental (cruces de trenes, velocidad media, pérdidas)."
+        description: "Evalúa la velocidad para realizar operaciones matemáticas básicas (fracciones, porcentajes, proporciones, regla de tres y velocidad media) y resolver pequeños problemas lógicos. La clave es escribir la mínima operación necesaria para evitar errores de cálculo y de transcripción."
       },
       {
         title: "Aptitud Verbal",
-        description: "Evalúa la comprensión lectora rápida de manuales técnicos, analogías semánticas, antónimos, sinónimos y la capacidad de seguir instrucciones complejas escritas de forma rigurosa."
+        description: "Evalúa la comprensión lectora rápida de manuales técnicos, analogías semánticas, antónimos, sinónimos y la capacidad de seguir instrucciones complejas escritas de forma rigurosa. Suele penalizar más la lectura precipitada que el desconocimiento léxico real."
       }
     ],
     examples: [
@@ -377,13 +377,14 @@ export const lessonTheories: Record<string, TheorySection> = {
       },
       {
         situation: "Se plantea un problema matemático de cruce de dos trenes: el tren A sale de Madrid a 80 km/h y el tren B sale de Zaragoza a 120 km/h al mismo tiempo. Sabiendo que la distancia es de 300 km, se pide hallar a qué distancia se cruzan.",
-        application: "Uso de la ecuación de movimiento relativo: Tiempo = Distancia / (Velocidad A + Velocidad B) = 300 / (80 + 120) = 1,5 horas. Se cruzan a 1,5 x 80 = 120 km de Madrid."
+        application: "Usa movimiento relativo: Tiempo = Distancia / (Velocidad A + Velocidad B) = 300 / (80 + 120) = 1,5 horas. Después calcula la distancia recorrida por uno de los trenes para comprobar el resultado antes de pasar a la siguiente pregunta."
       }
     ],
     reviewTakeaways: [
-      "En pruebas psicotécnicas conviene confirmar las reglas de corrección de cada convocatoria antes de asumir que las respuestas incorrectas penalizan; ante dudas completas, dejar en blanco suele ser la opción más prudente.",
-      "La gestión del tiempo es crítica: es conveniente saltarse las preguntas difíciles para asegurar primero las fáciles en la primera ronda del test.",
-      "La práctica diaria y cronometrada es el método científico más eficaz para automatizar la resolución de series y razonamientos lógicos."
+      "En pruebas psicotécnicas conviene confirmar las reglas de corrección de cada convocatoria antes de asumir penalización por error.",
+      "La gestión del tiempo es crítica: primero las preguntas seguras, después las dudosas y al final la revisión.",
+      "La práctica diaria y cronometrada automatiza series, matrices y comparaciones visuales.",
+      "Si un ejercicio no tiene regla evidente en pocos segundos, no te cases con él: márcalo y sigue."
     ]
   },
   "declaracion-red-2027": {
@@ -535,23 +536,23 @@ export const lessonTheories: Record<string, TheorySection> = {
     ]
   },
   "ingles-a2": {
-    introduction: "La prueba de inglés para el ingreso en ADIF corresponde al nivel de competencia A2 del Marco Común Europeo de Referencia para las Lenguas (MCER). Evalúa el dominio práctico de estructuras gramaticales cotidianas, el uso correcto de los tiempos verbales (en especial los pasados regular e irregular), el manejo de los verbos modales de obligación, permiso y prohibición, y la comprensión de un glosario de términos ferroviarios básicos.",
+    introduction: "La prueba de inglés para el ingreso en ADIF corresponde al nivel de competencia A2 del Marco Común Europeo de Referencia para las Lenguas (MCER). Evalúa estructuras gramaticales cotidianas, verbos modales, tiempos verbales básicos y comprensión de textos breves; la estrategia ganadora es identificar la pista temporal o modal antes de mirar las opciones.",
     concepts: [
       {
         title: "Pasado Simple (Past Simple)",
-        description: "Tiempo verbal utilizado para narrar eventos completados en el pasado. Los verbos regulares se forman añadiendo '-ed' al infinitivo (work -> worked). Los verbos irregulares cambian su forma y deben memorizarse (go -> went, see -> saw, write -> wrote, buy -> bought). En oraciones negativas y preguntas se utiliza el auxiliar 'did'."
+        description: "Tiempo verbal utilizado para narrar eventos completados en el pasado. Los verbos regulares se forman añadiendo '-ed' al infinitivo (work -> worked). Los verbos irregulares cambian su forma y deben memorizarse (go -> went, see -> saw, write -> wrote, buy -> bought). En oraciones negativas y preguntas se utiliza el auxiliar 'did', que obliga a volver al infinitivo."
       },
       {
         title: "Verbos Modales de Obligación, Prohibición y Necesidad",
-        description: "'Must' indica obligación legal u orden directa. 'Must not' (mustn't) denota prohibición absoluta. 'Have to' expresa una necesidad u obligación externa (reglamento). 'Don't have to' indica ausencia de obligación (es opcional)."
+        description: "'Must' indica obligación legal u orden directa. 'Must not' (mustn't) denota prohibición absoluta. 'Have to' expresa una necesidad u obligación externa (reglamento). 'Don't have to' indica ausencia de obligación, así que es el contraste que más preguntas resuelve."
       },
       {
         title: "Verbos Modales de Habilidad y Permiso",
-        description: "'Can' expresa habilidad presente o permiso informal. 'Could' expresa habilidad pasada o una petición más cortés de asistencia al cliente."
+        description: "'Can' expresa habilidad presente o permiso informal. 'Could' expresa habilidad pasada o una petición más cortés de asistencia al cliente. Cuando el enunciado suene a posibilidad, permiso o cortesía, este par suele ser el primero que debes revisar."
       },
       {
         title: "Glosario Técnico Ferroviario Esencial",
-        description: "Platform (andén), Track (vía), Train driver (maquinista), Station master (Jefe de estación), Timetable (horario), Delay (retraso), Level crossing (paso a nivel), Buffer (tope de vía), Points / Switches (agujas de desvío)."
+        description: "Platform (andén), Track (vía), Train driver (maquinista), Station master (jefe de estación), Timetable (horario), Delay (retraso), Level crossing (paso a nivel), Buffer (tope de vía), Points / Switches (agujas de desvío). Reconocer este vocabulario acelera mucho las preguntas de lectura."
       }
     ],
     examples: [
@@ -569,9 +570,10 @@ export const lessonTheories: Record<string, TheorySection> = {
       }
     ],
     reviewTakeaways: [
-      "El auxiliar 'did' de pasado simple anula la forma de pasado del verbo principal en las preguntas y negativas (ej. 'Did you go?', no 'Did you went?').",
+      "El auxiliar 'did' de pasado simple anula la forma de pasado del verbo principal en preguntas y negativas.",
       "Must not indica prohibición; don't have to indica que algo es opcional o innecesario.",
-      "El vocabulario técnico sobre estaciones, retrasos y billetes suele constituir el núcleo principal de los enunciados de examen de ADIF."
+      "El vocabulario técnico sobre estaciones, retrasos y billetes suele constituir el núcleo principal de los enunciados de ADIF.",
+      "Antes de responder, detecta si el hueco pide tiempo verbal, modal o vocabulario; esa clasificación reduce mucho el error."
     ]
   }
 };

@@ -137,25 +137,90 @@ export function calculateMetrics(
 }
 
 export interface Recommendation {
-  type: "lesson" | "practice";
+  type: "lesson" | "practice" | "simulation";
   id: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+export const MODULE_NAME_TO_LESSON_SLUG: Record<string, string> = {
+  "G1 Igualdad": "igualdad",
+  "G2 PRL": "prevencion-riesgos-laborales",
+  "G3 Estatuto ADIF": "estatuto-adif",
+  "E1 ICT RD 346/2011": "ict-rd-346-2011",
+  "E2 Compatibilidad electromagnetica": "compatibilidad-electromagnetica",
+  "E3 RCF Libro 1": "rcf-libro-1",
+  "P Psicotecnicos": "psicometria",
+  "I Ingles A2": "ingles-a2",
+};
+
+export const MODULE_NAME_TO_LABEL: Record<string, string> = {
+  "G1 Igualdad": "Igualdad",
+  "G2 PRL": "Prevención de Riesgos Laborales",
+  "G3 Estatuto ADIF": "Estatuto de ADIF",
+  "E1 ICT RD 346/2011": "ICT RD 346/2011",
+  "E2 Compatibilidad electromagnetica": "Compatibilidad electromagnética",
+  "E3 RCF Libro 1": "RCF Libro 1",
+  "P Psicotecnicos": "Psicotécnicos",
+  "I Ingles A2": "Inglés A2",
+};
+
+export function displayModuleName(moduleName: string | null | undefined): string {
+  if (!moduleName) return "General";
+  return MODULE_NAME_TO_LABEL[moduleName] ?? moduleName;
+}
+
+export function lessonSlugForModule(moduleName: string | null | undefined): string | null {
+  if (!moduleName) return null;
+  return MODULE_NAME_TO_LESSON_SLUG[moduleName] ?? null;
 }
 
 export function recommendNextSession(
   lessons: readonly { slug: string; title: string; percent: number; completed: boolean }[],
   weakestModule: string | null,
+  simulations: readonly { id: string; title: string }[] = [],
 ): Recommendation {
   // Recommend the first incomplete lesson
   const incomplete = lessons.find((l) => !l.completed);
   if (incomplete) {
-    return { type: "lesson", id: incomplete.slug };
+    return {
+      type: "lesson",
+      id: incomplete.slug,
+      title: `Volver a ${incomplete.title}`,
+      description: "Tienes temario pendiente. Reanuda la lección antes de volver a la práctica intensiva.",
+      href: `/curso/${incomplete.slug}`,
+    };
   }
 
   // Recommend practice for the weakest module
   if (weakestModule) {
-    return { type: "practice", id: weakestModule };
+    return {
+      type: "practice",
+      id: weakestModule,
+      title: `Practicar ${displayModuleName(weakestModule)}`,
+      description: "Ya no hay lecciones pendientes. Repite el módulo donde peor estás rindiendo ahora mismo.",
+      href: `/tests?module=${encodeURIComponent(weakestModule)}&practice=true`,
+    };
+  }
+
+  const nextSimulation = simulations[0];
+  if (nextSimulation) {
+    return {
+      type: "simulation",
+      id: nextSimulation.id,
+      title: `Hacer ${nextSimulation.title}`,
+      description: "Completa un simulacro para medir el rendimiento real y detectar fallos de gestión del tiempo.",
+      href: `/simulacros/${nextSimulation.id}`,
+    };
   }
 
   // Default recommendation
-  return { type: "practice", id: "random" };
+  return {
+    type: "simulation",
+    id: "SIM-01",
+    title: "Iniciar simulacro",
+    description: "Si no hay datos suficientes, empieza por un simulacro completo para establecer una referencia.",
+    href: "/simulacros/SIM-01",
+  };
 }

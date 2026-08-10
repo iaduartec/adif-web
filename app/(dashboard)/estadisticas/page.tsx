@@ -34,6 +34,30 @@ export default async function EstadisticasPage() {
     new Date(),
   );
 
+  const moduleNameMap: Record<string, string> = {
+    igualdad: "G1 Igualdad",
+    "prevencion-riesgos-laborales": "G2 PRL",
+    "estatuto-adif": "G3 Estatuto ADIF",
+    "ict-rd-346-2011": "E1 ICT RD 346/2011",
+    "compatibilidad-electromagnetica": "E2 Compatibilidad electromagnetica",
+    "rcf-libro-1": "E3 RCF Libro 1",
+    psicometria: "P Psicotecnicos",
+    "ingles-a2": "I Ingles A2",
+  };
+
+  const rankedLessons = [...lessons]
+    .map((lesson) => {
+      const moduleLabel = moduleNameMap[lesson.slug] ?? lesson.title;
+      const stats = metrics.accuracyByModule[moduleLabel];
+      return {
+        lesson,
+        moduleLabel,
+        stats,
+        percent: stats ? Math.round(stats.accuracy * 100) : null,
+      };
+    })
+    .sort((left, right) => (left.stats?.accuracy ?? Number.POSITIVE_INFINITY) - (right.stats?.accuracy ?? Number.POSITIVE_INFINITY));
+
   return (
     <div className="dashboard-wide statistics-page">
       <header className="course-index__header mb-8">
@@ -60,24 +84,7 @@ export default async function EstadisticasPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-rail">
-              {lessons.map((lesson) => {
-                // Find matching module in questions. Relies on mapped names.
-                // We map slug to module name
-                const moduleNameMap: Record<string, string> = {
-                  "igualdad": "G1 Igualdad",
-                  "prevencion-riesgos-laborales": "G2 Prevención de Riesgos Laborales",
-                  "estatuto-adif": "G3 Estatuto de ADIF",
-                  "ict-rd-346-2011": "T1 Infraestructuras de Telecomunicación (RD 346/2011)",
-                  "compatibilidad-electromagnetica": "T2 Compatibilidad Electromagnética",
-                  "rcf-libro-1": "T3 Reglamento de Circulación Ferroviaria (Libro 1)",
-                  "psicometria": "P1 Psicotecnia y Psicometría",
-                  "ingles-a2": "I1 Inglés A2",
-                };
-
-                const moduleLabel = moduleNameMap[lesson.slug] ?? lesson.title;
-                const stats = metrics.accuracyByModule[moduleLabel];
-                const percent = stats ? Math.round(stats.accuracy * 100) : null;
-
+              {rankedLessons.map(({ lesson, moduleLabel, stats, percent }, index) => {
                 return (
                   <tr key={lesson.slug}>
                     <td className="py-3 font-medium">
@@ -95,7 +102,14 @@ export default async function EstadisticasPage() {
                       )}
                     </td>
                     <td className="py-3 text-right font-medium text-gray-600">
-                      {stats ? stats.total : 0}
+                      <div className="flex items-center justify-end gap-2">
+                        {stats ? stats.total : 0}
+                        {index === 0 && stats && (
+                          <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-rose-100 text-rose-700">
+                            Prioridad
+                          </span>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 );

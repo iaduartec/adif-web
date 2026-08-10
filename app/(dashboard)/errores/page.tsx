@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { FavoriteButton } from "../../../components/practice/favorite-button";
 import { listQuestions } from "../../../lib/content/repository";
 import { deriveErrorNotebook } from "../../../lib/practice/error-notebook";
+import { calculateMetrics, displayModuleName, lessonSlugForModule } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -48,6 +49,9 @@ export default async function ErrorNotebookPage() {
 
   const allQuestions = listQuestions();
   const errorQuestions = deriveErrorNotebook(allQuestions, attemptRows ?? []);
+  const metrics = calculateMetrics(attemptRows ?? [], [], allQuestions, new Date());
+  const weakestModuleSlug = lessonSlugForModule(metrics.weakestModule);
+  const weakestModuleLabel = displayModuleName(metrics.weakestModule);
 
   return (
     <div className="dashboard-wide errors-page">
@@ -56,6 +60,11 @@ export default async function ErrorNotebookPage() {
         <h1>Cuaderno de Errores</h1>
         <p>
           Repasa y practica las preguntas que has fallado en tus intentos más recientes.
+          {metrics.weakestModule && (
+            <span className="block mt-1 text-sm text-gray-600">
+              Bloque más débil detectado: <strong>{weakestModuleLabel}</strong>.
+            </span>
+          )}
         </p>
       </header>
 
@@ -79,20 +88,45 @@ export default async function ErrorNotebookPage() {
             Tienes <strong>{errorQuestions.length}</strong> preguntas pendientes de corrección.
           </p>
         </div>
-        {errorQuestions.length > 0 && (
-          <Link
-            className="ui-button px-6 font-bold"
-            href="/tests?status=failed&practice=true"
-          >
-            Practicar errores en sesión ({Math.min(errorQuestions.length, 50)})
-          </Link>
-        )}
+        <div className="flex flex-wrap gap-3">
+          {errorQuestions.length > 0 && (
+            <Link
+              className="ui-button px-6 font-bold"
+              href="/tests?status=failed&practice=true"
+            >
+              Practicar errores en sesión ({Math.min(errorQuestions.length, 50)})
+            </Link>
+          )}
+          {weakestModuleSlug && (
+            <Link
+              className="ui-button bg-transparent border border-accent text-accent-strong hover:bg-accent-strong hover:text-paper px-6 font-bold"
+              href={`/tests?module=${encodeURIComponent(metrics.weakestModule ?? "")}&practice=true`}
+            >
+              Practicar bloque más débil
+            </Link>
+          )}
+        </div>
       </div>
 
       {errorQuestions.length === 0 ? (
         <div className="py-12 text-center text-gray-500 border border-dashed border-rail bg-white" role="status">
           <p className="font-medium text-lg text-accent-strong mb-1">¡Todo al día!</p>
-          <p className="text-sm">No tienes preguntas pendientes de corregir. Sigue con tu plan de estudio.</p>
+          <p className="text-sm mb-4">
+            No tienes preguntas pendientes de corregir. El siguiente paso recomendado es volver al bloque más débil o cerrar una vuelta con un simulacro.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {weakestModuleSlug ? (
+              <Link
+                className="ui-button"
+                href={`/tests?module=${encodeURIComponent(metrics.weakestModule ?? "")}&practice=true`}
+              >
+                Repasar {weakestModuleLabel}
+              </Link>
+            ) : null}
+            <Link className="ui-button bg-transparent border border-accent text-accent-strong hover:bg-accent-strong hover:text-paper" href="/simulacros">
+              Ir a simulacros
+            </Link>
+          </div>
         </div>
       ) : (
         <div className="grid gap-6">

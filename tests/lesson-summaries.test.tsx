@@ -7,15 +7,41 @@ import { getLesson } from "../lib/content/repository";
 describe("course lesson summaries", () => {
   afterEach(cleanup);
 
-  it("renders the psychometrics summary instead of the fallback note", () => {
-    render(<LessonReader lesson={getLesson("psicometria")!} progress={0} questions={[]} />);
+  const cases = [
+    {
+      slug: "psicometria",
+      overview: /Evaluación psicométrica: qué se mide y cómo prepararlo/i,
+      headingCount: 4,
+    },
+    {
+      slug: "ingles-a2",
+      overview: /Inglés A2: gramática funcional para examen/i,
+      headingCount: 4,
+    },
+    {
+      slug: "ict-rd-346-2011",
+      overview: /Real Decreto 346\/2011 aprueba el Reglamento regulador de las Infraestructuras Comunes de Telecomunicación/i,
+      headingCount: 4,
+    },
+    {
+      slug: "compatibilidad-electromagnetica",
+      overview: /En examen importa distinguir emisión, inmunidad, mecanismos de acoplamiento y la familia de normas EN 50121/i,
+      headingCount: 4,
+    },
+    {
+      slug: "rcf-libro-1",
+      overview: /Libro Primero del Reglamento de Circulación Ferroviaria/i,
+      headingCount: 4,
+    },
+  ] as const;
 
-    expect(screen.getByText(/Evaluación psicométrica: qué se mide y cómo prepararlo/i)).toBeVisible();
-  });
+  for (const { slug, overview, headingCount } of cases) {
+    it(`renders a structured summary for ${slug} instead of the fallback note`, () => {
+      render(<LessonReader lesson={getLesson(slug)!} progress={0} questions={[]} />);
 
-  it("renders the English A2 summary instead of the fallback note", () => {
-    render(<LessonReader lesson={getLesson("ingles-a2")!} progress={0} questions={[]} />);
-
-    expect(screen.getByText(/Inglés A2: gramática funcional para examen/i)).toBeVisible();
-  });
+      expect(screen.queryByText(/No hay resumen estructurado disponible/i)).toBeNull();
+      expect(screen.getByText(overview)).toBeVisible();
+      expect(screen.getAllByRole("heading", { level: 3 }).length).toBeGreaterThanOrEqual(headingCount);
+    });
+  }
 });

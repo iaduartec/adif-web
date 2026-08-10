@@ -55,6 +55,13 @@ describe("QuestionSession", () => {
     await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledWith("/api/attempts", expect.objectContaining({ method: "POST" }));
     });
+    const requestBody = JSON.parse(fetchMock.mock.calls[0][1]?.body as string);
+    expect(requestBody).toEqual({
+      questionId: "Q0001",
+      answer: "A",
+      mode: "practice",
+      elapsedMs: expect.any(Number),
+    });
     expect(await screen.findByRole("status")).toHaveTextContent("Respuesta incorrecta. Respuesta correcta: D.");
     expect(screen.getByText("La medida colectiva protege simultáneamente a varias personas.")).toBeVisible();
 

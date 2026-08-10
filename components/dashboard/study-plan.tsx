@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Recommendation } from "../../lib/progress/metrics";
-import { Button } from "../ui/button";
 
 export function StudyPlan({
   recommendation,
@@ -26,37 +25,19 @@ export function StudyPlan({
             <span className="text-xs font-bold uppercase tracking-wider text-accent-strong">
               Siguiente Acción Recomendada
             </span>
-            {recommendation.type === "lesson" ? (
-              <>
-                <h3 className="text-lg font-bold mt-2 mb-1">Continuar leyendo el temario</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Tienes temas pendientes. Te recomendamos continuar leyendo la lección.
-                </p>
-              </>
-            ) : (
-              <>
-                <h3 className="text-lg font-bold mt-2 mb-1">Practicar preguntas</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Has leído todos los temas. Te recomendamos practicar preguntas del módulo{" "}
-                  <strong>{recommendation.id === "random" ? "General" : recommendation.id}</strong>.
-                </p>
-              </>
-            )}
+            <h3 className="text-lg font-bold mt-2 mb-1">{recommendation.title}</h3>
+            <p className="text-sm text-gray-600 mb-4">{recommendation.description}</p>
           </div>
           <div>
-            {recommendation.type === "lesson" ? (
-              <Link href={`/curso/${recommendation.id}`} passHref legacyBehavior>
-                <a className="ui-button inline-block text-center">Ir a la Lección</a>
-              </Link>
-            ) : (
-              <Link
-                href={`/tests?module=${recommendation.id === "random" ? "" : encodeURIComponent(recommendation.id)}&start=true`}
-                passHref
-                legacyBehavior
-              >
-                <a className="ui-button inline-block text-center">Empezar Práctica</a>
-              </Link>
-            )}
+            <Link href={recommendation.href} passHref legacyBehavior>
+              <a className="ui-button inline-block text-center">
+                {recommendation.type === "lesson"
+                  ? "Ir a la lección"
+                  : recommendation.type === "practice"
+                    ? "Empezar práctica"
+                    : "Ir al simulacro"}
+              </a>
+            </Link>
           </div>
         </div>
 
