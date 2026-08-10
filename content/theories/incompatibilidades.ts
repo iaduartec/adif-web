@@ -169,7 +169,7 @@ export const incompatibilidadesTheory: TheorySection = {
       application: [
         {
           id: "incomp-ex-1-app-1",
-          text: "La incompatibilidad es absoluta debido a la relación de la contratista con el ámbito de supervisión de ADIF.",
+          text: "La relación de la contratista con el ámbito de supervisión de ADIF impide, con carácter general, conceder la compatibilidad, al concurrir el supuesto de incompatibilidad regulado para las actividades relacionadas con las funciones que desempeña.",
           kind: "example",
           legalBasis: ["l53-1984-art11"]
         }

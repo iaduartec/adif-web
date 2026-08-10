@@ -233,7 +233,7 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "estatuto-takeaway-1",
       text: "El personal de ADIF está sometido al régimen laboral común y no ostenta la condición de funcionario público.",
-      kind: "didactic",
+      kind: "normative",
       legalBasis: ["rd2395-2004-art33"]
     },
     {

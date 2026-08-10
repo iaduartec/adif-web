@@ -193,7 +193,7 @@ export const ictTheory: TheorySection = {
     {
       id: "ict-takeaway-1",
       text: "El RITU unifica RITI y RITS y está reservado para pequeños edificios (hasta 3 alturas y 10 PAU).",
-      kind: "didactic",
+      kind: "normative",
       legalBasis: ["rd346-2011-anex4"]
     },
     {

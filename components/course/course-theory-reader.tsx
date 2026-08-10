@@ -4,12 +4,13 @@ import { lessonTheories } from "../../content/lesson-theory";
 import { officialTexts } from "../../content/official-texts";
 import { loadFullText } from "../../lib/content/full-text";
 import type { Lesson } from "../../lib/content/schema";
+import type { LegalReference, TheoryClaim } from "../../content/theory-types";
 import { OriginLabel } from "./origin-label";
-import { LessonProgressShell } from "./lesson-progress-shell";
+import { CourseProgressShell } from "./course-progress-shell";
 
-export type LessonView = "summary" | "theory" | "official";
+export type CourseView = "summary" | "theory" | "official";
 
-function viewHref(slug: string, view: LessonView, extras?: Record<string, string>) {
+function viewHref(slug: string, view: CourseView, extras?: Record<string, string>) {
   const params = new URLSearchParams({ view, ...extras });
   return `/curso/${slug}?${params.toString()}`;
 }
@@ -19,6 +20,78 @@ const verificationStatusLabels: Record<string, string> = {
   reviewed: "Contenido revisado — verificación final pendiente.",
   verified: "Contenido verificado contra la fuente oficial vigente.",
 };
+
+const claimKindLabels: Record<TheoryClaim["kind"], string> = {
+  normative: "Norma",
+  interpretative: "Explicación",
+  didactic: "Consejo de examen",
+  example: "Ejemplo",
+};
+
+function ClaimWithTraceability({
+  claim,
+  sources,
+}: {
+  claim: TheoryClaim;
+  sources: LegalReference[];
+}) {
+  const basis = claim.legalBasis
+    .map((id) => sources.find((source) => source.id === id))
+    .filter((source): source is LegalReference => Boolean(source));
+
+  return (
+    <div
+      className="space-y-1"
+      data-claim-kind={claim.kind}
+      data-legal-reference-ids={claim.legalBasis.join(" ")}
+    >
+      {claim.kind === "normative" && basis.length > 0 ? (
+        <div className="flex flex-wrap gap-x-3 gap-y-1">
+          {basis.map((source) => (
+            <a
+              className="text-xs font-bold uppercase tracking-wider text-accent"
+              href={source.sourceUrl}
+              key={source.id}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {claimKindLabels.normative} · {source.sourceId} · {source.locator}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p className="text-xs font-bold uppercase tracking-wider text-gray-400">
+          {claimKindLabels[claim.kind]}
+        </p>
+      )}
+      <p className="text-sm text-gray-700 leading-relaxed">{claim.text}</p>
+      {claim.kind === "interpretative" && (
+        <p className="text-xs italic text-gray-500">
+          Esta interpretación resume el efecto práctico del precepto.
+        </p>
+      )}
+      {basis.length > 0 && claim.kind !== "normative" && (
+        <details className="text-xs text-gray-500">
+          <summary className="cursor-pointer font-bold">Ver fundamento</summary>
+          <ul className="mt-1 space-y-1">
+            {basis.map((source) => (
+              <li key={source.id}>
+                <a
+                  className="text-accent underline"
+                  href={source.sourceUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {source.sourceId} · {source.locator}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
+  );
+}
 
 export async function CourseTheoryReader({
   lesson,
@@ -31,7 +104,7 @@ export async function CourseTheoryReader({
   progress: number;
   searchQuery?: string;
   showFullDocument?: boolean;
-  view?: LessonView;
+  view?: CourseView;
 }) {
   const officialNorm = officialTexts[lesson.slug];
   const theory = lessonTheories[lesson.slug];
@@ -46,11 +119,11 @@ export async function CourseTheoryReader({
     : undefined;
 
   return (
-    <LessonProgressShell
+    <CourseProgressShell
       lesson={{ slug: lesson.slug, title: lesson.title, summary: lesson.summary, origin: lesson.origin }}
       progress={progress}
     >
-      <nav aria-label="Vistas de la lección" className="flex border-b border-rail mb-8 flex-wrap gap-2">
+      <nav aria-label="Vistas del tema" className="flex border-b border-rail mb-8 flex-wrap gap-2">
         {([
           ["summary", "Resumen Ejecutivo"],
           ["theory", "Teoría y Práctica"],
@@ -71,7 +144,7 @@ export async function CourseTheoryReader({
       {view === "summary" ? (
         <div className="space-y-8">
           {summary ? (
-            <section aria-labelledby="lesson-summary" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
+            <section aria-labelledby="course-summary" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
               <div className="border-b border-rail pb-4">
                 <span className="text-xs uppercase font-bold tracking-wider text-accent">Resumen Clave para Oposición</span>
                 <p className="text-gray-800 leading-relaxed mt-2 text-base font-medium">{summary.overview}</p>
@@ -97,16 +170,16 @@ export async function CourseTheoryReader({
         </div>
       ) : view === "theory" ? (
         <div className="space-y-8">
-          <section aria-labelledby="lesson-explanation" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
+          <section aria-labelledby="course-explanation" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
             <div className="border-b border-rail pb-4">
               <span className="text-xs uppercase font-bold tracking-wider text-accent">Explicación y Enfoque Didáctico</span>
-              <h2 id="lesson-explanation" className="text-xl font-bold text-ink mt-1">Teoría y Supuestos de Examen</h2>
+              <h2 id="course-explanation" className="text-xl font-bold text-ink mt-1">Teoría y Supuestos de Examen</h2>
             </div>
             {theory ? (
               <>
                 <div className="space-y-2">
                   {theory.introduction.map((claim) => (
-                    <p className="text-gray-700 leading-relaxed text-base" key={claim.id}>{claim.text}</p>
+                    <ClaimWithTraceability claim={claim} key={claim.id} sources={theory.sources} />
                   ))}
                 </div>
                 <div className="grid gap-4">
@@ -116,7 +189,7 @@ export async function CourseTheoryReader({
                       <h4 className="font-bold text-ink mb-1 text-base">{concept.title}</h4>
                       <div className="space-y-1.5">
                         {concept.claims.map((claim) => (
-                          <p className="text-sm text-gray-700 leading-relaxed" key={claim.id}>{claim.text}</p>
+                          <ClaimWithTraceability claim={claim} key={claim.id} sources={theory.sources} />
                         ))}
                       </div>
                     </section>
@@ -126,13 +199,13 @@ export async function CourseTheoryReader({
                 <div className="space-y-4">
                   <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Supuestos Prácticos Tipo Test</h3>
                   {theory.examples.map((example, index) => (
-                    <section className="lesson-example p-5 bg-paper border border-rail space-y-2" key={example.id}>
+                    <section className="course-example p-5 bg-paper border border-rail space-y-2" key={example.id}>
                       <h4 className="font-bold text-sm text-accent-strong">Caso Práctico #{index + 1}</h4>
                       <p className="text-sm text-ink italic">&quot;{example.situation}&quot;</p>
                       <div className="pt-2 border-t border-dashed border-rail space-y-1.5">
                         <strong className="text-sm">Aplicación en Examen:</strong>
                         {example.application.map((claim) => (
-                          <p className="text-sm text-gray-700" key={claim.id}>{claim.text}</p>
+                          <ClaimWithTraceability claim={claim} key={claim.id} sources={theory.sources} />
                         ))}
                       </div>
                     </section>
@@ -143,7 +216,9 @@ export async function CourseTheoryReader({
                   <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Reglas Nemotécnicas y Tips</h3>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-2 pl-2">
                     {theory.reviewTakeaways.map((takeaway) => (
-                      <li className="leading-relaxed" key={takeaway.id}>{takeaway.text}</li>
+                      <li className="leading-relaxed" key={takeaway.id}>
+                        <ClaimWithTraceability claim={takeaway} sources={theory.sources} />
+                      </li>
                     ))}
                   </ul>
                 </section>
@@ -167,19 +242,19 @@ export async function CourseTheoryReader({
             ) : (
               <div className="space-y-4">
                 <p>Parte de los conceptos de la referencia, relaciona cada término con una situación práctica y vuelve a la fuente oficial antes de fijar una literalidad para examen.</p>
-                <div className="lesson-example p-4 bg-paper border border-rail">
+                <div className="course-example p-4 bg-paper border border-rail">
                   <h3 className="font-bold text-sm text-accent-strong">Ejemplo de trabajo</h3>
                   <p className="text-sm text-gray-700 mt-1">Resume la idea principal en una frase, localiza su matiz en la norma y anota qué dato cambia si la pregunta plantea una excepción.</p>
                 </div>
               </div>
             )}
-            <div className="lesson-warning" role="note">
+            <div className="course-warning" role="note">
               <OriginLabel origin={lesson.origin} />
               <p>{verificationStatusLabels[lesson.verification.status] ?? verificationStatusLabels.draft}</p>
             </div>
           </section>
-          <section aria-labelledby="lesson-references" className="p-8 bg-white border border-rail space-y-4">
-            <h2 id="lesson-references" className="text-lg font-bold text-ink">Fuentes oficiales para cotejar</h2>
+          <section aria-labelledby="course-references" className="p-8 bg-white border border-rail space-y-4">
+            <h2 id="course-references" className="text-lg font-bold text-ink">Fuentes oficiales para cotejar</h2>
             <ul className="space-y-2">
               {lesson.officialReferences.map((reference) => (
                 <li className="flex justify-between items-center gap-4 py-3 border-b border-rail flex-wrap" key={reference.title}>
@@ -189,8 +264,8 @@ export async function CourseTheoryReader({
               ))}
             </ul>
           </section>
-          <section aria-labelledby="lesson-errors" className="p-8 bg-white border border-rail space-y-4">
-            <h2 id="lesson-errors" className="text-lg font-bold text-ink">Errores frecuentes en examen</h2>
+          <section aria-labelledby="course-errors" className="p-8 bg-white border border-rail space-y-4">
+            <h2 id="course-errors" className="text-lg font-bold text-ink">Errores frecuentes en examen</h2>
             <ul className="course-rule-list">
               <li>Memorizar una explicación sin comprobar la formulación exacta de la referencia.</li>
               <li>Confundir una regla general con su condición o excepción.</li>
@@ -235,6 +310,6 @@ export async function CourseTheoryReader({
           ) : <p className="empty-state">No hay texto oficial integrado disponible para esta lección.</p>}
         </section>
       )}
-    </LessonProgressShell>
+    </CourseProgressShell>
   );
 }

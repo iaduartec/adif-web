@@ -153,7 +153,7 @@ export const rcfLibro1Theory: TheorySection = {
     {
       id: "rcf-takeaway-1",
       text: "La marcha de maniobras limita estrictamente a 30 km/h al tirar del convoy, y a 20 km/h cuando la locomotora va empujando.",
-      kind: "didactic",
+      kind: "normative",
       legalBasis: ["rd664-2015-art1-5"]
     },
     {

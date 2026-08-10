@@ -7,7 +7,7 @@ import type { ContentOrigin } from "../../lib/content/schema";
 import { Button } from "../ui/button";
 import { OriginLabel } from "./origin-label";
 
-export function LessonProgressShell({
+export function CourseProgressShell({
   children,
   lesson,
   progress,
@@ -38,27 +38,27 @@ export function LessonProgressShell({
   }
 
   return (
-    <article className="lesson-reader">
-      <header className="lesson-reader__header">
+    <article className="course-reader">
+      <header className="course-reader__header">
         <p className="course-eyebrow">Curso · {completionPercent}% completado</p>
         <div className="course-origin-list"><OriginLabel origin={lesson.origin} /></div>
         <h1>{lesson.title}</h1>
-        <p className="lesson-reader__summary">{lesson.summary}</p>
+        <p className="course-reader__summary">{lesson.summary}</p>
       </header>
 
       {children}
 
       <div className="mt-8 pt-8 border-t border-rail space-y-8">
-        <section aria-labelledby="lesson-questions">
-          <h2 id="lesson-questions">Preguntas oficiales</h2>
+        <section aria-labelledby="course-questions">
+          <h2 id="course-questions">Preguntas oficiales</h2>
           <p>Consulta el banco oficial completo; no se asignan preguntas a esta lección sin una clasificación publicada por ADIF.</p>
           <Link className="ui-button ui-button--secondary mt-4" href="/tests">Preguntas oficiales</Link>
         </section>
 
-        <section className="lesson-completion" aria-labelledby="lesson-completion-title">
+        <section className="course-completion" aria-labelledby="course-completion-title">
           <div>
             <p className="course-eyebrow">Cierre de la lección</p>
-            <h2 id="lesson-completion-title">Marca la lección cuando hayas terminado el repaso</h2>
+            <h2 id="course-completion-title">Marca la lección cuando hayas terminado el repaso</h2>
           </div>
           <Button disabled={isPending || completionPercent === 100} onClick={markComplete}>
             {completionPercent === 100 ? "Lección completada" : isPending ? "Guardando…" : "Marcar como completada"}

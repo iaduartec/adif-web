@@ -125,8 +125,8 @@ export const cemTheory: TheorySection = {
     {
       id: "cem-takeaway-1",
       text: "La Directiva 2014/30/UE se transpone en España por el Real Decreto 186/2016 regulando las obligaciones de marcado CE y conformidad técnica.",
-      kind: "didactic",
-      legalBasis: ["rd186-2016"]
+      kind: "normative",
+      legalBasis: ["dir-2014-30-ue", "rd186-2016"]
     },
     {
       id: "cem-takeaway-2",

@@ -124,7 +124,7 @@ export const codigoConductaTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "conducta-takeaway-1",
-      text: "El Código de Conducta tiene rango normativo legal y su vulneración fundamenta las sanciones y despidos del régimen disciplinario.",
+      text: "El Código de Conducta es un régimen de obligaciones jurídicamente vinculante para los empleados públicos, cuyo incumplimiento puede motivar la apertura del correspondiente expediente disciplinario.",
       kind: "interpretative",
       legalBasis: ["rdleg-5-2015-art52"]
     },

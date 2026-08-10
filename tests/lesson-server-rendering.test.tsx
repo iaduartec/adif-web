@@ -4,14 +4,14 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 const { saveLessonProgress } = vi.hoisted(() => ({ saveLessonProgress: vi.fn() }));
 vi.mock("../app/actions/lesson", () => ({ saveLessonProgress }));
 
-import { LessonReader } from "../components/course/lesson-reader";
+import { CourseTheoryReader } from "../components/course/course-theory-reader";
 import { getLesson } from "../lib/content/repository";
 
 describe("server-rendered lesson selection", () => {
   afterEach(cleanup);
 
   it("renders the selected official view without loading the full legal document", async () => {
-    render(await LessonReader({
+    render(await CourseTheoryReader({
       lesson: getLesson("igualdad")!,
       progress: 0,
       view: "official",
@@ -24,7 +24,7 @@ describe("server-rendered lesson selection", () => {
   });
 
   it("loads the complete legal document only when explicitly requested", async () => {
-    render(await LessonReader({
+    render(await CourseTheoryReader({
       lesson: getLesson("igualdad")!,
       progress: 0,
       view: "official",

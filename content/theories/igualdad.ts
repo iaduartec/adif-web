@@ -19,6 +19,22 @@ export const igualdadTheory: TheorySection = {
       excerpt: "Corresponde a los poderes públicos promover las condiciones para que la libertad y la igualdad del individuo y de los grupos en que se integra sean reales y efectivas..."
     },
     {
+      id: "ce-art81",
+      sourceId: "CE",
+      sourceTitle: "Constitución Española",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      locator: "Artículo 81.1",
+      excerpt: "Son leyes orgánicas las relativas al desarrollo de los derechos fundamentales y de las libertades públicas, las que aprueben los Estatutos de Autonomía y el régimen electoral general y las demás previstas en la Constitución."
+    },
+    {
+      id: "ce-art81-2",
+      sourceId: "CE",
+      sourceTitle: "Constitución Española",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      locator: "Artículo 81.2",
+      excerpt: "La aprobación, modificación o derogación de las leyes orgánicas exigirá mayoría absoluta del Congreso, en una votación final sobre el conjunto del proyecto."
+    },
+    {
       id: "lo3-2007-art3",
       sourceId: "LO 3/2007",
       sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
@@ -48,7 +64,7 @@ export const igualdadTheory: TheorySection = {
       sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 7",
-      excerpt: "Constituye acoso sexual cualquier comportamiento, verbal o físico, de naturaleza sexual... Constituira acoso por razon de sexo cualquier comportamiento realizado en funcion del sexo de una persona..."
+      excerpt: "Constituye acoso sexual cualquier comportamiento, verbal o físico, de naturaleza sexual... Constituirá acoso por razón de sexo cualquier comportamiento realizado en función del sexo de una persona..."
     },
     {
       id: "lo3-2007-art8",
@@ -149,9 +165,15 @@ export const igualdadTheory: TheorySection = {
     },
     {
       id: "igualdad-intro-2",
-      text: "La relación entre una ley orgánica y las leyes ordinarias no es de jerarquía, sino de competencia: cada una regula materias reservadas constitucionalmente. Las leyes orgánicas requieren mayoría absoluta del Congreso para su aprobación.",
-      kind: "interpretative",
-      legalBasis: ["ce-art14"]
+      text: "La LO 3/2007 se tramita como ley orgánica por regular el desarrollo de un derecho fundamental: el derecho a la igualdad.",
+      kind: "normative",
+      legalBasis: ["ce-art81"]
+    },
+    {
+      id: "igualdad-intro-2b",
+      text: "La aprobación, modificación o derogación de la LO 3/2007 exige mayoría absoluta del Congreso, en una votación final sobre el conjunto del proyecto.",
+      kind: "normative",
+      legalBasis: ["ce-art81-2"]
     },
     {
       id: "igualdad-intro-3",
@@ -163,7 +185,7 @@ export const igualdadTheory: TheorySection = {
       id: "igualdad-intro-4",
       text: "La ley es de aplicación en el ámbito de las oposiciones públicas y de la gestión de empleo en entidades como ADIF.",
       kind: "didactic",
-      legalBasis: ["lo3-2007-art51"]
+      legalBasis: []
     }
   ],
 
@@ -182,7 +204,7 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c1-2",
           text: "La igualdad de trato prohíbe las diferencias injustificadas, mientras que la igualdad de oportunidades promueve medidas activas para corregir los desequilibrios existentes de partida.",
           kind: "didactic",
-          legalBasis: ["lo3-2007-art3"]
+          legalBasis: []
         }
       ]
     },
@@ -254,7 +276,7 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c5-2",
           text: "Se diferencia del acoso sexual en que la motivación se fundamenta en el género o sexo de la víctima, y no en la naturaleza sexual de la conducta.",
           kind: "didactic",
-          legalBasis: ["lo3-2007-art7"]
+          legalBasis: []
         }
       ]
     },
@@ -435,8 +457,8 @@ export const igualdadTheory: TheorySection = {
       application: [
         {
           id: "igualdad-ex-3-app-1",
-          text: "Incumple el principio de presencia equilibrada. No obstante, según la doctrina administrativa, los defectos de composición de tribunales no implican la nulidad automática e insubsanable del proceso si pueden ser objeto de rectificación o justificación técnica.",
-          kind: "example",
+          text: "Incumple el principio de presencia equilibrada en la composición del tribunal. La ley no prevé, por sí sola, la nulidad automática del proceso por esta causa; el incumplimiento se valorará conforme a las normas generales de revisión de actos administrativos.",
+          kind: "interpretative",
           legalBasis: ["lo3-2007-da1"]
         }
       ]
@@ -447,8 +469,8 @@ export const igualdadTheory: TheorySection = {
       application: [
         {
           id: "igualdad-ex-4-app-1",
-          text: "Es una infracción grave según el orden social por tratarse de una empresa con cincuenta o más trabajadores, con independencia de la ausencia de conflictos de hecho.",
-          kind: "example",
+          text: "Incumple la obligación de elaborar y aplicar un plan de igualdad que corresponde a las empresas de cincuenta o más trabajadores, con independencia de la ausencia de conflictos de hecho. El régimen sancionador aplicable se determina por la legislación de infracciones del orden social.",
+          kind: "interpretative",
           legalBasis: ["lo3-2007-art45"]
         }
       ]
@@ -458,15 +480,15 @@ export const igualdadTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "igualdad-takeaway-1",
-      text: "La LO 3/2007 obliga tanto a administraciones públicas como a empresas de más de 50 trabajadores en materia de planes de igualdad.",
-      kind: "didactic",
-      legalBasis: ["lo3-2007-art45"]
+      text: "La LO 3/2007 obliga tanto a administraciones públicas como a empresas de cincuenta o más trabajadores en materia de planes de igualdad.",
+      kind: "normative",
+      legalBasis: ["lo3-2007-art45", "lo3-2007-art51"]
     },
     {
       id: "igualdad-takeaway-2",
-      text: "La discriminación directa (por embarazo, maternidad o trato desfavorable de base) es de carácter absoluto y no admite justificación ordinaria.",
+      text: "La discriminación directa por embarazo o maternidad es de carácter especialmente grave y no admite justificación ordinaria; la indirecta sí puede justificarse si la medida neutra responde a una finalidad legítima y es necesaria y proporcionada.",
       kind: "interpretative",
-      legalBasis: ["lo3-2007-art6-1", "lo3-2007-art8"]
+      legalBasis: ["lo3-2007-art6-1", "lo3-2007-art6-2", "lo3-2007-art8"]
     },
     {
       id: "igualdad-takeaway-3",

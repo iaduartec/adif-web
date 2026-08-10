@@ -5,7 +5,7 @@ const { saveLessonProgress, saveNote } = vi.hoisted(() => ({ saveLessonProgress:
 
 vi.mock("../app/actions/lesson", () => ({ saveLessonProgress, saveNote }));
 
-import { LessonNotes } from "../components/course/lesson-notes";
+import { CourseNotes } from "../components/course/course-notes";
 import { CourseTheoryReader } from "../components/course/course-theory-reader";
 import { OriginLabel } from "../components/course/origin-label";
 import { getLesson } from "../lib/content/repository";
@@ -33,7 +33,7 @@ describe("course reader provenance and notes", () => {
 
   it("saves the entered note for the lesson and confirms only after success", async () => {
     saveNote.mockResolvedValue({ ok: true });
-    render(<LessonNotes slug="igualdad" initialBody="" />);
+    render(<CourseNotes slug="igualdad" initialBody="" />);
 
     const input = screen.getByRole("textbox", { name: "Tus notas" });
     fireEvent.change(input, { target: { value: "Repasar la discriminación indirecta." } });
@@ -85,5 +85,19 @@ describe("course reader provenance and notes", () => {
     expect(screen.getByRole("heading", { name: "Reglas Nemotécnicas y Tips" })).toBeVisible();
     expect(screen.getByText(/no admite justificación ordinaria/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
+  });
+
+  it("labels claims in study language without exposing internal ids or kind names", async () => {
+    const { container } = render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
+
+    expect(container.querySelectorAll("[data-claim-kind]").length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /^Norma · /i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Explicación").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Consejo de examen").length).toBeGreaterThan(0);
+    expect(screen.queryByText("normative")).toBeNull();
+    expect(screen.queryByText("interpretative")).toBeNull();
+    expect(screen.queryByText("didactic")).toBeNull();
+    expect(screen.queryByText(/lo3-2007-art6-2/)).toBeNull();
+    expect(screen.getAllByRole("link", { name: /LO 3\/2007 · Artículo 6\.2/i }).length).toBeGreaterThan(0);
   });
 });

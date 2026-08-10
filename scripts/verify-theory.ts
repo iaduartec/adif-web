@@ -1,7 +1,59 @@
 import { lessonTheories } from "../content/lesson-theory";
+import type {
+  TheoryClaim,
+  TheorySection,
+} from "../content/theory-types";
 
 console.log("Starting theory structural validation...");
 let errorCount = 0;
+
+const VALID_KINDS = ["normative", "interpretative", "didactic", "example"];
+
+type LocatedClaim = { location: string; claim: TheoryClaim };
+
+function allClaims(theory: TheorySection): LocatedClaim[] {
+  const out: LocatedClaim[] = [];
+  theory.introduction?.forEach((claim, idx) =>
+    out.push({ location: `introduction[${idx}]`, claim })
+  );
+  theory.concepts?.forEach((concept) =>
+    concept.claims?.forEach((claim, idx) =>
+      out.push({ location: `concept ${concept.id} claim[${idx}]`, claim })
+    )
+  );
+  theory.examples?.forEach((example) =>
+    example.application?.forEach((claim, idx) =>
+      out.push({ location: `example ${example.id} application[${idx}]`, claim })
+    )
+  );
+  theory.reviewTakeaways?.forEach((claim, idx) =>
+    out.push({ location: `reviewTakeaways[${idx}]`, claim })
+  );
+  return out;
+}
+
+function checkClaim(moduleName: string, location: string, claim: TheoryClaim) {
+  if (!claim.id || typeof claim.id !== "string") {
+    console.error(`[${moduleName}] Error in ${location}: missing/invalid 'id'`);
+    errorCount++;
+  }
+  if (!claim.text || typeof claim.text !== "string" || claim.text.trim() === "") {
+    console.error(`[${moduleName}] Error in ${location}: missing/invalid 'text'`);
+    errorCount++;
+  }
+  if (!claim.kind || !VALID_KINDS.includes(claim.kind)) {
+    console.error(
+      `[${moduleName}] Error in ${location}: missing/invalid 'kind': ${String(claim.kind)}`
+    );
+    errorCount++;
+  }
+  if (!Array.isArray(claim.legalBasis)) {
+    console.error(
+      `[${moduleName}] Error in ${location}: 'legalBasis' is missing or not an array`
+    );
+    errorCount++;
+  }
+}
 
 for (const [name, theory] of Object.entries(lessonTheories)) {
   console.log(`Checking module: ${name}`);
@@ -27,28 +79,16 @@ for (const [name, theory] of Object.entries(lessonTheories)) {
     }
   }
 
-  // 2. Validate introduction
+  // 2. Validate each section's shape and claims
   if (Array.isArray(theory.introduction)) {
-    theory.introduction.forEach((claim, idx) => {
-      if (!claim.id || typeof claim.id !== "string") {
-        console.error(`[${name}] Error in introduction[${idx}]: missing/invalid 'id'`);
-        errorCount++;
-      }
-      if (!claim.text || typeof claim.text !== "string") {
-        console.error(`[${name}] Error in introduction[${idx}]: missing/invalid 'text'`);
-        errorCount++;
-      }
-      if (!claim.kind || !["normative", "interpretative", "didactic", "example"].includes(claim.kind)) {
-        console.error(`[${name}] Error in introduction[${idx}]: missing/invalid 'kind': ${claim.kind}`);
-        errorCount++;
-      }
-    });
+    theory.introduction.forEach((claim, idx) =>
+      checkClaim(name, `introduction[${idx}]`, claim)
+    );
   } else {
     console.error(`[${name}] Error: 'introduction' is not an array`);
     errorCount++;
   }
 
-  // 3. Validate concepts
   if (Array.isArray(theory.concepts)) {
     theory.concepts.forEach((concept, idx) => {
       if (!concept.id || typeof concept.id !== "string") {
@@ -63,20 +103,9 @@ for (const [name, theory] of Object.entries(lessonTheories)) {
         console.error(`[${name}] Error in concepts[${idx}]: 'claims' is not an array`);
         errorCount++;
       } else {
-        concept.claims.forEach((claim, cIdx) => {
-          if (!claim.id || typeof claim.id !== "string") {
-            console.error(`[${name}] Error in concept ${concept.id} claim[${cIdx}]: missing/invalid 'id'`);
-            errorCount++;
-          }
-          if (!claim.text || typeof claim.text !== "string") {
-            console.error(`[${name}] Error in concept ${concept.id} claim[${cIdx}]: missing/invalid 'text'`);
-            errorCount++;
-          }
-          if (!claim.kind || !["normative", "interpretative", "didactic", "example"].includes(claim.kind)) {
-            console.error(`[${name}] Error in concept ${concept.id} claim[${cIdx}]: missing/invalid 'kind': ${claim.kind}`);
-            errorCount++;
-          }
-        });
+        concept.claims.forEach((claim, cIdx) =>
+          checkClaim(name, `concept ${concept.id} claim[${cIdx}]`, claim)
+        );
       }
     });
   } else {
@@ -84,7 +113,6 @@ for (const [name, theory] of Object.entries(lessonTheories)) {
     errorCount++;
   }
 
-  // 4. Validate examples
   if (Array.isArray(theory.examples)) {
     theory.examples.forEach((example, idx) => {
       if (!example.id || typeof example.id !== "string") {
@@ -99,20 +127,9 @@ for (const [name, theory] of Object.entries(lessonTheories)) {
         console.error(`[${name}] Error in examples[${idx}]: 'application' is not an array`);
         errorCount++;
       } else {
-        example.application.forEach((claim, aIdx) => {
-          if (!claim.id || typeof claim.id !== "string") {
-            console.error(`[${name}] Error in example ${example.id} application[${aIdx}]: missing/invalid 'id'`);
-            errorCount++;
-          }
-          if (!claim.text || typeof claim.text !== "string") {
-            console.error(`[${name}] Error in example ${example.id} application[${aIdx}]: missing/invalid 'text'`);
-            errorCount++;
-          }
-          if (!claim.kind || !["normative", "interpretative", "didactic", "example"].includes(claim.kind)) {
-            console.error(`[${name}] Error in example ${example.id} application[${aIdx}]: missing/invalid 'kind': ${claim.kind}`);
-            errorCount++;
-          }
-        });
+        example.application.forEach((claim, aIdx) =>
+          checkClaim(name, `example ${example.id} application[${aIdx}]`, claim)
+        );
       }
     });
   } else {
@@ -120,26 +137,32 @@ for (const [name, theory] of Object.entries(lessonTheories)) {
     errorCount++;
   }
 
-  // 5. Validate reviewTakeaways
   if (Array.isArray(theory.reviewTakeaways)) {
-    theory.reviewTakeaways.forEach((claim, idx) => {
-      if (!claim.id || typeof claim.id !== "string") {
-        console.error(`[${name}] Error in reviewTakeaways[${idx}]: missing/invalid 'id'`);
-        errorCount++;
-      }
-      if (!claim.text || typeof claim.text !== "string") {
-        console.error(`[${name}] Error in reviewTakeaways[${idx}]: missing/invalid 'text'`);
-        errorCount++;
-      }
-      if (!claim.kind || !["normative", "interpretative", "didactic", "example"].includes(claim.kind)) {
-        console.error(`[${name}] Error in reviewTakeaways[${idx}]: missing/invalid 'kind': ${claim.kind}`);
-        errorCount++;
-      }
-    });
+    theory.reviewTakeaways.forEach((claim, idx) =>
+      checkClaim(name, `reviewTakeaways[${idx}]`, claim)
+    );
   } else {
     console.error(`[${name}] Error: 'reviewTakeaways' is not an array`);
     errorCount++;
   }
+
+  // 3. Duplicate ID detection (claims + sources must be globally unique)
+  const seenIds = new Set<string>();
+  const registerId = (id: string, kind: string) => {
+    if (seenIds.has(id)) {
+      console.error(`[${name}] Error: Duplicate ${kind} ID: ${id}`);
+      errorCount++;
+    } else {
+      seenIds.add(id);
+    }
+  };
+
+  for (const located of allClaims(theory)) {
+    if (located.claim.id) registerId(located.claim.id, "claim");
+  }
+  theory.sources?.forEach((s) => {
+    if (s.id) registerId(s.id, "source");
+  });
 }
 
 if (errorCount > 0) {

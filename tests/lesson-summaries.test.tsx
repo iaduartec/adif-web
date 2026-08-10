@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, it, expect } from "vitest";
 
-import { LessonReader } from "../components/course/lesson-reader";
+import { CourseTheoryReader } from "../components/course/course-theory-reader";
 import { getLesson } from "../lib/content/repository";
 
 describe("course lesson summaries", () => {
@@ -37,7 +37,7 @@ describe("course lesson summaries", () => {
 
   for (const { slug, overview, headingCount } of cases) {
     it(`renders a structured summary for ${slug} instead of the fallback note`, async () => {
-      render(await LessonReader({ lesson: getLesson(slug)!, progress: 0 }));
+      render(await CourseTheoryReader({ lesson: getLesson(slug)!, progress: 0 }));
 
       expect(screen.queryByText(/No hay resumen estructurado disponible/i)).toBeNull();
       expect(screen.getByText(overview)).toBeVisible();

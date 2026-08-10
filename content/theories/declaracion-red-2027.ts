@@ -52,7 +52,7 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c1-1",
           text: "Documento oficial regulado por la Ley 38/2015 que detalla características técnicas, cánones, tarifas y adjudicación de capacidad para operadores.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-c1"]
+          legalBasis: ["dr-adif-2027-c1", "lsf-38-2015-art4"]
         }
       ]
     },
@@ -143,7 +143,7 @@ export const declaracionRed2027Theory: TheorySection = {
     {
       id: "dr-takeaway-1",
       text: "La DR es aprobada anualmente por el Consejo de Administración de ADIF y vincula a todos los operadores ferroviarios.",
-      kind: "didactic",
+      kind: "normative",
       legalBasis: ["dr-adif-2027-c1"]
     },
     {

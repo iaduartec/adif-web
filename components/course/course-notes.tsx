@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { saveNote } from "../../app/actions/lesson";
 import { Button } from "../ui/button";
 
-export function LessonNotes({ slug, initialBody }: { slug: string; initialBody: string }) {
+export function CourseNotes({ slug, initialBody }: { slug: string; initialBody: string }) {
   const [body, setBody] = useState(initialBody);
   const [message, setMessage] = useState<string>();
   const [isPending, startTransition] = useTransition();
@@ -24,22 +24,22 @@ export function LessonNotes({ slug, initialBody }: { slug: string; initialBody: 
   }
 
   return (
-    <section className="lesson-notes" aria-labelledby="lesson-notes-title">
+    <section className="course-notes" aria-labelledby="course-notes-title">
       <div>
         <p className="course-eyebrow">Cuaderno personal</p>
-        <h2 id="lesson-notes-title">Tus notas</h2>
+        <h2 id="course-notes-title">Tus notas</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor={`lesson-note-${slug}`}>Tus notas</label>
+        <label htmlFor={`course-note-${slug}`}>Tus notas</label>
         <textarea
-          id={`lesson-note-${slug}`}
+          id={`course-note-${slug}`}
           maxLength={5_000}
           onChange={(event) => setBody(event.target.value)}
           placeholder="Escribe una idea, una duda o una referencia para revisar."
           rows={7}
           value={body}
         />
-        <div className="lesson-notes__footer">
+        <div className="course-notes__footer">
           <p aria-live="polite" className={message === "Nota guardada" ? "course-status" : "course-status course-status--error"} role={message ? "status" : undefined}>
             {message}
           </p>

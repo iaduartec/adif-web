@@ -351,13 +351,13 @@ export const prlTheory: TheorySection = {
     {
       id: "prl-takeaway-1",
       text: "La prevención de riesgos laborales es un deber del empresario que exige la integración de un plan formal en el sistema general de gestión.",
-      kind: "didactic",
+      kind: "normative",
       legalBasis: ["lprl-31-1995-art16"]
     },
     {
       id: "prl-takeaway-2",
       text: "El Comité de Seguridad y Salud es un órgano colegiado paritario de carácter consultivo que se constituye obligatoriamente a partir de 50 trabajadores.",
-      kind: "didactic",
+      kind: "normative",
       legalBasis: ["lprl-31-1995-art38"]
     }
   ]
