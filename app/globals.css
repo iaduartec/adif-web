@@ -270,7 +270,6 @@ button:focus-visible,
 .course-origin-list { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; margin-top: .75rem; color: color-mix(in srgb, var(--ink) 66%, var(--paper)); font-size: .75rem; line-height: 1.35; }
 .course-origin { display: inline-block; border-left: 2px solid currentColor; padding-left: .45rem; color: color-mix(in srgb, var(--ink) 76%, var(--paper)); font-size: .75rem; font-weight: 700; line-height: 1.25; }
 .course-origin--official_reference { color: var(--accent-strong); }
-.course-origin--verification_pending { color: #78511a; }
 .course-breadcrumb { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem; color: color-mix(in srgb, var(--ink) 68%, var(--paper)); font-size: .8125rem; line-height: 1.5; }
 .course-breadcrumb a { color: var(--accent-strong); }
 .lesson-reader > section, .lesson-notes { margin-top: 3.5rem; }
