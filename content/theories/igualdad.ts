@@ -1,112 +1,484 @@
 import type { TheorySection } from "../lesson-theory";
 
 export const igualdadTheory: TheorySection = {
-  introduction: `La Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres constituye el principal instrumento normativo en España para erradicar la discriminación por razón de sexo y promover la igualdad real en todos los ámbitos de la vida pública y privada. Su carácter de Ley Orgánica implica que fue aprobada por mayoría absoluta del Congreso de los Diputados y que su contenido relacionado con derechos fundamentales prevalece sobre la legislación ordinaria. Se apoya en el artículo 14 de la Constitución Española (principio de igualdad y no discriminación) y en el artículo 9.2 CE (mandato a los poderes públicos de promover condiciones para que la igualdad sea real y efectiva).
+  sources: [
+    {
+      id: "ce-art14",
+      sourceId: "CE",
+      sourceTitle: "Constitución Española",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      locator: "Artículo 14",
+      excerpt: "Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social."
+    },
+    {
+      id: "ce-art9-2",
+      sourceId: "CE",
+      sourceTitle: "Constitución Española",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      locator: "Artículo 9.2",
+      excerpt: "Corresponde a los poderes públicos promover las condiciones para que la libertad y la igualdad del individuo y de los grupos en que se integra sean reales y efectivas..."
+    },
+    {
+      id: "lo3-2007-art3",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 3",
+      excerpt: "El principio de igualdad de trato entre mujeres y hombres supone la ausencia de toda discriminación, directa o indirecta, por razón de sexo..."
+    },
+    {
+      id: "lo3-2007-art6-1",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 6.1",
+      excerpt: "Se considera discriminación directa por razón de sexo la situación en que se encuentra una persona que sea, haya sido o pudiera ser tratada, en atención a su sexo, de manera menos favorable que otra en situación comparable."
+    },
+    {
+      id: "lo3-2007-art6-2",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 6.2",
+      excerpt: "Se considera discriminación indirecta por razón de sexo la situación en que una disposición, criterio o práctica aparentemente neutros pone a personas de un sexo en desventaja particular con respecto a personas del otro..."
+    },
+    {
+      id: "lo3-2007-art7",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 7",
+      excerpt: "Constituye acoso sexual cualquier comportamiento, verbal o físico, de naturaleza sexual... Constituira acoso por razon de sexo cualquier comportamiento realizado en funcion del sexo de una persona..."
+    },
+    {
+      id: "lo3-2007-art8",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 8",
+      excerpt: "Constituye discriminación directa por razón de sexo todo trato desfavorable a las mujeres relacionado con el embarazo o la maternidad."
+    },
+    {
+      id: "lo3-2007-art9",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 9",
+      excerpt: "También se considerará discriminación por razón de sexo cualquier trato adverso o efecto negativo que se produzca en una persona como consecuencia de la presentación por su parte de una queja, reclamación..."
+    },
+    {
+      id: "lo3-2007-art11",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 11",
+      excerpt: "Con el fin de hacer efectivo el derecho constitucional de la igualdad... los Poderes Públicos adoptarán medidas específicas en favor de las mujeres para corregir situaciones patentes de desigualdad..."
+    },
+    {
+      id: "lo3-2007-art13",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 13",
+      excerpt: "...en aquellos procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias, correspondera al demandado probar la ausencia de discriminación..."
+    },
+    {
+      id: "lo3-2007-art44",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 44",
+      excerpt: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y a las trabajadoras de forma que fomenten la asunción corresponsable..."
+    },
+    {
+      id: "lo3-2007-art45",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 45",
+      excerpt: "Las empresas están obligadas a respetar la igualdad de trato y de oportunidades en el ámbito laboral y, con esta finalidad, deberán adoptar medidas dirigidas a evitar cualquier tipo de discriminación laboral..."
+    },
+    {
+      id: "lo3-2007-art46",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 46",
+      excerpt: "Los planes de igualdad de las empresas son un conjunto ordenado de medidas, adoptadas después de realizar un diagnóstico de situación..."
+    },
+    {
+      id: "lo3-2007-art51",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 51",
+      excerpt: "Las Administraciones Públicas, en el ámbito de sus respectivas competencias... removerán los obstáculos que impidan o dificulten su plenitud..."
+    },
+    {
+      id: "lo3-2007-art77",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 77",
+      excerpt: "En todos los Ministerios se encomendará a uno de sus órganos directivos el desarrollo de las funciones relacionadas con el principio de igualdad..."
+    },
+    {
+      id: "lo3-2007-da1",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Disposición Adicional 1ª",
+      excerpt: "A los efectos de esta Ley, se entenderá por composición equilibrada la presencia de mujeres y hombres de forma que, en el conjunto a que se refiera, las personas de cada sexo no superen el sesenta por ciento ni sean menos del cuarenta por ciento."
+    },
+    {
+      id: "rd902-2020",
+      sourceId: "RD 902/2020",
+      sourceTitle: "Real Decreto 902/2020, de 13 de octubre, de igualdad retributiva entre mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215",
+      locator: "Artículo 5",
+      excerpt: "Las empresas que elaboren un plan de igualdad deberán incluir en el mismo una auditoría retributiva..."
+    }
+  ],
 
-En el ámbito de las oposiciones públicas y del empleo en ADIF, esta ley es de aplicación directa. Afecta a los procesos selectivos (composición de tribunales, criterios de valoración), a las condiciones de trabajo del personal (conciliación, retribución, promoción profesional) y a las obligaciones de las empresas públicas en materia de Planes de Igualdad. El Tribunal Constitucional ha reafirmado en múltiples ocasiones que el sexo es una de las categorías sospechosas de discriminación, por lo que cualquier diferencia de trato basada en él exige una justificación objetiva, proporcionada y especialmente robusta.
-
-La ley distingue con precisión técnica entre principio de igualdad de trato (ausencia de discriminación) y principio de igualdad de oportunidades (acciones positivas para corregir desequilibrios). Ambos son complementarios: el primero prohíbe las diferencias injustificadas de trato; el segundo permite e incluso exige medidas temporales que favorezcan al sexo subrepresentado para compensar las desigualdades estructurales de partida. Esta distinción es clave en examen, porque las preguntas suelen confundir ambos conceptos.`,
+  introduction: [
+    {
+      id: "igualdad-intro-1",
+      text: "La Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres constituye el principal instrumento normativo en España para erradicar la discriminación por razón de sexo y promover la igualdad real.",
+      kind: "normative",
+      legalBasis: ["lo3-2007-art3"]
+    },
+    {
+      id: "igualdad-intro-2",
+      text: "La relación entre una ley orgánica y las leyes ordinarias no es de jerarquía, sino de competencia: cada una regula materias reservadas constitucionalmente. Las leyes orgánicas requieren mayoría absoluta del Congreso para su aprobación.",
+      kind: "interpretative",
+      legalBasis: ["ce-art14"]
+    },
+    {
+      id: "igualdad-intro-3",
+      text: "Se fundamenta en el artículo 14 (derecho a la igualdad) y en el artículo 9.2 (obligación de los poderes públicos de promover condiciones de igualdad efectiva) de la Constitución Española.",
+      kind: "normative",
+      legalBasis: ["ce-art14", "ce-art9-2"]
+    },
+    {
+      id: "igualdad-intro-4",
+      text: "La ley es de aplicación en el ámbito de las oposiciones públicas y de la gestión de empleo en entidades como ADIF.",
+      kind: "didactic",
+      legalBasis: ["lo3-2007-art51"]
+    }
+  ],
 
   concepts: [
     {
-      title: "Principio de Igualdad de Trato y de Oportunidades (Art. 3)",
-      description: "Supone la ausencia de toda discriminación, directa o indirecta, por razón de sexo. La igualdad de trato prohíbe diferencias de trato injustificadas en situaciones comparables; la igualdad de oportunidades exige medidas activas para corregir desequilibrios. Ambos principios son vinculantes para los poderes públicos y para los particulares en el ámbito laboral. El artículo 3 establece que el principio de igualdad de trato entre mujeres y hombres supone la ausencia de toda discriminación, directa o indirecta, por razón de sexo, y especialmente las derivadas de la maternidad, la asunción de obligaciones familiares y el estado civil."
+      id: "igualdad-concept-1",
+      title: "Principio de Igualdad de Trato y de Oportunidades",
+      claims: [
+        {
+          id: "igualdad-c1-1",
+          text: "El principio de igualdad de trato supone la ausencia de toda discriminación, directa o indirecta, por razón de sexo, en particular las derivadas de maternidad, obligaciones familiares y estado civil.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art3"]
+        },
+        {
+          id: "igualdad-c1-2",
+          text: "La igualdad de trato prohíbe las diferencias injustificadas, mientras que la igualdad de oportunidades promueve medidas activas para corregir los desequilibrios existentes de partida.",
+          kind: "didactic",
+          legalBasis: ["lo3-2007-art3"]
+        }
+      ]
     },
     {
-      title: "Discriminación Directa por Sexo (Art. 6.1)",
-      description: "Se produce cuando una persona es tratada de manera menos favorable que otra en situación comparable única y exclusivamente por su sexo. No requiere intención discriminatoria: basta con que el trato sea objetivamente menos favorable. Ejemplos clásicos: excluir a mujeres de ciertos puestos de trabajo por razón del sexo, fijar retribuciones distintas para el mismo trabajo, o denegar una promoción a una mujer embarazada. La discriminación directa no admite ninguna justificación objetiva que la haga lícita; es, por tanto, de carácter absoluto."
+      id: "igualdad-concept-2",
+      title: "Discriminación Directa por Sexo",
+      claims: [
+        {
+          id: "igualdad-c2-1",
+          text: "Se define como la situación en que se encuentra una persona que sea, haya sido o pudiera ser tratada, en atención a su sexo, de manera menos favorable que otra en situación comparable.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art6-1"]
+        },
+        {
+          id: "igualdad-c2-2",
+          text: "No requiere acreditar intención discriminatoria por parte del sujeto y, por regla general, no admite justificaciones objetivas de licitud en la normativa ordinaria.",
+          kind: "interpretative",
+          legalBasis: ["lo3-2007-art6-1"]
+        }
+      ]
     },
     {
-      title: "Discriminación Indirecta por Sexo (Art. 6.2)",
-      description: "Ocurre cuando una disposición, criterio o práctica aparentemente neutros ponen a personas de un sexo en desventaja particular respecto al otro, salvo que puedan justificarse objetivamente en atención a una finalidad legítima y que los medios para alcanzarla sean necesarios y adecuados. La clave es el efecto desproporcionado sobre un sexo: no importa la intención del empleador, sino el resultado. En procesos selectivos, un requisito físico (peso, talla, marca de tiempo) que excluya a más mujeres que hombres sin justificación laboral objetiva es discriminación indirecta."
+      id: "igualdad-concept-3",
+      title: "Discriminación Indirecta por Sexo",
+      claims: [
+        {
+          id: "igualdad-c3-1",
+          text: "Ocurre cuando una disposición, criterio o práctica aparentemente neutros ponen a personas de un sexo en desventaja particular respecto al otro.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art6-2"]
+        },
+        {
+          id: "igualdad-c3-2",
+          text: "Esta conducta es lícita únicamente si se justifica de forma objetiva en atención a una finalidad legítima y los medios empleados son necesarios y adecuados.",
+          kind: "interpretative",
+          legalBasis: ["lo3-2007-art6-2"]
+        }
+      ]
     },
     {
-      title: "Acoso Sexual (Art. 7.1)",
-      description: "Cualquier comportamiento, verbal o físico, de naturaleza sexual que tenga el propósito o produzca el efecto de atentar contra la dignidad de una persona, en particular cuando se crea un entorno intimidatorio, degradante u ofensivo. No es necesario que sea reiterado: un único acto grave puede constituir acoso sexual. Se considera conducta discriminatoria expresamente prohibida. La responsabilidad del empresario es objetiva: debe prevenir el acoso mediante protocolos específicos y actuar con diligencia ante cualquier denuncia."
+      id: "igualdad-concept-4",
+      title: "Acoso Sexual",
+      claims: [
+        {
+          id: "igualdad-c4-1",
+          text: "Es cualquier comportamiento, verbal o físico, de naturaleza sexual que tenga el propósito o produzca el efecto de atentar contra la dignidad de una persona, en particular cuando se crea un entorno intimidatorio, degradante u ofensivo.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art7"]
+        },
+        {
+          id: "igualdad-c4-2",
+          text: "Es una conducta discriminatoria expresamente prohibida. Las empresas tienen la obligación legal de prevenir el acoso implementando protocolos específicos y tramitando denuncias diligentemente.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art7"]
+        }
+      ]
     },
     {
-      title: "Acoso por Razón de Sexo (Art. 7.2)",
-      description: "Comportamiento realizado en función del sexo de una persona (no necesariamente de naturaleza sexual) con el propósito o efecto de atentar contra su dignidad y crear un entorno intimidatorio, degradante u ofensivo. Se diferencia del acoso sexual en que la motivación es el género de la víctima, no su sexualidad. Ambos tipos de acoso (sexual y por razón de sexo) son conductas discriminatorias expresamente prohibidas por el artículo 7.3 de la Ley."
+      id: "igualdad-concept-5",
+      title: "Acoso por Razón de Sexo",
+      claims: [
+        {
+          id: "igualdad-c5-1",
+          text: "Cualquier comportamiento realizado en función del sexo de una persona, con el propósito o efecto de atentar contra su dignidad y crear un entorno intimidatorio, degradante u ofensivo.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art7"]
+        },
+        {
+          id: "igualdad-c5-2",
+          text: "Se diferencia del acoso sexual en que la motivación se fundamenta en el género o sexo de la víctima, y no en la naturaleza sexual de la conducta.",
+          kind: "didactic",
+          legalBasis: ["lo3-2007-art7"]
+        }
+      ]
     },
     {
-      title: "Indemnidad frente a represalias (Art. 9)",
-      description: "También llamada 'garantía de indemnidad'. Prohíbe cualquier trato adverso o consecuencia negativa sobre las personas que hayan ejercido acciones judiciales o administrativas, o simplemente presentado una queja, reclamación o denuncia destinada a hacer valer el principio de igualdad. La represalia contra quien denuncia una discriminación está expresamente equiparada a la discriminación misma. Esta garantía se extiende también a los testigos y personas que han prestado apoyo o asistencia a la víctima principal."
+      id: "igualdad-concept-6",
+      title: "Indemnidad frente a represalias",
+      claims: [
+        {
+          id: "igualdad-c6-1",
+          text: "Prohíbe cualquier trato adverso o consecuencia negativa en una persona como consecuencia de la presentación de una queja, reclamación, denuncia o recurso judicial tendente a exigir el principio de igualdad.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art9"]
+        },
+        {
+          id: "igualdad-c6-2",
+          text: "Esta garantía procesal y laboral protege tanto a la persona afectada como a los testigos o terceros que le presten asistencia.",
+          kind: "interpretative",
+          legalBasis: ["lo3-2007-art9"]
+        }
+      ]
     },
     {
-      title: "Acciones Positivas (Art. 11)",
-      description: "Medidas específicas y de carácter temporal adoptadas por los Poderes Públicos y/o las empresas para favorecer el acceso al empleo, la formación, la promoción y las condiciones de trabajo del sexo subrepresentado. Son proporcionales al objetivo perseguido y están justificadas en la desigualdad de facto existente. Se diferencian de la discriminación positiva inconstitucional (cuotas rígidas) en que son flexibles y ceden cuando la desigualdad que las motivó desaparece. No constituyen discriminación por razón de sexo respecto del sexo favorecido."
+      id: "igualdad-concept-7",
+      title: "Acciones Positivas",
+      claims: [
+        {
+          id: "igualdad-c7-1",
+          text: "Los Poderes Públicos adoptarán medidas específicas en favor de las mujeres para corregir situaciones patentes de desigualdad de hecho con respecto a los hombres.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art11"]
+        },
+        {
+          id: "igualdad-c7-2",
+          text: "Deben ser aplicadas con criterios de proporcionalidad y razonabilidad, y son de carácter temporal (deben cesar una vez corregida la desigualdad originaria).",
+          kind: "interpretative",
+          legalBasis: ["lo3-2007-art11"]
+        }
+      ]
     },
     {
-      title: "Inversión de la Carga de la Prueba (Art. 13)",
-      description: "En procesos judiciales o administrativos por discriminación, cuando la parte demandante aporta indicios fundados de discriminación, corresponde a la parte demandada probar que su actuación se debió a razones objetivas, ajenas a toda discriminación por razón de sexo. Este mecanismo procesal reconoce la dificultad práctica de probar la discriminación directa y la imposibilidad de probar una 'intención discriminatoria'. En el ámbito laboral, el trabajador debe aportar un principio de prueba; después, la empresa debe justificar su decisión."
+      id: "igualdad-concept-8",
+      title: "Inversión de la Carga de la Prueba",
+      claims: [
+        {
+          id: "igualdad-c8-1",
+          text: "En los procedimientos judiciales y administrativos en los que el actor aporte indicios fundados de discriminación, corresponde al demandado la aportación de una justificación objetiva y razonable de las medidas adoptadas.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art13"]
+        }
+      ]
     },
     {
-      title: "Planes de Igualdad en Empresas (Arts. 45 y 46)",
-      description: "Conjunto ordenado de medidas adoptadas tras realizar un diagnóstico de la situación, tendentes a alcanzar la igualdad de trato y oportunidades y a eliminar la discriminación. Son obligatorios para empresas con 50 o más trabajadores. Deben negociarse con la representación legal de los trabajadores y registrarse en el Registro de Planes de Igualdad de las Empresas. Su contenido mínimo incluye: proceso de selección y contratación, clasificación profesional, formación, promoción profesional, condiciones de trabajo (retribución, jornada, conciliación), ejercicio corresponsable de los derechos de la vida personal, familiar y laboral, infrarrepresentación femenina, retribuciones, y prevención del acoso sexual y por razón de sexo."
+      id: "igualdad-concept-9",
+      title: "Planes de Igualdad en Empresas",
+      claims: [
+        {
+          id: "igualdad-c9-1",
+          text: "Son obligatorios en aquellas empresas que cuenten con cincuenta o más trabajadores, debiendo negociarse con la representación de los trabajadores.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art45"]
+        },
+        {
+          id: "igualdad-c9-2",
+          text: "El plan consiste en un conjunto ordenado de medidas, adoptadas tras un diagnóstico de situación, dirigidas a asegurar la igualdad real y eliminar discriminaciones.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art46"]
+        }
+      ]
     },
     {
-      title: "Auditoría Retributiva (RD 902/2020)",
-      description: "Obligatoria para todas las empresas con Plan de Igualdad. Consiste en la valoración de los puestos de trabajo para verificar que no existe brecha salarial injustificada entre mujeres y hombres que realizan trabajos de igual valor. Debe incluir: diagnóstico de la situación retributiva, evaluación de los puestos de trabajo, evaluación de la implantación de las medidas de igualdad y el impacto de la brecha salarial en la empresa. Las empresas deben registrar sus planes de igualdad y llevar un registro de retribuciones diferenciado por sexo."
+      id: "igualdad-concept-10",
+      title: "Auditoría Retributiva",
+      claims: [
+        {
+          id: "igualdad-c10-1",
+          text: "Las empresas obligadas a realizar un Plan de Igualdad deben incorporar en él una auditoría retributiva, destinada a verificar que el sistema salarial garantiza la igualdad de retribución por trabajos de igual valor.",
+          kind: "normative",
+          legalBasis: ["rd902-2020"]
+        }
+      ]
     },
     {
-      title: "Principio de Presencia Equilibrada (Disposición Adicional 1ª)",
-      description: "Criterio rector que establece que en los nombramientos y designaciones de los poderes públicos, en los órganos colegiados, comités de selección y tribunales de oposición, debe buscarse una composición en la que ningún sexo supere el 60% ni sea inferior al 40% del total. Para los órganos con un número reducido de miembros (3 o 5) la paridad se exige en el conjunto del proceso selectivo, no necesariamente en cada tribunal. Este principio aplica directamente a los tribunales de ADIF."
+      id: "igualdad-concept-11",
+      title: "Principio de Presencia Equilibrada",
+      claims: [
+        {
+          id: "igualdad-c11-1",
+          text: "Se define como la presencia de mujeres y hombres de forma que las personas de cada sexo no superen el sesenta por ciento ni sean menos del cuarenta por ciento.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-da1"]
+        },
+        {
+          id: "igualdad-c11-2",
+          text: "Este criterio rige en las designaciones de tribunales y órganos colegiados de valoración en convocatorias de empleo público.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-da1"]
+        }
+      ]
     },
     {
-      title: "Protección frente al embarazo y la maternidad (Art. 8)",
-      description: "Constituye discriminación directa por razón de sexo cualquier trato desfavorable a las mujeres relacionado con el embarazo o la maternidad. Esto incluye: despidos por embarazo (nulos de pleno derecho), denegación de ascensos, exclusión de procesos de selección por estado de gestación, no renovación de contratos temporales durante el embarazo sin causa objetiva ajena al mismo, y cualquier otro perjuicio laboral vinculado a la maternidad. La protección es de carácter absoluto y no admite justificación objetiva alguna."
+      id: "igualdad-concept-12",
+      title: "Protección frente al embarazo y la maternidad",
+      claims: [
+        {
+          id: "igualdad-c12-1",
+          text: "Constituye discriminación directa por razón de sexo todo trato desfavorable a las mujeres relacionado con el embarazo o la maternidad.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art8"]
+        }
+      ]
     },
     {
-      title: "Conciliación de la vida personal, familiar y laboral (Arts. 44 y ss.)",
-      description: "La Ley reconoce el derecho a la conciliación de la vida personal, familiar y laboral y fomenta la corresponsabilidad en las labores domésticas y en la atención a la familia. Los derechos de conciliación (reducción de jornada, excedencia por cuidado de familiares, permisos de maternidad/paternidad) tienen la consideración de derechos individuales de los trabajadores, hombres y mujeres. La denegación o limitación de estos derechos por razón de sexo o de su ejercicio constituye discriminación prohibida."
+      id: "igualdad-concept-13",
+      title: "Conciliación de la vida personal, familiar y laboral",
+      claims: [
+        {
+          id: "igualdad-c13-1",
+          text: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y a las trabajadoras de forma que fomenten la asunción corresponsable de las obligaciones familiares.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art44"]
+        }
+      ]
     },
     {
-      title: "Igualdad en el Empleo Público (Arts. 51 a 64)",
-      description: "Las Administraciones Públicas deben actuar como ejemplo en la aplicación de la igualdad: publicar convocatorias de procesos selectivos en términos neutros, asegurar la composición equilibrada de los tribunales, valorar de forma no discriminatoria los méritos, y adoptar medidas de acción positiva para favorecer el acceso de las mujeres a puestos en los que estén subrepresentadas. ADIF, como entidad pública empresarial, está sujeta a estas obligaciones, que son de carácter preceptivo y no meramente indicativo."
+      id: "igualdad-concept-14",
+      title: "Igualdad en el Empleo Público",
+      claims: [
+        {
+          id: "igualdad-c14-1",
+          text: "Las Administraciones Públicas y las entidades instrumentales equivalentes están obligadas a integrar el principio de igualdad en sus políticas de selección, formación, promoción y condiciones de trabajo.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art51"]
+        }
+      ]
     },
     {
-      title: "Unidad de Igualdad (Art. 77) y Comisión Interministerial de Igualdad",
-      description: "Cada Ministerio debe contar con una Unidad de Igualdad con rango mínimo de Subdirección General. La Comisión Interministerial de Igualdad entre Mujeres y Hombres es el órgano de coordinación de las políticas y medidas adoptadas por los Departamentos ministeriales. El Consejo de Participación de la Mujer es el órgano de consulta, y el Instituto de la Mujer y para la Igualdad de Oportunidades (IMIO) es el organismo responsable de la promoción de la igualdad entre mujeres y hombres."
+      id: "igualdad-concept-15",
+      title: "Unidades de Igualdad",
+      claims: [
+        {
+          id: "igualdad-c15-1",
+          text: "En todos los Ministerios se encomendará a uno de sus órganos directivos el desarrollo de las funciones relacionadas con el principio de igualdad entre mujeres y hombres en sus ámbitos de actuación.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art77"]
+        }
+      ]
     }
   ],
 
   examples: [
     {
-      situation: "En una convocatoria de ADIF para Oficial de Telecomunicaciones de Entrada, se establece una prueba física (subir una escalera de mano con un equipo de 15 kg en menos de 25 segundos) con baremo idéntico para hombres y mujeres. Estadísticamente, el 82% de mujeres no supera la marca frente al 12% de hombres.",
-      application: "Es un caso de discriminación indirecta (Art. 6.2): el criterio es aparentemente neutro pero tiene un impacto desproporcionado sobre las mujeres. Para ser lícito, ADIF debe demostrar: (1) que la prueba responde a una necesidad objetiva y real del puesto, (2) que el criterio es adecuado para medir esa necesidad y (3) que es proporcional, es decir, que no existe otra medida alternativa menos restrictiva. Si alguien lo impugna, la carga de la prueba recae sobre ADIF (Art. 13)."
+      id: "igualdad-ex-1",
+      situation: "En una convocatoria pública para un puesto operativo se establece una prueba de esfuerzo físico que, mediante marcas idénticas, descarta estadísticamente a una proporción mucho mayor de mujeres que de hombres sin justificación detallada.",
+      application: [
+        {
+          id: "igualdad-ex-1-app-1",
+          text: "Esta situación plantea indicios de discriminación indirecta por sexo, obligando a la entidad convocante a justificar técnicamente la necesidad del criterio.",
+          kind: "example",
+          legalBasis: ["lo3-2007-art6-2", "lo3-2007-art13"]
+        }
+      ]
     },
     {
-      situation: "Una operadora de circulación de ADIF notifica por escrito que está embarazada. Dos semanas después, su supervisor la excluye de los turnos de noche 'por su bien' sin pedirle su consentimiento ni evaluación médica previa.",
-      application: "Es discriminación directa por razón de sexo relacionada con el embarazo (Art. 8). El trato desfavorable –exclusión de turnos sin consentimiento– está directamente vinculado a su estado de gestación. La trabajadora tiene derecho a reclamar y la empresa no puede justificarse objetivamente. Si se materializara un despido o una sanción por reclamar, se añadiría la vulneración de la garantía de indemnidad (Art. 9)."
+      id: "igualdad-ex-2",
+      situation: "Una empleada notifica su embarazo a la empresa y, a los pocos días, es apartada de sus tareas habituales alegando protección, reduciéndose sus incentivos ordinarios sin su consentimiento o dictamen médico formal.",
+      application: [
+        {
+          id: "igualdad-ex-2-app-1",
+          text: "Constituye discriminación directa por razón de sexo. Cualquier cambio en las condiciones justificadas en la salud de la trabajadora gestante debe seguir las pautas y consentimientos médicos establecidos.",
+          kind: "example",
+          legalBasis: ["lo3-2007-art8"]
+        }
+      ]
     },
     {
-      situation: "El tribunal de selección de ADIF para un proceso de 5 plazas está compuesto por 5 hombres y 0 mujeres. La convocatoria no incluye ninguna justificación para esta composición.",
-      application: "Vulnera el principio de presencia equilibrada (Disposición Adicional 1ª). Con 5 miembros, al menos 2 deben ser de cada sexo (40% de 5 = 2). Una composición 5-0 es claramente contraria a la ley. Los candidatos afectados podrían impugnar el proceso selectivo por este motivo, siendo causa de nulidad de las actuaciones del tribunal si se acredita la vulneración."
+      id: "igualdad-ex-3",
+      situation: "Se impugna una convocatoria de selección de personal porque el tribunal de examen de cinco miembros está formado exclusivamente por personas de un mismo sexo.",
+      application: [
+        {
+          id: "igualdad-ex-3-app-1",
+          text: "Incumple el principio de presencia equilibrada. No obstante, según la doctrina administrativa, los defectos de composición de tribunales no implican la nulidad automática e insubsanable del proceso si pueden ser objeto de rectificación o justificación técnica.",
+          kind: "example",
+          legalBasis: ["lo3-2007-da1"]
+        }
+      ]
     },
     {
-      situation: "Una empresa con 60 trabajadores lleva 3 años sin elaborar un Plan de Igualdad ni registrarlo, alegando que 'el ambiente es bueno y no hay problemas'. ¿Qué consecuencias tiene?",
-      application: "El Plan de Igualdad es obligatorio para empresas de 50 o más trabajadores (Art. 45). El incumplimiento de la obligación de elaborar y registrar el Plan de Igualdad está tipificado como infracción grave o muy grave en la Ley sobre Infracciones y Sanciones en el Orden Social (LISOS), con multas que pueden alcanzar 225.018 euros. Además, la empresa no puede contratar con el sector público ni obtener subvenciones sin cumplir este requisito."
-    },
-    {
-      situation: "Un delegado sindical de ADIF denuncia ante la Inspección de Trabajo que el plan retributivo de la empresa da bonificaciones mayores a los jefes de equipo (categoría masculinizada) que a los coordinadores de servicio al cliente (categoría feminizada), aunque la responsabilidad y cualificación requerida son equivalentes.",
-      application: "Es un supuesto de brecha salarial por categorías de igual valor, que puede constituir discriminación indirecta retributiva (Art. 6.2 en relación con el principio de igual retribución por trabajo de igual valor). La empresa debe justificar objetivamente la diferencia retributiva; si no puede hacerlo, la diferencia es ilícita. La auditoría retributiva obligatoria (RD 902/2020) está precisamente diseñada para detectar y corregir este tipo de situaciones."
-    },
-    {
-      situation: "Un maquinista varón solicita una reducción de jornada para cuidar a su hijo recién nacido. Su empresa se la deniega argumentando que 'ese tipo de permisos son para las madres'.",
-      application: "Los derechos de conciliación son derechos individuales de los trabajadores, independientemente de su sexo (Arts. 44 y ss. de la LO 3/2007). Denegar la reducción de jornada a un hombre por razón de su sexo es discriminación directa por razón de sexo prohibida. El derecho a la reducción de jornada por cuidado de hijo menor de 12 años está reconocido en el Estatuto de los Trabajadores sin distinción de sexo."
+      id: "igualdad-ex-4",
+      situation: "Una empresa de 60 trabajadores no dispone de un Plan de Igualdad inscrito, alegando ausencia de conflictos entre la plantilla.",
+      application: [
+        {
+          id: "igualdad-ex-4-app-1",
+          text: "Es una infracción grave según el orden social por tratarse de una empresa con cincuenta o más trabajadores, con independencia de la ausencia de conflictos de hecho.",
+          kind: "example",
+          legalBasis: ["lo3-2007-art45"]
+        }
+      ]
     }
   ],
 
   reviewTakeaways: [
-    "LO 3/2007: Ley Orgánica (mayoría absoluta del Congreso) → prevalece sobre legislación ordinaria en materia de derechos fundamentales.",
-    "Discriminación DIRECTA = trato menos favorable por sexo → NO admite justificación objetiva (prohibición absoluta).",
-    "Discriminación INDIRECTA = medida neutra con impacto desproporcionado → SÍ puede justificarse si hay fin legítimo + medios necesarios y adecuados.",
-    "Acoso sexual: conducta de naturaleza SEXUAL → atenta contra la dignidad. Acoso por razón de sexo: motivación de GÉNERO → mismo efecto de entorno degradante. Ambos son discriminación.",
-    "Inversión de la carga de la prueba: el trabajador aporta INDICIOS → la empresa debe demostrar causa objetiva ajena a discriminación.",
-    "Plan de Igualdad: OBLIGATORIO para empresas de 50 o más trabajadores → debe negociarse con representantes + registrarse.",
-    "Presencia equilibrada: ningún sexo < 40% ni > 60% en órganos colegiados. Con 5 miembros → mínimo 2 de cada sexo.",
-    "Acciones positivas (Art. 11): son TEMPORALES, proporcionales y cesan cuando desaparece la desigualdad que las motivó → NO son discriminación.",
-    "Garantía de indemnidad (Art. 9): protege a quien DENUNCIA la discriminación → cualquier represalia es ilícita y equiparada a discriminación.",
-    "Embarazo y maternidad (Art. 8): protección ABSOLUTA → despido o perjuicio laboral vinculado al embarazo es nulo de pleno derecho sin excepción."
+    {
+      id: "igualdad-takeaway-1",
+      text: "La LO 3/2007 obliga tanto a administraciones públicas como a empresas de más de 50 trabajadores en materia de planes de igualdad.",
+      kind: "didactic",
+      legalBasis: ["lo3-2007-art45"]
+    },
+    {
+      id: "igualdad-takeaway-2",
+      text: "La discriminación directa (por embarazo, maternidad o trato desfavorable de base) es de carácter absoluto y no admite justificación ordinaria.",
+      kind: "interpretative",
+      legalBasis: ["lo3-2007-art6-1", "lo3-2007-art8"]
+    },
+    {
+      id: "igualdad-takeaway-3",
+      text: "La discriminación indirecta sí admite justificación si se acredita idoneidad, necesidad y proporcionalidad de la medida neutra.",
+      kind: "interpretative",
+      legalBasis: ["lo3-2007-art6-2"]
+    },
+    {
+      id: "igualdad-takeaway-4",
+      text: "La composición equilibrada (mínimo 40% y máximo 60% de cada sexo) debe aplicarse en el nombramiento de tribunales evaluadores.",
+      kind: "normative",
+      legalBasis: ["lo3-2007-da1"]
+    }
   ]
 };

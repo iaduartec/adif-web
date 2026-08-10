@@ -3,10 +3,23 @@ import { z } from "zod";
 export const contentOriginSchema = z.enum([
   "official_reference",
   "original_explanation",
-  "verification_pending",
 ]);
 
 export type ContentOrigin = z.infer<typeof contentOriginSchema>;
+
+export const verificationStatusSchema = z.enum([
+  "draft",
+  "reviewed",
+  "verified",
+]);
+
+export const verificationMetaSchema = z.object({
+  status: verificationStatusSchema,
+  reviewedAt: z.string().optional(),
+  verifiedAt: z.string().optional(),
+  reviewedBy: z.string().optional(),
+  verifiedBy: z.string().optional(),
+});
 
 export const optionSchema = z.object({
   key: z.enum(["A", "B", "C", "D"]),
@@ -63,10 +76,7 @@ export const lessonSchema = z.object({
   summary: z.string().trim().min(1),
   origin: contentOriginSchema,
   officialReferences: z.array(lessonReferenceSchema).min(1),
-  verificationNote: z.object({
-    text: z.string().trim().min(1),
-    origin: z.literal("verification_pending"),
-  }),
+  verification: verificationMetaSchema,
 });
 
 export const simulationSchema = z

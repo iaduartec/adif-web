@@ -12,7 +12,11 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "content:import": "tsx scripts/import-course-content.ts",
-    "content:import-official": "tsx scripts/import-official-exams.ts"
+    "content:import-official": "tsx scripts/import-official-exams.ts",
+    "verify:theory": "tsx scripts/verify-theory.ts",
+    "verify:theory-references": "tsx scripts/verify-theory-references.ts",
+    "verify:theory-claims": "tsx scripts/verify-theory-claims.ts",
+    "verify:theory-copy": "tsx scripts/verify-theory-copy.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",

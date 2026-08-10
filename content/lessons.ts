@@ -1,8 +1,7 @@
 import type { Lesson } from "../lib/content/schema";
 
-const finalAnnexVerification = {
-  text: "Alineación final con el anexo 2026 pendiente de verificación frente a la convocatoria y sus fuentes oficiales vigentes.",
-  origin: "verification_pending" as const,
+const draftVerification = {
+  status: "draft" as const,
 };
 
 export const lessons: readonly Lesson[] = [
@@ -12,7 +11,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Explicación de estudio sobre igualdad de trato, discriminación y garantías de protección.",
     origin: "original_explanation",
     officialReferences: [{ title: "Ley Orgánica 3/2007, para la igualdad efectiva de mujeres y hombres", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "prevencion-riesgos-laborales",
@@ -20,7 +19,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Material de repaso sobre principios preventivos, modalidades y medidas de protección.",
     origin: "original_explanation",
     officialReferences: [{ title: "Ley 31/1995, de Prevención de Riesgos Laborales", url: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "estatuto-adif",
@@ -28,7 +27,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Síntesis didáctica de la naturaleza, fines y organización de ADIF.",
     origin: "original_explanation",
     officialReferences: [{ title: "Real Decreto 2395/2004, Estatuto de la entidad pública empresarial ADIF", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "ict-rd-346-2011",
@@ -36,7 +35,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Repaso de los conceptos de ICT y del marco reglamentario de instalaciones de telecomunicación.",
     origin: "original_explanation",
     officialReferences: [{ title: "Real Decreto 346/2011, reglamento regulador de las ICT", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "compatibilidad-electromagnetica",
@@ -44,7 +43,7 @@ export const lessons: readonly Lesson[] = [
     summary: "La CEM en el sector ferroviario: Directiva CEM (2004/108/CE y 2014/30/UE, RD 1580/2006 y RD 186/2016), norma EN 50121, emisiones, inmunidad y seguridad.",
     origin: "original_explanation",
     officialReferences: [{ title: "Real Decreto 186/2016, compatibilidad electromagnética", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "rcf-libro-1",
@@ -52,7 +51,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Guía de estudio de definiciones, principios y reglas generales de circulación ferroviaria.",
     origin: "original_explanation",
     officialReferences: [{ title: "Reglamento de Circulación Ferroviaria, Libro Primero", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "declaracion-red-2027",
@@ -60,7 +59,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Estudio de los capítulos I y II de la Declaración sobre la Red de Adif: sector ferroviario, RFIG y condiciones de acceso.",
     origin: "original_explanation",
     officialReferences: [{ title: "Declaración sobre la Red 2027 (Adif)", url: "https://www.adif.es/sobre-adif/declaracion-red", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "codigo-conducta",
@@ -68,7 +67,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Deberes, principios éticos y principios de conducta del empleado público conforme al Capítulo VI del Estatuto Básico.",
     origin: "original_explanation",
     officialReferences: [{ title: "Real Decreto Legislativo 5/2015, texto refundido de la Ley del Estatuto Básico del Empleado Público", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "incompatibilidades",
@@ -76,7 +75,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Régimen de incompatibilidades del personal al servicio de las Administraciones Públicas conforme a la Ley 53/1984.",
     origin: "original_explanation",
     officialReferences: [{ title: "Ley 53/1984, de Incompatibilidades del personal al servicio de las Administraciones Públicas", url: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "psicometria",
@@ -84,7 +83,7 @@ export const lessons: readonly Lesson[] = [
     summary: "Práctica original de aptitudes, razonamiento y estrategias de resolución de pruebas.",
     origin: "original_explanation",
     officialReferences: [{ title: "Bases de la convocatoria y criterios de evaluación aplicables", url: "https://www.adif.es/w/pni26-01-personal-operativo", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
   {
     slug: "ingles-a2",
@@ -92,6 +91,6 @@ export const lessons: readonly Lesson[] = [
     summary: "Repaso original de vocabulario, gramática y comprensión para el nivel A2.",
     origin: "original_explanation",
     officialReferences: [{ title: "Marco Común Europeo de Referencia para las Lenguas, nivel A2", url: "https://www.coe.int/en/web/common-european-framework-reference-languages/introduction-and-context", origin: "official_reference" }],
-    verificationNote: finalAnnexVerification,
+    verification: draftVerification,
   },
 ];

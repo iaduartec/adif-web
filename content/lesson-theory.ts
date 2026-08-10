@@ -1,16 +1,16 @@
-﻿export interface TheorySection {
-  introduction: string;
-  concepts: Array<{
-    title: string;
-    description: string;
-  }>;
-  examples: Array<{
-    situation: string;
-    application: string;
-  }>;
-  reviewTakeaways: string[];
-}
+export type {
+  TheorySection,
+  TheoryClaim,
+  TheoryClaimKind,
+  TheoryConcept,
+  TheoryExample,
+  LegalReference,
+  VerificationMeta,
+  VerificationStatus,
+  LessonMetadata,
+} from "./theory-types";
 
+import type { TheorySection } from "./theory-types";
 import { igualdadTheory } from "./theories/igualdad";
 import { prlTheory } from "./theories/prevencion-riesgos-laborales";
 import { estatutoAdifTheory } from "./theories/estatuto-adif";
@@ -34,5 +34,5 @@ export const lessonTheories: Record<string, TheorySection> = {
   "declaracion-red-2027": declaracionRed2027Theory,
   "codigo-conducta": codigoConductaTheory,
   incompatibilidades: incompatibilidadesTheory,
-  "ingles-a2": inglesA2Theory
+  "ingles-a2": inglesA2Theory,
 };
