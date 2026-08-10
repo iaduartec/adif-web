@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LessonNotes } from "../../../../components/course/lesson-notes";
-import { LessonReader, type LessonView } from "../../../../components/course/lesson-reader";
+import { CourseTheoryReader, type LessonView } from "../../../../components/course/course-theory-reader";
 import { getLesson } from "../../../../lib/content/repository";
 import { createServerClient } from "../../../../lib/supabase/server";
 
@@ -25,7 +25,7 @@ export default async function CourseLessonPage({ params, searchParams = Promise.
     ])
     : [{ data: null }, { data: null }];
   const view: LessonView = query.view === "theory" || query.view === "official" ? query.view : "summary";
-  const reader = await LessonReader({
+  const reader = await CourseTheoryReader({
     lesson,
     progress: progress?.percent ?? 0,
     view,

@@ -6,7 +6,7 @@ const { saveLessonProgress, saveNote } = vi.hoisted(() => ({ saveLessonProgress:
 vi.mock("../app/actions/lesson", () => ({ saveLessonProgress, saveNote }));
 
 import { LessonNotes } from "../components/course/lesson-notes";
-import { LessonReader } from "../components/course/lesson-reader";
+import { CourseTheoryReader } from "../components/course/course-theory-reader";
 import { OriginLabel } from "../components/course/origin-label";
 import { getLesson } from "../lib/content/repository";
 
@@ -47,7 +47,7 @@ describe("course reader provenance and notes", () => {
 
   it("updates the visible progress and disables completion after the server save succeeds", async () => {
     saveLessonProgress.mockResolvedValue({ ok: true });
-    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 10 }));
+    render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 10 }));
 
     fireEvent.click(screen.getByRole("button", { name: "Marcar como completada" }));
 
@@ -59,7 +59,7 @@ describe("course reader provenance and notes", () => {
 
   it("keeps completion retryable and reports the server error when saving fails", async () => {
     saveLessonProgress.mockRejectedValue(new Error("No se ha podido guardar el progreso."));
-    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 10 }));
+    render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 10 }));
 
     fireEvent.click(screen.getByRole("button", { name: "Marcar como completada" }));
 
@@ -70,7 +70,7 @@ describe("course reader provenance and notes", () => {
   });
 
   it("uses server links to select the integrated official text without a client-side corpus", async () => {
-    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
+    render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 
     expect(screen.getByText("Explicación y Enfoque Didáctico")).toBeVisible();
     const links = screen.getAllByRole("link", { name: /Consultar temario original/i });
@@ -78,10 +78,10 @@ describe("course reader provenance and notes", () => {
   });
 
   it("preserves practical examples, review takeaways, and exam-error guidance in the server theory view", async () => {
-    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
+    render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 
     expect(screen.getByRole("heading", { name: "Supuestos Prácticos Tipo Test" })).toBeVisible();
-    expect(screen.getByText(/discriminación indirecta por sexo/i)).toBeVisible();
+    expect(screen.getByText(/un puesto operativo se establece una prueba de esfuerzo físico/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Reglas Nemotécnicas y Tips" })).toBeVisible();
     expect(screen.getByText(/no admite justificación ordinaria/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
