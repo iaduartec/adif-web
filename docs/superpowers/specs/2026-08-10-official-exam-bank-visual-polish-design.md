@@ -1,7 +1,7 @@
 # Banco oficial de exámenes ADIF y revisión visual final
 
 **Fecha:** 10 de agosto de 2026
-**Estado:** Pendiente de revisión escrita
+**Estado:** Aprobado
 **Producto:** Plataforma de estudio ADIF — Oficial de Telecomunicaciones de Entrada
 
 ## 1. Objetivo
