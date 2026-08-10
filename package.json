@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "content:import": "tsx scripts/import-course-content.ts"
+    "content:import": "tsx scripts/import-course-content.ts",
+    "content:import-official": "tsx scripts/import-official-exams.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
