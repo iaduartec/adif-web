@@ -6,7 +6,7 @@ export const cemTheory: TheorySection = {
       id: "dir-2014-30-ue",
       sourceId: "Directiva 2014/30/UE",
       sourceTitle: "Directiva de Compatibilidad Electromagnética",
-      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80595",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
       locator: "Artículo 1",
       excerpt: "Esta Directiva regula la compatibilidad electromagnética de los equipos..."
     },

@@ -6,7 +6,7 @@ export const declaracionRed2027Theory: TheorySection = {
       id: "lsf-38-2015-art4",
       sourceId: "Ley 38/2015",
       sourceTitle: "Ley del Sector Ferroviario",
-      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10446",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       locator: "Artículo 4",
       excerpt: "La Red Ferroviaria de Interés General está integrada por las infraestructuras esenciales..."
     },
@@ -14,7 +14,7 @@ export const declaracionRed2027Theory: TheorySection = {
       id: "lsf-38-2015-art32",
       sourceId: "Ley 38/2015",
       sourceTitle: "Ley del Sector Ferroviario",
-      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10446",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       locator: "Artículo 32",
       excerpt: "La declaración sobre la red expondrá las características de la infraestructura puesta a disposición de las empresas ferroviarias e informará sobre la capacidad y condiciones técnicas de cada tramo de la red y sobre las condiciones de acceso a la misma. Su contenido se atendrá a lo recogido en el anexo III."
     },
@@ -45,7 +45,7 @@ export const declaracionRed2027Theory: TheorySection = {
     },
     {
       id: "dr-intro-2",
-      text: "Se elabora de acuerdo con la Ley del Sector Ferroviario, aprobándose con carácter anual por el Consejo de Administración de ADIF.",
+      text: "La Ley 38/2015 obliga a los administradores de infraestructuras ferroviarias, previa consulta a las partes interesadas, a elaborar, aprobar y publicar la declaración sobre la red correspondiente a su ámbito de actuación, así como sus actualizaciones.",
       kind: "normative",
       legalBasis: ["lsf-38-2015-art32"]
     }
@@ -58,7 +58,7 @@ export const declaracionRed2027Theory: TheorySection = {
       claims: [
         {
           id: "dr-c1-1",
-          text: "Documento oficial regulado por la Ley 38/2015 que detalla características técnicas, cánones, tarifas y adjudicación de capacidad para operadores.",
+          text: "Documento oficial regulado por la Ley 38/2015 que expone las características de la infraestructura puesta a disposición de las empresas ferroviarias e informa sobre la capacidad y condiciones técnicas de cada tramo de la red y las condiciones de acceso a la misma.",
           kind: "normative",
           legalBasis: ["dr-adif-2027-c1", "lsf-38-2015-art32"]
         }
