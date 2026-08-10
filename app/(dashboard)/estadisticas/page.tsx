@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { LazyChartWrapper } from "../../../components/dashboard/lazy-chart-wrapper";
-import { listQuestions, listLessons } from "../../../lib/content/repository";
+import { listOfficialQuestions } from "../../../lib/content/repository";
 import { calculateMetrics } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
 
@@ -24,8 +24,7 @@ export default async function EstadisticasPage() {
     .select("lesson_id, percent, completed, last_activity_at")
     .eq("user_id", user.id);
 
-  const questions = listQuestions();
-  const lessons = listLessons();
+  const questions = listOfficialQuestions();
 
   const metrics = calculateMetrics(
     questionAttempts ?? [],
@@ -34,29 +33,17 @@ export default async function EstadisticasPage() {
     new Date(),
   );
 
-  const moduleNameMap: Record<string, string> = {
-    igualdad: "G1 Igualdad",
-    "prevencion-riesgos-laborales": "G2 PRL",
-    "estatuto-adif": "G3 Estatuto ADIF",
-    "ict-rd-346-2011": "E1 ICT RD 346/2011",
-    "compatibilidad-electromagnetica": "E2 Compatibilidad electromagnetica",
-    "rcf-libro-1": "E3 RCF Libro 1",
-    psicometria: "P Psicotecnicos",
-    "ingles-a2": "I Ingles A2",
+  const sectionLabels: Record<string, string> = {
+    general: "Conocimientos generales",
+    english: "Inglés",
+    specific: "Conocimiento específico",
   };
-
-  const rankedLessons = [...lessons]
-    .map((lesson) => {
-      const moduleLabel = moduleNameMap[lesson.slug] ?? lesson.title;
-      const stats = metrics.accuracyByModule[moduleLabel];
-      return {
-        lesson,
-        moduleLabel,
-        stats,
-        percent: stats ? Math.round(stats.accuracy * 100) : null,
-      };
-    })
-    .sort((left, right) => (left.stats?.accuracy ?? Number.POSITIVE_INFINITY) - (right.stats?.accuracy ?? Number.POSITIVE_INFINITY));
+  const rankedSections = Object.entries(metrics.accuracyByModule)
+    .map(([section, stats]) => ({ section, stats, percent: Math.round(stats.accuracy * 100) }))
+    .sort((left, right) => left.stats.accuracy - right.stats.accuracy);
+  const coverage = Object.entries(metrics.coverageByExam)
+    .map(([id, stats]) => ({ id, ...stats }))
+    .sort((left, right) => right.year - left.year || left.examCode.localeCompare(right.examCode));
 
   return (
     <div className="dashboard-wide statistics-page">
@@ -73,7 +60,7 @@ export default async function EstadisticasPage() {
 
       {/* Accuracy by Module Section */}
       <section aria-labelledby="accuracy-title" className="border border-rail bg-white p-6 mb-8">
-        <h2 id="accuracy-title" className="text-lg font-bold mb-4">Precisión por Temas (Módulos)</h2>
+        <h2 id="accuracy-title" className="text-lg font-bold mb-4">Precisión por sección oficial</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-rail text-left text-sm text-gray-700">
             <thead>
@@ -84,13 +71,11 @@ export default async function EstadisticasPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-rail">
-              {rankedLessons.map(({ lesson, moduleLabel, stats, percent }, index) => {
+              {rankedSections.map(({ section, stats, percent }, index) => {
                 return (
-                  <tr key={lesson.slug}>
+                  <tr key={section}>
                     <td className="py-3 font-medium">
-                      <Link href={`/curso/${lesson.slug}`} className="hover:underline text-accent-strong">
-                        {lesson.title}
-                      </Link>
+                      {sectionLabels[section] ?? section}
                     </td>
                     <td className="py-3 text-center font-bold">
                       {percent !== null ? (
@@ -114,6 +99,30 @@ export default async function EstadisticasPage() {
                   </tr>
                 );
               })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="coverage-title" className="border border-rail bg-white p-6 mb-8">
+        <h2 id="coverage-title" className="text-lg font-bold mb-4">Cobertura por año y modelo oficial</h2>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-rail text-left text-sm text-gray-700">
+            <thead>
+              <tr>
+                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500">Modelo</th>
+                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500 text-right">Preguntas practicadas</th>
+                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500 text-right">Cobertura</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-rail">
+              {coverage.map(({ id, attempted, total }) => (
+                <tr key={id}>
+                  <td className="py-3 font-medium">{id}</td>
+                  <td className="py-3 text-right">{attempted} de {total}</td>
+                  <td className="py-3 text-right font-bold">{Math.round((attempted / total) * 100)}%</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

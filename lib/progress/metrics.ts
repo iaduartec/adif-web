@@ -1,6 +1,9 @@
+import type { OfficialQuestion } from "../content/schema";
+
 export interface MetricQuestion {
   id: string;
-  module: string;
+  /** @deprecated Optional only while legacy callers are migrated to official question records. */
+  source?: Pick<OfficialQuestion["source"], "year" | "examCode" | "section">;
 }
 
 export interface MetricAttempt {
@@ -27,11 +30,19 @@ export interface DayActivity {
   count: number;
 }
 
+export interface ExamCoverage {
+  year: number;
+  examCode: string;
+  attempted: number;
+  total: number;
+}
+
 export interface StudyMetrics {
   streak: number;
   accuracyByModule: Record<string, ModuleAccuracy>;
   weakestModule: string | null;
   sevenDayActivity: DayActivity[];
+  coverageByExam: Record<string, ExamCoverage>;
 }
 
 export function calculateMetrics(
@@ -40,19 +51,24 @@ export function calculateMetrics(
   questions: readonly MetricQuestion[],
   refDate: Date = new Date(),
 ): StudyMetrics {
-  // 1. Group question attempts by module
-  const questionMap = new Map(questions.map((q) => [q.id, q]));
+  // Only active official questions can contribute to study history.
+  const activeQuestions = questions.filter(
+    (question): question is MetricQuestion & { source: NonNullable<MetricQuestion["source"]> } => question.source !== undefined,
+  );
+  const questionMap = new Map(activeQuestions.map((q) => [q.id, q]));
+  const activeAttempts = attempts.filter((attempt) => questionMap.has(attempt.question_id));
   const accuracyByModule: Record<string, ModuleAccuracy> = {};
 
-  for (const attempt of attempts) {
+  for (const attempt of activeAttempts) {
     const q = questionMap.get(attempt.question_id);
     if (!q) continue;
+    const section = q.source.section;
 
-    if (!accuracyByModule[q.module]) {
-      accuracyByModule[q.module] = { correct: 0, total: 0, accuracy: 0 };
+    if (!accuracyByModule[section]) {
+      accuracyByModule[section] = { correct: 0, total: 0, accuracy: 0 };
     }
 
-    const stats = accuracyByModule[q.module];
+    const stats = accuracyByModule[section];
     stats.total++;
     if (attempt.is_correct) {
       stats.correct++;
@@ -76,7 +92,7 @@ export function calculateMetrics(
   // 2. Calculate unique active days
   const activeDates = new Set<string>();
 
-  for (const attempt of attempts) {
+  for (const attempt of activeAttempts) {
     const dateStr = attempt.created_at.split("T")[0];
     activeDates.add(dateStr);
   }
@@ -118,7 +134,7 @@ export function calculateMetrics(
 
     // count attempts on this day
     let count = 0;
-    for (const attempt of attempts) {
+    for (const attempt of activeAttempts) {
       if (attempt.created_at.startsWith(dateStr)) count++;
     }
     for (const progress of lessonProgress) {
@@ -128,11 +144,32 @@ export function calculateMetrics(
     sevenDayActivity.push({ date: dateStr, count });
   }
 
+  const coverageByExam: Record<string, ExamCoverage> = {};
+  for (const question of activeQuestions) {
+    const id = `ADIF-${question.source.year}-${question.source.examCode}`;
+    if (!coverageByExam[id]) {
+      coverageByExam[id] = {
+        year: question.source.year,
+        examCode: question.source.examCode,
+        attempted: 0,
+        total: 0,
+      };
+    }
+    coverageByExam[id].total++;
+  }
+  for (const questionId of new Set(activeAttempts.map((attempt) => attempt.question_id))) {
+    const question = questionMap.get(questionId);
+    if (!question) continue;
+    const id = `ADIF-${question.source.year}-${question.source.examCode}`;
+    coverageByExam[id].attempted++;
+  }
+
   return {
     streak,
     accuracyByModule,
     weakestModule,
     sevenDayActivity,
+    coverageByExam,
   };
 }
 

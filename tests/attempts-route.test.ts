@@ -10,6 +10,7 @@ const { createServerClient, insert, select, single } = vi.hoisted(() => ({
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
 
 import { POST } from "../app/api/attempts/route";
+import { getOfficialExam, listOfficialExams, listOfficialQuestions } from "../lib/content/repository";
 
 function attemptRequest(body: unknown) {
   return new Request("http://localhost/api/attempts", {
@@ -35,7 +36,7 @@ describe("POST /api/attempts", () => {
 
   it("derives correctness and owner from server-side data", async () => {
     const response = await POST(attemptRequest({
-      questionId: "Q0001",
+      questionId: "ADIF-2025-1131-Q01",
       answer: "A",
       mode: "practice",
       elapsedMs: 420,
@@ -44,14 +45,14 @@ describe("POST /api/attempts", () => {
     expect(response.status).toBe(201);
     await expect(response.json()).resolves.toMatchObject({
       attemptId: "attempt-1",
-      isCorrect: false,
-      correctAnswer: "D",
+      isCorrect: true,
+      correctAnswer: "A",
     });
     expect(insert).toHaveBeenCalledWith({
       user_id: "server-user",
-      question_id: "Q0001",
+      question_id: "ADIF-2025-1131-Q01",
       selected_answer: "A",
-      is_correct: false,
+      is_correct: true,
       mode: "practice",
       elapsed_ms: 420,
     });
@@ -59,8 +60,8 @@ describe("POST /api/attempts", () => {
 
   it("rejects tampered client-owned score and identity fields before writing", async () => {
     const response = await POST(attemptRequest({
-      questionId: "Q0001",
-      answer: "D",
+      questionId: "ADIF-2025-1131-Q01",
+      answer: "A",
       mode: "practice",
       elapsedMs: 0,
       isCorrect: false,
@@ -79,9 +80,35 @@ describe("POST /api/attempts", () => {
       from: vi.fn(),
     });
 
-    const response = await POST(attemptRequest({ questionId: "Q0001", answer: "D", mode: "practice", elapsedMs: 0 }));
+    const response = await POST(attemptRequest({ questionId: "ADIF-2025-1131-Q01", answer: "A", mode: "practice", elapsedMs: 0 }));
 
     expect(response.status).toBe(401);
     expect(insert).not.toHaveBeenCalled();
+  });
+
+  it("keeps retired question IDs inert even when a user has historical attempts", async () => {
+    const response = await POST(attemptRequest({ questionId: "Q0001", answer: "A", mode: "practice", elapsedMs: 0 }));
+
+    expect(response.status).toBe(404);
+    expect(insert).not.toHaveBeenCalled();
+  });
+});
+
+describe("official content repository", () => {
+  it("combines official year, model, section, text, and ID filters", () => {
+    const questions = listOfficialQuestions({
+      year: 2025,
+      examCode: "1131",
+      section: "specific",
+      query: "cordones",
+      ids: ["ADIF-2025-1131-Q01", "ADIF-2025-4104-Q01"],
+    });
+
+    expect(questions.map((question) => question.id)).toEqual(["ADIF-2025-1131-Q01"]);
+  });
+
+  it("publishes official models only when their referenced questions are active", () => {
+    expect(getOfficialExam("ADIF-2025-1131")?.questionIds).toHaveLength(18);
+    expect(listOfficialExams()).toHaveLength(6);
   });
 });

@@ -1,4 +1,4 @@
-import type { PracticeQuestion } from "../../components/practice/question-session";
+import type { OfficialQuestion } from "../content/schema";
 
 export interface QuestionAttempt {
   question_id: string;
@@ -6,7 +6,7 @@ export interface QuestionAttempt {
   created_at: string;
 }
 
-export function deriveErrorNotebook<T extends PracticeQuestion>(
+export function deriveErrorNotebook<T extends OfficialQuestion>(
   questions: readonly T[],
   attempts: readonly QuestionAttempt[]
 ): T[] {
