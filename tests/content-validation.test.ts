@@ -131,10 +131,15 @@ describe("active official course content", () => {
     }
 
     const reusedContent = [...questionsByFingerprint.values()].filter((appearances) => appearances.length > 1);
+    expect(questionsByFingerprint.size).toBe(72);
     expect(reusedContent).toHaveLength(30);
     expect(
       reusedContent.every(
         (appearances) =>
+          appearances.length === 2 &&
+          new Set(
+            appearances.map((question) => `${question.source.year}-${question.source.examCode}`),
+          ).size === 2 &&
           new Set(
             appearances.map((question) =>
               JSON.stringify([question.prompt, question.options, question.answer]),
@@ -145,11 +150,13 @@ describe("active official course content", () => {
   });
 
   it("publishes the six visually reviewed official exam models", () => {
-    const parsed = listOfficialExams();
-    expect(parsed.success).toBe(true);
-    if (!parsed.success) return;
+    const parsedExams = listOfficialExams();
+    const parsedQuestions = listQuestions();
+    expect(parsedExams.success).toBe(true);
+    expect(parsedQuestions.success).toBe(true);
+    if (!parsedExams.success || !parsedQuestions.success) return;
 
-    expect(parsed.data.map((exam) => [exam.id, exam.questionIds.length])).toEqual([
+    expect(parsedExams.data.map((exam) => [exam.id, exam.questionIds.length])).toEqual([
       ["ADIF-2023-1433", 15],
       ["ADIF-2023-4101", 15],
       ["ADIF-2024-3403", 18],
@@ -157,9 +164,48 @@ describe("active official course content", () => {
       ["ADIF-2025-1131", 18],
       ["ADIF-2025-4104", 18],
     ]);
-    const questionIds = parsed.data.flatMap((exam) => exam.questionIds);
+    const expectedQuestionNumbers = {
+      "ADIF-2023-1433": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "ADIF-2023-4101": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "ADIF-2024-3403": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+      "ADIF-2024-3413": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+      "ADIF-2025-1131": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+      "ADIF-2025-4104": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    } as const;
+
+    for (const exam of parsedExams.data) {
+      const appearances = parsedQuestions.data.filter(
+        (question) => `ADIF-${question.source.year}-${question.source.examCode}` === exam.id,
+      );
+      expect(exam.questionIds).toEqual(appearances.map((question) => question.id));
+      expect(appearances.map((question) => question.source.questionNumber)).toEqual(
+        expectedQuestionNumbers[exam.id as keyof typeof expectedQuestionNumbers],
+      );
+    }
+
+    const questionIds = parsedExams.data.flatMap((exam) => exam.questionIds);
     expect(questionIds).toHaveLength(102);
     expect(new Set(questionIds).size).toBe(102);
+
+    const missing2023Reserves = parsedQuestions.data.filter(
+      (question) => question.source.year === 2023 && question.source.questionNumber >= 16,
+    );
+    expect(missing2023Reserves).toEqual([]);
+
+    const publishedReserves = parsedQuestions.data.filter(
+      (question) => question.source.year >= 2024 && question.source.questionNumber >= 16,
+    );
+    expect(publishedReserves).toHaveLength(12);
+    expect(
+      publishedReserves.every(
+        (question) => question.source.isReserve && ["A", "B", "C", "D"].includes(question.answer),
+      ),
+    ).toBe(true);
+    expect(
+      parsedQuestions.data
+        .filter((question) => question.source.questionNumber <= 15)
+        .every((question) => !question.source.isReserve),
+    ).toBe(true);
   });
 
   it("does not publish any retired generic synthetic distractor", () => {

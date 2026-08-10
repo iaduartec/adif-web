@@ -10,6 +10,32 @@
     "ADIF-2025-1131": 18,
     "ADIF-2025-4104": 18
   },
+  "modelResults": {
+    "ADIF-2023-1433": {
+      "accepted": 15,
+      "rejected": 0
+    },
+    "ADIF-2023-4101": {
+      "accepted": 15,
+      "rejected": 0
+    },
+    "ADIF-2024-3403": {
+      "accepted": 18,
+      "rejected": 0
+    },
+    "ADIF-2024-3413": {
+      "accepted": 18,
+      "rejected": 0
+    },
+    "ADIF-2025-1131": {
+      "accepted": 18,
+      "rejected": 0
+    },
+    "ADIF-2025-4104": {
+      "accepted": 18,
+      "rejected": 0
+    }
+  },
   "retiredSyntheticDistractorFingerprints": [
     "sha256:004773cbe36cd6186f69616139aa1b64324879d0b166c706fd85c8cd2f869721",
     "sha256:007f5c9827e93f2f47951dd7b6d5815be3bb81637378a3cc0fed8526d7e1195e",

@@ -99,6 +99,7 @@ export type ImportReport = {
   acceptedExamCount: number;
   acceptedQuestionCount: number;
   acceptedQuestionCounts: Record<string, number>;
+  modelResults: Record<string, { accepted: number; rejected: number }>;
 };
 
 export type ImportedOfficialExamContent = {
@@ -176,6 +177,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
   const questions: OfficialQuestion[] = [];
   const exams: OfficialExam[] = [];
   const acceptedQuestionCounts: Record<string, number> = {};
+  const modelResults: ImportReport["modelResults"] = {};
 
   for (const entry of manifest) {
     const transcription = transcriptionByExamId.get(entry.id);
@@ -253,6 +255,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
     questions.push(...examQuestions);
     exams.push(officialExam.data);
     acceptedQuestionCounts[entry.id] = examQuestions.length;
+    modelResults[entry.id] = { accepted: examQuestions.length, rejected: 0 };
   }
 
   return {
@@ -263,6 +266,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
       acceptedExamCount: exams.length,
       acceptedQuestionCount: questions.length,
       acceptedQuestionCounts,
+      modelResults,
     },
   };
 }

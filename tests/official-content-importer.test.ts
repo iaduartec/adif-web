@@ -130,6 +130,9 @@ describe("official ADIF exam importer", () => {
       acceptedExamCount: 1,
       acceptedQuestionCount: 2,
       acceptedQuestionCounts: { "ADIF-2025-1131": 2 },
+      modelResults: {
+        "ADIF-2025-1131": { accepted: 2, rejected: 0 },
+      },
     });
   });
 });
