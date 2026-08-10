@@ -42,13 +42,24 @@ describe("official ADIF content schemas", () => {
     expect(officialQuestionSchema.safeParse(officialQuestion).success).toBe(true);
   });
 
-  it("rejects official questions without both source page references", () => {
+  it("rejects official questions without an answer key page reference", () => {
     const { answerKeyPage: _answerKeyPage, ...withoutAnswerKeyPage } = source;
 
     expect(
       officialQuestionSchema.safeParse({
         ...officialQuestion,
         source: withoutAnswerKeyPage,
+      }).success,
+    ).toBe(false);
+  });
+
+  it("rejects official questions without a booklet page reference", () => {
+    const { bookletPage: _bookletPage, ...withoutBookletPage } = source;
+
+    expect(
+      officialQuestionSchema.safeParse({
+        ...officialQuestion,
+        source: withoutBookletPage,
       }).success,
     ).toBe(false);
   });
