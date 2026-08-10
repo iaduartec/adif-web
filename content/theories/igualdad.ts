@@ -35,6 +35,14 @@ export const igualdadTheory: TheorySection = {
       excerpt: "La aprobación, modificación o derogación de las leyes orgánicas exigirá mayoría absoluta del Congreso, en una votación final sobre el conjunto del proyecto."
     },
     {
+      id: "lo3-2007-art1",
+      sourceId: "LO 3/2007",
+      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 1",
+      excerpt: "Las mujeres y los hombres son iguales en dignidad humana, e iguales en derechos y deberes. Esta Ley tiene por objeto hacer efectivo el derecho de igualdad de trato y de oportunidades entre mujeres y hombres, en particular mediante la eliminación de la discriminación de la mujer, sea cual fuere su circunstancia o condición, en cualesquiera de los ámbitos de la vida y, singularmente, en las esferas política, civil, laboral, económica, social y cultural para, en el desarrollo de los artículos 9.2 y 14 de la Constitución, alcanzar una sociedad más democrática, más justa y más solidaria."
+    },
+    {
       id: "lo3-2007-art3",
       sourceId: "LO 3/2007",
       sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
@@ -128,7 +136,7 @@ export const igualdadTheory: TheorySection = {
       sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 51",
-      excerpt: "Las Administraciones Públicas, en el ámbito de sus respectivas competencias... removerán los obstáculos que impidan o dificulten su plenitud..."
+      excerpt: "Las Administraciones públicas, en el ámbito de sus respectivas competencias y en aplicación del principio de igualdad entre mujeres y hombres, deberán remover los obstáculos que impliquen la pervivencia de cualquier tipo de discriminación, con el fin de ofrecer condiciones de igualdad efectiva entre mujeres y hombres en el acceso al empleo público y en el desarrollo de la carrera profesional."
     },
     {
       id: "lo3-2007-art77",
@@ -159,19 +167,19 @@ export const igualdadTheory: TheorySection = {
   introduction: [
     {
       id: "igualdad-intro-1",
-      text: "La Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres constituye el principal instrumento normativo en España para erradicar la discriminación por razón de sexo y promover la igualdad real.",
+      text: "La Ley Orgánica 3/2007 establece medidas dirigidas a hacer efectivo el derecho de igualdad de trato y de oportunidades entre mujeres y hombres y a eliminar la discriminación por razón de sexo.",
       kind: "normative",
-      legalBasis: ["lo3-2007-art3"]
+      legalBasis: ["lo3-2007-art1"]
     },
     {
       id: "igualdad-intro-2",
-      text: "La LO 3/2007 se tramita como ley orgánica por regular el desarrollo de un derecho fundamental: el derecho a la igualdad.",
+      text: "El artículo 81.1 de la Constitución determina las materias reservadas a ley orgánica.",
       kind: "normative",
       legalBasis: ["ce-art81"]
     },
     {
       id: "igualdad-intro-2b",
-      text: "La aprobación, modificación o derogación de la LO 3/2007 exige mayoría absoluta del Congreso, en una votación final sobre el conjunto del proyecto.",
+      text: "La aprobación, modificación o derogación de las leyes orgánicas exige mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto.",
       kind: "normative",
       legalBasis: ["ce-art81-2"]
     },
@@ -183,7 +191,7 @@ export const igualdadTheory: TheorySection = {
     },
     {
       id: "igualdad-intro-4",
-      text: "La ley es de aplicación en el ámbito de las oposiciones públicas y de la gestión de empleo en entidades como ADIF.",
+      text: "Para preparar la oposición conviene distinguir qué preceptos de la ley afectan al acceso al empleo y cuáles regulan otras materias de igualdad.",
       kind: "didactic",
       legalBasis: []
     }
@@ -480,9 +488,15 @@ export const igualdadTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "igualdad-takeaway-1",
-      text: "La LO 3/2007 obliga tanto a administraciones públicas como a empresas de cincuenta o más trabajadores en materia de planes de igualdad.",
+      text: "La LO 3/2007 obliga a las empresas de cincuenta o más trabajadores a elaborar y aplicar un plan de igualdad.",
       kind: "normative",
-      legalBasis: ["lo3-2007-art45", "lo3-2007-art51"]
+      legalBasis: ["lo3-2007-art45"]
+    },
+    {
+      id: "igualdad-takeaway-1b",
+      text: "Las Administraciones Públicas, en el ámbito de sus respectivas competencias, deben remover los obstáculos que impidan la igualdad efectiva entre mujeres y hombres en el acceso al empleo público y en el desarrollo de la carrera profesional.",
+      kind: "normative",
+      legalBasis: ["lo3-2007-art51"]
     },
     {
       id: "igualdad-takeaway-2",
