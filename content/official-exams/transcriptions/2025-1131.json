@@ -1,0 +1,527 @@
+{
+  "examId": "ADIF-2025-1131",
+  "questions": [
+    {
+      "number": 1,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 63,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del Real Decreto 346/2011 de 11 de marzo, en el caso de interconexión de cables de FO, la conexión entre el panel común de conectores de salida de la red del edificio y los repartidores de conectores de entrada de los diferentes operadores se realizará …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… mediante cordones o latiguillos de fibra óptica."
+        },
+        {
+          "key": "B",
+          "text": "… soldando la FO en ambos extremos con el fin de minimizar las pérdidas de potencia óptica."
+        },
+        {
+          "key": "C",
+          "text": "… soldando la FO sólo en el extremo del panel común de la red del edificio, pero no en el repartidor de los operadores."
+        },
+        {
+          "key": "D",
+          "text": "… soldando la FO sólo en el extremo del repartidor de los operadores, pero no en el panel común de la red del edificio."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 63,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD346/2011 en una ICT para el acceso a los servicios de telecomunicaciones de telefonía disponible al público y de banda ancha, se llama Punto de Interconexión, a aquel que:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Realiza la unión entre cada una de las redes de alimentación de los operadores del servicio y las redes de distribución de la ICT de la edificación, y delimita las responsabilidades en cuanto a mantenimiento."
+        },
+        {
+          "key": "B",
+          "text": "Realiza la unión entre redes de operadores públicos de comunicaciones electrónicas."
+        },
+        {
+          "key": "C",
+          "text": "Realiza la unión entre las ICTs de diferentes edificios."
+        },
+        {
+          "key": "D",
+          "text": "Realiza la unión entre dos redes de dispersión dentro del mismo edificio."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 3,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 63,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD346/2011 en una ICT para el acceso a los servicios de telecomunicaciones de telefonía disponible al público y de banda ancha, la red de alimentación, cuando el enlace se produce mediante cable…",
+      "options": [
+        {
+          "key": "A",
+          "text": "…se introduce en la ICT de la edificación a través una antena situada en el RITS."
+        },
+        {
+          "key": "B",
+          "text": "…se introduce en la ICT de la edificación a través de la arqueta de entrada, hasta llegar al RITI, donde se ubica el punto de interconexión."
+        },
+        {
+          "key": "C",
+          "text": "…se encarga de interconectar el RITI con el RITS."
+        },
+        {
+          "key": "D",
+          "text": "…sólo incluirá los elementos activos ubicados en el RITU."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 63,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según lo establecido en el artículo 1.1.1.3 del RCF, ¿qué se entiende por \"Zona de riesgo para los trabajos\"?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Es la comprendida entre la zona de peligro para los trabajos y la zona de seguridad para los trabajos."
+        },
+        {
+          "key": "B",
+          "text": "Espacio alrededor de la vía en el que una persona, material o equipo pueden ser arrollados por un vehículo ferroviario, o ser puestos en peligro por la corriente de aire que genera su circulación. Dicha zona comprende la vía y los espacios situados entre la cara externa de la cabeza del carril y una línea paralela situada a 2 metros de la misma, a ambos lados de la vía."
+        },
+        {
+          "key": "C",
+          "text": "Espacios situados a más de 3 metros de distancia del borde exterior de la cabeza del carril, a ambos lados de la vía."
+        },
+        {
+          "key": "D",
+          "text": "Espacio alrededor del conductor eléctrico dentro del cual un trabajador (con o sin herramienta) o una máquina de trabajos podría sufrir un arco eléctrico o un contacto directo con el elemento en tensión."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 5,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 63,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del Real Decreto 346/2011 de 11 de marzo, la impedancia característica media de los cables de acometida exterior operando entre 5 MHz y 3 GHz, será …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… 75 ± 3Ω."
+        },
+        {
+          "key": "B",
+          "text": "… 50 ± 1 Ω."
+        },
+        {
+          "key": "C",
+          "text": "… 120 ± 15 Ω."
+        },
+        {
+          "key": "D",
+          "text": "… 600 ± 30 Ω."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 63,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Con objeto de garantizar que las redes de telecomunicaciones en el interior de los edificios cumplan con las normas técnicas establecidas en el RD346/2011, aquellas deberán…",
+      "options": [
+        {
+          "key": "A",
+          "text": "…contar con un proyecto técnico en el caso en que el promotor así lo decida para garantizar la mejor calidad de las instalaciones."
+        },
+        {
+          "key": "B",
+          "text": "…contar con el correspondiente proyecto técnico en el que se describirán, detalladamente, todos los elementos que componen la instalación y su ubicación y dimensiones, con mención de las normas que cumplen."
+        },
+        {
+          "key": "C",
+          "text": "…contar con una descripción general de las mismas, dejando a criterio del director de obra su concreción."
+        },
+        {
+          "key": "D",
+          "text": "…contar con el correspondiente proyecto técnico en el que se describirán, solo los principales componentes, quedando el resto de detalles y su ubicación a definir en fase de obra."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 7,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 64,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD346/2011, una infraestructura común de telecomunicación, proporcionará a las viviendas o locales de las edificaciones, acceso a servicios de telecomunicación…",
+      "options": [
+        {
+          "key": "A",
+          "text": "…de radiodifusión sonora y televisión terrestres."
+        },
+        {
+          "key": "B",
+          "text": "…de radiodifusión sonora y televisión terrestres y satelitales."
+        },
+        {
+          "key": "C",
+          "text": "…de radiodifusión sonora y televisión terrestres y satelitales, así como servicios de telefonía y telecomunicaciones de banda ancha, prestados a través de redes públicas de telecomunicaciones."
+        },
+        {
+          "key": "D",
+          "text": "…de radiodifusión sonora y televisión terrestres, así como servicios de telefonía prestados a través de redes públicas de telecomunicaciones."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 8,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 64,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD346/2011 en una ICT para la captación, adaptación y distribución de señales de radiodifusión y televisión, los mástiles de antena:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Deberán estar conectados, si es posible, a la toma de tierra del edificio."
+        },
+        {
+          "key": "B",
+          "text": "No deben estar conectados nunca a la toma de tierra del edificio."
+        },
+        {
+          "key": "C",
+          "text": "Deberán estar conectados a la toma de tierra del edificio a través del camino más largo posible, con cable de, al menos, 25 mm² de sección."
+        },
+        {
+          "key": "D",
+          "text": "Deberán estar conectados a la toma de tierra del edificio a través del camino más corto posible, con cable de, al menos, 25 mm² de sección."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 9,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 64,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del Real Decreto 346/2011 de 11 de marzo, con carácter general, la impedancia de la red de las Infraestructura Común de Telecomunicaciones será, para cables coaxiales, de …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… 75 Ω."
+        },
+        {
+          "key": "B",
+          "text": "… 50 Ω."
+        },
+        {
+          "key": "C",
+          "text": "… 120 Ω."
+        },
+        {
+          "key": "D",
+          "text": "… 600 Ω."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 10,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 64,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del Real Decreto 346/2011 de 11 de marzo, cuando se instalen los distintos equipos (armarios, bastidores, y demás estructuras metálicas accesibles), …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… se creará una red mallada de equipotencialidad que conecte las partes metálicas accesibles de todos ellos entre si y al anillo de tierras del inmueble."
+        },
+        {
+          "key": "B",
+          "text": "… se dejará aislada cada parte metálica accesible de cada uno de ellos entre si, pero unidas con la toma de tierra del edificio."
+        },
+        {
+          "key": "C",
+          "text": "… se conectará cada parte metálica accesible de cada uno de ellos a los recubrimientos metálicos de los cables a los que den servicio."
+        },
+        {
+          "key": "D",
+          "text": "… se conectará cada parte metálica accesible de cada uno de ellos al hilo de tierra de la alimentación de la energía eléctrica del inmueble."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 11,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 64,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del Real Decreto 346/2011 de 11 de marzo, el punto de acceso de usuario de cada una de las acometidas de pares trenzados de la red de dispersión se terminará en …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… una roseta hembra miniatura de ocho vías (RJ45)."
+        },
+        {
+          "key": "B",
+          "text": "… un distribuidor inductivo de dos salidas simétrico terminadas en un conector tipo F hembra."
+        },
+        {
+          "key": "C",
+          "text": "… una regleta de dos niveles y cuatro hilos por nivel."
+        },
+        {
+          "key": "D",
+          "text": "… una roseta con conexión por tornillos para fiabilizar la conexión de la instalación del usuario."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 64,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del Real Decreto 346/2011 de 11 de marzo, la red de distribución, dispersión y la red interior del usuario estarán preparadas para permitir la distribución de la señal, de manera transparente, entre la cabecera y la toma de usuario en la banda de frecuencias comprendida entre ...",
+      "options": [
+        {
+          "key": "A",
+          "text": "… 5 MHz y 2.150 MHz."
+        },
+        {
+          "key": "B",
+          "text": "… 20 Hz y 20 KHz."
+        },
+        {
+          "key": "C",
+          "text": "... 10 MHz y 1 GHz."
+        },
+        {
+          "key": "D",
+          "text": "… 1 MHz y 100 MHz."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 65,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del documento Compatibilidad electromagnética y la seguridad en los ferrocarriles, la Directiva de Compatibilidad Electromagnética (CEM) afecta a …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… los equipos electrónicos que consuman más de 10 W."
+        },
+        {
+          "key": "B",
+          "text": "… los equipos electrónicos que consuman más de 100 W."
+        },
+        {
+          "key": "C",
+          "text": "… los equipos electrónicos que se alimenten en corriente alterna."
+        },
+        {
+          "key": "D",
+          "text": "… todos los equipos electrónicos."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 14,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 65,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del documento Compatibilidad electromagnética y la seguridad en los ferrocarriles, ¿cuál es una de las razones más importantes de la utilización de los convertidores de potencia en las redes ferroviarias?",
+      "options": [
+        {
+          "key": "A",
+          "text": "La facilidad de su instalación."
+        },
+        {
+          "key": "B",
+          "text": "La exigencia de cambiar entre dos o más tipos de líneas de suministro de energía."
+        },
+        {
+          "key": "C",
+          "text": "La baja potencia que necesitan los sistemas ferroviarios."
+        },
+        {
+          "key": "D",
+          "text": "Por los bajos niveles de Interferencias electromagnéticas (EMI) que generan."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 65,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del documento Compatibilidad electromagnética y la seguridad en los ferrocarriles, las medidas de emisiones electromagnéticas de los trenes en movimiento se realizan con varias antenas a la vez para …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… medir todas las emisiones en toda la longitud del tren."
+        },
+        {
+          "key": "B",
+          "text": "… medir las emisiones en toda la altura del tren."
+        },
+        {
+          "key": "C",
+          "text": "… comprobar la medida con varias antenas."
+        },
+        {
+          "key": "D",
+          "text": "… recibir todo el ancho de banda a medir."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 16,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": true,
+      "bookletPage": 66,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el temario del documento Compatibilidad electromagnética y la seguridad en los ferrocarriles, la actual Directiva de Compatibilidad Electromagnética, CEM, se publicó en …",
+      "options": [
+        {
+          "key": "A",
+          "text": "… diciembre de 2004."
+        },
+        {
+          "key": "B",
+          "text": "… diciembre de 2006."
+        },
+        {
+          "key": "C",
+          "text": "… marzo de 2014."
+        },
+        {
+          "key": "D",
+          "text": "… abril de 2016."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": true,
+      "bookletPage": 66,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD346/2011, en una infraestructura común de telecomunicaciones para la captación, adaptación y distribución de señales de radiodifusión sonora y televisión, procedentes de emisiones terrestres y de satélite, la red de distribución es:",
+      "options": [
+        {
+          "key": "A",
+          "text": "La parte de red que enlaza la red de dispersión con la toma de usuario."
+        },
+        {
+          "key": "B",
+          "text": "La parte de red que enlaza el Punto de Acceso a Usuario (PAU) con la toma de usuario."
+        },
+        {
+          "key": "C",
+          "text": "La parte de red que enlaza el equipo de cabecera con la red de interior de usuario."
+        },
+        {
+          "key": "D",
+          "text": "La parte de la red que enlaza el equipo de cabecera con la red de dispersión."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": true,
+      "bookletPage": 66,
+      "answerKeyPage": 7,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según lo establecido en el artículo 1.5.1.9 del RCF. ¿En qué caso quedará invalidada la orden de marcha de un tren?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tren directo que quede detenido en una estación."
+        },
+        {
+          "key": "B",
+          "text": "Tren que quede detenido en un apeadero."
+        },
+        {
+          "key": "C",
+          "text": "Tren de mercancías que circule con 10 minutos de retraso."
+        },
+        {
+          "key": "D",
+          "text": "Tren que quede detenido ante la señal de entrada de una estación."
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}

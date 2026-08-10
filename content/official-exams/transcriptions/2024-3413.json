@@ -1,0 +1,527 @@
+{
+  "examId": "ADIF-2024-3413",
+  "questions": [
+    {
+      "number": 1,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 192,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, la \"Norma técnica de infraestructura común de telecomunicaciones para la captación, adaptación y distribución de señales de radiodifusión sonora y televisión, procedentes de emisiones terrestres y de satélite\", se incluye en su anexo:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anexo I"
+        },
+        {
+          "key": "B",
+          "text": "Anexo II"
+        },
+        {
+          "key": "C",
+          "text": "Anexo III"
+        },
+        {
+          "key": "D",
+          "text": "Anexo IV"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 2,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 192,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo II indica que, todos los cables con portadores metálicos de telecomunicación procedentes del exterior del edificio serán apantallados, y el extremo de su pantalla estará conectado a tierra local en un punto tan próximo como sea posible de su entrada al recinto que aloja el punto de interconexión y nunca a más de:",
+      "options": [
+        {
+          "key": "A",
+          "text": "3 metros de distancia."
+        },
+        {
+          "key": "B",
+          "text": "2 metros de distancia."
+        },
+        {
+          "key": "C",
+          "text": "4 metros de distancia."
+        },
+        {
+          "key": "D",
+          "text": "5 metros de distancia."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 192,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo V hace referencia al CTE o:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Código de Telecomunicaciones de Edificación"
+        },
+        {
+          "key": "B",
+          "text": "Código Técnico de Edificación"
+        },
+        {
+          "key": "C",
+          "text": "Clasificación Técnica de Edificación"
+        },
+        {
+          "key": "D",
+          "text": "Categoría Técnica de Edificación"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 192,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo II indica que, en el caso de cableado de fibra óptica, la fibra se terminará en un BAT de fibra óptica con adaptador de tipo:",
+      "options": [
+        {
+          "key": "A",
+          "text": "BNC"
+        },
+        {
+          "key": "B",
+          "text": "SC/APC"
+        },
+        {
+          "key": "C",
+          "text": "F"
+        },
+        {
+          "key": "D",
+          "text": "ST"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 192,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo II indica que, cuando el enlace utilizado por los operadores entre sus centrales y la edificación se produce mediante cable, el punto de interconexión está ubicado en el:",
+      "options": [
+        {
+          "key": "A",
+          "text": "RITI"
+        },
+        {
+          "key": "B",
+          "text": "BAT"
+        },
+        {
+          "key": "C",
+          "text": "RITS"
+        },
+        {
+          "key": "D",
+          "text": "PAU"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 192,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo II indica que se conoce con la abreviatura \"RITS\" a:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Recinto de Instalaciones de Telecomunicación Superior."
+        },
+        {
+          "key": "B",
+          "text": "Registro de Instalaciones de Telecomunicación Superior."
+        },
+        {
+          "key": "C",
+          "text": "Red de Instalaciones de Telecomunicación Superior."
+        },
+        {
+          "key": "D",
+          "text": "Registro de Instalaciones de Telecomunicación y Sistemas."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, \"se determinarán las calidades de los materiales y equipos y las condiciones de montaje\", en el siguiente documento del proyecto técnico:",
+      "options": [
+        {
+          "key": "A",
+          "text": "La memoria."
+        },
+        {
+          "key": "B",
+          "text": "El pliego de condiciones."
+        },
+        {
+          "key": "C",
+          "text": "Los planos."
+        },
+        {
+          "key": "D",
+          "text": "El presupuesto."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 8,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, los \"esquemas de principio de la instalación; tipo, número, características y situación de los elementos de la infraestructura, canalizaciones de telecomunicación de la edificación; situación y ordenación de los recintos de instalaciones de telecomunicaciones; otras instalaciones previstas en la edificación que pudieran interferir o ser interferidas en su funcionamiento con la infraestructura; y detalles de ejecución de puntos singulares, cuando así se requiera por su índole.\", se incluirán en el siguiente documento del proyecto técnico:",
+      "options": [
+        {
+          "key": "A",
+          "text": "La memoria."
+        },
+        {
+          "key": "B",
+          "text": "El pliego de condiciones."
+        },
+        {
+          "key": "C",
+          "text": "Los planos."
+        },
+        {
+          "key": "D",
+          "text": "El presupuesto."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 9,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo II indica que, cuando el enlace utilizado por los operadores entre sus centrales y la edificación se produce por medios radioeléctricos, los elementos de captación irán situados en:",
+      "options": [
+        {
+          "key": "A",
+          "text": "RITS"
+        },
+        {
+          "key": "B",
+          "text": "Cubierta o azotea"
+        },
+        {
+          "key": "C",
+          "text": "Sótano"
+        },
+        {
+          "key": "D",
+          "text": "RITI"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 10,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo V, ¿cuál de los siguientes NO es un servicio de hogar digital del área o grupo de control del entorno?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Telemonitorización."
+        },
+        {
+          "key": "B",
+          "text": "Control de iluminación."
+        },
+        {
+          "key": "C",
+          "text": "Telecontrol."
+        },
+        {
+          "key": "D",
+          "text": "Diagnóstico y mantenimiento remoto."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo II indica que se conoce con la abreviatura \"STDP\" a:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Servicios de Telefonía Disponible al Público."
+        },
+        {
+          "key": "B",
+          "text": "Sistema de Telecomunicaciones Disponible al Público."
+        },
+        {
+          "key": "C",
+          "text": "Sistema de Transmisión Disponible al Público."
+        },
+        {
+          "key": "D",
+          "text": "Servicio de Telecomunicaciones Disponible al Público."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 12,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Conforme a lo establecido en el artículo 1.1.1.7 - Criterios generales de operación de trenes del RCF, ¿cuál es la velocidad máxima de circulación para un tren cuando los sistemas de protección del tren instalados en la infraestructura y en la cabina de conducción no sean compatibles entre sí, o alguno de ellos no esté operativo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "100 km/h"
+        },
+        {
+          "key": "B",
+          "text": "120 km/h"
+        },
+        {
+          "key": "C",
+          "text": "200 km/h"
+        },
+        {
+          "key": "D",
+          "text": "220 km/h"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 13,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 193,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "A la señal eléctrica no deseada que se suma a la señal útil, se le conoce como:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Inducción electromagnética."
+        },
+        {
+          "key": "B",
+          "text": "Radiación electromagnética."
+        },
+        {
+          "key": "C",
+          "text": "Interferencia electromagnética."
+        },
+        {
+          "key": "D",
+          "text": "Perturbación electromagnética."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 14,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 194,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "A la distancia recorrida por la onda durante el tiempo de una oscilación completa, se le conoce como:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Amplitud de onda."
+        },
+        {
+          "key": "B",
+          "text": "Ancho de banda."
+        },
+        {
+          "key": "C",
+          "text": "Armónico."
+        },
+        {
+          "key": "D",
+          "text": "Longitud de onda."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 194,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "En el acoplamiento capacitivo, la tensión inducida será mayor:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cuanto menor sea la capacidad mutua."
+        },
+        {
+          "key": "B",
+          "text": "Cuanto menor sea la variación respecto al tiempo de la tensión fuente, o cuanto menor sea su frecuencia."
+        },
+        {
+          "key": "C",
+          "text": "Cuanto menor sea la distancia entre el conductor fuente y el conductor víctima."
+        },
+        {
+          "key": "D",
+          "text": "Cuanto menor sea la longitud de los dos circuitos enfrentados."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": true,
+      "bookletPage": 195,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "El Índice de Distorsión Armónica (IDA) es:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Inversamente proporcional a la amplitud de la fundamental o armónico de rango 1."
+        },
+        {
+          "key": "B",
+          "text": "Directamente proporcional a la amplitud de la fundamental o armónico de rango 1."
+        },
+        {
+          "key": "C",
+          "text": "Inversamente proporcional a la amplitud de la fundamental o armónico de rango 2."
+        },
+        {
+          "key": "D",
+          "text": "Directamente proporcional a la amplitud de la fundamental o armónico de rango 2."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 17,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": true,
+      "bookletPage": 195,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según lo establecido en el artículo 1.5.1.21 - Pruebas de frenado del RCF. Para los trenes formados con material convencional, ¿qué prueba de frenado se realizará antes de la salida del tren de una estación o dependencia en la que se agreguen vehículos a la composición?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Prueba de continuidad."
+        },
+        {
+          "key": "B",
+          "text": "Prueba completa."
+        },
+        {
+          "key": "C",
+          "text": "Verificación de acoplamiento."
+        },
+        {
+          "key": "D",
+          "text": "Prueba Parcial."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": true,
+      "bookletPage": 195,
+      "answerKeyPage": 19,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en su Anexo V hace referencia al RITE o:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reglamento de Instalaciones de Telecomunicaciones en Edificación."
+        },
+        {
+          "key": "B",
+          "text": "Reglamento de Infraestructuras de Telecomunicaciones."
+        },
+        {
+          "key": "C",
+          "text": "Reglamento de Instalaciones Térmicas de los Edificios."
+        },
+        {
+          "key": "D",
+          "text": "Reglamento de Interconexión de Telecomunicaciones en Edificios."
+        }
+      ],
+      "answer": "C"
+    }
+  ]
+}

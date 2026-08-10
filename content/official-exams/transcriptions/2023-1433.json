@@ -1,0 +1,440 @@
+{
+  "examId": "ADIF-2023-1433",
+  "questions": [
+    {
+      "number": 1,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 68,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Cuando los sistemas de protección del tren instalados en la infraestructura y en la cabina de conducción no sean compatibles entre sí, la velocidad máxima de circulación será:",
+      "options": [
+        {
+          "key": "A",
+          "text": "80 km/h."
+        },
+        {
+          "key": "B",
+          "text": "100 km/h."
+        },
+        {
+          "key": "C",
+          "text": "120 km/h."
+        },
+        {
+          "key": "D",
+          "text": "140 km/h."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 2,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 68,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, se conoce con la abreviatura \"BAT\" a las:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bases de Acceso de Telecomunicaciones."
+        },
+        {
+          "key": "B",
+          "text": "Bases de Acceso de Terminal."
+        },
+        {
+          "key": "C",
+          "text": "Bases de Acceso de Telefonía."
+        },
+        {
+          "key": "D",
+          "text": "Bases de Acceso Total."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 3,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 68,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "El ámbito subjetivo del RCF es…",
+      "options": [
+        {
+          "key": "A",
+          "text": "… exclusivamente el personal de Adif y Adif AV que interviene, directa o indirectamente, en los procesos de circulación de trenes y maniobras."
+        },
+        {
+          "key": "B",
+          "text": "… todo el personal de las EF, de los AI y de otras empresas, que interviene, directa o indirectamente, en los procesos de circulación de trenes y maniobras."
+        },
+        {
+          "key": "C",
+          "text": "… solamente el personal ferroviario de Adif y Adif AV y de las empresas ferroviarias que intervienen, directa o indirectamente, en los procesos de circulación de trenes y maniobras."
+        },
+        {
+          "key": "D",
+          "text": "… todo el personal de las EF, de los AI y de otras empresas, que interviene, directa o indirectamente, en los procesos del transporte ferroviario."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 4,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 68,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, en los pasos de canalizaciones a través de elementos que deban cumplir una función de compartimentación frente a incendio se debe mantener la resistencia al fuego exigible a dichos elementos, de acuerdo con lo establecido en el artículo:",
+      "options": [
+        {
+          "key": "A",
+          "text": "SUA 1-4 del documento básico DB SUA del Código Técnico de Edificación."
+        },
+        {
+          "key": "B",
+          "text": "SI 1-3 del documento básico DB SI del Código Técnico de Edificación."
+        },
+        {
+          "key": "C",
+          "text": "SE 1-5 del documento básico DB SE del Código Técnico de Edificación."
+        },
+        {
+          "key": "D",
+          "text": "HE 1-6 del documento básico DB HE del Código Técnico de Edificación."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 5,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 68,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, podrán utilizarse, con presunción de conformidad del cumplimiento de los requisitos de compatibilidad electromagnética, entre otras, las normas:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Armonizadas que se publiquen en el Diario Oficial de las Comunidades Europeas al amparo de la Directiva 2004/108/CE."
+        },
+        {
+          "key": "B",
+          "text": "ETSI."
+        },
+        {
+          "key": "C",
+          "text": "ISO."
+        },
+        {
+          "key": "D",
+          "text": "ITU."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 6,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 68,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, se conoce con la abreviatura \"RITI\" a:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Recinto de Instalaciones de Telecomunicación Inferior."
+        },
+        {
+          "key": "B",
+          "text": "Registro de Instalaciones de Telecomunicación Interior."
+        },
+        {
+          "key": "C",
+          "text": "Red de Instalaciones de Telecomunicación Interior."
+        },
+        {
+          "key": "D",
+          "text": "Registro de Instalaciones de Telecomunicación interoperable."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 7,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Considerando su función la parada de los trenes podrá ser:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Comercial, momentánea o técnica."
+        },
+        {
+          "key": "B",
+          "text": "Momentánea, ocasional o técnica."
+        },
+        {
+          "key": "C",
+          "text": "Programada o accidental."
+        },
+        {
+          "key": "D",
+          "text": "Técnica, restringida o comercial."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 8,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, la norma de \"Tecnologías de la Información. Instalación de cableado. Ensayo de cableados instalados\" es la:",
+      "options": [
+        {
+          "key": "A",
+          "text": "UNE-EN 50346"
+        },
+        {
+          "key": "B",
+          "text": "UNE-EN 50643"
+        },
+        {
+          "key": "C",
+          "text": "UNE-EN 50354"
+        },
+        {
+          "key": "D",
+          "text": "UNE-EN 50436"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 9,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, ¿cuál de las siguientes redes es responsabilidad de los operadores del servicio?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Red interior de usuario."
+        },
+        {
+          "key": "B",
+          "text": "Red de distribución."
+        },
+        {
+          "key": "C",
+          "text": "Red de alimentación."
+        },
+        {
+          "key": "D",
+          "text": "Red de dispersión."
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "number": 10,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, al punto que \"realiza la unión entre las redes de distribución y de dispersión\", se le conoce como:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Punto de acceso universal."
+        },
+        {
+          "key": "B",
+          "text": "Punto de distribución."
+        },
+        {
+          "key": "C",
+          "text": "Punto de asignación de usuarios."
+        },
+        {
+          "key": "D",
+          "text": "Punto de asignación universal."
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "number": 11,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "El artículo 1.1.1.7 del RCF establece que para que un tren pueda iniciar servicio, es necesario que en la estación de origen, o en la primera de la RFIG para trenes internacionales, disponga en la cabina de conducción y tenga operativos, una serie de equipamientos. Marque la respuesta INCORRECTA.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sistema de protección de tren compatible con alguno de los instalados en la infraestructura (si ésta dispone de ellos)."
+        },
+        {
+          "key": "B",
+          "text": "Dispositivo de vigilancia."
+        },
+        {
+          "key": "C",
+          "text": "Radiotelefonía."
+        },
+        {
+          "key": "D",
+          "text": "Sistema de protección de tren compatible con el instalado en la infraestructura."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 12,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "Las EMI conducidas pueden aparecer en modo diferencial cuando se propagan:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sólo por conductores activos del sistema."
+        },
+        {
+          "key": "B",
+          "text": "Por la tierra del sistema."
+        },
+        {
+          "key": "C",
+          "text": "Por la tierra de protección."
+        },
+        {
+          "key": "D",
+          "text": "Por la pantalla del cable."
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "number": 13,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "¿Cuál de los siguientes NO es un criterio para que un objeto sea compatible electromagnéticamente?",
+      "options": [
+        {
+          "key": "A",
+          "text": "No produce perturbaciones sobre potenciales víctimas."
+        },
+        {
+          "key": "B",
+          "text": "No produce perturbaciones sobre sí mismo."
+        },
+        {
+          "key": "C",
+          "text": "Es inmune a las emisiones de otros sistemas."
+        },
+        {
+          "key": "D",
+          "text": "Es inmune a sus propias emisiones."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 14,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "¿Cuál de las siguientes NO es una forma de reducir el acoplamiento inductivo?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Trenzar el cable."
+        },
+        {
+          "key": "B",
+          "text": "Juntar el cable que lleva la corriente perturbadora y el cable de retorno de esta corriente."
+        },
+        {
+          "key": "C",
+          "text": "Colocar el cable perturbador en perpendicular al bucle víctima."
+        },
+        {
+          "key": "D",
+          "text": "Aumentar el área del bucle víctima."
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "number": 15,
+      "section": "specific",
+      "sectionLabel": "Conocimiento Específico",
+      "isReserve": false,
+      "bookletPage": 69,
+      "answerKeyPage": 6,
+      "verifiedAt": "2026-08-10",
+      "prompt": "A la capacidad de un equipo para NO ser afectado en su función por la presencia de interferencias electromagnéticas, se le conoce como:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Inmunidad"
+        },
+        {
+          "key": "B",
+          "text": "Compatibilidad"
+        },
+        {
+          "key": "C",
+          "text": "Susceptibilidad"
+        },
+        {
+          "key": "D",
+          "text": "Sensibilidad"
+        }
+      ],
+      "answer": "A"
+    }
+  ]
+}
