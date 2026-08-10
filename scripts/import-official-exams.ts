@@ -184,12 +184,19 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
     if (!transcription) importError(`Missing reviewed transcription for ${entry.id}.`);
 
     const seenNumbers = new Set<number>();
+    const expectedNumbers = new Set(entry.expectedQuestionNumbers);
+    let rejectedCount = 0;
     const examQuestions: OfficialQuestion[] = [];
     for (const transcribedQuestion of transcription.questions) {
       if (seenNumbers.has(transcribedQuestion.number)) {
         importError(`Duplicate question number for ${entry.year}-${entry.examCode}: ${transcribedQuestion.number}.`);
       }
       seenNumbers.add(transcribedQuestion.number);
+
+      if (!expectedNumbers.has(transcribedQuestion.number)) {
+        rejectedCount++;
+        continue;
+      }
 
       const options = orderedOptions(transcribedQuestion.options);
       const wording = [transcribedQuestion.prompt, ...options.map((option) => option.text)];
@@ -255,7 +262,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
     questions.push(...examQuestions);
     exams.push(officialExam.data);
     acceptedQuestionCounts[entry.id] = examQuestions.length;
-    modelResults[entry.id] = { accepted: examQuestions.length, rejected: 0 };
+    modelResults[entry.id] = { accepted: examQuestions.length, rejected: rejectedCount };
   }
 
   return {

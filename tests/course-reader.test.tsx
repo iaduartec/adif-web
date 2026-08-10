@@ -49,7 +49,7 @@ describe("course reader provenance and notes", () => {
 
   it("updates the visible progress and disables completion after the server save succeeds", async () => {
     saveLessonProgress.mockResolvedValue({ ok: true });
-    render(<LessonReader lesson={getLesson("igualdad")!} progress={10} questions={[]} />);
+    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 10 }));
 
     fireEvent.click(screen.getByRole("button", { name: "Marcar como completada" }));
 
@@ -61,7 +61,7 @@ describe("course reader provenance and notes", () => {
 
   it("keeps completion retryable and reports the server error when saving fails", async () => {
     saveLessonProgress.mockRejectedValue(new Error("No se ha podido guardar el progreso."));
-    render(<LessonReader lesson={getLesson("igualdad")!} progress={10} questions={[]} />);
+    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 10 }));
 
     fireEvent.click(screen.getByRole("button", { name: "Marcar como completada" }));
 
@@ -71,20 +71,21 @@ describe("course reader provenance and notes", () => {
     expect(screen.getByRole("button", { name: "Marcar como completada" })).toBeEnabled();
   });
 
-  it("allows switching to the integrated official text tab when clicking the consult button", () => {
-    render(<LessonReader lesson={getLesson("igualdad")!} progress={0} questions={[]} />);
+  it("uses server links to select the integrated official text without a client-side corpus", async () => {
+    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 
-    fireEvent.click(screen.getByRole("button", { name: "Teoría y Práctica" }));
-
-    // Initially we see the study guide explanation
     expect(screen.getByText("Explicación y Enfoque Didáctico")).toBeVisible();
+    const links = screen.getAllByRole("link", { name: /Consultar temario original/i });
+    expect(links[0]).toHaveAttribute("href", "/curso/igualdad?view=official");
+  });
 
-    // Click on the button to check official text
-    const buttons = screen.getAllByRole("button", { name: /Consultar temario original/i });
-    fireEvent.click(buttons[0]);
+  it("preserves practical examples, review takeaways, and exam-error guidance in the server theory view", async () => {
+    render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 
-    // Now the active tab should switch to Official Text
-    expect(screen.getByRole("button", { name: /Temario Original/i })).toBeVisible();
-    expect(screen.getByPlaceholderText(/Buscar artículos/i)).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Supuestos Prácticos Tipo Test" })).toBeVisible();
+    expect(screen.getByText(/prueba física con una marca de tiempo idéntica/i)).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Reglas Nemotécnicas y Tips" })).toBeVisible();
+    expect(screen.getByText(/La discriminación directa no admite justificación objetiva/i)).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
   });
 });

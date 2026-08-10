@@ -2,22 +2,17 @@ import { createServerClient as createSupabaseServerClient } from "@supabase/ssr"
 import { cookies } from "next/headers";
 import type { Database } from "../database.types";
 import { createMockSupabaseClient } from "./mock-client";
+import { getSupabaseRuntimeConfig } from "./config";
 
 export async function createServerClient() {
-  if (
-    process.env.PLAYWRIGHT_TEST === "true" ||
-    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  ) {
+  const config = getSupabaseRuntimeConfig();
+  if (config.mode === "mock") {
     return createMockSupabaseClient() as unknown as ReturnType<typeof createSupabaseServerClient<Database>>;
   }
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
   const cookieStore = await cookies();
 
-  return createSupabaseServerClient<Database>(url, anonKey, {
+  return createSupabaseServerClient<Database>(config.url, config.anonKey, {
     cookies: {
       getAll() {
         return cookieStore.getAll();

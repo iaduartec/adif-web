@@ -6,7 +6,7 @@ import { SimulationRunner } from "../../../../components/practice/simulation-run
 import { SimulationResults } from "../../../../components/practice/simulation-results";
 import type { SimulationResult } from "../../../../app/actions/simulations";
 import type { OfficialExamQuestion } from "../../../../lib/content/repository";
-import type { OfficialExam } from "../../../../lib/content/schema";
+import type { PublicOfficialExam } from "../../../../lib/content/public-dto";
 import { Button } from "../../../../components/ui/button";
 import { OfficialSource } from "../../../../components/practice/official-source";
 
@@ -14,7 +14,7 @@ export function SimulationPageClient({
   exam,
   questions,
 }: {
-  exam: OfficialExam;
+  exam: PublicOfficialExam;
   questions: OfficialExamQuestion[];
 }) {
   const [result, setResult] = useState<SimulationResult | null>(null);

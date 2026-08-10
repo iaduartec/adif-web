@@ -179,6 +179,15 @@ describe("authenticated navigation", () => {
     expect(container.querySelector(".official-question-card h2")).not.toBeNull();
   });
 
+  it("clamps an out-of-range question page and removes navigation from the disabled control", async () => {
+    render(await TestsPage({ searchParams: Promise.resolve({ page: "999" }) }));
+
+    expect(screen.getByText("Página 5 de 5")).toBeVisible();
+    expect(screen.getAllByRole("article")).toHaveLength(2);
+    expect(screen.queryByRole("link", { name: "Siguiente" })).not.toBeInTheDocument();
+    expect(screen.getByText("Siguiente")).toHaveAttribute("aria-disabled", "true");
+  });
+
   it("uses level-two question headings in the populated error notebook", async () => {
     const question = listOfficialQuestions()[0]!;
     serverRows.current = {

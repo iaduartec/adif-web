@@ -12,7 +12,7 @@ const manifestEntry = {
   documentUrl: "https://www.adif.es/documents/20124/45240815/examen.pdf",
   durationMinutes: 120,
   expectedQuestionNumbers: [1, 2],
-  completeness: "complete" as const,
+  completeness: "complete" as "complete" | "specific_part",
   scoring: { correct: 1, incorrect: -1 / 3, omitted: 0 },
 };
 
@@ -134,5 +134,23 @@ describe("official ADIF exam importer", () => {
         "ADIF-2025-1131": { accepted: 2, rejected: 0 },
       },
     });
+  });
+
+  it("rejects unexpected specific-part numbers from publication and reports their real count", () => {
+    const input = validInput();
+    input.manifest[0] = { ...manifestEntry, completeness: "specific_part" };
+    input.transcriptions[0].questions[1] = {
+      number: 3,
+      ...question,
+      prompt: "Pregunta fuera del tramo publicado.",
+    };
+
+    const result = parseOfficialExamTranscriptions(input);
+
+    expect(result.questions.map((item) => item.id)).toEqual(["ADIF-2025-1131-Q01"]);
+    expect(result.report.modelResults).toEqual({
+      "ADIF-2025-1131": { accepted: 1, rejected: 1 },
+    });
+    expect(result.report.acceptedQuestionCount).toBe(1);
   });
 });

@@ -83,13 +83,16 @@ function createSupabaseDouble() {
       return Promise.resolve({ error: null });
     },
   }));
+  const rpc = vi.fn(async () => ({ data: "attempt-1", error: null }));
 
   return {
     client: {
       auth: { getUser: async () => ({ data: { user: { id: "user-1" } } }) },
       from,
+      rpc,
     },
     from,
+    rpc,
     insertedAttempts,
     insertedAnswers,
   };
@@ -116,15 +119,19 @@ describe("submitSimulation", () => {
     );
 
     expect(result).toMatchObject({ correct: 0, incorrect: 2, omitted: 0, score: -0.67 });
-    expect(supabase.insertedAttempts).toEqual([
-      expect.objectContaining({ simulation_id: exam.id, score: -0.67 }),
-    ]);
-    expect(supabase.insertedAnswers).toEqual([
-      [
-        expect.objectContaining({ question_id: "ADIF-2024-3403-Q01" }),
-        expect.objectContaining({ question_id: "ADIF-2024-3403-Q02" }),
+    expect(supabase.rpc).toHaveBeenCalledWith("submit_simulation_attempt", {
+      p_simulation_id: exam.id,
+      p_correct_count: 0,
+      p_incorrect_count: 2,
+      p_omitted_count: 0,
+      p_score: -0.67,
+      p_elapsed_ms: 1200,
+      p_answers: [
+        { question_id: "ADIF-2024-3403-Q01", selected_answer: "D", is_correct: false },
+        { question_id: "ADIF-2024-3403-Q02", selected_answer: "D", is_correct: false },
       ],
-    ]);
+    });
+    expect(supabase.from).not.toHaveBeenCalled();
   });
 
   it("rejects an answer keyed to another official model", async () => {
@@ -144,4 +151,31 @@ describe("submitSimulation", () => {
 
     expect(supabase.from).not.toHaveBeenCalled();
   });
+
+  it.each(["E", "", "A "])("rejects the invalid answer value %j before persistence", async (answer) => {
+    const supabase = createSupabaseDouble();
+    createServerClient.mockResolvedValue(supabase.client);
+
+    await expect(submitSimulation(
+      exam.id,
+      { "ADIF-2024-3403-Q01": answer },
+      1200,
+    )).rejects.toThrow(/respuesta.*inválida/i);
+
+    expect(supabase.rpc).not.toHaveBeenCalled();
+    expect(supabase.from).not.toHaveBeenCalled();
+  });
+
+  it.each([Number.NaN, Number.POSITIVE_INFINITY, 86_400_001])(
+    "rejects the invalid or out-of-bounds duration %s before persistence",
+    async (elapsedMs) => {
+      const supabase = createSupabaseDouble();
+      createServerClient.mockResolvedValue(supabase.client);
+
+      await expect(submitSimulation(exam.id, {}, elapsedMs)).rejects.toThrow(/Tiempo transcurrido inválido/i);
+
+      expect(supabase.rpc).not.toHaveBeenCalled();
+      expect(supabase.from).not.toHaveBeenCalled();
+    },
+  );
 });

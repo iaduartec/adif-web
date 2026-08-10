@@ -36,8 +36,8 @@ describe("course lesson summaries", () => {
   ] as const;
 
   for (const { slug, overview, headingCount } of cases) {
-    it(`renders a structured summary for ${slug} instead of the fallback note`, () => {
-      render(<LessonReader lesson={getLesson(slug)!} progress={0} questions={[]} />);
+    it(`renders a structured summary for ${slug} instead of the fallback note`, async () => {
+      render(await LessonReader({ lesson: getLesson(slug)!, progress: 0 }));
 
       expect(screen.queryByText(/No hay resumen estructurado disponible/i)).toBeNull();
       expect(screen.getByText(overview)).toBeVisible();

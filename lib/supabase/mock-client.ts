@@ -1,6 +1,7 @@
-import { mockStore, MOCK_USER } from "./mock-store";
+import { getMockStore, MOCK_USER } from "./mock-store";
 
 export function createMockSupabaseClient() {
+  const mockStore = getMockStore();
   const chain = (tableName: string, dataState: any[]) => {
     let operation: "select" | "insert" | "upsert" | "delete" | "update" | null = null;
     let operationPayload: any = null;
@@ -182,6 +183,40 @@ export function createMockSupabaseClient() {
         }
         return Promise.resolve({ error: null });
       },
+    },
+    rpc: (functionName: string, args: any) => {
+      if (functionName !== "submit_simulation_attempt") {
+        return Promise.resolve({ data: null, error: new Error("Unknown mock RPC") });
+      }
+
+      const attemptId = Math.random().toString(36).substring(7);
+      const createdAt = new Date().toISOString();
+      const answerRows = Array.isArray(args.p_answers) ? args.p_answers : [];
+      const attempt = {
+        id: attemptId,
+        user_id: MOCK_USER.id,
+        simulation_id: args.p_simulation_id,
+        score: args.p_score,
+        correct_count: args.p_correct_count,
+        incorrect_count: args.p_incorrect_count,
+        omitted_count: args.p_omitted_count,
+        elapsed_ms: args.p_elapsed_ms,
+        created_at: createdAt,
+      };
+      const answers = answerRows.map((answer: any) => ({
+        id: Math.random().toString(36).substring(7),
+        user_id: MOCK_USER.id,
+        attempt_id: attemptId,
+        question_id: answer.question_id,
+        selected_answer: answer.selected_answer,
+        is_correct: answer.is_correct,
+        created_at: createdAt,
+      }));
+
+      // Commit both arrays together after the payload has been materialized.
+      mockStore.simulationAttempts.push(attempt);
+      mockStore.simulationAnswers.push(...answers);
+      return Promise.resolve({ data: attemptId, error: null });
     },
     from: (tableName: string) => {
       if (tableName === "question_attempts") return chain(tableName, mockStore.questionAttempts);

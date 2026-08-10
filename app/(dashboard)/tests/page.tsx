@@ -4,6 +4,7 @@ import { FavoriteButton } from "../../../components/practice/favorite-button";
 import { OfficialSource } from "../../../components/practice/official-source";
 import { QuestionSession, type PracticeQuestion } from "../../../components/practice/question-session";
 import { listOfficialQuestions } from "../../../lib/content/repository";
+import { toPublicOfficialQuestion } from "../../../lib/content/public-dto";
 import type { OfficialQuestion } from "../../../lib/content/schema";
 import { displayModuleName } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
@@ -29,10 +30,6 @@ function getSelectedYear(value: string | undefined): number | undefined {
   return Number.isInteger(year) ? year : undefined;
 }
 
-function toPracticeQuestion({ answer: _answer, ...question }: OfficialQuestion): PracticeQuestion {
-  return question;
-}
-
 export default async function TestsPage({
   searchParams,
 }: {
@@ -44,7 +41,7 @@ export default async function TestsPage({
   const selectedSection = params.section && params.section !== "all" ? params.section : undefined;
   const searchQuery = params.query?.trim() ?? "";
   const statusFilter = params.status ?? "all";
-  const currentPage = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
+  const requestedPage = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
   const isPractice = params.practice === "true";
 
   const supabase = await createServerClient();
@@ -90,6 +87,10 @@ export default async function TestsPage({
     filtered = filtered.filter((question) => favoriteIds.has(question.id));
   }
 
+  const totalItems = filtered.length;
+  const totalPages = Math.ceil(totalItems / PAGE_SIZE) || 1;
+  const currentPage = Math.min(requestedPage, totalPages);
+
   const buildUrl = (updates: Record<string, string | null>) => {
     const urlParams = new URLSearchParams();
     if (selectedYear) urlParams.set("year", String(selectedYear));
@@ -107,7 +108,7 @@ export default async function TestsPage({
   };
 
   if (isPractice) {
-    const practiceQuestions = filtered.slice(0, PRACTICE_QUESTION_LIMIT).map(toPracticeQuestion);
+    const practiceQuestions = filtered.slice(0, PRACTICE_QUESTION_LIMIT).map(toPublicOfficialQuestion);
     const backParams = new URLSearchParams(buildUrl({ practice: null }).split("?")[1]);
 
     return (
@@ -143,8 +144,6 @@ export default async function TestsPage({
     );
   }
 
-  const totalItems = filtered.length;
-  const totalPages = Math.ceil(totalItems / PAGE_SIZE) || 1;
   const paginatedQuestions = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   return (
@@ -237,9 +236,17 @@ export default async function TestsPage({
 
       {totalPages > 1 && (
         <nav aria-label="Navegación de páginas" className="pagination">
-          <Link aria-disabled={currentPage <= 1} className="ui-button ui-button--secondary" href={buildUrl({ page: String(currentPage - 1) })}>Anterior</Link>
+          {currentPage > 1 ? (
+            <Link className="ui-button ui-button--secondary" href={buildUrl({ page: String(currentPage - 1) })}>Anterior</Link>
+          ) : (
+            <span aria-disabled="true" className="ui-button ui-button--secondary">Anterior</span>
+          )}
           <span>Página {currentPage} de {totalPages}</span>
-          <Link aria-disabled={currentPage >= totalPages} className="ui-button ui-button--secondary" href={buildUrl({ page: String(currentPage + 1) })}>Siguiente</Link>
+          {currentPage < totalPages ? (
+            <Link className="ui-button ui-button--secondary" href={buildUrl({ page: String(currentPage + 1) })}>Siguiente</Link>
+          ) : (
+            <span aria-disabled="true" className="ui-button ui-button--secondary">Siguiente</span>
+          )}
         </nav>
       )}
     </div>

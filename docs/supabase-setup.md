@@ -3,6 +3,7 @@
 ## Create and configure the project
 
 1. Create a Supabase project and copy only its project URL and anon key into the application environment used by the existing Supabase client. Do not commit credentials.
+   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are required outside Playwright. The application fails closed with a configuration error when either value is missing; the in-memory client is enabled only when the Playwright web server sets `PLAYWRIGHT_TEST=true`.
 2. In Supabase Dashboard, open **Authentication → Providers → Google** and follow the official Google provider configuration guide. Configure the approved redirect URLs for this app in both Google Cloud and Supabase.
 3. Apply the tracked migration:
 
@@ -46,4 +47,4 @@ The focused contract test can be run with the application suite:
 pnpm test -- tests/study-schema-contract.test.ts
 ```
 
-The pgTAP test covers owner success plus cross-user insert, select, and update denial. No real user credentials or provider secrets are required.
+The pgTAP test covers owner success plus cross-user insert, select, and update denial. Simulation submissions use the tracked `submit_simulation_attempt` RPC so the parent attempt and its answers commit in one transaction under `auth.uid()` ownership. No real user credentials or provider secrets are required.

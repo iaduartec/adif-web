@@ -63,9 +63,18 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     await page.click("text=Siguiente");
     await page.locator("label").filter({ hasText: /^B\./ }).click();
 
-    // Submit simulation
-    await page.getByRole("button", { name: "Entregar examen" }).click();
-    await page.click("text=Confirmar entrega");
+    // Submit simulation and verify accessible modal focus management.
+    const submitTrigger = page.getByRole("button", { name: "Entregar examen" });
+    await submitTrigger.click();
+    const submitDialog = page.getByRole("dialog", { name: "Confirmar entrega" });
+    await expect(submitDialog).toBeVisible();
+    await expect(page.getByRole("button", { name: "Seguir revisando" })).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(submitDialog).toBeHidden();
+    await expect(submitTrigger).toBeFocused();
+
+    await submitTrigger.click();
+    await page.getByRole("button", { name: "Confirmar entrega" }).click();
 
     // Verify simulation results page (exact text from SimulationResults component)
     await expect(page.locator("h2:has-text('Resultado del examen')")).toBeVisible();

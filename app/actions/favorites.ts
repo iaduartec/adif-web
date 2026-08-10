@@ -1,10 +1,10 @@
 "use server";
 
-import { getOfficialQuestion, getQuestion } from "../../lib/content/repository";
+import { getOfficialQuestion } from "../../lib/content/repository";
 import { createServerClient } from "../../lib/supabase/server";
 
 export async function toggleFavorite(questionId: string) {
-  if (!getOfficialQuestion(questionId) && !getQuestion(questionId)) {
+  if (!getOfficialQuestion(questionId)) {
     throw new Error("La pregunta solicitada no existe.");
   }
 

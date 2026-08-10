@@ -1,12 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useRef, useState } from "react";
+import { useModalFocus } from "../ui/use-modal-focus";
 import { NAV_ITEMS } from "./nav-items";
-
-function focusableWithin(container: HTMLElement) {
-  return Array.from(container.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
-}
 
 export function MobileNavigation({ currentPath }: { currentPath: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,39 +11,17 @@ export function MobileNavigation({ currentPath }: { currentPath: string }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!isOpen) return;
-    const initialOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    return () => { document.body.style.overflow = initialOverflow; };
-  }, [isOpen]);
-
-  function closeNavigation(restoreFocus = true) {
+  function closeNavigation() {
     setIsOpen(false);
-    if (restoreFocus) triggerRef.current?.focus();
   }
 
-  function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      closeNavigation();
-      return;
-    }
-    if (event.key !== "Tab" || !dialogRef.current) return;
-    const elements = focusableWithin(dialogRef.current);
-    const first = elements[0];
-    const last = elements[elements.length - 1];
-    if (!first || !last) return;
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    }
-    if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  }
+  const handleKeyDown = useModalFocus({
+    dialogRef,
+    initialFocusRef: closeRef,
+    isOpen,
+    onDismiss: closeNavigation,
+    returnFocusRef: triggerRef,
+  });
 
   return (
     <div className="mobile-navigation">
@@ -66,7 +41,7 @@ export function MobileNavigation({ currentPath }: { currentPath: string }) {
               <ul className="shell-navigation-list">
                 {NAV_ITEMS.map(({ href, icon: Icon, label }) => (
                   <li key={href}>
-                    <Link className="shell-navigation-link" href={href} aria-current={currentPath === href ? "page" : undefined} onClick={() => closeNavigation(false)}>
+                    <Link className="shell-navigation-link" href={href} aria-current={currentPath === href ? "page" : undefined} onClick={closeNavigation}>
                       <Icon className="shell-navigation-icon" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" />
                       <span>{label}</span>
                     </Link>

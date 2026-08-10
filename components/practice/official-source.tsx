@@ -1,10 +1,10 @@
-import type { OfficialQuestion } from "../../lib/content/schema";
+import type { PublicOfficialQuestionSource } from "../../lib/content/public-dto";
 
 export function OfficialSource({
   source,
   variant = "question",
 }: {
-  source: OfficialQuestion["source"];
+  source: PublicOfficialQuestionSource;
   variant?: "question" | "exam";
 }) {
   return (

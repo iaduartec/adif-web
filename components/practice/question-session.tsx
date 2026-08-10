@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
-import type { OfficialQuestion } from "../../lib/content/schema";
+import type { PublicOfficialQuestion } from "../../lib/content/public-dto";
 import { Button } from "../ui/button";
 import { OfficialSource } from "./official-source";
 
-export type PracticeQuestion = Omit<OfficialQuestion, "answer">;
+export type PracticeQuestion = PublicOfficialQuestion;
 
 type AttemptResult = {
   isCorrect: boolean;

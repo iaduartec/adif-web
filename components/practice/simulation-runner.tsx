@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { OfficialExamQuestion } from "../../lib/content/repository";
 import { submitSimulation, type SimulationResult } from "../../app/actions/simulations";
 import { Button } from "../ui/button";
+import { useModalFocus } from "../ui/use-modal-focus";
 
 type AnswerKey = "A" | "B" | "C" | "D";
 
@@ -64,6 +65,18 @@ export function SimulationRunner({
   const [error, setError] = useState("");
   const startedAt = useRef(0);
   const delivered = useRef(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const reviewButtonRef = useRef<HTMLButtonElement>(null);
+  const deliverButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeConfirm = useCallback(() => setShowConfirm(false), []);
+  const handleDialogKeyDown = useModalFocus({
+    dialogRef,
+    initialFocusRef: reviewButtonRef,
+    isOpen: showConfirm,
+    onDismiss: closeConfirm,
+    returnFocusRef: deliverButtonRef,
+  });
 
   useEffect(() => {
     startedAt.current = Date.now();
@@ -127,6 +140,11 @@ export function SimulationRunner({
 
   return (
     <div className="simulation-runner">
+      <div
+        aria-hidden={showConfirm ? "true" : undefined}
+        className="simulation-runner__content"
+        inert={showConfirm ? true : undefined}
+      >
       {/* Top bar: timer + progress */}
       <div className="simulation-topbar">
         <div className={`simulation-timer ${isUrgent ? "simulation-timer--urgent" : ""}`}>
@@ -201,16 +219,31 @@ export function SimulationRunner({
           className="simulation-deliver-btn"
           disabled={isSubmitting}
           onClick={() => setShowConfirm(true)}
+          ref={deliverButtonRef}
         >
           {isSubmitting ? "Entregando…" : "Entregar examen"}
         </Button>
       </div>
 
+      {error && (
+        <p aria-live="assertive" className="course-status course-status--error" role="alert">
+          {error}
+        </p>
+      )}
+      </div>
+
       {/* Confirmation dialog */}
       {showConfirm && (
-        <div className="simulation-confirm-overlay" role="dialog" aria-modal="true" aria-label="Confirmar entrega">
+        <div
+          aria-labelledby="simulation-confirm-title"
+          aria-modal="true"
+          className="simulation-confirm-overlay"
+          onKeyDown={handleDialogKeyDown}
+          ref={dialogRef}
+          role="dialog"
+        >
           <div className="simulation-confirm-dialog">
-            <h3>¿Entregar examen?</h3>
+            <h3 id="simulation-confirm-title">Confirmar entrega</h3>
             <p>
               Has respondido {answeredCount} de {questions.length} preguntas.
               {questions.length - answeredCount > 0 && (
@@ -218,7 +251,7 @@ export function SimulationRunner({
               )}
             </p>
             <div className="simulation-confirm-actions">
-              <Button onClick={() => setShowConfirm(false)}>Seguir revisando</Button>
+              <Button onClick={closeConfirm} ref={reviewButtonRef}>Seguir revisando</Button>
               <Button disabled={isSubmitting} onClick={() => { setShowConfirm(false); doSubmit(); }}>
                 Confirmar entrega
               </Button>
@@ -227,11 +260,6 @@ export function SimulationRunner({
         </div>
       )}
 
-      {error && (
-        <p aria-live="assertive" className="course-status course-status--error" role="alert">
-          {error}
-        </p>
-      )}
     </div>
   );
 }

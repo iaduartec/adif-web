@@ -90,6 +90,17 @@ describe("calculateMetrics", () => {
     expect(metrics.sevenDayActivity[6].count).toBe(0);
     expect(metrics.sevenDayActivity[5].count).toBe(1);
   });
+
+  it("groups a streak by Europe/Madrid calendar days across the UTC midnight boundary", () => {
+    const metrics = calculateMetrics([
+      { question_id: "ADIF-2025-1131-Q01", is_correct: true, created_at: "2026-08-09T23:30:00Z" },
+      { question_id: "ADIF-2025-1131-Q02", is_correct: true, created_at: "2026-08-09T20:00:00Z" },
+    ], [], mockQuestions, new Date("2026-08-10T10:00:00Z"));
+
+    expect(metrics.streak).toBe(2);
+    expect(metrics.sevenDayActivity.at(-1)).toEqual({ date: "2026-08-10", count: 1 });
+    expect(metrics.sevenDayActivity.at(-2)).toEqual({ date: "2026-08-09", count: 1 });
+  });
 });
 
 describe("recommendNextSession", () => {
@@ -133,10 +144,11 @@ describe("recommendNextSession", () => {
     expect(rec.href).toBe("/simulacros/SIM-07");
   });
 
-  it("falls back to SIM-01 when there are no simulations provided", () => {
+  it("falls back to the official exam index when no published model is provided", () => {
     const rec = recommendNextSession([], null);
     expect(rec.type).toBe("simulation");
-    expect(rec.id).toBe("SIM-01");
-    expect(rec.href).toBe("/simulacros/SIM-01");
+    expect(rec.id).toBe("official-exams");
+    expect(rec.href).toBe("/simulacros");
+    expect(rec.title).toBe("Explorar exámenes oficiales");
   });
 });

@@ -1,5 +1,10 @@
 import { notFound, redirect } from "next/navigation";
-import { getOfficialExam, getOfficialQuestion, type OfficialExamQuestion } from "../../../../lib/content/repository";
+import { getOfficialExam, getOfficialQuestion } from "../../../../lib/content/repository";
+import {
+  toPublicOfficialExam,
+  toPublicOfficialQuestion,
+  type PublicOfficialQuestion,
+} from "../../../../lib/content/public-dto";
 import { createServerClient } from "../../../../lib/supabase/server";
 import { SimulationPageClient } from "./client";
 
@@ -16,16 +21,15 @@ export default async function SimulationDetailPage({ params }: { params: Promise
   if (!exam) notFound();
 
   // Strip the answer from each question so the client cannot cheat
-  const questions: OfficialExamQuestion[] = exam.questionIds.map((questionId) => {
+  const questions: PublicOfficialQuestion[] = exam.questionIds.map((questionId) => {
     const question = getOfficialQuestion(questionId);
     if (!question) throw new Error(`Pregunta oficial ${questionId} no encontrada.`);
-    const { answer: _answer, ...rest } = question;
-    return rest;
+    return toPublicOfficialQuestion(question);
   });
 
   return (
     <SimulationPageClient
-      exam={exam}
+      exam={toPublicOfficialExam(exam)}
       questions={questions}
     />
   );

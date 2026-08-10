@@ -1,17 +1,12 @@
 import { createBrowserClient as createSupabaseBrowserClient } from "@supabase/ssr";
 import { createMockSupabaseClient } from "./mock-client";
+import { getSupabaseRuntimeConfig } from "./config";
 
 export function createBrowserClient() {
-  if (
-    process.env.PLAYWRIGHT_TEST === "true" ||
-    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  ) {
+  const config = getSupabaseRuntimeConfig();
+  if (config.mode === "mock") {
     return createMockSupabaseClient();
   }
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  return createSupabaseBrowserClient(url, anonKey);
+  return createSupabaseBrowserClient(config.url, config.anonKey);
 }

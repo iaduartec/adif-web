@@ -1,28 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LessonNotes } from "../../../../components/course/lesson-notes";
-import { LessonReader } from "../../../../components/course/lesson-reader";
-import { getLesson, listQuestions } from "../../../../lib/content/repository";
+import { LessonReader, type LessonView } from "../../../../components/course/lesson-reader";
+import { getLesson } from "../../../../lib/content/repository";
 import { createServerClient } from "../../../../lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
-const questionModules: Record<string, string> = {
-  igualdad: "G1 Igualdad",
-  "prevencion-riesgos-laborales": "G2 PRL",
-  "estatuto-adif": "G3 Estatuto ADIF",
-  "codigo-conducta": "G4 Codigo de conducta",
-  incompatibilidades: "G5 Incompatibilidades",
-  "ict-rd-346-2011": "E1 ICT RD 346/2011",
-  "compatibilidad-electromagnetica": "E2 Compatibilidad electromagnetica",
-  "rcf-libro-1": "E3 RCF Libro 1",
-  "declaracion-red-2027": "E4 Declaracion de la red",
-  psicometria: "P Psicotecnicos",
-  "ingles-a2": "I Ingles A2",
-};
-
-export default async function CourseLessonPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CourseLessonPage({ params, searchParams = Promise.resolve({}) }: {
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ view?: string; full?: string; query?: string }>;
+}) {
   const { slug } = await params;
+  const query = await searchParams;
   const lesson = getLesson(slug);
   if (!lesson) notFound();
 
@@ -34,12 +24,19 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ s
       supabase.from("notes").select("body").eq("user_id", user.id).eq("lesson_id", slug).maybeSingle(),
     ])
     : [{ data: null }, { data: null }];
-  const questions = listQuestions({ module: questionModules[slug] }).slice(0, 3);
+  const view: LessonView = query.view === "theory" || query.view === "official" ? query.view : "summary";
+  const reader = await LessonReader({
+    lesson,
+    progress: progress?.percent ?? 0,
+    view,
+    showFullDocument: query.full === "true",
+    searchQuery: query.query ?? "",
+  });
 
   return (
     <div className="dashboard-reading course-page">
       <nav aria-label="Migas de pan" className="course-breadcrumb"><Link href="/curso">Curso</Link><span aria-hidden="true">/</span><span aria-current="page">{lesson.title}</span></nav>
-      <LessonReader lesson={lesson} progress={progress?.percent ?? 0} questions={questions} />
+      {reader}
       <LessonNotes initialBody={note?.body ?? ""} slug={lesson.slug} />
     </div>
   );

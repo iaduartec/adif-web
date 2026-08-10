@@ -45,6 +45,29 @@ export interface StudyMetrics {
   coverageByExam: Record<string, ExamCoverage>;
 }
 
+const madridDateFormatter = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Europe/Madrid",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+function madridDateKey(value: Date | string): string {
+  const parts = madridDateFormatter.formatToParts(
+    typeof value === "string" ? new Date(value) : value,
+  );
+  const year = parts.find((part) => part.type === "year")?.value;
+  const month = parts.find((part) => part.type === "month")?.value;
+  const day = parts.find((part) => part.type === "day")?.value;
+  if (!year || !month || !day) throw new Error("No se ha podido calcular la fecha de actividad.");
+  return `${year}-${month}-${day}`;
+}
+
+function shiftCalendarDate(dateKey: string, days: number): string {
+  const [year, month, day] = dateKey.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day + days, 12)).toISOString().slice(0, 10);
+}
+
 export function calculateMetrics(
   attempts: readonly MetricAttempt[],
   lessonProgress: readonly MetricLessonProgress[],
@@ -93,52 +116,45 @@ export function calculateMetrics(
   const activeDates = new Set<string>();
 
   for (const attempt of activeAttempts) {
-    const dateStr = attempt.created_at.split("T")[0];
-    activeDates.add(dateStr);
+    activeDates.add(madridDateKey(attempt.created_at));
   }
   for (const progress of lessonProgress) {
-    const dateStr = progress.last_activity_at.split("T")[0];
-    activeDates.add(dateStr);
+    activeDates.add(madridDateKey(progress.last_activity_at));
   }
 
   // 3. Streak calculation
   let streak = 0;
-  const getLocalDateStr = (d: Date) => d.toISOString().split("T")[0];
+  const todayStr = madridDateKey(refDate);
+  const yesterdayStr = shiftCalendarDate(todayStr, -1);
 
-  const todayStr = getLocalDateStr(refDate);
-  const yesterdayDate = new Date(refDate.getTime() - 24 * 3600 * 1000);
-  const yesterdayStr = getLocalDateStr(yesterdayDate);
-
-  let startStreakDate: Date | null = null;
+  let startStreakDate: string | null = null;
 
   if (activeDates.has(todayStr)) {
-    startStreakDate = refDate;
+    startStreakDate = todayStr;
   } else if (activeDates.has(yesterdayStr)) {
-    startStreakDate = yesterdayDate;
+    startStreakDate = yesterdayStr;
   }
 
   if (startStreakDate !== null) {
-    let checkDate = new Date(startStreakDate.getTime());
-    while (activeDates.has(getLocalDateStr(checkDate))) {
+    let checkDate = startStreakDate;
+    while (activeDates.has(checkDate)) {
       streak++;
-      // go back 1 day
-      checkDate = new Date(checkDate.getTime() - 24 * 3600 * 1000);
+      checkDate = shiftCalendarDate(checkDate, -1);
     }
   }
 
   // 4. Seven day activity ending on refDate
   const sevenDayActivity: DayActivity[] = [];
   for (let i = 6; i >= 0; i--) {
-    const d = new Date(refDate.getTime() - i * 24 * 3600 * 1000);
-    const dateStr = getLocalDateStr(d);
+    const dateStr = shiftCalendarDate(todayStr, -i);
 
     // count attempts on this day
     let count = 0;
     for (const attempt of activeAttempts) {
-      if (attempt.created_at.startsWith(dateStr)) count++;
+      if (madridDateKey(attempt.created_at) === dateStr) count++;
     }
     for (const progress of lessonProgress) {
-      if (progress.last_activity_at.startsWith(dateStr)) count++;
+      if (madridDateKey(progress.last_activity_at) === dateStr) count++;
     }
 
     sevenDayActivity.push({ date: dateStr, count });
@@ -263,12 +279,11 @@ export function recommendNextSession(
     };
   }
 
-  // Default recommendation
   return {
     type: "simulation",
-    id: "SIM-01",
-    title: "Iniciar simulacro",
-    description: "Si no hay datos suficientes, empieza por un simulacro completo para establecer una referencia.",
-    href: "/simulacros/SIM-01",
+    id: "official-exams",
+    title: "Explorar exámenes oficiales",
+    description: "Consulta los modelos oficiales publicados y elige uno para establecer una referencia.",
+    href: "/simulacros",
   };
 }

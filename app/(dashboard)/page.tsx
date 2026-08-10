@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ProgressSummary } from "../../components/dashboard/progress-summary";
 import { StudyPlan } from "../../components/dashboard/study-plan";
-import { listLessons, listQuestions, listOfficialExams } from "../../lib/content/repository";
+import { listLessons, listOfficialQuestions, listOfficialExams } from "../../lib/content/repository";
 import { calculateMetrics, recommendNextSession } from "../../lib/progress/metrics";
 import { createServerClient } from "../../lib/supabase/server";
 
@@ -57,7 +57,7 @@ export default async function DashboardPage() {
 
   // Retrieve lessons list and questions list
   const lessons = listLessons();
-  const questions = listQuestions();
+  const questions = listOfficialQuestions();
   const simulations = listOfficialExams();
 
   // Metrics calculation

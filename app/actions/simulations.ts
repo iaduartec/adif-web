@@ -3,6 +3,9 @@
 import { getOfficialExam, getOfficialQuestion } from "../../lib/content/repository";
 import { createServerClient } from "../../lib/supabase/server";
 
+const ANSWER_KEYS = new Set(["A", "B", "C", "D"]);
+const MAX_SIMULATION_ELAPSED_MS = 86_400_000;
+
 export type SimulationCorrection = {
   questionId: string;
   selectedAnswer: string | null;
@@ -28,12 +31,24 @@ export async function submitSimulation(
   const exam = getOfficialExam(examId);
   if (!exam) throw new Error("El examen oficial solicitado no existe.");
 
-  const supabase = await createServerClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) throw new Error("Debes iniciar sesión para entregar un examen.");
-
-  if (typeof elapsedMs !== "number" || elapsedMs < 0) {
+  if (
+    typeof elapsedMs !== "number"
+    || !Number.isFinite(elapsedMs)
+    || !Number.isSafeInteger(elapsedMs)
+    || elapsedMs < 0
+    || elapsedMs > MAX_SIMULATION_ELAPSED_MS
+  ) {
     throw new Error("Tiempo transcurrido inválido.");
+  }
+
+  if (!answers || typeof answers !== "object" || Array.isArray(answers)) {
+    throw new Error("Respuesta inválida en la entrega del examen.");
+  }
+
+  for (const selectedAnswer of Object.values(answers)) {
+    if (!ANSWER_KEYS.has(selectedAnswer)) {
+      throw new Error("Respuesta inválida en la entrega del examen. Usa únicamente A, B, C o D.");
+    }
   }
 
   const examQuestionIds = new Set(exam.questionIds);
@@ -42,6 +57,10 @@ export async function submitSimulation(
       throw new Error(`La pregunta ${questionId} no pertenece al examen oficial.`);
     }
   }
+
+  const supabase = await createServerClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error("Debes iniciar sesión para entregar un examen.");
 
   // Derive corrections exclusively from the published model on the server.
   const corrections: SimulationCorrection[] = [];
@@ -75,44 +94,32 @@ export async function submitSimulation(
   // ADIF scoring: correct * 1 - incorrect * (1/3), omitted = 0
   const score = Math.round((correct - incorrect / 3) * 100) / 100;
 
-  // Insert attempt
-  const { data: attempt, error: attemptError } = await supabase
-    .from("simulation_attempts")
-    .insert({
-      user_id: user.id,
-      simulation_id: exam.id,
-      correct_count: correct,
-      incorrect_count: incorrect,
-      omitted_count: omitted,
-      score,
-      elapsed_ms: elapsedMs,
-    })
-    .select("id")
-    .single();
+  const answerRows = corrections.map((correction) => ({
+    question_id: correction.questionId,
+    selected_answer: correction.selectedAnswer,
+    is_correct: correction.isCorrect,
+  }));
 
-  if (attemptError || !attempt) {
+  // The RPC owns user_id through auth.uid() and writes parent plus children in one transaction.
+  const { data: attemptId, error: attemptError } = await supabase.rpc(
+    "submit_simulation_attempt",
+    {
+      p_simulation_id: exam.id,
+      p_correct_count: correct,
+      p_incorrect_count: incorrect,
+      p_omitted_count: omitted,
+      p_score: score,
+      p_elapsed_ms: elapsedMs,
+      p_answers: answerRows,
+    },
+  );
+
+  if (attemptError || !attemptId) {
     throw new Error("No se ha podido registrar el intento del examen.");
   }
 
-  // Insert individual answers
-  const answerRows = corrections.map((c) => ({
-    user_id: user.id,
-    attempt_id: attempt.id,
-    question_id: c.questionId,
-    selected_answer: c.selectedAnswer as "A" | "B" | "C" | "D" | null,
-    is_correct: c.isCorrect,
-  }));
-
-  const { error: answersError } = await supabase
-    .from("simulation_answers")
-    .insert(answerRows);
-
-  if (answersError) {
-    throw new Error("No se han podido registrar las respuestas del examen.");
-  }
-
   return {
-    attemptId: attempt.id,
+    attemptId,
     correct,
     incorrect,
     omitted,

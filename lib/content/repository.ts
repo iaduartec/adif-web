@@ -5,44 +5,27 @@ import {
   type Lesson,
   type OfficialExam,
   type OfficialQuestion,
-  type Question,
   lessonsSchema,
   officialExamsSchema,
   officialQuestionsSchema,
 } from "./schema";
+import type { PublicOfficialQuestion } from "./public-dto";
 
 export type QuestionFilter = {
   year?: number;
   examCode?: string;
   section?: OfficialQuestion["source"]["section"];
-  /** @deprecated Legacy UI filter. It matches the official section label only. */
-  module?: string;
   query?: string;
   ids?: readonly string[];
 };
 
-/**
- * @deprecated Legacy UI shape during the official-bank migration. Its values are
- * derived from official section labels and the canonical document URL only.
- */
-export type OfficialPracticeQuestion = Question;
-
-export type OfficialExamQuestion = Omit<OfficialQuestion, "answer">;
+export type OfficialExamQuestion = PublicOfficialQuestion;
 
 export type ContentRepositoryInput = {
   lessons: unknown;
   questions: unknown;
   exams: unknown;
 };
-
-function toPracticeQuestion(question: OfficialQuestion): OfficialPracticeQuestion {
-  return {
-    ...question,
-    module: question.sectionLabel,
-    explanation: question.source.documentUrl,
-    sourceNote: question.source.documentUrl,
-  } as unknown as OfficialPracticeQuestion;
-}
 
 export function createContentRepository({
   lessons: lessonInput,
@@ -83,7 +66,6 @@ export function createContentRepository({
       if (filter.year && question.source.year !== filter.year) return false;
       if (filter.examCode && question.source.examCode !== filter.examCode) return false;
       if (filter.section && question.source.section !== filter.section) return false;
-      if (filter.module && question.sectionLabel !== filter.module) return false;
       if (allowedIds && !allowedIds.has(question.id)) return false;
       if (!query) return true;
 
@@ -113,15 +95,6 @@ export function createContentRepository({
     },
     listOfficialExams(): readonly OfficialExam[] {
       return examList;
-    },
-    /** @deprecated Migrate callers to getOfficialQuestion. */
-    getQuestion(id: string): OfficialPracticeQuestion | undefined {
-      const question = questionById.get(id);
-      return question ? toPracticeQuestion(question) : undefined;
-    },
-    /** @deprecated Migrate callers to listOfficialQuestions. */
-    listQuestions(filter?: QuestionFilter): OfficialPracticeQuestion[] {
-      return listOfficialQuestions(filter).map(toPracticeQuestion);
     },
   };
 }
@@ -154,14 +127,4 @@ export function getOfficialExam(id: string): OfficialExam | undefined {
 
 export function listOfficialExams(): readonly OfficialExam[] {
   return repository.listOfficialExams();
-}
-
-/** @deprecated Migrate callers to getOfficialQuestion. */
-export function getQuestion(id: string): OfficialPracticeQuestion | undefined {
-  return repository.getQuestion(id);
-}
-
-/** @deprecated Migrate callers to listOfficialQuestions. */
-export function listQuestions(filter?: QuestionFilter): OfficialPracticeQuestion[] {
-  return repository.listQuestions(filter);
 }

@@ -148,6 +148,35 @@ describe("SimulationRunner", () => {
     });
   });
 
+  it("moves focus into the confirmation dialog, traps it, closes on Escape, and restores focus", () => {
+    render(
+      <SimulationRunner
+        examId={exam.id}
+        questions={questions}
+        durationMinutes={exam.durationMinutes}
+        onFinish={() => {}}
+      />,
+    );
+
+    const trigger = screen.getByRole("button", { name: "Entregar examen" });
+    trigger.focus();
+    fireEvent.click(trigger);
+
+    const dialog = screen.getByRole("dialog", { name: "Confirmar entrega" });
+    const review = screen.getByRole("button", { name: "Seguir revisando" });
+    const confirm = screen.getByRole("button", { name: "Confirmar entrega" });
+    expect(review).toHaveFocus();
+    expect(document.querySelector(".simulation-runner__content")).toHaveAttribute("inert");
+
+    confirm.focus();
+    fireEvent.keyDown(dialog, { key: "Tab" });
+    expect(review).toHaveFocus();
+
+    fireEvent.keyDown(dialog, { key: "Escape" });
+    expect(screen.queryByRole("dialog", { name: "Confirmar entrega" })).not.toBeInTheDocument();
+    expect(trigger).toHaveFocus();
+  });
+
   it("auto-delivers when the official time limit expires", async () => {
     submitSimulation.mockResolvedValue({
       attemptId: "att-2",

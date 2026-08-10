@@ -99,14 +99,6 @@ class MockStore {
   }
 }
 
-// Persist the mock store across HMR / route requests by attaching it to the global object
-const globalVal = globalThis as unknown as { __mock_supabase_store__?: MockStore };
-
-if (!globalVal.__mock_supabase_store__) {
-  globalVal.__mock_supabase_store__ = new MockStore();
-}
-
-export const mockStore = globalVal.__mock_supabase_store__;
 export const MOCK_USER = {
   id: "test-user-id",
   email: "test@example.com",
@@ -115,3 +107,12 @@ export const MOCK_USER = {
     avatar_url: "https://avatar.example.com/test.png",
   },
 };
+
+export function getMockStore(): MockStore {
+  // Created lazily so importing production Supabase adapters cannot activate test identity state.
+  const globalVal = globalThis as unknown as { __mock_supabase_store__?: MockStore };
+  if (!globalVal.__mock_supabase_store__) {
+    globalVal.__mock_supabase_store__ = new MockStore();
+  }
+  return globalVal.__mock_supabase_store__;
+}

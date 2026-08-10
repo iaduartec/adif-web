@@ -250,7 +250,20 @@ export type Database = {
       };
     };
     Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Functions: {
+      submit_simulation_attempt: {
+        Args: {
+          p_answers: Json;
+          p_correct_count: number;
+          p_elapsed_ms: number;
+          p_incorrect_count: number;
+          p_omitted_count: number;
+          p_score: number;
+          p_simulation_id: string;
+        };
+        Returns: string;
+      };
+    };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
   };
