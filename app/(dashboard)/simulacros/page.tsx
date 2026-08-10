@@ -71,7 +71,7 @@ export default async function SimulacrosPage() {
                     <span>{exam.questionIds.length} preguntas</span>
                     <span>{exam.durationMinutes} min</span>
                   </div>
-                  <OfficialSource source={exam.source} />
+                  <OfficialSource source={exam.source} variant="exam" />
                   {best ? (
                     <div className="simulation-card__best">
                       <p className="simulation-card__score">

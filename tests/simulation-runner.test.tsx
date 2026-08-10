@@ -7,6 +7,7 @@ vi.mock("../app/actions/simulations", () => ({ submitSimulation }));
 
 import { SimulationRunner } from "../components/practice/simulation-runner";
 import { SimulationResults } from "../components/practice/simulation-results";
+import { OfficialSource } from "../components/practice/official-source";
 import { SimulationPageClient } from "../app/(dashboard)/simulacros/[id]/client";
 import type { OfficialQuestion } from "../lib/content/schema";
 
@@ -186,6 +187,8 @@ describe("SimulationPageClient", () => {
     expect(screen.getByRole("heading", { name: "Examen oficial ADIF 2024 3403" })).toBeVisible();
     expect(screen.getByText(/2024 · PNI24\/01 · 24\/05PO · modelo 3403 · Parte específica/i)).toBeVisible();
     expect(screen.getByText(/3 preguntas · 15 minutos/i)).toBeVisible();
+    expect(screen.getByText("Documento oficial ADIF")).toBeVisible();
+    expect(screen.queryByText(/pregunta 1/i)).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Ver en el documento oficial/i })).toHaveAttribute("href", source.documentUrl);
   });
 
@@ -195,6 +198,17 @@ describe("SimulationPageClient", () => {
     fireEvent.click(screen.getByRole("button", { name: /Comenzar examen/i }));
 
     expect(screen.getByRole("timer")).toHaveTextContent("15:00");
+  });
+});
+
+describe("OfficialSource", () => {
+  afterEach(cleanup);
+
+  it("keeps the question label and number for question sessions", () => {
+    render(<OfficialSource source={source} />);
+
+    expect(screen.getByText("Pregunta oficial ADIF")).toBeVisible();
+    expect(screen.getByText(/pregunta 1/i)).toBeVisible();
   });
 });
 

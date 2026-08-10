@@ -57,7 +57,7 @@ export function SimulationPageClient({
             <br />
             {exam.questionIds.length} preguntas · {exam.durationMinutes} minutos · Corrección ADIF (acierto: +1, error: −⅓, omisión: 0).
           </p>
-          <OfficialSource source={exam.source} />
+          <OfficialSource source={exam.source} variant="exam" />
         </header>
         <div className="p-6 border border-rail bg-white max-w-lg">
           <h2 className="text-lg font-bold mb-4">Antes de empezar</h2>
