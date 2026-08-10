@@ -6,9 +6,24 @@ import { OriginLabel } from "../../../components/course/origin-label";
 export const dynamic = "force-dynamic";
 
 const courseBlocks = [
-  { title: "Bloque común", slugs: ["igualdad", "prevencion-riesgos-laborales", "estatuto-adif", "codigo-conducta", "incompatibilidades"], minutes: [18, 20, 16, 14, 15] },
-  { title: "Telecomunicaciones", slugs: ["ict-rd-346-2011", "compatibilidad-electromagnetica"], minutes: [22, 18] },
-  { title: "Entorno ferroviario y pruebas", slugs: ["rcf-libro-1", "declaracion-red-2027", "psicometria", "ingles-a2"], minutes: [25, 18, 15, 14] },
+  {
+    title: "Bloque común",
+    description: "Normativa básica institucional, igualdad y prevención de riesgos laborales obligatorias para el personal de ADIF.",
+    slugs: ["igualdad", "prevencion-riesgos-laborales", "estatuto-adif", "codigo-conducta", "incompatibilidades"],
+    minutes: [18, 20, 16, 14, 15]
+  },
+  {
+    title: "Telecomunicaciones",
+    description: "Infraestructuras comunes de telecomunicación (ICT) en edificios y compatibilidad electromagnética aplicada al entorno ferroviario.",
+    slugs: ["ict-rd-346-2011", "compatibilidad-electromagnetica"],
+    minutes: [22, 18]
+  },
+  {
+    title: "Entorno ferroviario y pruebas",
+    description: "Reglamento de Circulación Ferroviaria (RCF), declaración sobre la red, psicotécnicos y nivel de inglés técnico.",
+    slugs: ["rcf-libro-1", "declaracion-red-2027", "psicometria", "ingles-a2"],
+    minutes: [25, 18, 15, 14]
+  },
 ] as const;
 
 export default async function CourseIndexPage() {
@@ -29,7 +44,10 @@ export default async function CourseIndexPage() {
       </header>
       {courseBlocks.map((block) => (
         <section className="course-block" key={block.title} aria-labelledby={`block-${block.title}`}>
-          <h2 id={`block-${block.title}`}>{block.title}</h2>
+          <div className="space-y-1 mb-4">
+            <h2 id={`block-${block.title}`}>{block.title}</h2>
+            <p className="text-sm text-gray-600 max-w-3xl leading-relaxed">{block.description}</p>
+          </div>
           <ol className="course-rule-list course-lesson-list">
             {block.slugs.map((slug, index) => {
               const lesson = lessonsBySlug.get(slug);

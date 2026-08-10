@@ -74,15 +74,17 @@ describe("course reader provenance and notes", () => {
   it("allows switching to the integrated official text tab when clicking the consult button", () => {
     render(<LessonReader lesson={getLesson("igualdad")!} progress={0} questions={[]} />);
 
+    fireEvent.click(screen.getByRole("button", { name: "Teoría y Práctica" }));
+
     // Initially we see the study guide explanation
-    expect(screen.getByText("Explicación y Teoría del Tema")).toBeVisible();
+    expect(screen.getByText("Explicación y Enfoque Didáctico")).toBeVisible();
 
     // Click on the button to check official text
-    const buttons = screen.getAllByRole("button", { name: /Consultar texto oficial/i });
+    const buttons = screen.getAllByRole("button", { name: /Consultar temario original/i });
     fireEvent.click(buttons[0]);
 
     // Now the active tab should switch to Official Text
-    expect(screen.getByRole("button", { name: /Guía de Estudio/i })).toBeVisible();
+    expect(screen.getByRole("button", { name: /Temario Original/i })).toBeVisible();
     expect(screen.getByPlaceholderText(/Buscar artículos/i)).toBeVisible();
   });
 });

@@ -8,6 +8,7 @@ import { OriginLabel } from "./origin-label";
 import { officialTexts } from "../../content/official-texts";
 import { lessonTheories } from "../../content/lesson-theory";
 import { fullTexts } from "../../content/full-texts";
+import { lessonSummaries } from "../../content/lesson-summaries";
 
 export function LessonReader({
   lesson,
@@ -18,7 +19,7 @@ export function LessonReader({
   questions: readonly Question[];
   progress: number;
 }) {
-  const [activeTab, setActiveTab] = useState<"guide" | "official">("guide");
+  const [activeTab, setActiveTab] = useState<"summary" | "theory" | "official">("summary");
   const [searchQuery, setSearchQuery] = useState("");
   const [completionPercent, setCompletionPercent] = useState(progress);
   const [completionMessage, setCompletionMessage] = useState(
@@ -49,6 +50,9 @@ export function LessonReader({
 
   // Get theory content for the current lesson slug
   const theory = lessonTheories[lesson.slug];
+
+  // Get structured summary content for the current lesson slug
+  const summary = lessonSummaries[lesson.slug];
 
   // Filter articles based on search query
   const filteredArticles = useMemo(() => {
@@ -89,20 +93,31 @@ export function LessonReader({
       </header>
 
       {/* Tabs navigation */}
-      <div className="flex border-b border-rail mb-8">
+      <div className="flex border-b border-rail mb-8 flex-wrap gap-2">
         <button
-          className={`px-6 py-3 font-bold text-sm transition-all border-b-2 -mb-[2px] ${
-            activeTab === "guide"
+          className={`px-5 py-3 font-bold text-sm transition-all border-b-2 -mb-[2px] ${
+            activeTab === "summary"
               ? "border-accent text-accent-strong bg-white"
               : "border-transparent text-gray-500 hover:text-ink hover:bg-gray-50/50"
           }`}
-          onClick={() => setActiveTab("guide")}
+          onClick={() => setActiveTab("summary")}
           type="button"
         >
-          Guía de Estudio
+          Resumen Ejecutivo
         </button>
         <button
-          className={`px-6 py-3 font-bold text-sm transition-all border-b-2 -mb-[2px] flex items-center gap-2 ${
+          className={`px-5 py-3 font-bold text-sm transition-all border-b-2 -mb-[2px] ${
+            activeTab === "theory"
+              ? "border-accent text-accent-strong bg-white"
+              : "border-transparent text-gray-500 hover:text-ink hover:bg-gray-50/50"
+          }`}
+          onClick={() => setActiveTab("theory")}
+          type="button"
+        >
+          Teoría y Práctica
+        </button>
+        <button
+          className={`px-5 py-3 font-bold text-sm transition-all border-b-2 -mb-[2px] flex items-center gap-2 ${
             activeTab === "official"
               ? "border-accent text-accent-strong bg-white"
               : "border-transparent text-gray-500 hover:text-ink hover:bg-gray-50/50"
@@ -110,7 +125,7 @@ export function LessonReader({
           onClick={() => setActiveTab("official")}
           type="button"
         >
-          Texto Oficial Integrado
+          Temario Original
           {officialNorm && (
             <span className="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-normal">
               {officialNorm.articles.length} art.
@@ -119,32 +134,78 @@ export function LessonReader({
         </button>
       </div>
 
-      {activeTab === "guide" ? (
+      {activeTab === "summary" ? (
+        <div className="space-y-8">
+          {summary ? (
+            <section aria-labelledby="lesson-summary" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
+              <div className="border-b border-rail pb-4">
+                <span className="text-xs uppercase font-bold tracking-wider text-accent">Resumen Clave para Oposición</span>
+                <p className="text-gray-800 leading-relaxed mt-2 text-base font-medium">{summary.overview}</p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Datos Esenciales de Examen</h3>
+                <ul className="grid gap-2.5">
+                  {summary.keyFacts.map((fact, index) => (
+                    <li key={index} className="flex items-start gap-3 text-sm text-gray-800 bg-gray-50/80 p-3.5 border border-rail">
+                      <span className="text-accent font-bold mt-0.5">▪</span>
+                      <span className="leading-relaxed">{fact}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-6 pt-3">
+                {summary.sections.map((sec, index) => (
+                  <div key={index} className="space-y-3 border-t border-rail pt-4">
+                    <h3 className="font-bold text-ink text-sm uppercase tracking-wider">{sec.title}</h3>
+                    <ul className="space-y-2.5 pl-1">
+                      {sec.points.map((pt, pIdx) => (
+                        <li key={pIdx} className="text-sm text-gray-700 flex items-start gap-2.5 leading-relaxed">
+                          <span className="text-accent font-bold select-none">•</span>
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : (
+            <div className="p-8 bg-white border border-rail text-gray-500 text-sm">
+              No hay resumen estructurado disponible para esta lección todavía.
+            </div>
+          )}
+        </div>
+      ) : activeTab === "theory" ? (
         <div className="space-y-8">
           {theory ? (
-            <section aria-labelledby="lesson-explanation" className="space-y-6">
-              <h2 id="lesson-explanation">Explicación y Teoría del Tema</h2>
-              <p className="text-gray-700 leading-relaxed">{theory.introduction}</p>
+            <section aria-labelledby="lesson-explanation" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
+              <div className="border-b border-rail pb-4">
+                <span className="text-xs uppercase font-bold tracking-wider text-accent">Explicación y Enfoque Didáctico</span>
+                <h2 id="lesson-explanation" className="text-xl font-bold text-ink mt-1">Teoría y Supuestos de Examen</h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-base">{theory.introduction}</p>
 
               {/* Key Concepts Grid */}
               <div className="grid gap-4 mt-6">
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider">Conceptos Clave de Oposición</h3>
+                <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Conceptos Fundamentales</h3>
                 {theory.concepts.map((concept, index) => (
-                  <div key={index} className="p-4 border border-rail bg-white">
-                    <h4 className="font-bold text-ink mb-1">{concept.title}</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed">{concept.description}</p>
+                  <div key={index} className="p-4 border border-rail bg-gray-50/50">
+                    <h4 className="font-bold text-ink mb-1 text-base">{concept.title}</h4>
+                    <p className="text-sm text-gray-700 leading-relaxed">{concept.description}</p>
                   </div>
                 ))}
               </div>
 
               {/* Practical Examples */}
               <div className="space-y-4 mt-6">
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider">Ejemplos Prácticos de Examen</h3>
+                <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Supuestos Prácticos Tipo Test</h3>
                 {theory.examples.map((ex, index) => (
                   <div key={index} className="lesson-example p-5 bg-paper border border-rail space-y-2">
-                    <h4 className="font-bold text-sm text-accent-strong">Supuesto Práctico #{index + 1}</h4>
+                    <h4 className="font-bold text-sm text-accent-strong">Caso Práctico #{index + 1}</h4>
                     <p className="text-sm text-ink italic">&quot;{ex.situation}&quot;</p>
-                    <div className="pt-2 border-t border-dashed border-rail text-sm text-gray-600">
+                    <div className="pt-2 border-t border-dashed border-rail text-sm text-gray-700">
                       <strong>Aplicación en Examen:</strong> {ex.application}
                     </div>
                   </div>
@@ -152,9 +213,9 @@ export function LessonReader({
               </div>
 
               {/* Mnemonic Rules / Key Takeaways */}
-              <div className="p-5 border border-rail bg-gray-50/50 space-y-3">
-                <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Reglas Nemotécnicas e Ideas Clave</h3>
-                <ul className="list-disc list-inside text-sm text-gray-600 space-y-2 pl-2">
+              <div className="p-5 border border-rail bg-gray-50/70 space-y-3">
+                <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Reglas Nemotécnicas y Tips</h3>
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-2 pl-2">
                   {theory.reviewTakeaways.map((takeaway, index) => (
                     <li key={index} className="leading-relaxed">{takeaway}</li>
                   ))}
@@ -167,14 +228,14 @@ export function LessonReader({
               </div>
             </section>
           ) : (
-            <section aria-labelledby="lesson-explanation">
-              <h2 id="lesson-explanation">Explicación para el estudio</h2>
-              <p>
+            <section aria-labelledby="lesson-explanation" className="p-8 bg-white border border-rail space-y-6">
+              <h2 id="lesson-explanation" className="text-xl font-bold text-ink">Explicación para el estudio</h2>
+              <p className="text-gray-700 leading-relaxed">
                 Parte de los conceptos que aparecen en la referencia, relaciona cada término con una situación práctica y vuelve a la fuente oficial antes de fijar una literalidad para examen.
               </p>
-              <div className="lesson-example">
-                <h3>Ejemplo de trabajo</h3>
-                <p>
+              <div className="lesson-example p-4 bg-paper border border-rail">
+                <h3 className="font-bold text-sm text-accent-strong">Ejemplo de trabajo</h3>
+                <p className="text-sm text-gray-700 mt-1">
                   Resume la idea principal en una frase, localiza su matiz en la norma y anota qué dato cambia si la pregunta plantea una excepción.
                 </p>
               </div>
@@ -186,15 +247,15 @@ export function LessonReader({
           )}
 
           {/* Integrated References Section without External Outbound Links */}
-          <section aria-labelledby="lesson-references">
-            <h2 id="lesson-references">Fuentes oficiales para cotejar (Integrado)</h2>
-            <div className="p-4 border border-rail bg-white space-y-3">
-              <p className="text-xs text-gray-500 mb-2">
+          <section aria-labelledby="lesson-references" className="p-8 bg-white border border-rail space-y-4">
+            <h2 id="lesson-references" className="text-lg font-bold text-ink">Fuentes oficiales para cotejar (Integrado)</h2>
+            <div className="space-y-3">
+              <p className="text-xs text-gray-500">
                 Consulta los textos completos correspondientes a continuación sin salir de la plataforma de estudio.
               </p>
               <ul className="space-y-2">
                 {lesson.officialReferences.map((reference) => (
-                  <li key={reference.title} className="flex justify-between items-center gap-4 py-2 border-b border-rail last:border-0 flex-wrap">
+                  <li key={reference.title} className="flex justify-between items-center gap-4 py-3 border-b border-rail last:border-0 flex-wrap">
                     <span className="font-bold text-sm text-ink">{reference.title}</span>
                     <button
                       onClick={() => {
@@ -204,7 +265,7 @@ export function LessonReader({
                       className="ui-button px-3 py-1.5 text-xs font-bold"
                       type="button"
                     >
-                      Consultar texto oficial →
+                      Consultar temario original →
                     </button>
                   </li>
                 ))}
@@ -212,8 +273,8 @@ export function LessonReader({
             </div>
           </section>
 
-          <section aria-labelledby="lesson-errors">
-            <h2 id="lesson-errors">Errores frecuentes</h2>
+          <section aria-labelledby="lesson-errors" className="p-8 bg-white border border-rail space-y-4">
+            <h2 id="lesson-errors" className="text-lg font-bold text-ink">Errores frecuentes en examen</h2>
             <ul className="course-rule-list">
               <li>Memorizar una explicación sin comprobar la formulación exacta de la referencia.</li>
               <li>Confundir una regla general con su condición o excepción.</li>
