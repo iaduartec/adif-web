@@ -193,11 +193,66 @@ export function validateTheoryStructure(theories: Record<string, TheorySection>)
   return errors;
 }
 
+export type TheoryStats = {
+  moduleCount: number;
+  totalClaims: number;
+  byKind: Record<string, number>;
+  sourceCount: number;
+};
+
+/**
+ * Collects every claim across all modules tagged with its module name and
+ * location, useful for global analyses (stats, reports, audits).
+ */
+export function collectTheoryClaims(theories: Record<string, TheorySection>): (LocatedClaim & { module: string })[] {
+  const out: (LocatedClaim & { module: string })[] = [];
+  for (const [name, theory] of Object.entries(theories)) {
+    for (const located of allClaims(theory)) {
+      out.push({ ...located, module: name });
+    }
+  }
+  return out;
+}
+
+/**
+ * Computes aggregate statistics over all theory modules: total claims, claims
+ * per kind and total sources. Per-module breakdown is included for reports.
+ */
+export function getTheoryStats(theories: Record<string, TheorySection>): TheoryStats {
+  const byKind: Record<string, number> = {};
+  let totalClaims = 0;
+  let sourceCount = 0;
+
+  for (const [name, theory] of Object.entries(theories)) {
+    if (!theory) continue;
+    for (const located of allClaims(theory)) {
+      const kind = located.claim.kind ?? "unknown";
+      byKind[kind] = (byKind[kind] ?? 0) + 1;
+      totalClaims++;
+    }
+    sourceCount += theory.sources?.length ?? 0;
+  }
+
+  return {
+    moduleCount: Object.keys(theories).length,
+    totalClaims,
+    byKind,
+    sourceCount,
+  };
+}
+
 const isMain = process.argv[1] !== undefined && import.meta.url === pathToFileURL(process.argv[1]).href;
 
 if (isMain) {
   console.log("Starting theory structural validation...");
   const errors = validateTheoryStructure(lessonTheories);
+
+  const stats = getTheoryStats(lessonTheories);
+  console.log(`Modules: ${stats.moduleCount}`);
+  console.log(`Total claims: ${stats.totalClaims}`);
+  console.log(`Claims by kind: ${JSON.stringify(stats.byKind)}`);
+  console.log(`Total sources: ${stats.sourceCount}`);
+
   for (const error of errors) console.error(error);
 
   if (errors.length > 0) {

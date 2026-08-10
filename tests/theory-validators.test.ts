@@ -8,7 +8,12 @@ import {
   extractReferenceLocators,
   validateTheoryClaims,
 } from "../scripts/verify-theory-claims";
-import { registerGlobalId, validateTheoryStructure } from "../scripts/verify-theory";
+import { registerGlobalId, validateTheoryStructure, getTheoryStats } from "../scripts/verify-theory";
+import {
+  OFFICIAL_SOURCE_REGISTRY,
+  validateOfficialSourceIdentity,
+  validateTheoryReferences,
+} from "../scripts/verify-theory-references";
 
 function source(
   id: string,
@@ -303,5 +308,91 @@ describe("whole content guardrails", () => {
 
   it("keeps claim/concept/example/source IDs globally unique on the real lesson theories", () => {
     expect(validateTheoryStructure(lessonTheories)).toEqual([]);
+  });
+
+  it("passes reference structural and official-source-identity validation on the real lesson theories", () => {
+    expect(validateTheoryReferences(lessonTheories)).toEqual([]);
+  });
+});
+
+describe("official source identity", () => {
+  function sectionWithSource(sourceUrl: string): Record<string, TheorySection> {
+    return {
+      m: {
+        introduction: [],
+        concepts: [],
+        examples: [],
+        reviewTakeaways: [],
+        sources: [{ id: "s1", sourceId: "Ley 38/2015", sourceTitle: "Ley del Sector Ferroviario", sourceUrl, locator: "Artículo 32" }],
+      },
+    };
+  }
+
+  it("registers the canonical BOE URL for Ley 38/2015", () => {
+    expect(OFFICIAL_SOURCE_REGISTRY["Ley 38/2015"]).toBe(
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
+    );
+  });
+
+  it("registers the canonical BOE URL for Directiva 2014/30/UE", () => {
+    expect(OFFICIAL_SOURCE_REGISTRY["Directiva 2014/30/UE"]).toBe(
+      "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
+    );
+  });
+
+  it("rejects a wrong BOE document ID for the same sourceId", () => {
+    const errors = validateOfficialSourceIdentity(
+      sectionWithSource("https://www.boe.es/buscar/act.php?id=BOE-A-2015-10446"),
+    );
+    expect(errors.some((e) => e.includes("does not match the official source identity"))).toBe(true);
+  });
+
+  it("accepts the exact canonical URL", () => {
+    const errors = validateOfficialSourceIdentity(
+      sectionWithSource("https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440"),
+    );
+    expect(errors).toEqual([]);
+  });
+
+  it("rejects a sourceId missing from the registry", () => {
+    const theories: Record<string, TheorySection> = {
+      m: {
+        introduction: [],
+        concepts: [],
+        examples: [],
+        reviewTakeaways: [],
+        sources: [{ id: "s1", sourceId: "Ley Inexistente", sourceTitle: "x", sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2000-1", locator: "Artículo 1" }],
+      },
+    };
+    expect(validateOfficialSourceIdentity(theories).some((e) => e.includes("has no entry"))).toBe(true);
+  });
+});
+
+describe("theory stats", () => {
+  it("computes total claims, kinds and sources across modules", () => {
+    const a: TheorySection = {
+      ...emptyTheory,
+      introduction: [claim({ id: "a1", text: "A.", kind: "normative", legalBasis: [] })],
+      sources: [source("a-ref", "CE", "Artículo 14", "Constitución Española")],
+    };
+    const b: TheorySection = {
+      ...emptyTheory,
+      concepts: [
+        { id: "b-con", title: "T", claims: [
+          claim({ id: "b1", text: "B.", kind: "didactic", legalBasis: [] }),
+          claim({ id: "b2", text: "C.", kind: "example", legalBasis: [] }),
+        ] },
+      ],
+      sources: [
+        source("b-ref1", "LO 3/2007", "Artículo 1", "Ley Orgánica"),
+        source("b-ref2", "TREBEP", "Artículo 14", "Estatuto"),
+      ],
+    };
+    expect(getTheoryStats({ a, b })).toEqual({
+      moduleCount: 2,
+      totalClaims: 3,
+      byKind: { normative: 1, didactic: 1, example: 1 },
+      sourceCount: 3,
+    });
   });
 });
