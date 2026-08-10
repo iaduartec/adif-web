@@ -11,9 +11,16 @@ export interface TheorySection {
   reviewTakeaways: string[];
 }
 
+import { igualdadTheory } from "./theories/igualdad";
+import { prlTheory } from "./theories/prevencion-riesgos-laborales";
+import { estatutoAdifTheory } from "./theories/estatuto-adif";
+
 export const lessonTheories: Record<string, TheorySection> = {
-  igualdad: {
-    introduction: "El estudio de la igualdad y la no discriminación en España está cimentado en la Ley Orgánica 3/2007, de 22 de marzo. Este bloque legislativo de carácter social y transversal es obligatorio y prioritario en todas las oposiciones públicas y de ADIF para el año 2026. Su objetivo principal es asegurar la igualdad real y efectiva entre mujeres y hombres en todos los ámbitos, corrigiendo las desigualdades históricas y estructurales de partida, especialmente en el acceso al empleo público, la formación, la promoción profesional y las condiciones de trabajo en las empresas públicas.",
+  igualdad: igualdadTheory,
+  "prevencion-riesgos-laborales": prlTheory,
+  "estatuto-adif": estatutoAdifTheory,
+  _placeholder_igualdad_old: {
+    introduction: "PLACEHOLDER — replaced by igualdadTheory Este bloque legislativo de carácter social y transversal es obligatorio y prioritario en todas las oposiciones públicas y de ADIF para el año 2026. Su objetivo principal es asegurar la igualdad real y efectiva entre mujeres y hombres en todos los ámbitos, corrigiendo las desigualdades históricas y estructurales de partida, especialmente en el acceso al empleo público, la formación, la promoción profesional y las condiciones de trabajo en las empresas públicas.",
     concepts: [
       {
         title: "Principio de Igualdad de Trato y de Oportunidades",
