@@ -46,8 +46,8 @@ export default async function SimulacrosPage() {
 
   return (
     <div className="dashboard-wide simulacros-page">
-      <header className="course-index__header mb-8">
-        <p className="course-eyebrow">Archivo ADIF</p>
+      <header className="page-header">
+        <p className="page-kicker">Archivo ADIF</p>
         <h1>Exámenes oficiales</h1>
         <p>
           Modelos históricos publicados por ADIF. Cada examen conserva sus preguntas, duración y procedencia documental.
@@ -55,9 +55,9 @@ export default async function SimulacrosPage() {
       </header>
 
       {[...examsByYear.entries()].sort(([a], [b]) => b - a).map(([year, yearExams]) => (
-        <section aria-labelledby={`exam-year-${year}`} className="mb-10" key={year}>
-          <h2 className="mb-4 text-2xl font-semibold" id={`exam-year-${year}`}>{year}</h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <section aria-labelledby={`exam-year-${year}`} className="simulation-year" key={year}>
+          <h2 id={`exam-year-${year}`}>{year}</h2>
+          <div className="simulation-grid">
             {yearExams.map((exam) => {
               const best = bestBySimulation.get(exam.id);
               return (

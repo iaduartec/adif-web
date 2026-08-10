@@ -47,54 +47,50 @@ export default async function EstadisticasPage() {
 
   return (
     <div className="dashboard-wide statistics-page">
-      <header className="course-index__header mb-8">
-        <p className="course-eyebrow">Progreso & Rendimiento</p>
-        <h1>Estadísticas de Estudio</h1>
+      <header className="page-header">
+        <p className="page-kicker">Progreso y rendimiento</p>
+        <h1>Estadísticas de estudio</h1>
         <p>
           Analiza tu rendimiento detallado por módulo, tu racha de estudio activo y la evolución de tus respuestas diarias.
         </p>
       </header>
 
-      {/* 7-Day Performance Chart (Dynamically imported client component) */}
       <LazyChartWrapper activity={metrics.sevenDayActivity} />
 
-      {/* Accuracy by Module Section */}
-      <section aria-labelledby="accuracy-title" className="border border-rail bg-white p-6 mb-8">
-        <h2 id="accuracy-title" className="text-lg font-bold mb-4">Precisión por sección oficial</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-rail text-left text-sm text-gray-700">
+      <section aria-labelledby="accuracy-title" className="data-panel">
+        <h2 id="accuracy-title">Precisión por sección oficial</h2>
+        <div className="data-table-wrap">
+          <table className="data-table">
             <thead>
               <tr>
-                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500">Módulo</th>
-                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500 text-center">Precisión</th>
-                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500 text-right">Preguntas Intentadas</th>
+                <th>Sección</th>
+                <th>Precisión</th>
+                <th>Preguntas intentadas</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-rail">
+            <tbody>
               {rankedSections.map(({ section, stats, percent }, index) => {
                 return (
                   <tr key={section}>
-                    <td className="py-3 font-medium">
+                    <td>
                       {sectionLabels[section] ?? section}
                     </td>
-                    <td className="py-3 text-center font-bold">
+                    <td>
                       {percent !== null ? (
-                        <span className={percent >= 75 ? "text-emerald-700" : percent >= 50 ? "text-amber-600" : "text-rose-600"}>
+                        <strong className={percent >= 75 ? "data-value--good" : percent >= 50 ? "data-value--warning" : "data-value--danger"}>
                           {percent}%
-                        </span>
+                        </strong>
                       ) : (
-                        <span className="text-gray-400 font-normal italic">Sin intentos</span>
+                        <span>Sin intentos</span>
                       )}
                     </td>
-                    <td className="py-3 text-right font-medium text-gray-600">
-                      <div className="flex items-center justify-end gap-2">
-                        {stats ? stats.total : 0}
+                    <td>
+                        {stats.total}
                         {index === 0 && stats && (
-                          <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-rose-100 text-rose-700">
+                          <span className="data-priority">
                             Prioridad
                           </span>
                         )}
-                      </div>
                     </td>
                   </tr>
                 );
@@ -104,23 +100,23 @@ export default async function EstadisticasPage() {
         </div>
       </section>
 
-      <section aria-labelledby="coverage-title" className="border border-rail bg-white p-6 mb-8">
-        <h2 id="coverage-title" className="text-lg font-bold mb-4">Cobertura por año y modelo oficial</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-rail text-left text-sm text-gray-700">
+      <section aria-labelledby="coverage-title" className="data-panel">
+        <h2 id="coverage-title">Cobertura por año y modelo oficial</h2>
+        <div className="data-table-wrap">
+          <table className="data-table">
             <thead>
               <tr>
-                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500">Modelo</th>
-                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500 text-right">Preguntas practicadas</th>
-                <th className="py-3 font-bold text-xs uppercase tracking-wider text-gray-500 text-right">Cobertura</th>
+                <th>Modelo</th>
+                <th>Preguntas practicadas</th>
+                <th>Cobertura</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-rail">
+            <tbody>
               {coverage.map(({ id, attempted, total }) => (
                 <tr key={id}>
-                  <td className="py-3 font-medium">{id}</td>
-                  <td className="py-3 text-right">{attempted} de {total}</td>
-                  <td className="py-3 text-right font-bold">{Math.round((attempted / total) * 100)}%</td>
+                  <td>{id}</td>
+                  <td>{attempted} de {total}</td>
+                  <td><strong>{Math.round((attempted / total) * 100)}%</strong></td>
                 </tr>
               ))}
             </tbody>
@@ -128,10 +124,9 @@ export default async function EstadisticasPage() {
         </div>
       </section>
 
-      {/* Study Plan Goal Call-to-action */}
-      <div className="flex gap-4">
-        <Link href="/" className="ui-button">
-          Volver al Inicio
+      <div className="section-actions">
+        <Link href="/" className="ui-button ui-button--secondary">
+          Volver al inicio
         </Link>
         <Link href="/tests" className="ui-button">
           Practicar preguntas

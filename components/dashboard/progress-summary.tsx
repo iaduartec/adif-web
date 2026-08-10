@@ -21,55 +21,37 @@ export function ProgressSummary({
   const overallAccuracy = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
   const courseCompletionPercent =
     totalLessonsCount > 0 ? Math.round((completedLessonsCount / totalLessonsCount) * 100) : 0;
-  const remainingLessonsCount = Math.max(0, totalLessonsCount - completedLessonsCount);
   const weakestLabel = displayModuleName(metrics.weakestModule);
 
   return (
-    <section aria-labelledby="progress-summary-title" className="mb-8">
-      <h2 id="progress-summary-title" className="sr-only">Resumen de Progreso</h2>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        {/* Streak Card */}
-        <div className="simulation-results__card">
-          <p className="simulation-results__label">Racha de Estudio</p>
-          <p className="simulation-results__value flex items-center justify-center gap-2">
-            🔥 {metrics.streak} {metrics.streak === 1 ? "día" : "días"}
-          </p>
-          <p className="simulation-results__sub">días consecutivos activo</p>
+    <section aria-labelledby="progress-summary-title" className="progress-summary">
+      <h2 id="progress-summary-title" className="sr-only">Resumen de progreso</h2>
+      <div className="progress-summary__row">
+        <div className="progress-metric">
+          <p className="progress-metric__label">Lecciones completadas</p>
+          <p className="progress-metric__value">{completedLessonsCount}/{totalLessonsCount}</p>
+          <p className="progress-metric__detail">{courseCompletionPercent}% del temario</p>
         </div>
 
-        {/* Course Completion Card */}
-        <div className="simulation-results__card">
-          <p className="simulation-results__label">Temario Completado</p>
-          <p className="simulation-results__value">
-            {courseCompletionPercent}%
-          </p>
-          <p className="simulation-results__sub">
-            {completedLessonsCount} de {totalLessonsCount} temas leídos
-          </p>
+        <div className="progress-metric">
+          <p className="progress-metric__label">Preguntas oficiales intentadas</p>
+          <p className="progress-metric__value">{totalAttempts}</p>
+          <p className="progress-metric__detail">Intentos registrados</p>
         </div>
 
-        {/* Practice Questions Card */}
-        <div className="simulation-results__card">
-          <p className="simulation-results__label">Preguntas Respondidas</p>
-          <p className="simulation-results__value">{totalAttempts}</p>
-          <p className="simulation-results__sub">en el banco de preguntas</p>
+        <div className="progress-metric">
+          <p className="progress-metric__label">Precisión global</p>
+          <p className="progress-metric__value">{totalAttempts > 0 ? `${overallAccuracy}%` : "—"}</p>
+          <p className="progress-metric__detail">{totalAttempts > 0 ? "Respuestas correctas" : "Sin respuestas registradas"}</p>
         </div>
 
-        {/* Global Accuracy Card */}
-        <div className="simulation-results__card">
-          <p className="simulation-results__label">Acierto Global</p>
-          <p className="simulation-results__value">{overallAccuracy}%</p>
-          <p className="simulation-results__sub">de respuestas correctas</p>
-        </div>
-
-        {/* Weakest Module Card */}
-        <div className="simulation-results__card">
-          <p className="simulation-results__label">Bloque más débil</p>
-          <p className="simulation-results__value text-base leading-tight">
-            {metrics.weakestModule ? weakestLabel : "Sin datos"}
+        <div className="progress-metric progress-metric--priority">
+          <p className="progress-metric__label">Sección oficial prioritaria</p>
+          <p className="progress-metric__value progress-metric__value--text">
+            {metrics.weakestModule ? weakestLabel : "Sin datos todavía"}
           </p>
-          <p className="simulation-results__sub">
-            {metrics.weakestModule ? "Prioridad para la siguiente práctica" : `${remainingLessonsCount} lecciones pendientes`}
+          <p className="progress-metric__detail">
+            {metrics.weakestModule ? "Menor precisión registrada" : "Aparecerá tras tus primeros intentos"}
           </p>
         </div>
       </div>

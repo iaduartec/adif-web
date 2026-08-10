@@ -83,55 +83,52 @@ export default async function DashboardPage() {
 
   return (
     <div className="dashboard-wide home-page">
-      <header className="course-index__header mb-8">
-        <p className="course-eyebrow">Plataforma de Estudio</p>
+      <header className="page-header">
+        <p className="page-kicker">Plataforma de estudio</p>
         <h1>Hola{user.user_metadata?.full_name ? `, ${user.user_metadata.full_name.split(" ")[0]}` : ""}. Bienvenido de nuevo</h1>
         <p>
           Prepara tu oposición para Oficial de Telecomunicaciones de Entrada ADIF 2026. Sigue tu plan diario para consolidar el temario.
         </p>
       </header>
 
-      {/* Progress Cards Overview */}
       <ProgressSummary
         metrics={metrics}
         totalLessonsCount={lessons.length}
         completedLessonsCount={completedLessonsCount}
       />
 
-      {/* Recommended Next Action & Goal Track */}
       <StudyPlan
         recommendation={recommendation}
         weeklyTargetMinutes={weeklyTargetMinutes}
         elapsedMinutesThisWeek={elapsedMinutesThisWeek}
       />
 
-      {/* Shortcuts grid */}
-      <div className="grid gap-4 md:grid-cols-3 mt-8">
-        <Link href="/curso" className="simulation-card">
-          <div className="simulation-card__header">
-            <h3 className="simulation-card__title">📖 Temario Oficial</h3>
-          </div>
-          <p className="text-sm text-gray-600 mt-2">
-            Accede al contenido completo del temario oficial con explicaciones detalladas y notas.
-          </p>
-        </Link>
-        <Link href="/tests" className="simulation-card">
-          <div className="simulation-card__header">
-            <h3 className="simulation-card__title">📝 Preguntas oficiales</h3>
-          </div>
-          <p className="text-sm text-gray-600 mt-2">
-            Practica con preguntas oficiales y consulta su documento de origen en ADIF.
-          </p>
-        </Link>
-        <Link href="/simulacros" className="simulation-card">
-          <div className="simulation-card__header">
-            <h3 className="simulation-card__title">⏱️ Exámenes oficiales</h3>
-          </div>
-          <p className="text-sm text-gray-600 mt-2">
-            Practica con modelos históricos oficiales, cada uno con su duración y preguntas publicadas.
-          </p>
-        </Link>
-      </div>
+      <section aria-labelledby="official-resources-title" className="resource-links">
+        <h2 id="official-resources-title">Recursos oficiales</h2>
+        <div className="resource-links__list">
+          <Link href="/curso" className="resource-link">
+            <span>
+              <strong>Temario oficial</strong>
+              <small>Accede al contenido completo del temario oficial con explicaciones detalladas y notas.</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </Link>
+          <Link href="/tests" className="resource-link">
+            <span>
+              <strong>Preguntas oficiales</strong>
+              <small>Practica con preguntas oficiales y consulta su documento de origen en ADIF.</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </Link>
+          <Link href="/simulacros" className="resource-link">
+            <span>
+              <strong>Exámenes oficiales</strong>
+              <small>Practica con modelos históricos oficiales, cada uno con su duración y preguntas publicadas.</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

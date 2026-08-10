@@ -17,10 +17,25 @@ test.describe("Mobile viewport verification (390x844)", () => {
     if (await menuButton.isVisible()) {
       await menuButton.click();
       // Verify drawer/sheet overlay is visible
-      await expect(page.locator(".mobile-navigation-dialog")).toBeVisible();
+      const navigationDialog = page.getByRole("dialog", { name: "Navegación principal" });
+      await expect(navigationDialog).toBeVisible();
+      await expect(navigationDialog.getByRole("link", { name: "Exámenes oficiales", exact: true })).toBeVisible();
     }
 
-    // 3. Verify readable measure limits on lesson page
+    // 3. Keep the official-question bank concise on mobile.
+    await page.goto("/tests");
+    await expect(page.getByRole("heading", { name: "Preguntas oficiales" })).toBeVisible();
+    await expect(page.locator(".official-question-options")).toHaveCount(25);
+    await expect(page.locator(".official-question-options:visible")).toHaveCount(0);
+
+    const compactControls = page.locator(".filter-panel input, .filter-panel select, .filter-panel button, .filter-panel a");
+    const compactControlCount = await compactControls.count();
+    for (let index = 0; index < compactControlCount; index += 1) {
+      const box = await compactControls.nth(index).boundingBox();
+      expect(box?.height ?? 0).toBeGreaterThanOrEqual(44);
+    }
+
+    // 4. Verify readable measure limits on lesson page
     await page.goto("/curso/igualdad");
     const readingContainer = page.locator(".dashboard-reading");
     await expect(readingContainer).toBeVisible();

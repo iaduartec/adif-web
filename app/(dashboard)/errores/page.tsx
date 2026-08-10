@@ -43,43 +43,40 @@ export default async function ErrorNotebookPage() {
 
   return (
     <div className="dashboard-wide errors-page">
-      <header className="course-index__header mb-8">
-        <p className="course-eyebrow">Repaso Focalizado</p>
-        <h1>Cuaderno de Errores</h1>
+      <header className="page-header">
+        <p className="page-kicker">Repaso focalizado</p>
+        <h1>Cuaderno de errores</h1>
         <p>
           Repasa y practica las preguntas que has fallado en tus intentos más recientes.
           {metrics.weakestModule && (
-            <span className="block mt-1 text-sm text-gray-600">
+            <span>
               Bloque más débil detectado: <strong>{weakestModuleLabel}</strong>.
             </span>
           )}
         </p>
       </header>
 
-      {/* Limitation / Documentation */}
-      <div className="p-4 bg-gray-50 border border-rail text-xs text-gray-600 mb-8 max-w-4xl">
-        <h2 className="font-bold text-ink uppercase tracking-wider mb-2">Funcionamiento del Cuaderno</h2>
-        <p className="mb-2">
-          • <strong>Estado Pendiente:</strong> Preguntas cuyo último intento registrado es incorrecto (aparecen listadas a continuación).
-        </p>
-        <p className="mb-2">
-          • <strong>Estado Dominado:</strong> Preguntas anteriormente falladas que has vuelto a responder correctamente (se archivan y desaparecen de esta lista automáticamente).
-        </p>
+      <section aria-labelledby="notebook-guide-title" className="quiet-panel notebook-guide">
+        <h2 id="notebook-guide-title">Funcionamiento del cuaderno</h2>
+        <ul>
+          <li><strong>Estado pendiente:</strong> preguntas cuyo último intento registrado es incorrecto; aparecen listadas a continuación.</li>
+          <li><strong>Estado dominado:</strong> preguntas anteriormente falladas que has vuelto a responder correctamente; se archivan y desaparecen de esta lista automáticamente.</li>
+        </ul>
         <p>
-          <em>* Nota: El estado se deriva dinámicamente de tu historial de respuestas reales. Los intentos de preguntas retiradas se conservan, pero no se muestran porque ya no pertenecen al banco oficial activo.</em>
+          <em>El estado se deriva dinámicamente de tu historial de respuestas reales. Los intentos de preguntas retiradas se conservan, pero no se muestran porque ya no pertenecen al banco oficial activo.</em>
         </p>
-      </div>
+      </section>
 
-      <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+      <div className="metadata-row question-index-summary">
         <div>
-          <p className="text-sm text-gray-600">
+          <p>
             Tienes <strong>{errorQuestions.length}</strong> preguntas pendientes de corrección.
           </p>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="section-actions">
           {errorQuestions.length > 0 && (
             <Link
-              className="ui-button px-6 font-bold"
+              className="ui-button"
               href="/tests?status=failed&practice=true"
             >
               Practicar errores en sesión ({Math.min(errorQuestions.length, 50)})
@@ -89,71 +86,72 @@ export default async function ErrorNotebookPage() {
       </div>
 
       {errorQuestions.length === 0 ? (
-        <div className="py-12 text-center text-gray-500 border border-dashed border-rail bg-white" role="status">
-          <p className="font-medium text-lg text-accent-strong mb-1">¡Todo al día!</p>
-          <p className="text-sm mb-4">
+        <div className="empty-state" role="status">
+          <p className="empty-state__title">Todo al día</p>
+          <p>
             No tienes preguntas oficiales pendientes de corregir. Los intentos históricos de preguntas retiradas siguen guardados, pero no alteran este cuaderno.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link className="ui-button bg-transparent border border-accent text-accent-strong hover:bg-accent-strong hover:text-paper" href="/simulacros">
-              Ir a simulacros
+          <div className="section-actions">
+            <Link className="ui-button ui-button--secondary" href="/simulacros">
+              Ir a exámenes oficiales
             </Link>
           </div>
         </div>
       ) : (
-        <div className="grid gap-6">
+        <div className="official-question-list">
           {errorQuestions.map((q) => {
             const isFav = favoriteIds.has(q.id);
             const latest = latestAttempts.get(q.id);
             return (
-              <div
-                className="p-6 border border-rail bg-white flex justify-between gap-4 border-l-4 border-l-red-500"
+              <article
+                className="official-question-card official-question-card--failed"
                 key={q.id}
               >
-                <div className="flex-grow">
-                  <div className="flex items-center gap-3 mb-2 flex-wrap">
-                    <span className="font-bold text-sm text-accent-strong">{q.id}</span>
-                    <span className="text-xs px-2 py-0.5 bg-gray-100 text-gray-600 rounded">
+                <div className="official-question-card__content">
+                  <div className="metadata-row">
+                    <strong>{q.id}</strong>
+                    <span className="status-tag">
                       {q.sectionLabel}
                     </span>
-                    <span className="text-xs px-2 py-0.5 bg-red-100 text-red-700 rounded font-semibold">
+                    <span className="status-tag status-tag--danger">
                       Pendiente
                     </span>
                   </div>
-                  <h3 className="text-lg font-medium text-ink mb-4">{q.prompt}</h3>
-                  <div className="grid md:grid-cols-2 gap-2 pl-4 border-l border-rail mb-4">
+                  <h3>{q.prompt}</h3>
+                  <div className="official-question-options">
                     {q.options.map((opt) => (
-                      <div className="text-sm text-gray-700" key={opt.key}>
+                      <div key={opt.key}>
                         <strong>{opt.key}.</strong> {opt.text}
                       </div>
                     ))}
                   </div>
+                  <p className="official-question-options-note">Las opciones están disponibles en la sesión de repaso.</p>
 
                   {latest && (
-                    <div className="p-3 bg-red-50/50 border border-red-100 text-sm mb-4">
-                      <p className="text-red-800">
+                    <div className="answer-correction">
+                      <p>
                         <strong>Tu última respuesta:</strong> {latest.selected_answer}
                       </p>
-                      <p className="text-green-800 mt-1">
+                      <p>
                         <strong>Respuesta correcta:</strong> {q.answer}
                       </p>
                     </div>
                   )}
 
-                  <div className="p-3 bg-gray-50 border border-rail text-sm">
-                    <p className="text-gray-700 font-medium">Procedencia oficial:</p>
-                    <p className="text-gray-600 mt-1">
+                  <aside aria-label="Procedencia oficial" className="official-source">
+                    <strong>Procedencia oficial</strong>
+                    <span>
                       {q.source.profileName} · modelo {q.source.year}/{q.source.examCode} · cuadernillo, página {q.source.bookletPage}.
-                    </p>
-                    <a className="text-xs text-accent-strong hover:underline mt-2 inline-block" href={q.source.documentUrl} rel="noreferrer" target="_blank">
+                    </span>
+                    <a href={q.source.documentUrl} rel="noreferrer" target="_blank">
                       Consultar cuadernillo oficial de ADIF
                     </a>
-                  </div>
+                  </aside>
                 </div>
                 <div className="flex-shrink-0">
                   <FavoriteButton initialIsFavorite={isFav} questionId={q.id} />
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>

@@ -19,6 +19,7 @@ export default async function DashboardLayout({ children }: Readonly<{ children:
 
   return (
     <div className="dashboard-shell">
+      <a className="skip-link" href="#dashboard-content">Saltar al contenido</a>
       <DashboardNavigation placement="sidebar" />
       <div className="dashboard-surface">
         <header className="dashboard-header">
@@ -26,7 +27,7 @@ export default async function DashboardLayout({ children }: Readonly<{ children:
           <p className="dashboard-context">Preparación ADIF Telecomunicaciones</p>
           <UserMenu profile={profile} />
         </header>
-        <main className="dashboard-main"><DashboardContent>{children}</DashboardContent></main>
+        <main className="dashboard-main" id="dashboard-content"><DashboardContent>{children}</DashboardContent></main>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createBrowserClient } from "../../lib/supabase/browser";
 
 export type UserProfile = { avatarUrl?: string; email?: string; name?: string };
@@ -18,7 +18,18 @@ export function UserMenu({ profile }: { profile: UserProfile }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSigningOut, setIsSigningOut] = useState(false);
   const [signOutError, setSignOutError] = useState<string | null>(null);
+  const [failedAvatarUrl, setFailedAvatarUrl] = useState<string | null>(null);
+  const avatarRef = useRef<HTMLImageElement>(null);
   const name = profile.name?.trim() || profile.email?.split("@")[0] || "Usuario";
+  const accountInitials = initials(profile.name, profile.email);
+  const showAvatar = profile.avatarUrl && failedAvatarUrl !== profile.avatarUrl;
+
+  useEffect(() => {
+    const avatar = avatarRef.current;
+    if (profile.avatarUrl && avatar?.complete && avatar.naturalWidth === 0) {
+      setFailedAvatarUrl(profile.avatarUrl);
+    }
+  }, [profile.avatarUrl]);
 
   async function signOut() {
     setIsSigningOut(true);
@@ -40,11 +51,19 @@ export function UserMenu({ profile }: { profile: UserProfile }) {
   return (
     <div className="user-menu">
       <button className="user-menu-trigger" type="button" aria-label="Abrir menú de cuenta" aria-expanded={isOpen} aria-haspopup="menu" onClick={() => setIsOpen((open) => !open)}>
-        {profile.avatarUrl ? (
+        {showAvatar ? (
           // Google profile image hosts are user-controlled and cannot be allowlisted at build time.
           // eslint-disable-next-line @next/next/no-img-element
-          <img className="user-avatar" src={profile.avatarUrl} alt="" />
-        ) : <span className="user-avatar user-avatar-fallback" aria-hidden="true">{initials(profile.name, profile.email)}</span>}
+          <img className="user-avatar" src={profile.avatarUrl} alt="" onError={() => setFailedAvatarUrl(profile.avatarUrl ?? null)} ref={avatarRef} />
+        ) : (
+          <span
+            aria-label={`Iniciales de ${name}: ${accountInitials}`}
+            className="user-avatar user-avatar-fallback"
+            role="img"
+          >
+            {accountInitials}
+          </span>
+        )}
         <span className="user-menu-label">{name}</span>
       </button>
       {isOpen ? (

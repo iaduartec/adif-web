@@ -28,7 +28,7 @@ export const NAV_ITEMS: readonly NavigationItem[] = [
   { href: "/", icon: RailIcon, label: "Inicio" },
   { href: "/curso", icon: CourseIcon, label: "Curso" },
   { href: "/tests", icon: TestsIcon, label: "Preguntas oficiales" },
-  { href: "/simulacros", icon: SimulationIcon, label: "Simulacros" },
+  { href: "/simulacros", icon: SimulationIcon, label: "Exámenes oficiales" },
   { href: "/psicotecnicos", icon: AptitudeIcon, label: "Psicotécnicos" },
   { href: "/ingles-a2", icon: LanguageIcon, label: "Inglés A2" },
   { href: "/fichas", icon: CardsIcon, label: "Fichas" },

@@ -6,7 +6,8 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     await page.goto("/");
     await expect(page).toHaveURL("/");
     await expect(page.locator("h1")).toContainText("Bienvenido de nuevo");
-    await expect(page.locator("text=Temario Completado")).toBeVisible();
+    await expect(page.getByText("Lecciones completadas")).toBeVisible();
+    await expect(page.getByRole("region", { name: "Siguiente acción recomendada" })).toHaveCount(1);
 
     // 2. Lesson completion
     await page.goto("/curso");
@@ -22,15 +23,19 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     // 3. Answer a question incorrectly to feed the Error Notebook
     await page.goto("/tests");
     await page.click("a:has-text('Iniciar práctica')");
-    // Select option A (incorrect — correct answer for Q0001 is D)
+    const activeQuestionName = await page.locator("input[type='radio']").first().getAttribute("name");
+    const activeQuestionId = activeQuestionName?.replace("question-", "");
+    expect(activeQuestionId).toBeTruthy();
+    // Select option A, which is incorrect for the first active official question.
     await page.locator("label").filter({ hasText: /^A\./ }).click();
     await page.click("text=Comprobar respuesta");
     await expect(page.locator("text=Respuesta incorrecta")).toBeVisible();
+    await expect(page.getByRole("complementary", { name: "Procedencia oficial" })).toContainText("Pregunta oficial ADIF");
 
     // 4. Verify the Error Notebook
     await page.goto("/errores");
-    await expect(page.locator("h1")).toContainText("Cuaderno de Errores");
-    await expect(page.locator("text=Q0001")).toBeVisible();
+    await expect(page.locator("h1")).toContainText("Cuaderno de errores");
+    await expect(page.getByText(activeQuestionId ?? "", { exact: true })).toBeVisible();
     await expect(page.locator("text=Tu última respuesta: A")).toBeVisible();
 
     // 5. Favorite a question in the question bank list
@@ -41,9 +46,12 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
 
     // 6. Complete a timed simulation
     await page.goto("/simulacros");
-    await expect(page.locator("h1")).toContainText("Simulacros de Examen");
-    await page.click("text=Simulacro 01");
-    await page.click("text=Comenzar simulacro");
+    await expect(page.locator("h1")).toContainText("Exámenes oficiales");
+    await expect(page.locator("article.simulation-card")).toHaveCount(6);
+    await expect(page.locator("article.simulation-card", { hasText: "15 preguntas" })).toHaveCount(2);
+    await expect(page.locator("article.simulation-card", { hasText: "18 preguntas" })).toHaveCount(4);
+    await page.getByRole("link", { name: "Abrir examen" }).first().click();
+    await page.getByRole("button", { name: "Comenzar examen" }).click();
 
     // Answer two questions
     await page.locator("label").filter({ hasText: /^A\./ }).click();
@@ -51,19 +59,18 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     await page.locator("label").filter({ hasText: /^B\./ }).click();
 
     // Submit simulation
-    await page.click("text=Entregar simulacro");
+    await page.getByRole("button", { name: "Entregar examen" }).click();
     await page.click("text=Confirmar entrega");
 
     // Verify simulation results page (exact text from SimulationResults component)
-    await expect(page.locator("h2:has-text('Resultado del simulacro')")).toBeVisible();
+    await expect(page.locator("h2:has-text('Resultado del examen')")).toBeVisible();
     await expect(page.locator(".simulation-results__card--score")).toBeVisible();
     await expect(page.locator(".simulation-results__card--correct")).toBeVisible();
 
     // 7. Verify study statistics
     await page.goto("/estadisticas");
-    await expect(page.locator("h1")).toContainText("Estadísticas de Estudio");
-    // The "Precisión por Temas" table is the primary visible table
-    await expect(page.locator("h2:has-text('Precisión por Temas')")).toBeVisible();
+    await expect(page.locator("h1")).toContainText("Estadísticas de estudio");
+    await expect(page.locator("h2:has-text('Precisión por sección oficial')")).toBeVisible();
     await expect(page.locator("table").first()).toBeVisible();
   });
 });

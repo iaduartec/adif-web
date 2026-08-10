@@ -1,20 +1,26 @@
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import DashboardPage from "../app/(dashboard)/page";
 import { DashboardNavigation } from "../components/shell/dashboard-navigation";
 import { MobileNavigation } from "../components/shell/mobile-navigation";
 import { Sidebar } from "../components/shell/sidebar";
 import { UserMenu } from "../components/shell/user-menu";
 
-const { signOut, usePathname } = vi.hoisted(() => ({ signOut: vi.fn(), usePathname: vi.fn() }));
+const { createServerClient, signOut, usePathname } = vi.hoisted(() => ({
+  createServerClient: vi.fn(),
+  signOut: vi.fn(),
+  usePathname: vi.fn(),
+}));
 
-vi.mock("next/navigation", () => ({ usePathname }));
+vi.mock("next/navigation", () => ({ redirect: vi.fn(), usePathname }));
 vi.mock("../lib/supabase/browser", () => ({ createBrowserClient: () => ({ auth: { signOut } }) }));
+vi.mock("../lib/supabase/server", () => ({ createServerClient }));
 
 const requiredDestinations = [
   ["Inicio", "/"],
   ["Curso", "/curso"],
   ["Preguntas oficiales", "/tests"],
-  ["Simulacros", "/simulacros"],
+  ["Exámenes oficiales", "/simulacros"],
   ["Psicotécnicos", "/psicotecnicos"],
   ["Inglés A2", "/ingles-a2"],
   ["Fichas", "/fichas"],
@@ -28,6 +34,56 @@ describe("authenticated navigation", () => {
   beforeEach(() => {
     signOut.mockReset();
     usePathname.mockReset();
+    createServerClient.mockReset();
+    createServerClient.mockImplementation(async () => {
+      const createQuery = (rows: unknown[]) => {
+        const query = {
+          select: vi.fn(),
+          eq: vi.fn(),
+          gte: vi.fn(),
+          order: vi.fn(),
+          maybeSingle: vi.fn(async () => ({ data: rows[0] ?? null })),
+          then: (resolve: (value: { data: unknown[] }) => unknown) =>
+            Promise.resolve({ data: rows }).then(resolve),
+        };
+        query.select.mockReturnValue(query);
+        query.eq.mockReturnValue(query);
+        query.gte.mockReturnValue(query);
+        query.order.mockReturnValue(query);
+        return query;
+      };
+
+      return {
+        auth: {
+          getUser: vi.fn(async () => ({
+            data: {
+              user: {
+                email: "ana@example.com",
+                id: "user-1",
+                user_metadata: { full_name: "Ana López" },
+              },
+            },
+          })),
+        },
+        from: vi.fn((table: string) =>
+          createQuery(table === "study_goals" ? [{ weekly_target_minutes: 120 }] : []),
+        ),
+      };
+    });
+  });
+
+  it("presents one primary recommendation and an official-content summary without emoji headings", async () => {
+    render(await DashboardPage());
+
+    expect(screen.getAllByRole("region", { name: "Siguiente acción recomendada" })).toHaveLength(1);
+    expect(screen.getByText("Lecciones completadas")).toBeInTheDocument();
+    expect(screen.getByText("Preguntas oficiales intentadas")).toBeInTheDocument();
+    expect(screen.getByText("Precisión global")).toBeInTheDocument();
+    expect(screen.getByText("Sección oficial prioritaria")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Recursos oficiales" })).toBeInTheDocument();
+
+    const headingText = screen.getAllByRole("heading").map((heading) => heading.textContent).join(" ");
+    expect(headingText).not.toMatch(/[🔥📖📝⏱️]/u);
   });
 
   it("exposes every study destination and identifies the current page", () => {
@@ -74,6 +130,14 @@ describe("authenticated navigation", () => {
     render(<UserMenu profile={{ email: "ana@example.com", name: "Ana López" }} />);
 
     expect(screen.getByRole("button", { name: "Abrir menú de cuenta" })).toBeInTheDocument();
+  });
+
+  it("replaces a failed decorative avatar with accessible account initials", () => {
+    render(<UserMenu profile={{ avatarUrl: "https://example.com/broken.jpg", email: "ana@example.com", name: "Ana López" }} />);
+
+    fireEvent.error(screen.getByAltText(""));
+
+    expect(screen.getByRole("img", { name: "Iniciales de Ana López: AL" })).toHaveTextContent("AL");
   });
 
   it("shows a retryable error instead of navigating away when sign-out fails", async () => {
