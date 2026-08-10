@@ -23,14 +23,12 @@ describe("course reader provenance and notes", () => {
       <>
         <OriginLabel origin="official_reference" />
         <OriginLabel origin="original_explanation" />
-        <OriginLabel origin="verification_pending" />
       </>,
     );
 
     expect(screen.getByText("Referencia oficial")).toBeVisible();
     expect(screen.getByText("Explicación didáctica original")).toBeVisible();
-    expect(screen.getByText("Pendiente de cotejo 2026")).toBeVisible();
-    expect(container.querySelectorAll("[data-origin-label]")).toHaveLength(3);
+    expect(container.querySelectorAll("[data-origin-label]")).toHaveLength(2);
   });
 
   it("saves the entered note for the lesson and confirms only after success", async () => {
@@ -83,9 +81,9 @@ describe("course reader provenance and notes", () => {
     render(await LessonReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 
     expect(screen.getByRole("heading", { name: "Supuestos Prácticos Tipo Test" })).toBeVisible();
-    expect(screen.getByText(/prueba física con una marca de tiempo idéntica/i)).toBeVisible();
+    expect(screen.getByText(/discriminación indirecta por sexo/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Reglas Nemotécnicas y Tips" })).toBeVisible();
-    expect(screen.getByText(/La discriminación directa no admite justificación objetiva/i)).toBeVisible();
+    expect(screen.getByText(/no admite justificación ordinaria/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
   });
 });
