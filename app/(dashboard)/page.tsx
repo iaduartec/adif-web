@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ProgressSummary } from "../../components/dashboard/progress-summary";
 import { StudyPlan } from "../../components/dashboard/study-plan";
-import { listLessons, listQuestions, listSimulations } from "../../lib/content/repository";
+import { listLessons, listQuestions, listOfficialExams } from "../../lib/content/repository";
 import { calculateMetrics, recommendNextSession } from "../../lib/progress/metrics";
 import { createServerClient } from "../../lib/supabase/server";
 
@@ -56,7 +56,7 @@ export default async function DashboardPage() {
   // Retrieve lessons list and questions list
   const lessons = listLessons();
   const questions = listQuestions();
-  const simulations = listSimulations();
+  const simulations = listOfficialExams();
 
   // Metrics calculation
   const metrics = calculateMetrics(
@@ -125,10 +125,10 @@ export default async function DashboardPage() {
         </Link>
         <Link href="/simulacros" className="simulation-card">
           <div className="simulation-card__header">
-            <h3 className="simulation-card__title">⏱️ Simulacros de Examen</h3>
+            <h3 className="simulation-card__title">⏱️ Exámenes oficiales</h3>
           </div>
           <p className="text-sm text-gray-600 mt-2">
-            Ponte a prueba con simulacros cronometrados de 60 preguntas y corrección real.
+            Practica con modelos históricos oficiales, cada uno con su duración y preguntas publicadas.
           </p>
         </Link>
       </div>

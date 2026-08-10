@@ -1,14 +1,15 @@
 "use client";
 
 import type { SimulationResult } from "../../app/actions/simulations";
-import type { LegacyPracticeQuestion } from "../../lib/content/repository";
+import type { OfficialExamQuestion } from "../../lib/content/repository";
+import { OfficialSource } from "./official-source";
 
 export function SimulationResults({
   result,
   questions,
 }: {
   result: SimulationResult;
-  questions: readonly LegacyPracticeQuestion[];
+  questions: readonly OfficialExamQuestion[];
 }) {
   const questionMap = new Map(questions.map((q) => [q.id, q]));
   const totalMinutes = Math.floor(result.elapsedMs / 60000);
@@ -17,15 +18,15 @@ export function SimulationResults({
   return (
     <div className="simulation-results">
       <header className="simulation-results__header">
-        <h2>Resultado del simulacro</h2>
+        <h2>Resultado del examen</h2>
       </header>
 
       {/* Score summary */}
       <div className="simulation-results__summary">
         <div className="simulation-results__card simulation-results__card--score">
-          <p className="simulation-results__label">Puntuación</p>
+          <p className="simulation-results__label">Puntuación neta</p>
           <p className="simulation-results__value">{result.score}</p>
-          <p className="simulation-results__sub">de {questions.length} posibles</p>
+          <p className="simulation-results__sub">en las {questions.length} preguntas publicadas</p>
         </div>
         <div className="simulation-results__card simulation-results__card--correct">
           <p className="simulation-results__label">Correctas</p>
@@ -46,7 +47,7 @@ export function SimulationResults({
       </div>
 
       <p className="text-sm text-gray-600 mt-4 mb-2">
-        Fórmula ADIF: <code>correctas × 1 − incorrectas × ⅓</code>. Omitidas no restan.
+        Puntuación neta de esta parte disponible: <code>correctas × 1 − incorrectas × ⅓</code>. No es la puntuación completa del proceso selectivo.
       </p>
 
       {/* Corrections list */}
@@ -80,9 +81,7 @@ export function SimulationResults({
                       <strong>Correcta:</strong> {correction.correctAnswer}
                     </p>
                   </div>
-                  {question && (
-                    <p className="simulation-correction__explanation">{question.explanation}</p>
-                  )}
+                  {question && <OfficialSource source={question.source} />}
                 </div>
               );
             })}

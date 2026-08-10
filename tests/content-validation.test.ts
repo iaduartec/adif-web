@@ -10,7 +10,6 @@ import {
   officialExamsSchema,
   officialQuestionsSchema,
   questionSchema,
-  simulationSchema,
 } from "../lib/content/schema";
 import { contentFingerprint } from "../scripts/import-official-exams";
 
@@ -75,16 +74,6 @@ describe("course content schemas", () => {
     expect(questionSchema.safeParse({ ...validQuestion, answer: "E" }).success).toBe(false);
   });
 
-  it("rejects simulations that repeat a question ID", () => {
-    expect(
-      simulationSchema.safeParse({
-        id: "SIM-01",
-        title: "Simulacro 01",
-        questionIds: Array.from({ length: 60 }, () => "Q0001"),
-        origin: "original_explanation",
-      }).success,
-    ).toBe(false);
-  });
 });
 
 describe("active official course content", () => {
@@ -164,6 +153,8 @@ describe("active official course content", () => {
       ["ADIF-2025-1131", 18],
       ["ADIF-2025-4104", 18],
     ]);
+    expect(parsedExams.data.map((exam) => exam.durationMinutes)).toEqual([15, 15, 15, 15, 15, 15]);
+    expect(parsedExams.data.every((exam) => exam.completeness === "specific_part")).toBe(true);
     const expectedQuestionNumbers = {
       "ADIF-2023-1433": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
       "ADIF-2023-4101": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],

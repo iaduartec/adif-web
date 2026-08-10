@@ -7,22 +7,51 @@ vi.mock("../app/actions/simulations", () => ({ submitSimulation }));
 
 import { SimulationRunner } from "../components/practice/simulation-runner";
 import { SimulationResults } from "../components/practice/simulation-results";
-import type { LegacyPracticeQuestion } from "../lib/content/repository";
+import { SimulationPageClient } from "../app/(dashboard)/simulacros/[id]/client";
+import type { OfficialQuestion } from "../lib/content/schema";
 
-const questions: LegacyPracticeQuestion[] = Array.from({ length: 3 }, (_, i) => ({
-  id: `Q${String(i + 1).padStart(4, "0")}`,
-  module: "G1 Igualdad",
-  prompt: `Pregunta ${i + 1}`,
+type ExamQuestion = Omit<OfficialQuestion, "answer">;
+
+const source = {
+  kind: "official_adif_exam" as const,
+  year: 2024,
+  call: "PNI24/01",
+  profileCode: "24/05PO",
+  profileName: "Oficial de Telecomunicaciones de Entrada",
+  examCode: "3403",
+  questionNumber: 1,
+  section: "specific" as const,
+  isReserve: false,
+  documentUrl: "https://www.adif.es/documents/examen-3403.pdf",
+  bookletPage: 187,
+  answerKeyPage: 19,
+  verifiedAt: "2026-08-10",
+  fingerprint: "sha256:115f6c60c9433982fffc9172f695afba38a969a92124f97ad8d707b2f7fcf7d0",
+};
+
+const questions: ExamQuestion[] = Array.from({ length: 3 }, (_, i) => ({
+  id: `ADIF-2024-3403-Q${String(i + 1).padStart(2, "0")}`,
+  sectionLabel: "Parte específica",
+  prompt: `Pregunta oficial ${i + 1}`,
   options: [
     { key: "A" as const, text: "Opción A" },
     { key: "B" as const, text: "Opción B" },
     { key: "C" as const, text: "Opción C" },
     { key: "D" as const, text: "Opción D" },
   ],
-  explanation: `Explicación ${i + 1}`,
-  sourceNote: "Fuente original.",
-  origin: "original_explanation" as const,
+  origin: "official_reference" as const,
+  source: { ...source, questionNumber: i + 1 },
 }));
+
+const exam = {
+  id: "ADIF-2024-3403",
+  title: "Examen oficial ADIF 2024 3403",
+  source,
+  durationMinutes: 15,
+  questionIds: questions.map((question) => question.id),
+  completeness: "specific_part" as const,
+  scoring: { correct: 1, incorrect: -1 / 3, omitted: 0 },
+};
 
 describe("SimulationRunner", () => {
   beforeEach(() => {
@@ -35,17 +64,17 @@ describe("SimulationRunner", () => {
     vi.useRealTimers();
   });
 
-  it("renders the countdown timer and question navigator", () => {
+  it("uses the documented duration of the official exam", () => {
     render(
       <SimulationRunner
-        simulationId="SIM-01"
+        examId={exam.id}
         questions={questions}
-        durationMinutes={90}
+        durationMinutes={exam.durationMinutes}
         onFinish={() => {}}
       />,
     );
 
-    expect(screen.getByText(/90:00/)).toBeVisible();
+    expect(screen.getByText(/15:00/)).toBeVisible();
     expect(screen.getByText("Pregunta 1 de 3")).toBeVisible();
     expect(screen.getAllByRole("radio")).toHaveLength(4);
   });
@@ -53,9 +82,9 @@ describe("SimulationRunner", () => {
   it("records the answer and navigates to the next question", () => {
     render(
       <SimulationRunner
-        simulationId="SIM-01"
+        examId={exam.id}
         questions={questions}
-        durationMinutes={90}
+        durationMinutes={exam.durationMinutes}
         onFinish={() => {}}
       />,
     );
@@ -66,7 +95,7 @@ describe("SimulationRunner", () => {
     expect(screen.getByText("Pregunta 2 de 3")).toBeVisible();
   });
 
-  it("submits answers on manual delivery and calls onFinish with results", async () => {
+  it("submits answers when delivering an exam", async () => {
     const mockResult = {
       attemptId: "att-1",
       correct: 2,
@@ -75,9 +104,9 @@ describe("SimulationRunner", () => {
       score: 1.67,
       elapsedMs: 5000,
       corrections: [
-        { questionId: "Q0001", selectedAnswer: "A", correctAnswer: "D", isCorrect: false },
-        { questionId: "Q0002", selectedAnswer: "B", correctAnswer: "B", isCorrect: true },
-        { questionId: "Q0003", selectedAnswer: "C", correctAnswer: "C", isCorrect: true },
+        { questionId: questions[0].id, selectedAnswer: "A", correctAnswer: "D", isCorrect: false },
+        { questionId: questions[1].id, selectedAnswer: "B", correctAnswer: "B", isCorrect: true },
+        { questionId: questions[2].id, selectedAnswer: "C", correctAnswer: "C", isCorrect: true },
       ],
     };
     submitSimulation.mockResolvedValue(mockResult);
@@ -85,32 +114,30 @@ describe("SimulationRunner", () => {
     const onFinish = vi.fn();
     render(
       <SimulationRunner
-        simulationId="SIM-01"
+        examId={exam.id}
         questions={questions}
-        durationMinutes={90}
+        durationMinutes={exam.durationMinutes}
         onFinish={onFinish}
       />,
     );
 
-    // Answer all 3 questions
     fireEvent.click(screen.getByRole("radio", { name: /A\. Opción A/i }));
     fireEvent.click(screen.getByRole("button", { name: /Siguiente/i }));
-
     fireEvent.click(screen.getByRole("radio", { name: /B\. Opción B/i }));
     fireEvent.click(screen.getByRole("button", { name: /Siguiente/i }));
-
     fireEvent.click(screen.getByRole("radio", { name: /C\. Opción C/i }));
 
-    // Click deliver
-    fireEvent.click(screen.getByRole("button", { name: /Entregar simulacro/i }));
-
-    // Confirm delivery
+    fireEvent.click(screen.getByRole("button", { name: /Entregar examen/i }));
     fireEvent.click(screen.getByRole("button", { name: /Confirmar entrega/i }));
 
     await waitFor(() => {
       expect(submitSimulation).toHaveBeenCalledWith(
-        "SIM-01",
-        { Q0001: "A", Q0002: "B", Q0003: "C" },
+        exam.id,
+        {
+          [questions[0].id]: "A",
+          [questions[1].id]: "B",
+          [questions[2].id]: "C",
+        },
         expect.any(Number),
       );
     });
@@ -120,31 +147,28 @@ describe("SimulationRunner", () => {
     });
   });
 
-  it("auto-delivers when timer reaches zero", async () => {
-    const mockResult = {
+  it("auto-delivers when the official time limit expires", async () => {
+    submitSimulation.mockResolvedValue({
       attemptId: "att-2",
       correct: 0,
       incorrect: 0,
       omitted: 3,
       score: 0,
-      elapsedMs: 5400000,
+      elapsedMs: 900000,
       corrections: [],
-    };
-    submitSimulation.mockResolvedValue(mockResult);
+    });
 
-    const onFinish = vi.fn();
     render(
       <SimulationRunner
-        simulationId="SIM-01"
+        examId={exam.id}
         questions={questions}
-        durationMinutes={90}
-        onFinish={onFinish}
+        durationMinutes={exam.durationMinutes}
+        onFinish={() => {}}
       />,
     );
 
-    // Advance 90 minutes
     act(() => {
-      vi.advanceTimersByTime(90 * 60 * 1000 + 1000);
+      vi.advanceTimersByTime(15 * 60 * 1000 + 1000);
     });
 
     await waitFor(() => {
@@ -153,29 +177,51 @@ describe("SimulationRunner", () => {
   });
 });
 
+describe("SimulationPageClient", () => {
+  afterEach(cleanup);
+
+  it("shows the documented historical-model header before starting", () => {
+    render(<SimulationPageClient exam={exam} questions={questions} />);
+
+    expect(screen.getByRole("heading", { name: "Examen oficial ADIF 2024 3403" })).toBeVisible();
+    expect(screen.getByText(/2024 · PNI24\/01 · 24\/05PO · modelo 3403 · Parte específica/i)).toBeVisible();
+    expect(screen.getByText(/3 preguntas · 15 minutos/i)).toBeVisible();
+    expect(screen.getByRole("link", { name: /Ver en el documento oficial/i })).toHaveAttribute("href", source.documentUrl);
+  });
+
+  it("passes the documented exam duration to the runner", () => {
+    render(<SimulationPageClient exam={exam} questions={questions} />);
+
+    fireEvent.click(screen.getByRole("button", { name: /Comenzar examen/i }));
+
+    expect(screen.getByRole("timer")).toHaveTextContent("15:00");
+  });
+});
+
 describe("SimulationResults", () => {
   afterEach(cleanup);
 
-  it("renders the score summary and individual corrections", () => {
+  it("shows the raw net score and the official source without an invented explanation", () => {
     render(
       <SimulationResults
         result={{
           attemptId: "att-1",
-          correct: 45,
-          incorrect: 10,
-          omitted: 5,
-          score: 41.67,
-          elapsedMs: 4500000,
+          correct: 0,
+          incorrect: 3,
+          omitted: 0,
+          score: -1,
+          elapsedMs: 300000,
           corrections: [
-            { questionId: "Q0001", selectedAnswer: "A", correctAnswer: "D", isCorrect: false },
+            { questionId: questions[0].id, selectedAnswer: "A", correctAnswer: "D", isCorrect: false },
           ],
         }}
         questions={questions}
       />,
     );
 
-    expect(screen.getByText(/45/)).toBeVisible();
-    expect(screen.getByText(/41\.67/)).toBeVisible();
-    expect(screen.getByText(/Q0001/)).toBeVisible();
+    expect(screen.getByText("-1")).toBeVisible();
+    expect(screen.getByText(/puntuación neta de esta parte disponible/i)).toBeVisible();
+    expect(screen.getByRole("link", { name: /Ver en el documento oficial/i })).toHaveAttribute("href", source.documentUrl);
+    expect(screen.queryByText(/Explicación/)).not.toBeInTheDocument();
   });
 });

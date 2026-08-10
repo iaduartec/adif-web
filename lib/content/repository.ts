@@ -27,12 +27,7 @@ export type QuestionFilter = {
  */
 export type OfficialPracticeQuestion = Question;
 
-/**
- * @deprecated Temporary compatibility shape for the legacy simulation UI.
- * Migrate simulations to `PracticeQuestion` after they stop rendering legacy
- * explanation fields.
- */
-export type LegacyPracticeQuestion = Omit<OfficialPracticeQuestion, "answer">;
+export type OfficialExamQuestion = Omit<OfficialQuestion, "answer">;
 
 export type ContentRepositoryInput = {
   lessons: unknown;
@@ -128,14 +123,6 @@ export function createContentRepository({
     listQuestions(filter?: QuestionFilter): OfficialPracticeQuestion[] {
       return listOfficialQuestions(filter).map(toPracticeQuestion);
     },
-    /** @deprecated Migrate callers to getOfficialExam. */
-    getSimulation(id: string): OfficialExam | undefined {
-      return examById.get(id);
-    },
-    /** @deprecated Migrate callers to listOfficialExams. */
-    listSimulations(): readonly OfficialExam[] {
-      return examList;
-    },
   };
 }
 
@@ -177,14 +164,4 @@ export function getQuestion(id: string): OfficialPracticeQuestion | undefined {
 /** @deprecated Migrate callers to listOfficialQuestions. */
 export function listQuestions(filter?: QuestionFilter): OfficialPracticeQuestion[] {
   return repository.listQuestions(filter);
-}
-
-/** @deprecated Migrate callers to getOfficialExam. */
-export function getSimulation(id: string): OfficialExam | undefined {
-  return repository.getSimulation(id);
-}
-
-/** @deprecated Migrate callers to listOfficialExams. */
-export function listSimulations(): readonly OfficialExam[] {
-  return repository.listSimulations();
 }

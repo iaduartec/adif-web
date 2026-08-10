@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { getSimulation, getQuestion, type LegacyPracticeQuestion } from "../../../../lib/content/repository";
+import { getOfficialExam, getOfficialQuestion, type OfficialExamQuestion } from "../../../../lib/content/repository";
 import { createServerClient } from "../../../../lib/supabase/server";
 import { SimulationPageClient } from "./client";
 
@@ -12,20 +12,20 @@ export default async function SimulationDetailPage({ params }: { params: Promise
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const simulation = getSimulation(id);
-  if (!simulation) notFound();
+  const exam = getOfficialExam(id);
+  if (!exam) notFound();
 
   // Strip the answer from each question so the client cannot cheat
-  const questions: LegacyPracticeQuestion[] = simulation.questionIds.map((questionId) => {
-    const question = getQuestion(questionId);
-    if (!question) return null;
+  const questions: OfficialExamQuestion[] = exam.questionIds.map((questionId) => {
+    const question = getOfficialQuestion(questionId);
+    if (!question) throw new Error(`Pregunta oficial ${questionId} no encontrada.`);
     const { answer: _answer, ...rest } = question;
     return rest;
-  }).filter((q): q is LegacyPracticeQuestion => q !== null);
+  });
 
   return (
     <SimulationPageClient
-      simulation={{ id: simulation.id, title: simulation.title }}
+      exam={exam}
       questions={questions}
     />
   );

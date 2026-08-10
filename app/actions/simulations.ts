@@ -1,6 +1,6 @@
 "use server";
 
-import { getQuestion, getSimulation } from "../../lib/content/repository";
+import { getOfficialExam, getOfficialQuestion } from "../../lib/content/repository";
 import { createServerClient } from "../../lib/supabase/server";
 
 export type SimulationCorrection = {
@@ -21,29 +21,36 @@ export type SimulationResult = {
 };
 
 export async function submitSimulation(
-  simulationId: string,
+  examId: string,
   answers: Record<string, string>,
   elapsedMs: number,
 ): Promise<SimulationResult> {
-  const simulation = getSimulation(simulationId);
-  if (!simulation) throw new Error("El simulacro solicitado no existe.");
+  const exam = getOfficialExam(examId);
+  if (!exam) throw new Error("El examen oficial solicitado no existe.");
 
   const supabase = await createServerClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) throw new Error("Debes iniciar sesión para entregar un simulacro.");
+  if (!user) throw new Error("Debes iniciar sesión para entregar un examen.");
 
   if (typeof elapsedMs !== "number" || elapsedMs < 0) {
     throw new Error("Tiempo transcurrido inválido.");
   }
 
-  // Derive corrections on server
+  const examQuestionIds = new Set(exam.questionIds);
+  for (const questionId of Object.keys(answers)) {
+    if (!examQuestionIds.has(questionId)) {
+      throw new Error(`La pregunta ${questionId} no pertenece al examen oficial.`);
+    }
+  }
+
+  // Derive corrections exclusively from the published model on the server.
   const corrections: SimulationCorrection[] = [];
   let correct = 0;
   let incorrect = 0;
   let omitted = 0;
 
-  for (const questionId of simulation.questionIds) {
-    const question = getQuestion(questionId);
+  for (const questionId of exam.questionIds) {
+    const question = getOfficialQuestion(questionId);
     if (!question) throw new Error(`Pregunta ${questionId} no encontrada en el contenido.`);
 
     const selectedAnswer = answers[questionId] ?? null;
@@ -73,18 +80,18 @@ export async function submitSimulation(
     .from("simulation_attempts")
     .insert({
       user_id: user.id,
-      simulation_id: simulationId,
+      simulation_id: exam.id,
       correct_count: correct,
       incorrect_count: incorrect,
       omitted_count: omitted,
-      score: Math.max(0, score),
+      score,
       elapsed_ms: elapsedMs,
     })
     .select("id")
     .single();
 
   if (attemptError || !attempt) {
-    throw new Error("No se ha podido registrar el intento del simulacro.");
+    throw new Error("No se ha podido registrar el intento del examen.");
   }
 
   // Insert individual answers
@@ -101,7 +108,7 @@ export async function submitSimulation(
     .insert(answerRows);
 
   if (answersError) {
-    throw new Error("No se han podido registrar las respuestas del simulacro.");
+    throw new Error("No se han podido registrar las respuestas del examen.");
   }
 
   return {
@@ -109,7 +116,7 @@ export async function submitSimulation(
     correct,
     incorrect,
     omitted,
-    score: Math.max(0, score),
+    score,
     elapsedMs,
     corrections,
   };

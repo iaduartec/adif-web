@@ -1,21 +1,21 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { LegacyPracticeQuestion } from "../../lib/content/repository";
+import type { OfficialExamQuestion } from "../../lib/content/repository";
 import { submitSimulation, type SimulationResult } from "../../app/actions/simulations";
 import { Button } from "../ui/button";
 
 type AnswerKey = "A" | "B" | "C" | "D";
 
-const STORAGE_PREFIX = "adif-sim-draft-";
+const STORAGE_PREFIX = "adif-exam-draft-";
 
-function getStorageKey(simulationId: string): string {
-  return `${STORAGE_PREFIX}${simulationId}`;
+function getStorageKey(examId: string): string {
+  return `${STORAGE_PREFIX}${examId}`;
 }
 
-function loadDraft(simulationId: string): Record<string, AnswerKey> {
+function loadDraft(examId: string): Record<string, AnswerKey> {
   try {
-    const raw = sessionStorage.getItem(getStorageKey(simulationId));
+    const raw = sessionStorage.getItem(getStorageKey(examId));
     if (!raw) return {};
     return JSON.parse(raw) as Record<string, AnswerKey>;
   } catch {
@@ -23,17 +23,17 @@ function loadDraft(simulationId: string): Record<string, AnswerKey> {
   }
 }
 
-function saveDraft(simulationId: string, answers: Record<string, AnswerKey>): void {
+function saveDraft(examId: string, answers: Record<string, AnswerKey>): void {
   try {
-    sessionStorage.setItem(getStorageKey(simulationId), JSON.stringify(answers));
+    sessionStorage.setItem(getStorageKey(examId), JSON.stringify(answers));
   } catch {
     // sessionStorage full or unavailable — silent fail
   }
 }
 
-function clearDraft(simulationId: string): void {
+function clearDraft(examId: string): void {
   try {
-    sessionStorage.removeItem(getStorageKey(simulationId));
+    sessionStorage.removeItem(getStorageKey(examId));
   } catch {
     // silent fail
   }
@@ -46,18 +46,18 @@ function formatTime(totalSeconds: number): string {
 }
 
 export function SimulationRunner({
-  simulationId,
+  examId,
   questions,
   durationMinutes,
   onFinish,
 }: {
-  simulationId: string;
-  questions: readonly LegacyPracticeQuestion[];
+  examId: string;
+  questions: readonly OfficialExamQuestion[];
   durationMinutes: number;
   onFinish: (result: SimulationResult) => void;
 }) {
   const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, AnswerKey>>(() => loadDraft(simulationId));
+  const [answers, setAnswers] = useState<Record<string, AnswerKey>>(() => loadDraft(examId));
   const [remainingSeconds, setRemainingSeconds] = useState(durationMinutes * 60);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -90,15 +90,15 @@ export function SimulationRunner({
     setError("");
     try {
       const elapsed = Math.max(0, Date.now() - startedAt.current);
-      const result = await submitSimulation(simulationId, answers, elapsed);
-      clearDraft(simulationId);
+      const result = await submitSimulation(examId, answers, elapsed);
+      clearDraft(examId);
       onFinish(result);
     } catch (err) {
       delivered.current = false;
       setIsSubmitting(false);
-      setError(err instanceof Error ? err.message : "Error al entregar el simulacro.");
+      setError(err instanceof Error ? err.message : "Error al entregar el examen.");
     }
-  }, [answers, onFinish, simulationId]);
+  }, [answers, examId, onFinish]);
 
   // Auto-deliver when timer expires
   useEffect(() => {
@@ -116,7 +116,7 @@ export function SimulationRunner({
   function selectAnswer(key: AnswerKey) {
     const next = { ...answers, [question.id]: key };
     setAnswers(next);
-    saveDraft(simulationId, next);
+    saveDraft(examId, next);
   }
 
   function goToQuestion(targetIndex: number) {
@@ -202,7 +202,7 @@ export function SimulationRunner({
           disabled={isSubmitting}
           onClick={() => setShowConfirm(true)}
         >
-          {isSubmitting ? "Entregando…" : "Entregar simulacro"}
+          {isSubmitting ? "Entregando…" : "Entregar examen"}
         </Button>
       </div>
 
@@ -210,7 +210,7 @@ export function SimulationRunner({
       {showConfirm && (
         <div className="simulation-confirm-overlay" role="dialog" aria-modal="true" aria-label="Confirmar entrega">
           <div className="simulation-confirm-dialog">
-            <h3>¿Entregar simulacro?</h3>
+            <h3>¿Entregar examen?</h3>
             <p>
               Has respondido {answeredCount} de {questions.length} preguntas.
               {questions.length - answeredCount > 0 && (
