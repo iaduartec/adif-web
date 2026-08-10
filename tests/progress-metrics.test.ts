@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   calculateMetrics,
+  displayModuleName,
   recommendNextSession,
   type MetricQuestion,
 } from "../lib/progress/metrics";
@@ -92,6 +93,14 @@ describe("calculateMetrics", () => {
 });
 
 describe("recommendNextSession", () => {
+  it.each([
+    ["general", "Conocimientos generales"],
+    ["english", "Inglés"],
+    ["specific", "Conocimiento específico"],
+  ])("displays the official section %s with its Spanish label", (section, label) => {
+    expect(displayModuleName(section)).toBe(label);
+  });
+
   it("recommends finishing the first uncompleted lesson first", () => {
     const lessons = [
       { slug: "igualdad", title: "Igualdad", percent: 100, completed: true },
@@ -109,10 +118,12 @@ describe("recommendNextSession", () => {
       { slug: "igualdad", title: "Igualdad", percent: 100, completed: true },
     ];
 
-    const rec = recommendNextSession(lessons, "G1 Igualdad");
+    const rec = recommendNextSession(lessons, "specific");
     expect(rec.type).toBe("practice");
-    expect(rec.id).toBe("G1 Igualdad");
-    expect(rec.href).toBe("/tests?module=G1%20Igualdad&practice=true");
+    expect(rec.id).toBe("specific");
+    expect(rec.title).toBe("Practicar Conocimiento específico");
+    expect(rec.title).not.toContain("specific");
+    expect(rec.href).toBe("/tests?section=specific&practice=true");
   });
 
   it("recommends the first simulation if everything is complete and there is no weakest module", () => {

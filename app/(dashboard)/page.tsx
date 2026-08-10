@@ -13,38 +13,40 @@ export default async function DashboardPage() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  // Fetch attempts, progress, goals
-  const { data: questionAttempts } = await supabase
-    .from("question_attempts")
-    .select("question_id, is_correct, created_at")
-    .eq("user_id", user.id);
-
-  const { data: lessonProgress } = await supabase
-    .from("lesson_progress")
-    .select("lesson_id, percent, completed, last_activity_at")
-    .eq("user_id", user.id);
-
-  const { data: goalRow } = await supabase
-    .from("study_goals")
-    .select("weekly_target_minutes")
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  // Calculate study elapsed time this week
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
-  const { data: questionAttemptsThisWeek } = await supabase
-    .from("question_attempts")
-    .select("elapsed_ms")
-    .eq("user_id", user.id)
-    .gte("created_at", oneWeekAgo.toISOString());
-
-  const { data: simulationAttemptsThisWeek } = await supabase
-    .from("simulation_attempts")
-    .select("elapsed_ms")
-    .eq("user_id", user.id)
-    .gte("created_at", oneWeekAgo.toISOString());
+  const [
+    { data: questionAttempts },
+    { data: lessonProgress },
+    { data: goalRow },
+    { data: questionAttemptsThisWeek },
+    { data: simulationAttemptsThisWeek },
+  ] = await Promise.all([
+    supabase
+      .from("question_attempts")
+      .select("question_id, is_correct, created_at")
+      .eq("user_id", user.id),
+    supabase
+      .from("lesson_progress")
+      .select("lesson_id, percent, completed, last_activity_at")
+      .eq("user_id", user.id),
+    supabase
+      .from("study_goals")
+      .select("weekly_target_minutes")
+      .eq("user_id", user.id)
+      .maybeSingle(),
+    supabase
+      .from("question_attempts")
+      .select("elapsed_ms")
+      .eq("user_id", user.id)
+      .gte("created_at", oneWeekAgo.toISOString()),
+    supabase
+      .from("simulation_attempts")
+      .select("elapsed_ms")
+      .eq("user_id", user.id)
+      .gte("created_at", oneWeekAgo.toISOString()),
+  ]);
 
   const totalMsThisWeek =
     (questionAttemptsThisWeek ?? []).reduce((acc, a) => acc + (a.elapsed_ms ?? 0), 0) +

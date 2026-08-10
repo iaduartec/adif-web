@@ -86,7 +86,7 @@ export function QuestionSession({
     <section aria-labelledby="practice-question-title" className="practice-session">
       <p className="course-eyebrow">Pregunta {index + 1} de {questions.length}</p>
       <p className="practice-session__module">{question.sectionLabel}</p>
-      <h1 id="practice-question-title">{question.prompt}</h1>
+      <h2 id="practice-question-title">{question.prompt}</h2>
       <OfficialSource source={question.source} />
       <form onSubmit={submitAnswer}>
         <fieldset disabled={isPending || result !== null}>

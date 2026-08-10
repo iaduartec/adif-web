@@ -23,6 +23,8 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     // 3. Answer a question incorrectly to feed the Error Notebook
     await page.goto("/tests");
     await page.click("a:has-text('Iniciar práctica')");
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator(".practice-session h2")).toHaveCount(1);
     const activeQuestionName = await page.locator("input[type='radio']").first().getAttribute("name");
     const activeQuestionId = activeQuestionName?.replace("question-", "");
     expect(activeQuestionId).toBeTruthy();
@@ -35,6 +37,9 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     // 4. Verify the Error Notebook
     await page.goto("/errores");
     await expect(page.locator("h1")).toContainText("Cuaderno de errores");
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator(".official-question-card h2")).toHaveCount(1);
+    await expect(page.locator(".official-question-card h3")).toHaveCount(0);
     await expect(page.getByText(activeQuestionId ?? "", { exact: true })).toBeVisible();
     await expect(page.locator("text=Tu última respuesta: A")).toBeVisible();
 

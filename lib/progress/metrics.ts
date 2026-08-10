@@ -203,8 +203,19 @@ export const MODULE_NAME_TO_LABEL: Record<string, string> = {
   "I Ingles A2": "Inglés A2",
 };
 
+export const OFFICIAL_SECTION_LABELS: Record<OfficialQuestion["source"]["section"], string> = {
+  general: "Conocimientos generales",
+  english: "Inglés",
+  specific: "Conocimiento específico",
+};
+
+function isOfficialSection(value: string): value is OfficialQuestion["source"]["section"] {
+  return Object.hasOwn(OFFICIAL_SECTION_LABELS, value);
+}
+
 export function displayModuleName(moduleName: string | null | undefined): string {
   if (!moduleName) return "General";
+  if (isOfficialSection(moduleName)) return OFFICIAL_SECTION_LABELS[moduleName];
   return MODULE_NAME_TO_LABEL[moduleName] ?? moduleName;
 }
 
@@ -230,14 +241,14 @@ export function recommendNextSession(
     };
   }
 
-  // Recommend practice for the weakest module
-  if (weakestModule) {
+  // Recommend practice only for a filterable official section.
+  if (weakestModule && isOfficialSection(weakestModule)) {
     return {
       type: "practice",
       id: weakestModule,
       title: `Practicar ${displayModuleName(weakestModule)}`,
-      description: "Ya no hay lecciones pendientes. Repite el módulo donde peor estás rindiendo ahora mismo.",
-      href: `/tests?module=${encodeURIComponent(weakestModule)}&practice=true`,
+      description: "Ya no hay lecciones pendientes. Repite la sección donde peor estás rindiendo ahora mismo.",
+      href: `/tests?section=${encodeURIComponent(weakestModule)}&practice=true`,
     };
   }
 

@@ -5,6 +5,7 @@ import { OfficialSource } from "../../../components/practice/official-source";
 import { QuestionSession, type PracticeQuestion } from "../../../components/practice/question-session";
 import { listOfficialQuestions } from "../../../lib/content/repository";
 import type { OfficialQuestion } from "../../../lib/content/schema";
+import { displayModuleName } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -173,7 +174,9 @@ export default async function TestsPage({
           <label htmlFor="filter-section">Sección</label>
           <select className="filter-control" defaultValue={selectedSection ?? "all"} id="filter-section" name="section">
             <option value="all">Todas las secciones</option>
-            {sections.map((section) => <option key={section} value={section}>{section}</option>)}
+            {sections.map((section) => (
+              <option key={section} value={section}>{displayModuleName(section)}</option>
+            ))}
           </select>
         </div>
         <div className="filter-field">

@@ -23,6 +23,9 @@ describe("QuestionSession", () => {
 
     render(<QuestionSession questions={questions} />);
 
+    expect(screen.getByRole("heading", { level: 2, name: officialQuestion.prompt })).toBeVisible();
+    expect(screen.queryByRole("heading", { level: 1 })).not.toBeInTheDocument();
+
     fireEvent.click(screen.getByRole("radio", { name: /D\./i }));
     fireEvent.click(screen.getByRole("button", { name: "Comprobar respuesta" }));
 

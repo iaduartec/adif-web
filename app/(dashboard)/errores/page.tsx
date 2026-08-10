@@ -117,7 +117,7 @@ export default async function ErrorNotebookPage() {
                       Pendiente
                     </span>
                   </div>
-                  <h3>{q.prompt}</h3>
+                  <h2>{q.prompt}</h2>
                   <div className="official-question-options">
                     {q.options.map((opt) => (
                       <div key={opt.key}>

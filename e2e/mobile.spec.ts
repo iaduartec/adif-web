@@ -25,6 +25,7 @@ test.describe("Mobile viewport verification (390x844)", () => {
     // 3. Keep the official-question bank concise on mobile.
     await page.goto("/tests");
     await expect(page.getByRole("heading", { name: "Preguntas oficiales" })).toBeVisible();
+    await expect(page.locator("h1")).toHaveCount(1);
     await expect(page.locator(".official-question-options")).toHaveCount(25);
     await expect(page.locator(".official-question-options:visible")).toHaveCount(0);
 
@@ -33,6 +34,33 @@ test.describe("Mobile viewport verification (390x844)", () => {
     for (let index = 0; index < compactControlCount; index += 1) {
       const box = await compactControls.nth(index).boundingBox();
       expect(box?.height ?? 0).toBeGreaterThanOrEqual(44);
+    }
+
+    const favoriteBox = await page.locator("button.favorite-btn").first().boundingBox();
+    expect(favoriteBox?.width ?? 0).toBeGreaterThanOrEqual(44);
+    expect(favoriteBox?.height ?? 0).toBeGreaterThanOrEqual(44);
+    if (process.env.TASK7_FIX1_TESTS_SCREENSHOT) {
+      await page.screenshot({ path: process.env.TASK7_FIX1_TESTS_SCREENSHOT, fullPage: true });
+    }
+
+    await page.goto("/simulacros");
+    await page.getByRole("link", { name: "Abrir examen" }).first().click();
+    await page.getByRole("button", { name: "Comenzar examen" }).click();
+    const simulationDotBox = await page.locator(".simulation-nav-dot").first().boundingBox();
+    expect(simulationDotBox?.width ?? 0).toBeGreaterThanOrEqual(44);
+    expect(simulationDotBox?.height ?? 0).toBeGreaterThanOrEqual(44);
+    if (process.env.TASK7_FIX1_SIMULATION_SCREENSHOT) {
+      await page.screenshot({ path: process.env.TASK7_FIX1_SIMULATION_SCREENSHOT, fullPage: true });
+    }
+
+    await page.goto("/tests?section=specific&practice=true");
+    await expect(page).toHaveURL(/\/tests\?section=specific&practice=true$/);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator(".practice-session h2")).toHaveCount(1);
+    await expect(page.locator(".practice-session__module")).toHaveText("Conocimiento Específico");
+    await expect(page.getByText("specific", { exact: true })).toHaveCount(0);
+    if (process.env.TASK7_FIX1_FILTER_SCREENSHOT) {
+      await page.screenshot({ path: process.env.TASK7_FIX1_FILTER_SCREENSHOT, fullPage: true });
     }
 
     // 4. Verify readable measure limits on lesson page
