@@ -14,6 +14,12 @@ function viewHref(slug: string, view: LessonView, extras?: Record<string, string
   return `/curso/${slug}?${params.toString()}`;
 }
 
+const verificationStatusLabels: Record<string, string> = {
+  draft: "Contenido en borrador — pendiente de cotejo con la fuente oficial antes de la convocatoria.",
+  reviewed: "Contenido revisado — verificación final pendiente.",
+  verified: "Contenido verificado contra la fuente oficial vigente.",
+};
+
 export async function LessonReader({
   lesson,
   progress,
@@ -98,13 +104,21 @@ export async function LessonReader({
             </div>
             {theory ? (
               <>
-                <p className="text-gray-700 leading-relaxed text-base">{theory.introduction}</p>
+                <div className="space-y-2">
+                  {theory.introduction.map((claim) => (
+                    <p className="text-gray-700 leading-relaxed text-base" key={claim.id}>{claim.text}</p>
+                  ))}
+                </div>
                 <div className="grid gap-4">
                   <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Conceptos Fundamentales</h3>
                   {theory.concepts.map((concept) => (
-                    <section className="p-4 border border-rail bg-gray-50/50" key={concept.title}>
+                    <section className="p-4 border border-rail bg-gray-50/50" key={concept.id}>
                       <h4 className="font-bold text-ink mb-1 text-base">{concept.title}</h4>
-                      <p className="text-sm text-gray-700 leading-relaxed">{concept.description}</p>
+                      <div className="space-y-1.5">
+                        {concept.claims.map((claim) => (
+                          <p className="text-sm text-gray-700 leading-relaxed" key={claim.id}>{claim.text}</p>
+                        ))}
+                      </div>
                     </section>
                   ))}
                 </div>
@@ -112,12 +126,15 @@ export async function LessonReader({
                 <div className="space-y-4">
                   <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Supuestos Prácticos Tipo Test</h3>
                   {theory.examples.map((example, index) => (
-                    <section className="lesson-example p-5 bg-paper border border-rail space-y-2" key={example.situation}>
+                    <section className="lesson-example p-5 bg-paper border border-rail space-y-2" key={example.id}>
                       <h4 className="font-bold text-sm text-accent-strong">Caso Práctico #{index + 1}</h4>
                       <p className="text-sm text-ink italic">&quot;{example.situation}&quot;</p>
-                      <p className="pt-2 border-t border-dashed border-rail text-sm text-gray-700">
-                        <strong>Aplicación en Examen:</strong> {example.application}
-                      </p>
+                      <div className="pt-2 border-t border-dashed border-rail space-y-1.5">
+                        <strong className="text-sm">Aplicación en Examen:</strong>
+                        {example.application.map((claim) => (
+                          <p className="text-sm text-gray-700" key={claim.id}>{claim.text}</p>
+                        ))}
+                      </div>
                     </section>
                   ))}
                 </div>
@@ -126,10 +143,26 @@ export async function LessonReader({
                   <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Reglas Nemotécnicas y Tips</h3>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-2 pl-2">
                     {theory.reviewTakeaways.map((takeaway) => (
-                      <li className="leading-relaxed" key={takeaway}>{takeaway}</li>
+                      <li className="leading-relaxed" key={takeaway.id}>{takeaway.text}</li>
                     ))}
                   </ul>
                 </section>
+
+                {theory.sources && theory.sources.length > 0 && (
+                  <section className="p-5 border border-rail bg-gray-50/40 space-y-3">
+                    <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Fuentes Registradas</h3>
+                    <ul className="space-y-2">
+                      {theory.sources.map((source) => (
+                        <li className="text-sm text-gray-700" key={source.id}>
+                          <strong>{source.sourceId}</strong> — {source.locator}
+                          {source.sourceUrl && (
+                            <> · <a className="text-accent underline" href={source.sourceUrl} rel="noopener noreferrer" target="_blank">Consultar fuente</a></>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
               </>
             ) : (
               <div className="space-y-4">
@@ -140,7 +173,10 @@ export async function LessonReader({
                 </div>
               </div>
             )}
-            <div className="lesson-warning" role="note"><OriginLabel origin={lesson.verificationNote.origin} /><p>{lesson.verificationNote.text}</p></div>
+            <div className="lesson-warning" role="note">
+              <OriginLabel origin={lesson.origin} />
+              <p>{verificationStatusLabels[lesson.verification.status] ?? verificationStatusLabels.draft}</p>
+            </div>
           </section>
           <section aria-labelledby="lesson-references" className="p-8 bg-white border border-rail space-y-4">
             <h2 id="lesson-references" className="text-lg font-bold text-ink">Fuentes oficiales para cotejar</h2>
