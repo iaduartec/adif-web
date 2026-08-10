@@ -27,6 +27,13 @@ export type QuestionFilter = {
  */
 export type OfficialPracticeQuestion = Question;
 
+/**
+ * @deprecated Temporary compatibility shape for the legacy simulation UI.
+ * Migrate simulations to `PracticeQuestion` after they stop rendering legacy
+ * explanation fields.
+ */
+export type LegacyPracticeQuestion = Omit<OfficialPracticeQuestion, "answer">;
+
 export type ContentRepositoryInput = {
   lessons: unknown;
   questions: unknown;

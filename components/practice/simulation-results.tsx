@@ -1,14 +1,14 @@
 "use client";
 
 import type { SimulationResult } from "../../app/actions/simulations";
-import type { PracticeQuestion } from "./question-session";
+import type { LegacyPracticeQuestion } from "../../lib/content/repository";
 
 export function SimulationResults({
   result,
   questions,
 }: {
   result: SimulationResult;
-  questions: readonly PracticeQuestion[];
+  questions: readonly LegacyPracticeQuestion[];
 }) {
   const questionMap = new Map(questions.map((q) => [q.id, q]));
   const totalMinutes = Math.floor(result.elapsedMs / 60000);

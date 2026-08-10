@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
-import type { Question } from "../../lib/content/schema";
+import type { OfficialQuestion } from "../../lib/content/schema";
 import { Button } from "../ui/button";
-import { OriginLabel } from "../course/origin-label";
+import { OfficialSource } from "./official-source";
 
-export type PracticeQuestion = Omit<Question, "answer">;
+export type PracticeQuestion = Omit<OfficialQuestion, "answer">;
 
 type AttemptResult = {
   isCorrect: boolean;
@@ -85,8 +85,9 @@ export function QuestionSession({
   return (
     <section aria-labelledby="practice-question-title" className="practice-session">
       <p className="course-eyebrow">Pregunta {index + 1} de {questions.length}</p>
-      <p className="practice-session__module">{question.module}</p>
+      <p className="practice-session__module">{question.sectionLabel}</p>
       <h1 id="practice-question-title">{question.prompt}</h1>
+      <OfficialSource source={question.source} />
       <form onSubmit={submitAnswer}>
         <fieldset disabled={isPending || result !== null}>
           <legend className="sr-only">Elige una respuesta</legend>
@@ -107,13 +108,6 @@ export function QuestionSession({
       </form>
 
       {statusMessage && <p aria-live="polite" className="course-status" role="status">{statusMessage}</p>}
-      {result && immediateCorrection && (
-        <div className="practice-feedback">
-          <p>{question.explanation}</p>
-          <p><strong>Procedencia:</strong> {question.sourceNote}</p>
-          <OriginLabel origin={question.origin} />
-        </div>
-      )}
       {result && index + 1 < questions.length && <Button onClick={nextQuestion}>Siguiente pregunta</Button>}
       {result && index + 1 === questions.length && <p role="status">Has terminado esta práctica.</p>}
     </section>

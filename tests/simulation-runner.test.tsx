@@ -7,9 +7,9 @@ vi.mock("../app/actions/simulations", () => ({ submitSimulation }));
 
 import { SimulationRunner } from "../components/practice/simulation-runner";
 import { SimulationResults } from "../components/practice/simulation-results";
-import type { PracticeQuestion } from "../components/practice/question-session";
+import type { LegacyPracticeQuestion } from "../lib/content/repository";
 
-const questions: PracticeQuestion[] = Array.from({ length: 3 }, (_, i) => ({
+const questions: LegacyPracticeQuestion[] = Array.from({ length: 3 }, (_, i) => ({
   id: `Q${String(i + 1).padStart(4, "0")}`,
   module: "G1 Igualdad",
   prompt: `Pregunta ${i + 1}`,

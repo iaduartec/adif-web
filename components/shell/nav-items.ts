@@ -27,7 +27,7 @@ const StatisticsIcon = createIcon(["M5 19V11M10 19V5M15 19v-7M20 19V8"]);
 export const NAV_ITEMS: readonly NavigationItem[] = [
   { href: "/", icon: RailIcon, label: "Inicio" },
   { href: "/curso", icon: CourseIcon, label: "Curso" },
-  { href: "/tests", icon: TestsIcon, label: "Tests" },
+  { href: "/tests", icon: TestsIcon, label: "Preguntas oficiales" },
   { href: "/simulacros", icon: SimulationIcon, label: "Simulacros" },
   { href: "/psicotecnicos", icon: AptitudeIcon, label: "Psicotécnicos" },
   { href: "/ingles-a2", icon: LanguageIcon, label: "Inglés A2" },

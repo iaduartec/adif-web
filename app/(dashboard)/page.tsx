@@ -117,10 +117,10 @@ export default async function DashboardPage() {
         </Link>
         <Link href="/tests" className="simulation-card">
           <div className="simulation-card__header">
-            <h3 className="simulation-card__title">📝 Banco de Preguntas</h3>
+            <h3 className="simulation-card__title">📝 Preguntas oficiales</h3>
           </div>
           <p className="text-sm text-gray-600 mt-2">
-            Práctica libre de preguntas comentadas del banco completo de la oposición.
+            Practica con preguntas oficiales y consulta su documento de origen en ADIF.
           </p>
         </Link>
         <Link href="/simulacros" className="simulation-card">

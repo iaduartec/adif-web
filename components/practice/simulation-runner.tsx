@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { PracticeQuestion } from "./question-session";
+import type { LegacyPracticeQuestion } from "../../lib/content/repository";
 import { submitSimulation, type SimulationResult } from "../../app/actions/simulations";
 import { Button } from "../ui/button";
 
@@ -52,7 +52,7 @@ export function SimulationRunner({
   onFinish,
 }: {
   simulationId: string;
-  questions: readonly PracticeQuestion[];
+  questions: readonly LegacyPracticeQuestion[];
   durationMinutes: number;
   onFinish: (result: SimulationResult) => void;
 }) {

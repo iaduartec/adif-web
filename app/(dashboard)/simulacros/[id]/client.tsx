@@ -5,7 +5,7 @@ import { useState } from "react";
 import { SimulationRunner } from "../../../../components/practice/simulation-runner";
 import { SimulationResults } from "../../../../components/practice/simulation-results";
 import type { SimulationResult } from "../../../../app/actions/simulations";
-import type { PracticeQuestion } from "../../../../components/practice/question-session";
+import type { LegacyPracticeQuestion } from "../../../../lib/content/repository";
 import { Button } from "../../../../components/ui/button";
 
 export function SimulationPageClient({
@@ -13,7 +13,7 @@ export function SimulationPageClient({
   questions,
 }: {
   simulation: { id: string; title: string };
-  questions: PracticeQuestion[];
+  questions: LegacyPracticeQuestion[];
 }) {
   const [result, setResult] = useState<SimulationResult | null>(null);
   const [started, setStarted] = useState(false);

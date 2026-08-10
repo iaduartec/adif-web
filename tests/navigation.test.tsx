@@ -13,7 +13,7 @@ vi.mock("../lib/supabase/browser", () => ({ createBrowserClient: () => ({ auth: 
 const requiredDestinations = [
   ["Inicio", "/"],
   ["Curso", "/curso"],
-  ["Tests", "/tests"],
+  ["Preguntas oficiales", "/tests"],
   ["Simulacros", "/simulacros"],
   ["Psicotécnicos", "/psicotecnicos"],
   ["Inglés A2", "/ingles-a2"],
@@ -37,7 +37,7 @@ describe("authenticated navigation", () => {
       expect(screen.getByRole("link", { name: label })).toHaveAttribute("href", href);
     }
 
-    expect(screen.getByRole("link", { name: "Tests" })).toHaveAttribute("aria-current", "page");
+    expect(screen.getByRole("link", { name: "Preguntas oficiales" })).toHaveAttribute("aria-current", "page");
     expect(screen.getByRole("link", { name: "Inicio" })).not.toHaveAttribute("aria-current");
   });
 

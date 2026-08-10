@@ -1,8 +1,7 @@
 import { notFound, redirect } from "next/navigation";
-import { getSimulation, getQuestion } from "../../../../lib/content/repository";
+import { getSimulation, getQuestion, type LegacyPracticeQuestion } from "../../../../lib/content/repository";
 import { createServerClient } from "../../../../lib/supabase/server";
 import { SimulationPageClient } from "./client";
-import type { PracticeQuestion } from "../../../../components/practice/question-session";
 
 export const dynamic = "force-dynamic";
 
@@ -17,12 +16,12 @@ export default async function SimulationDetailPage({ params }: { params: Promise
   if (!simulation) notFound();
 
   // Strip the answer from each question so the client cannot cheat
-  const questions: PracticeQuestion[] = simulation.questionIds.map((questionId) => {
+  const questions: LegacyPracticeQuestion[] = simulation.questionIds.map((questionId) => {
     const question = getQuestion(questionId);
     if (!question) return null;
     const { answer: _answer, ...rest } = question;
     return rest;
-  }).filter((q): q is PracticeQuestion => q !== null);
+  }).filter((q): q is LegacyPracticeQuestion => q !== null);
 
   return (
     <SimulationPageClient
