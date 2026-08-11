@@ -5,7 +5,8 @@ export const ictTheory: TheorySection = {
     {
       id: "rd346-2011-art1",
       sourceId: "RD 346/2011",
-      sourceTitle: "Reglamento de Infraestructuras Comunes de Telecomunicaciones (ICT)",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       locator: "Artículo 1",
       excerpt: "Este reglamento tiene por objeto establecer las normas técnicas relativas al diseño, instalación y mantenimiento de las ICT..."
@@ -13,7 +14,8 @@ export const ictTheory: TheorySection = {
     {
       id: "rd346-2011-anex2",
       sourceId: "RD 346/2011",
-      sourceTitle: "Reglamento de Infraestructuras Comunes de Telecomunicaciones (ICT)",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       locator: "Anexo II",
       excerpt: "Establece los parámetros y especificaciones técnicas de las redes de telefonía y telecomunicaciones de banda ancha..."
@@ -21,7 +23,8 @@ export const ictTheory: TheorySection = {
     {
       id: "rd346-2011-anex4",
       sourceId: "RD 346/2011",
-      sourceTitle: "Reglamento de Infraestructuras Comunes de Telecomunicaciones (ICT)",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       locator: "Anexo IV",
       excerpt: "Especifica las características de las canalizaciones, recintos y registros necesarios para alojar la infraestructura..."
@@ -29,7 +32,8 @@ export const ictTheory: TheorySection = {
     {
       id: "rd346-2011-anex5",
       sourceId: "RD 346/2011",
-      sourceTitle: "Reglamento de Infraestructuras Comunes de Telecomunicaciones (ICT)",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       locator: "Anexo V",
       excerpt: "Regula los requisitos de seguridad eléctrica, compatibilidad electromagnética y puesta a tierra..."

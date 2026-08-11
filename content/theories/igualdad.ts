@@ -37,7 +37,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art1",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 1",
       excerpt: "Las mujeres y los hombres son iguales en dignidad humana, e iguales en derechos y deberes. Esta Ley tiene por objeto hacer efectivo el derecho de igualdad de trato y de oportunidades entre mujeres y hombres, en particular mediante la eliminación de la discriminación de la mujer, sea cual fuere su circunstancia o condición, en cualesquiera de los ámbitos de la vida y, singularmente, en las esferas política, civil, laboral, económica, social y cultural para, en el desarrollo de los artículos 9.2 y 14 de la Constitución, alcanzar una sociedad más democrática, más justa y más solidaria."
@@ -45,7 +46,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art3",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 3",
       excerpt: "El principio de igualdad de trato entre mujeres y hombres supone la ausencia de toda discriminación, directa o indirecta, por razón de sexo..."
@@ -53,7 +55,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art6-1",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 6.1",
       excerpt: "Se considera discriminación directa por razón de sexo la situación en que se encuentra una persona que sea, haya sido o pudiera ser tratada, en atención a su sexo, de manera menos favorable que otra en situación comparable."
@@ -61,7 +64,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art6-2",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 6.2",
       excerpt: "Se considera discriminación indirecta por razón de sexo la situación en que una disposición, criterio o práctica aparentemente neutros pone a personas de un sexo en desventaja particular con respecto a personas del otro..."
@@ -69,7 +73,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art7",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 7",
       excerpt: "Constituye acoso sexual cualquier comportamiento, verbal o físico, de naturaleza sexual... Constituirá acoso por razón de sexo cualquier comportamiento realizado en función del sexo de una persona..."
@@ -77,7 +82,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art8",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 8",
       excerpt: "Constituye discriminación directa por razón de sexo todo trato desfavorable a las mujeres relacionado con el embarazo o la maternidad."
@@ -85,7 +91,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art9",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 9",
       excerpt: "También se considerará discriminación por razón de sexo cualquier trato adverso o efecto negativo que se produzca en una persona como consecuencia de la presentación por su parte de una queja, reclamación..."
@@ -93,7 +100,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art11",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 11",
       excerpt: "Con el fin de hacer efectivo el derecho constitucional de la igualdad... los Poderes Públicos adoptarán medidas específicas en favor de las mujeres para corregir situaciones patentes de desigualdad..."
@@ -101,7 +109,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art13",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 13",
       excerpt: "...en aquellos procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias, correspondera al demandado probar la ausencia de discriminación..."
@@ -109,7 +118,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art44",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 44",
       excerpt: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y a las trabajadoras de forma que fomenten la asunción corresponsable..."
@@ -117,7 +127,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art45",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 45",
       excerpt: "Las empresas están obligadas a respetar la igualdad de trato y de oportunidades en el ámbito laboral y, con esta finalidad, deberán adoptar medidas dirigidas a evitar cualquier tipo de discriminación laboral..."
@@ -125,7 +136,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art46",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 46",
       excerpt: "Los planes de igualdad de las empresas son un conjunto ordenado de medidas, adoptadas después de realizar un diagnóstico de situación..."
@@ -133,7 +145,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art51",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 51",
       excerpt: "Las Administraciones públicas, en el ámbito de sus respectivas competencias y en aplicación del principio de igualdad entre mujeres y hombres, deberán remover los obstáculos que impliquen la pervivencia de cualquier tipo de discriminación, con el fin de ofrecer condiciones de igualdad efectiva entre mujeres y hombres en el acceso al empleo público y en el desarrollo de la carrera profesional."
@@ -141,7 +154,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-art77",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 77",
       excerpt: "En todos los Ministerios se encomendará a uno de sus órganos directivos el desarrollo de las funciones relacionadas con el principio de igualdad..."
@@ -149,7 +163,8 @@ export const igualdadTheory: TheorySection = {
     {
       id: "lo3-2007-da1",
       sourceId: "LO 3/2007",
-      sourceTitle: "Ley Orgánica para la igualdad efectiva de mujeres y hombres",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Disposición Adicional 1ª",
       excerpt: "A los efectos de esta Ley, se entenderá por composición equilibrada la presencia de mujeres y hombres de forma que, en el conjunto a que se refiera, las personas de cada sexo no superen el sesenta por ciento ni sean menos del cuarenta por ciento."
@@ -157,7 +172,7 @@ export const igualdadTheory: TheorySection = {
     {
       id: "rd902-2020",
       sourceId: "RD 902/2020",
-      sourceTitle: "Real Decreto 902/2020, de 13 de octubre, de igualdad retributiva entre mujeres y hombres",
+      sourceTitle: "Real Decreto 902/2020, de 13 de octubre, de igualdad retributiva de las mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215",
       locator: "Artículo 5",
       excerpt: "Las empresas que elaboren un plan de igualdad deberán incluir en el mismo una auditoría retributiva..."

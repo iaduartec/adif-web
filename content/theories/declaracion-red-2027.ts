@@ -5,7 +5,7 @@ export const declaracionRed2027Theory: TheorySection = {
     {
       id: "lsf-38-2015-art4",
       sourceId: "Ley 38/2015",
-      sourceTitle: "Ley del Sector Ferroviario",
+      sourceTitle: "Ley 38/2015, de 29 de septiembre, del sector ferroviario",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       locator: "Artículo 4",
       excerpt: "La Red Ferroviaria de Interés General está integrada por las infraestructuras esenciales..."
@@ -13,7 +13,7 @@ export const declaracionRed2027Theory: TheorySection = {
     {
       id: "lsf-38-2015-art32",
       sourceId: "Ley 38/2015",
-      sourceTitle: "Ley del Sector Ferroviario",
+      sourceTitle: "Ley 38/2015, de 29 de septiembre, del sector ferroviario",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       locator: "Artículo 32",
       excerpt: "La declaración sobre la red expondrá las características de la infraestructura puesta a disposición de las empresas ferroviarias e informará sobre la capacidad y condiciones técnicas de cada tramo de la red y sobre las condiciones de acceso a la misma. Su contenido se atendrá a lo recogido en el anexo III."

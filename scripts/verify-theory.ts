@@ -193,16 +193,27 @@ export function validateTheoryStructure(theories: Record<string, TheorySection>)
   return errors;
 }
 
+export type ClaimsByKind = {
+  normative: number;
+  interpretative: number;
+  didactic: number;
+  example: number;
+};
+
 export type TheoryStats = {
-  moduleCount: number;
-  totalClaims: number;
-  byKind: Record<string, number>;
-  sourceCount: number;
+  modules: number;
+  concepts: number;
+  examples: number;
+  sources: number;
+  claimsTotal: number;
+  claimsByKind: ClaimsByKind;
 };
 
 /**
  * Collects every claim across all modules tagged with its module name and
- * location, useful for global analyses (stats, reports, audits).
+ * location, useful for global analyses (stats, reports, audits). It is the
+ * single source of truth for claim counting: `getTheoryStats` MUST consume it
+ * so every metric derives from one traversal.
  */
 export function collectTheoryClaims(theories: Record<string, TheorySection>): (LocatedClaim & { module: string })[] {
   const out: (LocatedClaim & { module: string })[] = [];
@@ -215,29 +226,50 @@ export function collectTheoryClaims(theories: Record<string, TheorySection>): (L
 }
 
 /**
- * Computes aggregate statistics over all theory modules: total claims, claims
- * per kind and total sources. Per-module breakdown is included for reports.
+ * Computes aggregate statistics over all theory modules: module/concept/
+ * example/source counts and total claims split per kind. It derives every
+ * claim metric from `collectTheoryClaims`.
+ *
+ * A claim with an unknown `kind` is a controlled exception: it must never be
+ * silently hidden under an "unknown" bucket, so it throws. The classification
+ * invariant (sum of `claimsByKind` === `claimsTotal`) is asserted after
+ * counting; a violation also throws.
  */
 export function getTheoryStats(theories: Record<string, TheorySection>): TheoryStats {
-  const byKind: Record<string, number> = {};
-  let totalClaims = 0;
-  let sourceCount = 0;
+  const claimsByKind: ClaimsByKind = { normative: 0, interpretative: 0, didactic: 0, example: 0 };
+  let claimsTotal = 0;
+  let concepts = 0;
+  let examples = 0;
+  let sources = 0;
 
   for (const [name, theory] of Object.entries(theories)) {
     if (!theory) continue;
-    for (const located of allClaims(theory)) {
-      const kind = located.claim.kind ?? "unknown";
-      byKind[kind] = (byKind[kind] ?? 0) + 1;
-      totalClaims++;
+    concepts += theory.concepts?.length ?? 0;
+    examples += theory.examples?.length ?? 0;
+    sources += theory.sources?.length ?? 0;
+  }
+
+  for (const located of collectTheoryClaims(theories)) {
+    const kind = located.claim.kind;
+    if (!kind || !VALID_KINDS.includes(kind)) {
+      throw new Error(`Unknown claim kind '${String(kind)}' at ${located.module}:${located.location}`);
     }
-    sourceCount += theory.sources?.length ?? 0;
+    claimsByKind[kind as keyof ClaimsByKind]++;
+    claimsTotal++;
+  }
+
+  const classifiedTotal = Object.values(claimsByKind).reduce((sum, count) => sum + count, 0);
+  if (classifiedTotal !== claimsTotal) {
+    throw new Error("claim kind totals do not match total claims");
   }
 
   return {
-    moduleCount: Object.keys(theories).length,
-    totalClaims,
-    byKind,
-    sourceCount,
+    modules: Object.keys(theories).length,
+    concepts,
+    examples,
+    sources,
+    claimsTotal,
+    claimsByKind,
   };
 }
 
@@ -247,19 +279,30 @@ if (isMain) {
   console.log("Starting theory structural validation...");
   const errors = validateTheoryStructure(lessonTheories);
 
-  const stats = getTheoryStats(lessonTheories);
-  console.log(`Modules: ${stats.moduleCount}`);
-  console.log(`Total claims: ${stats.totalClaims}`);
-  console.log(`Claims by kind: ${JSON.stringify(stats.byKind)}`);
-  console.log(`Total sources: ${stats.sourceCount}`);
-
   for (const error of errors) console.error(error);
 
   if (errors.length > 0) {
     console.error(`Validation failed with ${errors.length} errors.`);
     process.exit(1);
-  } else {
-    console.log("Validation passed successfully!");
-    process.exit(0);
   }
+
+  let stats: TheoryStats;
+  try {
+    stats = getTheoryStats(lessonTheories);
+  } catch (err) {
+    console.error(`Statistics validation failed: ${err instanceof Error ? err.message : String(err)}`);
+    process.exit(1);
+  }
+
+  console.log(`Modules: ${stats.modules}`);
+  console.log(`Concepts: ${stats.concepts}`);
+  console.log(`Examples: ${stats.examples}`);
+  console.log(`Sources: ${stats.sources}`);
+  console.log(
+    `Claims: normative ${stats.claimsByKind.normative}, interpretative ${stats.claimsByKind.interpretative}, didactic ${stats.claimsByKind.didactic}, example ${stats.claimsByKind.example}. Total: ${stats.claimsTotal}`
+  );
+  const classifiedTotal = Object.values(stats.claimsByKind).reduce((sum, count) => sum + count, 0);
+  console.log(`Classified claims == total claims: ${classifiedTotal === stats.claimsTotal ? "yes" : "no"}`);
+  console.log("Theory validation passed");
+  process.exit(0);
 }

@@ -2,6 +2,7 @@ import { pathToFileURL } from "node:url";
 
 import { lessonTheories } from "../content/lesson-theory";
 import type { LegalReference, TheoryClaim, TheorySection } from "../content/theory-types";
+import { getSourceKind } from "./verify-theory-references";
 
 // Source titles whose ID should never appear in a `didactic` claim's legalBasis.
 const LEGAL_TITLE_MARKERS = [
@@ -281,6 +282,26 @@ export function checkClaim(
         `[${moduleName}] Error in ${location} (claim ID: ${claim.id}): ` +
           `Text cites article/apartado ${unmatched.join(", ")} but the referenced ` +
           `locators (${locators.join(" | ") || "none"}) do not cover it.`
+      );
+    }
+  }
+
+  // 9. A normative claim must not be backed EXCLUSIVELY by `syllabus-reference`
+  //    sources. A syllabus reference (exam call page) only proves the source is
+  //    on the exam syllabus — it never evidences the legal content the claim
+  //    asserts. The claim must either be reclassified as didactic or backed by
+  //    an official legal source.
+  if (claim.kind === "normative" && hasBasis) {
+    const basisKinds = claim.legalBasis.map((sourceId) => {
+      const source = sourcesById.get(sourceId);
+      return source ? getSourceKind(source.sourceId) : undefined;
+    });
+    if (basisKinds.length > 0 && basisKinds.every((kind) => kind === "syllabus-reference")) {
+      errors.push(
+        `[${moduleName}] Error in ${location} (claim ID: ${claim.id}): ` +
+          `normative claim is backed exclusively by syllabus-reference sources ` +
+          `(${claim.legalBasis.join(", ")}) — a syllabus reference only proves the source ` +
+          `is on the exam syllabus; reclassify as didactic or back it with an official legal source.`
       );
     }
   }

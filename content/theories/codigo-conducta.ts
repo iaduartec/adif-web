@@ -5,7 +5,8 @@ export const codigoConductaTheory: TheorySection = {
     {
       id: "rdleg-5-2015-art52",
       sourceId: "TREBEP",
-      sourceTitle: "Texto Refundido de la Ley del Estatuto Básico del Empleado Público",
+      sourceTitle:
+        "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       locator: "Artículo 52",
       excerpt: "Los empleados públicos deben desempeñar con diligencia las tareas que tengan asignadas y velar por los intereses generales..."
@@ -13,7 +14,8 @@ export const codigoConductaTheory: TheorySection = {
     {
       id: "rdleg-5-2015-art53",
       sourceId: "TREBEP",
-      sourceTitle: "Texto Refundido de la Ley del Estatuto Básico del Empleado Público",
+      sourceTitle:
+        "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       locator: "Artículo 53",
       excerpt: "Principios éticos: Los empleados públicos respetarán la Constitución y el resto del ordenamiento jurídico..."
@@ -21,7 +23,8 @@ export const codigoConductaTheory: TheorySection = {
     {
       id: "rdleg-5-2015-art54",
       sourceId: "TREBEP",
-      sourceTitle: "Texto Refundido de la Ley del Estatuto Básico del Empleado Público",
+      sourceTitle:
+        "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       locator: "Artículo 54",
       excerpt: "Principios de conducta: Garantizarán la atención al ciudadano... cumplirán con diligencia las tareas... informarán a la inspección ante órdenes ilegales..."

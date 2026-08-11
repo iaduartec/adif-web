@@ -5,7 +5,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art3",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 3",
       excerpt: "ADIF tiene como objeto la administración de las infraestructuras ferroviarias... y la gestión de su seguridad..."
@@ -13,7 +14,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art7",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 7",
       excerpt: "El Consejo de Administración estará integrado por el Presidente de la entidad... y un número de vocales no inferior a nueve ni superior a diez..."
@@ -21,7 +23,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art14",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 14",
       excerpt: "El Presidente de la entidad pública empresarial será nombrado por el Consejo de Ministros..."
@@ -29,7 +32,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art16",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 16",
       excerpt: "El Director General será nombrado y separado por el Consejo de Administración..."
@@ -37,7 +41,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art22",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 22",
       excerpt: "Los recursos de ADIF podrán provenir de los cánones por el uso de la infraestructura..."
@@ -45,7 +50,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art29",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 29",
       excerpt: "El patrimonio de ADIF está integrado por los bienes y derechos propios y por los que se le adscriban..."
@@ -53,7 +59,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art31",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 31",
       excerpt: "Los bienes de dominio público cuya administración corresponda a ADIF que resulten innecesarios... podrán ser desafectados..."
@@ -61,7 +68,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art33",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 33",
       excerpt: "El personal de ADIF se regirá por las normas de Derecho laboral que le sean de aplicación..."
@@ -69,7 +77,8 @@ export const estatutoAdifTheory: TheorySection = {
     {
       id: "rd2395-2004-art37",
       sourceId: "RD 2395/2004",
-      sourceTitle: "Estatuto de la entidad pública empresarial ADIF",
+      sourceTitle:
+        "Real Decreto 2395/2004, de 30 de diciembre, por el que se aprueba el Estatuto de la entidad pública empresarial Administrador de Infraestructuras Ferroviarias",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       locator: "Artículo 37",
       excerpt: "El control financiero y de gestión de ADIF se realizará de acuerdo con lo previsto en la Ley General Presupuestaria..."

@@ -5,7 +5,8 @@ export const rcfLibro1Theory: TheorySection = {
     {
       id: "rd664-2015-art1-1",
       sourceId: "RD 664/2015",
-      sourceTitle: "Reglamento de Circulación Ferroviaria, Libro Primero",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Artículo 1.1",
       excerpt: "La seguridad es el principio rector de la circulación ferroviaria..."
@@ -13,7 +14,8 @@ export const rcfLibro1Theory: TheorySection = {
     {
       id: "rd664-2015-art1-3",
       sourceId: "RD 664/2015",
-      sourceTitle: "Reglamento de Circulación Ferroviaria, Libro Primero",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Artículo 1.3",
       excerpt: "Regula la clasificación y el orden de prevalencia de la documentación reglamentaria..."
@@ -21,7 +23,8 @@ export const rcfLibro1Theory: TheorySection = {
     {
       id: "rd664-2015-art1-4",
       sourceId: "RD 664/2015",
-      sourceTitle: "Reglamento de Circulación Ferroviaria, Libro Primero",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Artículo 1.4",
       excerpt: "Establece las definiciones de estación, cantón y bloqueo..."
@@ -29,7 +32,8 @@ export const rcfLibro1Theory: TheorySection = {
     {
       id: "rd664-2015-art1-5",
       sourceId: "RD 664/2015",
-      sourceTitle: "Reglamento de Circulación Ferroviaria, Libro Primero",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Artículo 1.5",
       excerpt: "Define las condiciones y tipos de marcha (maniobras, a la vista, con precaución)..."
@@ -37,7 +41,8 @@ export const rcfLibro1Theory: TheorySection = {
     {
       id: "rd664-2015-art1-7",
       sourceId: "RD 664/2015",
-      sourceTitle: "Reglamento de Circulación Ferroviaria, Libro Primero",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Artículo 1.7",
       excerpt: "Establece las normas para las comunicaciones reglamentarias y el telefonema..."

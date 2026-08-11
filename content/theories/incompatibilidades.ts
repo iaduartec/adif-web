@@ -5,7 +5,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art1",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 1",
       excerpt: "El personal comprendido en el ámbito de esta Ley no podrá compatibilizar sus actividades con el desempeño de un segundo puesto..."
@@ -13,7 +14,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art2",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 2",
       excerpt: "La presente Ley será de aplicación al personal... al servicio de los entes y organismos públicos..."
@@ -21,7 +23,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art3",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 3",
       excerpt: "Se exceptúa del principio general... el desempeño de un puesto docente como Profesor Universitario..."
@@ -29,7 +32,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art7",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 7",
       excerpt: "La cantidad máxima que puede percibirse por ambos puestos no podrá superar la remuneración de un Director General..."
@@ -37,7 +41,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art11",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 11",
       excerpt: "El personal no podrá ejercer actividades privadas que se relacionen directamente con las que desarrolle el departamento..."
@@ -45,7 +50,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art14",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 14",
       excerpt: "El personal que acceda por cualquier título a un nuevo puesto del sector público que con arreglo a esta Ley sea incompatible..."
@@ -53,7 +59,8 @@ export const incompatibilidadesTheory: TheorySection = {
     {
       id: "l53-1984-art19",
       sourceId: "Ley 53/1984",
-      sourceTitle: "Ley de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+      sourceTitle:
+        "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 19",
       excerpt: "Quedan exceptuadas del régimen de incompatibilidades las actividades siguientes: La dirección de seminarios..."

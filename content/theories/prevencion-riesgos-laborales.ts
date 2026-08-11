@@ -5,7 +5,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art14",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 14",
       excerpt: "Los trabajadores tienen derecho a una protección eficaz en materia de seguridad y salud en el trabajo..."
@@ -13,7 +13,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art15",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 15",
       excerpt: "El empresario aplicará las medidas que integran el deber general de prevención... evitando los riesgos, evaluando los que no se puedan evitar..."
@@ -21,7 +21,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art16",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 16",
       excerpt: "La prevención de riesgos laborales deberá integrarse en el sistema general de gestión de la empresa... mediante la implantación y aplicación de un plan de prevención..."
@@ -29,7 +29,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art18",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 18",
       excerpt: "A fin de dar cumplimiento al deber de protección... el empresario adoptará las medidas adecuadas para que los trabajadores reciban todas las informaciones necesarias..."
@@ -37,7 +37,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art19",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 19",
       excerpt: "En cumplimiento del deber de protección, el empresario garantizará que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada..."
@@ -45,7 +45,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art20",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 20",
       excerpt: "El empresario... deberá analizar las posibles situaciones de emergencia y adoptar las medidas necesarias en materia de primeros auxilios..."
@@ -53,7 +53,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art21",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 21",
       excerpt: "Cuando los trabajadores estén o puedan estar expuestos a un riesgo grave e inminente con ocasión de su trabajo, el empresario estará obligado a informar lo antes posible..."
@@ -61,7 +61,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art22",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 22",
       excerpt: "El empresario garantizará a los trabajadores a su servicio la vigilancia periódica de su estado de salud en función de los riesgos inherentes al trabajo."
@@ -69,7 +69,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art23",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 23",
       excerpt: "El empresario deberá elaborar y conservar a disposición de la autoridad laboral la siguiente documentación..."
@@ -77,7 +77,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art24",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 24",
       excerpt: "Cuando en un mismo centro de trabajo desarrollen actividades trabajadores de dos o más empresas, éstas deberán cooperar en la aplicación de la normativa..."
@@ -85,7 +85,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art29",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 29",
       excerpt: "Corresponde a cada trabajador velar, según sus posibilidades y mediante el cumplimiento de las medidas de prevención que en cada caso sean adoptadas..."
@@ -93,7 +93,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art35",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 35",
       excerpt: "Los Delegados de Prevención son los representantes de los trabajadores con funciones específicas en materia de prevención de riesgos en el trabajo."
@@ -101,7 +101,7 @@ export const prlTheory: TheorySection = {
     {
       id: "lprl-31-1995-art38",
       sourceId: "Ley 31/1995",
-      sourceTitle: "Ley de Prevención de Riesgos Laborales",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 38",
       excerpt: "El Comité de Seguridad y Salud es el órgano paritario y colegiado de participación destinado a la consulta regular y periódica..."

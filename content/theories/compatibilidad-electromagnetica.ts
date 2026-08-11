@@ -5,7 +5,8 @@ export const cemTheory: TheorySection = {
     {
       id: "dir-2014-30-ue",
       sourceId: "Directiva 2014/30/UE",
-      sourceTitle: "Directiva de Compatibilidad Electromagnética",
+      sourceTitle:
+        "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
       sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
       locator: "Artículo 1",
       excerpt: "Esta Directiva regula la compatibilidad electromagnética de los equipos..."
@@ -13,7 +14,8 @@ export const cemTheory: TheorySection = {
     {
       id: "rd186-2016",
       sourceId: "Real Decreto 186/2016",
-      sourceTitle: "Real Decreto de transposición de la Directiva de CEM",
+      sourceTitle:
+        "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
       locator: "Artículo 3",
       excerpt: "Los equipos deberán cumplir los requisitos esenciales de protección..."
@@ -75,7 +77,7 @@ export const cemTheory: TheorySection = {
         {
           id: "cem-c3-1",
           text: "Es la norma armonizada de CENELEC específica para la CEM en ferrocarriles, que prescribe los ensayos y límites de emisión e inmunidad de material e instalaciones.",
-          kind: "normative",
+          kind: "didactic",
           legalBasis: ["en50121"]
         }
       ]
@@ -99,7 +101,7 @@ export const cemTheory: TheorySection = {
         {
           id: "cem-c5-1",
           text: "Los ensayos de emisión radiada de material rodante en prueba estacionaria se miden por norma armonizada a una distancia de 10 metros utilizando detector de cuasi-pico.",
-          kind: "normative",
+          kind: "didactic",
           legalBasis: ["en50121"]
         }
       ]
@@ -131,7 +133,7 @@ export const cemTheory: TheorySection = {
     {
       id: "cem-takeaway-2",
       text: "La familia de normas EN 50121 es el estándar técnico armonizado que detalla los métodos de ensayo de CEM en el ámbito ferroviario.",
-      kind: "interpretative",
+      kind: "didactic",
       legalBasis: ["en50121"]
     }
   ]

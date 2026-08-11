@@ -11,6 +11,8 @@ import {
 import { registerGlobalId, validateTheoryStructure, getTheoryStats } from "../scripts/verify-theory";
 import {
   OFFICIAL_SOURCE_REGISTRY,
+  getSourceKind,
+  getSourcesByKind,
   validateOfficialSourceIdentity,
   validateTheoryReferences,
 } from "../scripts/verify-theory-references";
@@ -313,6 +315,26 @@ describe("whole content guardrails", () => {
   it("passes reference structural and official-source-identity validation on the real lesson theories", () => {
     expect(validateTheoryReferences(lessonTheories)).toEqual([]);
   });
+
+  it("registers every content sourceId with a known source kind on the real lesson theories", () => {
+    const unknown: string[] = [];
+    for (const theory of Object.values(lessonTheories)) {
+      for (const s of theory.sources ?? []) {
+        if (!getSourceKind(s.sourceId)) unknown.push(`${s.sourceId} (${s.id})`);
+      }
+    }
+    expect(unknown).toEqual([]);
+  });
+
+  it("satisfies the classification invariant on the real lesson theories", () => {
+    const stats = getTheoryStats(lessonTheories);
+    const classified = Object.values(stats.claimsByKind).reduce((sum, n) => sum + n, 0);
+    expect(classified).toBe(stats.claimsTotal);
+  });
+
+  it("leaves no normative claim backed exclusively by syllabus-reference sources on the real lesson theories", () => {
+    expect(validateTheoryClaims(lessonTheories).some((e) => e.includes("syllabus-reference sources"))).toBe(false);
+  });
 });
 
 describe("official source identity", () => {
@@ -323,21 +345,34 @@ describe("official source identity", () => {
         concepts: [],
         examples: [],
         reviewTakeaways: [],
-        sources: [{ id: "s1", sourceId: "Ley 38/2015", sourceTitle: "Ley del Sector Ferroviario", sourceUrl, locator: "Artículo 32" }],
+        sources: [{ id: "s1", sourceId: "Ley 38/2015", sourceTitle: "Ley 38/2015, de 29 de septiembre, del sector ferroviario", sourceUrl, locator: "Artículo 32" }],
       },
     };
   }
 
-  it("registers the canonical BOE URL for Ley 38/2015", () => {
-    expect(OFFICIAL_SOURCE_REGISTRY["Ley 38/2015"]).toBe(
+  it("registers the canonical BOE URL for Ley 38/2015 as legislation", () => {
+    expect(OFFICIAL_SOURCE_REGISTRY["Ley 38/2015"].canonicalUrl).toBe(
       "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
+    );
+    expect(OFFICIAL_SOURCE_REGISTRY["Ley 38/2015"].kind).toBe("legislation");
+    expect(OFFICIAL_SOURCE_REGISTRY["Ley 38/2015"].canonicalTitle).toBe(
+      "Ley 38/2015, de 29 de septiembre, del sector ferroviario",
     );
   });
 
-  it("registers the canonical BOE URL for Directiva 2014/30/UE", () => {
-    expect(OFFICIAL_SOURCE_REGISTRY["Directiva 2014/30/UE"]).toBe(
+  it("registers the canonical BOE URL for Directiva 2014/30/UE as legislation", () => {
+    expect(OFFICIAL_SOURCE_REGISTRY["Directiva 2014/30/UE"].canonicalUrl).toBe(
       "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
     );
+    expect(OFFICIAL_SOURCE_REGISTRY["Directiva 2014/30/UE"].kind).toBe("legislation");
+  });
+
+  it("registers exam-syllabus sources as syllabus-reference, not legal sources", () => {
+    expect(getSourceKind("EN 50121")).toBe("syllabus-reference");
+    expect(getSourceKind("MET-PSI-01")).toBe("syllabus-reference");
+    expect(getSourceKind("DR 2027")).toBe("official-document");
+    expect(getSourceKind("MCER-A2")).toBe("official-document");
+    expect(getSourceKind("TREBEP")).toBe("legislation");
   });
 
   it("rejects a wrong BOE document ID for the same sourceId", () => {
@@ -347,11 +382,71 @@ describe("official source identity", () => {
     expect(errors.some((e) => e.includes("does not match the official source identity"))).toBe(true);
   });
 
-  it("accepts the exact canonical URL", () => {
+  it("rejects a correct URL with a non-canonical sourceTitle", () => {
+    const theories: Record<string, TheorySection> = {
+      m: {
+        introduction: [],
+        concepts: [],
+        examples: [],
+        reviewTakeaways: [],
+        sources: [{
+          id: "s1",
+          sourceId: "Ley 38/2015",
+          sourceTitle: "Ley del Sector Ferroviario",
+          sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
+          locator: "Artículo 32",
+        }],
+      },
+    };
+    const errors = validateOfficialSourceIdentity(theories);
+    expect(errors.some((e) => e.includes("sourceTitle does not match the official source identity"))).toBe(true);
+  });
+
+  it("accepts the exact canonical URL and title", () => {
     const errors = validateOfficialSourceIdentity(
       sectionWithSource("https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440"),
     );
     expect(errors).toEqual([]);
+  });
+
+  it("accepts a title that differs only by controlled normalization (double space, trailing period)", () => {
+    const theories: Record<string, TheorySection> = {
+      m: {
+        introduction: [],
+        concepts: [],
+        examples: [],
+        reviewTakeaways: [],
+        sources: [{
+          id: "s1",
+          sourceId: "Ley 38/2015",
+          sourceTitle: "Ley 38/2015,  de 29 de septiembre, del sector ferroviario.",
+          sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
+          locator: "Artículo 32",
+        }],
+      },
+    };
+    expect(validateOfficialSourceIdentity(theories)).toEqual([]);
+  });
+
+  it("rejects a paraphrased title even when the URL is correct", () => {
+    const theories: Record<string, TheorySection> = {
+      m: {
+        introduction: [],
+        concepts: [],
+        examples: [],
+        reviewTakeaways: [],
+        sources: [{
+          id: "s1",
+          sourceId: "TREBEP",
+          sourceTitle: "Estatuto Básico del Empleado Público",
+          sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
+          locator: "Artículo 52",
+        }],
+      },
+    };
+    expect(
+      validateOfficialSourceIdentity(theories).some((e) => e.includes("sourceTitle does not match")),
+    ).toBe(true);
   });
 
   it("rejects a sourceId missing from the registry", () => {
@@ -369,7 +464,7 @@ describe("official source identity", () => {
 });
 
 describe("theory stats", () => {
-  it("computes total claims, kinds and sources across modules", () => {
+  it("computes modules, concepts, examples, sources and claims per kind across modules", () => {
     const a: TheorySection = {
       ...emptyTheory,
       introduction: [claim({ id: "a1", text: "A.", kind: "normative", legalBasis: [] })],
@@ -389,10 +484,144 @@ describe("theory stats", () => {
       ],
     };
     expect(getTheoryStats({ a, b })).toEqual({
-      moduleCount: 2,
-      totalClaims: 3,
-      byKind: { normative: 1, didactic: 1, example: 1 },
-      sourceCount: 3,
+      modules: 2,
+      concepts: 1,
+      examples: 0,
+      sources: 3,
+      claimsTotal: 3,
+      claimsByKind: { normative: 1, interpretative: 0, didactic: 1, example: 1 },
     });
+  });
+
+  it("counts concepts, examples and every kind from a full-module fixture", () => {
+    const fixture: TheorySection = {
+      ...emptyTheory,
+      introduction: [
+        claim({ id: "n1", text: "Norma.", kind: "normative", legalBasis: [] }),
+      ],
+      concepts: [
+        { id: "c1", title: "C1", claims: [
+          claim({ id: "i1", text: "Interp.", kind: "interpretative", legalBasis: [] }),
+        ] },
+        { id: "c2", title: "C2", claims: [
+          claim({ id: "d1", text: "Did.", kind: "didactic", legalBasis: [] }),
+        ] },
+      ],
+      examples: [
+        { id: "e1", situation: "S", application: [
+          claim({ id: "x1", text: "Ej.", kind: "example", legalBasis: [] }),
+        ] },
+      ],
+      sources: [
+        source("s1", "CE", "Artículo 14", "Constitución Española"),
+        source("s2", "LO 3/2007", "Artículo 1", "Ley Orgánica"),
+        source("s3", "TREBEP", "Artículo 52", "Estatuto"),
+        source("s4", "Ley 31/1995", "Artículo 14", "LPRL"),
+      ],
+    };
+    const stats = getTheoryStats({ m: fixture });
+    expect(stats).toEqual({
+      modules: 1,
+      concepts: 2,
+      examples: 1,
+      sources: 4,
+      claimsTotal: 4,
+      claimsByKind: { normative: 1, interpretative: 1, didactic: 1, example: 1 },
+    });
+    const classified = Object.values(stats.claimsByKind).reduce((sum, n) => sum + n, 0);
+    expect(classified).toBe(stats.claimsTotal);
+  });
+
+  it("throws a controlled exception on an unknown claim kind", () => {
+    const unknownKind: TheorySection = {
+      ...emptyTheory,
+      introduction: [{ id: "bad", text: "X.", kind: "weird", legalBasis: [] } as unknown as TheoryClaim],
+    };
+    expect(() => getTheoryStats({ m: unknownKind })).toThrow(/Unknown claim kind 'weird'/);
+  });
+
+  it("satisfies the classification invariant on a full-module fixture", () => {
+    const fixture: TheorySection = {
+      ...emptyTheory,
+      introduction: [
+        claim({ id: "n1", text: "Norma.", kind: "normative", legalBasis: [] }),
+      ],
+      concepts: [
+        { id: "c1", title: "C1", claims: [
+          claim({ id: "i1", text: "Interp.", kind: "interpretative", legalBasis: [] }),
+        ] },
+        { id: "c2", title: "C2", claims: [
+          claim({ id: "d1", text: "Did.", kind: "didactic", legalBasis: [] }),
+        ] },
+      ],
+      sources: [
+        source("s1", "CE", "Artículo 14", "Constitución Española"),
+        source("s2", "LO 3/2007", "Artículo 1", "Ley Orgánica"),
+      ],
+    };
+    const stats = getTheoryStats({ m: fixture });
+    const classified = Object.values(stats.claimsByKind).reduce((sum, n) => sum + n, 0);
+    expect(classified).toBe(stats.claimsTotal);
+    expect(classified).toBe(3);
+  });
+});
+
+describe("syllabus-reference backing rule", () => {
+  const ceSource = source("ce-ref", "CE", "Artículo 14", "Constitución Española");
+  const enSource = source(
+    "en50121-ref",
+    "EN 50121",
+    "Parte 1",
+    "Norma armonizada europea de compatibilidad electromagnética en aplicaciones ferroviarias",
+  );
+
+  it("accepts a normative claim backed by a legislation source", () => {
+    const errors = checkClaim(
+      "m",
+      "introduction[0]",
+      claim({ id: "norm-leg", text: "El artículo 14 consagra la igualdad.", legalBasis: ["ce-ref"] }),
+      mapOf(ceSource),
+    );
+    expect(errors).toEqual([]);
+  });
+
+  it("rejects a normative claim backed exclusively by a syllabus-reference source", () => {
+    const errors = checkClaim(
+      "m",
+      "introduction[0]",
+      claim({
+        id: "norm-syll",
+        text: "La norma armonizada impone los límites de emisión.",
+        legalBasis: ["en50121-ref"],
+      }),
+      mapOf(enSource),
+    );
+    expect(errors.some((e) => e.includes("backed exclusively by syllabus-reference sources"))).toBe(true);
+  });
+
+  it("accepts a didactic claim backed by a syllabus-reference source", () => {
+    const errors = checkClaim(
+      "m",
+      "introduction[0]",
+      claim({
+        id: "did-syll",
+        text: "Conviene repasar la familia de normas EN 50121 para el examen.",
+        kind: "didactic",
+        legalBasis: ["en50121-ref"],
+      }),
+      mapOf(enSource),
+    );
+    expect(errors).toEqual([]);
+  });
+});
+
+describe("registry stats", () => {
+  it("counts registered sources by kind consistently with the registry size", () => {
+    const counts = getSourcesByKind();
+    const total = Object.values(counts).reduce((sum, n) => sum + n, 0);
+    expect(total).toBe(Object.keys(OFFICIAL_SOURCE_REGISTRY).length);
+    expect(counts.legislation).toBeGreaterThanOrEqual(13);
+    expect(counts["official-document"]).toBeGreaterThanOrEqual(2);
+    expect(counts["syllabus-reference"]).toBeGreaterThanOrEqual(2);
   });
 });

@@ -5,7 +5,7 @@ export const inglesA2Theory: TheorySection = {
     {
       id: "mcer-ingles-a2",
       sourceId: "MCER-A2",
-      sourceTitle: "Marco Común Europeo de Referencia para las Lenguas, nivel A2",
+      sourceTitle: "Marco Común Europeo de Referencia para las Lenguas (MCER)",
       sourceUrl: "https://www.coe.int/en/web/common-european-framework-reference-languages/introduction-and-context",
       locator: "Nivel de Usuario Básico A2",
       excerpt: "Describe la capacidad de comprender frases y expresiones de uso frecuente relacionadas con áreas de experiencia que le son especialmente relevantes."
