@@ -146,6 +146,7 @@ reset role;
 do $$
 declare
   protected_table text;
+  canonical_answers jsonb;
 begin
   if has_schema_privilege('authenticated', 'private', 'usage') then
     raise exception 'authenticated unexpectedly has private schema usage';
@@ -168,9 +169,30 @@ begin
       where user_id = '11111111-1111-4111-8111-111111111111') <> 1 then
     raise exception 'Practice idempotency did not preserve one canonical attempt';
   end if;
+  if (select request_fingerprint from public.question_attempts
+      where user_id = '11111111-1111-4111-8111-111111111111')
+      <> pg_catalog.md5(jsonb_build_array(
+        'ADIF-2025-1131-Q01', 'A', 420, 'practice'
+      )::text) then
+    raise exception 'Practice fingerprint is not the canonical built-in MD5 value';
+  end if;
   if (select count(*) from public.simulation_attempts
       where user_id = '11111111-1111-4111-8111-111111111111') <> 1 then
     raise exception 'Simulation idempotency did not preserve one canonical attempt';
+  end if;
+  select jsonb_agg(jsonb_build_array(answer.question_id, answer.selected_answer)
+    order by answer.question_id)
+  into canonical_answers
+  from jsonb_to_recordset((select answers from rpc_fixtures))
+    answer(question_id text, selected_answer text);
+  if (select request_fingerprint from public.simulation_attempts
+      where user_id = '11111111-1111-4111-8111-111111111111')
+      <> pg_catalog.md5(jsonb_build_object(
+        'simulation_id', 'ADIF-2025-1131',
+        'elapsed_ms', 900,
+        'answers', canonical_answers
+      )::text) then
+    raise exception 'Simulation fingerprint is not the canonical built-in MD5 value';
   end if;
   if (select count(*) from public.simulation_answers answer
       join public.simulation_attempts attempt on attempt.id = answer.attempt_id

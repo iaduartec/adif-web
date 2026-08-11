@@ -38,14 +38,26 @@ export type SimulationResult = {
   corrections: SimulationCorrection[];
 };
 
+export type SimulationSubmissionFailure = {
+  ok: false;
+  error: string;
+  retryable: boolean;
+};
+
+export type SimulationSubmissionOutcome = SimulationResult | SimulationSubmissionFailure;
+
+function validationFailure(error: string): SimulationSubmissionFailure {
+  return { ok: false, error, retryable: false };
+}
+
 export async function submitSimulation(
   examId: string,
   answers: Record<string, string>,
   elapsedMs: number,
   clientEventId: string,
-): Promise<SimulationResult> {
+): Promise<SimulationSubmissionOutcome> {
   const exam = getOfficialExam(examId);
-  if (!exam) throw new Error("El examen oficial solicitado no existe.");
+  if (!exam) return validationFailure("El examen oficial solicitado no existe.");
 
   if (
     typeof elapsedMs !== "number"
@@ -54,33 +66,37 @@ export async function submitSimulation(
     || elapsedMs < 0
     || elapsedMs > MAX_SIMULATION_ELAPSED_MS
   ) {
-    throw new Error("Tiempo transcurrido inválido.");
+    return validationFailure("Tiempo transcurrido inválido.");
   }
 
   if (!answers || typeof answers !== "object" || Array.isArray(answers)) {
-    throw new Error("Respuesta inválida en la entrega del examen.");
+    return validationFailure("Respuesta inválida en la entrega del examen.");
   }
 
   if (typeof clientEventId !== "string" || !UUID_PATTERN.test(clientEventId)) {
-    throw new Error("Identificador de entrega inválido.");
+    return validationFailure("Identificador de entrega inválido.");
   }
 
   for (const selectedAnswer of Object.values(answers)) {
     if (!ANSWER_KEYS.has(selectedAnswer)) {
-      throw new Error("Respuesta inválida en la entrega del examen. Usa únicamente A, B, C o D.");
+      return validationFailure("Respuesta inválida en la entrega del examen. Usa únicamente A, B, C o D.");
     }
   }
 
   const examQuestionIds = new Set(exam.questionIds);
   for (const questionId of Object.keys(answers)) {
     if (!examQuestionIds.has(questionId)) {
-      throw new Error(`La pregunta ${questionId} no pertenece al examen oficial.`);
+      return validationFailure(`La pregunta ${questionId} no pertenece al examen oficial.`);
     }
+  }
+
+  if (exam.questionIds.some((questionId) => !getOfficialQuestion(questionId))) {
+    return validationFailure("El contenido del examen oficial está incompleto.");
   }
 
   const supabase = await createServerClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) throw new Error("Debes iniciar sesión para entregar un examen.");
+  if (!user) return validationFailure("Debes iniciar sesión para entregar un examen.");
 
   const answerRows = exam.questionIds.map((questionId) => ({
     question_id: questionId,
@@ -99,8 +115,22 @@ export async function submitSimulation(
   );
 
   const parsedResult = persistedSimulationSchema.safeParse(persistedResult);
-  if (attemptError || !parsedResult.success) {
-    throw new Error("No se ha podido registrar el intento del examen.");
+  if (attemptError) {
+    const retryable = !["23514", "P0002", "28000"].includes(attemptError.code ?? "");
+    return {
+      ok: false,
+      error: retryable
+        ? "No se ha podido registrar el intento del examen. Puedes reintentar la entrega."
+        : "La entrega contiene datos inválidos. Revisa las respuestas antes de intentarlo de nuevo.",
+      retryable,
+    };
+  }
+  if (!parsedResult.success) {
+    return {
+      ok: false,
+      error: "No se ha podido confirmar el resultado guardado. Puedes reintentar la entrega.",
+      retryable: true,
+    };
   }
 
   const persistedByQuestion = new Map(

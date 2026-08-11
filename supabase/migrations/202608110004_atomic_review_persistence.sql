@@ -264,10 +264,9 @@ begin
   end if;
 
   v_is_correct := p_selected_answer = v_question.correct_answer;
-  v_request_fingerprint := encode(public.digest(
-    jsonb_build_array(p_question_id, p_selected_answer, p_elapsed_ms, p_mode)::text,
-    'sha256'
-  ), 'hex');
+  v_request_fingerprint := pg_catalog.md5(
+    jsonb_build_array(p_question_id, p_selected_answer, p_elapsed_ms, p_mode)::text
+  );
   insert into public.question_attempts (
     user_id, question_id, selected_answer, is_correct, mode, elapsed_ms, client_event_id, request_fingerprint
   ) values (
@@ -493,14 +492,13 @@ begin
   )
   into v_canonical_answers
   from jsonb_to_recordset(p_answers) answer(question_id text, selected_answer text);
-  v_request_fingerprint := encode(public.digest(
+  v_request_fingerprint := pg_catalog.md5(
     jsonb_build_object(
       'simulation_id', p_simulation_id,
       'elapsed_ms', p_elapsed_ms,
       'answers', v_canonical_answers
-    )::text,
-    'sha256'
-  ), 'hex');
+    )::text
+  );
 
   select
     count(*) filter (where answer.selected_answer = question.correct_answer),

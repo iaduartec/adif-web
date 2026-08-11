@@ -52,6 +52,8 @@ describe("atomic review persistence migration", () => {
     expect(migration).toMatch(/add column request_fingerprint text/i);
     expect(migration).toMatch(/request_fingerprint is distinct from v_request_fingerprint/i);
     expect(migration).toMatch(/Idempotency key was already used with a different payload/i);
+    expect(migration).not.toMatch(/\bdigest\s*\(/i);
+    expect(migration.match(/pg_catalog\.md5\s*\(/gi)?.length).toBeGreaterThanOrEqual(2);
   });
 
   it("removes direct client mutation privileges while preserving authenticated owner reads", () => {

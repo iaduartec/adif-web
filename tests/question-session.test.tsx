@@ -36,6 +36,7 @@ describe("QuestionSession", () => {
     expect(requestBody).toEqual({
       questionId: "ADIF-2025-1131-Q01",
       selectedAnswer: "D",
+      mode: "practice",
       elapsedMs: expect.any(Number),
       clientEventId: expect.stringMatching(/^[0-9a-f-]{36}$/i),
     });
@@ -47,5 +48,54 @@ describe("QuestionSession", () => {
       officialQuestion.source.documentUrl,
     );
     expect(screen.queryByText(/explicación/i)).not.toBeInTheDocument();
+  });
+
+  it("resends the exact first request body after an uncertain failure", async () => {
+    const now = vi.spyOn(Date, "now").mockReturnValue(1_000);
+    const fetchMock = vi.fn()
+      .mockRejectedValueOnce(new Error("Sin conexión"))
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 201,
+        json: async () => ({ isCorrect: true, correctAnswer: "A" }),
+      });
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<QuestionSession questions={questions} />);
+    fireEvent.click(screen.getByRole("radio", { name: /^A\./i }));
+    fireEvent.click(screen.getByRole("button", { name: "Comprobar respuesta" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent("Sin conexión");
+    const firstBody = fetchMock.mock.calls[0][1]?.body;
+    expect(JSON.parse(firstBody as string)).toMatchObject({
+      questionId: officialQuestion.id,
+      selectedAnswer: "A",
+      mode: "practice",
+      elapsedMs: 0,
+      clientEventId: expect.stringMatching(/^[0-9a-f-]{36}$/i),
+    });
+    expect(screen.getByRole("radio", { name: /^B\./i })).toBeDisabled();
+
+    now.mockReturnValue(9_000);
+    fireEvent.click(screen.getByRole("button", { name: "Reintentar respuesta" }));
+
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+    expect(fetchMock.mock.calls[1][1]?.body).toBe(firstBody);
+  });
+
+  it("unfreezes the answer after a definitive validation response", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
+      ok: false,
+      status: 400,
+      json: async () => ({ error: "Solicitud inválida" }),
+    }));
+
+    render(<QuestionSession questions={questions} />);
+    fireEvent.click(screen.getByRole("radio", { name: /^A\./i }));
+    fireEvent.click(screen.getByRole("button", { name: "Comprobar respuesta" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent("Solicitud inválida");
+    expect(screen.getByRole("radio", { name: /^B\./i })).toBeEnabled();
+    expect(screen.queryByRole("button", { name: "Reintentar respuesta" })).not.toBeInTheDocument();
   });
 });

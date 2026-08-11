@@ -10,6 +10,13 @@ type AnswerKey = "A" | "B" | "C" | "D";
 
 const STORAGE_PREFIX = "adif-exam-draft-";
 
+type SubmissionEnvelope = {
+  examId: string;
+  answers: Record<string, AnswerKey>;
+  elapsedMs: number;
+  clientEventId: string;
+};
+
 function getStorageKey(examId: string): string {
   return `${STORAGE_PREFIX}${examId}`;
 }
@@ -63,12 +70,13 @@ export function SimulationRunner({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [error, setError] = useState("");
+  const [retryPending, setRetryPending] = useState(false);
   const startedAt = useRef(0);
   const delivered = useRef(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const reviewButtonRef = useRef<HTMLButtonElement>(null);
   const deliverButtonRef = useRef<HTMLButtonElement>(null);
-  const clientEventId = useRef<string | null>(null);
+  const submissionEnvelope = useRef<SubmissionEnvelope | null>(null);
 
   const closeConfirm = useCallback(() => setShowConfirm(false), []);
   const handleDialogKeyDown = useModalFocus({
@@ -102,29 +110,50 @@ export function SimulationRunner({
     delivered.current = true;
     setIsSubmitting(true);
     setError("");
+    const envelope = submissionEnvelope.current ?? {
+      examId,
+      answers: { ...answers },
+      elapsedMs: Math.max(0, Date.now() - startedAt.current),
+      clientEventId: crypto.randomUUID(),
+    };
+    submissionEnvelope.current = envelope;
     try {
-      const elapsed = Math.max(0, Date.now() - startedAt.current);
-      const result = await submitSimulation(
-        examId,
-        answers,
-        elapsed,
-        clientEventId.current ??= crypto.randomUUID(),
+      const outcome = await submitSimulation(
+        envelope.examId,
+        envelope.answers,
+        envelope.elapsedMs,
+        envelope.clientEventId,
       );
+      if ("ok" in outcome) {
+        delivered.current = false;
+        setIsSubmitting(false);
+        setError(outcome.error);
+        if (outcome.retryable) {
+          setRetryPending(true);
+        } else {
+          submissionEnvelope.current = null;
+          setRetryPending(false);
+        }
+        return;
+      }
+      submissionEnvelope.current = null;
+      setRetryPending(false);
       clearDraft(examId);
-      onFinish(result);
+      onFinish(outcome);
     } catch (err) {
       delivered.current = false;
       setIsSubmitting(false);
+      setRetryPending(true);
       setError(err instanceof Error ? err.message : "Error al entregar el examen.");
     }
   }, [answers, examId, onFinish]);
 
   // Auto-deliver when timer expires
   useEffect(() => {
-    if (remainingSeconds <= 0 && !delivered.current) {
+    if (remainingSeconds <= 0 && !delivered.current && !retryPending) {
       doSubmit();
     }
-  }, [remainingSeconds, doSubmit]);
+  }, [remainingSeconds, retryPending, doSubmit]);
 
   const question = questions[index];
   if (!question) return null;
@@ -191,7 +220,7 @@ export function SimulationRunner({
       <section aria-labelledby="sim-question-title" className="simulation-question">
         <p className="course-eyebrow">Pregunta {index + 1} de {questions.length}</p>
         <h2 id="sim-question-title">{question.prompt}</h2>
-        <fieldset disabled={isSubmitting}>
+        <fieldset disabled={isSubmitting || retryPending}>
           <legend className="sr-only">Elige una respuesta</legend>
           {question.options.map((option) => (
             <label className="practice-option" key={option.key}>
@@ -223,7 +252,7 @@ export function SimulationRunner({
         ) : null}
         <Button
           className="simulation-deliver-btn"
-          disabled={isSubmitting}
+          disabled={isSubmitting || retryPending}
           onClick={() => setShowConfirm(true)}
           ref={deliverButtonRef}
         >
@@ -232,9 +261,14 @@ export function SimulationRunner({
       </div>
 
       {error && (
-        <p aria-live="assertive" className="course-status course-status--error" role="alert">
-          {error}
-        </p>
+        <div className="course-status course-status--error">
+          <p aria-live="assertive" role="alert">{error}</p>
+          {retryPending && (
+            <Button disabled={isSubmitting} onClick={doSubmit}>
+              {isSubmitting ? "Reintentando…" : "Reintentar entrega"}
+            </Button>
+          )}
+        </div>
       )}
       </div>
 
