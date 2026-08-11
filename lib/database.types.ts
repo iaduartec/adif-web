@@ -204,6 +204,7 @@ export type Database = {
           is_correct: boolean;
           mode: "practice" | "simulation";
           question_id: string;
+          request_fingerprint: string | null;
           selected_answer: "A" | "B" | "C" | "D";
           user_id: string;
         };
@@ -215,6 +216,7 @@ export type Database = {
           is_correct: boolean;
           mode: "practice" | "simulation";
           question_id: string;
+          request_fingerprint?: string | null;
           selected_answer: "A" | "B" | "C" | "D";
           user_id: string;
         };
@@ -226,6 +228,7 @@ export type Database = {
           is_correct?: boolean;
           mode?: "practice" | "simulation";
           question_id?: string;
+          request_fingerprint?: string | null;
           selected_answer?: "A" | "B" | "C" | "D";
           user_id?: string;
         };
@@ -314,6 +317,7 @@ export type Database = {
           id: string;
           incorrect_count: number;
           omitted_count: number;
+          request_fingerprint: string | null;
           score: number;
           simulation_id: string;
           user_id: string;
@@ -326,6 +330,7 @@ export type Database = {
           id?: string;
           incorrect_count?: number;
           omitted_count?: number;
+          request_fingerprint?: string | null;
           score?: number;
           simulation_id: string;
           user_id: string;
@@ -338,6 +343,7 @@ export type Database = {
           id?: string;
           incorrect_count?: number;
           omitted_count?: number;
+          request_fingerprint?: string | null;
           score?: number;
           simulation_id?: string;
           user_id?: string;
@@ -386,6 +392,7 @@ export type Database = {
           p_elapsed_ms: number;
           p_question_id: string;
           p_selected_answer: string;
+          p_mode?: string;
         };
         Returns: Json;
       };
@@ -404,7 +411,7 @@ export type Database = {
           p_elapsed_ms: number;
           p_simulation_id: string;
         };
-        Returns: string;
+        Returns: Json;
       };
     };
     Enums: Record<string, never>;

@@ -4,6 +4,7 @@ export interface MockQuestionAttempt {
   client_event_id: string | null;
   user_id: string;
   question_id: string;
+  request_fingerprint: string | null;
   selected_answer: string;
   is_correct: boolean;
   mode: "practice" | "simulation";
@@ -20,6 +21,7 @@ export interface MockSimulationAttempt {
   correct_count: number;
   incorrect_count: number;
   omitted_count: number;
+  request_fingerprint: string | null;
   elapsed_ms: number;
   created_at: string;
 }

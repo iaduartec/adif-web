@@ -4,6 +4,7 @@ import type { Database } from "../lib/database.types";
 import { createMockSupabaseClient } from "../lib/supabase/mock-client";
 import { getMockStore } from "../lib/supabase/mock-store";
 import { getOfficialExam } from "../lib/content/repository";
+import { activeTheoryConceptRegistry } from "../content/theory-concepts";
 
 describe("adaptive learning Supabase mock", () => {
   it("exposes empty adaptive records and onboarding-ready study goal defaults", async () => {
@@ -186,5 +187,110 @@ describe("adaptive learning Supabase mock", () => {
     expect(store.simulationAttempts[0]).toMatchObject({ correct_count: 1, incorrect_count: 0, omitted_count: 14 });
     expect(store.simulationAnswers).toHaveLength(15);
     expect(store.reviewEvents).toHaveLength(1);
+  });
+
+  it("rejects an idempotency key reused with a changed practice or simulation payload", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const practiceArgs = {
+      p_question_id: "ADIF-2025-1131-Q01",
+      p_selected_answer: "D",
+      p_elapsed_ms: 500,
+      p_client_event_id: "218f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+      p_mode: "practice",
+    };
+    await client.rpc("record_practice_attempt", practiceArgs);
+    const practiceConflict = await client.rpc("record_practice_attempt", {
+      ...practiceArgs,
+      p_selected_answer: "A",
+    });
+
+    const exam = getOfficialExam("ADIF-2023-1433")!;
+    const simulationArgs = {
+      p_simulation_id: exam.id,
+      p_elapsed_ms: 1_000,
+      p_answers: exam.questionIds.map((questionId) => ({ question_id: questionId, selected_answer: null })),
+      p_client_event_id: "318f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    };
+    await client.rpc("submit_simulation_attempt", simulationArgs);
+    const simulationConflict = await client.rpc("submit_simulation_attempt", {
+      ...simulationArgs,
+      p_elapsed_ms: 2_000,
+    });
+
+    expect(practiceConflict).toMatchObject({ data: null, error: expect.objectContaining({ code: "23514" }) });
+    expect(simulationConflict).toMatchObject({ data: null, error: expect.objectContaining({ code: "23514" }) });
+    expect(store.questionAttempts).toHaveLength(1);
+    expect(store.simulationAttempts).toHaveLength(1);
+  });
+
+  it.each([
+    "incomplete",
+    "duplicate",
+    "foreign",
+    "invalid-answer",
+    "invalid-elapsed",
+  ])("rolls back an invalid %s simulation payload", async (variant) => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const exam = getOfficialExam("ADIF-2023-1433")!;
+    const answers: Array<{ question_id: string; selected_answer: string | null }> = exam.questionIds.map(
+      (questionId) => ({ question_id: questionId, selected_answer: null }),
+    );
+    let elapsedMs = 1_000;
+    if (variant === "incomplete") answers.pop();
+    if (variant === "duplicate") answers[answers.length - 1] = { ...answers[0] };
+    if (variant === "foreign") answers[answers.length - 1] = { question_id: "ADIF-2025-1131-Q01", selected_answer: null };
+    if (variant === "invalid-answer") answers[0].selected_answer = "E";
+    if (variant === "invalid-elapsed") elapsedMs = 86_400_001;
+
+    const result = await client.rpc("submit_simulation_attempt", {
+      p_simulation_id: exam.id,
+      p_elapsed_ms: elapsedMs,
+      p_answers: answers,
+      p_client_event_id: "418f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    });
+
+    expect(result).toMatchObject({ data: null, error: expect.any(Error) });
+    expect(store.simulationAttempts).toEqual([]);
+    expect(store.simulationAnswers).toEqual([]);
+    expect(store.reviewEvents).toEqual([]);
+    expect(store.conceptMastery).toEqual([]);
+  });
+
+  it("rejects practice and simulation persistence when a mapped concept is inactive", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const mutableRegistry = activeTheoryConceptRegistry as Map<string, unknown>;
+    const concept = mutableRegistry.get("ict-concept-24")!;
+    mutableRegistry.delete("ict-concept-24");
+
+    try {
+      const result = await client.rpc("record_practice_attempt", {
+        p_question_id: "ADIF-2025-1131-Q01",
+        p_selected_answer: "A",
+        p_elapsed_ms: 500,
+        p_client_event_id: "518f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+        p_mode: "practice",
+      });
+      expect(result).toMatchObject({ data: null, error: expect.any(Error) });
+      expect(store.questionAttempts).toEqual([]);
+
+      const exam = getOfficialExam("ADIF-2025-1131")!;
+      const simulationResult = await client.rpc("submit_simulation_attempt", {
+        p_simulation_id: exam.id,
+        p_elapsed_ms: 500,
+        p_answers: exam.questionIds.map((questionId) => ({ question_id: questionId, selected_answer: null })),
+        p_client_event_id: "618f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+      });
+      expect(simulationResult).toMatchObject({ data: null, error: expect.any(Error) });
+      expect(store.simulationAttempts).toEqual([]);
+      expect(store.simulationAnswers).toEqual([]);
+    } finally {
+      mutableRegistry.set("ict-concept-24", concept);
+    }
   });
 });

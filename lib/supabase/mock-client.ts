@@ -338,28 +338,56 @@ export function createMockSupabaseClient() {
       },
     },
     rpc: (functionName: string, args: any) => {
+      const constraintError = (message: string) => Object.assign(new Error(message), { code: "23514" });
+      const validUuid = (value: unknown) => typeof value === "string"
+        && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+      const validElapsed = (value: unknown) => typeof value === "number"
+        && Number.isSafeInteger(value) && value >= 0 && value <= 86_400_000;
+      const idempotencyMismatch = () => Promise.resolve({
+        data: null,
+        error: constraintError("Idempotency key was already used with a different payload."),
+      });
+
       if (functionName === "record_practice_attempt") {
+        const mode = args.p_mode ?? "practice";
+        const question = getOfficialQuestion(args.p_question_id);
+        if (
+          !validUuid(args.p_client_event_id)
+          || !["A", "B", "C", "D"].includes(args.p_selected_answer)
+          || !["practice", "simulation"].includes(mode)
+          || !validElapsed(args.p_elapsed_ms)
+          || !question
+          || question.conceptIds.some((conceptId) => !activeTheoryConceptRegistry.has(conceptId))
+        ) {
+          return Promise.resolve({ data: null, error: constraintError("Invalid practice payload") });
+        }
+        const requestFingerprint = JSON.stringify([
+          question.id,
+          args.p_selected_answer,
+          args.p_elapsed_ms,
+          mode,
+        ]);
         const existing = mockStore.questionAttempts.find(
           (attempt) => attempt.client_event_id === args.p_client_event_id,
         );
         if (existing) {
+          if (existing.request_fingerprint !== requestFingerprint) return idempotencyMismatch();
           return Promise.resolve({
             data: { attempt_id: existing.id, is_correct: existing.is_correct },
             error: null,
           });
         }
-        const question = getOfficialQuestion(args.p_question_id);
-        if (!question) return Promise.resolve({ data: null, error: new Error("Unknown question") });
         const createdAt = new Date().toISOString();
         const isCorrect = question.answer === args.p_selected_answer;
         const attempt = {
           id: Math.random().toString(36).substring(7),
           client_event_id: args.p_client_event_id,
+          request_fingerprint: requestFingerprint,
           user_id: MOCK_USER.id,
           question_id: question.id,
           selected_answer: args.p_selected_answer,
           is_correct: isCorrect,
-          mode: "practice" as const,
+          mode: mode as "practice" | "simulation",
           elapsed_ms: args.p_elapsed_ms,
           created_at: createdAt,
         };
@@ -379,6 +407,25 @@ export function createMockSupabaseClient() {
       }
 
       if (functionName === "record_recall_review") {
+        if (
+          !validUuid(args.p_client_event_id)
+          || !Number.isInteger(args.p_rating)
+          || args.p_rating < 0
+          || args.p_rating > 3
+          || !activeTheoryConceptRegistry.has(args.p_concept_id)
+        ) return Promise.resolve({ data: null, error: constraintError("Invalid recall payload") });
+        const existing = mockStore.reviewEvents.find(
+          (event) => event.client_event_id === args.p_client_event_id,
+        );
+        if (existing) {
+          if (
+            existing.source_kind !== "recall"
+            || existing.concept_id !== args.p_concept_id
+            || existing.rating !== args.p_rating
+            || existing.question_id !== null
+          ) return idempotencyMismatch();
+          return Promise.resolve({ data: true, error: null });
+        }
         const occurredAt = new Date().toISOString();
         const recorded = persistEvidence({
           clientEventId: args.p_client_event_id,
@@ -395,42 +442,87 @@ export function createMockSupabaseClient() {
         return Promise.resolve({ data: null, error: new Error("Unknown mock RPC") });
       }
 
+      const exam = getOfficialExam(args.p_simulation_id);
+      const answerRows = args.p_answers;
+      if (!validUuid(args.p_client_event_id) || !validElapsed(args.p_elapsed_ms) || !exam || !Array.isArray(answerRows)) {
+        return Promise.resolve({ data: null, error: constraintError("Invalid simulation payload") });
+      }
+      const expectedIds = new Set(exam.questionIds);
+      const suppliedIds = new Set<string>();
+      for (const answer of answerRows) {
+        if (
+          !answer || typeof answer !== "object" || Array.isArray(answer)
+          || typeof answer.question_id !== "string"
+          || !(answer.selected_answer === null || ["A", "B", "C", "D"].includes(answer.selected_answer))
+          || !expectedIds.has(answer.question_id)
+          || suppliedIds.has(answer.question_id)
+        ) return Promise.resolve({ data: null, error: constraintError("Invalid simulation answer rows") });
+        suppliedIds.add(answer.question_id);
+      }
+      if (answerRows.length !== exam.questionIds.length || suppliedIds.size !== exam.questionIds.length) {
+        return Promise.resolve({ data: null, error: constraintError("Incomplete simulation answers") });
+      }
+      const questions = exam.questionIds.map((questionId) => getOfficialQuestion(questionId));
+      if (
+        questions.some((question) => !question)
+        || questions.some((question) => question!.conceptIds.some(
+          (conceptId) => !activeTheoryConceptRegistry.has(conceptId),
+        ))
+      ) return Promise.resolve({ data: null, error: constraintError("Inactive simulation question") });
+
+      const canonicalAnswers = answerRows
+        .map((answer: any) => [answer.question_id, answer.selected_answer] as const)
+        .sort(([left], [right]) => left.localeCompare(right));
+      const requestFingerprint = JSON.stringify([
+        args.p_simulation_id,
+        args.p_elapsed_ms,
+        canonicalAnswers,
+      ]);
+      const simulationResult = (attempt: (typeof mockStore.simulationAttempts)[number]) => ({
+        attempt_id: attempt.id,
+        correct_count: attempt.correct_count,
+        incorrect_count: attempt.incorrect_count,
+        omitted_count: attempt.omitted_count,
+        score: attempt.score,
+        elapsed_ms: attempt.elapsed_ms,
+        answers: mockStore.simulationAnswers
+          .filter((answer) => answer.attempt_id === attempt.id)
+          .sort((left, right) => left.question_id.localeCompare(right.question_id))
+          .map((answer) => ({
+            question_id: answer.question_id,
+            selected_answer: answer.selected_answer,
+            is_correct: answer.is_correct,
+          })),
+      });
       const existing = mockStore.simulationAttempts.find(
         (attempt) => attempt.client_event_id === args.p_client_event_id,
       );
-      if (existing) return Promise.resolve({ data: existing.id, error: null });
-      const exam = getOfficialExam(args.p_simulation_id);
-      if (!exam) return Promise.resolve({ data: null, error: new Error("Unknown simulation") });
+      if (existing) {
+        if (existing.request_fingerprint !== requestFingerprint) return idempotencyMismatch();
+        return Promise.resolve({ data: simulationResult(existing), error: null });
+      }
+
       const attemptId = Math.random().toString(36).substring(7);
       const createdAt = new Date().toISOString();
-      const answerRows = Array.isArray(args.p_answers) ? args.p_answers : [];
-      const persistedAnswers: Array<{
-        id: string;
-        user_id: string;
-        attempt_id: string;
-        question_id: string;
-        selected_answer: string | null;
-        is_correct: boolean;
-        created_at: string;
-      }> = answerRows.map((answer: any) => {
-        const question = getOfficialQuestion(answer.question_id);
-        const isCorrect = Boolean(question && answer.selected_answer === question.answer);
+      const persistedAnswers = answerRows.map((answer: any) => {
+        const question = getOfficialQuestion(answer.question_id)!;
         return {
           id: Math.random().toString(36).substring(7),
           user_id: MOCK_USER.id,
           attempt_id: attemptId,
           question_id: answer.question_id,
           selected_answer: answer.selected_answer,
-          is_correct: isCorrect,
+          is_correct: answer.selected_answer === question.answer,
           created_at: createdAt,
         };
       });
-      const correctCount = persistedAnswers.filter((answer) => answer.is_correct).length;
-      const omittedCount = persistedAnswers.filter((answer) => answer.selected_answer === null).length;
+      const correctCount = persistedAnswers.filter((answer: any) => answer.is_correct).length;
+      const omittedCount = persistedAnswers.filter((answer: any) => answer.selected_answer === null).length;
       const incorrectCount = persistedAnswers.length - correctCount - omittedCount;
       const attempt = {
         id: attemptId,
         client_event_id: args.p_client_event_id,
+        request_fingerprint: requestFingerprint,
         user_id: MOCK_USER.id,
         simulation_id: args.p_simulation_id,
         score: Math.round((correctCount - incorrectCount / 3) * 100) / 100,
@@ -443,7 +535,7 @@ export function createMockSupabaseClient() {
 
       mockStore.simulationAttempts.push(attempt);
       mockStore.simulationAnswers.push(...persistedAnswers);
-      for (const answer of persistedAnswers.filter((row) => row.selected_answer !== null)) {
+      for (const answer of persistedAnswers.filter((row: any) => row.selected_answer !== null)) {
         const question = getOfficialQuestion(answer.question_id)!;
         for (const conceptId of [...question.conceptIds].sort()) {
           persistEvidence({
@@ -457,7 +549,7 @@ export function createMockSupabaseClient() {
           });
         }
       }
-      return Promise.resolve({ data: attemptId, error: null });
+      return Promise.resolve({ data: simulationResult(attempt), error: null });
     },
     from: (tableName: string) => {
       if (tableName === "question_attempts") return chain(tableName, mockStore.questionAttempts);

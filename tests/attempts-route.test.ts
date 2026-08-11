@@ -49,7 +49,38 @@ describe("POST /api/attempts", () => {
       p_selected_answer: "A",
       p_elapsed_ms: 420,
       p_client_event_id: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+      p_mode: "practice",
     });
+  });
+
+  it("keeps the legacy answer/mode DTO and generates an idempotency UUID when absent", async () => {
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      answer: "A",
+      mode: "simulation",
+      elapsedMs: 420,
+    }));
+
+    expect(response.status).toBe(201);
+    expect(rpc).toHaveBeenCalledWith("record_practice_attempt", {
+      p_question_id: "ADIF-2025-1131-Q01",
+      p_selected_answer: "A",
+      p_elapsed_ms: 420,
+      p_client_event_id: expect.stringMatching(/^[0-9a-f-]{36}$/i),
+      p_mode: "simulation",
+    });
+  });
+
+  it("rejects conflicting answer aliases", async () => {
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      answer: "A",
+      selectedAnswer: "B",
+      elapsedMs: 420,
+    }));
+
+    expect(response.status).toBe(400);
+    expect(rpc).not.toHaveBeenCalled();
   });
 
   it("rejects tampered client-owned score and identity fields before writing", async () => {
@@ -111,6 +142,23 @@ describe("POST /api/attempts", () => {
     await expect(first.json()).resolves.toMatchObject({ attemptId: "attempt-1", isCorrect: true });
     await expect(retry.json()).resolves.toMatchObject({ attemptId: "attempt-1", isCorrect: true });
     expect(rpc).toHaveBeenCalledTimes(2);
+  });
+
+  it("reports an idempotency UUID reused with a different payload as a conflict", async () => {
+    rpc.mockResolvedValueOnce({
+      data: null,
+      error: { code: "23514", message: "Idempotency key was already used with a different payload." },
+    });
+
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      selectedAnswer: "B",
+      elapsedMs: 420,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    }));
+
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toMatchObject({ error: expect.stringMatching(/identificador/i) });
   });
 });
 

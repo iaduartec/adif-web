@@ -2,10 +2,24 @@
 
 import { getOfficialExam, getOfficialQuestion } from "../../lib/content/repository";
 import { createServerClient } from "../../lib/supabase/server";
+import { z } from "zod";
 
 const ANSWER_KEYS = new Set(["A", "B", "C", "D"]);
 const MAX_SIMULATION_ELAPSED_MS = 86_400_000;
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const persistedSimulationSchema = z.object({
+  attempt_id: z.string().min(1),
+  correct_count: z.number().int().nonnegative(),
+  incorrect_count: z.number().int().nonnegative(),
+  omitted_count: z.number().int().nonnegative(),
+  score: z.number().finite(),
+  elapsed_ms: z.number().int().nonnegative().max(MAX_SIMULATION_ELAPSED_MS),
+  answers: z.array(z.object({
+    question_id: z.string().min(1),
+    selected_answer: z.enum(["A", "B", "C", "D"]).nullable(),
+    is_correct: z.boolean(),
+  }).strict()),
+}).strict();
 
 export type SimulationCorrection = {
   questionId: string;
@@ -68,45 +82,13 @@ export async function submitSimulation(
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error("Debes iniciar sesión para entregar un examen.");
 
-  // Derive corrections exclusively from the published model on the server.
-  const corrections: SimulationCorrection[] = [];
-  let correct = 0;
-  let incorrect = 0;
-  let omitted = 0;
-
-  for (const questionId of exam.questionIds) {
-    const question = getOfficialQuestion(questionId);
-    if (!question) throw new Error(`Pregunta ${questionId} no encontrada en el contenido.`);
-
-    const selectedAnswer = answers[questionId] ?? null;
-    const isCorrect = selectedAnswer === question.answer;
-
-    if (selectedAnswer === null) {
-      omitted++;
-    } else if (isCorrect) {
-      correct++;
-    } else {
-      incorrect++;
-    }
-
-    corrections.push({
-      questionId,
-      selectedAnswer,
-      correctAnswer: question.answer,
-      isCorrect,
-    });
-  }
-
-  // ADIF scoring: correct * 1 - incorrect * (1/3), omitted = 0
-  const score = Math.round((correct - incorrect / 3) * 100) / 100;
-
-  const answerRows = corrections.map((correction) => ({
-    question_id: correction.questionId,
-    selected_answer: correction.selectedAnswer,
+  const answerRows = exam.questionIds.map((questionId) => ({
+    question_id: questionId,
+    selected_answer: answers[questionId] ?? null,
   }));
 
   // The RPC owns user_id through auth.uid() and writes parent plus children in one transaction.
-  const { data: attemptId, error: attemptError } = await supabase.rpc(
+  const { data: persistedResult, error: attemptError } = await supabase.rpc(
     "submit_simulation_attempt",
     {
       p_simulation_id: exam.id,
@@ -116,17 +98,43 @@ export async function submitSimulation(
     },
   );
 
-  if (attemptError || !attemptId) {
+  const parsedResult = persistedSimulationSchema.safeParse(persistedResult);
+  if (attemptError || !parsedResult.success) {
     throw new Error("No se ha podido registrar el intento del examen.");
   }
 
+  const persistedByQuestion = new Map(
+    parsedResult.data.answers.map((answer) => [answer.question_id, answer]),
+  );
+  if (
+    persistedByQuestion.size !== exam.questionIds.length
+    || parsedResult.data.answers.length !== exam.questionIds.length
+    || exam.questionIds.some((questionId) => !persistedByQuestion.has(questionId))
+  ) {
+    throw new Error("No se ha podido registrar el intento del examen.");
+  }
+
+  const corrections = exam.questionIds.map((questionId): SimulationCorrection => {
+    const question = getOfficialQuestion(questionId);
+    const persistedAnswer = persistedByQuestion.get(questionId);
+    if (!question || !persistedAnswer) {
+      throw new Error(`Pregunta ${questionId} no encontrada en el contenido.`);
+    }
+    return {
+      questionId,
+      selectedAnswer: persistedAnswer.selected_answer,
+      correctAnswer: question.answer,
+      isCorrect: persistedAnswer.is_correct,
+    };
+  });
+
   return {
-    attemptId,
-    correct,
-    incorrect,
-    omitted,
-    score,
-    elapsedMs,
+    attemptId: parsedResult.data.attempt_id,
+    correct: parsedResult.data.correct_count,
+    incorrect: parsedResult.data.incorrect_count,
+    omitted: parsedResult.data.omitted_count,
+    score: parsedResult.data.score,
+    elapsedMs: parsedResult.data.elapsed_ms,
     corrections,
   };
 }

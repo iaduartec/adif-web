@@ -83,7 +83,29 @@ function createSupabaseDouble() {
       return Promise.resolve({ error: null });
     },
   }));
-  const rpc = vi.fn(async () => ({ data: "attempt-1", error: null }));
+  const rpc = vi.fn(async (_name: string, args: { p_answers: Array<{ question_id: string; selected_answer: string | null }> }) => {
+    const persistedAnswers = args.p_answers.map((answer) => ({
+      ...answer,
+      is_correct: answer.question_id.endsWith("Q01")
+        ? answer.selected_answer === "A"
+        : answer.selected_answer === "B",
+    }));
+    const correctCount = persistedAnswers.filter((answer) => answer.is_correct).length;
+    const omittedCount = persistedAnswers.filter((answer) => answer.selected_answer === null).length;
+    const incorrectCount = persistedAnswers.length - correctCount - omittedCount;
+    return {
+      data: {
+        attempt_id: "attempt-1",
+        correct_count: correctCount,
+        incorrect_count: incorrectCount,
+        omitted_count: omittedCount,
+        score: Math.round((correctCount - incorrectCount / 3) * 100) / 100,
+        elapsed_ms: 1200,
+        answers: persistedAnswers,
+      },
+      error: null,
+    };
+  });
 
   return {
     client: {
@@ -190,5 +212,45 @@ describe("submitSimulation", () => {
 
     await expect(submitSimulation(exam.id, {}, 1200, "not-a-uuid")).rejects.toThrow(/identificador/i);
     expect(supabase.rpc).not.toHaveBeenCalled();
+  });
+
+  it("returns the canonical persisted simulation result instead of recomputing a retry payload", async () => {
+    const supabase = createSupabaseDouble();
+    supabase.rpc.mockResolvedValueOnce({
+      data: {
+        attempt_id: "persisted-attempt",
+        correct_count: 1,
+        incorrect_count: 1,
+        omitted_count: 0,
+        score: 0.67,
+        elapsed_ms: 900,
+        answers: [
+          { question_id: "ADIF-2024-3403-Q01", selected_answer: "A", is_correct: true },
+          { question_id: "ADIF-2024-3403-Q02", selected_answer: "D", is_correct: false },
+        ],
+      },
+      error: null,
+    });
+    createServerClient.mockResolvedValue(supabase.client);
+
+    const result = await submitSimulation(
+      exam.id,
+      { "ADIF-2024-3403-Q01": "D", "ADIF-2024-3403-Q02": "D" },
+      1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    );
+
+    expect(result).toMatchObject({
+      attemptId: "persisted-attempt",
+      correct: 1,
+      incorrect: 1,
+      omitted: 0,
+      score: 0.67,
+      elapsedMs: 900,
+      corrections: [
+        expect.objectContaining({ questionId: "ADIF-2024-3403-Q01", selectedAnswer: "A", isCorrect: true }),
+        expect.objectContaining({ questionId: "ADIF-2024-3403-Q02", selectedAnswer: "D", isCorrect: false }),
+      ],
+    });
   });
 });

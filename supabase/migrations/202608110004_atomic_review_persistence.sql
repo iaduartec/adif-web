@@ -37,11 +37,26 @@ select
 from jsonb_to_recordset('[{"id":"ADIF-2023-1433-Q01","answer":"C","concepts":["rcf-concept-9"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q02","answer":"B","concepts":["ict-concept-5"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q03","answer":"B","concepts":["rcf-concept-7"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q04","answer":"B","concepts":["ict-concept-11"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q05","answer":"A","concepts":["ict-concept-12"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q06","answer":"A","concepts":["ict-concept-7"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q07","answer":"D","concepts":["rcf-concept-10"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q08","answer":"A","concepts":["ict-concept-13"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q09","answer":"C","concepts":["ict-concept-2"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q10","answer":"B","concepts":["ict-concept-14"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q11","answer":"D","concepts":["rcf-concept-8"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q12","answer":"A","concepts":["cem-concept-6"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q13","answer":"D","concepts":["cem-concept-1"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q14","answer":"D","concepts":["cem-concept-7"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-1433-Q15","answer":"A","concepts":["cem-concept-1"],"exam":"ADIF-2023-1433"},{"id":"ADIF-2023-4101-Q01","answer":"D","concepts":["rcf-concept-8"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q02","answer":"A","concepts":["rcf-concept-7"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q03","answer":"C","concepts":["ict-concept-2"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q04","answer":"B","concepts":["ict-concept-14"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q05","answer":"A","concepts":["ict-concept-5"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q06","answer":"C","concepts":["rcf-concept-9"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q07","answer":"D","concepts":["ict-concept-12"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q08","answer":"C","concepts":["ict-concept-13"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q09","answer":"B","concepts":["rcf-concept-10"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q10","answer":"D","concepts":["ict-concept-11"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q11","answer":"C","concepts":["ict-concept-7"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q12","answer":"D","concepts":["cem-concept-1"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q13","answer":"C","concepts":["cem-concept-6"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q14","answer":"A","concepts":["cem-concept-1"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2023-4101-Q15","answer":"C","concepts":["cem-concept-7"],"exam":"ADIF-2023-4101"},{"id":"ADIF-2024-3403-Q01","answer":"A","concepts":["ict-concept-15"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q02","answer":"B","concepts":["ict-concept-16"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q03","answer":"B","concepts":["ict-concept-17"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q04","answer":"B","concepts":["ict-concept-18"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q05","answer":"B","concepts":["ict-concept-19"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q06","answer":"A","concepts":["ict-concept-20"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q07","answer":"B","concepts":["ict-concept-21"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q08","answer":"B","concepts":["ict-concept-22"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q09","answer":"A","concepts":["ict-concept-23"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q10","answer":"B","concepts":["rcf-concept-9"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q11","answer":"C","concepts":["ict-concept-16"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q12","answer":"A","concepts":["ict-concept-7"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q13","answer":"C","concepts":["cem-concept-8"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q14","answer":"D","concepts":["cem-concept-9"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q15","answer":"D","concepts":["cem-concept-10"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q16","answer":"C","concepts":["cem-concept-11"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q17","answer":"B","concepts":["rcf-concept-12"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3403-Q18","answer":"A","concepts":["ict-concept-17"],"exam":"ADIF-2024-3403"},{"id":"ADIF-2024-3413-Q01","answer":"A","concepts":["ict-concept-20"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q02","answer":"B","concepts":["ict-concept-22"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q03","answer":"B","concepts":["ict-concept-17"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q04","answer":"B","concepts":["ict-concept-19"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q05","answer":"A","concepts":["ict-concept-15"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q06","answer":"A","concepts":["ict-concept-7"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q07","answer":"B","concepts":["ict-concept-16"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q08","answer":"C","concepts":["ict-concept-16"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q09","answer":"B","concepts":["ict-concept-21"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q10","answer":"B","concepts":["ict-concept-18"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q11","answer":"A","concepts":["ict-concept-23"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q12","answer":"B","concepts":["rcf-concept-9"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q13","answer":"D","concepts":["cem-concept-9"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q14","answer":"D","concepts":["cem-concept-10"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q15","answer":"C","concepts":["cem-concept-8"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q16","answer":"A","concepts":["cem-concept-11"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q17","answer":"D","concepts":["rcf-concept-12"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2024-3413-Q18","answer":"C","concepts":["ict-concept-17"],"exam":"ADIF-2024-3413"},{"id":"ADIF-2025-1131-Q01","answer":"A","concepts":["ict-concept-24"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q02","answer":"A","concepts":["ict-concept-15"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q03","answer":"B","concepts":["ict-concept-25"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q04","answer":"A","concepts":["rcf-concept-11"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q05","answer":"A","concepts":["ict-concept-26"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q06","answer":"B","concepts":["ict-concept-16"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q07","answer":"C","concepts":["ict-concept-27"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q08","answer":"D","concepts":["ict-concept-28"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q09","answer":"A","concepts":["ict-concept-29"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q10","answer":"A","concepts":["ict-concept-30"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q11","answer":"A","concepts":["ict-concept-31"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q12","answer":"A","concepts":["ict-concept-32"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q13","answer":"D","concepts":["cem-concept-12"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q14","answer":"B","concepts":["cem-concept-13"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q15","answer":"D","concepts":["cem-concept-14"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q16","answer":"C","concepts":["cem-concept-12"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q17","answer":"D","concepts":["ict-concept-33"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-1131-Q18","answer":"A","concepts":["rcf-concept-13"],"exam":"ADIF-2025-1131"},{"id":"ADIF-2025-4104-Q01","answer":"A","concepts":["ict-concept-15"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q02","answer":"B","concepts":["ict-concept-25"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q03","answer":"A","concepts":["ict-concept-26"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q04","answer":"D","concepts":["ict-concept-28"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q05","answer":"A","concepts":["ict-concept-29"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q06","answer":"A","concepts":["ict-concept-31"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q07","answer":"C","concepts":["ict-concept-27"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q08","answer":"A","concepts":["rcf-concept-11"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q09","answer":"B","concepts":["ict-concept-16"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q10","answer":"A","concepts":["ict-concept-32"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q11","answer":"A","concepts":["ict-concept-30"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q12","answer":"A","concepts":["ict-concept-24"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q13","answer":"B","concepts":["cem-concept-13"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q14","answer":"D","concepts":["cem-concept-14"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q15","answer":"D","concepts":["cem-concept-12"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q16","answer":"D","concepts":["cem-concept-12"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q17","answer":"C","concepts":["ict-concept-33"],"exam":"ADIF-2025-4104"},{"id":"ADIF-2025-4104-Q18","answer":"B","concepts":["rcf-concept-13"],"exam":"ADIF-2025-4104"}]'::jsonb)
   as seed(id text, answer text, concepts jsonb, exam text);
 
+create view private.active_learning_questions as
+select question.*
+from private.learning_questions question
+where question.active
+  and not exists (
+    select 1
+    from unnest(question.concept_ids) as mapped(concept_id)
+    left join private.learning_concepts concept on concept.concept_id = mapped.concept_id
+    where concept.concept_id is null or not concept.active
+  );
+
+revoke all on table private.active_learning_questions from public, anon, authenticated;
+
 alter table public.question_attempts add column client_event_id uuid;
+alter table public.question_attempts add column request_fingerprint text;
 alter table public.question_attempts
   add constraint question_attempts_user_client_event_key unique (user_id, client_event_id);
 
 alter table public.simulation_attempts add column client_event_id uuid;
+alter table public.simulation_attempts add column request_fingerprint text;
 alter table public.simulation_attempts
   add constraint simulation_attempts_user_client_event_key unique (user_id, client_event_id);
 
@@ -207,7 +222,8 @@ create function public.record_practice_attempt(
   p_question_id text,
   p_selected_answer text,
   p_elapsed_ms bigint,
-  p_client_event_id uuid
+  p_client_event_id uuid,
+  p_mode text default 'practice'
 )
 returns jsonb
 language plpgsql
@@ -220,6 +236,7 @@ declare
   v_attempt public.question_attempts%rowtype;
   v_concept_id text;
   v_is_correct boolean;
+  v_request_fingerprint text;
   v_now timestamptz := statement_timestamp();
   v_today date := (statement_timestamp() at time zone 'Europe/Madrid')::date;
 begin
@@ -232,22 +249,30 @@ begin
   if p_selected_answer is null or p_selected_answer not in ('A', 'B', 'C', 'D') then
     raise exception 'The selected answer is invalid.' using errcode = '23514';
   end if;
+  if p_mode is null or p_mode not in ('practice', 'simulation') then
+    raise exception 'The attempt mode is invalid.' using errcode = '23514';
+  end if;
   if p_elapsed_ms is null or p_elapsed_ms < 0 or p_elapsed_ms > 86400000 then
     raise exception 'Elapsed time is outside the accepted range.' using errcode = '23514';
   end if;
 
   select * into v_question
-  from private.learning_questions
-  where question_id = p_question_id and active;
+  from private.active_learning_questions
+  where question_id = p_question_id;
   if not found then
     raise exception 'The active question does not exist.' using errcode = 'P0002';
   end if;
 
   v_is_correct := p_selected_answer = v_question.correct_answer;
+  v_request_fingerprint := encode(public.digest(
+    jsonb_build_array(p_question_id, p_selected_answer, p_elapsed_ms, p_mode)::text,
+    'sha256'
+  ), 'hex');
   insert into public.question_attempts (
-    user_id, question_id, selected_answer, is_correct, mode, elapsed_ms, client_event_id
+    user_id, question_id, selected_answer, is_correct, mode, elapsed_ms, client_event_id, request_fingerprint
   ) values (
-    v_user_id, p_question_id, p_selected_answer, v_is_correct, 'practice', p_elapsed_ms, p_client_event_id
+    v_user_id, p_question_id, p_selected_answer, v_is_correct, p_mode, p_elapsed_ms,
+    p_client_event_id, v_request_fingerprint
   )
   on conflict (user_id, client_event_id) do nothing
   returning * into v_attempt;
@@ -256,6 +281,9 @@ begin
     select * into strict v_attempt
     from public.question_attempts
     where user_id = v_user_id and client_event_id = p_client_event_id;
+    if v_attempt.request_fingerprint is distinct from v_request_fingerprint then
+      raise exception 'Idempotency key was already used with a different payload.' using errcode = '23514';
+    end if;
     return jsonb_build_object('attempt_id', v_attempt.id, 'is_correct', v_attempt.is_correct);
   end if;
 
@@ -280,9 +308,9 @@ begin
 end;
 $$;
 
-revoke all on function public.record_practice_attempt(text, text, bigint, uuid) from public, anon;
-grant execute on function public.record_practice_attempt(text, text, bigint, uuid) to authenticated;
-comment on function public.record_practice_attempt(text, text, bigint, uuid)
+revoke all on function public.record_practice_attempt(text, text, bigint, uuid, text) from public, anon;
+grant execute on function public.record_practice_attempt(text, text, bigint, uuid, text) to authenticated;
+comment on function public.record_practice_attempt(text, text, bigint, uuid, text)
   is 'Atomically persists an idempotent practice attempt and server-derived mastery evidence.';
 
 create function public.record_recall_review(
@@ -297,6 +325,8 @@ set search_path = pg_catalog, public, private
 as $$
 declare
   v_user_id uuid := auth.uid();
+  v_existing_event public.review_events%rowtype;
+  v_recorded boolean;
   v_now timestamptz := statement_timestamp();
   v_today date := (statement_timestamp() at time zone 'Europe/Madrid')::date;
 begin
@@ -309,13 +339,25 @@ begin
   if p_client_event_id is null then
     raise exception 'An idempotency key is required.' using errcode = '23514';
   end if;
+  select * into v_existing_event
+  from public.review_events
+  where user_id = v_user_id and client_event_id = p_client_event_id;
+  if found then
+    if v_existing_event.source_kind <> 'recall'
+      or v_existing_event.concept_id <> p_concept_id
+      or v_existing_event.rating <> p_rating
+      or v_existing_event.question_id is not null then
+      raise exception 'Idempotency key was already used with a different payload.' using errcode = '23514';
+    end if;
+    return true;
+  end if;
   if not exists (
     select 1 from private.learning_concepts where concept_id = p_concept_id and active
   ) then
     raise exception 'The active concept does not exist.' using errcode = 'P0002';
   end if;
 
-  return private.record_review_evidence(
+  v_recorded := private.record_review_evidence(
     v_user_id,
     p_concept_id,
     'recall',
@@ -325,6 +367,20 @@ begin
     v_now,
     v_today
   );
+  if v_recorded then
+    return true;
+  end if;
+
+  select * into strict v_existing_event
+  from public.review_events
+  where user_id = v_user_id and client_event_id = p_client_event_id;
+  if v_existing_event.source_kind <> 'recall'
+    or v_existing_event.concept_id <> p_concept_id
+    or v_existing_event.rating <> p_rating
+    or v_existing_event.question_id is not null then
+    raise exception 'Idempotency key was already used with a different payload.' using errcode = '23514';
+  end if;
+  return true;
 end;
 $$;
 
@@ -333,25 +389,61 @@ grant execute on function public.record_recall_review(text, smallint, uuid) to a
 
 drop function public.submit_simulation_attempt(text, integer, integer, integer, numeric, bigint, jsonb);
 
+create function private.simulation_attempt_result(
+  p_user_id uuid,
+  p_attempt_id uuid
+)
+returns jsonb
+language sql
+stable
+security definer
+set search_path = pg_catalog, public
+as $$
+  select jsonb_build_object(
+    'attempt_id', attempt.id,
+    'correct_count', attempt.correct_count,
+    'incorrect_count', attempt.incorrect_count,
+    'omitted_count', attempt.omitted_count,
+    'score', attempt.score,
+    'elapsed_ms', attempt.elapsed_ms,
+    'answers', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'question_id', answer.question_id,
+        'selected_answer', answer.selected_answer,
+        'is_correct', answer.is_correct
+      ) order by answer.question_id)
+      from public.simulation_answers answer
+      where answer.user_id = p_user_id and answer.attempt_id = p_attempt_id
+    ), '[]'::jsonb)
+  )
+  from public.simulation_attempts attempt
+  where attempt.user_id = p_user_id and attempt.id = p_attempt_id;
+$$;
+
+revoke all on function private.simulation_attempt_result(uuid, uuid) from public, anon, authenticated;
+
 create function public.submit_simulation_attempt(
   p_simulation_id text,
   p_elapsed_ms bigint,
   p_answers jsonb,
   p_client_event_id uuid
 )
-returns uuid
+returns jsonb
 language plpgsql
 security definer
 set search_path = pg_catalog, public, private
 as $$
 declare
   v_user_id uuid := auth.uid();
-  v_attempt_id uuid;
+  v_attempt public.simulation_attempts%rowtype;
   v_expected_count integer;
+  v_active_count integer;
   v_correct_count integer;
   v_incorrect_count integer;
   v_omitted_count integer;
   v_score numeric;
+  v_canonical_answers jsonb;
+  v_request_fingerprint text;
   v_evidence record;
   v_now timestamptz := statement_timestamp();
   v_today date := (statement_timestamp() at time zone 'Europe/Madrid')::date;
@@ -369,19 +461,23 @@ begin
     raise exception 'Answers must be an array.' using errcode = '23514';
   end if;
 
-  select count(*) into v_expected_count
-  from private.learning_questions
-  where simulation_id = p_simulation_id and active;
-  if v_expected_count = 0 or jsonb_array_length(p_answers) <> v_expected_count then
+  select count(*), count(active_question.question_id)
+  into v_expected_count, v_active_count
+  from private.learning_questions question
+  left join private.active_learning_questions active_question
+    on active_question.question_id = question.question_id
+  where question.simulation_id = p_simulation_id and question.active;
+  if v_expected_count = 0
+    or v_active_count <> v_expected_count
+    or jsonb_array_length(p_answers) <> v_expected_count then
     raise exception 'Answers must match the active simulation.' using errcode = '23514';
   end if;
   if exists (
     select 1
     from jsonb_to_recordset(p_answers) answer(question_id text, selected_answer text)
-    left join private.learning_questions question
+    left join private.active_learning_questions question
       on question.question_id = answer.question_id
       and question.simulation_id = p_simulation_id
-      and question.active
     where question.question_id is null
       or not (answer.selected_answer is null or answer.selected_answer in ('A', 'B', 'C', 'D'))
   ) or (
@@ -391,28 +487,48 @@ begin
     raise exception 'Answer rows contain invalid or duplicate questions.' using errcode = '23514';
   end if;
 
+  select coalesce(
+    jsonb_agg(jsonb_build_array(answer.question_id, answer.selected_answer) order by answer.question_id),
+    '[]'::jsonb
+  )
+  into v_canonical_answers
+  from jsonb_to_recordset(p_answers) answer(question_id text, selected_answer text);
+  v_request_fingerprint := encode(public.digest(
+    jsonb_build_object(
+      'simulation_id', p_simulation_id,
+      'elapsed_ms', p_elapsed_ms,
+      'answers', v_canonical_answers
+    )::text,
+    'sha256'
+  ), 'hex');
+
   select
     count(*) filter (where answer.selected_answer = question.correct_answer),
     count(*) filter (where answer.selected_answer is not null and answer.selected_answer <> question.correct_answer),
     count(*) filter (where answer.selected_answer is null)
   into v_correct_count, v_incorrect_count, v_omitted_count
   from jsonb_to_recordset(p_answers) answer(question_id text, selected_answer text)
-  join private.learning_questions question on question.question_id = answer.question_id;
+  join private.active_learning_questions question on question.question_id = answer.question_id;
   v_score := round((v_correct_count - v_incorrect_count / 3.0), 2);
 
   insert into public.simulation_attempts (
-    user_id, simulation_id, correct_count, incorrect_count, omitted_count, score, elapsed_ms, client_event_id
+    user_id, simulation_id, correct_count, incorrect_count, omitted_count, score, elapsed_ms,
+    client_event_id, request_fingerprint
   ) values (
-    v_user_id, p_simulation_id, v_correct_count, v_incorrect_count, v_omitted_count, v_score, p_elapsed_ms, p_client_event_id
+    v_user_id, p_simulation_id, v_correct_count, v_incorrect_count, v_omitted_count, v_score, p_elapsed_ms,
+    p_client_event_id, v_request_fingerprint
   )
   on conflict (user_id, client_event_id) do nothing
-  returning id into v_attempt_id;
+  returning * into v_attempt;
 
-  if v_attempt_id is null then
-    select id into strict v_attempt_id
+  if v_attempt.id is null then
+    select * into strict v_attempt
     from public.simulation_attempts
     where user_id = v_user_id and client_event_id = p_client_event_id;
-    return v_attempt_id;
+    if v_attempt.request_fingerprint is distinct from v_request_fingerprint then
+      raise exception 'Idempotency key was already used with a different payload.' using errcode = '23514';
+    end if;
+    return private.simulation_attempt_result(v_user_id, v_attempt.id);
   end if;
 
   insert into public.simulation_answers (
@@ -420,12 +536,12 @@ begin
   )
   select
     v_user_id,
-    v_attempt_id,
+    v_attempt.id,
     answer.question_id,
     answer.selected_answer,
     coalesce(answer.selected_answer = question.correct_answer, false)
   from jsonb_to_recordset(p_answers) answer(question_id text, selected_answer text)
-  join private.learning_questions question on question.question_id = answer.question_id;
+  join private.active_learning_questions question on question.question_id = answer.question_id;
 
   for v_evidence in
     select
@@ -433,7 +549,7 @@ begin
       concept_id,
       answer.selected_answer = question.correct_answer as is_correct
     from jsonb_to_recordset(p_answers) answer(question_id text, selected_answer text)
-    join private.learning_questions question on question.question_id = answer.question_id
+    join private.active_learning_questions question on question.question_id = answer.question_id
     cross join lateral unnest(question.concept_ids) concept_id
     where answer.selected_answer is not null
     order by concept_id, answer.question_id
@@ -450,7 +566,7 @@ begin
     );
   end loop;
 
-  return v_attempt_id;
+  return private.simulation_attempt_result(v_user_id, v_attempt.id);
 end;
 $$;
 
@@ -458,3 +574,33 @@ revoke all on function public.submit_simulation_attempt(text, bigint, jsonb, uui
 grant execute on function public.submit_simulation_attempt(text, bigint, jsonb, uuid) to authenticated;
 comment on function public.submit_simulation_attempt(text, bigint, jsonb, uuid)
   is 'Atomically persists an idempotent simulation, derives scoring from private keys, and records mastery evidence.';
+
+-- Learning evidence is append-only through the controlled RPCs above. Owner
+-- reads remain governed by the existing SELECT policies.
+drop policy concept_mastery_insert_own on public.concept_mastery;
+drop policy if exists concept_mastery_update_own on public.concept_mastery;
+drop policy if exists concept_mastery_delete_own on public.concept_mastery;
+drop policy review_events_insert_own on public.review_events;
+drop policy if exists review_events_update_own on public.review_events;
+drop policy if exists review_events_delete_own on public.review_events;
+drop policy question_attempts_insert_own on public.question_attempts;
+drop policy if exists question_attempts_update_own on public.question_attempts;
+drop policy if exists question_attempts_delete_own on public.question_attempts;
+drop policy simulation_attempts_insert_own on public.simulation_attempts;
+drop policy if exists simulation_attempts_update_own on public.simulation_attempts;
+drop policy if exists simulation_attempts_delete_own on public.simulation_attempts;
+drop policy simulation_answers_insert_own on public.simulation_answers;
+drop policy if exists simulation_answers_update_own on public.simulation_answers;
+drop policy if exists simulation_answers_delete_own on public.simulation_answers;
+
+revoke insert, update, delete on table public.concept_mastery from public, anon, authenticated;
+revoke insert, update, delete on table public.review_events from public, anon, authenticated;
+revoke insert, update, delete on table public.question_attempts from public, anon, authenticated;
+revoke insert, update, delete on table public.simulation_attempts from public, anon, authenticated;
+revoke insert, update, delete on table public.simulation_answers from public, anon, authenticated;
+
+grant select on table public.concept_mastery to authenticated;
+grant select on table public.review_events to authenticated;
+grant select on table public.question_attempts to authenticated;
+grant select on table public.simulation_attempts to authenticated;
+grant select on table public.simulation_answers to authenticated;

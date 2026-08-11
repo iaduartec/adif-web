@@ -23,7 +23,7 @@
 
 The eight personal tables are `profiles`, `lesson_progress`, `question_attempts`, `simulation_attempts`, `simulation_answers`, `favorites`, `notes`, and `study_goals`.
 
-Every row is owned by `user_id`, which references the Google-authenticated Supabase user in `auth.users`. Row-level security allows a signed-in user to select, insert, update, or delete only rows where `auth.uid()` equals `user_id`. The `simulation_answers` composite foreign key also requires its `user_id` to match the parent `simulation_attempts` owner.
+Every row is owned by `user_id`, which references the Google-authenticated Supabase user in `auth.users`. Profiles, progress, favorites, notes, and study goals retain owner-scoped CRUD. Learning evidence in `concept_mastery`, `review_events`, `question_attempts`, `simulation_attempts`, and `simulation_answers` is owner-readable but may be written only by the validated review, practice, and simulation RPCs. The RPCs derive identity, correctness, scoring, concept mappings, and mastery changes on the server.
 
 ## Generate TypeScript types
 
@@ -48,3 +48,11 @@ pnpm test -- tests/study-schema-contract.test.ts
 ```
 
 The pgTAP test covers owner success plus cross-user insert, select, and update denial. Simulation submissions use the tracked `submit_simulation_attempt` RPC so the parent attempt and its answers commit in one transaction under `auth.uid()` ownership. No real user credentials or provider secrets are required.
+
+After applying all migrations to a local or disposable PostgreSQL database with Supabase roles, run the behavioral RPC regression through an administrative connection:
+
+```bash
+psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f supabase/tests/adaptive_learning_rpc.sql
+```
+
+The script runs inside `BEGIN`/`ROLLBACK` and checks RPC-only mutation privileges, private-schema isolation, same-payload retries, changed-payload rejection, atomic simulation children, and inactive-concept rejection. A successful run prints `RPC_BEHAVIOR_OK` and leaves no test rows behind.

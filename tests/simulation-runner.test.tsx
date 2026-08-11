@@ -150,6 +150,47 @@ describe("SimulationRunner", () => {
     });
   });
 
+  it("reuses the same idempotency UUID after a failed delivery even if answers change", async () => {
+    const persistedResult = {
+      attemptId: "att-retry",
+      correct: 1,
+      incorrect: 0,
+      omitted: 2,
+      score: 1,
+      elapsedMs: 100,
+      corrections: [
+        { questionId: questions[0].id, selectedAnswer: "A", correctAnswer: "A", isCorrect: true },
+        { questionId: questions[1].id, selectedAnswer: null, correctAnswer: "B", isCorrect: false },
+        { questionId: questions[2].id, selectedAnswer: null, correctAnswer: "C", isCorrect: false },
+      ],
+    };
+    submitSimulation
+      .mockRejectedValueOnce(new Error("Respuesta perdida"))
+      .mockResolvedValueOnce(persistedResult);
+
+    render(
+      <SimulationRunner
+        examId={exam.id}
+        questions={questions}
+        durationMinutes={exam.durationMinutes}
+        onFinish={() => {}}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("radio", { name: /A\. Opción A/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Entregar examen/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Confirmar entrega/i }));
+    expect(await screen.findByText("Respuesta perdida")).toBeVisible();
+
+    fireEvent.click(screen.getByRole("radio", { name: /B\. Opción B/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Entregar examen/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Confirmar entrega/i }));
+
+    await waitFor(() => expect(submitSimulation).toHaveBeenCalledTimes(2));
+    expect(submitSimulation.mock.calls[0][3]).toBe(submitSimulation.mock.calls[1][3]);
+    expect(submitSimulation.mock.calls[0][1]).not.toEqual(submitSimulation.mock.calls[1][1]);
+  });
+
   it("moves focus into the confirmation dialog, traps it, closes on Escape, and restores focus", () => {
     render(
       <SimulationRunner
