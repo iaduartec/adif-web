@@ -76,6 +76,12 @@ También está integrado en `pnpm verify:content`.
 | `pnpm build` | OK |
 | `git diff --check` | OK |
 
+Deployment tras el push: `https://adif-web.vercel.app/curso` respondió HTTP 200.
+La respuesta incluyó cabecera `X-Vercel-Id: cdg1::9dwxz-1786413444488-aa3fed488ad4`
+y `X-Vercel-Cache: HIT`; el acceso a la API autenticada de Vercel no está
+configurado en este entorno, por lo que no se afirma un estado interno `Ready`
+más allá del HTTP 200 observado.
+
 Revisión mínima de rutas con configuración mock de Playwright: `/curso` y
 `/curso/igualdad`, `/curso/psicometria`, `/curso/compatibilidad-electromagnetica`
 y `/curso/ingles-a2` devolvieron HTTP 200.
