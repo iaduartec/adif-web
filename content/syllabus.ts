@@ -1,216 +1,136 @@
 import { lessonTheories } from "./lesson-theory";
+import { lessons } from "./lessons";
+import { SYLLABUS_SOURCES } from "./syllabus-sources";
 
-export type SyllabusStatus = "covered" | "partial" | "missing" | "reference-only";
+export type ConfirmedSyllabusStatus = "covered" | "partial" | "missing" | "reference-only";
+export type SyllabusStatus = ConfirmedSyllabusStatus | "unresolved";
 
 export type SyllabusItem = {
   id: string;
   title: string;
-  officialSourceId: string;
-  officialLocator: string;
+  syllabusSourceId: string;
+  syllabusLocator: string;
+  syllabusQuote?: string;
+  materialSourceIds: string[];
   status: SyllabusStatus;
+  /** Provisional classification retained for identified-scope reporting only. */
+  identifiedStatus?: ConfirmedSyllabusStatus;
   linkedModules: string[];
   rationale: string;
   priority?: "P0" | "P1" | "P2" | "P3";
 };
 
+export type SyllabusInventoryMeta = {
+  sourceComplete: boolean;
+  sourceDocumentId: string;
+  sourceTitle: string;
+  sourceUrl: string;
+  extractedItems: number;
+  unresolvedItems: number;
+};
+
 export type SyllabusCoverageMetrics = {
-  syllabusItemsTotal: number;
+  officialItemsTotal: number | null;
+  identifiedItemsTotal: number;
   covered: number;
   partial: number;
   missing: number;
   referenceOnly: number;
-  coveragePercent: number;
+  unresolved: number;
+  coveragePercent: number | null;
+  identifiedCoveragePercent: number | null;
 };
 
-/**
- * Source-level inventory of the official scope currently represented by the
- * course. PNI26/01 is the current ADIF call page; its public HTML exposes the
- * bases but not an itemised annex, so the map deliberately does not invent
- * finer-grained syllabus wording. The unit of measurement is one named
- * official source/block, not one claim.
- */
+export const syllabusInventoryMeta: SyllabusInventoryMeta = {
+  sourceComplete: false,
+  sourceDocumentId: "pni26-01",
+  sourceTitle: SYLLABUS_SOURCES["pni26-01"].title,
+  sourceUrl: SYLLABUS_SOURCES["pni26-01"].url,
+  extractedItems: 0,
+  unresolvedItems: 17,
+};
+
+const provisionalScope = {
+  syllabusSourceId: "pni26-01",
+  syllabusLocator: "Página de convocatoria PNI26/01; bases adjuntas anunciadas, anexo itemizado no expuesto",
+} as const;
+
+const item = (
+  value: Omit<SyllabusItem, "syllabusSourceId" | "syllabusLocator" | "status">,
+): SyllabusItem => ({
+  ...value,
+  ...provisionalScope,
+  status: "unresolved",
+});
+
+/** Provisional identified scope. It is not the official exhaustive universe. */
 export const syllabusItems: readonly SyllabusItem[] = [
-  {
-    id: "syllabus-constitucion",
-    title: "Constitución Española",
-    officialSourceId: "CE",
-    officialLocator: "Bloque legal citado en el alcance del curso",
-    status: "partial",
-    linkedModules: ["igualdad", "codigo-conducta"],
-    rationale: "Hay principios constitucionales aplicados, pero no un bloque autónomo completo.",
-    priority: "P1",
-  },
-  {
-    id: "syllabus-igualdad",
-    title: "Igualdad efectiva de mujeres y hombres",
-    officialSourceId: "LO 3/2007",
-    officialLocator: "Bloque legal citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["igualdad"],
-    rationale: "El módulo contiene conceptos y claims trazables a la ley y su desarrollo retributivo.",
-  },
-  {
-    id: "syllabus-prl",
-    title: "Prevención de riesgos laborales y equipos de protección",
-    officialSourceId: "Ley 31/1995",
-    officialLocator: "Bloque legal citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["prevencion-riesgos-laborales"],
-    rationale: "El módulo cubre principios preventivos, derechos y obligaciones con fuentes BOE.",
-  },
-  {
-    id: "syllabus-sector-ferroviario",
-    title: "Sector ferroviario y ADIF",
-    officialSourceId: "Ley 38/2015",
-    officialLocator: "Bloque legal citado en Declaración sobre la Red",
-    status: "partial",
-    linkedModules: ["declaracion-red-2027", "estatuto-adif"],
-    rationale: "Está tratado junto con la Declaración sobre la Red, pero faltan apartados autónomos del sector.",
-    priority: "P1",
-  },
-  {
-    id: "syllabus-incompatibilidades",
-    title: "Incompatibilidades del personal de las Administraciones Públicas",
-    officialSourceId: "Ley 53/1984",
-    officialLocator: "Bloque legal citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["incompatibilidades"],
-    rationale: "Módulo específico con artículos, excepciones y fuentes BOE.",
-  },
-  {
-    id: "syllabus-estatuto-adif",
-    title: "Estatuto de la entidad pública empresarial ADIF",
-    officialSourceId: "RD 2395/2004",
-    officialLocator: "Bloque institucional citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["estatuto-adif"],
-    rationale: "Módulo específico con organización, órganos y controles trazados al BOE.",
-  },
-  {
-    id: "syllabus-ict",
-    title: "Infraestructuras comunes de telecomunicaciones",
-    officialSourceId: "RD 346/2011",
-    officialLocator: "Bloque técnico citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["ict-rd-346-2011"],
-    rationale: "Módulo técnico específico con conceptos y artículos del reglamento BOE.",
-  },
-  {
-    id: "syllabus-rcf",
-    title: "Reglamento de Circulación Ferroviaria, Libro 1",
-    officialSourceId: "RD 664/2015",
-    officialLocator: "Bloque ferroviario citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["rcf-libro-1"],
-    rationale: "Módulo específico con definiciones y reglas generales localizadas.",
-  },
-  {
-    id: "syllabus-epi",
-    title: "Equipos de protección individual",
-    officialSourceId: "RD 773/1997",
-    officialLocator: "Bloque preventivo citado en el alcance del curso",
-    status: "partial",
-    linkedModules: ["prevencion-riesgos-laborales"],
-    rationale: "El contenido aparece como parte de PRL; no existe todavía una cobertura independiente completa.",
-    priority: "P1",
-  },
-  {
-    id: "syllabus-igualdad-retributiva",
-    title: "Igualdad retributiva",
-    officialSourceId: "RD 902/2020",
-    officialLocator: "Bloque de igualdad retributiva citado en el alcance del curso",
-    status: "partial",
-    linkedModules: ["igualdad"],
-    rationale: "Se cubren principios y obligaciones seleccionadas, no el desarrollo completo del real decreto.",
-    priority: "P1",
-  },
-  {
-    id: "syllabus-codigo-conducta",
-    title: "Código de conducta de los empleados públicos",
-    officialSourceId: "TREBEP",
-    officialLocator: "Capítulo VI del título III",
-    status: "covered",
-    linkedModules: ["codigo-conducta"],
-    rationale: "El módulo cubre los artículos 52 a 54 del capítulo seleccionado.",
-  },
-  {
-    id: "syllabus-cem-legal",
-    title: "Compatibilidad electromagnética: marco legal",
-    officialSourceId: "Real Decreto 186/2016",
-    officialLocator: "Bloque técnico-legal citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["compatibilidad-electromagnetica"],
-    rationale: "El módulo cubre definición, ámbito y obligaciones con RD y Directiva.",
-  },
-  {
-    id: "syllabus-cem-directiva",
-    title: "Compatibilidad electromagnética: Directiva europea",
-    officialSourceId: "Directiva 2014/30/UE",
-    officialLocator: "Bloque técnico-legal citado en el alcance del curso",
-    status: "covered",
-    linkedModules: ["compatibilidad-electromagnetica"],
-    rationale: "La Directiva está representada con definición y localizador oficial.",
-  },
-  {
-    id: "syllabus-declaracion-red",
-    title: "Declaración sobre la Red de Adif",
-    officialSourceId: "DR 2027",
-    officialLocator: "Capítulos I y II de la edición 2027",
-    status: "covered",
-    linkedModules: ["declaracion-red-2027"],
-    rationale: "Módulo específico de los capítulos I y II con fuente institucional ADIF.",
-  },
-  {
-    id: "syllabus-en-50121",
-    title: "EN 50121: compatibilidad electromagnética ferroviaria",
-    officialSourceId: "EN 50121",
-    officialLocator: "Referencia de norma incluida en la página oficial PNI26/01",
-    status: "reference-only",
-    linkedModules: ["compatibilidad-electromagnetica"],
-    rationale: "La convocatoria acredita inclusión, pero el repositorio no contiene una fuente material legítima de la norma.",
-    priority: "P0",
-  },
-  {
-    id: "syllabus-psicometria",
-    title: "Prueba psicométrica y aptitudes cognitivas",
-    officialSourceId: "MET-PSI-01",
-    officialLocator: "Referencia metodológica de la página oficial PNI26/01",
-    status: "reference-only",
-    linkedModules: ["psicometria"],
-    rationale: "La convocatoria acredita el bloque, pero no publica una guía material accesible en el repositorio.",
-    priority: "P0",
-  },
-  {
-    id: "syllabus-ingles-a2",
-    title: "Conocimiento de idioma inglés orientativo A2",
-    officialSourceId: "MCER-A2",
-    officialLocator: "Nivel A2 según MCER",
-    status: "covered",
-    linkedModules: ["ingles-a2"],
-    rationale: "El módulo usa el MCER como marco y mantiene separado el alcance de convocatoria.",
-  },
+  item({ id: "syllabus-constitucion", title: "Constitución Española", materialSourceIds: ["CE"], identifiedStatus: "partial", linkedModules: ["igualdad", "codigo-conducta"], rationale: "Bloque identificado en la trazabilidad previa; su presencia y granularidad PNI26/01 no están confirmadas.", priority: "P1" }),
+  item({ id: "syllabus-igualdad", title: "Igualdad efectiva de mujeres y hombres", materialSourceIds: ["LO 3/2007", "RD 902/2020"], identifiedStatus: "covered", linkedModules: ["igualdad"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-prl", title: "Prevención de riesgos laborales y equipos de protección", materialSourceIds: ["Ley 31/1995", "RD 773/1997"], identifiedStatus: "covered", linkedModules: ["prevencion-riesgos-laborales"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-sector-ferroviario", title: "Sector ferroviario y ADIF", materialSourceIds: ["Ley 38/2015", "RD 2395/2004"], identifiedStatus: "partial", linkedModules: ["declaracion-red-2027", "estatuto-adif"], rationale: "Bloque identificado en la trazabilidad previa; su presencia y granularidad PNI26/01 no están confirmadas.", priority: "P1" }),
+  item({ id: "syllabus-incompatibilidades", title: "Incompatibilidades del personal de las Administraciones Públicas", materialSourceIds: ["Ley 53/1984"], identifiedStatus: "covered", linkedModules: ["incompatibilidades"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-estatuto-adif", title: "Estatuto de la entidad pública empresarial ADIF", materialSourceIds: ["RD 2395/2004"], identifiedStatus: "covered", linkedModules: ["estatuto-adif"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-ict", title: "Infraestructuras comunes de telecomunicaciones", materialSourceIds: ["RD 346/2011"], identifiedStatus: "covered", linkedModules: ["ict-rd-346-2011"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-rcf", title: "Reglamento de Circulación Ferroviaria, Libro 1", materialSourceIds: ["RD 664/2015"], identifiedStatus: "covered", linkedModules: ["rcf-libro-1"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-epi", title: "Equipos de protección individual", materialSourceIds: ["RD 773/1997"], identifiedStatus: "partial", linkedModules: ["prevencion-riesgos-laborales"], rationale: "Bloque identificado en la trazabilidad previa; su presencia y granularidad PNI26/01 no están confirmadas.", priority: "P1" }),
+  item({ id: "syllabus-igualdad-retributiva", title: "Igualdad retributiva", materialSourceIds: ["RD 902/2020"], identifiedStatus: "partial", linkedModules: ["igualdad"], rationale: "Bloque identificado en la trazabilidad previa; su presencia y granularidad PNI26/01 no están confirmadas.", priority: "P1" }),
+  item({ id: "syllabus-codigo-conducta", title: "Código de conducta de los empleados públicos", materialSourceIds: ["TREBEP"], identifiedStatus: "covered", linkedModules: ["codigo-conducta"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-cem-legal", title: "Compatibilidad electromagnética: marco legal", materialSourceIds: ["Real Decreto 186/2016", "Directiva 2014/30/UE"], identifiedStatus: "covered", linkedModules: ["compatibilidad-electromagnetica"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-cem-directiva", title: "Compatibilidad electromagnética: Directiva europea", materialSourceIds: ["Directiva 2014/30/UE"], identifiedStatus: "covered", linkedModules: ["compatibilidad-electromagnetica"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-declaracion-red", title: "Declaración sobre la Red de Adif", materialSourceIds: ["DR 2027", "Ley 38/2015"], identifiedStatus: "covered", linkedModules: ["declaracion-red-2027"], rationale: "Fuente material trazada, pero falta el anexo oficial que confirme el ítem de alcance." }),
+  item({ id: "syllabus-en-50121", title: "EN 50121: compatibilidad electromagnética ferroviaria", materialSourceIds: [], identifiedStatus: "reference-only", linkedModules: ["compatibilidad-electromagnetica"], rationale: "Referencia técnica identificada, sin documento material legítimo accesible ni confirmación itemizada del anexo PNI26/01.", priority: "P0" }),
+  item({ id: "syllabus-psicometria", title: "Prueba psicométrica y aptitudes cognitivas", materialSourceIds: [], identifiedStatus: "reference-only", linkedModules: ["psicometria"], rationale: "La documentación psicométrica oficial está restringida al portal del candidato; no hay guía material pública verificable.", priority: "P0" }),
+  item({ id: "syllabus-ingles-a2", title: "Conocimiento de idioma inglés orientativo A2", materialSourceIds: ["MCER-A2"], identifiedStatus: "covered", linkedModules: ["ingles-a2"], rationale: "MCER es fuente material del nivel; la convocatoria que demostraría el alcance A2 sigue sin anexo público verificable." }),
 ];
 
-export function getSyllabusCoverage(items: readonly SyllabusItem[]): SyllabusCoverageMetrics {
-  const counts = items.reduce(
-    (acc, item) => {
-      acc[item.status] += 1;
-      return acc;
-    },
-    { covered: 0, partial: 0, missing: 0, "reference-only": 0 } as Record<SyllabusStatus, number>,
-  );
-  const syllabusItemsTotal = items.length;
+export const officialItems: readonly SyllabusItem[] = [];
+
+export function getSyllabusCoverage(
+  items: readonly SyllabusItem[] = syllabusItems,
+  meta: SyllabusInventoryMeta = syllabusInventoryMeta,
+): SyllabusCoverageMetrics {
+  const count = (status: SyllabusStatus, identified = false) =>
+    items.filter((entry) => (identified ? entry.identifiedStatus === status : entry.status === status)).length;
+  const identifiedItemsTotal = items.filter((entry) => entry.identifiedStatus).length;
+  const covered = count("covered");
+  const identifiedCovered = count("covered", true);
   return {
-    syllabusItemsTotal,
-    covered: counts.covered,
-    partial: counts.partial,
-    missing: counts.missing,
-    referenceOnly: counts["reference-only"],
+    officialItemsTotal: meta.sourceComplete ? meta.extractedItems : null,
+    identifiedItemsTotal,
+    covered,
+    partial: count("partial"),
+    missing: count("missing"),
+    referenceOnly: count("reference-only"),
+    unresolved: count("unresolved"),
     coveragePercent:
-      syllabusItemsTotal === 0 ? 0 : Number(((counts.covered / syllabusItemsTotal) * 100).toFixed(2)),
+      meta.sourceComplete && meta.extractedItems > 0
+        ? Number(((covered / meta.extractedItems) * 100).toFixed(2))
+        : null,
+    identifiedCoveragePercent:
+      identifiedItemsTotal > 0 ? Number(((identifiedCovered / identifiedItemsTotal) * 100).toFixed(2)) : null,
   };
 }
 
-export function getTheoryConceptCount(moduleSlug: string): number {
-  return lessonTheories[moduleSlug]?.concepts.length ?? 0;
+export function getMappedModuleSlugs(items: readonly SyllabusItem[] = syllabusItems): string[] {
+  return [...new Set(items.flatMap((entry) => entry.linkedModules))];
+}
+
+export function getUnmappedOfficialItems(
+  official: readonly SyllabusItem[] = officialItems,
+  mapped: readonly SyllabusItem[] = syllabusItems,
+): string[] {
+  const mappedIds = new Set(mapped.map((entry) => entry.id));
+  return official.filter((entry) => !mappedIds.has(entry.id)).map((entry) => entry.id);
+}
+
+export const SUPPORTING_MODULES = ["psicometria", "ingles-a2"] as const;
+
+export function getOrphanCourseModules(items: readonly SyllabusItem[] = syllabusItems): string[] {
+  const mapped = new Set(getMappedModuleSlugs(items));
+  return lessons.map((lesson) => lesson.slug).filter((slug) => !mapped.has(slug));
+}
+
+export function getSupportingModules(): string[] {
+  return [...SUPPORTING_MODULES].filter((slug) => Boolean(lessonTheories[slug]));
 }

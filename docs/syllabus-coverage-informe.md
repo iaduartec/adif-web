@@ -1,102 +1,95 @@
-# Mapa de cobertura del temario oficial ADIF
+# Reconciliación del alcance oficial PNI26/01
 
 Fecha: 2026-08-11
 Repositorio: `iaduartec/adif-web`
-Commit inicial de esta fase: `2851f6485db8d175581fe0e44d0dadb4393ab165`
+Commit base: `348a4f79071bfd9c02c6c733822f84e376224347`
 
-## Fuente de alcance
+## Fuente oficial localizada
 
-La referencia de convocatoria vigente utilizada es la página oficial de ADIF
-[PNI26/01 — Convocatoria Pública de Ingreso en categorías de Personal Operativo](https://www.adif.es/w/pni26-01-personal-operativo).
-La página confirma la convocatoria y remite a las bases, pero el HTML público
-consultado no expone un anexo desglosado con el temario por subapartados.
+La fuente primaria es la [página oficial PNI26/01 de ADIF](https://www.adif.es/w/pni26-01-personal-operativo),
+una página de convocatoria (`pni26-01`). La página confirma 1.079 plazas, la
+fecha de convocatoria (14/07/2026) y que las bases están adjuntas, pero el HTML
+consultado no expone el PDF de bases ni un anexo itemizado del temario.
 
-Por esa limitación real, este primer inventario usa como unidad conservadora cada
-bloque/fuente oficial ya identificado en la trazabilidad del curso. No usa el
-número de claims como cobertura y no inventa títulos de subapartados que no están
-publicados en el repositorio. La fuente de alcance (convocatoria) queda separada
-de las fuentes materiales (BOE, ADIF y MCER).
+También se localizaron el [anuncio BOE-B-2026-24123](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-24123)
+y las [instrucciones oficiales de inscripción](https://www.adif.es/documents/20124/55031380/Instrucciones%2Bpara%2Bformalizar%2Bla%2Binscripci%C3%B3n%2BPNI26%2B01.pdf/f99c019c-92cd-2da1-d5a5-98367b72edb7?t=1783940162781).
+Ninguno contiene el programa itemizado. La guía oficial de alegaciones indica
+además que los cuadernillos psicométricos se consultan desde el portal privado
+del candidato.
 
-## Unidad y fórmula
+**Inventario oficial exhaustivo:** no. El documento necesario no es recuperable
+de las fuentes públicas consultadas. Por tanto, los 17 registros actuales son
+`identified scope`, no “ítems oficiales completos”.
 
-- Unidad: bloque o fuente oficial identificada en el alcance actual.
-- `coveragePercent = covered / syllabusItemsTotal * 100`.
-- Los elementos `partial` y `reference-only` no incrementan `coveragePercent`.
-- La métrica no cuenta claims, conceptos ni ejemplos.
+## Modelo aplicado
 
-## Estado inicial
+`content/syllabus-sources.ts` contiene exclusivamente fuentes de alcance. Cada
+`SyllabusItem` separa:
 
-| Métrica | Valor |
+- `syllabusSourceId` + `syllabusLocator`: por qué podría entrar en examen.
+- `materialSourceIds`: fuentes BOE/ADIF/MCER para estudiar su contenido.
+- `status: unresolved`: alcance no confirmado mientras falte el anexo.
+- `identifiedStatus`: clasificación provisional, solo para la métrica auxiliar.
+
+`coveragePercent` es `null` mientras `sourceComplete === false`.
+La métrica auxiliar es `identifiedCoveragePercent`.
+
+## Estado reconciliado
+
+| Métrica | Resultado |
 |---|---:|
-| Ítems oficiales inventariados | 17 |
-| Covered | 11 |
-| Partial | 4 |
-| Missing | 0 |
-| Reference-only | 2 |
-| Coverage | 64,71 % |
+| Ítems oficiales extraídos | 0 |
+| Subítems oficiales | 0 |
+| `syllabusItems` provisionales | 17 |
+| Covered oficial | 0 |
+| Partial oficial | 0 |
+| Missing oficial | 0 |
+| Reference-only oficial | 0 |
+| Unresolved | 17 |
+| Cobertura oficial | No válida (`null`) |
+| Cobertura identificada provisional | 64,71 % |
 
-El mapa canónico está en [`content/syllabus.ts`](../content/syllabus.ts) y el
-verificador ejecutable en [`scripts/verify-syllabus-coverage.ts`](../scripts/verify-syllabus-coverage.ts).
+El 64,71 % anterior no era una cobertura oficial fiable: trataba fuentes
+materiales (`LO 3/2007`, `RD 346/2011`, etc.) como si fueran fuentes de alcance
+y asumía exhaustividad inexistente. Queda invalidado como porcentaje oficial.
 
-## Gaps priorizados antes de ampliar contenido
+## Mapeo provisional y módulos
 
-| ID | Estado | Módulo actual | Qué cubre | Qué falta | Fuente material | Prioridad |
-|---|---|---|---|---|---|---|
-| `syllabus-sector-ferroviario` | partial | `declaracion-red-2027`, `estatuto-adif` | Ley 38/2015 arts. 4 y 32 y contexto de red | Bloque autónomo del sector ferroviario | BOE Ley 38/2015 | P1 |
-| `syllabus-epi` | partial | `prevencion-riesgos-laborales` | RD 773/1997 arts. 3 y 4 | Desarrollo independiente de selección, uso y obligaciones sobre EPI | BOE RD 773/1997 | P1 |
-| `syllabus-igualdad-retributiva` | partial | `igualdad` | RD 902/2020 art. 7 | Desarrollo completo del principio y herramientas de igualdad retributiva | BOE RD 902/2020 | P1 |
-| `syllabus-constitucion` | partial | `igualdad`, `codigo-conducta` | Principios constitucionales usados como fundamento | Bloque constitucional autónomo | BOE Constitución | P1 |
-| `syllabus-en-50121` | reference-only | `compatibilidad-electromagnetica` | La convocatoria acredita su inclusión | Fuente material legítima accesible de la norma | Referencia ADIF PNI26/01 | P0 |
-| `syllabus-psicometria` | reference-only | `psicometria` | La convocatoria acredita el bloque psicométrico | Guía material oficial publicada | Referencia ADIF PNI26/01 | P0 |
+Los 17 registros conservan el mapa de trabajo anterior, pero todos llevan
+`syllabusSourceId: pni26-01` y `status: unresolved`. Los módulos de psicometría e
+inglés A2 se conservan como contenido de apoyo identificado; su presencia y
+granularidad exacta deben confirmarse en las bases/anexo. No se han reescrito
+claims ni añadido teoría.
 
-## Decisión de ampliación de esta sesión
+- Ítems oficiales sin mapear: no evaluable (`officialItems` está vacío).
+- Módulos huérfanos: no evaluables contra un universo oficial no recuperado.
+- Materiales psicométricos: no se presenta la etiqueta interna `MET-PSI-01` como
+  guía oficial pública.
+- EN 50121: `identifiedStatus: reference-only`, sin `materialSourceIds`.
+- Inglés: MCER-A2 solo es fuente material del nivel; no demuestra que PNI26/01
+  exija A2.
 
-No se ha añadido contenido normativo nuevo todavía. El anexo oficial itemizado
-de PNI26/01 no está disponible en el checkout ni se expone en la página pública
-consultada; ampliar ahora exigiría adivinar el alcance exacto. El siguiente lote
-válido es el de los cuatro gaps P1 anteriores, una vez incorporado o verificado
-el anexo oficial. EN 50121 y MET-PSI-01 permanecen `reference-only` por falta de
-fuente material legítima, conforme a la regla de no inventar normas técnicas.
+## Guardrails y tests
 
-## Guardrails implementados
+El verificador comprueba fuentes separadas, localizadores, IDs duplicados,
+módulos y materiales válidos, estados `unresolved`/`reference-only`, coherencia
+de `covered`/`missing`, porcentaje nulo con inventario incompleto y la regla de
+“missing invisible” cuando un inventario exhaustivo omite un ID oficial.
 
-`pnpm verify:syllabus` comprueba IDs únicos, estados válidos, fuentes registradas,
-módulos existentes, coherencia entre estado y contenido, y porcentajes derivados.
-También está integrado en `pnpm verify:content`.
+## Verificación
 
-## Verificación de esta fase
+- `pnpm verify:syllabus`: OK; 17 identificados, 17 unresolved, cobertura oficial no disponible.
+- `pnpm verify:content`: OK; teoría 11/87/15/76/167 y guardrail de syllabus OK.
+- `pnpm typecheck`: OK.
+- `pnpm lint`: OK; 2 warnings preexistentes, 0 errores.
+- `pnpm test`: **186 passed / 29 files**.
+- `pnpm build`: OK.
+- `git diff --check`: OK antes del commit.
 
-| Check | Resultado |
-|---|---|
-| `pnpm verify:content` | OK; 11 módulos, 87 conceptos, 15 ejemplos, 76 fuentes, 167 claims |
-| `pnpm verify:syllabus` | OK; 17 items, 64,71 % |
-| `pnpm typecheck` | OK |
-| `pnpm lint` | OK; 2 warnings preexistentes de navegación interna |
-| `pnpm test` | 183 passed / 29 files |
-| `pnpm build` | OK |
-| `git diff --check` | OK |
+## Limitación y siguiente paso
 
-Deployment tras el push: `https://adif-web.vercel.app/curso` respondió HTTP 200.
-La respuesta incluyó cabecera `X-Vercel-Id: cdg1::9dwxz-1786413444488-aa3fed488ad4`
-y `X-Vercel-Cache: HIT`; el acceso a la API autenticada de Vercel no está
-configurado en este entorno, por lo que no se afirma un estado interno `Ready`
-más allá del HTTP 200 observado.
-
-Revisión mínima de rutas con configuración mock de Playwright: `/curso` y
-`/curso/igualdad`, `/curso/psicometria`, `/curso/compatibilidad-electromagnetica`
-y `/curso/ingles-a2` devolvieron HTTP 200.
-
-## Estado final de esta fase
-
-No hay ampliación material de teoría en este commit: el cambio queda limitado al
-mapa, su verificador, tests y documentación. Por tanto, los contadores de teoría
-y las métricas de cobertura son iguales antes y después. El siguiente commit de
-contenido debe esperar al anexo oficial itemizado o a una fuente ADIF equivalente.
-
-## Próximos cinco gaps
-
-1. `syllabus-sector-ferroviario` — separar y completar el bloque de Ley 38/2015.
-2. `syllabus-epi` — ampliar EPI con material BOE verificable.
-3. `syllabus-igualdad-retributiva` — completar RD 902/2020 con texto vigente.
-4. `syllabus-constitucion` — confirmar si el anexo oficial exige un bloque autónomo.
-5. `syllabus-en-50121` — mantener reference-only hasta disponer de material legítimo.
+No se debe ampliar contenido P0/P1 ni publicar un porcentaje de cobertura oficial
+hasta obtener el PDF/anexo de bases itemizado desde ADIF o desde el portal oficial
+correspondiente. El siguiente paso es incorporar ese documento como
+`SyllabusSource`, extraer todos sus ítems y activar `sourceComplete: true` solo
+después de validar la exhaustividad.
