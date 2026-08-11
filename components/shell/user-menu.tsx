@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { createBrowserClient } from "../../lib/supabase/browser";
 
 export type UserProfile = { avatarUrl?: string; email?: string; name?: string };
@@ -70,6 +71,7 @@ export function UserMenu({ profile }: { profile: UserProfile }) {
         <div className="user-menu-popover" role="menu">
           <p className="user-menu-name">{name}</p>
           {profile.email ? <p className="user-menu-email">{profile.email}</p> : null}
+          <Link className="user-menu-profile" href="/onboarding" role="menuitem">Editar preparación</Link>
           {signOutError ? <p className="user-menu-error" role="alert">{signOutError}</p> : null}
           <button className="user-menu-sign-out" type="button" role="menuitem" disabled={isSigningOut} onClick={() => void signOut()}>
             {isSigningOut ? "Cerrando sesión…" : "Cerrar sesión"}

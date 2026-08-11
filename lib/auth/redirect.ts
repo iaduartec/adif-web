@@ -2,10 +2,21 @@ type AuthUser = { id: string } | null;
 
 const publicAuthRoutes = new Set(["/login", "/auth/callback"]);
 
-export function resolveProtectedRoute(user: AuthUser, pathname: string): string | null {
-  if (user || publicAuthRoutes.has(pathname.split("?")[0])) {
+export function resolveProtectedRoute(
+  user: AuthUser,
+  pathname: string,
+  onboardingComplete = true,
+): string | null {
+  const route = pathname.split("?")[0];
+  if (publicAuthRoutes.has(route)) {
     return null;
   }
+
+  if (user && !onboardingComplete && route !== "/onboarding") {
+    return `/onboarding?next=${encodeURIComponent(pathname)}`;
+  }
+
+  if (user) return null;
 
   return `/login?next=${encodeURIComponent(pathname)}`;
 }

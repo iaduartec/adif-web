@@ -3,9 +3,9 @@ import { resolveProtectedRoute } from "./lib/auth/redirect";
 import { updateSession } from "./lib/supabase/middleware";
 
 export async function proxy(request: NextRequest) {
-  const { response, user } = await updateSession(request);
+  const { response, user, onboardingComplete } = await updateSession(request);
   const requestedPath = `${request.nextUrl.pathname}${request.nextUrl.search}`;
-  const redirect = resolveProtectedRoute(user, requestedPath);
+  const redirect = resolveProtectedRoute(user, requestedPath, onboardingComplete);
 
   if (!redirect) {
     return response;

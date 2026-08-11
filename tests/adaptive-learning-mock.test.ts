@@ -16,7 +16,7 @@ describe("adaptive learning Supabase mock", () => {
     expect(store.dailyPlanActions).toEqual([]);
     expect(store.studyGoals[0]).toMatchObject({
       exam_date: null,
-      onboarding_completed_at: null,
+      onboarding_completed_at: "2026-08-11T00:00:00.000Z",
       session_minutes: 30,
     });
 

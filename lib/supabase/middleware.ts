@@ -1,6 +1,6 @@
 import { createServerClient as createSupabaseServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
-import { MOCK_USER } from "./mock-store";
+import { getMockStore, MOCK_USER } from "./mock-store";
 import { getSupabaseRuntimeConfig } from "./config";
 
 type SessionUser = { id: string } | null;
@@ -8,12 +8,14 @@ type SessionUser = { id: string } | null;
 export async function updateSession(request: NextRequest): Promise<{
   response: NextResponse;
   user: SessionUser;
+  onboardingComplete: boolean;
 }> {
   const config = getSupabaseRuntimeConfig();
   let response = NextResponse.next({ request });
 
   if (config.mode === "mock") {
-    return { response, user: MOCK_USER };
+    const goal = getMockStore().studyGoals.find((row) => row.user_id === MOCK_USER.id);
+    return { response, user: MOCK_USER, onboardingComplete: Boolean(goal?.onboarding_completed_at) };
   }
 
   const supabase = createSupabaseServerClient(config.url, config.anonKey, {
@@ -35,5 +37,13 @@ export async function updateSession(request: NextRequest): Promise<{
     data: { user },
   } = await supabase.auth.getUser();
 
-  return { response, user };
+  if (!user) return { response, user, onboardingComplete: false };
+
+  const { data: goal } = await supabase
+    .from("study_goals")
+    .select("onboarding_completed_at")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  return { response, user, onboardingComplete: Boolean(goal?.onboarding_completed_at) };
 }

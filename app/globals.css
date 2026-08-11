@@ -69,6 +69,8 @@ button:focus-visible,
 .user-menu-name, .user-menu-email { overflow-wrap: anywhere; margin: 0; }
 .user-menu-name { font-size: .875rem; font-weight: 700; }
 .user-menu-email { margin-top: .25rem; color: color-mix(in srgb, var(--ink) 68%, var(--paper)); font-size: .8125rem; }
+.user-menu-profile { display: block; width: 100%; min-height: 2.75rem; margin-top: 1rem; border: 1px solid var(--rail); padding: .5rem .75rem; color: var(--ink); font-size: .8125rem; font-weight: 700; line-height: 1.75rem; text-decoration: none; }
+.user-menu-profile:hover { border-color: var(--accent); color: var(--accent-strong); }
 .user-menu-error { margin: .75rem 0 0; color: #9b1c1c; font-size: .8125rem; line-height: 1.45; }
 .user-menu-sign-out { width: 100%; min-height: 2.75rem; margin-top: 1rem; border: 1px solid var(--accent); padding: .5rem .75rem; background: transparent; color: var(--accent-strong); cursor: pointer; font: inherit; font-size: .8125rem; font-weight: 700; text-align: left; }
 [aria-busy="true"] { animation: shell-loading 1.2s ease-in-out infinite alternate; }
@@ -238,6 +240,20 @@ button:focus-visible,
 .answer-correction p + p { margin-top: .35rem; color: var(--accent-strong); }
 
 .data-panel { margin: 2.5rem 0; border-top: 1px solid var(--ink); padding-top: 1rem; }
+
+.onboarding-page { display: grid; min-height: 100vh; place-items: center; padding: clamp(1.25rem, 5vw, 4rem); background: var(--quiet); }
+.onboarding-panel { width: min(100%, 44rem); padding: clamp(1.5rem, 5vw, 3.5rem); background: var(--paper); border: 1px solid var(--rail); }
+.onboarding-panel h1 { max-width: 16ch; margin: .35rem 0 1rem; font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -.045em; line-height: 1; }
+.onboarding-intro { max-width: 58ch; margin: 0; color: var(--muted); line-height: 1.6; }
+.onboarding-form { display: grid; gap: 1.5rem; margin-top: 2rem; }
+.onboarding-field { display: grid; gap: .625rem; margin: 0; border: 0; padding: 0; }
+.onboarding-field > label, .onboarding-field > legend { font-weight: 700; }
+.onboarding-field input[type="number"], .onboarding-field input[type="date"] { width: min(100%, 18rem); border: 1px solid var(--rail); padding: .75rem; color: var(--ink); background: var(--paper); font: inherit; }
+.onboarding-day-grid, .onboarding-session-grid { display: flex; flex-wrap: wrap; gap: .6rem; }
+.onboarding-day-grid label, .onboarding-session-grid label, .onboarding-diagnostic { display: inline-flex; align-items: center; gap: .45rem; }
+.onboarding-field p, .onboarding-form__status p { margin: 0; color: var(--danger); font-size: .875rem; }
+.onboarding-diagnostic { font-weight: 700; }
+.onboarding-diagnostic__hint { max-width: 60ch; margin: -1rem 0 0; color: var(--muted); font-size: .875rem; line-height: 1.5; }
 .data-panel h2 { margin: 0 0 1rem; font-size: 1.15rem; font-weight: 600; }
 .data-table-wrap { overflow-x: auto; }
 .data-table { width: 100%; border-collapse: collapse; color: var(--ink); font-size: .875rem; text-align: left; }

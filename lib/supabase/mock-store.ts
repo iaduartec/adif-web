@@ -132,7 +132,7 @@ class MockStore {
       updated_at: new Date().toISOString(),
       exam_date: null,
       session_minutes: 30,
-      onboarding_completed_at: null,
+      onboarding_completed_at: "2026-08-11T00:00:00.000Z",
     },
   ];
 
@@ -155,7 +155,7 @@ class MockStore {
         updated_at: new Date().toISOString(),
         exam_date: null,
         session_minutes: 30,
-        onboarding_completed_at: null,
+        onboarding_completed_at: "2026-08-11T00:00:00.000Z",
       },
     ];
   }

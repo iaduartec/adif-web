@@ -252,6 +252,14 @@ describe("authenticated navigation", () => {
     expect(screen.getByRole("button", { name: "Abrir menú de cuenta" })).toBeInTheDocument();
   });
 
+  it("links the account menu to the editable preparation profile", () => {
+    render(<UserMenu profile={{ email: "ana@example.com", name: "Ana López" }} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Abrir menú de cuenta" }));
+
+    expect(screen.getByRole("menuitem", { name: "Editar preparación" })).toHaveAttribute("href", "/onboarding");
+  });
+
   it("replaces a failed decorative avatar with accessible account initials", () => {
     render(<UserMenu profile={{ avatarUrl: "https://example.com/broken.jpg", email: "ana@example.com", name: "Ana López" }} />);
 

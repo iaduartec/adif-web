@@ -22,6 +22,7 @@ type SearchParams = {
   query?: string;
   page?: string;
   practice?: string;
+  diagnostic?: string;
 };
 
 function getSelectedYear(value: string | undefined): number | undefined {
@@ -43,6 +44,7 @@ export default async function TestsPage({
   const statusFilter = params.status ?? "all";
   const requestedPage = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
   const isPractice = params.practice === "true";
+  const diagnosticIds = new Set((params.diagnostic ?? "").split(",").filter(Boolean));
 
   const supabase = await createServerClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -85,6 +87,9 @@ export default async function TestsPage({
     filtered = filtered.filter((question) => failedIds.has(question.id));
   } else if (statusFilter === "favorites") {
     filtered = filtered.filter((question) => favoriteIds.has(question.id));
+  }
+  if (diagnosticIds.size > 0) {
+    filtered = filtered.filter((question) => diagnosticIds.has(question.id));
   }
 
   const totalItems = filtered.length;
