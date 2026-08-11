@@ -21,9 +21,11 @@
 
 ## Database ownership rule
 
-The eight personal tables are `profiles`, `lesson_progress`, `question_attempts`, `simulation_attempts`, `simulation_answers`, `favorites`, `notes`, and `study_goals`.
+The personal tables are `profiles`, `lesson_progress`, `question_attempts`, `simulation_attempts`, `simulation_answers`, `favorites`, `notes`, `study_goals`, `concept_mastery`, `review_events`, and `daily_plan_actions`.
 
-Every row is owned by `user_id`, which references the Google-authenticated Supabase user in `auth.users`. Profiles, progress, favorites, notes, and study goals retain owner-scoped CRUD. Learning evidence in `concept_mastery`, `review_events`, `question_attempts`, `simulation_attempts`, and `simulation_answers` is owner-readable but may be written only by the validated review, practice, and simulation RPCs. The RPCs derive identity, correctness, scoring, concept mappings, and mastery changes on the server.
+Every row is owned by `user_id`, which references the Google-authenticated Supabase user in `auth.users`. Profiles, progress, favorites, notes, and study goals retain owner-scoped CRUD. Learning evidence in `concept_mastery`, `review_events`, `question_attempts`, `simulation_attempts`, and `simulation_answers` is owner-readable but may be written only by the validated review, practice, and simulation RPCs. Daily plan actions are owner-readable and append-only through `record_daily_plan_action`; direct authenticated inserts, updates, and deletes are revoked. The RPCs derive identity from `auth.uid()` and validate their respective immutable input contracts.
+
+Daily plans themselves are not stored. The server rebuilds them from active content and owner history. A direct owner call to the daily-action RPC can only add a structurally valid preference for today's Madrid date; active-task and same-or-shorter replacement checks are reapplied when the plan is assembled, so stale keys are ignored and cannot activate content or expand access.
 
 ## Generate TypeScript types
 
@@ -44,7 +46,7 @@ supabase test db
 The focused contract test can be run with the application suite:
 
 ```bash
-pnpm test -- tests/study-schema-contract.test.ts
+pnpm exec vitest run tests/study-schema-contract.test.ts tests/daily-plan-security-contract.test.ts
 ```
 
 The pgTAP test covers owner success plus cross-user insert, select, and update denial. Simulation submissions use the tracked `submit_simulation_attempt` RPC so the parent attempt and its answers commit in one transaction under `auth.uid()` ownership. No real user credentials or provider secrets are required.

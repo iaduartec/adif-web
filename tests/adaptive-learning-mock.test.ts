@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import type { Database } from "../lib/database.types";
 import { createMockSupabaseClient } from "../lib/supabase/mock-client";
@@ -125,6 +125,54 @@ describe("adaptive learning Supabase mock", () => {
     expect(first.error).toBeNull();
     expect(duplicate).toMatchObject({ data: null, error: { code: "23505" } });
     expect(store.dailyPlanActions).toHaveLength(1);
+  });
+
+  it("models the authenticated append-only daily action RPC and immutable retry contract", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-08-11T10:00:00.000Z"));
+    try {
+      const store = getMockStore();
+      store.reset();
+      const client = createMockSupabaseClient();
+      const args = {
+        p_plan_date: "2026-08-11",
+        p_task_key: "lesson:lesson-a",
+        p_action: "replace",
+        p_replacement_task_key: "review:concept-a",
+      };
+
+      const first = await client.rpc("record_daily_plan_action", args);
+      const retry = await client.rpc("record_daily_plan_action", args);
+      const changed = await client.rpc("record_daily_plan_action", {
+        ...args,
+        p_replacement_task_key: "review:concept-b",
+      });
+
+      expect(first).toEqual({ data: true, error: null });
+      expect(retry).toEqual(first);
+      expect(changed).toMatchObject({ data: null, error: { code: "23505" } });
+      expect(store.dailyPlanActions).toHaveLength(1);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("rolls back an internally duplicated daily-action batch atomically", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const action = {
+      action: "postpone" as const,
+      plan_date: "2026-08-11",
+      replacement_task_key: null,
+      task_key: "review:concept-1",
+      user_id: "test-user-id",
+    };
+
+    const duplicateBatch = await client.from("daily_plan_actions").insert([action, action]);
+
+    expect(duplicateBatch).toMatchObject({ data: null, error: { code: "23505" } });
+    expect(store.dailyPlanActions).toEqual([]);
   });
 
   it("exposes generated table contracts for adaptive records", () => {

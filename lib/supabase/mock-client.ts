@@ -218,11 +218,17 @@ export function createMockSupabaseClient() {
           resultData = [...dataState];
         } else if (operation === "insert") {
           const rows = Array.isArray(operationPayload) ? operationPayload : [operationPayload];
-          if (tableName === "daily_plan_actions" && rows.some((row) => dataState.some((existing) => (
-            existing.user_id === row.user_id
-            && existing.plan_date === row.plan_date
-            && existing.task_key === row.task_key
-          )))) {
+          const incomingActionKeys = new Set<string>();
+          if (tableName === "daily_plan_actions" && rows.some((row) => {
+            const key = `${row.user_id}\u001f${row.plan_date}\u001f${row.task_key}`;
+            if (incomingActionKeys.has(key)) return true;
+            incomingActionKeys.add(key);
+            return dataState.some((existing) => (
+              existing.user_id === row.user_id
+              && existing.plan_date === row.plan_date
+              && existing.task_key === row.task_key
+            ));
+          })) {
             operationError = Object.assign(
               new Error("duplicate key value violates daily_plan_actions user/date/task uniqueness"),
               { code: "23505" },
@@ -358,6 +364,49 @@ export function createMockSupabaseClient() {
         data: null,
         error: constraintError("Idempotency key was already used with a different payload."),
       });
+
+      if (functionName === "record_daily_plan_action") {
+        const currentMadridDate = madridDayKey(new Date());
+        const taskKeyValid = typeof args.p_task_key === "string"
+          && args.p_task_key.trim().length > 0
+          && args.p_task_key.length <= 200;
+        const replacementKeyValid = typeof args.p_replacement_task_key === "string"
+          && args.p_replacement_task_key.trim().length > 0
+          && args.p_replacement_task_key.length <= 200
+          && args.p_replacement_task_key !== args.p_task_key;
+        const shapeValid = args.p_action === "postpone"
+          ? args.p_replacement_task_key == null
+          : args.p_action === "replace" && replacementKeyValid;
+        if (args.p_plan_date !== currentMadridDate || !taskKeyValid || !shapeValid) {
+          return Promise.resolve({ data: null, error: constraintError("Invalid daily plan action") });
+        }
+        const existing = mockStore.dailyPlanActions.find((action) => (
+          action.user_id === MOCK_USER.id
+          && action.plan_date === args.p_plan_date
+          && action.task_key === args.p_task_key
+        ));
+        if (existing) {
+          if (
+            existing.action === args.p_action
+            && existing.replacement_task_key === (args.p_replacement_task_key ?? null)
+          ) return Promise.resolve({ data: true, error: null });
+          return Promise.resolve({
+            data: null,
+            error: Object.assign(new Error("A different action already exists."), { code: "23505" }),
+          });
+        }
+        const createdAt = new Date().toISOString();
+        mockStore.dailyPlanActions.push({
+          id: Math.random().toString(36).substring(7),
+          user_id: MOCK_USER.id,
+          plan_date: args.p_plan_date,
+          task_key: args.p_task_key,
+          action: args.p_action,
+          replacement_task_key: args.p_replacement_task_key ?? null,
+          created_at: createdAt,
+        });
+        return Promise.resolve({ data: true, error: null });
+      }
 
       if (functionName === "record_practice_attempt") {
         const mode = args.p_mode ?? "practice";

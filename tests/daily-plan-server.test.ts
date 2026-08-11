@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { assembleDailyPlanInputFromRows } from "../lib/adaptive/daily-plan-server";
+import { buildDailyPlan } from "../lib/adaptive/daily-plan";
 
 describe("daily-plan server assembly", () => {
   it("assembles only active content and authenticated history into deterministic domain input", () => {
@@ -49,7 +50,6 @@ describe("daily-plan server assembly", () => {
     expect(input).toMatchObject({
       date: "2026-08-11",
       availableMinutes: 30,
-      evidenceSufficient: true,
       reviews: [{ conceptId: "active-a", title: "Active A", dueOn: "2026-08-10", status: "at_risk" }],
       lessons: [{ lessonId: "lesson-b", title: "Lesson B", remainingMinutes: 5 }],
       practiceQuestions: [{ id: "q-active-1" }, { id: "q-active-2" }],
@@ -66,7 +66,7 @@ describe("daily-plan server assembly", () => {
     });
   });
 
-  it("marks a new user as insufficient evidence without inventing stored plan rows", () => {
+  it("marks fewer than 20 unique questions or 10 reviewed concepts as insufficient evidence", () => {
     const input = assembleDailyPlanInputFromRows({
       date: "2026-08-11",
       sessionMinutes: 20,
@@ -79,8 +79,39 @@ describe("daily-plan server assembly", () => {
       history: { mastery: [], lessonProgress: [], questionAttempts: [], simulationAttempts: [], actions: [] },
     });
 
-    expect(input.evidenceSufficient).toBe(false);
+    expect(buildDailyPlan(input).evidenceSufficient).toBe(false);
     expect(input.actions).toEqual([]);
     expect(input.lessons).toEqual([{ lessonId: "lesson", title: "Lesson", remainingMinutes: 10 }]);
+  });
+
+  it("marks evidence sufficient only when both exact minimums are met", () => {
+    const input = assembleDailyPlanInputFromRows({
+      date: "2026-08-11",
+      sessionMinutes: 20,
+      content: {
+        concepts: Array.from({ length: 10 }, (_, index) => ({
+          conceptId: `concept-${index}`,
+          title: `Concept ${index}`,
+          lessonId: "lesson",
+        })),
+        lessons: [{ lessonId: "lesson", title: "Lesson" }],
+        questions: Array.from({ length: 20 }, (_, index) => ({ id: `q-${index}`, conceptIds: [`concept-${index % 10}`] })),
+        simulations: [],
+      },
+      history: {
+        mastery: Array.from({ length: 10 }, (_, index) => ({
+          conceptId: `concept-${index}`,
+          status: "review",
+          dueOn: "2026-08-12",
+          repetitions: 1,
+        })),
+        lessonProgress: [],
+        questionAttempts: Array.from({ length: 20 }, (_, index) => ({ questionId: `q-${index}` })),
+        simulationAttempts: [],
+        actions: [],
+      },
+    });
+
+    expect(buildDailyPlan(input).evidenceSufficient).toBe(true);
   });
 });

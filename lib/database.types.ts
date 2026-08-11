@@ -386,6 +386,15 @@ export type Database = {
     };
     Views: Record<string, never>;
     Functions: {
+      record_daily_plan_action: {
+        Args: {
+          p_action: string;
+          p_plan_date: string;
+          p_replacement_task_key?: string | null;
+          p_task_key: string;
+        };
+        Returns: boolean;
+      };
       record_practice_attempt: {
         Args: {
           p_client_event_id: string;

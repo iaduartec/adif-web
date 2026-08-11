@@ -53,28 +53,21 @@ async function persistAction({
   replacementTaskKey,
   supabase,
   taskKey,
-  userId,
 }: {
   action: DailyPlanAction["action"];
   planDate: string;
   replacementTaskKey: string | null;
   supabase: Awaited<ReturnType<typeof createServerClient>>;
   taskKey: string;
-  userId: string;
 }) {
-  const { error } = await supabase.from("daily_plan_actions").insert({
-    user_id: userId,
-    plan_date: planDate,
-    task_key: taskKey,
-    action,
-    replacement_task_key: replacementTaskKey,
+  const { error } = await supabase.rpc("record_daily_plan_action", {
+    p_plan_date: planDate,
+    p_task_key: taskKey,
+    p_action: action,
+    p_replacement_task_key: replacementTaskKey,
   });
   if (!error) return { ok: true } as const;
 
-  if (error.code === "23505") {
-    const raced = await existingAction(supabase, userId, planDate, taskKey);
-    if (raced && sameAction(raced, action, replacementTaskKey)) return { ok: true } as const;
-  }
   throw new Error("No se ha podido guardar la acción del plan. Inténtalo de nuevo.");
 }
 
@@ -108,7 +101,6 @@ export async function postponeDailyTask(planDate: string, taskKey: string) {
     replacementTaskKey: null,
     supabase,
     taskKey,
-    userId: user.id,
   });
 }
 
@@ -125,6 +117,15 @@ export async function replaceDailyTask(planDate: string, taskKey: string, replac
   if (!original) throw new Error("La tarea original ya no está activa en el plan de hoy.");
   const replacement = listDailyTaskCandidates(input).find((task) => task.key === replacementTaskKey);
   if (!replacement) throw new Error("La tarea alternativa ya no está activa.");
+  if (buildDailyPlan(input).tasks.some((task) => task.key === replacementTaskKey)) {
+    throw new Error("La tarea alternativa ya está incluida en el plan de hoy.");
+  }
+  const todaysActions = input.actions.filter((action) => action.planDate === planDate);
+  if (todaysActions.some((action) => (
+    action.taskKey === replacementTaskKey || action.replacementTaskKey === replacementTaskKey
+  ))) {
+    throw new Error("La tarea alternativa ya está aplazada, reemplazada o asignada hoy.");
+  }
   if (replacement.estimatedMinutes > original.estimatedMinutes) {
     throw new Error("La duración de la alternativa no puede superar la de la tarea original.");
   }
@@ -135,6 +136,5 @@ export async function replaceDailyTask(planDate: string, taskKey: string, replac
     replacementTaskKey,
     supabase,
     taskKey,
-    userId: user.id,
   });
 }

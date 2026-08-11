@@ -141,6 +141,39 @@ exception when insufficient_privilege then null;
 end;
 $$;
 
+select public.record_daily_plan_action(
+  (pg_catalog.timezone('Europe/Madrid', pg_catalog.now()))::date,
+  'review:ict-concept-24', 'postpone', null
+);
+select public.record_daily_plan_action(
+  (pg_catalog.timezone('Europe/Madrid', pg_catalog.now()))::date,
+  'review:ict-concept-24', 'postpone', null
+);
+
+do $$
+begin
+  perform public.record_daily_plan_action(
+    (pg_catalog.timezone('Europe/Madrid', pg_catalog.now()))::date,
+    'review:ict-concept-24', 'replace', 'lesson:ict-rd-346-2011'
+  );
+  raise exception 'Expected changed daily action to be rejected';
+exception when unique_violation then null;
+end;
+$$;
+
+do $$
+begin
+  insert into public.daily_plan_actions (
+    user_id, plan_date, task_key, action, replacement_task_key
+  ) values (
+    auth.uid(), (pg_catalog.timezone('Europe/Madrid', pg_catalog.now()))::date,
+    'review:direct-write', 'postpone', null
+  );
+  raise exception 'Expected direct daily action insert to be denied';
+exception when insufficient_privilege then null;
+end;
+$$;
+
 reset role;
 
 do $$
@@ -153,7 +186,7 @@ begin
   end if;
   foreach protected_table in array array[
     'concept_mastery', 'review_events', 'question_attempts',
-    'simulation_attempts', 'simulation_answers'
+    'simulation_attempts', 'simulation_answers', 'daily_plan_actions'
   ] loop
     if has_table_privilege('authenticated', 'public.' || protected_table, 'insert')
       or has_table_privilege('authenticated', 'public.' || protected_table, 'update')
@@ -164,6 +197,11 @@ begin
       raise exception 'authenticated lacks owner read privilege on %', protected_table;
     end if;
   end loop;
+
+  if (select count(*) from public.daily_plan_actions
+      where user_id = '11111111-1111-4111-8111-111111111111') <> 1 then
+    raise exception 'Daily action retry did not preserve one immutable row';
+  end if;
 
   if (select count(*) from public.question_attempts
       where user_id = '11111111-1111-4111-8111-111111111111') <> 1 then

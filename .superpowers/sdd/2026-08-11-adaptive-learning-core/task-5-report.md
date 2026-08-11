@@ -89,9 +89,70 @@ git diff --check
 
 ## Concerns
 
-- `evidenceSufficient` currently becomes true after the first active question attempt or completed recall. The stricter 20-question/10-concept threshold is reserved for first-simulation eligibility; future product calibration may choose a larger diagnostic sample without changing task persistence.
+- Evidence is insufficient until both 20 unique active-question attempts and 10 reviewed active concepts exist. This is deliberately the same minimum-evidence gate used by the first-simulation branch.
 - The active lesson model has no authoritative total reading duration. Server assembly therefore emits ten-minute chunks and treats progress at 95–99% as a five-minute final chunk instead of inventing a total lesson length.
 
 ## Commit
 
 - `feat: add deterministic daily planning`
+
+## Review round 1/5 — capacity, action integrity, and append-only persistence
+
+### Findings addressed
+
+- Removed the caller-supplied evidence flag. The pure engine now derives sufficient evidence exactly as `uniqueQuestionCount >= 20 && reviewedConceptCount >= 10`; either lower count selects the insufficient-evidence branch.
+- Replaced the single practice task with deterministic, nonoverlapping blocks. Ten-question/12-minute blocks are used when the allocation supports them; five-question/6-minute blocks are used when the session budget needs scaling. Keys contain the diagnostic/new mode, block number, and a stable hash of the exact question IDs.
+- Lessons now expose successive stable ten-minute chunks, a known 5–9 minute final remainder, and a 5–9 minute capacity-fill chunk. Allocation continues across all eligible blocks until nothing fits, while the review cap remains absolute.
+- Insufficient 60-minute plans continue beyond the mandatory diagnostic and first incomplete lesson with additional new-question and lesson blocks. Seven-day-due official simulations remain eligible even while the evidence sample is below 20/10.
+- Yesterday's postponed stable key is promoted for every task family: review, lesson, practice block, and simulation. Debt affects selection as well as output order.
+- Action replay no longer deduplicates collisions. An invalid/conflicting stored replacement leaves the original work intact; valid replacements preserve task count. A replacement is invalid if its target is already selected, is another action's original or target, is inactive, is oversized, is repeated, or is the same key.
+- Server replacement validation enforces those same conflicts before persistence and reconstructs every candidate from active content and authenticated history.
+- Added forward-only migration `202608110005_daily_plan_actions_rpc.sql`. Authenticated direct `INSERT`, `UPDATE`, and `DELETE` are revoked, mutation policies are removed, and the only learner write path is `record_daily_plan_action`, a security-definer RPC that derives `auth.uid()`, requires today's Madrid date, validates action/key shape, and implements immutable identical retries through the unique user/date/task key.
+- The mock implements RPC idempotency/conflict behavior and now detects both stored and within-payload duplicate daily actions before any batch row is written.
+- Pure date validation performs a UTC calendar round trip, rejecting impossible ISO-looking dates such as `2026-02-31`. Date-dependent action and mock tests freeze time explicitly.
+
+### RED evidence
+
+The first focused review run exited 1 with 15 failures and 6 passes across plan, assembly, and action suites. It demonstrated the one-event evidence gate, single practice/session output, capacity left despite eligible work, conflicting replacements deleting work through deduplication, debt limited to reviews, source-dependent current dates, and acceptance of impossible calendar dates.
+
+The security/mock RED run exited 1 with 3 failures and 13 passes: migration 005 was absent, the action RPC was unknown, and an internally duplicated two-row mock insert committed both rows.
+
+A dedicated server-action RED then resolved `{ ok: true }` for a replacement target already postponed by today's actions. Additional allocator RED tests showed a lower-priority practice block winning over an eligible partial lesson and a ten-question pool not scaling into two stable half blocks.
+
+### GREEN evidence
+
+```text
+pnpm exec vitest run tests/daily-plan.test.ts tests/daily-plan-server.test.ts tests/daily-plan-actions.test.ts tests/daily-plan-security-contract.test.ts tests/adaptive-learning-mock.test.ts
+# 5 files, 41 tests passed
+
+pnpm typecheck
+# exit 0
+
+pnpm test
+# 41 files, 295 tests passed
+```
+
+### Live PostgreSQL replay
+
+A disposable PostgreSQL 16 cluster was initialized from zero with the Supabase auth-role shim and all five migrations applied in order. Under `authenticated`, the new RPC accepted one action, returned the identical retry, rejected a changed action with `23505`, and left exactly one row. Direct authenticated `INSERT`, `UPDATE`, and `DELETE` privilege checks all returned false. The replay ended with:
+
+```text
+DAILY_PLAN_RPC_OK
+ROLLBACK
+```
+
+The cluster was stopped and its temporary directory removed after verification.
+
+### Full round verification
+
+```text
+pnpm lint       # exit 0; 2 pre-existing navigation warnings
+pnpm typecheck  # exit 0
+pnpm test       # 41 files, 295 tests passed
+pnpm build      # exit 0
+git diff --check # exit 0
+```
+
+### Remaining boundary
+
+The database deliberately does not duplicate the TypeScript active-content catalog or duration allocator. An authenticated owner could call the RPC directly with structurally valid but stale task keys; this only writes that owner's non-security-sensitive planning preference. Plan assembly and action replay always require an active candidate, enforce same-or-shorter duration, and preserve the original task for invalid rows, so such a row cannot activate content, expand authorization, or inject an oversized replacement.

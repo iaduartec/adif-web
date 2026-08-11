@@ -93,7 +93,6 @@ export function assembleDailyPlanInputFromRows(rows: DailyPlanAssemblyRows): Dai
   return {
     date: rows.date,
     availableMinutes: rows.sessionMinutes,
-    evidenceSufficient: reviewedConceptIds.length > 0 || uniqueAttemptedQuestionIds.length > 0,
     reviews,
     lessons,
     practiceQuestions: activeQuestions.map(({ id }) => ({ id })),
