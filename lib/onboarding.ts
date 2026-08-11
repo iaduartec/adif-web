@@ -25,7 +25,8 @@ export function getMadridDate(date = new Date()) {
 
 export function parseOnboardingInput(formData: FormData, today = getMadridDate()): OnboardingParseResult {
   const weeklyTargetMinutes = Number(formData.get("weekly_target_minutes"));
-  const preferredDays = [...new Set(formData.getAll("preferred_days").map(Number))].sort((a, b) => a - b);
+  const rawPreferredDays = formData.getAll("preferred_days").map(String);
+  const preferredDays = [...new Set(rawPreferredDays.map(Number))].sort((a, b) => a - b);
   const sessionMinutes = Number(formData.get("session_minutes"));
   const rawExamDate = formData.get("exam_date");
   const examDate = typeof rawExamDate === "string" && rawExamDate ? rawExamDate : null;
@@ -35,13 +36,13 @@ export function parseOnboardingInput(formData: FormData, today = getMadridDate()
   if (!Number.isInteger(weeklyTargetMinutes) || weeklyTargetMinutes < 1 || weeklyTargetMinutes > 1680) {
     errors.weeklyTargetMinutes = "Indica un objetivo semanal entre 1 y 1.680 minutos.";
   }
-  if (preferredDays.length === 0 || preferredDays.some((day) => !Number.isInteger(day) || day < 0 || day > 6)) {
+  if (rawPreferredDays.length === 0 || rawPreferredDays.some((day) => !/^[0-6]$/.test(day))) {
     errors.preferredDays = "Elige al menos un día de estudio.";
   }
   if (!ONBOARDING_SESSION_MINUTES.includes(sessionMinutes as (typeof ONBOARDING_SESSION_MINUTES)[number])) {
     errors.sessionMinutes = "Elige una duración de sesión disponible.";
   }
-  if (examDate && (!/^\d{4}-\d{2}-\d{2}$/.test(examDate) || examDate < today)) {
+  if (examDate && (!isCalendarDate(examDate) || examDate < today)) {
     errors.examDate = "La fecha de examen no puede ser anterior a hoy.";
   }
 
@@ -57,6 +58,12 @@ export function parseOnboardingInput(formData: FormData, today = getMadridDate()
     },
     errors: {},
   };
+}
+
+function isCalendarDate(value: string) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
 }
 
 type DiagnosticQuestion = { id: string; source: { section: string } };

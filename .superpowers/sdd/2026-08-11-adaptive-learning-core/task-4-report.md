@@ -47,3 +47,43 @@ git diff --check          # exit 0
 ## Concerns
 
 - The diagnostic session uses all currently available official sections. The present official bank may have fewer than 15 questions in an individual section, so the selection is round-robin until each available section is exhausted rather than inventing non-official questions.
+
+## Review round 1/5 — error handling and validation hardening
+
+### Findings addressed
+
+- Middleware now treats a `study_goals` read error as unavailable onboarding state, not incomplete onboarding, so authenticated users remain available instead of being trapped in onboarding. A clean `{ data: null, error: null }` remains incomplete as intended.
+- The onboarding page shows an accessible load-error state and never fabricates default preferences after a failed goal read.
+- The save action aborts before upsert when its completion-timestamp read fails, retains submitted values in an accessible form error, and therefore cannot clobber an existing timestamp. Upsert errors remain retryable with retained values.
+- Preferred-day tokens are validated before numeric conversion and exam dates now round-trip through UTC calendar construction, rejecting blank tokens and dates such as `2026-02-31` before database persistence.
+- The Playwright reset endpoint is the sole incomplete-onboarding proxy exception, remains 404 outside mock mode, and also returns 404 under explicit `NODE_ENV` or `VERCEL_ENV` production markers. Every onboarding E2E restores a completed mock state in `afterEach`.
+
+### RED/GREEN evidence
+
+Focused RED run produced the expected failures for malformed day/calendar validation, middleware fail-available behavior, action read-error no-write behavior, and page load-error UI. The initial run was `4 failed, 9 passed` across the four new focused contracts.
+
+After the minimal fixes:
+
+```text
+pnpm exec vitest run tests/onboarding.test.ts tests/onboarding-action.test.ts tests/onboarding-page.test.tsx tests/middleware-onboarding.test.ts tests/auth-redirect.test.ts
+# 5 files, 25 tests passed
+
+pnpm exec playwright test e2e/onboarding.spec.ts
+# 2 passed
+```
+
+### Full verification
+
+```text
+pnpm lint      # exit 0; 2 existing warnings
+pnpm typecheck # exit 0
+pnpm test      # 37 files, 266 tests passed
+pnpm build     # exit 0
+git diff --check # exit 0
+```
+
+### Self-review
+
+- Confirmed a query error and an absent goal are distinct in the middleware contract.
+- Confirmed the action does not call upsert when completion-state loading fails, and a subsequent retry remains successful without replacing the stored completion time.
+- Confirmed diagnostic selection logic was not changed and remains balanced across available official sections.

@@ -14,7 +14,7 @@ export default async function OnboardingPage({
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=%2Fonboarding");
 
-  const [{ data: goal }, params] = await Promise.all([
+  const [{ data: goal, error: goalError }, params] = await Promise.all([
     supabase
       .from("study_goals")
       .select("weekly_target_minutes, preferred_days, session_minutes, exam_date, onboarding_completed_at")
@@ -24,6 +24,18 @@ export default async function OnboardingPage({
   ]);
   const completed = Boolean(goal?.onboarding_completed_at);
   const next = getSafeRedirectPath(params.next ?? null);
+
+  if (goalError) {
+    return (
+      <main className="onboarding-page">
+        <section className="onboarding-panel" aria-labelledby="onboarding-title">
+          <p className="page-kicker">Plan personal de estudio</p>
+          <h1 id="onboarding-title">No hemos podido cargar tu preparación</h1>
+          <p className="onboarding-intro" role="alert">Inténtalo de nuevo en unos instantes.</p>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="onboarding-page">

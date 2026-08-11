@@ -19,6 +19,10 @@ describe("resolveProtectedRoute", () => {
     expect(resolveProtectedRoute({ id: "u1" }, "/onboarding?next=%2Fcurso", false)).toBeNull();
   });
 
+  it("allows only the test onboarding reset route through incomplete-user gating", () => {
+    expect(resolveProtectedRoute({ id: "u1" }, "/api/test/onboarding", false)).toBeNull();
+  });
+
   it.each(["/login", "/auth/callback"])("never redirects the public auth route %s", (pathname) => {
     expect(resolveProtectedRoute(null, pathname)).toBeNull();
   });

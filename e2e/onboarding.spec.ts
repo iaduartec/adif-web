@@ -1,13 +1,17 @@
 import { expect, test, type Page } from "@playwright/test";
 
-async function resetOnboarding(page: Page) {
-  const response = await page.request.post("/api/test/onboarding", { data: { completed: false } });
+async function setOnboarding(page: Page, completed: boolean) {
+  const response = await page.request.post("/api/test/onboarding", { data: { completed } });
   expect(response.ok()).toBe(true);
 }
 
 test.describe("onboarding", () => {
+  test.afterEach(async ({ page }) => {
+    await setOnboarding(page, true);
+  });
+
   test("requires and completes onboarding when the diagnostic is skipped", async ({ page }) => {
-    await resetOnboarding(page);
+    await setOnboarding(page, false);
     await page.goto("/curso");
 
     await expect(page).toHaveURL(/\/onboarding\?next=%2Fcurso$/);
@@ -20,7 +24,7 @@ test.describe("onboarding", () => {
   });
 
   test("starts the balanced fifteen-question diagnostic after saving", async ({ page }) => {
-    await resetOnboarding(page);
+    await setOnboarding(page, false);
     await page.goto("/onboarding");
 
     await page.getByRole("checkbox", { name: "Lunes" }).check();

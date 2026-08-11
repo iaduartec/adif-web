@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const { createServerClient, redirect } = vi.hoisted(() => ({
   createServerClient: vi.fn(),
@@ -12,6 +12,8 @@ vi.mock("../lib/supabase/server", () => ({ createServerClient }));
 import OnboardingPage from "../app/onboarding/page";
 
 describe("OnboardingPage", () => {
+  afterEach(cleanup);
+
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -39,5 +41,21 @@ describe("OnboardingPage", () => {
     expect(screen.getByRole("checkbox", { name: "Martes" })).toBeChecked();
     expect(screen.getByRole("radio", { name: "60 minutos" })).toBeChecked();
     expect(redirect).not.toHaveBeenCalled();
+  });
+
+  it("shows a retryable load error instead of silently presenting default preferences", async () => {
+    createServerClient.mockResolvedValue({
+      auth: { getUser: vi.fn(async () => ({ data: { user: { id: "user-1" } } })) },
+      from: vi.fn(() => ({
+        select: vi.fn().mockReturnThis(),
+        eq: vi.fn().mockReturnThis(),
+        maybeSingle: vi.fn(async () => ({ data: null, error: new Error("read failed") })),
+      })),
+    });
+
+    render(await OnboardingPage({ searchParams: Promise.resolve({}) }));
+
+    expect(screen.getByRole("alert")).toHaveTextContent(/inténtalo de nuevo/i);
+    expect(screen.queryByRole("spinbutton", { name: "Objetivo semanal (minutos)" })).not.toBeInTheDocument();
   });
 });

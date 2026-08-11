@@ -12,7 +12,7 @@ export function resolveProtectedRoute(
     return null;
   }
 
-  if (user && !onboardingComplete && route !== "/onboarding") {
+  if (user && !onboardingComplete && route !== "/onboarding" && route !== "/api/test/onboarding") {
     return `/onboarding?next=${encodeURIComponent(pathname)}`;
   }
 

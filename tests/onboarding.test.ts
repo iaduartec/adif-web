@@ -46,6 +46,21 @@ describe("onboarding contract", () => {
     });
   });
 
+  it("rejects malformed preferred-day tokens and impossible calendar dates before persistence", () => {
+    const input = new FormData();
+    input.set("weekly_target_minutes", "120");
+    input.append("preferred_days", "");
+    input.append("preferred_days", "1");
+    input.set("session_minutes", "30");
+    input.set("exam_date", "2026-02-31");
+
+    const result = parseOnboardingInput(input, "2026-02-01");
+
+    expect(result.data).toBeNull();
+    expect(result.errors.preferredDays).toBeTruthy();
+    expect(result.errors.examDate).toBeTruthy();
+  });
+
   it("only exposes the supported session duration choices", () => {
     expect(ONBOARDING_SESSION_MINUTES).toEqual([20, 30, 45, 60]);
   });

@@ -39,11 +39,11 @@ export async function updateSession(request: NextRequest): Promise<{
 
   if (!user) return { response, user, onboardingComplete: false };
 
-  const { data: goal } = await supabase
+  const { data: goal, error } = await supabase
     .from("study_goals")
     .select("onboarding_completed_at")
     .eq("user_id", user.id)
     .maybeSingle();
 
-  return { response, user, onboardingComplete: Boolean(goal?.onboarding_completed_at) };
+  return { response, user, onboardingComplete: error ? true : Boolean(goal?.onboarding_completed_at) };
 }

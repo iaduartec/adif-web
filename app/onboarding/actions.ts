@@ -30,11 +30,18 @@ export async function saveOnboarding(
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=%2Fonboarding");
 
-  const { data: existingGoal } = await supabase
+  const { data: existingGoal, error: existingGoalError } = await supabase
     .from("study_goals")
     .select("onboarding_completed_at")
     .eq("user_id", user.id)
     .maybeSingle();
+
+  if (existingGoalError) {
+    return {
+      errors: { form: "No se ha podido cargar tu preparación. Inténtalo de nuevo." },
+      values,
+    };
+  }
 
   const { error } = await supabase.from("study_goals").upsert({
     user_id: user.id,
