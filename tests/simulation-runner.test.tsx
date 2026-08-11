@@ -217,6 +217,64 @@ describe("SimulationRunner", () => {
     expect(screen.queryByRole("button", { name: /Reintentar entrega/i })).not.toBeInTheDocument();
   });
 
+  it("does not auto-submit a new envelope after a timed-out retry becomes definite", async () => {
+    submitSimulation
+      .mockRejectedValueOnce(new Error("Entrega incierta"))
+      .mockResolvedValueOnce({ ok: false, error: "Entrega inválida", retryable: false })
+      .mockResolvedValue({ ok: false, error: "No debe enviarse", retryable: false });
+
+    render(
+      <SimulationRunner
+        examId={exam.id}
+        questions={questions}
+        durationMinutes={0}
+        onFinish={() => {}}
+      />,
+    );
+
+    expect(await screen.findByRole("button", { name: "Reintentar entrega" })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Reintentar entrega" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent("Entrega inválida");
+
+    await act(async () => {
+      vi.advanceTimersByTime(1_000);
+      await Promise.resolve();
+    });
+    expect(submitSimulation).toHaveBeenCalledTimes(2);
+  });
+
+  it("keeps the retry control mounted and focused across a repeated uncertain failure", async () => {
+    let rejectRetry!: (reason: Error) => void;
+    submitSimulation
+      .mockRejectedValueOnce(new Error("Primera entrega incierta"))
+      .mockImplementationOnce(() => new Promise((_resolve, reject) => { rejectRetry = reject; }));
+
+    render(
+      <SimulationRunner
+        examId={exam.id}
+        questions={questions}
+        durationMinutes={exam.durationMinutes}
+        onFinish={() => {}}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("radio", { name: /A\. Opción A/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Entregar examen/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Confirmar entrega/i }));
+
+    const retryButton = await screen.findByRole("button", { name: "Reintentar entrega" });
+    retryButton.focus();
+    fireEvent.click(retryButton);
+
+    const pendingRetry = screen.getByRole("button", { name: "Reintentando…" });
+    expect(pendingRetry).toBeDisabled();
+    expect(pendingRetry).toHaveFocus();
+
+    await act(async () => rejectRetry(new Error("Segunda entrega incierta")));
+    const repeatedRetry = await screen.findByRole("button", { name: "Reintentar entrega" });
+    expect(repeatedRetry).toHaveFocus();
+  });
+
   it("moves focus into the confirmation dialog, traps it, closes on Escape, and restores focus", () => {
     render(
       <SimulationRunner

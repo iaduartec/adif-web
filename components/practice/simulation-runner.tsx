@@ -73,6 +73,7 @@ export function SimulationRunner({
   const [retryPending, setRetryPending] = useState(false);
   const startedAt = useRef(0);
   const delivered = useRef(false);
+  const timeoutSubmitted = useRef(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const reviewButtonRef = useRef<HTMLButtonElement>(null);
   const deliverButtonRef = useRef<HTMLButtonElement>(null);
@@ -89,7 +90,8 @@ export function SimulationRunner({
 
   useEffect(() => {
     startedAt.current = Date.now();
-  }, []);
+    timeoutSubmitted.current = false;
+  }, [examId]);
 
   // Timer countdown
   useEffect(() => {
@@ -109,7 +111,7 @@ export function SimulationRunner({
     if (delivered.current) return;
     delivered.current = true;
     setIsSubmitting(true);
-    setError("");
+    if (!retryPending) setError("");
     const envelope = submissionEnvelope.current ?? {
       examId,
       answers: { ...answers },
@@ -146,14 +148,15 @@ export function SimulationRunner({
       setRetryPending(true);
       setError(err instanceof Error ? err.message : "Error al entregar el examen.");
     }
-  }, [answers, examId, onFinish]);
+  }, [answers, examId, onFinish, retryPending]);
 
   // Auto-deliver when timer expires
   useEffect(() => {
-    if (remainingSeconds <= 0 && !delivered.current && !retryPending) {
+    if (remainingSeconds <= 0 && !timeoutSubmitted.current) {
+      timeoutSubmitted.current = true;
       doSubmit();
     }
-  }, [remainingSeconds, retryPending, doSubmit]);
+  }, [remainingSeconds, doSubmit]);
 
   const question = questions[index];
   if (!question) return null;

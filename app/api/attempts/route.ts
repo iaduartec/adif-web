@@ -38,20 +38,20 @@ export async function POST(request: Request) {
       && typeof body.questionId === "string"
       && /^Q\d{4}$/.test(body.questionId)
     ) {
-      return NextResponse.json({ error: "La pregunta solicitada no existe." }, { status: 404 });
+      return NextResponse.json({ error: "La pregunta solicitada no existe.", retryable: false }, { status: 404 });
     }
     input = rawAttemptSchema.parse(body);
   } catch {
-    return NextResponse.json({ error: "Solicitud de intento inválida." }, { status: 400 });
+    return NextResponse.json({ error: "Solicitud de intento inválida.", retryable: false }, { status: 400 });
   }
 
   try {
     const supabase = await createServerClient();
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return NextResponse.json({ error: "Debes iniciar sesión para registrar respuestas." }, { status: 401 });
+    if (!user) return NextResponse.json({ error: "Debes iniciar sesión para registrar respuestas.", retryable: false }, { status: 401 });
 
     const question = getOfficialQuestion(input.questionId);
-    if (!question) return NextResponse.json({ error: "La pregunta solicitada no existe." }, { status: 404 });
+    if (!question) return NextResponse.json({ error: "La pregunta solicitada no existe.", retryable: false }, { status: 404 });
 
     const { data, error } = await supabase.rpc("record_practice_attempt", {
       p_question_id: question.id,
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
 
     if (error?.code === "23514" && /idempotency key/i.test(error.message ?? "")) {
       return NextResponse.json(
-        { error: "El identificador del intento ya se utilizó con otros datos." },
+        { error: "El identificador del intento ya se utilizó con otros datos.", retryable: false },
         { status: 409 },
       );
     }
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
       || Array.isArray(data)
       || typeof data.attempt_id !== "string"
       || typeof data.is_correct !== "boolean"
-    ) return NextResponse.json({ error: "No se ha podido guardar el intento." }, { status: 503 });
+    ) return NextResponse.json({ error: "No se ha podido guardar el intento.", retryable: true }, { status: 503 });
 
     return NextResponse.json({
       attemptId: data.attempt_id,
@@ -82,6 +82,6 @@ export async function POST(request: Request) {
       correctAnswer: question.answer,
     }, { status: 201 });
   } catch {
-    return NextResponse.json({ error: "El servicio de práctica no está disponible." }, { status: 503 });
+    return NextResponse.json({ error: "El servicio de práctica no está disponible.", retryable: true }, { status: 503 });
   }
 }

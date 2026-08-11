@@ -16,6 +16,10 @@ type AttemptEnvelope = {
   body: string;
 };
 
+function fallbackRetryableStatus(status: number): boolean {
+  return status === 408 || status === 425 || status === 429 || status >= 500;
+}
+
 export function QuestionSession({
   questions,
   immediateCorrection = true,
@@ -69,9 +73,15 @@ export function QuestionSession({
           headers: { "Content-Type": "application/json" },
           body: envelope.body,
         });
-        const payload = await response.json().catch(() => ({})) as AttemptResult & { error?: string };
+        const payload = await response.json().catch(() => ({})) as AttemptResult & {
+          error?: string;
+          retryable?: boolean;
+        };
         if (!response.ok) {
-          if (response.status >= 400 && response.status < 500) setRetryEnvelope(null);
+          const retryable = typeof payload.retryable === "boolean"
+            ? payload.retryable
+            : fallbackRetryableStatus(response.status);
+          if (!retryable) setRetryEnvelope(null);
           setMessageIsError(true);
           setMessage(payload.error ?? "No se ha podido guardar la respuesta.");
           return;
