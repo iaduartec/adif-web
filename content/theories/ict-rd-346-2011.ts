@@ -74,7 +74,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c2-1",
-          text: "Constituye la parte del tendido propiedad de las operadoras que conecta sus centrales con el punto de interconexión del edificio en el RITI. No forma parte de la ICT del edificio.",
+          text: "La red de alimentación es la parte de la red propiedad del operador que enlaza sus centrales o nodos con el punto de interconexión del edificio, introduciéndose en la ICT hasta el registro principal del RITI.",
           kind: "normative",
           legalBasis: ["rd346-2011-anex2"]
         }
@@ -110,7 +110,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c5-1",
-          text: "Es el tendido que discurre en la vivienda desde el PAU hasta las Bases de Acceso Terminal (BAT). Es propiedad y responsabilidad de cada propietario.",
+          text: "Es el tendido que discurre en el interior de cada domicilio desde el PAU hasta las Bases de Acceso Terminal (BAT), diseñado y realizado bajo la responsabilidad de la propiedad de la edificación.",
           kind: "normative",
           legalBasis: ["rd346-2011-anex2"]
         }
@@ -146,7 +146,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c8-1",
-          text: "Se autoriza la instalación de un único recinto de telecomunicaciones únicamente en edificaciones de hasta 3 alturas y un máximo de 10 puntos de acceso al usuario.",
+          text: "Se permite la instalación de un único recinto de telecomunicaciones (RITU) en edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja y con un máximo de dieciséis puntos de acceso al usuario (PAU).",
           kind: "normative",
           legalBasis: ["rd346-2011-anex4"]
         }
@@ -170,7 +170,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c10-1",
-          text: "La red de tierras de la ICT debe registrar una resistencia de difusión eléctrica no superior a 10 ohmios, conectándose al sistema general de tierras del edificio.",
+          text: "El sistema de puesta a tierra de cada recinto consta de un anillo interior de cobre con una barra colectora, conectado al sistema general de tierra de la edificación y al que se conectan los equipos y masas metálicas.",
           kind: "normative",
           legalBasis: ["rd346-2011-anex5"]
         }
@@ -185,7 +185,7 @@ export const ictTheory: TheorySection = {
       application: [
         {
           id: "ict-ex-1-app-1",
-          text: "Es contrario a norma. Al superar las 3 plantas de altura, resulta preceptiva la instalación de recintos independientes (RITI y RITS).",
+          text: "El RITU simple no resulta aplicable a un edificio de más de tres alturas; para esos casos la norma prevé un recinto único ampliado (RITU-A) bajo determinadas condiciones o, en su defecto, los recintos independientes RITI y RITS.",
           kind: "example",
           legalBasis: ["rd346-2011-anex4"]
         }
@@ -196,7 +196,7 @@ export const ictTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "ict-takeaway-1",
-      text: "El RITU unifica RITI y RITS y está reservado para pequeños edificios (hasta 3 alturas y 10 PAU).",
+      text: "El RITU unifica RITI y RITS y está reservado para edificios pequeños, de hasta tres alturas y planta baja y un máximo de 16 PAU.",
       kind: "normative",
       legalBasis: ["rd346-2011-anex4"]
     },

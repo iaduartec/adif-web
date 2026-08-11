@@ -23,16 +23,24 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceId: "DR 2027",
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
-      locator: "Capítulo I",
-      excerpt: "Regula las condiciones generales de acceso y adjudicación de capacidad..."
+      locator: "Capítulo I, 1.4 Los agentes del sector ferroviario",
+      excerpt: "Corresponden a Adif las funciones de administración de las infraestructuras... La DR entrará en vigor tras su publicación y podrá ser actualizada por el administrador de infraestructuras ferroviarias cuando así lo requieran sus contenidos. Aprobada la Declaración sobre la Red por el Consejo de Administración del Administrador de infraestructuras se publica en la web, www.adif.es, en formato PDF o similar."
     },
     {
       id: "dr-adif-2027-c2",
       sourceId: "DR 2027",
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
-      locator: "Capítulo II",
-      excerpt: "Detalla la descripción de las infraestructuras, anchos de vía y electrificación..."
+      locator: "Capítulo I, 1.2 Estructura organizativa. RFIG",
+      excerpt: "La Red Ferroviaria de Interés General (RFIG): Red Convencional de Ancho Ibérico puro (1.668 mm) 10.212,5 km; Red Mixta (Tercer Carril) 126,8 km; Red de Vía Estrecha de Ancho Métrico (1.000 mm) 1.195,3 km. Total Red Ferroviaria Titularidad de Adif 11.675,9 km."
+    },
+    {
+      id: "dr-adif-2027-agentes",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo I, 1.4 Los agentes del sector ferroviario",
+      excerpt: "El Ministerio de Transportes y Movilidad Sostenible es responsable de proponer y ejecutar la política del ferrocarril... La CNMC supervisará y controlará el correcto funcionamiento del sector ferroviario y la competencia en los mercados de servicios."
     }
   ],
 
@@ -82,9 +90,9 @@ export const declaracionRed2027Theory: TheorySection = {
       claims: [
         {
           id: "dr-c3-1",
-          text: "Órgano competente para planificar infraestructuras, dictar regulación sectorial y aprobar formalmente el Catálogo de la RFIG.",
+          text: "El Ministerio de Transportes y Movilidad Sostenible es responsable de proponer y ejecutar la política del ferrocarril y establece directrices específicas para el desarrollo de la política ferroviaria a través de sus planes estratégicos.",
           kind: "normative",
-          legalBasis: ["lsf-38-2015-art4"]
+          legalBasis: ["dr-adif-2027-agentes"]
         }
       ]
     },
@@ -94,9 +102,9 @@ export const declaracionRed2027Theory: TheorySection = {
       claims: [
         {
           id: "dr-c4-1",
-          text: "Supervisa las tarifas y cánones de la DR y garantiza el principio de no discriminación y competencia en el mercado ferroviario.",
+          text: "La Comisión Nacional de los Mercados y la Competencia (CNMC) supervisa y controla el correcto funcionamiento del sector ferroviario y la competencia en los mercados de servicios.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-c1"]
+          legalBasis: ["dr-adif-2027-agentes"]
         }
       ]
     },
@@ -150,7 +158,7 @@ export const declaracionRed2027Theory: TheorySection = {
   reviewTakeaways: [
     {
       id: "dr-takeaway-1",
-      text: "La DR es aprobada anualmente por el Consejo de Administración de ADIF y vincula a todos los operadores ferroviarios.",
+      text: "La DR, aprobada por el Consejo de Administración del administrador de infraestructuras, entra en vigor tras su publicación y puede ser actualizada por el propio administrador cuando sus contenidos lo requieran.",
       kind: "normative",
       legalBasis: ["dr-adif-2027-c1"]
     },

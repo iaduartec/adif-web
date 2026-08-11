@@ -9,7 +9,7 @@ export const codigoConductaTheory: TheorySection = {
         "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       locator: "Artículo 52",
-      excerpt: "Los empleados públicos deben desempeñar con diligencia las tareas que tengan asignadas y velar por los intereses generales..."
+      excerpt: "Los empleados públicos deberán desempeñar con diligencia las tareas que tengan asignadas y velar por los intereses generales con sujeción y observancia de la Constitución y del resto del ordenamiento jurídico, y deberán actuar con arreglo a los siguientes principios: objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad... Los principios y reglas establecidos en este capítulo informarán la interpretación y aplicación del régimen disciplinario de los empleados públicos."
     },
     {
       id: "rdleg-5-2015-art53",
@@ -18,7 +18,7 @@ export const codigoConductaTheory: TheorySection = {
         "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       locator: "Artículo 53",
-      excerpt: "Principios éticos: Los empleados públicos respetarán la Constitución y el resto del ordenamiento jurídico..."
+      excerpt: "Principios éticos: Los empleados públicos respetarán la Constitución y el resto de normas que integran el ordenamiento jurídico. ... 5. Se abstendrán en aquellos asuntos en los que tengan un interés personal... 7. No aceptarán ningún trato de favor o situación que implique privilegio o ventaja injustificada, por parte de personas físicas o entidades privadas. ... 12. Guardarán secreto de las materias clasificadas u otras cuya difusión esté prohibida legalmente, y mantendrán la debida discreción sobre aquellos asuntos que conozcan por razón de su cargo..."
     },
     {
       id: "rdleg-5-2015-art54",
@@ -27,7 +27,7 @@ export const codigoConductaTheory: TheorySection = {
         "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       locator: "Artículo 54",
-      excerpt: "Principios de conducta: Garantizarán la atención al ciudadano... cumplirán con diligencia las tareas... informarán a la inspección ante órdenes ilegales..."
+      excerpt: "Principios de conducta: 1. Tratarán con atención y respeto a los ciudadanos, a sus superiores y a los restantes empleados públicos. 2. El desempeño de las tareas correspondientes a su puesto de trabajo se realizará de forma diligente y cumpliendo la jornada y el horario establecidos. 3. Obedecerán las instrucciones y órdenes profesionales de los superiores, salvo que constituyan una infracción manifiesta del ordenamiento jurídico, en cuyo caso las pondrán inmediatamente en conocimiento de los órganos de inspección procedentes. 5. Administrarán los recursos y bienes públicos con austeridad, y no utilizarán los mismos en provecho propio o de personas allegadas. 8. Mantendrán actualizada su formación y cualificación."
     }
   ],
 
@@ -63,12 +63,12 @@ export const codigoConductaTheory: TheorySection = {
       id: "conducta-concept-2",
       title: "Principios Éticos",
       claims: [
-        {
-          id: "conducta-c2-1",
-          text: "Normas fundamentales de rectitud moral que incluyen el deber de neutralidad, abstención por interés personal, y la prohibición absoluta de aceptar regalos o tratos de favor.",
-          kind: "normative",
-          legalBasis: ["rdleg-5-2015-art53"]
-        }
+    {
+      id: "conducta-c2-1",
+      text: "Entre los principios éticos se incluye la abstención en los asuntos en los que el empleado tenga un interés personal y el deber de no aceptar tratos de favor o situaciones que impliquen un privilegio o ventaja injustificada por parte de personas físicas o entidades privadas.",
+      kind: "normative",
+      legalBasis: ["rdleg-5-2015-art53"]
+    }
       ]
     },
     {
@@ -87,12 +87,12 @@ export const codigoConductaTheory: TheorySection = {
       id: "conducta-concept-4",
       title: "Objeción a Órdenes de Superiores",
       claims: [
-        {
-          id: "conducta-c4-1",
-          text: "El deber de obediencia jerárquica cede ante órdenes de superiores que supongan una infracción manifiesta del ordenamiento jurídico, en cuyo caso existe la obligación de no ejecutarlas.",
-          kind: "normative",
-          legalBasis: ["rdleg-5-2015-art54"]
-        }
+    {
+      id: "conducta-c4-1",
+      text: "Los empleados públicos obedecerán las instrucciones y órdenes profesionales de los superiores, salvo que constituyan una infracción manifiesta del ordenamiento jurídico, en cuyo caso deberán ponerlas inmediatamente en conocimiento de los órganos de inspección procedentes.",
+      kind: "normative",
+      legalBasis: ["rdleg-5-2015-art54"]
+    }
       ]
     },
     {
@@ -116,7 +116,7 @@ export const codigoConductaTheory: TheorySection = {
       application: [
         {
           id: "conducta-ex-1-app-1",
-          text: "Constituye un incumplimiento muy grave del deber ético que prohíbe la aceptación de regalos o favores de particulares, pudiendo derivar en expediente disciplinario.",
+          text: "Podría constituir un incumplimiento de los principios éticos y de conducta que obligan a rechazar cualquier regalo, favor o servicio que vaya más allá de los usos habituales, sociales y de cortesía, pudiendo dar lugar a las responsabilidades disciplinarias que procedan.",
           kind: "example",
           legalBasis: ["rdleg-5-2015-art53"]
         }
@@ -133,7 +133,7 @@ export const codigoConductaTheory: TheorySection = {
     },
     {
       id: "conducta-takeaway-2",
-      text: "Se prohíbe rigurosamente la utilización de recursos o furgonetas de ADIF para fines privados u operaciones ajenas al servicio público ferroviario.",
+      text: "Los bienes y recursos públicos no podrán utilizarse en provecho propio o de personas allegadas, por lo que su empleo para fines privados supone un incumplimiento del código de conducta.",
       kind: "interpretative",
       legalBasis: ["rdleg-5-2015-art54"]
     }

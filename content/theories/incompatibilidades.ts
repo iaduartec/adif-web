@@ -9,7 +9,7 @@ export const incompatibilidadesTheory: TheorySection = {
         "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 1",
-      excerpt: "El personal comprendido en el ámbito de esta Ley no podrá compatibilizar sus actividades con el desempeño de un segundo puesto..."
+      excerpt: "1. El personal comprendido en el ámbito de aplicación de esta Ley no podrá compatibilizar sus actividades con el desempeño, por sí o mediante sustitución, de un segundo puesto de trabajo, cargo o actividad en el sector público, salvo en los supuestos previstos en la misma. 2. Además, no se podrá percibir, salvo en los supuestos previstos en esta Ley, más de una remuneración con cargo a los presupuestos de las Administraciones Públicas..."
     },
     {
       id: "l53-1984-art2",
@@ -18,7 +18,7 @@ export const incompatibilidadesTheory: TheorySection = {
         "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 2",
-      excerpt: "La presente Ley será de aplicación al personal... al servicio de los entes y organismos públicos..."
+      excerpt: "1. La presente Ley será de aplicación a: ... d) El personal al servicio de Entes y Organismos públicos exceptuados de la aplicación de la Ley de Entidades Estatales Autónomas. ... h) El personal que preste servicios en Empresas en que la participación del capital, directa o indirectamente, de las Administraciones Públicas sea superior al 50 por 100. ... 2. En el ámbito delimitado en el apartado anterior se entenderá incluido todo el personal, cualquiera que sea la naturaleza jurídica de la relación de empleo."
     },
     {
       id: "l53-1984-art3",
@@ -45,7 +45,7 @@ export const incompatibilidadesTheory: TheorySection = {
         "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 11",
-      excerpt: "El personal no podrá ejercer actividades privadas que se relacionen directamente con las que desarrolle el departamento..."
+      excerpt: "1. ...el personal comprendido en su ámbito de aplicación no podrá ejercer, por sí o mediante sustitución, actividades privadas, incluidas las de carácter profesional, sean por cuenta propia o bajo la dependencia o al servicio de Entidades o particulares que se relacionen directamente con las que desarrolle el Departamento, Organismo o Entidad donde estuviera destinado."
     },
     {
       id: "l53-1984-art14",
@@ -54,7 +54,7 @@ export const incompatibilidadesTheory: TheorySection = {
         "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 14",
-      excerpt: "El personal que acceda por cualquier título a un nuevo puesto del sector público que con arreglo a esta Ley sea incompatible..."
+      excerpt: "El ejercicio de actividades profesionales, laborales, mercantiles o industriales fuera de las Administraciones Públicas requerirá el previo reconocimiento de compatibilidad. La resolución motivada reconociendo la compatibilidad o declarando la incompatibilidad, que se dictará en el plazo de dos meses, corresponde al Ministerio de la Presidencia, a propuesta del Subsecretario del Departamento correspondiente..."
     },
     {
       id: "l53-1984-art19",
@@ -63,7 +63,7 @@ export const incompatibilidadesTheory: TheorySection = {
         "Ley 53/1984, de 26 de diciembre, de incompatibilidades del personal al servicio de las Administraciones Públicas",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       locator: "Artículo 19",
-      excerpt: "Quedan exceptuadas del régimen de incompatibilidades las actividades siguientes: La dirección de seminarios..."
+      excerpt: "Quedan exceptuadas del régimen de incompatibilidades de la presente Ley las actividades siguientes: a) Las derivadas de la Administración del patrimonio personal o familiar... b) La dirección de seminarios o el dictado de cursos o conferencias en Centros oficiales destinados a la formación de funcionarios o profesorado... cuando no tenga carácter permanente o habitual ni supongan más de setenta y cinco horas al año... f) La producción y creación literaria, artística, científica y técnica, así como las publicaciones derivadas de aquéllas..."
     }
   ],
 
@@ -137,7 +137,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c5-1",
-          text: "Se prohíbe realizar actividades privadas relacionadas con las funciones de ADIF, como formar parte de consejos en constructoras adjudicatarias de vía.",
+          text: "Se prohíbe ejercer actividades privadas, por cuenta propia o ajena, que se relacionen directamente con las que desarrolla el organismo donde el empleado está destinado, como ocurriría con asesorías a empresas contratistas del propio ADIF.",
           kind: "normative",
           legalBasis: ["l53-1984-art11"]
         }
@@ -149,7 +149,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c6-1",
-          text: "Toda actividad laboral o mercantil privada requiere previa autorización expresa. El silencio administrativo tras dos meses es desestimatorio.",
+          text: "El ejercicio de actividades profesionales, laborales, mercantiles o industriales fuera de las Administraciones Públicas requiere el previo reconocimiento de compatibilidad, que se resolverá mediante resolución motivada dictada en el plazo de dos meses.",
           kind: "normative",
           legalBasis: ["l53-1984-art14"]
         }
@@ -187,7 +187,7 @@ export const incompatibilidadesTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "incomp-takeaway-1",
-      text: "El silencio administrativo de las solicitudes de compatibilidad se cataloga como negativo tras el transcurso de dos meses.",
+      text: "Las solicitudes de compatibilidad para actividades privadas deben resolverse mediante resolución motivada en el plazo de dos meses.",
       kind: "interpretative",
       legalBasis: ["l53-1984-art14"]
     },

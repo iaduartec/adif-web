@@ -122,7 +122,7 @@ export const igualdadTheory: TheorySection = {
         "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 44",
-      excerpt: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y a las trabajadoras de forma que fomenten la asunción corresponsable..."
+      excerpt: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y las trabajadoras en forma que fomenten la asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio."
     },
     {
       id: "lo3-2007-art45",
@@ -131,7 +131,25 @@ export const igualdadTheory: TheorySection = {
         "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 45",
-      excerpt: "Las empresas están obligadas a respetar la igualdad de trato y de oportunidades en el ámbito laboral y, con esta finalidad, deberán adoptar medidas dirigidas a evitar cualquier tipo de discriminación laboral..."
+      excerpt: "En el caso de las empresas de cincuenta o más trabajadores, las medidas de igualdad a que se refiere el apartado anterior deberán dirigirse a la elaboración y aplicación de un plan de igualdad, con el alcance y contenido establecidos en este capítulo, que deberá ser asimismo objeto de negociación en la forma que se determine en la legislación laboral."
+    },
+    {
+      id: "lo3-2007-art48",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 48.1",
+      excerpt: "Las empresas deberán promover condiciones de trabajo que eviten la comisión de delitos y otras conductas contra la libertad sexual y la integridad moral en el trabajo, incidiendo especialmente en el acoso sexual y el acoso por razón de sexo, incluidos los cometidos en el ámbito digital."
+    },
+    {
+      id: "lo3-2007-art53",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 53",
+      excerpt: "Todos los tribunales y órganos de selección del personal de la Administración General del Estado y de los organismos públicos vinculados o dependientes de ella responderán al principio de presencia equilibrada de mujeres y hombres, salvo por razones fundadas y objetivas, debidamente motivadas."
     },
     {
       id: "lo3-2007-art46",
@@ -170,12 +188,12 @@ export const igualdadTheory: TheorySection = {
       excerpt: "A los efectos de esta Ley, se entenderá por composición equilibrada la presencia de mujeres y hombres de forma que, en el conjunto a que se refiera, las personas de cada sexo no superen el sesenta por ciento ni sean menos del cuarenta por ciento."
     },
     {
-      id: "rd902-2020",
+      id: "rd902-2020-art7",
       sourceId: "RD 902/2020",
       sourceTitle: "Real Decreto 902/2020, de 13 de octubre, de igualdad retributiva de las mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215",
-      locator: "Artículo 5",
-      excerpt: "Las empresas que elaboren un plan de igualdad deberán incluir en el mismo una auditoría retributiva..."
+      locator: "Artículo 7.1",
+      excerpt: "Las empresas que elaboren un plan de igualdad deberán incluir en el mismo una auditoría retributiva, de conformidad con el artículo 46.2.e) de la Ley Orgánica 3/2007... La auditoría retributiva tiene por objeto obtener la información necesaria para comprobar si el sistema retributivo de la empresa, de manera transversal y completa, cumple con la aplicación efectiva del principio de igualdad entre mujeres y hombres en materia de retribución."
     }
   ],
 
@@ -279,9 +297,15 @@ export const igualdadTheory: TheorySection = {
         },
         {
           id: "igualdad-c4-2",
-          text: "Es una conducta discriminatoria expresamente prohibida. Las empresas tienen la obligación legal de prevenir el acoso implementando protocolos específicos y tramitando denuncias diligentemente.",
+          text: "El acoso sexual y el acoso por razón de sexo se consideran en todo caso discriminatorios.",
           kind: "normative",
           legalBasis: ["lo3-2007-art7"]
+        },
+        {
+          id: "igualdad-c4-3",
+          text: "Las empresas deberán promover condiciones de trabajo que eviten la comisión de delitos y otras conductas contra la libertad sexual y la integridad moral en el trabajo, incidiendo especialmente en el acoso sexual y el acoso por razón de sexo, incluidos los cometidos en el ámbito digital.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art48"]
         }
       ]
     },
@@ -315,7 +339,7 @@ export const igualdadTheory: TheorySection = {
         },
         {
           id: "igualdad-c6-2",
-          text: "Esta garantía procesal y laboral protege tanto a la persona afectada como a los testigos o terceros que le presten asistencia.",
+          text: "La protección frente a represalias alcanza a la persona que presenta la queja, reclamación, denuncia, demanda o recurso para exigir el cumplimiento del principio de igualdad de trato.",
           kind: "interpretative",
           legalBasis: ["lo3-2007-art9"]
         }
@@ -345,7 +369,7 @@ export const igualdadTheory: TheorySection = {
       claims: [
         {
           id: "igualdad-c8-1",
-          text: "En los procedimientos judiciales y administrativos en los que el actor aporte indicios fundados de discriminación, corresponde al demandado la aportación de una justificación objetiva y razonable de las medidas adoptadas.",
+          text: "De acuerdo con las leyes procesales, en los procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, corresponderá a la persona demandada probar la ausencia de discriminación en las medidas adoptadas y su proporcionalidad.",
           kind: "normative",
           legalBasis: ["lo3-2007-art13"]
         }
@@ -375,9 +399,9 @@ export const igualdadTheory: TheorySection = {
       claims: [
         {
           id: "igualdad-c10-1",
-          text: "Las empresas obligadas a realizar un Plan de Igualdad deben incorporar en él una auditoría retributiva, destinada a verificar que el sistema salarial garantiza la igualdad de retribución por trabajos de igual valor.",
+          text: "Las empresas que elaboren un plan de igualdad deben incluir en el mismo una auditoría retributiva, que tiene por objeto comprobar si el sistema retributivo de la empresa cumple con la aplicación efectiva del principio de igualdad entre mujeres y hombres en materia de retribución.",
           kind: "normative",
-          legalBasis: ["rd902-2020"]
+          legalBasis: ["rd902-2020-art7"]
         }
       ]
     },
@@ -393,9 +417,9 @@ export const igualdadTheory: TheorySection = {
         },
         {
           id: "igualdad-c11-2",
-          text: "Este criterio rige en las designaciones de tribunales y órganos colegiados de valoración en convocatorias de empleo público.",
+          text: "La aplicación a los tribunales y órganos de selección de personal responde al principio de presencia equilibrada de mujeres y hombres, salvo por razones fundadas y objetivas, debidamente motivadas.",
           kind: "normative",
-          legalBasis: ["lo3-2007-da1"]
+          legalBasis: ["lo3-2007-da1", "lo3-2007-art53"]
         }
       ]
     },
@@ -468,7 +492,7 @@ export const igualdadTheory: TheorySection = {
       application: [
         {
           id: "igualdad-ex-2-app-1",
-          text: "Constituye discriminación directa por razón de sexo. Cualquier cambio en las condiciones justificadas en la salud de la trabajadora gestante debe seguir las pautas y consentimientos médicos establecidos.",
+          text: "El trato desfavorable relacionado con el embarazo encaja en la discriminación directa por razón de sexo. Cualquier cambio de condiciones motivado por la salud de la trabajadora gestante habría de apoyarse en la valoración médica del riesgo correspondiente.",
           kind: "example",
           legalBasis: ["lo3-2007-art8"]
         }
@@ -482,7 +506,7 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-ex-3-app-1",
           text: "Incumple el principio de presencia equilibrada en la composición del tribunal. La ley no prevé, por sí sola, la nulidad automática del proceso por esta causa; el incumplimiento se valorará conforme a las normas generales de revisión de actos administrativos.",
           kind: "interpretative",
-          legalBasis: ["lo3-2007-da1"]
+          legalBasis: ["lo3-2007-art53", "lo3-2007-da1"]
         }
       ]
     },
@@ -527,9 +551,9 @@ export const igualdadTheory: TheorySection = {
     },
     {
       id: "igualdad-takeaway-4",
-      text: "La composición equilibrada (mínimo 40% y máximo 60% de cada sexo) debe aplicarse en el nombramiento de tribunales evaluadores.",
+      text: "La composición equilibrada (mínimo 40% y máximo 60% de cada sexo) se aplica a los tribunales y órganos de selección del personal, salvo por razones fundadas y objetivas debidamente motivadas.",
       kind: "normative",
-      legalBasis: ["lo3-2007-da1"]
+      legalBasis: ["lo3-2007-da1", "lo3-2007-art53"]
     }
   ]
 };

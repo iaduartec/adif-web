@@ -8,8 +8,9 @@ export const cemTheory: TheorySection = {
       sourceTitle:
         "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
       sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
-      locator: "Artículo 1",
-      excerpt: "Esta Directiva regula la compatibilidad electromagnética de los equipos..."
+      locator: "Artículo 3, definiciones",
+      excerpt:
+        "Compatibilidad electromagnética: la capacidad de un equipo para funcionar satisfactoriamente en su entorno electromagnético sin introducir perturbaciones electromagnéticas intolerables para otros equipos y sin sufrir él mismo degradación inaceptable."
     },
     {
       id: "rd186-2016",

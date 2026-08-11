@@ -40,7 +40,7 @@ export const prlTheory: TheorySection = {
       sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 19",
-      excerpt: "En cumplimiento del deber de protección, el empresario garantizará que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada..."
+      excerpt: "En cumplimiento del deber de protección, el empresario deberá garantizar que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada, en materia preventiva, tanto en el momento de su contratación como cuando se produzcan cambios en las funciones que desempeñe o se introduzcan nuevas tecnologías o cambios en los equipos de trabajo. La formación deberá impartirse, siempre que sea posible, dentro de la jornada de trabajo o, en su defecto, en otras horas pero con el descuento en aquélla del tiempo invertido en la misma, y su coste no recaerá en ningún caso sobre los trabajadores."
     },
     {
       id: "lprl-31-1995-art20",
@@ -56,7 +56,7 @@ export const prlTheory: TheorySection = {
       sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 21",
-      excerpt: "Cuando los trabajadores estén o puedan estar expuestos a un riesgo grave e inminente con ocasión de su trabajo, el empresario estará obligado a informar lo antes posible..."
+      excerpt: "1. Cuando los trabajadores estén o puedan estar expuestos a un riesgo grave e inminente con ocasión de su trabajo, el empresario estará obligado a: a) Informar lo antes posible a todos los trabajadores afectados acerca de la existencia de dicho riesgo y de las medidas adoptadas o que, en su caso, deban adoptarse en materia de protección. ... 2. De acuerdo con lo previsto en el apartado 1 del artículo 14 de la presente Ley, el trabajador tendrá derecho a interrumpir su actividad y abandonar el lugar de trabajo, en caso necesario, cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud. 3. Cuando en el caso a que se refiere el apartado 1 de este artículo el empresario no adopte o no permita la adopción de las medidas necesarias para garantizar la seguridad y la salud de los trabajadores, los representantes legales de éstos podrán acordar, por mayoría de sus miembros, la paralización de la actividad de los trabajadores afectados por dicho riesgo. Tal acuerdo será comunicado de inmediato a la empresa y a la autoridad laboral, la cual, en el plazo de veinticuatro horas, anulará o ratificará la paralización acordada. El acuerdo a que se refiere el párrafo anterior podrá ser adoptado por decisión mayoritaria de los Delegados de Prevención cuando no resulte posible reunir con la urgencia requerida al órgano de representación del personal."
     },
     {
       id: "lprl-31-1995-art22",
@@ -64,7 +64,7 @@ export const prlTheory: TheorySection = {
       sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       locator: "Artículo 22",
-      excerpt: "El empresario garantizará a los trabajadores a su servicio la vigilancia periódica de su estado de salud en función de los riesgos inherentes al trabajo."
+      excerpt: "El empresario garantizará a los trabajadores a su servicio la vigilancia periódica de su estado de salud en función de los riesgos inherentes al trabajo. Esta vigilancia sólo podrá llevarse a cabo cuando el trabajador preste su consentimiento. De este carácter voluntario sólo se exceptuarán, previo informe de los representantes de los trabajadores, los supuestos en los que la realización de los reconocimientos sea imprescindible para evaluar los efectos de las condiciones de trabajo sobre la salud de los trabajadores o para verificar si el estado de salud del trabajador puede constituir un peligro para el mismo, para los demás trabajadores o para otras personas relacionadas con la empresa o cuando así esté establecido en una disposición legal en relación con la protección de riesgos específicos y actividades de especial peligrosidad."
     },
     {
       id: "lprl-31-1995-art23",
@@ -107,25 +107,33 @@ export const prlTheory: TheorySection = {
       excerpt: "El Comité de Seguridad y Salud es el órgano paritario y colegiado de participación destinado a la consulta regular y periódica..."
     },
     {
-      id: "rd773-1997",
+      id: "rd773-1997-art3",
+      sourceId: "RD 773/1997",
+      sourceTitle: "Real Decreto 773/1997, de 30 de mayo, sobre disposiciones mínimas de seguridad y salud relativas a la utilización por los trabajadores de equipos de protección individual",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735",
+      locator: "Artículo 3",
+      excerpt: "En aplicación a lo dispuesto en el presente Real Decreto, el empresario estará obligado a: ... c) Proporcionar gratuitamente a los trabajadores los equipos de protección individual que deban utilizar, reponiéndolos cuando resulte necesario."
+    },
+    {
+      id: "rd773-1997-art4",
       sourceId: "RD 773/1997",
       sourceTitle: "Real Decreto 773/1997, de 30 de mayo, sobre disposiciones mínimas de seguridad y salud relativas a la utilización por los trabajadores de equipos de protección individual",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735",
       locator: "Artículo 4",
-      excerpt: "El empresario proporcionará gratuitamente a los trabajadores los equipos de protección individual que deban utilizar..."
+      excerpt: "Los equipos de protección individual deberán utilizarse cuando existan riesgos para la seguridad o salud de los trabajadores que no hayan podido evitarse o limitarse suficientemente por medios técnicos de protección colectiva o mediante medidas, métodos o procedimientos de organización del trabajo."
     }
   ],
 
   introduction: [
     {
       id: "prl-intro-1",
-      text: "La Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales (LPRL) transpone la Directiva Marco 89/391/CEE y establece el marco legal de la seguridad y salud en el trabajo.",
-      kind: "normative",
-      legalBasis: ["lprl-31-1995-art14"]
+      text: "La Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales (LPRL) transpone la Directiva Marco 89/391/CEE y constituye la norma básica de referencia en materia de seguridad y salud en el trabajo.",
+      kind: "didactic",
+      legalBasis: []
     },
     {
       id: "prl-intro-2",
-      text: "Impone al empresario un deber general de protección del personal a su servicio, constituyendo el marco de obligaciones en la gestión operativa y técnica en entidades públicas ferroviarias.",
+      text: "Impone al empresario un deber general de protección frente a los riesgos laborales, que se extiende también a las Administraciones públicas respecto del personal a su servicio.",
       kind: "normative",
       legalBasis: ["lprl-31-1995-art14"]
     }
@@ -156,7 +164,7 @@ export const prlTheory: TheorySection = {
         },
         {
           id: "prl-c2-2",
-          text: "Se debe anteponer la protección colectiva a la protección individual en todos los casos que sea factible técnicamente.",
+          text: "Se adoptarán medidas que antepongan la protección colectiva a la individual.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art15"]
         }
@@ -204,7 +212,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c6-1",
-          text: "Se garantizará formación teórica y práctica adecuada tanto en el momento de contratación como al cambiar de funciones o tecnologías, sin coste para el empleado y dentro de la jornada laboral.",
+          text: "El empresario garantizará formación teórica y práctica, suficiente y adecuada, en el momento de la contratación y ante cambios de funciones o introducción de nuevas tecnologías, impartida, siempre que sea posible, dentro de la jornada de trabajo y sin coste para el trabajador.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art19"]
         }
@@ -228,13 +236,13 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c8-1",
-          text: "El trabajador tiene derecho a interrumpir su actividad y abandonar el puesto si existe un riesgo grave e inminente para su seguridad.",
+          text: "El trabajador tiene derecho a interrumpir su actividad y abandonar el lugar de trabajo cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art21"]
         },
         {
           id: "prl-c8-2",
-          text: "Los Delegados de Prevención podrán acordar la paralización cuando se presuma riesgo grave e inminente y no sea posible reunir de urgencia al Comité.",
+          text: "Los representantes legales de los trabajadores podrán acordar, por mayoría de sus miembros, la paralización de la actividad cuando el empresario no adopte o no permita la adopción de las medidas necesarias; si no resulta posible reunir con la urgencia requerida al órgano de representación del personal, el acuerdo podrá ser adoptado por decisión mayoritaria de los Delegados de Prevención.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art21"]
         }
@@ -282,9 +290,15 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c12-1",
-          text: "Son los equipos destinados a proteger al trabajador. Tienen carácter subsidiario y se facilitan gratuitamente por la empresa.",
+          text: "Los equipos de protección individual tienen carácter subsidiario: se utilizan cuando los riesgos no hayan podido evitarse o limitarse suficientemente por medios técnicos de protección colectiva o por medidas, métodos o procedimientos de organización del trabajo.",
           kind: "normative",
-          legalBasis: ["rd773-1997"]
+          legalBasis: ["rd773-1997-art4"]
+        },
+        {
+          id: "prl-c12-2",
+          text: "El empresario está obligado a proporcionar gratuitamente los equipos de protección individual que los trabajadores deban utilizar, reponiéndolos cuando resulte necesario.",
+          kind: "normative",
+          legalBasis: ["rd773-1997-art3"]
         }
       ]
     },
@@ -339,7 +353,13 @@ export const prlTheory: TheorySection = {
       application: [
         {
           id: "prl-ex-2-app-1",
-          text: "Los trabajadores o Delegados tienen la facultad de paralizar de inmediato los trabajos y abandonar la zona por concurrir riesgo grave e inminente.",
+          text: "El trabajador podría ejercer su derecho a interrumpir la actividad y abandonar la zona si considera que la tarea entraña un riesgo grave e inminente para su vida o su salud.",
+          kind: "example",
+          legalBasis: ["lprl-31-1995-art21"]
+        },
+        {
+          id: "prl-ex-2-app-2",
+          text: "Si el empresario no adopta o no permite adoptar las medidas necesarias, los representantes del personal o los Delegados de Prevención podrían acordar la paralización de los trabajos por riesgo grave e inminente.",
           kind: "example",
           legalBasis: ["lprl-31-1995-art21"]
         }
