@@ -9,6 +9,52 @@ export function createMockSupabaseClient() {
     const filters: Array<{ type: "eq" | "gte"; column: string; value: any }> = [];
     let orderByColumn: string | null = null;
     let orderAscending = true;
+    let operationError: Error | null = null;
+
+    const createRow = (row: any) => {
+      const now = new Date().toISOString();
+
+      if (tableName === "concept_mastery") {
+        return {
+          created_at: now,
+          updated_at: now,
+          status: "new",
+          repetitions: 0,
+          ease_factor: 2.5,
+          interval_days: 0,
+          due_on: null,
+          last_reviewed_at: null,
+          last_evidence_at: null,
+          correct_evidence: 0,
+          incorrect_evidence: 0,
+          ...row,
+        };
+      }
+
+      if (tableName === "review_events") {
+        return {
+          id: Math.random().toString(36).substring(7),
+          created_at: now,
+          occurred_at: now,
+          ...row,
+        };
+      }
+
+      if (tableName === "daily_plan_actions") {
+        return {
+          id: Math.random().toString(36).substring(7),
+          created_at: now,
+          ...row,
+        };
+      }
+
+      return {
+        id: Math.random().toString(36).substring(7),
+        created_at: now,
+        updated_at: now,
+        ...row,
+      };
+    };
 
     const builder: any = {
       select: (fields?: string) => {
@@ -23,16 +69,28 @@ export function createMockSupabaseClient() {
         return builder;
       },
       upsert: (payload: any, options?: any) => {
+        if (tableName === "review_events") {
+          operationError = new Error("Review events are immutable.");
+          return builder;
+        }
         operation = "upsert";
         operationPayload = payload;
         upsertOptions = options;
         return builder;
       },
       delete: () => {
+        if (tableName === "review_events") {
+          operationError = new Error("Review events are immutable.");
+          return builder;
+        }
         operation = "delete";
         return builder;
       },
       update: (payload: any) => {
+        if (tableName === "review_events") {
+          operationError = new Error("Review events are immutable.");
+          return builder;
+        }
         operation = "update";
         operationPayload = payload;
         return builder;
@@ -58,12 +116,7 @@ export function createMockSupabaseClient() {
         } else if (operation === "insert") {
           const rows = Array.isArray(operationPayload) ? operationPayload : [operationPayload];
           resultData = rows.map((row) => {
-            const newRow = {
-              id: Math.random().toString(36).substring(7),
-              created_at: new Date().toISOString(),
-              updated_at: new Date().toISOString(),
-              ...row,
-            };
+            const newRow = createRow(row);
             dataState.push(newRow);
             return newRow;
           });
@@ -87,12 +140,7 @@ export function createMockSupabaseClient() {
               dataState[matchIndex] = updatedRow;
               return updatedRow;
             } else {
-              const newRow = {
-                id: Math.random().toString(36).substring(7),
-                created_at: new Date().toISOString(),
-                updated_at: new Date().toISOString(),
-                ...row,
-              };
+              const newRow = createRow(row);
               dataState.push(newRow);
               return newRow;
             }
@@ -120,7 +168,9 @@ export function createMockSupabaseClient() {
               return true;
             });
             if (match) {
-              Object.assign(row, operationPayload, { updated_at: new Date().toISOString() });
+              const timestamp =
+                tableName === "daily_plan_actions" ? {} : { updated_at: new Date().toISOString() };
+              Object.assign(row, operationPayload, timestamp);
               updated.push(row);
             }
           });
@@ -151,15 +201,15 @@ export function createMockSupabaseClient() {
       },
       maybeSingle: async () => {
         const data = builder.execute();
-        return { data: data[0] || null, error: null };
+        return { data: data?.[0] || null, error: operationError };
       },
       single: async () => {
         const data = builder.execute();
-        return { data: data[0] || null, error: null };
+        return { data: data?.[0] || null, error: operationError };
       },
       then: (onfulfilled?: (value: any) => any) => {
         const data = builder.execute();
-        const result = { data, error: null };
+        const result = { data: operationError ? null : data, error: operationError };
         return Promise.resolve(result).then(onfulfilled);
       },
     };

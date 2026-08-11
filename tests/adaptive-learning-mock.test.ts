@@ -39,9 +39,70 @@ describe("adaptive learning Supabase mock", () => {
       user_id: "test-user-id",
     });
 
-    expect(store.conceptMastery).toHaveLength(1);
-    expect(store.reviewEvents).toHaveLength(1);
+    expect(store.conceptMastery).toEqual([
+      expect.objectContaining({
+        concept_id: "concept-1",
+        correct_evidence: 0,
+        due_on: null,
+        ease_factor: 2.5,
+        incorrect_evidence: 0,
+        interval_days: 0,
+        last_evidence_at: null,
+        last_reviewed_at: null,
+        repetitions: 0,
+        status: "new",
+        user_id: "test-user-id",
+      }),
+    ]);
+    expect(store.reviewEvents).toEqual([
+      expect.objectContaining({
+        occurred_at: expect.any(String),
+        source_kind: "recall",
+      }),
+    ]);
     expect(store.dailyPlanActions).toHaveLength(1);
+  });
+
+  it("rejects review-event mutations so immutable history stays unchanged", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+
+    await client.from("review_events").insert({
+      client_event_id: "97e8506c-ea4d-4ce1-b42e-554969cebd3a",
+      concept_id: "concept-1",
+      question_id: null,
+      rating: 2,
+      source_kind: "recall",
+      user_id: "test-user-id",
+    });
+
+    const update = await client
+      .from("review_events")
+      .update({ rating: 3 })
+      .eq("client_event_id", "97e8506c-ea4d-4ce1-b42e-554969cebd3a");
+    const deletion = await client
+      .from("review_events")
+      .delete()
+      .eq("client_event_id", "97e8506c-ea4d-4ce1-b42e-554969cebd3a");
+    const upsert = await client.from("review_events").upsert(
+      {
+        client_event_id: "97e8506c-ea4d-4ce1-b42e-554969cebd3a",
+        concept_id: "concept-1",
+        question_id: null,
+        rating: 3,
+        source_kind: "recall",
+        user_id: "test-user-id",
+      },
+      { onConflict: "user_id,client_event_id" },
+    );
+
+    expect(update).toMatchObject({ data: null, error: expect.any(Error) });
+    expect(deletion).toMatchObject({ data: null, error: expect.any(Error) });
+    expect(upsert).toMatchObject({ data: null, error: expect.any(Error) });
+    expect(store.reviewEvents).toEqual([
+      expect.objectContaining({ rating: 2 }),
+    ]);
   });
 
   it("exposes generated table contracts for adaptive records", () => {

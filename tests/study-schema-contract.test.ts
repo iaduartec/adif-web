@@ -26,6 +26,15 @@ const requiredTables = [
   "study_goals",
 ];
 
+function getTableDefinition(migration: string, table: string) {
+  const match = migration.match(
+    new RegExp(`create table public\\.${table}\\s*\\(([\\s\\S]*?)\\n\\);`, "i"),
+  );
+
+  expect(match, `missing ${table} definition`).not.toBeNull();
+  return match![1];
+}
+
 describe("study schema contract", () => {
   it("creates every personal table with ownership, RLS, and parent-attempt integrity", () => {
     expect(existsSync(migrationPath)).toBe(true);
@@ -104,20 +113,28 @@ describe("study schema contract", () => {
     );
 
     for (const table of ["concept_mastery", "review_events", "daily_plan_actions"]) {
+      const definition = getTableDefinition(migration, table);
+
       expect(migration).toMatch(
         new RegExp(`alter table public\\.${table} enable row level security`, "i"),
       );
-      expect(migration).toMatch(
-        new RegExp(`user_id uuid not null references auth\\.users\\(id\\) on delete cascade`, "i"),
+      expect(definition).toMatch(
+        /user_id uuid not null references auth\.users\(id\) on delete cascade/i,
       );
     }
 
     expect(migration).toMatch(/create policy concept_mastery_update_own/i);
     expect(migration).toMatch(/create policy daily_plan_actions_delete_own/i);
-    expect(migration).toMatch(/create policy review_events_select_own/i);
-    expect(migration).toMatch(/create policy review_events_insert_own/i);
-    expect(migration).not.toMatch(/create policy review_events_update_own/i);
-    expect(migration).not.toMatch(/create policy review_events_delete_own/i);
+    const reviewEventPolicies =
+      migration.match(/create policy [^;]+ on public\.review_events(?:\s+as\s+(?:permissive|restrictive))?\s+for (?:all|select|insert|update|delete)[^;]*;/gi) ?? [];
+
+    expect(reviewEventPolicies).toHaveLength(2);
+    expect(reviewEventPolicies).toContainEqual(
+      expect.stringMatching(/for select using \(\(select auth\.uid\(\)\) = user_id\)/i),
+    );
+    expect(reviewEventPolicies).toContainEqual(
+      expect.stringMatching(/for insert with check \(\(select auth\.uid\(\)\) = user_id\)/i),
+    );
 
     expect(migration).toMatch(/create index concept_mastery_user_due_idx on public\.concept_mastery \(user_id, due_on\)/i);
     expect(migration).toMatch(/create index review_events_user_concept_occurred_idx on public\.review_events \(user_id, concept_id, occurred_at desc\)/i);
