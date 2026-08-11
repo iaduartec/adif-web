@@ -28,7 +28,11 @@
           "text": "PAU"
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-2",
+        "ict-concept-7"
+      ]
     },
     {
       "number": 2,
@@ -57,7 +61,10 @@
           "text": "El presupuesto."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     },
     {
       "number": 3,
@@ -86,7 +93,10 @@
           "text": "Categoría Técnica de Edificación"
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     },
     {
       "number": 4,
@@ -115,7 +125,10 @@
           "text": "Diagnóstico y mantenimiento remoto."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     },
     {
       "number": 5,
@@ -144,7 +157,10 @@
           "text": "ST"
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-5"
+      ]
     },
     {
       "number": 6,
@@ -173,7 +189,10 @@
           "text": "Anexo IV"
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     },
     {
       "number": 7,
@@ -202,7 +221,10 @@
           "text": "RITI"
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-7"
+      ]
     },
     {
       "number": 8,
@@ -231,7 +253,10 @@
           "text": "5 metros de distancia."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-10"
+      ]
     },
     {
       "number": 9,
@@ -260,7 +285,10 @@
           "text": "Servicio de Telecomunicaciones Disponible al Público."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     },
     {
       "number": 10,
@@ -289,7 +317,10 @@
           "text": "220 km/h"
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "rcf-concept-1"
+      ]
     },
     {
       "number": 11,
@@ -318,7 +349,10 @@
           "text": "El presupuesto."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     },
     {
       "number": 12,
@@ -347,7 +381,10 @@
           "text": "Registro de Instalaciones de Telecomunicación y Sistemas."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-7"
+      ]
     },
     {
       "number": 13,
@@ -376,7 +413,10 @@
           "text": "Cuanto menor sea la longitud de los dos circuitos enfrentados."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "cem-concept-4"
+      ]
     },
     {
       "number": 14,
@@ -405,7 +445,10 @@
           "text": "Perturbación electromagnética."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-1"
+      ]
     },
     {
       "number": 15,
@@ -434,7 +477,10 @@
           "text": "Longitud de onda."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-4"
+      ]
     },
     {
       "number": 16,
@@ -463,7 +509,10 @@
           "text": "Directamente proporcional a la amplitud de la fundamental o armónico de rango 1."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "cem-concept-5"
+      ]
     },
     {
       "number": 17,
@@ -492,7 +541,10 @@
           "text": "Prueba completa."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "rcf-concept-1"
+      ]
     },
     {
       "number": 18,
@@ -521,7 +573,10 @@
           "text": "Reglamento de Infraestructuras de Telecomunicaciones."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-1"
+      ]
     }
   ]
 }

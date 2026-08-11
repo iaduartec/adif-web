@@ -34,6 +34,7 @@ const questions: ExamQuestion[] = Array.from({ length: 3 }, (_, i) => ({
   id: `ADIF-2024-3403-Q${String(i + 1).padStart(2, "0")}`,
   sectionLabel: "Parte específica",
   prompt: `Pregunta oficial ${i + 1}`,
+  conceptIds: ["ict-concept-1"],
   options: [
     { key: "A" as const, text: "Opción A" },
     { key: "B" as const, text: "Opción B" },

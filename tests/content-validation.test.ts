@@ -4,6 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { lessonSummaries } from "../content/lesson-summaries";
+import { activeTheoryConceptRegistry } from "../content/theory-concepts";
 import { lessons } from "../content/lessons";
 import {
   lessonReferenceSchema,
@@ -77,6 +78,23 @@ describe("course content schemas", () => {
 });
 
 describe("active official course content", () => {
+  it("maps every official appearance to unique active theory concepts", () => {
+    const parsed = listQuestions();
+    expect(parsed.success).toBe(true);
+    if (!parsed.success) return;
+
+    expect(activeTheoryConceptRegistry.size).toBe(87);
+    expect(parsed.data).toHaveLength(102);
+    for (const question of parsed.data) {
+      expect(question.conceptIds.length, question.id).toBeGreaterThan(0);
+      expect(new Set(question.conceptIds).size, question.id).toBe(question.conceptIds.length);
+      expect(
+        question.conceptIds.every((conceptId) => activeTheoryConceptRegistry.has(conceptId)),
+        question.id,
+      ).toBe(true);
+    }
+  });
+
   it("publishes 102 uniquely identified official ADIF appearances", () => {
     const parsed = listQuestions();
     expect(parsed.success).toBe(true);

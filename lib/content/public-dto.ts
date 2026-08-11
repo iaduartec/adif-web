@@ -37,6 +37,7 @@ export function toPublicOfficialQuestion(question: OfficialQuestion): PublicOffi
     id: question.id,
     sectionLabel: question.sectionLabel,
     prompt: question.prompt,
+    conceptIds: question.conceptIds,
     options: question.options,
     origin: question.origin,
     source: toPublicOfficialSource(question.source),

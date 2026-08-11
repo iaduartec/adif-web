@@ -69,6 +69,7 @@ const transcriptionQuestionSchema = z
     answerKeyPage: z.number().int().positive(),
     verifiedAt: z.iso.date(),
     prompt: z.string().trim().min(1),
+    conceptIds: z.array(z.string().trim().min(1)).min(1),
     options: z.array(z.object({ key: z.enum(optionKeys), text: z.string().trim().min(1) }).strict()),
     answer: z.enum(optionKeys),
   })
@@ -213,6 +214,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
         id: `${entry.id}-Q${String(transcribedQuestion.number).padStart(2, "0")}`,
         sectionLabel: transcribedQuestion.sectionLabel,
         prompt: transcribedQuestion.prompt,
+        conceptIds: transcribedQuestion.conceptIds,
         options,
         answer: transcribedQuestion.answer,
         origin: "official_reference",
