@@ -48,7 +48,7 @@ export const rcfLibro1Theory: TheorySection = {
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Capítulo 1, 1.1.1.7 Criterios generales de operación de trenes",
       excerpt:
-        "Para iniciar servicio se requieren sistema de protección compatible, dispositivo de vigilancia y radiotelefonía. Sin compatibilidad u operatividad del sistema de protección, la velocidad máxima es 120 km/h."
+        "Para que un tren pueda iniciar servicio, es necesario que disponga en la cabina de conducción y tenga operativos: a) Sistema de protección de tren compatible con alguno de los instalados en la infraestructura (si ésta dispone de ellos). b) Dispositivo de vigilancia. c) Radiotelefonía. Sin compatibilidad u operatividad del sistema de protección, la velocidad máxima es 120 km/h."
     },
     {
       id: "rd664-2015-1-2-1-1",
@@ -215,7 +215,7 @@ export const rcfLibro1Theory: TheorySection = {
       claims: [
         {
           id: "rcf-c8-1",
-          text: "Para que un tren pueda iniciar servicio debe disponer en la cabina de conducción y tener operativos un Sistema de protección de tren compatible con alguno de los instalados en la infraestructura, un Dispositivo de vigilancia y la Radiotelefonía.",
+          text: "Para que un tren pueda iniciar servicio debe disponer en la cabina de conducción y tener operativos un Sistema de protección de tren compatible con alguno de los instalados en la infraestructura (si ésta dispone de ellos), un Dispositivo de vigilancia y la Radiotelefonía.",
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-7"]
         }

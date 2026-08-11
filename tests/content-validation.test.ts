@@ -4,6 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { lessonSummaries } from "../content/lesson-summaries";
+import { lessonTheories } from "../content/lesson-theory";
 import { activeTheoryConceptRegistry } from "../content/theory-concepts";
 import { lessons } from "../content/lessons";
 import {
@@ -78,6 +79,37 @@ describe("course content schemas", () => {
 });
 
 describe("active official course content", () => {
+  it("retains the infrastructure-equipment qualifier in the RCF start-of-service evidence", () => {
+    const theory = lessonTheories["rcf-libro-1"];
+    const claim = theory.concepts
+      .find((concept) => concept.id === "rcf-concept-8")
+      ?.claims.find((candidate) => candidate.id === "rcf-c8-1");
+    const source = theory.sources.find((candidate) => candidate.id === "rd664-2015-1-1-1-7");
+
+    expect(claim?.text).toMatch(/infraestructura[^.]*si [ée]sta dispone de ellos/i);
+    expect(source?.excerpt).toMatch(/infraestructura[^.]*si [ée]sta dispone de ellos/i);
+  });
+
+  it("limits UNE-EN 50346 certification to twisted-pair distribution and dispersion networks", () => {
+    const theory = lessonTheories["ict-rd-346-2011"];
+    const claim = theory.concepts
+      .find((concept) => concept.id === "ict-concept-13")
+      ?.claims.find((candidate) => candidate.id === "ict-c13-1");
+
+    expect(claim?.text).toMatch(
+      /redes de distribución y dispersión.*pares trenzados.*UNE-EN 50346/i,
+    );
+  });
+
+  it("anchors the moving-train CEM teaching claim only to its official exam evidence", () => {
+    const theory = lessonTheories["compatibilidad-electromagnetica"];
+    const claim = theory.concepts
+      .find((concept) => concept.id === "cem-concept-14")
+      ?.claims.find((candidate) => candidate.id === "cem-c14-1");
+
+    expect(claim?.legalBasis).toEqual(["adif-pni25-cem-questions"]);
+  });
+
   it("maps every official appearance to unique active theory concepts", () => {
     const parsed = listQuestions();
     expect(parsed.success).toBe(true);

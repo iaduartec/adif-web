@@ -241,7 +241,7 @@ export const cemTheory: TheorySection = {
           id: "cem-c14-1",
           text: "Las emisiones electromagnéticas de los trenes en movimiento se miden con varias antenas simultáneas para recibir todo el ancho de banda que debe medirse.",
           kind: "didactic",
-          legalBasis: ["adif-pni25-cem-questions", "en50121"]
+          legalBasis: ["adif-pni25-cem-questions"]
         }
       ]
     }

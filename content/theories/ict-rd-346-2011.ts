@@ -346,7 +346,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c13-1",
-          text: "Las instalaciones de cableado se certifican con arreglo a la norma UNE-EN 50346, Tecnologías de la información. Instalación de cableado. Ensayo de cableados instalados.",
+          text: "Las redes de distribución y dispersión que utilicen cables de pares trenzados se certifican con arreglo a la norma UNE-EN 50346, Tecnologías de la información. Instalación de cableado. Ensayo de cableados instalados.",
           kind: "normative",
           legalBasis: ["rd346-2011-anex2-cabling"]
         }
