@@ -226,6 +226,9 @@ export function createMockSupabaseClient() {
       if (tableName === "favorites") return chain(tableName, mockStore.favorites);
       if (tableName === "notes") return chain(tableName, mockStore.notes);
       if (tableName === "study_goals") return chain(tableName, mockStore.studyGoals);
+      if (tableName === "concept_mastery") return chain(tableName, mockStore.conceptMastery);
+      if (tableName === "review_events") return chain(tableName, mockStore.reviewEvents);
+      if (tableName === "daily_plan_actions") return chain(tableName, mockStore.dailyPlanActions);
       return chain(tableName, []);
     },
   } as any;

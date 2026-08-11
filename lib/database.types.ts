@@ -9,6 +9,84 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      concept_mastery: {
+        Row: {
+          concept_id: string;
+          correct_evidence: number;
+          created_at: string;
+          due_on: string | null;
+          ease_factor: number;
+          incorrect_evidence: number;
+          interval_days: number;
+          last_evidence_at: string | null;
+          last_reviewed_at: string | null;
+          repetitions: number;
+          status: "new" | "learning" | "review" | "consolidated" | "at_risk";
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          concept_id: string;
+          correct_evidence?: number;
+          created_at?: string;
+          due_on?: string | null;
+          ease_factor?: number;
+          incorrect_evidence?: number;
+          interval_days?: number;
+          last_evidence_at?: string | null;
+          last_reviewed_at?: string | null;
+          repetitions?: number;
+          status?: "new" | "learning" | "review" | "consolidated" | "at_risk";
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          concept_id?: string;
+          correct_evidence?: number;
+          created_at?: string;
+          due_on?: string | null;
+          ease_factor?: number;
+          incorrect_evidence?: number;
+          interval_days?: number;
+          last_evidence_at?: string | null;
+          last_reviewed_at?: string | null;
+          repetitions?: number;
+          status?: "new" | "learning" | "review" | "consolidated" | "at_risk";
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
+      daily_plan_actions: {
+        Row: {
+          action: "postpone" | "replace";
+          created_at: string;
+          id: string;
+          plan_date: string;
+          replacement_task_key: string | null;
+          task_key: string;
+          user_id: string;
+        };
+        Insert: {
+          action: "postpone" | "replace";
+          created_at?: string;
+          id?: string;
+          plan_date: string;
+          replacement_task_key?: string | null;
+          task_key: string;
+          user_id: string;
+        };
+        Update: {
+          action?: "postpone" | "replace";
+          created_at?: string;
+          id?: string;
+          plan_date?: string;
+          replacement_task_key?: string | null;
+          task_key?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
       favorites: {
         Row: {
           created_at: string;
@@ -150,6 +228,42 @@ export type Database = {
         };
         Relationships: [];
       };
+      review_events: {
+        Row: {
+          client_event_id: string;
+          concept_id: string;
+          created_at: string;
+          id: string;
+          occurred_at: string;
+          question_id: string | null;
+          rating: number;
+          source_kind: "recall" | "question";
+          user_id: string;
+        };
+        Insert: {
+          client_event_id: string;
+          concept_id: string;
+          created_at?: string;
+          id?: string;
+          occurred_at?: string;
+          question_id?: string | null;
+          rating: number;
+          source_kind: "recall" | "question";
+          user_id: string;
+        };
+        Update: {
+          client_event_id?: string;
+          concept_id?: string;
+          created_at?: string;
+          id?: string;
+          occurred_at?: string;
+          question_id?: string | null;
+          rating?: number;
+          source_kind?: "recall" | "question";
+          user_id?: string;
+        };
+        Relationships: [];
+      };
       simulation_answers: {
         Row: {
           attempt_id: string;
@@ -227,21 +341,30 @@ export type Database = {
       study_goals: {
         Row: {
           created_at: string;
+          exam_date: string | null;
+          onboarding_completed_at: string | null;
           preferred_days: number[];
+          session_minutes: number;
           updated_at: string;
           user_id: string;
           weekly_target_minutes: number;
         };
         Insert: {
           created_at?: string;
+          exam_date?: string | null;
+          onboarding_completed_at?: string | null;
           preferred_days?: number[];
+          session_minutes?: number;
           updated_at?: string;
           user_id: string;
           weekly_target_minutes: number;
         };
         Update: {
           created_at?: string;
+          exam_date?: string | null;
+          onboarding_completed_at?: string | null;
           preferred_days?: number[];
+          session_minutes?: number;
           updated_at?: string;
           user_id?: string;
           weekly_target_minutes?: number;
