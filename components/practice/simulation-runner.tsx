@@ -68,6 +68,7 @@ export function SimulationRunner({
   const dialogRef = useRef<HTMLDivElement>(null);
   const reviewButtonRef = useRef<HTMLButtonElement>(null);
   const deliverButtonRef = useRef<HTMLButtonElement>(null);
+  const clientEventId = useRef<string | null>(null);
 
   const closeConfirm = useCallback(() => setShowConfirm(false), []);
   const handleDialogKeyDown = useModalFocus({
@@ -103,7 +104,12 @@ export function SimulationRunner({
     setError("");
     try {
       const elapsed = Math.max(0, Date.now() - startedAt.current);
-      const result = await submitSimulation(examId, answers, elapsed);
+      const result = await submitSimulation(
+        examId,
+        answers,
+        elapsed,
+        clientEventId.current ??= crypto.randomUUID(),
+      );
       clearDraft(examId);
       onFinish(result);
     } catch (err) {

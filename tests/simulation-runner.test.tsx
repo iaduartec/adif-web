@@ -141,6 +141,7 @@ describe("SimulationRunner", () => {
           [questions[2].id]: "C",
         },
         expect.any(Number),
+        expect.stringMatching(/^[0-9a-f-]{36}$/i),
       );
     });
 

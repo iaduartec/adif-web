@@ -5,9 +5,9 @@ import { createServerClient } from "../../../lib/supabase/server";
 
 const attemptSchema = z.object({
   questionId: z.string().regex(/^ADIF-\d{4}-\d{4}-Q\d{2}$/),
-  answer: z.enum(["A", "B", "C", "D"]),
-  mode: z.enum(["practice", "simulation"]),
-  elapsedMs: z.number().finite().min(0),
+  selectedAnswer: z.enum(["A", "B", "C", "D"]),
+  elapsedMs: z.number().finite().safe().int().min(0).max(86_400_000),
+  clientEventId: z.uuid(),
 }).strict();
 
 export async function POST(request: Request) {
@@ -36,19 +36,27 @@ export async function POST(request: Request) {
     const question = getOfficialQuestion(input.questionId);
     if (!question) return NextResponse.json({ error: "La pregunta solicitada no existe." }, { status: 404 });
 
-    const isCorrect = question.answer === input.answer;
-    const { data, error } = await supabase.from("question_attempts").insert({
-      user_id: user.id,
-      question_id: question.id,
-      selected_answer: input.answer,
-      is_correct: isCorrect,
-      mode: input.mode,
-      elapsed_ms: input.elapsedMs,
-    }).select("id").single();
+    const { data, error } = await supabase.rpc("record_practice_attempt", {
+      p_question_id: question.id,
+      p_selected_answer: input.selectedAnswer,
+      p_elapsed_ms: input.elapsedMs,
+      p_client_event_id: input.clientEventId,
+    });
 
-    if (error || !data) return NextResponse.json({ error: "No se ha podido guardar el intento." }, { status: 503 });
+    if (
+      error
+      || !data
+      || typeof data !== "object"
+      || Array.isArray(data)
+      || typeof data.attempt_id !== "string"
+      || typeof data.is_correct !== "boolean"
+    ) return NextResponse.json({ error: "No se ha podido guardar el intento." }, { status: 503 });
 
-    return NextResponse.json({ attemptId: data.id, isCorrect, correctAnswer: question.answer }, { status: 201 });
+    return NextResponse.json({
+      attemptId: data.attempt_id,
+      isCorrect: data.is_correct,
+      correctAnswer: question.answer,
+    }, { status: 201 });
   } catch {
     return NextResponse.json({ error: "El servicio de práctica no está disponible." }, { status: 503 });
   }

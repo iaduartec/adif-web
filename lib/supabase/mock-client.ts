@@ -1,7 +1,110 @@
 import { getMockStore, MOCK_USER } from "./mock-store";
+import { getOfficialExam, getOfficialQuestion } from "../content/repository";
+import { activeTheoryConceptRegistry } from "../../content/theory-concepts";
+import {
+  applyReviewSchedule,
+  madridDayKey,
+  type ConceptMastery,
+  type ReviewRating,
+} from "../adaptive/review-schedule";
 
 export function createMockSupabaseClient() {
   const mockStore = getMockStore();
+
+  const persistEvidence = ({
+    clientEventId,
+    conceptId,
+    isCorrect,
+    occurredAt,
+    questionId,
+    rating,
+    sourceKind,
+  }: {
+    clientEventId: string;
+    conceptId: string;
+    isCorrect?: boolean;
+    occurredAt: string;
+    questionId: string | null;
+    rating: ReviewRating;
+    sourceKind: "question" | "recall";
+  }) => {
+    if (mockStore.reviewEvents.some((event) => event.client_event_id === clientEventId)) return false;
+    const previous = sourceKind === "question"
+      ? [...mockStore.reviewEvents].reverse().find((event) => (
+          event.source_kind === "question"
+          && event.question_id === questionId
+          && event.concept_id === conceptId
+        ))
+      : undefined;
+    const existing = mockStore.conceptMastery.find((row) => row.concept_id === conceptId);
+    const current: ConceptMastery = existing ? {
+      status: existing.status,
+      repetitions: existing.repetitions,
+      easeFactor: existing.ease_factor,
+      intervalDays: existing.interval_days,
+      dueOn: existing.due_on,
+      lastReviewedAt: existing.last_reviewed_at,
+      lastEvidenceAt: existing.last_evidence_at,
+      correctEvidence: existing.correct_evidence,
+      incorrectEvidence: existing.incorrect_evidence,
+    } : {
+      status: "new",
+      repetitions: 0,
+      easeFactor: 2.5,
+      intervalDays: 0,
+      dueOn: null,
+      lastReviewedAt: null,
+      lastEvidenceAt: null,
+      correctEvidence: 0,
+      incorrectEvidence: 0,
+    };
+    const next = applyReviewSchedule(
+      current,
+      sourceKind === "question"
+        ? {
+            kind: "question",
+            questionId: questionId!,
+            isCorrect: Boolean(isCorrect),
+            occurredAt,
+            previousMatchingOccurredAt: previous?.occurred_at,
+            conceptActive: activeTheoryConceptRegistry.has(conceptId),
+          }
+        : { kind: "recall", rating, occurredAt, conceptActive: activeTheoryConceptRegistry.has(conceptId) },
+      madridDayKey(occurredAt),
+    );
+    if (!next) return false;
+
+    const now = occurredAt;
+    const masteryRow = {
+      user_id: MOCK_USER.id,
+      concept_id: conceptId,
+      status: next.status,
+      repetitions: next.repetitions,
+      ease_factor: next.easeFactor,
+      interval_days: next.intervalDays,
+      due_on: next.dueOn,
+      last_reviewed_at: next.lastReviewedAt,
+      last_evidence_at: next.lastEvidenceAt,
+      correct_evidence: next.correctEvidence,
+      incorrect_evidence: next.incorrectEvidence,
+      created_at: existing?.created_at ?? now,
+      updated_at: now,
+    };
+    if (existing) Object.assign(existing, masteryRow);
+    else mockStore.conceptMastery.push(masteryRow);
+    mockStore.reviewEvents.push({
+      id: Math.random().toString(36).substring(7),
+      user_id: MOCK_USER.id,
+      concept_id: conceptId,
+      source_kind: sourceKind,
+      question_id: questionId,
+      rating,
+      client_event_id: clientEventId,
+      occurred_at: occurredAt,
+      created_at: occurredAt,
+    });
+    return true;
+  };
   const chain = (tableName: string, dataState: any[]) => {
     let operation: "select" | "insert" | "upsert" | "delete" | "update" | null = null;
     let operationPayload: any = null;
@@ -235,37 +338,125 @@ export function createMockSupabaseClient() {
       },
     },
     rpc: (functionName: string, args: any) => {
+      if (functionName === "record_practice_attempt") {
+        const existing = mockStore.questionAttempts.find(
+          (attempt) => attempt.client_event_id === args.p_client_event_id,
+        );
+        if (existing) {
+          return Promise.resolve({
+            data: { attempt_id: existing.id, is_correct: existing.is_correct },
+            error: null,
+          });
+        }
+        const question = getOfficialQuestion(args.p_question_id);
+        if (!question) return Promise.resolve({ data: null, error: new Error("Unknown question") });
+        const createdAt = new Date().toISOString();
+        const isCorrect = question.answer === args.p_selected_answer;
+        const attempt = {
+          id: Math.random().toString(36).substring(7),
+          client_event_id: args.p_client_event_id,
+          user_id: MOCK_USER.id,
+          question_id: question.id,
+          selected_answer: args.p_selected_answer,
+          is_correct: isCorrect,
+          mode: "practice" as const,
+          elapsed_ms: args.p_elapsed_ms,
+          created_at: createdAt,
+        };
+        mockStore.questionAttempts.push(attempt);
+        for (const conceptId of [...question.conceptIds].sort()) {
+          persistEvidence({
+            clientEventId: `${args.p_client_event_id}:${question.id}:${conceptId}`,
+            conceptId,
+            isCorrect,
+            occurredAt: createdAt,
+            questionId: question.id,
+            rating: isCorrect ? 2 : 0,
+            sourceKind: "question",
+          });
+        }
+        return Promise.resolve({ data: { attempt_id: attempt.id, is_correct: isCorrect }, error: null });
+      }
+
+      if (functionName === "record_recall_review") {
+        const occurredAt = new Date().toISOString();
+        const recorded = persistEvidence({
+          clientEventId: args.p_client_event_id,
+          conceptId: args.p_concept_id,
+          occurredAt,
+          questionId: null,
+          rating: args.p_rating,
+          sourceKind: "recall",
+        });
+        return Promise.resolve({ data: recorded, error: null });
+      }
+
       if (functionName !== "submit_simulation_attempt") {
         return Promise.resolve({ data: null, error: new Error("Unknown mock RPC") });
       }
 
+      const existing = mockStore.simulationAttempts.find(
+        (attempt) => attempt.client_event_id === args.p_client_event_id,
+      );
+      if (existing) return Promise.resolve({ data: existing.id, error: null });
+      const exam = getOfficialExam(args.p_simulation_id);
+      if (!exam) return Promise.resolve({ data: null, error: new Error("Unknown simulation") });
       const attemptId = Math.random().toString(36).substring(7);
       const createdAt = new Date().toISOString();
       const answerRows = Array.isArray(args.p_answers) ? args.p_answers : [];
+      const persistedAnswers: Array<{
+        id: string;
+        user_id: string;
+        attempt_id: string;
+        question_id: string;
+        selected_answer: string | null;
+        is_correct: boolean;
+        created_at: string;
+      }> = answerRows.map((answer: any) => {
+        const question = getOfficialQuestion(answer.question_id);
+        const isCorrect = Boolean(question && answer.selected_answer === question.answer);
+        return {
+          id: Math.random().toString(36).substring(7),
+          user_id: MOCK_USER.id,
+          attempt_id: attemptId,
+          question_id: answer.question_id,
+          selected_answer: answer.selected_answer,
+          is_correct: isCorrect,
+          created_at: createdAt,
+        };
+      });
+      const correctCount = persistedAnswers.filter((answer) => answer.is_correct).length;
+      const omittedCount = persistedAnswers.filter((answer) => answer.selected_answer === null).length;
+      const incorrectCount = persistedAnswers.length - correctCount - omittedCount;
       const attempt = {
         id: attemptId,
+        client_event_id: args.p_client_event_id,
         user_id: MOCK_USER.id,
         simulation_id: args.p_simulation_id,
-        score: args.p_score,
-        correct_count: args.p_correct_count,
-        incorrect_count: args.p_incorrect_count,
-        omitted_count: args.p_omitted_count,
+        score: Math.round((correctCount - incorrectCount / 3) * 100) / 100,
+        correct_count: correctCount,
+        incorrect_count: incorrectCount,
+        omitted_count: omittedCount,
         elapsed_ms: args.p_elapsed_ms,
         created_at: createdAt,
       };
-      const answers = answerRows.map((answer: any) => ({
-        id: Math.random().toString(36).substring(7),
-        user_id: MOCK_USER.id,
-        attempt_id: attemptId,
-        question_id: answer.question_id,
-        selected_answer: answer.selected_answer,
-        is_correct: answer.is_correct,
-        created_at: createdAt,
-      }));
 
-      // Commit both arrays together after the payload has been materialized.
       mockStore.simulationAttempts.push(attempt);
-      mockStore.simulationAnswers.push(...answers);
+      mockStore.simulationAnswers.push(...persistedAnswers);
+      for (const answer of persistedAnswers.filter((row) => row.selected_answer !== null)) {
+        const question = getOfficialQuestion(answer.question_id)!;
+        for (const conceptId of [...question.conceptIds].sort()) {
+          persistEvidence({
+            clientEventId: `${args.p_client_event_id}:${question.id}:${conceptId}`,
+            conceptId,
+            isCorrect: answer.is_correct,
+            occurredAt: createdAt,
+            questionId: question.id,
+            rating: answer.is_correct ? 2 : 0,
+            sourceKind: "question",
+          });
+        }
+      }
       return Promise.resolve({ data: attemptId, error: null });
     },
     from: (tableName: string) => {

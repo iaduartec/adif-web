@@ -197,6 +197,7 @@ export type Database = {
       };
       question_attempts: {
         Row: {
+          client_event_id: string | null;
           created_at: string;
           elapsed_ms: number;
           id: string;
@@ -207,6 +208,7 @@ export type Database = {
           user_id: string;
         };
         Insert: {
+          client_event_id?: string | null;
           created_at?: string;
           elapsed_ms: number;
           id?: string;
@@ -217,6 +219,7 @@ export type Database = {
           user_id: string;
         };
         Update: {
+          client_event_id?: string | null;
           created_at?: string;
           elapsed_ms?: number;
           id?: string;
@@ -304,6 +307,7 @@ export type Database = {
       };
       simulation_attempts: {
         Row: {
+          client_event_id: string | null;
           correct_count: number;
           created_at: string;
           elapsed_ms: number;
@@ -315,6 +319,7 @@ export type Database = {
           user_id: string;
         };
         Insert: {
+          client_event_id?: string | null;
           correct_count?: number;
           created_at?: string;
           elapsed_ms: number;
@@ -326,6 +331,7 @@ export type Database = {
           user_id: string;
         };
         Update: {
+          client_event_id?: string | null;
           correct_count?: number;
           created_at?: string;
           elapsed_ms?: number;
@@ -374,14 +380,28 @@ export type Database = {
     };
     Views: Record<string, never>;
     Functions: {
+      record_practice_attempt: {
+        Args: {
+          p_client_event_id: string;
+          p_elapsed_ms: number;
+          p_question_id: string;
+          p_selected_answer: string;
+        };
+        Returns: Json;
+      };
+      record_recall_review: {
+        Args: {
+          p_client_event_id: string;
+          p_concept_id: string;
+          p_rating: number;
+        };
+        Returns: boolean;
+      };
       submit_simulation_attempt: {
         Args: {
           p_answers: Json;
-          p_correct_count: number;
+          p_client_event_id: string;
           p_elapsed_ms: number;
-          p_incorrect_count: number;
-          p_omitted_count: number;
-          p_score: number;
           p_simulation_id: string;
         };
         Returns: string;

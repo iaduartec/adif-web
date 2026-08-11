@@ -14,11 +14,9 @@ type AttemptResult = {
 
 export function QuestionSession({
   questions,
-  mode = "practice",
   immediateCorrection = true,
 }: {
   questions: readonly PracticeQuestion[];
-  mode?: "practice" | "simulation";
   immediateCorrection?: boolean;
 }) {
   const [index, setIndex] = useState(0);
@@ -27,6 +25,7 @@ export function QuestionSession({
   const [message, setMessage] = useState("");
   const [isPending, startTransition] = useTransition();
   const startedAt = useRef(0);
+  const clientEventId = useRef<string | null>(null);
 
   useEffect(() => {
     startedAt.current = Date.now();
@@ -53,9 +52,9 @@ export function QuestionSession({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             questionId: question.id,
-            answer,
-            mode,
+            selectedAnswer: answer,
             elapsedMs: Math.max(0, Date.now() - startedAt.current),
+            clientEventId: clientEventId.current ??= crypto.randomUUID(),
           }),
         });
         const payload = await response.json() as AttemptResult & { error?: string };
@@ -76,6 +75,7 @@ export function QuestionSession({
     setResult(null);
     setMessage("");
     startedAt.current = Date.now();
+    clientEventId.current = null;
   }
 
   const statusMessage = result && immediateCorrection

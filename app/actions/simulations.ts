@@ -5,6 +5,7 @@ import { createServerClient } from "../../lib/supabase/server";
 
 const ANSWER_KEYS = new Set(["A", "B", "C", "D"]);
 const MAX_SIMULATION_ELAPSED_MS = 86_400_000;
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export type SimulationCorrection = {
   questionId: string;
@@ -27,6 +28,7 @@ export async function submitSimulation(
   examId: string,
   answers: Record<string, string>,
   elapsedMs: number,
+  clientEventId: string,
 ): Promise<SimulationResult> {
   const exam = getOfficialExam(examId);
   if (!exam) throw new Error("El examen oficial solicitado no existe.");
@@ -43,6 +45,10 @@ export async function submitSimulation(
 
   if (!answers || typeof answers !== "object" || Array.isArray(answers)) {
     throw new Error("Respuesta inválida en la entrega del examen.");
+  }
+
+  if (typeof clientEventId !== "string" || !UUID_PATTERN.test(clientEventId)) {
+    throw new Error("Identificador de entrega inválido.");
   }
 
   for (const selectedAnswer of Object.values(answers)) {
@@ -97,7 +103,6 @@ export async function submitSimulation(
   const answerRows = corrections.map((correction) => ({
     question_id: correction.questionId,
     selected_answer: correction.selectedAnswer,
-    is_correct: correction.isCorrect,
   }));
 
   // The RPC owns user_id through auth.uid() and writes parent plus children in one transaction.
@@ -105,12 +110,9 @@ export async function submitSimulation(
     "submit_simulation_attempt",
     {
       p_simulation_id: exam.id,
-      p_correct_count: correct,
-      p_incorrect_count: incorrect,
-      p_omitted_count: omitted,
-      p_score: score,
       p_elapsed_ms: elapsedMs,
       p_answers: answerRows,
+      p_client_event_id: clientEventId,
     },
   );
 

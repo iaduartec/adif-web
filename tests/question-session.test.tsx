@@ -35,9 +35,9 @@ describe("QuestionSession", () => {
     const requestBody = JSON.parse(fetchMock.mock.calls[0][1]?.body as string);
     expect(requestBody).toEqual({
       questionId: "ADIF-2025-1131-Q01",
-      answer: "D",
-      mode: "practice",
+      selectedAnswer: "D",
       elapsedMs: expect.any(Number),
+      clientEventId: expect.stringMatching(/^[0-9a-f-]{36}$/i),
     });
     expect(await screen.findByText("Respuesta incorrecta. Respuesta correcta: A.")).toBeVisible();
     expect(screen.getByText("Pregunta oficial ADIF")).toBeVisible();

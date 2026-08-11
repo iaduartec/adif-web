@@ -116,19 +116,17 @@ describe("submitSimulation", () => {
         "ADIF-2024-3403-Q02": "D",
       },
       1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
     );
 
     expect(result).toMatchObject({ correct: 0, incorrect: 2, omitted: 0, score: -0.67 });
     expect(supabase.rpc).toHaveBeenCalledWith("submit_simulation_attempt", {
       p_simulation_id: exam.id,
-      p_correct_count: 0,
-      p_incorrect_count: 2,
-      p_omitted_count: 0,
-      p_score: -0.67,
       p_elapsed_ms: 1200,
+      p_client_event_id: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
       p_answers: [
-        { question_id: "ADIF-2024-3403-Q01", selected_answer: "D", is_correct: false },
-        { question_id: "ADIF-2024-3403-Q02", selected_answer: "D", is_correct: false },
+        { question_id: "ADIF-2024-3403-Q01", selected_answer: "D" },
+        { question_id: "ADIF-2024-3403-Q02", selected_answer: "D" },
       ],
     });
     expect(supabase.from).not.toHaveBeenCalled();
@@ -146,6 +144,7 @@ describe("submitSimulation", () => {
           "ADIF-2023-1433-Q01": "B",
         },
         1200,
+        "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
       ),
     ).rejects.toThrow(/no pertenece al examen oficial/i);
 
@@ -160,6 +159,7 @@ describe("submitSimulation", () => {
       exam.id,
       { "ADIF-2024-3403-Q01": answer },
       1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
     )).rejects.toThrow(/respuesta.*inválida/i);
 
     expect(supabase.rpc).not.toHaveBeenCalled();
@@ -172,10 +172,23 @@ describe("submitSimulation", () => {
       const supabase = createSupabaseDouble();
       createServerClient.mockResolvedValue(supabase.client);
 
-      await expect(submitSimulation(exam.id, {}, elapsedMs)).rejects.toThrow(/Tiempo transcurrido inválido/i);
+      await expect(submitSimulation(
+        exam.id,
+        {},
+        elapsedMs,
+        "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+      )).rejects.toThrow(/Tiempo transcurrido inválido/i);
 
       expect(supabase.rpc).not.toHaveBeenCalled();
       expect(supabase.from).not.toHaveBeenCalled();
     },
   );
+
+  it("rejects a malformed idempotency key before persistence", async () => {
+    const supabase = createSupabaseDouble();
+    createServerClient.mockResolvedValue(supabase.client);
+
+    await expect(submitSimulation(exam.id, {}, 1200, "not-a-uuid")).rejects.toThrow(/identificador/i);
+    expect(supabase.rpc).not.toHaveBeenCalled();
+  });
 });

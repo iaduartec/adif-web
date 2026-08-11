@@ -1,6 +1,7 @@
 // In-memory store for mock Supabase client during Playwright E2E runs
 export interface MockQuestionAttempt {
   id: string;
+  client_event_id: string | null;
   user_id: string;
   question_id: string;
   selected_answer: string;
@@ -12,6 +13,7 @@ export interface MockQuestionAttempt {
 
 export interface MockSimulationAttempt {
   id: string;
+  client_event_id: string | null;
   user_id: string;
   simulation_id: string;
   score: number;
@@ -26,8 +28,10 @@ export interface MockSimulationAnswer {
   id: string;
   attempt_id: string;
   question_id: string;
-  selected_answer: string;
+  selected_answer: string | null;
   is_correct: boolean;
+  created_at: string;
+  user_id: string;
 }
 
 export interface MockLessonProgress {

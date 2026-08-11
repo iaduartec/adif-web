@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { Database } from "../lib/database.types";
 import { createMockSupabaseClient } from "../lib/supabase/mock-client";
 import { getMockStore } from "../lib/supabase/mock-store";
+import { getOfficialExam } from "../lib/content/repository";
 
 describe("adaptive learning Supabase mock", () => {
   it("exposes empty adaptive records and onboarding-ready study goal defaults", async () => {
@@ -132,5 +133,58 @@ describe("adaptive learning Supabase mock", () => {
     expect(mastery.status).toBeUndefined();
     expect(reviewEvent.question_id).toBeUndefined();
     expect(dailyAction.replacement_task_key).toBeUndefined();
+  });
+
+  it("models an idempotent atomic practice attempt with derived mastery", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const args = {
+      p_question_id: "ADIF-2025-1131-Q01",
+      p_selected_answer: "D",
+      p_elapsed_ms: 500,
+      p_client_event_id: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    };
+
+    const first = await client.rpc("record_practice_attempt", args);
+    const retry = await client.rpc("record_practice_attempt", args);
+
+    expect(retry).toEqual(first);
+    expect(store.questionAttempts).toHaveLength(1);
+    expect(store.reviewEvents).toHaveLength(1);
+    expect(store.conceptMastery).toEqual([
+      expect.objectContaining({
+        concept_id: "ict-concept-24",
+        incorrect_evidence: 1,
+        repetitions: 0,
+        status: "at_risk",
+      }),
+    ]);
+  });
+
+  it("models an idempotent simulation without accepting client correctness", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const exam = getOfficialExam("ADIF-2023-1433")!;
+    const answers = exam.questionIds.map((questionId, index) => ({
+      question_id: questionId,
+      selected_answer: index === 0 ? "C" : null,
+    }));
+    const args = {
+      p_simulation_id: exam.id,
+      p_elapsed_ms: 1_000,
+      p_answers: answers,
+      p_client_event_id: "118f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    };
+
+    const first = await client.rpc("submit_simulation_attempt", args);
+    const retry = await client.rpc("submit_simulation_attempt", args);
+
+    expect(retry).toEqual(first);
+    expect(store.simulationAttempts).toHaveLength(1);
+    expect(store.simulationAttempts[0]).toMatchObject({ correct_count: 1, incorrect_count: 0, omitted_count: 14 });
+    expect(store.simulationAnswers).toHaveLength(15);
+    expect(store.reviewEvents).toHaveLength(1);
   });
 });
