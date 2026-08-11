@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { AdaptiveDashboard } from "../../components/dashboard/adaptive-dashboard";
+import { AnalyticsUnavailable } from "../../components/dashboard/analytics-unavailable";
 import { assembleDailyPlanInput } from "../../lib/adaptive/daily-plan-server";
 import { buildDailyPlan } from "../../lib/adaptive/daily-plan";
 import { calculateReadiness } from "../../lib/adaptive/readiness";
-import { assembleReadinessInput } from "../../lib/adaptive/readiness-server";
+import { assembleReadinessInput, ReadinessUnavailableError } from "../../lib/adaptive/readiness-server";
 import { madridDayKey } from "../../lib/adaptive/review-schedule";
 import { createServerClient } from "../../lib/supabase/server";
 
@@ -21,14 +22,29 @@ export default async function DashboardPage() {
 
   const now = new Date();
   const today = madridDayKey(now);
-  const [readinessInput, dailyPlanInput, goalResult] = await Promise.all([
-    assembleReadinessInput(supabase, user.id, now),
-    assembleDailyPlanInput(today, { supabase, userId: user.id }),
-    supabase.from("study_goals")
-      .select("weekly_target_minutes")
-      .eq("user_id", user.id)
-      .maybeSingle(),
-  ]);
+  const readinessInputPromise = assembleReadinessInput(supabase, user.id, now);
+  let readinessInput;
+  let dailyPlanInput;
+  let goalResult;
+  try {
+    [readinessInput, dailyPlanInput, goalResult] = await Promise.all([
+      readinessInputPromise,
+      assembleDailyPlanInput(today, {
+        supabase,
+        userId: user.id,
+        readinessInput: readinessInputPromise,
+      }),
+      supabase.from("study_goals")
+        .select("weekly_target_minutes")
+        .eq("user_id", user.id)
+        .maybeSingle(),
+    ]);
+  } catch (error) {
+    if (error instanceof ReadinessUnavailableError) {
+      return <AnalyticsUnavailable retryHref="/" />;
+    }
+    throw error;
+  }
   if (goalResult.error) throw new Error("No se ha podido cargar el objetivo semanal.");
 
   const snapshot = calculateReadiness(readinessInput);

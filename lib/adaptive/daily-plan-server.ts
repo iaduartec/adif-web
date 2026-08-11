@@ -1,7 +1,11 @@
 import { lessonTheories } from "../../content/lesson-theory";
 import { listLessons, listOfficialExams, listOfficialQuestions } from "../content/repository";
 import { createServerClient } from "../supabase/server";
+import { fetchPaginatedRows } from "../supabase/paginated-query";
 import { madridDayKey } from "./review-schedule";
+import { collectActiveEvidence } from "./evidence";
+import { assembleReadinessInput } from "./readiness-server";
+import type { ReadinessInput } from "./readiness";
 import type {
   DailyPlanAction,
   DailyPlanInput,
@@ -12,7 +16,13 @@ type AssemblyContent = {
   concepts: readonly { conceptId: string; title: string; lessonId: string }[];
   lessons: readonly { lessonId: string; title: string }[];
   questions: readonly { id: string; conceptIds: readonly string[] }[];
-  simulations: readonly { examId: string; title: string; durationMinutes: number; sourceYear: number }[];
+  simulations: readonly {
+    examId: string;
+    title: string;
+    durationMinutes: number;
+    sourceYear: number;
+    questionIds: readonly string[];
+  }[];
 };
 
 type AssemblyHistory = {
@@ -20,11 +30,22 @@ type AssemblyHistory = {
     conceptId: string;
     status: string;
     dueOn: string | null;
-    repetitions: number;
+    lastReviewedAt: string | null;
   }[];
   lessonProgress: readonly { lessonId: string; percent: number; completed: boolean }[];
   questionAttempts: readonly { questionId: string }[];
-  simulationAttempts: readonly { examId: string; createdAt: string }[];
+  reviewEvents: readonly {
+    conceptId: string;
+    sourceKind: "recall" | "question";
+    questionId: string | null;
+    rating: number;
+  }[];
+  simulationAnswers: readonly {
+    attemptId: string;
+    questionId: string;
+    selectedAnswer: "A" | "B" | "C" | "D" | null;
+  }[];
+  simulationAttempts: readonly { attemptId: string; examId: string; createdAt: string }[];
   actions: readonly DailyPlanAction[];
 };
 
@@ -53,15 +74,25 @@ export function assembleDailyPlanInputFromRows(rows: DailyPlanAssemblyRows): Dai
   const activeQuestionIds = new Set(activeQuestions.map((question) => question.id));
   const progressByLesson = new Map(rows.history.lessonProgress.map((progress) => [progress.lessonId, progress]));
   const mastery = rows.history.mastery.filter((entry) => activeConcepts.has(entry.conceptId));
-  const reviewedConceptIds = mastery
-    .filter((entry) => entry.repetitions > 0)
-    .map((entry) => entry.conceptId)
-    .sort(compareText);
-  const uniqueAttemptedQuestionIds = [...new Set(
-    rows.history.questionAttempts
-      .map((attempt) => attempt.questionId)
-      .filter((questionId) => activeQuestionIds.has(questionId)),
-  )].sort(compareText);
+  const activeSimulationById = new Map(rows.content.simulations.map((simulation) => [simulation.examId, simulation]));
+  const activeSimulationAttemptById = new Map(
+    rows.history.simulationAttempts
+      .filter((attempt) => activeSimulationById.has(attempt.examId))
+      .map((attempt) => [attempt.attemptId, attempt]),
+  );
+  const activeSimulationAnswers = rows.history.simulationAnswers.filter((answer) => {
+    const attempt = activeSimulationAttemptById.get(answer.attemptId);
+    const simulation = attempt ? activeSimulationById.get(attempt.examId) : undefined;
+    return simulation?.questionIds.includes(answer.questionId) === true;
+  });
+  const evidence = collectActiveEvidence({
+    activeConceptIds: new Set(activeConcepts.keys()),
+    activeQuestionIds,
+    mastery,
+    questionAttempts: rows.history.questionAttempts,
+    simulationAnswers: activeSimulationAnswers,
+    reviewEvents: rows.history.reviewEvents,
+  });
   const yesterday = previousDay(rows.date);
 
   const reviews = mastery
@@ -96,11 +127,18 @@ export function assembleDailyPlanInputFromRows(rows: DailyPlanAssemblyRows): Dai
     reviews,
     lessons,
     practiceQuestions: activeQuestions.map(({ id }) => ({ id })),
-    simulations: [...rows.content.simulations].sort((left, right) => (
-      left.sourceYear - right.sourceYear || compareText(left.examId, right.examId)
-    )),
-    uniqueAttemptedQuestionIds,
-    reviewedConceptIds,
+    simulations: [...rows.content.simulations]
+      .sort((left, right) => (
+        left.sourceYear - right.sourceYear || compareText(left.examId, right.examId)
+      ))
+      .map(({ examId, title, durationMinutes, sourceYear }) => ({
+        examId,
+        title,
+        durationMinutes,
+        sourceYear,
+      })),
+    uniqueAttemptedQuestionIds: evidence.uniqueAttemptedQuestionIds,
+    reviewedConceptIds: evidence.reviewedConceptIds,
     simulationAttempts: rows.history.simulationAttempts
       .map((attempt) => ({ examId: attempt.examId, attemptedOn: madridDayKey(attempt.createdAt) }))
       .sort((left, right) => compareText(left.attemptedOn, right.attemptedOn) || compareText(left.examId, right.examId)),
@@ -129,51 +167,84 @@ function activeContent(): AssemblyContent {
       title: exam.title,
       durationMinutes: exam.durationMinutes,
       sourceYear: exam.source.year,
+      questionIds: exam.questionIds,
     })),
   };
 }
 
 type SupabaseClient = Awaited<ReturnType<typeof createServerClient>>;
 
-async function readHistory(supabase: SupabaseClient, userId: string, date: string): Promise<{
+async function readHistory(
+  supabase: SupabaseClient,
+  userId: string,
+  date: string,
+  readinessInput?: Promise<ReadinessInput> | ReadinessInput,
+): Promise<{
   sessionMinutes: number;
   history: AssemblyHistory;
 }> {
   const since = previousDay(date);
-  const [goalResult, masteryResult, progressResult, questionResult, simulationResult, actionResult] = await Promise.all([
+  const [goalResult, progressRows, actionRows, readiness] = await Promise.all([
     supabase.from("study_goals").select("session_minutes").eq("user_id", userId).maybeSingle(),
-    supabase.from("concept_mastery").select("concept_id,status,due_on,repetitions").eq("user_id", userId),
-    supabase.from("lesson_progress").select("lesson_id,percent,completed").eq("user_id", userId),
-    supabase.from("question_attempts").select("question_id").eq("user_id", userId),
-    supabase.from("simulation_attempts").select("simulation_id,created_at").eq("user_id", userId),
-    supabase.from("daily_plan_actions").select("plan_date,task_key,action,replacement_task_key").eq("user_id", userId).gte("plan_date", since),
+    fetchPaginatedRows<{ lesson_id: string; percent: number; completed: boolean }>(() => (
+      supabase.from("lesson_progress")
+        .select("lesson_id,percent,completed")
+        .eq("user_id", userId)
+        .order("lesson_id", { ascending: true })
+    )),
+    fetchPaginatedRows<{
+      plan_date: string;
+      task_key: string;
+      action: DailyPlanAction["action"];
+      replacement_task_key: string | null;
+    }>(() => (
+      supabase.from("daily_plan_actions")
+        .select("plan_date,task_key,action,replacement_task_key")
+        .eq("user_id", userId)
+        .gte("plan_date", since)
+        .order("plan_date", { ascending: true })
+        .order("task_key", { ascending: true })
+    )),
+    readinessInput ?? assembleReadinessInput(supabase, userId, new Date(`${date}T12:00:00+02:00`)),
   ]);
 
-  const firstError = [goalResult, masteryResult, progressResult, questionResult, simulationResult, actionResult]
-    .find((result) => result.error)?.error;
-  if (firstError) throw new Error("No se ha podido preparar el plan diario.");
+  if (goalResult.error) throw new Error("No se ha podido preparar el plan diario.");
   if (!goalResult.data) throw new Error("Completa tu perfil de preparación antes de generar el plan.");
 
   return {
     sessionMinutes: goalResult.data.session_minutes,
     history: {
-      mastery: (masteryResult.data ?? []).map((row) => ({
-        conceptId: row.concept_id,
+      mastery: readiness.mastery.map((row) => ({
+        conceptId: row.conceptId,
         status: row.status,
-        dueOn: row.due_on,
-        repetitions: row.repetitions,
+        dueOn: row.dueOn,
+        lastReviewedAt: row.lastReviewedAt,
       })),
-      lessonProgress: (progressResult.data ?? []).map((row) => ({
+      lessonProgress: progressRows.map((row) => ({
         lessonId: row.lesson_id,
         percent: row.percent,
         completed: row.completed,
       })),
-      questionAttempts: (questionResult.data ?? []).map((row) => ({ questionId: row.question_id })),
-      simulationAttempts: (simulationResult.data ?? []).map((row) => ({
-        examId: row.simulation_id,
-        createdAt: row.created_at,
+      questionAttempts: readiness.questionAttempts
+        .filter((attempt) => attempt.mode !== "simulation")
+        .map((row) => ({ questionId: row.questionId })),
+      reviewEvents: readiness.reviewEvents.map((event) => ({
+        conceptId: event.conceptId,
+        sourceKind: event.sourceKind,
+        questionId: event.questionId ?? null,
+        rating: event.rating,
       })),
-      actions: (actionResult.data ?? []).map((row) => ({
+      simulationAnswers: readiness.simulationAnswers.map((answer) => ({
+        attemptId: answer.attemptId,
+        questionId: answer.questionId,
+        selectedAnswer: answer.selectedAnswer,
+      })),
+      simulationAttempts: readiness.simulationAttempts.map((row) => ({
+        attemptId: row.id,
+        examId: row.simulationId,
+        createdAt: row.createdAt,
+      })),
+      actions: actionRows.map((row) => ({
         planDate: row.plan_date,
         taskKey: row.task_key,
         action: row.action,
@@ -185,7 +256,11 @@ async function readHistory(supabase: SupabaseClient, userId: string, date: strin
 
 export async function assembleDailyPlanInput(
   requestedDate?: string,
-  authenticated?: { supabase: SupabaseClient; userId: string },
+  authenticated?: {
+    supabase: SupabaseClient;
+    userId: string;
+    readinessInput?: Promise<ReadinessInput> | ReadinessInput;
+  },
 ): Promise<DailyPlanInput> {
   const date = requestedDate ?? madridDayKey(new Date());
   const supabase = authenticated?.supabase ?? await createServerClient();
@@ -195,6 +270,11 @@ export async function assembleDailyPlanInput(
     if (error || !user) throw new Error("Debes iniciar sesión para consultar tu plan diario.");
     userId = user.id;
   }
-  const { sessionMinutes, history } = await readHistory(supabase, userId, date);
+  const { sessionMinutes, history } = await readHistory(
+    supabase,
+    userId,
+    date,
+    authenticated?.readinessInput,
+  );
   return assembleDailyPlanInputFromRows({ date, sessionMinutes, content: activeContent(), history });
 }

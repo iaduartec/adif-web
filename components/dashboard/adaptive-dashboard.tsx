@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { DailyPlan, DailyReviewTask, DailyTask } from "../../lib/adaptive/daily-plan";
+import type { DailyPlan, DailyTask } from "../../lib/adaptive/daily-plan";
 import type { ReadinessSnapshot } from "../../lib/adaptive/readiness";
 
 type NextSimulation = { id: string; title: string; durationMinutes: number };
@@ -18,7 +18,16 @@ function taskDestination(task: DailyTask, snapshot: ReadinessSnapshot) {
       };
     }
     case "lesson": return { href: `/curso/${task.lessonId}`, label: `Continuar ${task.title}` };
-    case "practice": return { href: "/tests?practice=true", label: `Practicar ${task.questionCount} preguntas` };
+    case "practice": {
+      const params = new URLSearchParams({
+        practice: "true",
+        questions: task.questionIds.join(","),
+      });
+      return {
+        href: `/tests?${params.toString()}`,
+        label: `Practicar ${task.questionCount} preguntas`,
+      };
+    }
     case "simulation": return { href: `/simulacros/${task.examId}`, label: `Abrir ${task.title}` };
   }
 }
@@ -39,8 +48,8 @@ export function AdaptiveDashboard({
   weeklyTargetMinutes: number;
 }) {
   const obstacle = snapshot.mainObstacle;
-  const overdueReviews = plan.tasks.filter((task): task is DailyReviewTask => (
-    task.kind === "review" && task.dueOn < plan.date
+  const overdueReviews = snapshot.concepts.filter((concept) => (
+    concept.dueOn !== null && concept.dueOn < plan.date
   ));
   const atRiskLessonIds = new Set(
     snapshot.concepts
@@ -127,15 +136,12 @@ export function AdaptiveDashboard({
         </div>
         {overdueReviews.length > 0 ? (
           <ul className="dashboard-compact-list">
-            {overdueReviews.map((review) => {
-              const destination = taskDestination(review, snapshot);
-              return (
-                <li key={review.key}>
-                  <span><strong>{review.title}</strong><small>Vencido desde {review.dueOn}</small></span>
-                  <Link className="text-link" href={destination.href}>{destination.label}</Link>
-                </li>
-              );
-            })}
+            {overdueReviews.map((review) => (
+              <li key={review.conceptId}>
+                <span><strong>{review.conceptTitle}</strong><small>Vencido desde {review.dueOn}</small></span>
+                <Link className="text-link" href={`/curso/${review.lessonId}`}>Revisar {review.conceptTitle}</Link>
+              </li>
+            ))}
           </ul>
         ) : <p className="empty-state">No tienes repasos vencidos dentro del contenido activo.</p>}
       </section>

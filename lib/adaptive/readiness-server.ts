@@ -1,6 +1,7 @@
 import { lessonTheories } from "../../content/lesson-theory";
 import { listLessons, listOfficialExams, listOfficialQuestions } from "../content/repository";
 import type { createServerClient } from "../supabase/server";
+import { fetchPaginatedRows } from "../supabase/paginated-query";
 import type {
   ReadinessInput,
   ReadinessMastery,
@@ -14,7 +15,7 @@ type ReadinessContentRows = Pick<
   "concepts" | "questions" | "simulations"
 >;
 
-type ReadinessHistoryRows = {
+export type ReadinessHistoryRows = {
   mastery: readonly {
     concept_id: string;
     status: ReadinessMastery["status"];
@@ -142,45 +143,78 @@ function activeContent(): ReadinessContentRows {
 
 type SupabaseClient = Awaited<ReturnType<typeof createServerClient>>;
 
+export class ReadinessUnavailableError extends Error {
+  readonly cause: unknown;
+
+  constructor(cause?: unknown) {
+    super("No se han podido cargar los indicadores de preparación.");
+    this.name = "ReadinessUnavailableError";
+    this.cause = cause;
+  }
+}
+
+export async function readReadinessHistory(
+  supabase: SupabaseClient,
+  userId: string,
+): Promise<ReadinessHistoryRows> {
+  const [mastery, questionAttempts, reviewEvents, simulationAttempts, simulationAnswers, lessonProgress] = await Promise.all([
+    fetchPaginatedRows<ReadinessHistoryRows["mastery"][number]>(() => (
+      supabase.from("concept_mastery")
+        .select("concept_id,status,due_on,last_reviewed_at")
+        .eq("user_id", userId)
+        .order("concept_id", { ascending: true })
+    )),
+    fetchPaginatedRows<ReadinessHistoryRows["questionAttempts"][number]>(() => (
+      supabase.from("question_attempts")
+        .select("question_id,is_correct,elapsed_ms,mode,created_at")
+        .eq("user_id", userId)
+        .order("created_at", { ascending: true })
+        .order("id", { ascending: true })
+    )),
+    fetchPaginatedRows<ReadinessHistoryRows["reviewEvents"][number]>(() => (
+      supabase.from("review_events")
+        .select("concept_id,source_kind,question_id,rating,occurred_at")
+        .eq("user_id", userId)
+        .order("occurred_at", { ascending: true })
+        .order("id", { ascending: true })
+    )),
+    fetchPaginatedRows<ReadinessHistoryRows["simulationAttempts"][number]>(() => (
+      supabase.from("simulation_attempts")
+        .select("id,simulation_id,correct_count,incorrect_count,omitted_count,elapsed_ms,created_at")
+        .eq("user_id", userId)
+        .order("created_at", { ascending: true })
+        .order("id", { ascending: true })
+    )),
+    fetchPaginatedRows<ReadinessHistoryRows["simulationAnswers"][number]>(() => (
+      supabase.from("simulation_answers")
+        .select("attempt_id,question_id,is_correct,selected_answer")
+        .eq("user_id", userId)
+        .order("id", { ascending: true })
+    )),
+    fetchPaginatedRows<ReadinessHistoryRows["lessonProgress"][number]>(() => (
+      supabase.from("lesson_progress")
+        .select("lesson_id,last_activity_at")
+        .eq("user_id", userId)
+        .order("lesson_id", { ascending: true })
+    )),
+  ]);
+
+  return { mastery, questionAttempts, reviewEvents, simulationAttempts, simulationAnswers, lessonProgress };
+}
+
 export async function assembleReadinessInput(
   supabase: SupabaseClient,
   userId: string,
   now: Date = new Date(),
 ): Promise<ReadinessInput> {
-  const [mastery, attempts, reviews, simulations, answers, lessons] = await Promise.all([
-    supabase.from("concept_mastery")
-      .select("concept_id,status,due_on,last_reviewed_at")
-      .eq("user_id", userId),
-    supabase.from("question_attempts")
-      .select("question_id,is_correct,elapsed_ms,mode,created_at")
-      .eq("user_id", userId),
-    supabase.from("review_events")
-      .select("concept_id,source_kind,question_id,rating,occurred_at")
-      .eq("user_id", userId),
-    supabase.from("simulation_attempts")
-      .select("id,simulation_id,correct_count,incorrect_count,omitted_count,elapsed_ms,created_at")
-      .eq("user_id", userId),
-    supabase.from("simulation_answers")
-      .select("attempt_id,question_id,is_correct,selected_answer")
-      .eq("user_id", userId),
-    supabase.from("lesson_progress")
-      .select("lesson_id,last_activity_at")
-      .eq("user_id", userId),
-  ]);
-  const firstError = [mastery, attempts, reviews, simulations, answers, lessons]
-    .find((result) => result.error)?.error;
-  if (firstError) throw new Error("No se han podido calcular los indicadores de preparación.");
-
-  return assembleReadinessInputFromRows({
-    now,
-    content: activeContent(),
-    rows: {
-      mastery: mastery.data ?? [],
-      questionAttempts: attempts.data ?? [],
-      reviewEvents: reviews.data ?? [],
-      simulationAttempts: simulations.data ?? [],
-      simulationAnswers: answers.data ?? [],
-      lessonProgress: lessons.data ?? [],
-    },
-  });
+  try {
+    return assembleReadinessInputFromRows({
+      now,
+      content: activeContent(),
+      rows: await readReadinessHistory(supabase, userId),
+    });
+  } catch (error) {
+    if (error instanceof ReadinessUnavailableError) throw error;
+    throw new ReadinessUnavailableError(error);
+  }
 }

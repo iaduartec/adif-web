@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { assembleReadinessInputFromRows } from "../lib/adaptive/readiness-server";
+import { vi } from "vitest";
+import {
+  assembleReadinessInput,
+  assembleReadinessInputFromRows,
+  ReadinessUnavailableError,
+  readReadinessHistory,
+} from "../lib/adaptive/readiness-server";
 
 describe("readiness server assembly", () => {
   it("maps active content and authenticated history into the pure readiness contract", () => {
@@ -93,5 +99,72 @@ describe("readiness server assembly", () => {
       }],
       lessonActivity: [{ lessonId: "lesson-a", occurredAt: "2026-08-08T09:00:00Z" }],
     });
+  });
+
+  it("paginates every history table and exhausts a full first page", async () => {
+    const tableRows: Record<string, unknown[]> = {
+      concept_mastery: [],
+      question_attempts: Array.from({ length: 501 }, (_, index) => ({
+        question_id: `question-${index}`,
+        is_correct: true,
+        elapsed_ms: 1_000,
+        mode: "practice",
+        created_at: "2026-08-11T09:00:00Z",
+      })),
+      review_events: [],
+      simulation_attempts: [],
+      simulation_answers: [],
+      lesson_progress: [],
+    };
+    const ranges = new Map<string, Array<[number, number]>>();
+    const supabase = {
+      from: vi.fn((table: string) => {
+        const query = {
+          select: vi.fn(),
+          eq: vi.fn(),
+          order: vi.fn(),
+          range: vi.fn(async (from: number, to: number) => {
+            ranges.set(table, [...(ranges.get(table) ?? []), [from, to]]);
+            return { data: tableRows[table]!.slice(from, to + 1), error: null };
+          }),
+        };
+        query.select.mockReturnValue(query);
+        query.eq.mockReturnValue(query);
+        query.order.mockReturnValue(query);
+        return query;
+      }),
+    };
+
+    const history = await readReadinessHistory(supabase as never, "user-1");
+
+    expect(history.questionAttempts).toHaveLength(501);
+    expect(ranges.get("question_attempts")).toEqual([[0, 499], [500, 999]]);
+    expect([...ranges.keys()].sort()).toEqual(Object.keys(tableRows).sort());
+  });
+
+  it("wraps database failures in a typed safe readiness error", async () => {
+    const databaseError = new Error("relation secret_table violates private policy");
+    const supabase = {
+      from: vi.fn((table: string) => {
+        const query = {
+          select: vi.fn(),
+          eq: vi.fn(),
+          order: vi.fn(),
+          range: vi.fn(async () => ({
+            data: table === "question_attempts" ? null : [],
+            error: table === "question_attempts" ? databaseError : null,
+          })),
+        };
+        query.select.mockReturnValue(query);
+        query.eq.mockReturnValue(query);
+        query.order.mockReturnValue(query);
+        return query;
+      }),
+    };
+
+    const promise = assembleReadinessInput(supabase as never, "user-1");
+
+    await expect(promise).rejects.toBeInstanceOf(ReadinessUnavailableError);
+    await expect(promise).rejects.not.toThrow(/secret_table|private policy/i);
   });
 });

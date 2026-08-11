@@ -209,6 +209,7 @@ describe("calculateReadiness metrics", () => {
       ],
       reviewEvents: [
         { conceptId: "concept-active", sourceKind: "recall", rating: 2, occurredAt: "2026-08-10T09:00:00Z" },
+        { conceptId: "concept-active", sourceKind: "question", questionId: "question-retired", rating: 3, occurredAt: "2026-08-09T09:00:00Z" },
         { conceptId: "concept-retired", sourceKind: "recall", rating: 2, occurredAt: "2026-08-10T09:00:00Z" },
       ],
       simulationAttempts: [{
@@ -227,6 +228,42 @@ describe("calculateReadiness metrics", () => {
     expect(snapshot.accuracy.historical).toEqual({ correct: 1, percentage: 100, total: 1 });
     expect(snapshot.currentDomain).toEqual({ current: 1, percentage: 100, total: 1 });
     expect(snapshot.recentSimulations).toBe(0);
+    expect(snapshot.deferredRetention).toEqual({ eligible: 0, percentage: null, retained: 0 });
+  });
+
+  it("recomputes simulation score from active answers when an exam still references a retired question", () => {
+    const snapshot = calculateReadiness(input({
+      concepts: [{ id: "concept-active", title: "Activo", lessonId: "lesson-a", lessonTitle: "Lección A" }],
+      questions: [{ id: "question-active", conceptIds: ["concept-active"] }],
+      simulations: [{
+        id: "exam",
+        title: "Examen",
+        durationMinutes: 10,
+        questionIds: ["question-active", "question-retired"],
+      }],
+      simulationAttempts: [{
+        id: "attempt",
+        simulationId: "exam",
+        correctCount: 0,
+        incorrectCount: 2,
+        omittedCount: 0,
+        elapsedMs: 100_000,
+        createdAt: "2026-08-10T09:00:00Z",
+      }],
+      simulationAnswers: [
+        { attemptId: "attempt", questionId: "question-active", isCorrect: true, selectedAnswer: "A" },
+        { attemptId: "attempt", questionId: "question-retired", isCorrect: false, selectedAnswer: "B" },
+      ],
+    }));
+
+    expect(snapshot.simulationScores).toEqual([{
+      attemptId: "attempt",
+      examId: "exam",
+      examTitle: "Examen",
+      netScore: 1,
+      normalizedPercentage: 100,
+      totalQuestions: 1,
+    }]);
   });
 
   it("computes recent accuracy by the last 14 Madrid days and historical accuracy over all active answers", () => {
@@ -309,6 +346,21 @@ describe("calculateReadiness metrics", () => {
         elapsedMs: 600_000,
         createdAt: "2026-08-10T08:00:00Z",
       }],
+      simulationAnswers: [
+        ...Array.from({ length: 6 }, (_, index) => ({
+          attemptId: "simulation-attempt-1",
+          questionId: `question-${index + 1}`,
+          isCorrect: true,
+          selectedAnswer: "A" as const,
+        })),
+        ...Array.from({ length: 3 }, (_, index) => ({
+          attemptId: "simulation-attempt-1",
+          questionId: `question-${index + 7}`,
+          isCorrect: false,
+          selectedAnswer: "B" as const,
+        })),
+        { attemptId: "simulation-attempt-1", questionId: "question-10", isCorrect: false, selectedAnswer: null },
+      ],
     }));
 
     expect(snapshot.simulationScores).toEqual([{
@@ -329,6 +381,12 @@ describe("calculateReadiness metrics", () => {
       simulationAttempts: [
         { id: "older", simulationId: "exam", correctCount: 1, incorrectCount: 1, omittedCount: 0, elapsedMs: 600_000, createdAt: "2026-08-01T09:00:00Z" },
         { id: "latest", simulationId: "exam", correctCount: 2, incorrectCount: 0, omittedCount: 0, elapsedMs: 600_000, createdAt: "2026-08-10T09:00:00Z" },
+      ],
+      simulationAnswers: [
+        { attemptId: "older", questionId: "question-1", isCorrect: true, selectedAnswer: "A" },
+        { attemptId: "older", questionId: "question-2", isCorrect: false, selectedAnswer: "B" },
+        { attemptId: "latest", questionId: "question-1", isCorrect: true, selectedAnswer: "A" },
+        { attemptId: "latest", questionId: "question-2", isCorrect: true, selectedAnswer: "A" },
       ],
     }));
 

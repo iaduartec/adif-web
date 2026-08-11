@@ -22,12 +22,18 @@ describe("daily-plan server assembly", () => {
           { id: "q-active-1", conceptIds: ["active-a"] },
           { id: "q-retired", conceptIds: ["retired"] },
         ],
-        simulations: [{ examId: "exam-a", title: "Exam", durationMinutes: 15, sourceYear: 2024 }],
+        simulations: [{
+          examId: "exam-a",
+          title: "Exam",
+          durationMinutes: 15,
+          sourceYear: 2024,
+          questionIds: ["q-active-1", "q-active-2"],
+        }],
       },
       history: {
         mastery: [
-          { conceptId: "active-a", status: "at_risk", dueOn: "2026-08-10", repetitions: 1 },
-          { conceptId: "retired", status: "at_risk", dueOn: "2026-08-01", repetitions: 9 },
+          { conceptId: "active-a", status: "at_risk", dueOn: "2026-08-10", lastReviewedAt: "2026-08-01T09:00:00Z" },
+          { conceptId: "retired", status: "at_risk", dueOn: "2026-08-01", lastReviewedAt: "2026-08-01T09:00:00Z" },
         ],
         lessonProgress: [
           { lessonId: "lesson-a", percent: 100, completed: true },
@@ -38,7 +44,9 @@ describe("daily-plan server assembly", () => {
           { questionId: "q-active-1" },
           { questionId: "q-retired" },
         ],
-        simulationAttempts: [{ examId: "exam-a", createdAt: "2026-08-03T22:30:00.000Z" }],
+        reviewEvents: [],
+        simulationAnswers: [],
+        simulationAttempts: [{ attemptId: "attempt-a", examId: "exam-a", createdAt: "2026-08-03T22:30:00.000Z" }],
         actions: [
           { planDate: "2026-08-10", taskKey: "review:active-b", action: "postpone", replacementTaskKey: null },
           { planDate: "2026-08-11", taskKey: "review:active-a", action: "postpone", replacementTaskKey: null },
@@ -76,7 +84,7 @@ describe("daily-plan server assembly", () => {
         questions: Array.from({ length: 10 }, (_, index) => ({ id: `q-${index}`, conceptIds: ["active"] })),
         simulations: [],
       },
-      history: { mastery: [], lessonProgress: [], questionAttempts: [], simulationAttempts: [], actions: [] },
+      history: { mastery: [], lessonProgress: [], questionAttempts: [], reviewEvents: [], simulationAnswers: [], simulationAttempts: [], actions: [] },
     });
 
     expect(buildDailyPlan(input).evidenceSufficient).toBe(false);
@@ -96,22 +104,41 @@ describe("daily-plan server assembly", () => {
         })),
         lessons: [{ lessonId: "lesson", title: "Lesson" }],
         questions: Array.from({ length: 20 }, (_, index) => ({ id: `q-${index}`, conceptIds: [`concept-${index % 10}`] })),
-        simulations: [],
+        simulations: [{
+          examId: "exam",
+          title: "Exam",
+          durationMinutes: 20,
+          sourceYear: 2026,
+          questionIds: Array.from({ length: 10 }, (_, index) => `q-${index + 10}`),
+        }],
       },
       history: {
         mastery: Array.from({ length: 10 }, (_, index) => ({
           conceptId: `concept-${index}`,
           status: "review",
           dueOn: "2026-08-12",
-          repetitions: 1,
+          lastReviewedAt: index < 5 ? "2026-08-01T09:00:00Z" : null,
         })),
         lessonProgress: [],
-        questionAttempts: Array.from({ length: 20 }, (_, index) => ({ questionId: `q-${index}` })),
-        simulationAttempts: [],
+        questionAttempts: Array.from({ length: 10 }, (_, index) => ({ questionId: `q-${index}` })),
+        simulationAnswers: Array.from({ length: 10 }, (_, index) => ({
+          attemptId: "attempt",
+          questionId: `q-${index + 10}`,
+          selectedAnswer: "A" as const,
+        })),
+        reviewEvents: Array.from({ length: 5 }, (_, index) => ({
+          conceptId: `concept-${index + 5}`,
+          sourceKind: "recall" as const,
+          questionId: null,
+          rating: 0,
+        })),
+        simulationAttempts: [{ attemptId: "attempt", examId: "exam", createdAt: "2026-08-01T09:00:00Z" }],
         actions: [],
       },
     });
 
     expect(buildDailyPlan(input).evidenceSufficient).toBe(true);
+    expect(input.uniqueAttemptedQuestionIds).toHaveLength(20);
+    expect(input.reviewedConceptIds).toHaveLength(10);
   });
 });

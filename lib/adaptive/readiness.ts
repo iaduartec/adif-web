@@ -1,4 +1,5 @@
 import { madridDayKey, type MasteryStatus, type ReviewRating } from "./review-schedule";
+import { collectActiveEvidence } from "./evidence";
 
 export type ReadinessLevel = "insufficient" | "building" | "consolidating" | "on_track";
 export type ReadinessCriterionKey = "evidence" | "coverage" | "domain" | "retention" | "simulations" | "speed";
@@ -192,7 +193,13 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
       .filter((entry) => activeConceptIds.has(entry.conceptId))
       .map((entry) => [entry.conceptId, entry]),
   );
-  const activeEvents = input.reviewEvents.filter((event) => activeConceptIds.has(event.conceptId));
+  const activeEvents = input.reviewEvents.filter((event) => (
+    activeConceptIds.has(event.conceptId)
+    && (event.sourceKind === "recall"
+      || (event.questionId !== null
+        && event.questionId !== undefined
+        && activeQuestionById.has(event.questionId)))
+  ));
   const activeSimulationById = new Map(input.simulations.map((simulation) => [simulation.id, simulation]));
   const activeSimulationAttempts = input.simulationAttempts.filter((attempt) => (
     activeSimulationById.has(attempt.simulationId)
@@ -233,14 +240,15 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     }
   }
 
-  const attemptedQuestionIds = new Set(observations.map((observation) => observation.questionId));
-  const reviewedConceptIds = new Set<string>();
-  for (const event of activeEvents) {
-    if (event.sourceKind === "recall") reviewedConceptIds.add(event.conceptId);
-  }
-  for (const entry of masteryByConcept.values()) {
-    if (entry.lastReviewedAt !== null) reviewedConceptIds.add(entry.conceptId);
-  }
+  const activeSimulationAnswers = [...answersBySimulationAttempt.values()].flat();
+  const evidence = collectActiveEvidence({
+    activeConceptIds,
+    activeQuestionIds: new Set(activeQuestionById.keys()),
+    mastery: [...masteryByConcept.values()],
+    questionAttempts: practiceAttempts,
+    simulationAnswers: activeSimulationAnswers,
+    reviewEvents: activeEvents,
+  });
 
   const currentConceptIds = new Set<string>();
   for (const [conceptId, entry] of masteryByConcept) {
@@ -250,21 +258,36 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     ) currentConceptIds.add(conceptId);
   }
 
-  const coveragePercentage = roundPercentage(attemptedQuestionIds.size, input.questions.length) ?? 0;
+  const coveragePercentage = roundPercentage(evidence.uniqueAttemptedQuestionIds.length, input.questions.length) ?? 0;
   const domainPercentage = roundPercentage(currentConceptIds.size, input.concepts.length) ?? 0;
   const recentObservations = observations.filter((observation) => (
     withinWindow(observation.occurredAt, accuracyFrom, today)
   ));
 
-  const eligibleRecalls = activeEvents.filter((event) => {
-    if (event.sourceKind !== "recall" || !withinWindow(event.occurredAt, readinessFrom, today)) return false;
-    const eventTime = new Date(event.occurredAt).getTime();
-    if (!Number.isFinite(eventTime)) return false;
-    return activeEvents.some((previous) => (
-      previous.conceptId === event.conceptId
-      && new Date(previous.occurredAt).getTime() <= eventTime - DAY_MS
+  const eventsByConcept = new Map<string, ReadinessReviewEvent[]>();
+  for (const event of activeEvents) {
+    const conceptEvents = eventsByConcept.get(event.conceptId) ?? [];
+    conceptEvents.push(event);
+    eventsByConcept.set(event.conceptId, conceptEvents);
+  }
+  const eligibleRecalls: ReadinessReviewEvent[] = [];
+  // Grouping plus one chronological pass per concept is O(n log n), replacing the former O(n²) scan.
+  for (const conceptEvents of eventsByConcept.values()) {
+    const chronological = [...conceptEvents].sort((left, right) => (
+      new Date(left.occurredAt).getTime() - new Date(right.occurredAt).getTime()
     ));
-  });
+    let earliestEvidenceAt = Number.POSITIVE_INFINITY;
+    for (const event of chronological) {
+      const eventTime = new Date(event.occurredAt).getTime();
+      if (!Number.isFinite(eventTime)) continue;
+      if (
+        event.sourceKind === "recall"
+        && withinWindow(event.occurredAt, readinessFrom, today)
+        && earliestEvidenceAt <= eventTime - DAY_MS
+      ) eligibleRecalls.push(event);
+      earliestEvidenceAt = Math.min(earliestEvidenceAt, eventTime);
+    }
+  }
   const retainedRecalls = eligibleRecalls.filter((event) => event.rating >= 2).length;
 
   const recentSimulationAttempts = activeSimulationAttempts.filter((attempt) => (
@@ -377,7 +400,10 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     .map((attempt): SimulationScore => {
       const exam = activeSimulationById.get(attempt.simulationId)!;
       const totalQuestions = exam.questionIds.filter((questionId) => activeQuestionById.has(questionId)).length;
-      const netScore = Math.round((attempt.correctCount - attempt.incorrectCount / 3) * 100) / 100;
+      const activeAnswers = answersBySimulationAttempt.get(attempt.id) ?? [];
+      const correctCount = activeAnswers.filter((answer) => answer.selectedAnswer !== null && answer.isCorrect).length;
+      const incorrectCount = activeAnswers.filter((answer) => answer.selectedAnswer !== null && !answer.isCorrect).length;
+      const netScore = Math.round((correctCount - incorrectCount / 3) * 100) / 100;
       return {
         attemptId: attempt.id,
         examId: exam.id,
@@ -389,8 +415,8 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     });
 
   const sample = {
-    uniqueAttemptedQuestions: attemptedQuestionIds.size,
-    reviewedConcepts: reviewedConceptIds.size,
+    uniqueAttemptedQuestions: evidence.uniqueAttemptedQuestionIds.length,
+    reviewedConcepts: evidence.reviewedConceptIds.length,
   };
   const deferredRetention = {
     retained: retainedRecalls,
@@ -452,7 +478,7 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     level,
     label: levelLabel(level),
     sample,
-    coverage: { attempted: attemptedQuestionIds.size, total: input.questions.length, percentage: coveragePercentage },
+    coverage: { attempted: evidence.uniqueAttemptedQuestionIds.length, total: input.questions.length, percentage: coveragePercentage },
     currentDomain: { current: currentConceptIds.size, total: input.concepts.length, percentage: domainPercentage },
     accuracy: { recent: rate(recentObservations), historical: rate(observations) },
     deferredRetention,

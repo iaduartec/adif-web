@@ -23,6 +23,7 @@ type SearchParams = {
   page?: string;
   practice?: string;
   diagnostic?: string;
+  questions?: string;
 };
 
 function getSelectedYear(value: string | undefined): number | undefined {
@@ -45,6 +46,7 @@ export default async function TestsPage({
   const requestedPage = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
   const isPractice = params.practice === "true";
   const diagnosticIds = new Set((params.diagnostic ?? "").split(",").filter(Boolean));
+  const plannedQuestionIds = params.questions?.split(",").filter(Boolean);
 
   const supabase = await createServerClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -72,6 +74,12 @@ export default async function TestsPage({
   );
 
   const activeQuestions = listOfficialQuestions();
+  const activeQuestionById = new Map(activeQuestions.map((question) => [question.id, question]));
+  const plannedQuestionsAreValid = plannedQuestionIds === undefined || (
+    (plannedQuestionIds.length === 5 || plannedQuestionIds.length === 10)
+    && new Set(plannedQuestionIds).size === plannedQuestionIds.length
+    && plannedQuestionIds.every((questionId) => activeQuestionById.has(questionId))
+  );
   const years = [...new Set(activeQuestions.map((question) => question.source.year))].sort((a, b) => b - a);
   const exams = [...new Set(activeQuestions.map((question) => question.source.examCode))].sort();
   const sections = [...new Set(activeQuestions.map((question) => question.source.section))];
@@ -90,6 +98,9 @@ export default async function TestsPage({
   }
   if (diagnosticIds.size > 0) {
     filtered = filtered.filter((question) => diagnosticIds.has(question.id));
+  }
+  if (plannedQuestionIds !== undefined && plannedQuestionsAreValid) {
+    filtered = plannedQuestionIds.map((questionId) => activeQuestionById.get(questionId)!);
   }
 
   const totalItems = filtered.length;
@@ -113,6 +124,18 @@ export default async function TestsPage({
   };
 
   if (isPractice) {
+    if (!plannedQuestionsAreValid) {
+      return (
+        <div className="dashboard-wide practice-page">
+          <section aria-labelledby="invalid-practice-title" className="empty-state" role="alert">
+            <p className="page-kicker">Práctica dirigida</p>
+            <h1 id="invalid-practice-title">No se puede iniciar esta práctica</h1>
+            <p>La selección planificada ya no coincide con el banco oficial activo.</p>
+            <Link className="ui-button" href="/tests">Volver a preguntas oficiales</Link>
+          </section>
+        </div>
+      );
+    }
     const practiceQuestions = filtered.slice(0, PRACTICE_QUESTION_LIMIT).map(toPublicOfficialQuestion);
     const backParams = new URLSearchParams(buildUrl({ practice: null }).split("?")[1]);
 

@@ -15,6 +15,14 @@
 - Rebuilt `/` in the required order: readiness/obstacle, today's server-generated plan, overdue reviews, at-risk lessons, next simulation, weekly summary, and complementary resources.
 - Kept the dashboard and new statistics surfaces as Server Components. The only existing client-side statistics code retained is the lazy seven-day chart.
 - Renamed the root navigation label from `Inicio` to `Preparación` and expanded `/estadisticas` with streak plus semantic lesson/concept tables while preserving the existing seven-day chart, official-section accuracy, and official-model coverage.
+- Review round 1 now carries every planned practice task's exact ordered 5/10-question IDs into `/tests`; the route rejects duplicates, wrong-sized sets, and any inactive/unknown ID instead of widening the session.
+- All readiness history and daily-plan auxiliary history reads now use stable, fixed 500-row PostgREST pagination and stop only on a short page; page errors abort the calculation rather than returning partial evidence.
+- Readiness and daily-plan evidence gates now share one pure helper. Both count active practice plus valid active-simulation answers, and any active mastery `lastReviewedAt` or active recall regardless of rating.
+- Simulation scores are recomputed from active answer rows after content filtering, and question-origin review events require both an active concept and active question.
+- The overdue dashboard list now comes from the complete active mastery snapshot, independently of the capped or modified daily plan.
+- Readiness loading failures now become a typed safe error and both `/` and `/estadisticas` render an accessible, retryable recovery with study resources and no database details.
+- Deferred-retention eligibility is grouped by concept and scanned chronologically in O(n log n), replacing the quadratic previous-event search.
+- The home route shares its readiness promise with daily-plan assembly, eliminating duplicate reads of question attempts, review events, simulation attempts, simulation answers, and mastery.
 
 ## Strict TDD evidence
 
@@ -68,11 +76,30 @@ pnpm typecheck
 
 Exit 0: 5 files and 36 tests passed; TypeScript passed.
 
+### Review round 1/5 — RED
+
+```text
+pnpm test -- tests/paginated-query.test.ts tests/adaptive-evidence.test.ts tests/planned-practice.test.tsx tests/readiness.test.ts tests/daily-plan-server.test.ts tests/readiness-dashboard.test.tsx tests/readiness-pages.test.tsx
+```
+
+Exit 1: 7 files failed and 8 assertions failed. The missing pagination/evidence/recovery modules failed to resolve; planned practice widened to the first 50 bank questions; unknown IDs were accepted; retired question events made recall eligible; stored simulation aggregates produced the wrong net score; daily-plan evidence ignored simulation/recall history; route failures escaped; and the dashboard had no complete-backlog or exact-question contract.
+
+### Review round 1/5 — GREEN
+
+```text
+pnpm exec vitest run tests/paginated-query.test.ts tests/adaptive-evidence.test.ts tests/planned-practice.test.tsx tests/readiness.test.ts tests/readiness-server.test.ts tests/daily-plan-server.test.ts tests/readiness-dashboard.test.tsx tests/readiness-pages.test.tsx
+pnpm typecheck
+```
+
+Exit 0: 8 files and 39 tests passed; TypeScript passed. The focused contracts cover 500-row range exhaustion/error propagation, exact ordered 5/10 practice sets, hostile IDs, shared evidence, active simulation filtering, active question-origin events, recomputed scores, complete overdue backlog, shared home reads, typed recovery, retry links, alert labelling, headings, and resource navigation.
+
+The first full run then exposed three legacy navigation fixtures that did not model `.range()` and expected duplicate home history reads. After updating those integration fixtures to the paginated/shared-read contract, their focused 19 tests and the full suite passed.
+
 ## Full verification
 
 ```text
 pnpm test
-# 45 files, 323 tests passed
+# 48 files, 336 tests passed
 
 pnpm lint
 # exit 0; 2 pre-existing Next.js navigation warnings
@@ -110,10 +137,10 @@ The in-app Browser runtime was available but its required initialization failed 
 ## Concerns
 
 - A learner with no eligible recall pair receives `Sin datos` for deferred retention and cannot reach on-track until that evidence exists; this is intentional and is explained rather than estimated.
-- Readiness and daily-plan assembly currently issue independent owner-scoped reads in parallel. This avoids a waterfall and keeps both pure domains independent, but duplicates several table reads on the home route.
 - The statistics route server-renders the full active concept registry. It remains modest for the current catalog, but pagination or a server filter may be useful if the registry grows substantially.
 - Lint retains the two pre-existing navigation warnings in `components/shell/user-menu.tsx` and `lib/supabase/mock-client.ts`; neither file was changed.
 
 ## Commit
 
 - `feat: add adaptive readiness dashboard`
+- `fix: harden adaptive readiness history and recovery`

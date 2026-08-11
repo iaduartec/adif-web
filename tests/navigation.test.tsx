@@ -47,6 +47,7 @@ describe("authenticated navigation", () => {
           eq: vi.fn(),
           gte: vi.fn(),
           order: vi.fn(),
+          range: vi.fn(async (from: number, to: number) => ({ data: rows.slice(from, to + 1), error: null })),
           maybeSingle: vi.fn(async () => ({ data: rows[0] ?? null })),
           then: (resolve: (value: { data: unknown[] }) => unknown) =>
             Promise.resolve({ data: rows }).then(resolve),
@@ -113,12 +114,15 @@ describe("authenticated navigation", () => {
           select: vi.fn(),
           eq: vi.fn(),
           gte: vi.fn(),
+          order: vi.fn(),
+          range: vi.fn(() => result),
           maybeSingle: vi.fn(() => result),
           then: result.then.bind(result),
         };
         query.select.mockReturnValue(query);
         query.eq.mockReturnValue(query);
         query.gte.mockReturnValue(query);
+        query.order.mockReturnValue(query);
         return query;
       }),
     });
@@ -135,10 +139,7 @@ describe("authenticated navigation", () => {
           "simulation_answers",
           "lesson_progress",
           "study_goals",
-          "concept_mastery",
           "lesson_progress",
-          "question_attempts",
-          "simulation_attempts",
           "daily_plan_actions",
           "study_goals",
         ]);

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { LazyChartWrapper } from "../../../components/dashboard/lazy-chart-wrapper";
+import { AnalyticsUnavailable } from "../../../components/dashboard/analytics-unavailable";
 import { ReadinessStatistics } from "../../../components/dashboard/readiness-statistics";
 import { calculateReadiness } from "../../../lib/adaptive/readiness";
-import { assembleReadinessInput } from "../../../lib/adaptive/readiness-server";
+import { assembleReadinessInput, ReadinessUnavailableError } from "../../../lib/adaptive/readiness-server";
 import { listOfficialQuestions } from "../../../lib/content/repository";
 import { calculateMetrics } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
@@ -16,7 +17,15 @@ export default async function EstadisticasPage() {
   if (!user) redirect("/login");
 
   const now = new Date();
-  const readinessInput = await assembleReadinessInput(supabase, user.id, now);
+  let readinessInput;
+  try {
+    readinessInput = await assembleReadinessInput(supabase, user.id, now);
+  } catch (error) {
+    if (error instanceof ReadinessUnavailableError) {
+      return <AnalyticsUnavailable retryHref="/estadisticas" />;
+    }
+    throw error;
+  }
   const snapshot = calculateReadiness(readinessInput);
   const questions = listOfficialQuestions();
   const metrics = calculateMetrics(

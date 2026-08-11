@@ -1,6 +1,7 @@
 import { cleanup, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { AdaptiveDashboard } from "../components/dashboard/adaptive-dashboard";
+import { AnalyticsUnavailable } from "../components/dashboard/analytics-unavailable";
 import { ReadinessStatistics } from "../components/dashboard/readiness-statistics";
 import { NAV_ITEMS } from "../components/shell/nav-items";
 import { calculateReadiness } from "../lib/adaptive/readiness";
@@ -106,6 +107,73 @@ describe("adaptive dashboard", () => {
     expect(screen.getByRole("link", { name: "Continuar Lección B" })).toHaveAttribute("href", "/curso/lesson-b");
     expect(screen.getByRole("link", { name: "Abrir Examen oficial A" })).toHaveAttribute("href", "/simulacros/exam-a");
     expect(screen.getByText("Racha actual").nextElementSibling).toHaveTextContent("3 días");
+  });
+
+  it("links practice to the exact ordered task questions and renders the complete overdue backlog", () => {
+    const planWithPractice: DailyPlan = {
+      ...plan,
+      tasks: [
+        ...plan.tasks,
+        {
+          kind: "practice",
+          key: "practice:targeted",
+          block: 0,
+          diagnostic: false,
+          questionIds: ["question-b", "question-a", "question-c", "question-e", "question-d"],
+          questionCount: 5,
+          estimatedMinutes: 5,
+          title: "Práctica dirigida",
+        },
+      ],
+    };
+    const snapshotWithUnplannedOverdue = {
+      ...snapshot,
+      concepts: [
+        ...snapshot.concepts,
+        {
+          conceptId: "concept-unplanned",
+          conceptTitle: "Concepto vencido fuera del plan",
+          lessonId: "lesson-b",
+          lessonTitle: "Lección B",
+          status: "review" as const,
+          dueOn: "2026-08-01",
+          current: false,
+          correct: 0,
+          total: 0,
+          percentage: null,
+          recentCorrect: 0,
+          recentTotal: 0,
+          recentPercentage: null,
+        },
+      ],
+    };
+
+    render(
+      <AdaptiveDashboard
+        elapsedMinutesThisWeek={45}
+        nextSimulation={null}
+        plan={planWithPractice}
+        snapshot={snapshotWithUnplannedOverdue}
+        weeklyTargetMinutes={120}
+      />,
+    );
+
+    expect(screen.getByRole("link", { name: "Practicar 5 preguntas" })).toHaveAttribute(
+      "href",
+      "/tests?practice=true&questions=question-b%2Cquestion-a%2Cquestion-c%2Cquestion-e%2Cquestion-d",
+    );
+    const overdueSection = screen.getByRole("heading", { name: "Repasos vencidos" }).closest("section")!;
+    expect(within(overdueSection).getByText("Concepto vencido fuera del plan")).toBeVisible();
+  });
+
+  it("provides an accessible analytics recovery with retry and useful navigation", () => {
+    render(<AnalyticsUnavailable retryHref="/estadisticas" />);
+
+    const alert = screen.getByRole("alert");
+    expect(within(alert).getByRole("heading", { name: "Indicadores no disponibles" })).toBeVisible();
+    expect(within(alert).getByRole("link", { name: "Reintentar" })).toHaveAttribute("href", "/estadisticas");
+    expect(screen.getByRole("navigation", { name: "Recursos de estudio" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Preguntas oficiales" })).toHaveAttribute("href", "/tests");
   });
 });
 

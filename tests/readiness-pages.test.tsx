@@ -3,17 +3,18 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { DailyPlanInput } from "../lib/adaptive/daily-plan";
 import type { ReadinessInput } from "../lib/adaptive/readiness";
 
-const { assembleDailyPlanInput, assembleReadinessInput, createServerClient, redirect } = vi.hoisted(() => ({
+const { assembleDailyPlanInput, assembleReadinessInput, createServerClient, redirect, ReadinessUnavailableError } = vi.hoisted(() => ({
   assembleDailyPlanInput: vi.fn(),
   assembleReadinessInput: vi.fn(),
   createServerClient: vi.fn(),
   redirect: vi.fn(),
+  ReadinessUnavailableError: class ReadinessUnavailableError extends Error {},
 }));
 
 vi.mock("next/navigation", () => ({ redirect }));
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
 vi.mock("../lib/adaptive/daily-plan-server", () => ({ assembleDailyPlanInput }));
-vi.mock("../lib/adaptive/readiness-server", () => ({ assembleReadinessInput }));
+vi.mock("../lib/adaptive/readiness-server", () => ({ assembleReadinessInput, ReadinessUnavailableError }));
 
 import DashboardPage from "../app/(dashboard)/page";
 import EstadisticasPage from "../app/(dashboard)/estadisticas/page";
@@ -82,7 +83,10 @@ describe("readiness routes", () => {
     render(await DashboardPage());
 
     expect(assembleReadinessInput).toHaveBeenCalledWith(expect.anything(), "user-1", expect.any(Date));
-    expect(assembleDailyPlanInput).toHaveBeenCalledWith("2026-08-11", expect.objectContaining({ userId: "user-1" }));
+    expect(assembleDailyPlanInput).toHaveBeenCalledWith("2026-08-11", expect.objectContaining({
+      userId: "user-1",
+      readinessInput: expect.any(Promise),
+    }));
     expect(screen.getByRole("heading", { name: "Estado de preparación" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Sesión de hoy" })).toBeVisible();
     expect(screen.getByText("Racha actual")).toBeVisible();
@@ -97,5 +101,22 @@ describe("readiness routes", () => {
     expect(screen.getByRole("table", { name: "Rendimiento por concepto" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Precisión por sección oficial" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Cobertura por año y modelo oficial" })).toBeVisible();
+  });
+
+  it.each([
+    ["home", async () => DashboardPage(), "/"],
+    ["statistics", async () => EstadisticasPage(), "/estadisticas"],
+  ] as const)("renders scoped, safe, retryable recovery on the %s route", async (_name, renderPage, retryHref) => {
+    assembleReadinessInput.mockRejectedValueOnce(
+      new ReadinessUnavailableError("database relation and policy details"),
+    );
+
+    render(await renderPage());
+
+    expect(screen.getByRole("alert")).toHaveTextContent(/indicadores no disponibles/i);
+    expect(screen.getByRole("link", { name: "Reintentar" })).toHaveAttribute("href", retryHref);
+    expect(screen.getByRole("link", { name: "Temario activo" })).toHaveAttribute("href", "/curso");
+    expect(screen.getByRole("link", { name: "Preguntas oficiales" })).toHaveAttribute("href", "/tests");
+    expect(screen.queryByText(/database relation|policy details/i)).not.toBeInTheDocument();
   });
 });
