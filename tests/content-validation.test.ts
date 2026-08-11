@@ -83,7 +83,7 @@ describe("active official course content", () => {
     expect(parsed.success).toBe(true);
     if (!parsed.success) return;
 
-    expect(activeTheoryConceptRegistry.size).toBe(87);
+    expect(activeTheoryConceptRegistry.size).toBe(126);
     expect(parsed.data).toHaveLength(102);
     for (const question of parsed.data) {
       expect(question.conceptIds.length, question.id).toBeGreaterThan(0);
@@ -92,6 +92,77 @@ describe("active official course content", () => {
         question.conceptIds.every((conceptId) => activeTheoryConceptRegistry.has(conceptId)),
         question.id,
       ).toBe(true);
+    }
+  });
+
+  it("maps every official appearance to a concept whose claims teach the tested rule", () => {
+    const parsed = listQuestions();
+    expect(parsed.success).toBe(true);
+    if (!parsed.success) return;
+
+    const groups: Array<{
+      conceptId: string;
+      claimPattern: RegExp;
+      questionIds: string[];
+    }> = [
+      { conceptId: "rcf-concept-9", claimPattern: /120 km\/h/i, questionIds: ["ADIF-2023-1433-Q01", "ADIF-2023-4101-Q06", "ADIF-2024-3403-Q10", "ADIF-2024-3413-Q12"] },
+      { conceptId: "ict-concept-5", claimPattern: /Bases de Acceso Terminal.*BAT/i, questionIds: ["ADIF-2023-1433-Q02", "ADIF-2023-4101-Q05"] },
+      { conceptId: "rcf-concept-7", claimPattern: /personal.*EF.*AI.*otras empresas/i, questionIds: ["ADIF-2023-1433-Q03", "ADIF-2023-4101-Q02"] },
+      { conceptId: "ict-concept-11", claimPattern: /SI 1-3/i, questionIds: ["ADIF-2023-1433-Q04", "ADIF-2023-4101-Q10"] },
+      { conceptId: "ict-concept-12", claimPattern: /normas armonizadas.*Diario Oficial/i, questionIds: ["ADIF-2023-1433-Q05", "ADIF-2023-4101-Q07"] },
+      { conceptId: "ict-concept-7", claimPattern: /Recinto de Instalaciones de Telecomunicación Inferior.*Recinto de Instalaciones de Telecomunicación Superior/i, questionIds: ["ADIF-2023-1433-Q06", "ADIF-2023-4101-Q11", "ADIF-2024-3403-Q12", "ADIF-2024-3413-Q06"] },
+      { conceptId: "rcf-concept-10", claimPattern: /Comercial.*Restringida.*Técnica/i, questionIds: ["ADIF-2023-1433-Q07", "ADIF-2023-4101-Q09"] },
+      { conceptId: "ict-concept-13", claimPattern: /UNE-EN 50346/i, questionIds: ["ADIF-2023-1433-Q08", "ADIF-2023-4101-Q08"] },
+      { conceptId: "ict-concept-2", claimPattern: /propiedad del operador/i, questionIds: ["ADIF-2023-1433-Q09", "ADIF-2023-4101-Q03"] },
+      { conceptId: "ict-concept-14", claimPattern: /unión.*redes de distribución.*dispersión/i, questionIds: ["ADIF-2023-1433-Q10", "ADIF-2023-4101-Q04"] },
+      { conceptId: "rcf-concept-8", claimPattern: /Sistema de protección.*Dispositivo de vigilancia.*Radiotelefonía/i, questionIds: ["ADIF-2023-1433-Q11", "ADIF-2023-4101-Q01"] },
+      { conceptId: "cem-concept-6", claimPattern: /modo diferencial.*conductores activos/i, questionIds: ["ADIF-2023-1433-Q12", "ADIF-2023-4101-Q13"] },
+      { conceptId: "cem-concept-1", claimPattern: /emisión.*inmunidad/i, questionIds: ["ADIF-2023-1433-Q13", "ADIF-2023-1433-Q15", "ADIF-2023-4101-Q12", "ADIF-2023-4101-Q14"] },
+      { conceptId: "cem-concept-7", claimPattern: /acoplamiento inductivo.*área.*bucle/i, questionIds: ["ADIF-2023-1433-Q14", "ADIF-2023-4101-Q15"] },
+      { conceptId: "ict-concept-15", claimPattern: /Punto de interconexión.*redes de alimentación.*redes de distribución.*RITI/i, questionIds: ["ADIF-2024-3403-Q01", "ADIF-2024-3413-Q05", "ADIF-2025-1131-Q02", "ADIF-2025-4104-Q01"] },
+      { conceptId: "ict-concept-16", claimPattern: /proyecto técnico.*planos.*pliego de condiciones/i, questionIds: ["ADIF-2024-3403-Q02", "ADIF-2024-3403-Q11", "ADIF-2024-3413-Q07", "ADIF-2024-3413-Q08", "ADIF-2025-1131-Q06", "ADIF-2025-4104-Q09"] },
+      { conceptId: "ict-concept-17", claimPattern: /Código Técnico de la Edificación.*CTE.*Reglamento de Instalaciones Térmicas de los Edificios.*RITE/i, questionIds: ["ADIF-2024-3403-Q03", "ADIF-2024-3403-Q18", "ADIF-2024-3413-Q03", "ADIF-2024-3413-Q18"] },
+      { conceptId: "ict-concept-18", claimPattern: /Control del Entorno.*Control de iluminación.*Eficiencia Energética/i, questionIds: ["ADIF-2024-3403-Q04", "ADIF-2024-3413-Q10"] },
+      { conceptId: "ict-concept-19", claimPattern: /BAT.*SC\/APC/i, questionIds: ["ADIF-2024-3403-Q05", "ADIF-2024-3413-Q04"] },
+      { conceptId: "ict-concept-20", claimPattern: /Anexo I.*radiodifusión sonora y televisión/i, questionIds: ["ADIF-2024-3403-Q06", "ADIF-2024-3413-Q01"] },
+      { conceptId: "ict-concept-21", claimPattern: /cubierta o azotea/i, questionIds: ["ADIF-2024-3403-Q07", "ADIF-2024-3413-Q09"] },
+      { conceptId: "ict-concept-22", claimPattern: /2 metros/i, questionIds: ["ADIF-2024-3403-Q08", "ADIF-2024-3413-Q02"] },
+      { conceptId: "ict-concept-23", claimPattern: /(?:STDP.*Servicios de Telefonía Disponible al Público|Servicios de Telefonía Disponible al Público.*STDP)/i, questionIds: ["ADIF-2024-3403-Q09", "ADIF-2024-3413-Q11"] },
+      { conceptId: "cem-concept-8", claimPattern: /acoplamiento capacitivo.*menor.*distancia.*mayor.*tensión/i, questionIds: ["ADIF-2024-3403-Q13", "ADIF-2024-3413-Q15"] },
+      { conceptId: "cem-concept-9", claimPattern: /señal eléctrica no deseada.*señal útil.*perturbación/i, questionIds: ["ADIF-2024-3403-Q14", "ADIF-2024-3413-Q13"] },
+      { conceptId: "cem-concept-10", claimPattern: /distancia recorrida.*oscilación completa.*longitud de onda/i, questionIds: ["ADIF-2024-3403-Q15", "ADIF-2024-3413-Q14"] },
+      { conceptId: "cem-concept-11", claimPattern: /inversamente proporcional.*fundamental/i, questionIds: ["ADIF-2024-3403-Q16", "ADIF-2024-3413-Q16"] },
+      { conceptId: "rcf-concept-12", claimPattern: /Prueba parcial.*agreguen vehículos/i, questionIds: ["ADIF-2024-3403-Q17", "ADIF-2024-3413-Q17"] },
+      { conceptId: "ict-concept-24", claimPattern: /cordones o latiguillos de fibra óptica/i, questionIds: ["ADIF-2025-1131-Q01", "ADIF-2025-4104-Q12"] },
+      { conceptId: "ict-concept-25", claimPattern: /arqueta de entrada.*RITI.*punto de interconexión/i, questionIds: ["ADIF-2025-1131-Q03", "ADIF-2025-4104-Q02"] },
+      { conceptId: "rcf-concept-11", claimPattern: /zona de peligro.*zona de seguridad/i, questionIds: ["ADIF-2025-1131-Q04", "ADIF-2025-4104-Q08"] },
+      { conceptId: "ict-concept-26", claimPattern: /75 ± 3.*Ω/i, questionIds: ["ADIF-2025-1131-Q05", "ADIF-2025-4104-Q03"] },
+      { conceptId: "ict-concept-27", claimPattern: /radiodifusión sonora.*televisión.*telefonía.*banda ancha/i, questionIds: ["ADIF-2025-1131-Q07", "ADIF-2025-4104-Q07"] },
+      { conceptId: "ict-concept-28", claimPattern: /mástiles.*toma de tierra.*25 mm²/i, questionIds: ["ADIF-2025-1131-Q08", "ADIF-2025-4104-Q04"] },
+      { conceptId: "ict-concept-29", claimPattern: /cables coaxiales.*75.*Ω/i, questionIds: ["ADIF-2025-1131-Q09", "ADIF-2025-4104-Q05"] },
+      { conceptId: "ict-concept-30", claimPattern: /red mallada de equipotencialidad.*anillo de tierra/i, questionIds: ["ADIF-2025-1131-Q10", "ADIF-2025-4104-Q11"] },
+      { conceptId: "ict-concept-31", claimPattern: /roseta hembra miniatura de ocho vías.*RJ45/i, questionIds: ["ADIF-2025-1131-Q11", "ADIF-2025-4104-Q06"] },
+      { conceptId: "ict-concept-32", claimPattern: /5 MHz.*2\.150 MHz/i, questionIds: ["ADIF-2025-1131-Q12", "ADIF-2025-4104-Q10"] },
+      { conceptId: "cem-concept-12", claimPattern: /todos los equipos electrónicos.*marzo de 2014/i, questionIds: ["ADIF-2025-1131-Q13", "ADIF-2025-1131-Q16", "ADIF-2025-4104-Q15", "ADIF-2025-4104-Q16"] },
+      { conceptId: "cem-concept-13", claimPattern: /convertidores de potencia.*dos o más.*líneas de suministro/i, questionIds: ["ADIF-2025-1131-Q14", "ADIF-2025-4104-Q13"] },
+      { conceptId: "cem-concept-14", claimPattern: /varias antenas.*ancho de banda/i, questionIds: ["ADIF-2025-1131-Q15", "ADIF-2025-4104-Q14"] },
+      { conceptId: "ict-concept-33", claimPattern: /equipo de cabecera.*red de dispersión/i, questionIds: ["ADIF-2025-1131-Q17", "ADIF-2025-4104-Q17"] },
+      { conceptId: "rcf-concept-13", claimPattern: /Tren directo.*detenido.*estación/i, questionIds: ["ADIF-2025-1131-Q18", "ADIF-2025-4104-Q18"] },
+    ];
+
+    const questionById = new Map(parsed.data.map((question) => [question.id, question]));
+    const coveredIds = groups.flatMap((group) => group.questionIds);
+    expect(new Set(coveredIds).size).toBe(102);
+    expect(new Set(coveredIds)).toEqual(new Set(questionById.keys()));
+
+    for (const group of groups) {
+      const concept = activeTheoryConceptRegistry.get(group.conceptId);
+      expect(concept, group.conceptId).toBeDefined();
+      const teachingText = concept?.claims.map((claim) => claim.text).join(" ") ?? "";
+      expect(teachingText, group.conceptId).toMatch(group.claimPattern);
+      for (const questionId of group.questionIds) {
+        expect(questionById.get(questionId)?.conceptIds, questionId).toEqual([group.conceptId]);
+      }
     }
   });
 

@@ -30,7 +30,7 @@
       ],
       "answer": "D",
       "conceptIds": [
-        "rcf-concept-1"
+        "rcf-concept-8"
       ]
     },
     {
@@ -62,7 +62,7 @@
       ],
       "answer": "A",
       "conceptIds": [
-        "rcf-concept-1"
+        "rcf-concept-7"
       ]
     },
     {
@@ -126,8 +126,7 @@
       ],
       "answer": "B",
       "conceptIds": [
-        "ict-concept-3",
-        "ict-concept-4"
+        "ict-concept-14"
       ]
     },
     {
@@ -191,7 +190,7 @@
       ],
       "answer": "C",
       "conceptIds": [
-        "rcf-concept-1"
+        "rcf-concept-9"
       ]
     },
     {
@@ -223,7 +222,7 @@
       ],
       "answer": "D",
       "conceptIds": [
-        "cem-concept-2"
+        "ict-concept-12"
       ]
     },
     {
@@ -255,7 +254,7 @@
       ],
       "answer": "C",
       "conceptIds": [
-        "ict-concept-1"
+        "ict-concept-13"
       ]
     },
     {
@@ -287,7 +286,7 @@
       ],
       "answer": "B",
       "conceptIds": [
-        "rcf-concept-1"
+        "rcf-concept-10"
       ]
     },
     {
@@ -319,7 +318,7 @@
       ],
       "answer": "D",
       "conceptIds": [
-        "ict-concept-9"
+        "ict-concept-11"
       ]
     },
     {
@@ -415,7 +414,7 @@
       ],
       "answer": "C",
       "conceptIds": [
-        "cem-concept-4"
+        "cem-concept-6"
       ]
     },
     {
@@ -479,7 +478,7 @@
       ],
       "answer": "C",
       "conceptIds": [
-        "cem-concept-4"
+        "cem-concept-7"
       ]
     }
   ]

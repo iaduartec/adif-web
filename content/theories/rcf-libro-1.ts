@@ -21,6 +21,36 @@ export const rcfLibro1Theory: TheorySection = {
       excerpt: "17. Estación: Infraestructura ferroviaria consistente en una instalación de vías y sus aparatos asociados, protegida por señales, y en la que se desarrollan procesos de circulación. A efectos de este Reglamento se consideran estación los PB, PBA, PCA, PAET y las Bifurcaciones. También, los Cambiadores de Ancho y las Bases de Mantenimiento, cuando no estén integrados dentro de otra estación. ... 42. Telefonema: Comunicación reglamentaria en los procesos de circulación, caracterizada por un formato preestablecido, identificada mediante un número secuencial, la hora de transmisión y la identificación del emisor, y que queda registrada..."
     },
     {
+      id: "rd664-2015-1-1-1-2",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Capítulo 1, 1.1.1.2 Ámbito de aplicación",
+      excerpt:
+        "El ámbito subjetivo es todo el personal de las EF, de los AI y de otras empresas que interviene, directa o indirectamente, en los procesos de circulación de trenes y maniobras."
+    },
+    {
+      id: "rd664-2015-1-1-1-3-zona-riesgo",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Capítulo 1, 1.1.1.3, definición 59",
+      excerpt:
+        "Zona de riesgo para los trabajos: es la comprendida entre la zona de peligro para los trabajos y la zona de seguridad para los trabajos."
+    },
+    {
+      id: "rd664-2015-1-1-1-7",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Capítulo 1, 1.1.1.7 Criterios generales de operación de trenes",
+      excerpt:
+        "Para iniciar servicio se requieren sistema de protección compatible, dispositivo de vigilancia y radiotelefonía. Sin compatibilidad u operatividad del sistema de protección, la velocidad máxima es 120 km/h."
+    },
+    {
       id: "rd664-2015-1-2-1-1",
       sourceId: "RD 664/2015",
       sourceTitle:
@@ -46,6 +76,36 @@ export const rcfLibro1Theory: TheorySection = {
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       locator: "Capítulo 1, 1.5.1.4 Condiciones de marcha especiales",
       excerpt: "1. Marcha a la vista: Impone al maquinista la obligación de avanzar con la precaución que requiera el caso, regulando la velocidad de acuerdo con la longitud de vía que visualiza por delante del puesto de conducción, de forma que pueda detener el tren ante cualquier obstáculo o señal de parada. 2. Marcha de maniobras: Impone al maquinista la obligación de avanzar con prudencia, sin exceder la velocidad de 30 km/h si la locomotora va tirando del tren, o de 20 km/h si va empujándolo, de forma que pueda detener el tren ante cualquier obstáculo visible desde el puesto de conducción o ante una señal de parada."
+    },
+    {
+      id: "rd664-2015-1-5-1-6",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Capítulo 1, 1.5.1.6 Paradas de los trenes",
+      excerpt:
+        "Considerando su función, la parada prescrita puede ser comercial, restringida o técnica."
+    },
+    {
+      id: "rd664-2015-1-5-1-9",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Capítulo 1, 1.5.1.9 Invalidación de la orden de marcha",
+      excerpt:
+        "La orden de marcha queda invalidada, entre otros casos, cuando un tren directo queda detenido en una estación."
+    },
+    {
+      id: "rd664-2015-1-5-1-21",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Capítulo 1, 1.5.1.21 Pruebas de frenado",
+      excerpt:
+        "La prueba parcial se realiza antes de la salida del tren de una estación o dependencia en la que se agreguen vehículos a la composición."
     }
   ],
 
@@ -134,6 +194,90 @@ export const rcfLibro1Theory: TheorySection = {
           text: "El telefonema es una comunicación reglamentaria caracterizada por un formato preestablecido, identificada mediante un número secuencial, la hora de transmisión y la identificación del emisor, y queda registrada mediante los soportes contemplados en el Reglamento.",
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-3"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-7",
+      title: "Ámbito Subjetivo del RCF",
+      claims: [
+        {
+          id: "rcf-c7-1",
+          text: "El ámbito subjetivo del Reglamento comprende a todo el personal de las empresas ferroviarias (EF), de los administradores de infraestructuras (AI) y de otras empresas que interviene, directa o indirectamente, en los procesos de circulación de trenes y maniobras.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-1-1-2"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-8",
+      title: "Equipamiento para Iniciar Servicio",
+      claims: [
+        {
+          id: "rcf-c8-1",
+          text: "Para que un tren pueda iniciar servicio debe disponer en la cabina de conducción y tener operativos un Sistema de protección de tren compatible con alguno de los instalados en la infraestructura, un Dispositivo de vigilancia y la Radiotelefonía.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-1-1-7"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-9",
+      title: "Protección de Tren Incompatible o Inoperativa",
+      claims: [
+        {
+          id: "rcf-c9-1",
+          text: "Cuando los sistemas de protección del tren de la infraestructura y de la cabina no sean compatibles entre sí, o alguno no esté operativo, la velocidad máxima de circulación será de 120 km/h.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-1-1-7"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-10",
+      title: "Clasificación Funcional de las Paradas",
+      claims: [
+        {
+          id: "rcf-c10-1",
+          text: "Considerando su función, una parada prescrita puede ser Comercial, Restringida o Técnica.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-5-1-6"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-11",
+      title: "Zona de Riesgo para los Trabajos",
+      claims: [
+        {
+          id: "rcf-c11-1",
+          text: "La zona de riesgo para los trabajos es la comprendida entre la zona de peligro para los trabajos y la zona de seguridad para los trabajos.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-1-1-3-zona-riesgo"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-12",
+      title: "Prueba Parcial de Frenado",
+      claims: [
+        {
+          id: "rcf-c12-1",
+          text: "Para trenes formados con material convencional se realiza una Prueba parcial antes de la salida de una estación o dependencia en la que se agreguen vehículos a la composición.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-5-1-21"]
+        }
+      ]
+    },
+    {
+      id: "rcf-concept-13",
+      title: "Invalidación de la Orden de Marcha",
+      claims: [
+        {
+          id: "rcf-c13-1",
+          text: "La orden de marcha queda invalidada cuando un Tren directo queda detenido en una estación, entre los demás supuestos enumerados por el Reglamento.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-5-1-9"]
         }
       ]
     }
