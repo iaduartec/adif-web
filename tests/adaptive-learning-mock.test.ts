@@ -107,6 +107,26 @@ describe("adaptive learning Supabase mock", () => {
     ]);
   });
 
+  it("matches the daily action uniqueness contract for one original task per user and date", async () => {
+    const store = getMockStore();
+    store.reset();
+    const client = createMockSupabaseClient();
+    const action = {
+      action: "postpone" as const,
+      plan_date: "2026-08-11",
+      replacement_task_key: null,
+      task_key: "review:concept-1",
+      user_id: "test-user-id",
+    };
+
+    const first = await client.from("daily_plan_actions").insert(action);
+    const duplicate = await client.from("daily_plan_actions").insert(action);
+
+    expect(first.error).toBeNull();
+    expect(duplicate).toMatchObject({ data: null, error: { code: "23505" } });
+    expect(store.dailyPlanActions).toHaveLength(1);
+  });
+
   it("exposes generated table contracts for adaptive records", () => {
     const studyGoal: Database["public"]["Tables"]["study_goals"]["Insert"] = {
       user_id: "test-user-id",

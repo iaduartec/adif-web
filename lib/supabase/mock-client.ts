@@ -218,6 +218,17 @@ export function createMockSupabaseClient() {
           resultData = [...dataState];
         } else if (operation === "insert") {
           const rows = Array.isArray(operationPayload) ? operationPayload : [operationPayload];
+          if (tableName === "daily_plan_actions" && rows.some((row) => dataState.some((existing) => (
+            existing.user_id === row.user_id
+            && existing.plan_date === row.plan_date
+            && existing.task_key === row.task_key
+          )))) {
+            operationError = Object.assign(
+              new Error("duplicate key value violates daily_plan_actions user/date/task uniqueness"),
+              { code: "23505" },
+            );
+            return null;
+          }
           resultData = rows.map((row) => {
             const newRow = createRow(row);
             dataState.push(newRow);
