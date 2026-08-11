@@ -1,8 +1,9 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-const { createServerClient, redirect } = vi.hoisted(() => ({
+const { createServerClient, getUser, redirect } = vi.hoisted(() => ({
   createServerClient: vi.fn(),
+  getUser: vi.fn(),
   redirect: vi.fn(),
 }));
 
@@ -24,8 +25,9 @@ describe("planned practice route", () => {
   afterEach(cleanup);
 
   beforeEach(() => {
+    getUser.mockReset().mockResolvedValue({ data: { user: { id: "user-1" } } });
     createServerClient.mockResolvedValue({
-      auth: { getUser: vi.fn(async () => ({ data: { user: { id: "user-1" } } })) },
+      auth: { getUser },
       from: vi.fn(() => {
         const query = { select: vi.fn(), eq: vi.fn(), order: vi.fn() };
         query.select.mockReturnValue(query);
@@ -60,5 +62,61 @@ describe("planned practice route", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(/no se puede iniciar esta práctica/i);
     expect(screen.queryByLabelText("Preguntas planificadas")).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /volver a preguntas oficiales/i })).toHaveAttribute("href", "/tests");
+  });
+
+  it("authenticates and safely rejects repeated questions query keys represented as an array", async () => {
+    const activeIds = listOfficialQuestions().slice(0, 5).map(({ id }) => id).join(",");
+
+    const page = await TestsPage({
+      searchParams: Promise.resolve({
+        practice: "true",
+        questions: [activeIds, activeIds],
+      }),
+    });
+    render(page);
+
+    expect(getUser).toHaveBeenCalledOnce();
+    expect(screen.getByRole("alert")).toHaveAccessibleName("No se puede iniciar esta práctica");
+    expect(screen.queryByLabelText("Preguntas planificadas")).not.toBeInTheDocument();
+  });
+
+  it.each([
+    ["leading empty segment", (ids: string[]) => `,${ids.join(",")}`],
+    ["middle empty segment", (ids: string[]) => `${ids.slice(0, 2).join(",")},,${ids.slice(2).join(",")}`],
+    ["trailing empty segment", (ids: string[]) => `${ids.join(",")},`],
+  ] as const)("rejects a planned list with a %s", async (_name, tamper) => {
+    const activeIds = listOfficialQuestions().slice(0, 5).map(({ id }) => id);
+
+    render(await TestsPage({
+      searchParams: Promise.resolve({ practice: "true", questions: tamper(activeIds) }),
+    }));
+
+    expect(screen.getByRole("alert")).toHaveAccessibleName("No se puede iniciar esta práctica");
+    expect(screen.queryByLabelText("Preguntas planificadas")).not.toBeInTheDocument();
+  });
+
+  it("rejects duplicate planned IDs instead of silently shrinking or repeating the session", async () => {
+    const activeIds = listOfficialQuestions().slice(0, 4).map(({ id }) => id);
+
+    render(await TestsPage({
+      searchParams: Promise.resolve({
+        practice: "true",
+        questions: [...activeIds, activeIds[0]!].join(","),
+      }),
+    }));
+
+    expect(screen.getByRole("alert")).toBeVisible();
+    expect(screen.queryByLabelText("Preguntas planificadas")).not.toBeInTheDocument();
+  });
+
+  it("rejects more than the planned ten-question maximum", async () => {
+    const overLimitIds = listOfficialQuestions().slice(0, 11).map(({ id }) => id);
+
+    render(await TestsPage({
+      searchParams: Promise.resolve({ practice: "true", questions: overLimitIds.join(",") }),
+    }));
+
+    expect(screen.getByRole("alert")).toBeVisible();
+    expect(screen.queryByLabelText("Preguntas planificadas")).not.toBeInTheDocument();
   });
 });

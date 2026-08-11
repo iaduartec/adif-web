@@ -23,8 +23,27 @@ type SearchParams = {
   page?: string;
   practice?: string;
   diagnostic?: string;
-  questions?: string;
+  questions?: string | string[];
 };
+
+type PlannedQuestionSelection =
+  | { kind: "absent" }
+  | { kind: "invalid" }
+  | { kind: "valid"; ids: string[] };
+
+function parsePlannedQuestionSelection(value: SearchParams["questions"]): PlannedQuestionSelection {
+  if (value === undefined) return { kind: "absent" };
+  if (typeof value !== "string") return { kind: "invalid" };
+
+  const ids = value.split(",");
+  if (
+    (ids.length !== 5 && ids.length !== 10)
+    || ids.some((id) => id.length === 0)
+    || new Set(ids).size !== ids.length
+  ) return { kind: "invalid" };
+
+  return { kind: "valid", ids };
+}
 
 function getSelectedYear(value: string | undefined): number | undefined {
   if (!value || value === "all") return undefined;
@@ -46,11 +65,11 @@ export default async function TestsPage({
   const requestedPage = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
   const isPractice = params.practice === "true";
   const diagnosticIds = new Set((params.diagnostic ?? "").split(",").filter(Boolean));
-  const plannedQuestionIds = params.questions?.split(",").filter(Boolean);
 
   const supabase = await createServerClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const plannedSelection = parsePlannedQuestionSelection(params.questions);
 
   const { data: favRows } = await supabase
     .from("favorites")
@@ -75,10 +94,9 @@ export default async function TestsPage({
 
   const activeQuestions = listOfficialQuestions();
   const activeQuestionById = new Map(activeQuestions.map((question) => [question.id, question]));
-  const plannedQuestionsAreValid = plannedQuestionIds === undefined || (
-    (plannedQuestionIds.length === 5 || plannedQuestionIds.length === 10)
-    && new Set(plannedQuestionIds).size === plannedQuestionIds.length
-    && plannedQuestionIds.every((questionId) => activeQuestionById.has(questionId))
+  const plannedQuestionsAreValid = plannedSelection.kind === "absent" || (
+    plannedSelection.kind === "valid"
+    && plannedSelection.ids.every((questionId) => activeQuestionById.has(questionId))
   );
   const years = [...new Set(activeQuestions.map((question) => question.source.year))].sort((a, b) => b - a);
   const exams = [...new Set(activeQuestions.map((question) => question.source.examCode))].sort();
@@ -99,8 +117,8 @@ export default async function TestsPage({
   if (diagnosticIds.size > 0) {
     filtered = filtered.filter((question) => diagnosticIds.has(question.id));
   }
-  if (plannedQuestionIds !== undefined && plannedQuestionsAreValid) {
-    filtered = plannedQuestionIds.map((questionId) => activeQuestionById.get(questionId)!);
+  if (plannedSelection.kind === "valid" && plannedQuestionsAreValid) {
+    filtered = plannedSelection.ids.map((questionId) => activeQuestionById.get(questionId)!);
   }
 
   const totalItems = filtered.length;

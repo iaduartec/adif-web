@@ -23,6 +23,7 @@
 - Readiness loading failures now become a typed safe error and both `/` and `/estadisticas` render an accessible, retryable recovery with study resources and no database details.
 - Deferred-retention eligibility is grouped by concept and scanned chronologically in O(n log n), replacing the quadratic previous-event search.
 - The home route shares its readiness promise with daily-plan assembly, eliminating duplicate reads of question attempts, review events, simulation attempts, simulation answers, and mastery.
+- Review round 2 makes planned-question parsing fail closed for repeated query keys (`string[]`), empty comma segments, duplicate IDs, unknown/inactive IDs, and lists outside the exact 5/10 sizes. Authentication runs before parsing, valid order is unchanged, and every invalid shape reaches the labelled recovery response.
 
 ## Strict TDD evidence
 
@@ -95,11 +96,21 @@ Exit 0: 8 files and 39 tests passed; TypeScript passed. The focused contracts co
 
 The first full run then exposed three legacy navigation fixtures that did not model `.range()` and expected duplicate home history reads. After updating those integration fixtures to the paginated/shared-read contract, their focused 19 tests and the full suite passed.
 
+### Review round 2/5 — RED/GREEN
+
+```text
+pnpm exec vitest run tests/planned-practice.test.tsx
+```
+
+RED exited 1 with 4 failures out of 9 tests. A repeated `questions` key represented as `string[]` threw `TypeError: params.questions?.split is not a function` before authentication, while leading, middle, and trailing empty segments were silently removed and launched a five-question session.
+
+GREEN exited 0 with all 9 route/component tests passing. The suite also locks duplicate, unknown/inactive, and 11-ID over-limit lists to the accessible invalid-practice response, confirms authentication precedes array rejection, and verifies exact order for valid 5- and 10-question plans.
+
 ## Full verification
 
 ```text
 pnpm test
-# 48 files, 336 tests passed
+# 48 files, 342 tests passed
 
 pnpm lint
 # exit 0; 2 pre-existing Next.js navigation warnings
@@ -144,3 +155,4 @@ The in-app Browser runtime was available but its required initialization failed 
 
 - `feat: add adaptive readiness dashboard`
 - `fix: harden adaptive readiness history and recovery`
+- `fix: reject malformed planned practice queries`
