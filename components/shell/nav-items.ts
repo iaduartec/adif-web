@@ -25,7 +25,7 @@ const ErrorsIcon = createIcon(["M5 4.5h14v15H5zM8 8h8M8 12h5M8 16h3", "m16 15 2 
 const StatisticsIcon = createIcon(["M5 19V11M10 19V5M15 19v-7M20 19V8"]);
 
 export const NAV_ITEMS: readonly NavigationItem[] = [
-  { href: "/", icon: RailIcon, label: "Inicio" },
+  { href: "/", icon: RailIcon, label: "Preparación" },
   { href: "/curso", icon: CourseIcon, label: "Curso" },
   { href: "/tests", icon: TestsIcon, label: "Preguntas oficiales" },
   { href: "/simulacros", icon: SimulationIcon, label: "Exámenes oficiales" },

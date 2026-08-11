@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { LazyChartWrapper } from "../../../components/dashboard/lazy-chart-wrapper";
+import { ReadinessStatistics } from "../../../components/dashboard/readiness-statistics";
+import { calculateReadiness } from "../../../lib/adaptive/readiness";
+import { assembleReadinessInput } from "../../../lib/adaptive/readiness-server";
 import { listOfficialQuestions } from "../../../lib/content/repository";
 import { calculateMetrics } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
@@ -12,25 +15,24 @@ export default async function EstadisticasPage() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  // Fetch all question attempts
-  const { data: questionAttempts } = await supabase
-    .from("question_attempts")
-    .select("question_id, is_correct, created_at")
-    .eq("user_id", user.id);
-
-  // Fetch all lesson progress
-  const { data: lessonProgress } = await supabase
-    .from("lesson_progress")
-    .select("lesson_id, percent, completed, last_activity_at")
-    .eq("user_id", user.id);
-
+  const now = new Date();
+  const readinessInput = await assembleReadinessInput(supabase, user.id, now);
+  const snapshot = calculateReadiness(readinessInput);
   const questions = listOfficialQuestions();
-
   const metrics = calculateMetrics(
-    questionAttempts ?? [],
-    lessonProgress ?? [],
+    readinessInput.questionAttempts.map((attempt) => ({
+      question_id: attempt.questionId,
+      is_correct: attempt.isCorrect,
+      created_at: attempt.createdAt,
+    })),
+    readinessInput.lessonActivity.map((activity) => ({
+      lesson_id: activity.lessonId,
+      percent: 0,
+      completed: false,
+      last_activity_at: activity.occurredAt,
+    })),
     questions,
-    new Date(),
+    now,
   );
 
   const sectionLabels: Record<string, string> = {
@@ -39,7 +41,7 @@ export default async function EstadisticasPage() {
     specific: "Conocimiento específico",
   };
   const rankedSections = Object.entries(metrics.accuracyByModule)
-    .map(([section, stats]) => ({ section, stats, percent: Math.round(stats.accuracy * 100) }))
+    .map(([section, stats]) => ({ section, stats, percentage: Math.round(stats.accuracy * 100) }))
     .sort((left, right) => left.stats.accuracy - right.stats.accuracy);
   const coverage = Object.entries(metrics.coverageByExam)
     .map(([id, stats]) => ({ id, ...stats }))
@@ -50,74 +52,40 @@ export default async function EstadisticasPage() {
       <header className="page-header">
         <p className="page-kicker">Progreso y rendimiento</p>
         <h1>Estadísticas de estudio</h1>
-        <p>
-          Analiza tu rendimiento detallado por módulo, tu racha de estudio activo y la evolución de tus respuestas diarias.
-        </p>
+        <p>Compara la actividad reciente con todo tu historial activo y localiza conceptos y lecciones que necesitan refuerzo.</p>
       </header>
 
+      <ReadinessStatistics snapshot={snapshot} />
       <LazyChartWrapper activity={metrics.sevenDayActivity} />
 
       <section aria-labelledby="accuracy-title" className="data-panel">
         <h2 id="accuracy-title">Precisión por sección oficial</h2>
-        <div className="data-table-wrap">
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Sección</th>
-                <th>Precisión</th>
-                <th>Preguntas intentadas</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rankedSections.map(({ section, stats, percent }, index) => {
-                return (
+        {rankedSections.length > 0 ? (
+          <div className="data-table-wrap">
+            <table aria-label="Precisión por sección oficial" className="data-table">
+              <thead><tr><th>Sección</th><th>Precisión</th><th>Preguntas intentadas</th></tr></thead>
+              <tbody>
+                {rankedSections.map(({ section, stats, percentage }, index) => (
                   <tr key={section}>
-                    <td>
-                      {sectionLabels[section] ?? section}
-                    </td>
-                    <td>
-                      {percent !== null ? (
-                        <strong className={percent >= 75 ? "data-value--good" : percent >= 50 ? "data-value--warning" : "data-value--danger"}>
-                          {percent}%
-                        </strong>
-                      ) : (
-                        <span>Sin intentos</span>
-                      )}
-                    </td>
-                    <td>
-                        {stats.total}
-                        {index === 0 && stats && (
-                          <span className="data-priority">
-                            Prioridad
-                          </span>
-                        )}
-                    </td>
+                    <td>{sectionLabels[section] ?? section}</td>
+                    <td><strong className={percentage >= 75 ? "data-value--good" : percentage >= 50 ? "data-value--warning" : "data-value--danger"}>{percentage}%</strong></td>
+                    <td>{stats.total}{index === 0 && <span className="data-priority">Prioridad</span>}</td>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : <p className="empty-state">Todavía no hay respuestas activas para comparar por sección.</p>}
       </section>
 
       <section aria-labelledby="coverage-title" className="data-panel">
         <h2 id="coverage-title">Cobertura por año y modelo oficial</h2>
         <div className="data-table-wrap">
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Modelo</th>
-                <th>Preguntas practicadas</th>
-                <th>Cobertura</th>
-              </tr>
-            </thead>
+          <table aria-label="Cobertura por año y modelo oficial" className="data-table">
+            <thead><tr><th>Modelo</th><th>Preguntas practicadas</th><th>Cobertura</th></tr></thead>
             <tbody>
               {coverage.map(({ id, attempted, total }) => (
-                <tr key={id}>
-                  <td>{id}</td>
-                  <td>{attempted} de {total}</td>
-                  <td><strong>{Math.round((attempted / total) * 100)}%</strong></td>
-                </tr>
+                <tr key={id}><td>{id}</td><td>{attempted} de {total}</td><td><strong>{total > 0 ? Math.round((attempted / total) * 100) : 0}%</strong></td></tr>
               ))}
             </tbody>
           </table>
@@ -125,12 +93,8 @@ export default async function EstadisticasPage() {
       </section>
 
       <div className="section-actions">
-        <Link href="/" className="ui-button ui-button--secondary">
-          Volver al inicio
-        </Link>
-        <Link href="/tests" className="ui-button">
-          Practicar preguntas
-        </Link>
+        <Link href="/" className="ui-button ui-button--secondary">Volver a preparación</Link>
+        <Link href="/tests" className="ui-button">Practicar preguntas</Link>
       </div>
     </div>
   );
