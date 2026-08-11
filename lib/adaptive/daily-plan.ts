@@ -297,7 +297,13 @@ function applyActions(tasks: DailyTask[], input: DailyPlanInput, candidates: Dai
     }
   }
   const originallySelected = new Set(tasks.map((task) => task.key));
-  let result = tasks.filter((task) => actionByKey.get(task.key)?.action !== "postpone");
+  const retainedKeys = new Set<string>();
+  let result = tasks.filter((task) => {
+    if (actionByKey.get(task.key)?.action === "postpone") return false;
+    if (task.kind === "lesson" && !lessonReady(task, retainedKeys)) return false;
+    retainedKeys.add(task.key);
+    return true;
+  });
 
   for (const task of tasks) {
     const action = actionByKey.get(task.key);

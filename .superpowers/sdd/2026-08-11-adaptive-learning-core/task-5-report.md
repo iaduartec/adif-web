@@ -233,3 +233,44 @@ git diff --check
 ### Concerns
 
 - No new concerns. Replay remains deterministic and owner-scoped, and invalid replacement preferences continue to fall back to the original computed work.
+
+## Fix round 4/5 — atomic postponement cascade
+
+### Finding addressed
+
+- Action replay now constructs a valid postponement baseline before considering replacements. When a lesson prerequisite block is explicitly postponed, every selected later block in that same lesson sequence is deterministically removed as a cascading dependent.
+- Independent reviews, lessons, practice, and simulations retain their original order. Replacement actions are then proposed atomically against that valid baseline, so an orphaned lesson block can no longer reject an unrelated replacement and leak through in the returned plan.
+- Removing work cannot increase total, review, or simulation cardinality. The existing whole-plan validation remains the commit gate for every replacement, preserving all aggregate and prerequisite invariants.
+
+### RED evidence
+
+The new regression first exited 1 with 1 failure and 22 passes. After postponing `lesson:lesson-x`, replay returned the original practice block, orphaned `lesson:lesson-x:block:1`, and independent `lesson:lesson-y`; the unrelated practice replacement was rejected because the invalid postponement baseline failed whole-plan validation.
+
+### GREEN and full verification
+
+```text
+pnpm exec vitest run tests/daily-plan.test.ts
+# 1 file, 23 tests passed
+
+pnpm exec vitest run tests/daily-plan.test.ts tests/daily-plan-server.test.ts tests/daily-plan-actions.test.ts tests/daily-plan-security-contract.test.ts tests/adaptive-learning-mock.test.ts
+# 5 files, 46 tests passed
+
+pnpm test
+# 41 files, 300 tests passed
+
+pnpm typecheck
+# exit 0
+
+pnpm lint
+# exit 0; 2 pre-existing Next.js navigation warnings
+
+pnpm build
+# exit 0; production compilation, TypeScript, page data, and static generation passed
+
+git diff --check
+# exit 0
+```
+
+### Concerns
+
+- No new persistence or authorization boundary was introduced. Postponing a prerequisite intentionally removes its selected dependent lesson blocks for that day and leaves the reclaimed time unused; other learning sequences and valid replacements remain intact.

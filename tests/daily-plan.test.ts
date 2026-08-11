@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildDailyPlan,
+  listDailyTaskCandidates,
   type DailyPlanInput,
 } from "../lib/adaptive/daily-plan";
 
@@ -394,6 +395,54 @@ describe("buildDailyPlan", () => {
 
     expect(rebuilt.tasks.map((task) => task.key)).toEqual(original.tasks.map((task) => task.key));
     expect(rebuilt.allocatedMinutes).toBe(original.allocatedMinutes);
+  });
+
+  it("cascades a postponed lesson prerequisite while preserving independent work and replacements", () => {
+    const common = baseInput({
+      availableMinutes: 40,
+      lessons: [
+        { lessonId: "lesson-x", title: "X", remainingMinutes: 20 },
+        { lessonId: "lesson-y", title: "Y", remainingMinutes: 10 },
+      ],
+      practiceQuestions: questions(10),
+    });
+    const original = buildDailyPlan(common);
+    const selectedPractice = original.tasks.find((task) => task.kind === "practice");
+    const replacementPractice = listDailyTaskCandidates(common).find((task) => (
+      task.kind === "practice" && task.key !== selectedPractice?.key
+    ));
+    expect(selectedPractice).toBeDefined();
+    expect(replacementPractice).toBeDefined();
+    expect(original.tasks.filter((task) => task.kind === "lesson").map((task) => task.key)).toEqual([
+      "lesson:lesson-x",
+      "lesson:lesson-x:block:1",
+      "lesson:lesson-y",
+    ]);
+
+    const rebuilt = buildDailyPlan({
+      ...common,
+      actions: [
+        {
+          planDate: "2026-08-11",
+          taskKey: "lesson:lesson-x",
+          action: "postpone",
+          replacementTaskKey: null,
+        },
+        {
+          planDate: "2026-08-11",
+          taskKey: selectedPractice!.key,
+          action: "replace",
+          replacementTaskKey: replacementPractice!.key,
+        },
+      ],
+    });
+
+    expect(rebuilt.tasks.map((task) => task.key)).toEqual([
+      replacementPractice!.key,
+      "lesson:lesson-y",
+    ]);
+    expect(rebuilt.allocatedMinutes).toBe(16);
+    expect(rebuilt.unusedMinutes).toBe(24);
   });
 
   it("keeps original work when a stored replacement conflicts with a selected or acted-on target", () => {
