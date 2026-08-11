@@ -302,7 +302,7 @@ function applyActions(tasks: DailyTask[], input: DailyPlanInput, candidates: Dai
   for (const task of tasks) {
     const action = actionByKey.get(task.key);
     if (!action) {
-      result.push(task);
+      if (canAppendTask(result, task, input)) result.push(task);
       continue;
     }
     if (action.action === "postpone") continue;
@@ -317,7 +317,11 @@ function applyActions(tasks: DailyTask[], input: DailyPlanInput, candidates: Dai
       && !actedKeys.has(targetKey)
       && targetCounts.get(targetKey) === 1,
     );
-    result.push(replacementValid ? replacement! : task);
+    if (replacementValid && canAppendTask(result, replacement!, input)) {
+      result.push(replacement!);
+    } else if (canAppendTask(result, task, input)) {
+      result.push(task);
+    }
   }
   return result;
 }
@@ -337,6 +341,21 @@ function lessonReady(task: DailyLessonTask, selected: ReadonlySet<string>) {
     ? `lesson:${task.lessonId}`
     : `lesson:${task.lessonId}:block:${task.block - 1}`;
   return selected.has(previousKey);
+}
+
+function canAppendTask(tasks: readonly DailyTask[], task: DailyTask, input: DailyPlanInput) {
+  if (tasks.some((selected) => selected.key === task.key)) return false;
+  const allocatedMinutes = tasks.reduce((total, selected) => total + selected.estimatedMinutes, 0);
+  if (allocatedMinutes + task.estimatedMinutes > input.availableMinutes) return false;
+  if (task.kind === "review") {
+    const reviewMinutes = tasks
+      .filter((selected) => selected.kind === "review")
+      .reduce((total, selected) => total + selected.estimatedMinutes, 0);
+    if (reviewMinutes + task.estimatedMinutes > Math.floor(input.availableMinutes * 0.6)) return false;
+  }
+  if (task.kind === "simulation" && tasks.some((selected) => selected.kind === "simulation")) return false;
+  if (task.kind === "lesson" && !lessonReady(task, new Set(tasks.map((selected) => selected.key)))) return false;
+  return true;
 }
 
 function selectSufficient(input: DailyPlanInput, pools: CandidatePools, budgets: DailyPlan["initialBudgets"]) {
@@ -361,7 +380,9 @@ function selectSufficient(input: DailyPlanInput, pools: CandidatePools, budgets:
     let categoryMinutes = 0;
     while (true) {
       const task = takeFirstFitting(pool, selected, budget - categoryMinutes, (candidate) => (
-        predicate(candidate) && (!review || reviewMinutes + candidate.estimatedMinutes <= reviewCap)
+        predicate(candidate)
+        && canAppendTask(tasks, candidate, input)
+        && (!review || reviewMinutes + candidate.estimatedMinutes <= reviewCap)
       ));
       if (!task) break;
       add(task);
@@ -389,8 +410,10 @@ function selectSufficient(input: DailyPlanInput, pools: CandidatePools, budgets:
       partialLesson && partialLesson.estimatedMinutes > capacity
         ? { ...partialLesson, estimatedMinutes: capacity }
         : partialLesson,
-      takeFirstFitting(pools.practice, selected, capacity),
-    ].filter((task): task is DailyTask => Boolean(task));
+      takeFirstFitting(pools.practice, selected, capacity, (task) => canAppendTask(tasks, task, input)),
+    ]
+      .filter((task): task is DailyTask => Boolean(task))
+      .filter((task) => canAppendTask(tasks, task, input));
     if (options.length === 0) break;
     const debt = new Set(input.postponedTaskKeysYesterday);
     options.sort((left, right) => {
@@ -415,7 +438,7 @@ function selectInsufficient(input: DailyPlanInput, pools: CandidatePools) {
     allocated += task.estimatedMinutes;
   };
   const diagnostic = pools.practice.find((task) => task.kind === "practice" && task.diagnostic);
-  if (diagnostic && diagnostic.estimatedMinutes <= input.availableMinutes) add(diagnostic);
+  if (diagnostic && canAppendTask(tasks, diagnostic, input)) add(diagnostic);
   const firstLesson = pools.lesson.find((task) => lessonReady(task, selected));
   if (firstLesson) {
     const capacity = input.availableMinutes - allocated;
@@ -425,7 +448,7 @@ function selectInsufficient(input: DailyPlanInput, pools: CandidatePools) {
 
   while (allocated < input.availableMinutes) {
     const capacity = input.availableMinutes - allocated;
-    const practice = takeFirstFitting(pools.practice, selected, capacity);
+    const practice = takeFirstFitting(pools.practice, selected, capacity, (task) => canAppendTask(tasks, task, input));
     const lesson = takeFirstFitting(pools.lesson, selected, capacity, (task) => lessonReady(task, selected));
     const next = practice ?? lesson;
     if (next) {

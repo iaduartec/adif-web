@@ -156,3 +156,42 @@ git diff --check # exit 0
 ### Remaining boundary
 
 The database deliberately does not duplicate the TypeScript active-content catalog or duration allocator. An authenticated owner could call the RPC directly with structurally valid but stale task keys; this only writes that owner's non-security-sensitive planning preference. Plan assembly and action replay always require an active candidate, enforce same-or-shorter duration, and preserve the original task for invalid rows, so such a row cannot activate content, expand authorization, or inject an oversized replacement.
+
+## Review round 2/5 — final-plan invariants and simulation cardinality
+
+### Findings addressed
+
+- Added one shared append-invariant check used by both allocation and action replay. Every inserted task must keep the total within available minutes, review work within `floor(60%)`, task keys unique, simulations at one maximum, and lesson blocks in prerequisite order.
+- A replacement that fails any final-plan invariant now leaves the original task in place. Later lesson blocks are accepted only when the preceding stable block key is already earlier in the rebuilt plan.
+- Simulation allocation now consumes at most one official exam. Remaining capacity can still be filled with independent practice blocks, but additional simulation candidates are skipped.
+- Added action-replay coverage proving a second simulation cannot be introduced through a same-duration replacement, plus positive and negative prerequisite replacement cases.
+
+### RED evidence
+
+The focused test run exited 1 with 3 failures and 16 passes. It showed all three review findings directly: three official simulations were selected into one plan, a replacement raised review work from 12 to 15 minutes in a 20-minute plan, and `lesson:lesson-z:block:1` replaced an unrelated lesson even though `lesson:lesson-z` was absent.
+
+### GREEN and full verification
+
+```text
+pnpm exec vitest run tests/daily-plan.test.ts
+# 1 file, 21 tests passed
+
+pnpm test
+# 41 files, 298 tests passed
+
+pnpm typecheck
+# exit 0
+
+pnpm lint
+# exit 0; 2 pre-existing Next.js navigation warnings
+
+pnpm build
+# exit 0; production compilation, TypeScript, page data, and static generation passed
+
+git diff --check
+# exit 0
+```
+
+### Concerns
+
+- No new persistence or authorization boundary was introduced in this round. The prior owner-only stale-key boundary remains unchanged and harmless because rebuilt plans revalidate candidates and all aggregate invariants.

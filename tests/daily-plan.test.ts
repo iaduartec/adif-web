@@ -242,8 +242,10 @@ describe("buildDailyPlan", () => {
     }));
 
     expect(enoughEvidence.tasks.find((task) => task.kind === "simulation")).toMatchObject({ examId: "exam-2023-a" });
+    expect(enoughEvidence.tasks.filter((task) => task.kind === "simulation")).toHaveLength(1);
     expect(tooSoon.tasks.some((task) => task.kind === "simulation")).toBe(false);
     expect(sevenDays.tasks.find((task) => task.kind === "simulation")).toMatchObject({ examId: "exam-2023-a" });
+    expect(sevenDays.tasks.filter((task) => task.kind === "simulation")).toHaveLength(1);
   });
 
   it("never selects an official simulation that does not fit the available minutes", () => {
@@ -257,7 +259,7 @@ describe("buildDailyPlan", () => {
     expect(plan.tasks.some((task) => task.kind === "simulation")).toBe(false);
   });
 
-  it("applies today's postpone and replacement actions without materializing a stored plan", () => {
+  it("keeps the original task when a replacement would exceed the final review cap", () => {
     const input = baseInput({
       availableMinutes: 20,
       uniqueAttemptedQuestionIds: Array.from({ length: 20 }, (_, index) => `attempted-${index}`),
@@ -276,9 +278,93 @@ describe("buildDailyPlan", () => {
 
     const rebuilt = buildDailyPlan(input);
 
-    expect(rebuilt.tasks.some((task) => task.key === "lesson:lesson-a")).toBe(false);
-    expect(rebuilt.tasks.filter((task) => task.key === "review:concept-e")).toHaveLength(1);
+    expect(rebuilt.tasks.some((task) => task.key === "lesson:lesson-a")).toBe(true);
+    expect(rebuilt.tasks.some((task) => task.key === "review:concept-e")).toBe(false);
+    expect(rebuilt.tasks.filter((task) => task.kind === "review").reduce(
+      (minutes, task) => minutes + task.estimatedMinutes,
+      0,
+    )).toBe(12);
+    expect(rebuilt.allocatedMinutes).toBeLessThanOrEqual(rebuilt.availableMinutes);
     expect(rebuilt.tasks).toHaveLength(5);
+  });
+
+  it("rejects a replacement lesson block when its prerequisite block is not earlier in the final plan", () => {
+    const rebuilt = buildDailyPlan(baseInput({
+      availableMinutes: 30,
+      reviews: Array.from({ length: 6 }, (_, index) => ({
+        conceptId: `concept-${index}`,
+        title: `Concept ${index}`,
+        dueOn: "2026-08-10",
+        status: "review" as const,
+      })),
+      lessons: [
+        { lessonId: "lesson-a", title: "A", remainingMinutes: 10 },
+        { lessonId: "lesson-z", title: "Z", remainingMinutes: 20 },
+      ],
+      actions: [{
+        planDate: "2026-08-11",
+        taskKey: "lesson:lesson-a",
+        action: "replace",
+        replacementTaskKey: "lesson:lesson-z:block:1",
+      }],
+    }));
+
+    expect(rebuilt.tasks.some((task) => task.key === "lesson:lesson-a")).toBe(true);
+    expect(rebuilt.tasks.some((task) => task.key === "lesson:lesson-z:block:1")).toBe(false);
+    expect(rebuilt.tasks.some((task) => task.key === "lesson:lesson-z")).toBe(false);
+  });
+
+  it("allows a replacement lesson block when its prerequisite is already earlier in the final plan", () => {
+    const rebuilt = buildDailyPlan(baseInput({
+      availableMinutes: 40,
+      reviews: Array.from({ length: 5 }, (_, index) => ({
+        conceptId: `concept-${index}`,
+        title: `Concept ${index}`,
+        dueOn: "2026-08-10",
+        status: "review" as const,
+      })),
+      lessons: [{ lessonId: "lesson-z", title: "Z", remainingMinutes: 20 }],
+      simulations: [{ examId: "exam-a", title: "A", durationMinutes: 12, sourceYear: 2023 }],
+      postponedTaskKeysYesterday: ["simulation:exam-a"],
+      actions: [{
+        planDate: "2026-08-11",
+        taskKey: "simulation:exam-a",
+        action: "replace",
+        replacementTaskKey: "lesson:lesson-z:block:1",
+      }],
+    }));
+
+    expect(rebuilt.tasks.map((task) => task.key)).toContain("lesson:lesson-z");
+    expect(rebuilt.tasks.map((task) => task.key)).toContain("lesson:lesson-z:block:1");
+    expect(rebuilt.tasks.some((task) => task.key === "simulation:exam-a")).toBe(false);
+  });
+
+  it("keeps a non-simulation original when its replacement would add a second simulation", () => {
+    const common = baseInput({
+      availableMinutes: 60,
+      practiceQuestions: questions(10),
+      simulations: [
+        { examId: "exam-a", title: "A", durationMinutes: 12, sourceYear: 2023 },
+        { examId: "exam-b", title: "B", durationMinutes: 12, sourceYear: 2024 },
+      ],
+    });
+    const original = buildDailyPlan(common);
+    const practice = original.tasks.find((task) => task.kind === "practice");
+    expect(practice).toBeDefined();
+
+    const rebuilt = buildDailyPlan({
+      ...common,
+      actions: [{
+        planDate: "2026-08-11",
+        taskKey: practice!.key,
+        action: "replace",
+        replacementTaskKey: "simulation:exam-b",
+      }],
+    });
+
+    expect(rebuilt.tasks.filter((task) => task.kind === "simulation")).toHaveLength(1);
+    expect(rebuilt.tasks.some((task) => task.key === "simulation:exam-a")).toBe(true);
+    expect(rebuilt.tasks.some((task) => task.key === practice!.key)).toBe(true);
   });
 
   it("keeps original work when a stored replacement conflicts with a selected or acted-on target", () => {
