@@ -297,15 +297,11 @@ function applyActions(tasks: DailyTask[], input: DailyPlanInput, candidates: Dai
     }
   }
   const originallySelected = new Set(tasks.map((task) => task.key));
-  const result: DailyTask[] = [];
+  let result = tasks.filter((task) => actionByKey.get(task.key)?.action !== "postpone");
 
   for (const task of tasks) {
     const action = actionByKey.get(task.key);
-    if (!action) {
-      if (canAppendTask(result, task, input)) result.push(task);
-      continue;
-    }
-    if (action.action === "postpone") continue;
+    if (!action || action.action === "postpone") continue;
     const targetKey = action.replacementTaskKey;
     const replacement = targetKey ? candidateByKey.get(targetKey) : undefined;
     const replacementValid = Boolean(
@@ -317,11 +313,11 @@ function applyActions(tasks: DailyTask[], input: DailyPlanInput, candidates: Dai
       && !actedKeys.has(targetKey)
       && targetCounts.get(targetKey) === 1,
     );
-    if (replacementValid && canAppendTask(result, replacement!, input)) {
-      result.push(replacement!);
-    } else if (canAppendTask(result, task, input)) {
-      result.push(task);
-    }
+    const originalIndex = result.findIndex((candidate) => candidate.key === task.key);
+    if (!replacementValid || originalIndex < 0) continue;
+    const prospective = [...result];
+    prospective[originalIndex] = replacement!;
+    if (validPlan(prospective, input)) result = prospective;
   }
   return result;
 }
@@ -355,6 +351,15 @@ function canAppendTask(tasks: readonly DailyTask[], task: DailyTask, input: Dail
   }
   if (task.kind === "simulation" && tasks.some((selected) => selected.kind === "simulation")) return false;
   if (task.kind === "lesson" && !lessonReady(task, new Set(tasks.map((selected) => selected.key)))) return false;
+  return true;
+}
+
+function validPlan(tasks: readonly DailyTask[], input: DailyPlanInput) {
+  const validated: DailyTask[] = [];
+  for (const task of tasks) {
+    if (!canAppendTask(validated, task, input)) return false;
+    validated.push(task);
+  }
   return true;
 }
 

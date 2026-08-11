@@ -195,3 +195,41 @@ git diff --check
 ### Concerns
 
 - No new persistence or authorization boundary was introduced in this round. The prior owner-only stale-key boundary remains unchanged and harmless because rebuilt plans revalidate candidates and all aggregate invariants.
+
+## Review round 3/5 — atomic replacement replay
+
+### Finding addressed
+
+- Replacement replay no longer builds the result incrementally and drops a later untouched task when the replacement consumes an aggregate invariant first.
+- Explicit postponements are removed up front. Each otherwise valid replacement is then proposed in place against the complete remaining plan and committed only if the whole ordered task sequence passes every shared invariant.
+- A rejected proposal leaves both its original task and every unrelated original task unchanged. In particular, replacing an earlier lesson with another simulation cannot displace the already selected later official simulation.
+
+### RED evidence
+
+The focused test run exited 1 with 1 failure and 21 passes. The rebuilt plan incorrectly contained only `simulation:exam-b`; it had replaced `lesson:lesson-a` and then silently discarded untouched `simulation:exam-a`.
+
+### GREEN and full verification
+
+```text
+pnpm exec vitest run tests/daily-plan.test.ts
+# 1 file, 22 tests passed
+
+pnpm test
+# 41 files, 299 tests passed
+
+pnpm typecheck
+# exit 0
+
+pnpm lint
+# exit 0; 2 pre-existing Next.js navigation warnings
+
+pnpm build
+# exit 0; production compilation, TypeScript, page data, and static generation passed
+
+git diff --check
+# exit 0
+```
+
+### Concerns
+
+- No new concerns. Replay remains deterministic and owner-scoped, and invalid replacement preferences continue to fall back to the original computed work.

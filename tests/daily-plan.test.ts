@@ -367,6 +367,35 @@ describe("buildDailyPlan", () => {
     expect(rebuilt.tasks.some((task) => task.key === practice!.key)).toBe(true);
   });
 
+  it("rejects an earlier replacement atomically instead of dropping an untouched later simulation", () => {
+    const common = baseInput({
+      availableMinutes: 30,
+      lessons: [{ lessonId: "lesson-a", title: "A", remainingMinutes: 10 }],
+      simulations: [
+        { examId: "exam-a", title: "A", durationMinutes: 10, sourceYear: 2023 },
+        { examId: "exam-b", title: "B", durationMinutes: 10, sourceYear: 2024 },
+      ],
+    });
+    const original = buildDailyPlan(common);
+    expect(original.tasks.map((task) => task.key)).toEqual([
+      "lesson:lesson-a",
+      "simulation:exam-a",
+    ]);
+
+    const rebuilt = buildDailyPlan({
+      ...common,
+      actions: [{
+        planDate: "2026-08-11",
+        taskKey: "lesson:lesson-a",
+        action: "replace",
+        replacementTaskKey: "simulation:exam-b",
+      }],
+    });
+
+    expect(rebuilt.tasks.map((task) => task.key)).toEqual(original.tasks.map((task) => task.key));
+    expect(rebuilt.allocatedMinutes).toBe(original.allocatedMinutes);
+  });
+
   it("keeps original work when a stored replacement conflicts with a selected or acted-on target", () => {
     const common = baseInput({
       availableMinutes: 20,
