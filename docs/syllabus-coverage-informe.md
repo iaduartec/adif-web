@@ -86,6 +86,10 @@ de `covered`/`missing`, porcentaje nulo con inventario incompleto y la regla de
 - `pnpm build`: OK.
 - `git diff --check`: OK antes del commit.
 
+Tras el push, `https://adif-web.vercel.app/curso` respondió HTTP 200. Se
+observó `X-Vercel-Cache: PRERENDER` y un `X-Vercel-Id` real; no se afirma un
+estado interno `Ready` porque no hay acceso autenticado a la API de Vercel.
+
 ## Limitación y siguiente paso
 
 No se debe ampliar contenido P0/P1 ni publicar un porcentaje de cobertura oficial
