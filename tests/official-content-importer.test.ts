@@ -23,6 +23,7 @@ const question = {
   bookletPage: 61,
   answerKeyPage: 6,
   verifiedAt: "2026-08-10",
+  conceptIds: ["ict-concept-1"],
   prompt: "¿Cuál es la respuesta correcta de la pregunta oficial?",
   options: [
     { key: "A", text: "Opción oficial A" },
@@ -68,6 +69,22 @@ describe("official ADIF exam importer", () => {
     expect(second.questions.map((item) => item.source.fingerprint)).toEqual(
       first.questions.map((item) => item.source.fingerprint),
     );
+  });
+
+  it("preserves validated concept mappings in imported questions", () => {
+    const result = parseOfficialExamTranscriptions(validInput());
+
+    expect(result.questions.map((item) => item.conceptIds)).toEqual([
+      ["ict-concept-1"],
+      ["ict-concept-1"],
+    ]);
+  });
+
+  it("rejects mappings to concepts outside the active registry", () => {
+    const input = validInput();
+    input.transcriptions[0].questions[0].conceptIds = ["missing-concept"];
+
+    expect(() => parseOfficialExamTranscriptions(input)).toThrow(/concept/i);
   });
 
   it("rejects a duplicate year, model, and question number", () => {

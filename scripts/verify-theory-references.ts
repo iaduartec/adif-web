@@ -141,6 +141,24 @@ export const OFFICIAL_SOURCE_REGISTRY: Record<string, OfficialSourceIdentity> = 
     canonicalUrl: "https://www.adif.es/sobre-adif/declaracion-red",
     kind: "official-document",
   },
+  "ADIF PNI23/01": {
+    canonicalTitle: "Plantillas correctoras y cuadernillos de examen PNI23/01",
+    canonicalUrl:
+      "https://www.adif.es/documents/20124/17165113/%2807.11.2023%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/dce76c5e-ae60-a0d0-568e-4f4db30c3823",
+    kind: "official-document",
+  },
+  "ADIF PNI24/01": {
+    canonicalTitle: "Plantillas correctoras y cuadernillos de examen PNI24/01",
+    canonicalUrl:
+      "https://www.adif.es/documents/20124/33942288/%2825.11.2024%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/7d5847b0-d613-65b0-a0a2-ae936d6e0500",
+    kind: "official-document",
+  },
+  "ADIF PNI25/01": {
+    canonicalTitle: "Plantillas correctoras y cuadernillos de examen PNI25/01",
+    canonicalUrl:
+      "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+    kind: "official-document",
+  },
   "EN 50121": {
     canonicalTitle:
       "Norma armonizada europea de compatibilidad electromagnética en aplicaciones ferroviarias",

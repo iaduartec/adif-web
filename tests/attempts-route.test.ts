@@ -1,10 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { createServerClient, insert, select, single } = vi.hoisted(() => ({
+const { createServerClient, rpc } = vi.hoisted(() => ({
   createServerClient: vi.fn(),
-  insert: vi.fn(),
-  select: vi.fn(),
-  single: vi.fn(),
+  rpc: vi.fn(),
 }));
 
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
@@ -22,24 +20,22 @@ function attemptRequest(body: unknown) {
 
 describe("POST /api/attempts", () => {
   beforeEach(() => {
-    insert.mockReset();
-    select.mockReset();
-    single.mockReset();
-    single.mockResolvedValue({ data: { id: "attempt-1" }, error: null });
-    select.mockReturnValue({ single });
-    insert.mockReturnValue({ select });
+    rpc.mockReset().mockResolvedValue({
+      data: { attempt_id: "attempt-1", is_correct: true },
+      error: null,
+    });
     createServerClient.mockResolvedValue({
       auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: "server-user" } } }) },
-      from: vi.fn(() => ({ insert })),
+      rpc,
     });
   });
 
-  it("derives correctness and owner from server-side data", async () => {
+  it("accepts only public answer input and delegates one atomic idempotent write", async () => {
     const response = await POST(attemptRequest({
       questionId: "ADIF-2025-1131-Q01",
-      answer: "A",
-      mode: "practice",
+      selectedAnswer: "A",
       elapsedMs: 420,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
     }));
 
     expect(response.status).toBe(201);
@@ -48,22 +44,51 @@ describe("POST /api/attempts", () => {
       isCorrect: true,
       correctAnswer: "A",
     });
-    expect(insert).toHaveBeenCalledWith({
-      user_id: "server-user",
-      question_id: "ADIF-2025-1131-Q01",
-      selected_answer: "A",
-      is_correct: true,
-      mode: "practice",
-      elapsed_ms: 420,
+    expect(rpc).toHaveBeenCalledWith("record_practice_attempt", {
+      p_question_id: "ADIF-2025-1131-Q01",
+      p_selected_answer: "A",
+      p_elapsed_ms: 420,
+      p_client_event_id: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+      p_mode: "practice",
     });
+  });
+
+  it("keeps the legacy answer/mode DTO and generates an idempotency UUID when absent", async () => {
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      answer: "A",
+      mode: "simulation",
+      elapsedMs: 420,
+    }));
+
+    expect(response.status).toBe(201);
+    expect(rpc).toHaveBeenCalledWith("record_practice_attempt", {
+      p_question_id: "ADIF-2025-1131-Q01",
+      p_selected_answer: "A",
+      p_elapsed_ms: 420,
+      p_client_event_id: expect.stringMatching(/^[0-9a-f-]{36}$/i),
+      p_mode: "simulation",
+    });
+  });
+
+  it("rejects conflicting answer aliases", async () => {
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      answer: "A",
+      selectedAnswer: "B",
+      elapsedMs: 420,
+    }));
+
+    expect(response.status).toBe(400);
+    expect(rpc).not.toHaveBeenCalled();
   });
 
   it("rejects tampered client-owned score and identity fields before writing", async () => {
     const response = await POST(attemptRequest({
       questionId: "ADIF-2025-1131-Q01",
-      answer: "A",
-      mode: "practice",
+      selectedAnswer: "A",
       elapsedMs: 0,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
       isCorrect: false,
       score: 999,
       userId: "attacker",
@@ -71,7 +96,7 @@ describe("POST /api/attempts", () => {
 
     expect(response.status).toBe(400);
     await expect(response.json()).resolves.toMatchObject({ error: expect.stringMatching(/inválida/i) });
-    expect(insert).not.toHaveBeenCalled();
+    expect(rpc).not.toHaveBeenCalled();
   });
 
   it("does not reveal an answer or write an attempt without an authenticated user", async () => {
@@ -80,17 +105,60 @@ describe("POST /api/attempts", () => {
       from: vi.fn(),
     });
 
-    const response = await POST(attemptRequest({ questionId: "ADIF-2025-1131-Q01", answer: "A", mode: "practice", elapsedMs: 0 }));
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      selectedAnswer: "A",
+      elapsedMs: 0,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    }));
 
     expect(response.status).toBe(401);
-    expect(insert).not.toHaveBeenCalled();
+    expect(rpc).not.toHaveBeenCalled();
   });
 
   it("keeps retired question IDs inert even when a user has historical attempts", async () => {
-    const response = await POST(attemptRequest({ questionId: "Q0001", answer: "A", mode: "practice", elapsedMs: 0 }));
+    const response = await POST(attemptRequest({
+      questionId: "Q0001",
+      selectedAnswer: "A",
+      elapsedMs: 0,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    }));
 
     expect(response.status).toBe(404);
-    expect(insert).not.toHaveBeenCalled();
+    expect(rpc).not.toHaveBeenCalled();
+  });
+
+  it("returns the first atomic result when an idempotency key is retried", async () => {
+    const body = {
+      questionId: "ADIF-2025-1131-Q01",
+      selectedAnswer: "A",
+      elapsedMs: 420,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    };
+
+    const first = await POST(attemptRequest(body));
+    const retry = await POST(attemptRequest(body));
+
+    await expect(first.json()).resolves.toMatchObject({ attemptId: "attempt-1", isCorrect: true });
+    await expect(retry.json()).resolves.toMatchObject({ attemptId: "attempt-1", isCorrect: true });
+    expect(rpc).toHaveBeenCalledTimes(2);
+  });
+
+  it("reports an idempotency UUID reused with a different payload as a conflict", async () => {
+    rpc.mockResolvedValueOnce({
+      data: null,
+      error: { code: "23514", message: "Idempotency key was already used with a different payload." },
+    });
+
+    const response = await POST(attemptRequest({
+      questionId: "ADIF-2025-1131-Q01",
+      selectedAnswer: "B",
+      elapsedMs: 420,
+      clientEventId: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    }));
+
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toMatchObject({ error: expect.stringMatching(/identificador/i) });
   });
 });
 

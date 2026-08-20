@@ -16,6 +16,7 @@ describe("public official-content DTOs", () => {
       id: question.id,
       sectionLabel: question.sectionLabel,
       prompt: question.prompt,
+      conceptIds: question.conceptIds,
       options: question.options,
       origin: "official_reference",
       source: {

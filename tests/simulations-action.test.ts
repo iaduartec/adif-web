@@ -83,7 +83,29 @@ function createSupabaseDouble() {
       return Promise.resolve({ error: null });
     },
   }));
-  const rpc = vi.fn(async () => ({ data: "attempt-1", error: null }));
+  const rpc = vi.fn(async (_name: string, args: { p_answers: Array<{ question_id: string; selected_answer: string | null }> }) => {
+    const persistedAnswers = args.p_answers.map((answer) => ({
+      ...answer,
+      is_correct: answer.question_id.endsWith("Q01")
+        ? answer.selected_answer === "A"
+        : answer.selected_answer === "B",
+    }));
+    const correctCount = persistedAnswers.filter((answer) => answer.is_correct).length;
+    const omittedCount = persistedAnswers.filter((answer) => answer.selected_answer === null).length;
+    const incorrectCount = persistedAnswers.length - correctCount - omittedCount;
+    return {
+      data: {
+        attempt_id: "attempt-1",
+        correct_count: correctCount,
+        incorrect_count: incorrectCount,
+        omitted_count: omittedCount,
+        score: Math.round((correctCount - incorrectCount / 3) * 100) / 100,
+        elapsed_ms: 1200,
+        answers: persistedAnswers,
+      },
+      error: null,
+    };
+  });
 
   return {
     client: {
@@ -116,19 +138,17 @@ describe("submitSimulation", () => {
         "ADIF-2024-3403-Q02": "D",
       },
       1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
     );
 
     expect(result).toMatchObject({ correct: 0, incorrect: 2, omitted: 0, score: -0.67 });
     expect(supabase.rpc).toHaveBeenCalledWith("submit_simulation_attempt", {
       p_simulation_id: exam.id,
-      p_correct_count: 0,
-      p_incorrect_count: 2,
-      p_omitted_count: 0,
-      p_score: -0.67,
       p_elapsed_ms: 1200,
+      p_client_event_id: "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
       p_answers: [
-        { question_id: "ADIF-2024-3403-Q01", selected_answer: "D", is_correct: false },
-        { question_id: "ADIF-2024-3403-Q02", selected_answer: "D", is_correct: false },
+        { question_id: "ADIF-2024-3403-Q01", selected_answer: "D" },
+        { question_id: "ADIF-2024-3403-Q02", selected_answer: "D" },
       ],
     });
     expect(supabase.from).not.toHaveBeenCalled();
@@ -138,16 +158,16 @@ describe("submitSimulation", () => {
     const supabase = createSupabaseDouble();
     createServerClient.mockResolvedValue(supabase.client);
 
-    await expect(
-      submitSimulation(
-        exam.id,
-        {
-          "ADIF-2024-3403-Q01": "A",
-          "ADIF-2023-1433-Q01": "B",
-        },
-        1200,
-      ),
-    ).rejects.toThrow(/no pertenece al examen oficial/i);
+    const outcome = await submitSimulation(
+      exam.id,
+      {
+        "ADIF-2024-3403-Q01": "A",
+        "ADIF-2023-1433-Q01": "B",
+      },
+      1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    );
+    expect(outcome).toMatchObject({ ok: false, retryable: false, error: expect.stringMatching(/no pertenece/i) });
 
     expect(supabase.from).not.toHaveBeenCalled();
   });
@@ -156,11 +176,13 @@ describe("submitSimulation", () => {
     const supabase = createSupabaseDouble();
     createServerClient.mockResolvedValue(supabase.client);
 
-    await expect(submitSimulation(
+    const outcome = await submitSimulation(
       exam.id,
       { "ADIF-2024-3403-Q01": answer },
       1200,
-    )).rejects.toThrow(/respuesta.*inválida/i);
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    );
+    expect(outcome).toMatchObject({ ok: false, retryable: false, error: expect.stringMatching(/respuesta.*inválida/i) });
 
     expect(supabase.rpc).not.toHaveBeenCalled();
     expect(supabase.from).not.toHaveBeenCalled();
@@ -172,10 +194,87 @@ describe("submitSimulation", () => {
       const supabase = createSupabaseDouble();
       createServerClient.mockResolvedValue(supabase.client);
 
-      await expect(submitSimulation(exam.id, {}, elapsedMs)).rejects.toThrow(/Tiempo transcurrido inválido/i);
+      const outcome = await submitSimulation(
+        exam.id,
+        {},
+        elapsedMs,
+        "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+      );
+      expect(outcome).toMatchObject({ ok: false, retryable: false, error: expect.stringMatching(/Tiempo transcurrido inválido/i) });
 
       expect(supabase.rpc).not.toHaveBeenCalled();
       expect(supabase.from).not.toHaveBeenCalled();
     },
   );
+
+  it("rejects a malformed idempotency key before persistence", async () => {
+    const supabase = createSupabaseDouble();
+    createServerClient.mockResolvedValue(supabase.client);
+
+    const outcome = await submitSimulation(exam.id, {}, 1200, "not-a-uuid");
+    expect(outcome).toMatchObject({ ok: false, retryable: false, error: expect.stringMatching(/identificador/i) });
+    expect(supabase.rpc).not.toHaveBeenCalled();
+  });
+
+  it("returns the canonical persisted simulation result instead of recomputing a retry payload", async () => {
+    const supabase = createSupabaseDouble();
+    supabase.rpc.mockResolvedValueOnce({
+      data: {
+        attempt_id: "persisted-attempt",
+        correct_count: 1,
+        incorrect_count: 1,
+        omitted_count: 0,
+        score: 0.67,
+        elapsed_ms: 900,
+        answers: [
+          { question_id: "ADIF-2024-3403-Q01", selected_answer: "A", is_correct: true },
+          { question_id: "ADIF-2024-3403-Q02", selected_answer: "D", is_correct: false },
+        ],
+      },
+      error: null,
+    });
+    createServerClient.mockResolvedValue(supabase.client);
+
+    const result = await submitSimulation(
+      exam.id,
+      { "ADIF-2024-3403-Q01": "D", "ADIF-2024-3403-Q02": "D" },
+      1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    );
+
+    expect(result).toMatchObject({
+      attemptId: "persisted-attempt",
+      correct: 1,
+      incorrect: 1,
+      omitted: 0,
+      score: 0.67,
+      elapsedMs: 900,
+      corrections: [
+        expect.objectContaining({ questionId: "ADIF-2024-3403-Q01", selectedAnswer: "A", isCorrect: true }),
+        expect.objectContaining({ questionId: "ADIF-2024-3403-Q02", selectedAnswer: "D", isCorrect: false }),
+      ],
+    });
+  });
+
+  it.each([
+    ["23514", false],
+    ["P0002", false],
+    ["XX000", true],
+  ])("classifies RPC error %s for browser retry handling", async (code, retryable) => {
+    const supabase = createSupabaseDouble();
+    supabase.rpc.mockResolvedValueOnce({
+      data: null,
+      error: { code, message: "database failure" },
+    } as never);
+    createServerClient.mockResolvedValue(supabase.client);
+
+    const outcome = await submitSimulation(
+      exam.id,
+      { "ADIF-2024-3403-Q01": "A" },
+      1200,
+      "018f4c5e-7c2a-7d61-a85e-969efdde4dd5",
+    );
+
+    expect(outcome).toMatchObject({ ok: false, retryable });
+  });
 });

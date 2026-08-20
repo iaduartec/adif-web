@@ -33,4 +33,15 @@ describe("server-rendered lesson selection", () => {
 
     expect(screen.getByText(/LEGISLACIÓN CONSOLIDADA/)).toBeVisible();
   });
+
+  it("gives every theory concept a stable review-session anchor without making the reader client-side", async () => {
+    render(await CourseTheoryReader({
+      lesson: getLesson("igualdad")!,
+      progress: 0,
+      view: "theory",
+    }));
+
+    const conceptHeading = screen.getAllByRole("heading", { level: 4 })[0]!;
+    expect(conceptHeading.closest("section")).toHaveAttribute("id", expect.stringMatching(/^concept-.+/));
+  });
 });

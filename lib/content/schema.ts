@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { activeTheoryConceptRegistry } from "../../content/theory-concepts";
+
 export const contentOriginSchema = z.enum([
   "official_reference",
   "original_explanation",
@@ -126,6 +128,16 @@ export const officialQuestionSchema = z
     id: z.string().regex(/^ADIF-\d{4}-\d{4}-Q\d{2}$/),
     sectionLabel: z.string().trim().min(1),
     prompt: z.string().trim().min(1),
+    conceptIds: z
+      .array(z.string().trim().min(1))
+      .min(1)
+      .refine((conceptIds) => new Set(conceptIds).size === conceptIds.length, {
+        message: "Official-question concept mappings must not contain duplicates.",
+      })
+      .refine(
+        (conceptIds) => conceptIds.every((conceptId) => activeTheoryConceptRegistry.has(conceptId)),
+        { message: "Official questions may only reference active theory concepts." },
+      ),
     options: z.array(optionSchema).length(4),
     answer: z.enum(["A", "B", "C", "D"]),
     origin: z.literal("official_reference"),

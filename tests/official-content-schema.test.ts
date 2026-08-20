@@ -26,6 +26,7 @@ const officialQuestion = {
   id: "ADIF-2025-1131-Q01",
   sectionLabel: "Conocimiento específico",
   prompt: "Pregunta oficial de prueba de contrato.",
+  conceptIds: ["ict-concept-1"],
   options: [
     { key: "A", text: "Opción A" },
     { key: "B", text: "Opción B" },
@@ -91,6 +92,18 @@ describe("official ADIF content schemas", () => {
     expect(
       officialQuestionSchema.safeParse({ ...officialQuestion, answer: "E" }).success,
     ).toBe(false);
+  });
+
+  it.each([
+    ["missing", undefined],
+    ["empty", []],
+    ["duplicated", ["ict-concept-1", "ict-concept-1"]],
+    ["unknown", ["missing-concept"]],
+  ])("rejects %s official-question concept mappings", (_case, conceptIds) => {
+    const candidate = { ...officialQuestion, conceptIds };
+    if (conceptIds === undefined) delete (candidate as Partial<typeof officialQuestion>).conceptIds;
+
+    expect(officialQuestionSchema.safeParse(candidate).success).toBe(false);
   });
 
   it("rejects question IDs that do not match their official source", () => {

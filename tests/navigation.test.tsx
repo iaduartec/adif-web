@@ -7,7 +7,7 @@ import { DashboardNavigation } from "../components/shell/dashboard-navigation";
 import { MobileNavigation } from "../components/shell/mobile-navigation";
 import { Sidebar } from "../components/shell/sidebar";
 import { UserMenu } from "../components/shell/user-menu";
-import { listLessons, listOfficialQuestions } from "../lib/content/repository";
+import { listOfficialQuestions } from "../lib/content/repository";
 
 const { createServerClient, serverRows, signOut, usePathname } = vi.hoisted(() => ({
   createServerClient: vi.fn(),
@@ -21,7 +21,7 @@ vi.mock("../lib/supabase/browser", () => ({ createBrowserClient: () => ({ auth: 
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
 
 const requiredDestinations = [
-  ["Inicio", "/"],
+  ["Preparación", "/"],
   ["Curso", "/curso"],
   ["Preguntas oficiales", "/tests"],
   ["Exámenes oficiales", "/simulacros"],
@@ -33,9 +33,14 @@ const requiredDestinations = [
 ] as const;
 
 describe("authenticated navigation", () => {
-  afterEach(cleanup);
+  afterEach(() => {
+    cleanup();
+    vi.useRealTimers();
+  });
 
   beforeEach(() => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-08-11T10:00:00.000Z"));
     signOut.mockReset();
     usePathname.mockReset();
     createServerClient.mockReset();
@@ -47,6 +52,7 @@ describe("authenticated navigation", () => {
           eq: vi.fn(),
           gte: vi.fn(),
           order: vi.fn(),
+          range: vi.fn(async (from: number, to: number) => ({ data: rows.slice(from, to + 1), error: null })),
           maybeSingle: vi.fn(async () => ({ data: rows[0] ?? null })),
           then: (resolve: (value: { data: unknown[] }) => unknown) =>
             Promise.resolve({ data: rows }).then(resolve),
@@ -71,27 +77,26 @@ describe("authenticated navigation", () => {
           })),
         },
         from: vi.fn((table: string) => createQuery(
-          serverRows.current[table] ?? (table === "study_goals" ? [{ weekly_target_minutes: 120 }] : []),
+          serverRows.current[table] ?? (table === "study_goals" ? [{ session_minutes: 30, weekly_target_minutes: 120 }] : []),
         )),
       };
     });
   });
 
-  it("presents one primary recommendation and an official-content summary without emoji headings", async () => {
+  it("presents the adaptive plan and evidence summary without emoji headings", async () => {
     render(await DashboardPage());
 
-    expect(screen.getAllByRole("region", { name: "Siguiente acción recomendada" })).toHaveLength(1);
-    expect(screen.getByText("Lecciones completadas")).toBeInTheDocument();
-    expect(screen.getByText("Preguntas oficiales intentadas")).toBeInTheDocument();
-    expect(screen.getByText("Precisión global")).toBeInTheDocument();
-    expect(screen.getByText("Sección oficial prioritaria")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Recursos oficiales" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Estado de preparación" })).toBeInTheDocument();
+    expect(screen.getByText("Evidencia insuficiente")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Sesión de hoy" })).toBeInTheDocument();
+    expect(screen.getByText("Racha actual")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Recursos complementarios" })).toBeInTheDocument();
 
     const headingText = screen.getAllByRole("heading").map((heading) => heading.textContent).join(" ");
     expect(headingText).not.toMatch(/[🔥📖📝⏱️]/u);
   });
 
-  it("starts the five authorized dashboard queries without serial waterfalls", async () => {
+  it("starts readiness, daily-plan, and goal queries without serial waterfalls", async () => {
     const startedTables: string[] = [];
     let releaseQueries = () => {};
     const queryGate = new Promise<void>((resolve) => {
@@ -107,18 +112,22 @@ describe("authenticated navigation", () => {
       from: vi.fn((table: string) => {
         startedTables.push(table);
         const result = queryGate.then(() => ({
-          data: table === "study_goals" ? { weekly_target_minutes: 120 } : [],
+          data: table === "study_goals" ? { session_minutes: 30, weekly_target_minutes: 120 } : [],
+          error: null,
         }));
         const query = {
           select: vi.fn(),
           eq: vi.fn(),
           gte: vi.fn(),
+          order: vi.fn(),
+          range: vi.fn(() => result),
           maybeSingle: vi.fn(() => result),
           then: result.then.bind(result),
         };
         query.select.mockReturnValue(query);
         query.eq.mockReturnValue(query);
         query.gte.mockReturnValue(query);
+        query.order.mockReturnValue(query);
         return query;
       }),
     });
@@ -128,11 +137,16 @@ describe("authenticated navigation", () => {
     try {
       await waitFor(() => {
         expect(startedTables).toEqual([
+          "concept_mastery",
           "question_attempts",
+          "review_events",
+          "simulation_attempts",
+          "simulation_answers",
           "lesson_progress",
           "study_goals",
-          "question_attempts",
-          "simulation_attempts",
+          "lesson_progress",
+          "daily_plan_actions",
+          "study_goals",
         ]);
       }, { timeout: 150 });
     } catch (error) {
@@ -144,29 +158,21 @@ describe("authenticated navigation", () => {
     if (startError) throw startError;
   });
 
-  it("links the weakest official section with a Spanish label and a server-side section filter", async () => {
+  it("keeps active weekly practice in the server-rendered summary", async () => {
     const question = listOfficialQuestions()[0]!;
     serverRows.current = {
-      lesson_progress: listLessons().map((lesson) => ({
-        lesson_id: lesson.slug,
-        percent: 100,
-        completed: true,
-        last_activity_at: "2026-08-10T08:00:00.000Z",
-      })),
       question_attempts: [{
         question_id: question.id,
         is_correct: false,
+        elapsed_ms: 60_000,
+        mode: "practice",
         created_at: "2026-08-10T09:00:00.000Z",
       }],
     };
 
     render(await DashboardPage());
 
-    expect(screen.getByRole("heading", { name: "Practicar Conocimiento específico" })).toBeVisible();
-    expect(screen.getByRole("link", { name: "Empezar práctica" })).toHaveAttribute(
-      "href",
-      "/tests?section=specific&practice=true",
-    );
+    expect(screen.getByText("Práctica activa").nextElementSibling).toHaveTextContent("1 min");
     expect(screen.queryByText("specific", { exact: true })).not.toBeInTheDocument();
   });
 
@@ -214,7 +220,7 @@ describe("authenticated navigation", () => {
     }
 
     expect(screen.getByRole("link", { name: "Preguntas oficiales" })).toHaveAttribute("aria-current", "page");
-    expect(screen.getByRole("link", { name: "Inicio" })).not.toHaveAttribute("aria-current");
+    expect(screen.getByRole("link", { name: "Preparación" })).not.toHaveAttribute("aria-current");
   });
 
   it("opens the mobile navigation from a labelled trigger and returns focus after Escape", () => {
@@ -233,13 +239,13 @@ describe("authenticated navigation", () => {
     expect(trigger).toHaveFocus();
   });
 
-  it("identifies Curso rather than Inicio when the current route is /curso", () => {
+  it("identifies Curso rather than Preparación when the current route is /curso", () => {
     usePathname.mockReturnValue("/curso");
     render(<><DashboardNavigation placement="sidebar" /><DashboardNavigation placement="mobile" /></>);
     fireEvent.click(screen.getByRole("button", { name: "Abrir navegación" }));
 
     const courseLinks = screen.getAllByRole("link", { name: "Curso" });
-    const homeLinks = screen.getAllByRole("link", { name: "Inicio" });
+    const homeLinks = screen.getAllByRole("link", { name: "Preparación" });
 
     expect(courseLinks).toHaveLength(2);
     courseLinks.forEach((link) => expect(link).toHaveAttribute("aria-current", "page"));
@@ -250,6 +256,14 @@ describe("authenticated navigation", () => {
     render(<UserMenu profile={{ email: "ana@example.com", name: "Ana López" }} />);
 
     expect(screen.getByRole("button", { name: "Abrir menú de cuenta" })).toBeInTheDocument();
+  });
+
+  it("links the account menu to the editable preparation profile", () => {
+    render(<UserMenu profile={{ email: "ana@example.com", name: "Ana López" }} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Abrir menú de cuenta" }));
+
+    expect(screen.getByRole("menuitem", { name: "Editar preparación" })).toHaveAttribute("href", "/onboarding");
   });
 
   it("replaces a failed decorative avatar with accessible account initials", () => {

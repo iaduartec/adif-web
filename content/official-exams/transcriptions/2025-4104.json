@@ -28,7 +28,10 @@
           "text": "Realiza la unión entre dos redes de dispersión dentro del mismo edificio."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-15"
+      ]
     },
     {
       "number": 2,
@@ -57,7 +60,10 @@
           "text": "…sólo incluirá los elementos activos ubicados en el RITU."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-25"
+      ]
     },
     {
       "number": 3,
@@ -86,7 +92,10 @@
           "text": "… 600 ± 30 Ω."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-26"
+      ]
     },
     {
       "number": 4,
@@ -115,7 +124,10 @@
           "text": "Deberán estar conectados a la toma de tierra del edificio a través del camino más corto posible, con cable de, al menos, 25 mm² de sección."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "ict-concept-28"
+      ]
     },
     {
       "number": 5,
@@ -144,7 +156,10 @@
           "text": "… 600 Ω."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-29"
+      ]
     },
     {
       "number": 6,
@@ -173,7 +188,10 @@
           "text": "… una roseta con conexión por tornillos para fiabilizar la conexión de la instalación del usuario."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-31"
+      ]
     },
     {
       "number": 7,
@@ -202,7 +220,10 @@
           "text": "…de radiodifusión sonora y televisión terrestres, así como servicios de telefonía prestados a través de redes públicas de telecomunicaciones."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "ict-concept-27"
+      ]
     },
     {
       "number": 8,
@@ -231,7 +252,10 @@
           "text": "Espacio alrededor del conductor eléctrico dentro del cual un trabajador (con o sin herramienta) o una máquina de trabajos podría sufrir un arco eléctrico o un contacto directo con el elemento en tensión."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "rcf-concept-11"
+      ]
     },
     {
       "number": 9,
@@ -260,7 +284,10 @@
           "text": "…contar con el correspondiente proyecto técnico en el que se describirán, solo los principales componentes, quedando el resto de detalles y su ubicación a definir en fase de obra."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-16"
+      ]
     },
     {
       "number": 10,
@@ -289,7 +316,10 @@
           "text": "… 1 MHz y 100 MHz."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-32"
+      ]
     },
     {
       "number": 11,
@@ -318,7 +348,10 @@
           "text": "… se conectará cada parte metálica accesible de cada uno de ellos al hilo de tierra de la alimentación de la energía eléctrica del inmueble."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-30"
+      ]
     },
     {
       "number": 12,
@@ -347,7 +380,10 @@
           "text": "… soldando la FO sólo en el extremo del repartidor de los operadores, pero no en el panel común de la red del edificio."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-24"
+      ]
     },
     {
       "number": 13,
@@ -376,7 +412,10 @@
           "text": "Por los bajos niveles de Interferencias electromagnéticas (EMI) que generan."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "cem-concept-13"
+      ]
     },
     {
       "number": 14,
@@ -405,7 +444,10 @@
           "text": "… recibir todo el ancho de banda a medir."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-14"
+      ]
     },
     {
       "number": 15,
@@ -434,7 +476,10 @@
           "text": "… todos los equipos electrónicos."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-12"
+      ]
     },
     {
       "number": 16,
@@ -463,7 +508,10 @@
           "text": "… marzo de 2014."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-12"
+      ]
     },
     {
       "number": 17,
@@ -492,7 +540,10 @@
           "text": "La parte de red que enlaza la red de dispersión con la toma de usuario."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "ict-concept-33"
+      ]
     },
     {
       "number": 18,
@@ -521,7 +572,10 @@
           "text": "Tren que quede detenido ante la señal de entrada de una estación."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "rcf-concept-13"
+      ]
     }
   ]
 }

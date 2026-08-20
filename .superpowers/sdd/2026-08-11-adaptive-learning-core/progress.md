@@ -1,0 +1,26 @@
+# SDD ledger — plan: docs/superpowers/plans/2026-08-11-adaptive-learning-core.md
+
+Baseline: 2851f64; 177 tests passed on 2026-08-11.
+
+Task 1: fix round 1/5 (3 addressed, 0 open; commits 5acea68..8c869ea)
+Task 1: complete (commits 617daf0..8c869ea, review clean)
+Task 2: fix round 1/5 (3 addressed, 3 new open; commits bdb215e..93e9daa)
+Task 2: fix round 2/5 (3 addressed, 0 open; commits 93e9daa..102fb50)
+Task 2: complete (commits 8c869ea..102fb50, review clean; human approved registry expansion to 126 audited concepts)
+Task 3: fix round 1/5 (5 original findings addressed except end-to-end retry; 2 new open; commits 5e77471..95a288f)
+Task 3: fix round 2/5 (fingerprint portability addressed; retry lifecycle 3 open; commits 95a288f..7cf7d4a)
+Task 3: fix round 3/5 (3 addressed, 0 open; commits 7cf7d4a..bcda8e8)
+Task 3: complete (commits 102fb50..bcda8e8, review clean; recall self-rating exception approved by human)
+Task 4: fix round 1/5 (4 addressed, 0 open; commits 9072d3f..6761703)
+Task 4: complete (commits bcda8e8..6761703, review clean)
+Task 5: fix round 1/5 (7 addressed, 3 new open; commits 5476bce..93f7450)
+Task 5: fix round 2/5 (3 addressed, 1 new open; commits 93f7450..896c440)
+Task 5: fix round 3/5 (1 addressed, 1 new open; commits 896c440..8e2371e)
+Task 5: fix round 4/5 (1 addressed, 0 open; fresh implementer; commits 8e2371e..f7d0a7c)
+Task 5: complete (commits 6761703..f7d0a7c, review clean)
+Task 6: fix round 1/5 (7 addressed, 1 new open; commits 4ca7ae2..afcb844)
+Task 6: fix round 2/5 (1 addressed, 0 open; commits afcb844..0dc2cfd)
+Task 6: complete (commits f7d0a7c..0dc2cfd, review clean)
+Task 7: fix round 1/5 (2 addressed, 0 open; commits f955609..98e7ff6; review approved)
+Task 7: fix round 2/5 (1 minor coverage finding addressed; commit 12efc48)
+Task 7: complete (commits 0dc2cfd..12efc48, review clean; full validation green)

@@ -28,7 +28,10 @@
           "text": "140 km/h."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "rcf-concept-9"
+      ]
     },
     {
       "number": 2,
@@ -57,7 +60,10 @@
           "text": "Bases de Acceso Total."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-5"
+      ]
     },
     {
       "number": 3,
@@ -86,7 +92,10 @@
           "text": "… todo el personal de las EF, de los AI y de otras empresas, que interviene, directa o indirectamente, en los procesos del transporte ferroviario."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "rcf-concept-7"
+      ]
     },
     {
       "number": 4,
@@ -115,7 +124,10 @@
           "text": "HE 1-6 del documento básico DB HE del Código Técnico de Edificación."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-11"
+      ]
     },
     {
       "number": 5,
@@ -144,7 +156,10 @@
           "text": "ITU."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-12"
+      ]
     },
     {
       "number": 6,
@@ -173,7 +188,10 @@
           "text": "Registro de Instalaciones de Telecomunicación interoperable."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-7"
+      ]
     },
     {
       "number": 7,
@@ -202,7 +220,10 @@
           "text": "Técnica, restringida o comercial."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "rcf-concept-10"
+      ]
     },
     {
       "number": 8,
@@ -231,7 +252,10 @@
           "text": "UNE-EN 50436"
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "ict-concept-13"
+      ]
     },
     {
       "number": 9,
@@ -260,7 +284,10 @@
           "text": "Red de dispersión."
         }
       ],
-      "answer": "C"
+      "answer": "C",
+      "conceptIds": [
+        "ict-concept-2"
+      ]
     },
     {
       "number": 10,
@@ -289,7 +316,10 @@
           "text": "Punto de asignación universal."
         }
       ],
-      "answer": "B"
+      "answer": "B",
+      "conceptIds": [
+        "ict-concept-14"
+      ]
     },
     {
       "number": 11,
@@ -318,7 +348,10 @@
           "text": "Sistema de protección de tren compatible con el instalado en la infraestructura."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "rcf-concept-8"
+      ]
     },
     {
       "number": 12,
@@ -347,7 +380,10 @@
           "text": "Por la pantalla del cable."
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "cem-concept-6"
+      ]
     },
     {
       "number": 13,
@@ -376,7 +412,10 @@
           "text": "Es inmune a sus propias emisiones."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-1"
+      ]
     },
     {
       "number": 14,
@@ -405,7 +444,10 @@
           "text": "Aumentar el área del bucle víctima."
         }
       ],
-      "answer": "D"
+      "answer": "D",
+      "conceptIds": [
+        "cem-concept-7"
+      ]
     },
     {
       "number": 15,
@@ -434,7 +476,10 @@
           "text": "Sensibilidad"
         }
       ],
-      "answer": "A"
+      "answer": "A",
+      "conceptIds": [
+        "cem-concept-1"
+      ]
     }
   ]
 }
