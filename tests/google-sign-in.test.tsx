@@ -18,7 +18,10 @@ describe("GoogleSignIn", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    signInWithOAuth.mockResolvedValue({ error: null });
+    signInWithOAuth.mockResolvedValue({
+      data: { url: "https://example.supabase.co/auth/v1/authorize" },
+      error: null,
+    });
     window.history.replaceState({}, "", "/");
   });
 
@@ -51,6 +54,17 @@ describe("GoogleSignIn", () => {
 
   it("shows an inline error when Google OAuth cannot start", async () => {
     signInWithOAuth.mockResolvedValue({ error: new Error("cancelled") });
+    render(<GoogleSignIn />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Continuar con Google" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "No hemos podido iniciar sesión con Google. Inténtalo de nuevo.",
+    );
+  });
+
+  it("shows an inline error when OAuth does not return a usable redirect URL", async () => {
+    signInWithOAuth.mockResolvedValue({ data: { url: "not-a-url" }, error: null });
     render(<GoogleSignIn />);
 
     fireEvent.click(screen.getByRole("button", { name: "Continuar con Google" }));

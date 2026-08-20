@@ -20,6 +20,19 @@ function getInitialError() {
     : null;
 }
 
+function hasUsableOAuthRedirectUrl(url: unknown) {
+  if (typeof url !== "string") {
+    return false;
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.protocol === "https:" || parsedUrl.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 export function GoogleSignIn() {
   const [error, setError] = useState<string | null>(getInitialError);
 
@@ -35,13 +48,17 @@ export function GoogleSignIn() {
         callbackUrl.searchParams.set("next", next);
       }
 
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: callbackUrl.toString() },
       });
 
       if (error) {
         throw error;
+      }
+
+      if (!hasUsableOAuthRedirectUrl(data?.url)) {
+        throw new Error("OAuth did not return a usable redirect URL.");
       }
     } catch (error) {
       setError(
