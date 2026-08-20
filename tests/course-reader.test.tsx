@@ -100,4 +100,25 @@ describe("course reader provenance and notes", () => {
     expect(screen.queryByText(/lo3-2007-art6-2/)).toBeNull();
     expect(screen.getAllByRole("link", { name: /LO 3\/2007 · Artículo 6\.2/i }).length).toBeGreaterThan(0);
   });
+
+  it("renders every lesson summary with a paper-like study hierarchy", async () => {
+    const { container } = render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0 }));
+
+    expect(container.querySelector(".course-summary")).not.toBeNull();
+    expect(container.querySelector(".course-summary__lede")).not.toBeNull();
+    expect(container.querySelectorAll(".course-fact").length).toBeGreaterThan(0);
+    expect(container.querySelectorAll(".course-summary__section").length).toBeGreaterThan(0);
+  });
+
+  it("keeps legal anchors and article blocks visually distinguishable across views", async () => {
+    const { container, rerender } = render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
+
+    expect(container.querySelector(".course-theory")).not.toBeNull();
+    expect(container.querySelectorAll(".course-concept").length).toBeGreaterThan(0);
+    expect(container.querySelectorAll(".course-citation").length).toBeGreaterThan(0);
+
+    rerender(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "official" }));
+    expect(container.querySelector(".course-official")).not.toBeNull();
+    expect(container.querySelectorAll(".course-article").length).toBeGreaterThan(0);
+  });
 });

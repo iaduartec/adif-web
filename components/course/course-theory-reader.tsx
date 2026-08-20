@@ -41,7 +41,7 @@ function ClaimWithTraceability({
 
   return (
     <div
-      className="space-y-1"
+      className="course-claim space-y-1"
       data-claim-kind={claim.kind}
       data-legal-reference-ids={claim.legalBasis.join(" ")}
     >
@@ -49,7 +49,7 @@ function ClaimWithTraceability({
         <div className="flex flex-wrap gap-x-3 gap-y-1">
           {basis.map((source) => (
             <a
-              className="text-xs font-bold uppercase tracking-wider text-accent"
+              className="course-citation text-xs font-bold uppercase tracking-wider text-accent"
               href={source.sourceUrl}
               key={source.id}
               rel="noopener noreferrer"
@@ -77,7 +77,7 @@ function ClaimWithTraceability({
             {basis.map((source) => (
               <li key={source.id}>
                 <a
-                  className="text-accent underline"
+                  className="course-citation text-accent underline"
                   href={source.sourceUrl}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -123,7 +123,7 @@ export async function CourseTheoryReader({
       lesson={{ slug: lesson.slug, title: lesson.title, summary: lesson.summary, origin: lesson.origin }}
       progress={progress}
     >
-      <nav aria-label="Vistas del tema" className="flex border-b border-rail mb-8 flex-wrap gap-2">
+      <nav aria-label="Vistas del tema" className="course-reader__views flex border-b border-rail mb-8 flex-wrap gap-2">
         {([
           ["summary", "Resumen Ejecutivo"],
           ["theory", "Teoría y Práctica"],
@@ -131,7 +131,7 @@ export async function CourseTheoryReader({
         ] as const).map(([targetView, label]) => (
           <Link
             aria-current={view === targetView ? "page" : undefined}
-            className={`px-5 py-3 font-bold text-sm border-b-2 -mb-[2px] ${view === targetView ? "border-accent text-accent-strong bg-white" : "border-transparent text-gray-500"}`}
+            className={`course-reader__view px-5 py-3 font-bold text-sm border-b-2 -mb-[2px] ${view === targetView ? "course-reader__view--active border-accent text-accent-strong bg-white" : "border-transparent text-gray-500"}`}
             href={viewHref(lesson.slug, targetView)}
             key={targetView}
           >
@@ -144,20 +144,25 @@ export async function CourseTheoryReader({
       {view === "summary" ? (
         <div className="space-y-8">
           {summary ? (
-            <section aria-labelledby="course-summary" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
-              <div className="border-b border-rail pb-4">
+            <section aria-labelledby="course-summary" className="course-summary p-8 bg-white border border-rail space-y-6 shadow-sm">
+              <div className="course-summary__lede border-b border-rail pb-4">
                 <span className="text-xs uppercase font-bold tracking-wider text-accent">Resumen Clave para Oposición</span>
                 <p className="text-gray-800 leading-relaxed mt-2 text-base font-medium">{summary.overview}</p>
               </div>
-              <div className="space-y-3">
+              <div className="course-summary__facts space-y-3">
                 <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Datos Esenciales de Examen</h3>
                 <ul className="grid gap-2.5">
-                  {summary.keyFacts.map((fact) => <li className="text-sm text-gray-800 bg-gray-50/80 p-3.5 border border-rail" key={fact}>{fact}</li>)}
+                  {summary.keyFacts.map((fact, index) => (
+                    <li className="course-fact text-sm text-gray-800 bg-gray-50/80 p-3.5 border border-rail" key={fact}>
+                      <span aria-hidden="true" className="course-fact__marker">{String(index + 1).padStart(2, "0")}</span>
+                      <span>{fact}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="space-y-6 pt-3">
                 {summary.sections.map((section) => (
-                  <section className="space-y-3 border-t border-rail pt-4" key={section.title}>
+                  <section className="course-summary__section space-y-3 border-t border-rail pt-4" key={section.title}>
                     <h3 className="font-bold text-ink text-sm uppercase tracking-wider">{section.title}</h3>
                     <ul className="space-y-2.5 pl-1">
                       {section.points.map((point) => <li className="text-sm text-gray-700 leading-relaxed" key={point}>{point}</li>)}
@@ -169,7 +174,7 @@ export async function CourseTheoryReader({
           ) : <p className="empty-state">No hay resumen estructurado disponible para esta lección todavía.</p>}
         </div>
       ) : view === "theory" ? (
-        <div className="space-y-8">
+        <div className="course-theory space-y-8">
           <section aria-labelledby="course-explanation" className="p-8 bg-white border border-rail space-y-6 shadow-sm">
             <div className="border-b border-rail pb-4">
               <span className="text-xs uppercase font-bold tracking-wider text-accent">Explicación y Enfoque Didáctico</span>
@@ -177,17 +182,20 @@ export async function CourseTheoryReader({
             </div>
             {theory ? (
               <>
-                <div className="space-y-2">
+                <div className="course-theory__intro space-y-2">
                   {theory.introduction.map((claim) => (
                     <ClaimWithTraceability claim={claim} key={claim.id} sources={theory.sources} />
                   ))}
                 </div>
                 <div className="grid gap-4">
                   <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Conceptos Fundamentales</h3>
-                  {theory.concepts.map((concept) => (
-                    <section className="p-4 border border-rail bg-gray-50/50 scroll-mt-24" id={`concept-${concept.id}`} key={concept.id}>
-                      <h4 className="font-bold text-ink mb-1 text-base">{concept.title}</h4>
-                      <div className="space-y-1.5">
+                  {theory.concepts.map((concept, index) => (
+                    <section className="course-concept p-4 border border-rail bg-gray-50/50 scroll-mt-24" id={`concept-${concept.id}`} key={concept.id}>
+                      <div className="course-concept__heading">
+                        <span aria-hidden="true" className="course-concept__index">{String(index + 1).padStart(2, "0")}</span>
+                        <h4 className="font-bold text-ink mb-1 text-base">{concept.title}</h4>
+                      </div>
+                      <div className="course-concept__body space-y-1.5">
                         {concept.claims.map((claim) => (
                           <ClaimWithTraceability claim={claim} key={claim.id} sources={theory.sources} />
                         ))}
@@ -199,7 +207,7 @@ export async function CourseTheoryReader({
                 <div className="space-y-4">
                   <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Supuestos Prácticos Tipo Test</h3>
                   {theory.examples.map((example, index) => (
-                    <section className="course-example p-5 bg-paper border border-rail space-y-2" key={example.id}>
+                    <section className="course-example course-example--paper p-5 bg-paper border border-rail space-y-2" key={example.id}>
                       <h4 className="font-bold text-sm text-accent-strong">Caso Práctico #{index + 1}</h4>
                       <p className="text-sm text-ink italic">&quot;{example.situation}&quot;</p>
                       <div className="pt-2 border-t border-dashed border-rail space-y-1.5">
@@ -212,7 +220,7 @@ export async function CourseTheoryReader({
                   ))}
                 </div>
 
-                <section className="p-5 border border-rail bg-gray-50/70 space-y-3">
+                <section className="course-recall p-5 border border-rail bg-gray-50/70 space-y-3">
                   <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Reglas Nemotécnicas y Tips</h3>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-2 pl-2">
                     {theory.reviewTakeaways.map((takeaway) => (
@@ -224,7 +232,7 @@ export async function CourseTheoryReader({
                 </section>
 
                 {theory.sources && theory.sources.length > 0 && (
-                  <section className="p-5 border border-rail bg-gray-50/40 space-y-3">
+                  <section className="course-sources p-5 border border-rail bg-gray-50/40 space-y-3">
                     <h3 className="font-bold text-ink text-sm uppercase tracking-wider">Fuentes Registradas</h3>
                     <ul className="space-y-2">
                       {theory.sources.map((source) => (
@@ -273,7 +281,7 @@ export async function CourseTheoryReader({
           </section>
         </div>
       ) : (
-        <section aria-labelledby="official-text-title" className="space-y-6">
+        <section aria-labelledby="official-text-title" className="course-official space-y-6">
           <h2 id="official-text-title">Texto Oficial Integrado</h2>
           {officialNorm ? (
             <div className="bg-gray-50 border border-rail p-6 space-y-4">
@@ -299,8 +307,9 @@ export async function CourseTheoryReader({
               )}
 
               <div className="space-y-4">
-                {filteredArticles.length ? filteredArticles.map((article) => (
-                  <article className="bg-white p-4 border border-rail border-l-4 border-l-accent space-y-2" key={article.number}>
+                {filteredArticles.length ? filteredArticles.map((article, index) => (
+                  <article className="course-article bg-white p-4 border border-rail border-l-4 border-l-accent space-y-2" key={article.number}>
+                    <span aria-hidden="true" className="course-article__index">{String(index + 1).padStart(2, "0")}</span>
                     <h3 className="font-bold text-sm text-accent-strong">{article.number}. {article.title}</h3>
                     <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">{article.content}</p>
                   </article>

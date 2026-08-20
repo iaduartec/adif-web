@@ -347,6 +347,55 @@ button:focus-visible,
 .course-error p { line-height: 1.55; }
 .course-error button { min-height: 2.75rem; border: 1px solid var(--accent); padding: .5rem .75rem; background: transparent; color: var(--accent-strong); cursor: pointer; font: inherit; font-weight: 700; }
 
+/* Course reader: editorial study-sheet treatment shared by every lesson. */
+.course-reader { --course-marker: #c38b2b; }
+.course-reader__views { align-items: end; gap: 0; }
+.course-reader__view { min-height: 2.75rem; letter-spacing: .015em; text-decoration: none; transition: color 160ms ease, background-color 160ms ease; }
+.course-reader__view:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); color: var(--accent-strong); }
+.course-reader__view--active { box-shadow: inset 0 -2px 0 var(--accent); }
+.course-summary, .course-theory, .course-official { --sheet-line: color-mix(in srgb, var(--rail) 86%, white); }
+.course-summary { position: relative; overflow: hidden; border-top: 4px solid var(--ink) !important; }
+.course-summary::before { position: absolute; top: 0; right: 1.75rem; width: 3.25rem; height: .35rem; background: var(--course-marker); content: ""; }
+.course-summary__lede { padding-bottom: 1.25rem; }
+.course-summary__lede > span, .course-summary__facts h3, .course-summary__section h3 { letter-spacing: .12em; }
+.course-summary__lede p { max-width: 62ch; font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; line-height: 1.75; }
+.course-summary__facts { padding-top: .25rem; }
+.course-summary__facts ul { list-style: none; margin: 0; padding: 0; }
+.course-fact { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .85rem; align-items: start; border-left: 3px solid var(--course-marker) !important; background: color-mix(in srgb, var(--quiet) 72%, white) !important; line-height: 1.55; }
+.course-fact__marker, .course-concept__index, .course-article__index { color: var(--course-marker); font-family: Georgia, "Times New Roman", serif; font-size: .78rem; font-weight: 700; letter-spacing: .04em; line-height: 1.4; }
+.course-summary__section { border-top-color: var(--ink) !important; }
+.course-summary__section h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.12rem; letter-spacing: -.01em; text-transform: none; }
+.course-summary__section ul { display: grid; gap: .65rem; margin: 0; padding: 0 0 0 1.1rem; }
+.course-summary__section li { padding-left: .25rem; }
+.course-summary__section li::marker { color: var(--course-marker); }
+.course-theory > section:first-child, .course-official > div { border-top: 4px solid var(--ink) !important; }
+.course-theory__intro { border-left: 3px solid var(--course-marker); padding: .5rem 0 .5rem 1rem; }
+.course-claim { padding-block: .15rem; }
+.course-claim > p:last-child { font-family: Georgia, "Times New Roman", serif; font-size: .98rem; line-height: 1.7; }
+.course-citation { display: inline-flex; align-items: center; min-height: 1.5rem; border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); padding-bottom: .1rem; text-decoration: none; }
+.course-concept { position: relative; border-left: 3px solid var(--accent) !important; background: color-mix(in srgb, white 72%, var(--quiet)) !important; }
+.course-concept__heading { display: flex; align-items: baseline; gap: .8rem; border-bottom: 1px solid var(--sheet-line); padding-bottom: .5rem; }
+.course-concept__heading h4 { margin: 0 !important; font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; }
+.course-concept__body { padding-top: .55rem; }
+.course-example--paper { border-left: 3px solid var(--course-marker) !important; background: color-mix(in srgb, var(--paper) 72%, white) !important; }
+.course-recall { border-top: 3px solid var(--course-marker) !important; background: color-mix(in srgb, var(--quiet) 76%, white) !important; }
+.course-sources { border-top: 1px solid var(--ink) !important; }
+.course-official > h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; }
+.course-article { position: relative; padding-left: 3.5rem !important; border-left-width: 3px !important; }
+.course-article__index { position: absolute; top: 1rem; left: 1rem; }
+.course-article h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; }
+.course-article p { max-width: 70ch; font-family: Georgia, "Times New Roman", serif; line-height: 1.7; }
+
+@media (max-width: 36rem) {
+  .course-summary, .course-theory > section:first-child, .course-official > div { padding: 1.25rem !important; }
+  .course-summary::before { right: 1.25rem; }
+  .course-reader__views { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; }
+  .course-reader__view { min-width: 0; padding-inline: .35rem; white-space: normal; text-align: center; font-size: .74rem; line-height: 1.2; }
+  .course-fact { grid-template-columns: 1.65rem minmax(0, 1fr); gap: .6rem; }
+  .course-article { padding-left: 2.9rem !important; }
+  .course-article__index { left: .75rem; }
+}
+
 @media (min-width: 48rem) {
   .login-page {
     padding: 3rem;
