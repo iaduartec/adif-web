@@ -2,8 +2,8 @@
 
 ## Create and configure the project
 
-1. Create a Supabase project and copy only its project URL and anon key into the application environment used by the existing Supabase client. Do not commit credentials.
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are required outside Playwright. The application fails closed with a configuration error when either value is missing; the in-memory client is enabled only when the Playwright web server sets `PLAYWRIGHT_TEST=true`.
+1. Create a Supabase project and copy only its project URL and publishable key into the application environment used by the existing Supabase client. Do not commit credentials.
+   `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` are the preferred names outside Playwright. The application also accepts the legacy `NEXT_PUBLIC_SUPABASE_ANON_KEY` as a migration fallback and fails closed when no key is present; the in-memory client is enabled only when the Playwright web server sets `PLAYWRIGHT_TEST=true`.
 2. In Supabase Dashboard, open **Authentication → Providers → Google** and follow the official Google provider configuration guide. Configure the approved redirect URLs for this app in both Google Cloud and Supabase.
 3. Apply the tracked migration:
 
