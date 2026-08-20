@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { getSafeRedirectPath } from "../../lib/auth/redirect";
-import { createBrowserClient } from "../../lib/supabase/browser";
+import { createBrowserClient, getSupabaseOAuthAuthorizeUrl } from "../../lib/supabase/browser";
 import { Button } from "../ui/button";
 
 const unavailableMessage =
@@ -20,20 +20,44 @@ function getInitialError() {
     : null;
 }
 
-function hasUsableOAuthRedirectUrl(url: unknown) {
+function hasUsableOAuthRedirectUrl(url: unknown, expectedAuthorizeUrl: string | null) {
   if (typeof url !== "string") {
     return false;
   }
 
   try {
-    const parsedUrl = new URL(url);
-    return parsedUrl.protocol === "https:" || parsedUrl.protocol === "http:";
+    const redirectUrl = new URL(url);
+
+    if (!expectedAuthorizeUrl) {
+      return (
+        (redirectUrl.protocol === "https:" || redirectUrl.protocol === "http:") &&
+        redirectUrl.origin === window.location.origin &&
+        redirectUrl.pathname === "/auth/callback" &&
+        !redirectUrl.username &&
+        !redirectUrl.password
+      );
+    }
+
+    const expectedUrl = new URL(expectedAuthorizeUrl);
+
+    return (
+      (redirectUrl.protocol === "https:" || redirectUrl.protocol === "http:") &&
+      redirectUrl.protocol === expectedUrl.protocol &&
+      redirectUrl.origin === expectedUrl.origin &&
+      redirectUrl.pathname === expectedUrl.pathname &&
+      !redirectUrl.username &&
+      !redirectUrl.password
+    );
   } catch {
     return false;
   }
 }
 
-export function GoogleSignIn() {
+type GoogleSignInProps = {
+  onOAuthRedirect?: (url: string) => void;
+};
+
+export function GoogleSignIn({ onOAuthRedirect = (url) => window.location.assign(url) }: GoogleSignInProps) {
   const [error, setError] = useState<string | null>(getInitialError);
 
   async function handleSignIn() {
@@ -41,6 +65,7 @@ export function GoogleSignIn() {
 
     try {
       const supabase = createBrowserClient();
+      const expectedAuthorizeUrl = getSupabaseOAuthAuthorizeUrl();
       const callbackUrl = new URL("/auth/callback", window.location.origin);
       const next = getSafeRedirectPath(new URLSearchParams(window.location.search).get("next"));
 
@@ -50,16 +75,18 @@ export function GoogleSignIn() {
 
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: callbackUrl.toString() },
+        options: { redirectTo: callbackUrl.toString(), skipBrowserRedirect: true },
       });
 
       if (error) {
         throw error;
       }
 
-      if (!hasUsableOAuthRedirectUrl(data?.url)) {
+      if (!hasUsableOAuthRedirectUrl(data?.url, expectedAuthorizeUrl)) {
         throw new Error("OAuth did not return a usable redirect URL.");
       }
+
+      onOAuthRedirect(data.url);
     } catch (error) {
       setError(
         error instanceof Error && error.message === "Supabase public configuration is unavailable."

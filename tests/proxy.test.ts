@@ -32,6 +32,15 @@ describe("proxy", () => {
     expect(updateSession).not.toHaveBeenCalled();
   });
 
+  it("bypasses the Supabase session refresh for a trailing login slash", async () => {
+    updateSession.mockRejectedValue(new Error("Supabase should not be called for /login/"));
+
+    const response = await proxy(new NextRequest("http://localhost/login/?next=%2Fcurso"));
+
+    expect(response.status).toBe(200);
+    expect(updateSession).not.toHaveBeenCalled();
+  });
+
   it("continues through Supabase session handling for the OAuth callback", async () => {
     const refreshedResponse = NextResponse.next();
     updateSession.mockResolvedValue({ response: refreshedResponse, user: null });

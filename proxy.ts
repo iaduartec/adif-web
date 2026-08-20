@@ -3,7 +3,7 @@ import { resolveProtectedRoute } from "./lib/auth/redirect";
 import { updateSession } from "./lib/supabase/middleware";
 
 export async function proxy(request: NextRequest) {
-  if (request.nextUrl.pathname === "/login") {
+  if (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/login/") {
     return NextResponse.next({ request });
   }
 

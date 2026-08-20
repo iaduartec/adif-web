@@ -31,3 +31,11 @@ The production Supabase hostname `xyjoetdnzcmgvlhzfpbw.supabase.co` was reported
 
 - No Supabase URL, OAuth provider, or environment configuration was changed.
 - No blocking DNS or health request was added. A syntactically valid URL whose host later fails DNS resolution remains a browser/network failure; the route itself is now usable because it makes no session request.
+
+## Follow-up review correction
+
+- `signInWithOAuth` now receives `skipBrowserRedirect: true`, so its returned URL is inspected before any navigation occurs.
+- The client only navigates with `window.location.assign` after confirming an HTTP(S) URL with no credentials that matches the configured Supabase `/auth/v1/authorize` origin and path. `javascript:`, `data:`, malformed URLs, and other HTTPS origins are rejected with the existing safe inline error.
+- The Playwright-only mock path permits only a same-origin `/auth/callback` URL, preserving its direct mock callback behavior.
+- `/login/` now receives the same no-Supabase proxy short-circuit as `/login`.
+- Follow-up focused checks: 12 tests passed. Full suite: 28 files and 183 tests passed. Typecheck and build passed; lint retains the same two unrelated warnings.
