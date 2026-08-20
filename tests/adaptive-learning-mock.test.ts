@@ -231,6 +231,28 @@ describe("adaptive learning Supabase mock", () => {
     ]);
   });
 
+  it("keeps an uncertain recall retry idempotent after persistence", async () => {
+    const store = getMockStore();
+    store.reset();
+    store.reviewRpcFailure = "uncertain";
+    const client = createMockSupabaseClient();
+    const args = {
+      p_concept_id: "ict-concept-24",
+      p_rating: 1,
+      p_client_event_id: "018f4c5e-7c2a-7d61-a85e-969efdde4dd6",
+    };
+
+    const uncertain = await client.rpc("record_recall_review", args);
+    const retry = await client.rpc("record_recall_review", args);
+
+    expect(uncertain).toMatchObject({ data: null, error: { code: "08006" } });
+    expect(retry).toEqual({ data: true, error: null });
+    expect(store.reviewEvents).toHaveLength(1);
+    expect(store.conceptMastery).toEqual([
+      expect.objectContaining({ concept_id: "ict-concept-24", status: "learning" }),
+    ]);
+  });
+
   it("models an idempotent simulation without accepting client correctness", async () => {
     const store = getMockStore();
     store.reset();

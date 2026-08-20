@@ -479,17 +479,6 @@ export function createMockSupabaseClient() {
       }
 
       if (functionName === "record_recall_review") {
-        if (mockStore.reviewRpcFailure) {
-          const failure = mockStore.reviewRpcFailure;
-          mockStore.reviewRpcFailure = null;
-          return Promise.resolve({
-            data: null,
-            error: Object.assign(
-              new Error(failure === "definitive" ? "Invalid recall payload" : "Connection lost"),
-              { code: failure === "definitive" ? "23514" : "08006" },
-            ),
-          });
-        }
         if (
           !validUuid(args.p_client_event_id)
           || !Number.isInteger(args.p_rating)
@@ -509,6 +498,14 @@ export function createMockSupabaseClient() {
           ) return idempotencyMismatch();
           return Promise.resolve({ data: true, error: null });
         }
+        const failure = mockStore.reviewRpcFailure;
+        if (failure === "definitive") {
+          mockStore.reviewRpcFailure = null;
+          return Promise.resolve({
+            data: null,
+            error: Object.assign(new Error("Invalid recall payload"), { code: "23514" }),
+          });
+        }
         const occurredAt = new Date().toISOString();
         const recorded = persistEvidence({
           clientEventId: args.p_client_event_id,
@@ -518,6 +515,13 @@ export function createMockSupabaseClient() {
           rating: args.p_rating,
           sourceKind: "recall",
         });
+        if (failure === "uncertain") {
+          mockStore.reviewRpcFailure = null;
+          return Promise.resolve({
+            data: null,
+            error: Object.assign(new Error("Connection lost"), { code: "08006" }),
+          });
+        }
         return Promise.resolve({ data: recorded, error: null });
       }
 

@@ -27,6 +27,29 @@ select public.record_practice_attempt(
   'ADIF-2025-1131-Q01', 'A', 420,
   'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'practice'
 );
+
+select public.record_recall_review(
+  'ict-concept-24', 1,
+  'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaab'
+);
+select public.record_recall_review(
+  'ict-concept-24', 1,
+  'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaab'
+);
+
+do $$
+begin
+  perform public.record_recall_review(
+    'ict-concept-24', 2,
+    'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaab'
+  );
+  raise exception 'Expected changed recall payload to be rejected';
+exception
+  when check_violation then
+    if sqlerrm not ilike '%different payload%' then raise; end if;
+end;
+$$;
+
 select public.record_practice_attempt(
   'ADIF-2025-1131-Q01', 'A', 420,
   'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'practice'
@@ -206,6 +229,11 @@ begin
   if (select count(*) from public.question_attempts
       where user_id = '11111111-1111-4111-8111-111111111111') <> 1 then
     raise exception 'Practice idempotency did not preserve one canonical attempt';
+  end if;
+  if (select count(*) from public.review_events
+      where user_id = '11111111-1111-4111-8111-111111111111'
+        and source_kind = 'recall') <> 1 then
+    raise exception 'Recall idempotency did not preserve one canonical event';
   end if;
   if (select request_fingerprint from public.question_attempts
       where user_id = '11111111-1111-4111-8111-111111111111')

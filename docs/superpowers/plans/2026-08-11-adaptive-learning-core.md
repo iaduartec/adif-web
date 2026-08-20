@@ -1,5 +1,4 @@
 # Adaptive Learning Core Implementation Plan
-
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development to implement this plan task-by-task. Steps use checkbox syntax for tracking.
 
 **Goal:** Add onboarding, concept mastery, spaced review, a deterministic daily plan, and cautious readiness indicators to the ADIF study platform.
@@ -75,4 +74,3 @@
 - [ ] Add mobile sticky progress/action treatment, 44px targets, and overflow safeguards without regressing desktop hierarchy.
 - [ ] Update README and Supabase setup documentation for migration, onboarding, adaptive plan, and readiness semantics.
 - [ ] Run `pnpm verify:content`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm exec playwright test`, `pnpm build`, and `git diff --check`; fix only task-caused failures and commit.
-

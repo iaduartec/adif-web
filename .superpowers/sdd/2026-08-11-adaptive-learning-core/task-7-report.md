@@ -30,6 +30,9 @@ Implemented in the adaptive-learning worktree. The review route is protected, lo
   # 4 tests passed, including desktop flow and 390x844 sticky/44px/no-overflow/reduced-motion coverage
   ```
 
+- The retry harness now models the realistic uncertain boundary: the mock persists the review evidence before returning a transport error, and the next identical request resolves from the canonical event. The PostgreSQL behavioral asset also exercises recall idempotency and changed-payload rejection.
+- Regression: `pnpm test tests/adaptive-learning-mock.test.ts tests/review-session.test.tsx` — 21 tests passed.
+
 ## Verification
 
 - `pnpm verify:content` — passed.
