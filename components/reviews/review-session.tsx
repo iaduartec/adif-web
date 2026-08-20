@@ -35,6 +35,7 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
   const [isPending, startTransition] = useTransition();
   const revealRef = useRef<HTMLButtonElement>(null);
   const firstRatingRef = useRef<HTMLButtonElement>(null);
+  const retryRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const concept = concepts[index];
 
@@ -43,7 +44,13 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
     if (!revealed) revealRef.current?.focus();
     else if (outcome?.kind === "saved") nextRef.current?.focus();
     else if (outcome?.kind === "rejected" || outcome === null) firstRatingRef.current?.focus();
-  }, [concept, index, outcome, revealed]);
+  }, [concept, index, isPending, outcome, revealed, retryPayload]);
+
+  useEffect(() => {
+    if (outcome?.kind !== "retryable" || !retryPayload) return;
+    const focusRetry = window.setTimeout(() => retryRef.current?.focus(), 0);
+    return () => window.clearTimeout(focusRetry);
+  }, [outcome, retryPayload]);
 
   if (!concept) {
     return (
@@ -65,10 +72,9 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
       } catch {
         result = { kind: "retryable" };
       }
-      setOutcome(result);
       if (result.kind === "retryable") setRetryPayload(payload);
-      else if (result.kind === "rejected") setRetryPayload(null);
       else setRetryPayload(null);
+      setOutcome(result);
     });
   };
 
@@ -106,14 +112,16 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
         </Link>
 
         {!revealed ? (
-          <button
-            className="ui-button review-session__reveal"
-            onClick={() => setRevealed(true)}
-            ref={revealRef}
-            type="button"
-          >
-            Mostrar respuesta
-          </button>
+          <div className="review-session__action-bar">
+            <button
+              className="ui-button review-session__reveal"
+              onClick={() => setRevealed(true)}
+              ref={revealRef}
+              type="button"
+            >
+              Mostrar respuesta
+            </button>
+          </div>
         ) : (
           <>
             <section aria-labelledby="review-answer-title" className="review-session__answer" data-testid="review-answer">
@@ -124,34 +132,44 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
             </section>
 
             {outcome?.kind !== "saved" && outcome?.kind !== "retryable" && (
-              <fieldset className="review-rating" disabled={isPending}>
-                <legend>¿Cómo lo recordaste?</legend>
-                <div className="review-rating__grid">
-                  {ratings.map(({ detail, label, rating }, ratingIndex) => (
-                    <button
-                      aria-label={`${rating} · ${label}`}
-                      className="review-rating-button"
-                      key={rating}
-                      onClick={() => chooseRating(rating)}
-                      ref={ratingIndex === 0 ? firstRatingRef : undefined}
-                      type="button"
-                    >
-                      <strong>{rating} · {label}</strong>
-                      <span>{detail}</span>
-                    </button>
-                  ))}
-                </div>
-              </fieldset>
+              <div className="review-session__action-bar">
+                <fieldset className="review-rating" disabled={isPending}>
+                  <legend>¿Cómo lo recordaste?</legend>
+                  <div className="review-rating__grid">
+                    {ratings.map(({ detail, label, rating }, ratingIndex) => (
+                      <button
+                        aria-label={`${rating} · ${label}`}
+                        className="review-rating-button"
+                        key={rating}
+                        onClick={() => chooseRating(rating)}
+                        ref={ratingIndex === 0 ? firstRatingRef : undefined}
+                        type="button"
+                      >
+                        <strong>{rating} · {label}</strong>
+                        <span>{detail}</span>
+                      </button>
+                    ))}
+                  </div>
+                </fieldset>
+              </div>
             )}
 
             {isPending && <p aria-live="polite" className="review-session__saving">Guardando tu repaso…</p>}
 
             {outcome?.kind === "retryable" && retryPayload && (
-              <div className="review-session__error" role="alert">
-                <p>No sabemos si se guardó el repaso. Reintenta con los mismos datos para evitar duplicados.</p>
-                <button className="ui-button" disabled={isPending} onClick={() => submit(retryPayload)} type="button">
-                  Reintentar guardado
-                </button>
+              <div className="review-session__action-bar">
+                <div className="review-session__error" role="alert">
+                  <p>No sabemos si se guardó el repaso. Reintenta con los mismos datos para evitar duplicados.</p>
+                  <button
+                    className="ui-button"
+                    disabled={isPending}
+                    onClick={() => submit(retryPayload)}
+                    ref={retryRef}
+                    type="button"
+                  >
+                    Reintentar guardado
+                  </button>
+                </div>
               </div>
             )}
 
@@ -162,12 +180,14 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
             )}
 
             {outcome?.kind === "saved" && (
-              <div className="review-session__feedback" role="status">
-                <p><strong>Repaso guardado.</strong> Próximo repaso: {outcome.dueOn ?? "por programar"}.</p>
-                <p>Estado: {statusLabels[outcome.status]}.</p>
-                <button className="ui-button" onClick={advance} ref={nextRef} type="button">
-                  {index + 1 < concepts.length ? "Siguiente concepto" : "Finalizar repaso"}
-                </button>
+              <div className="review-session__action-bar">
+                <div className="review-session__feedback" role="status">
+                  <p><strong>Repaso guardado.</strong> Próximo repaso: {outcome.dueOn ?? "por programar"}.</p>
+                  <p>Estado: {statusLabels[outcome.status]}.</p>
+                  <button className="ui-button" onClick={advance} ref={nextRef} type="button">
+                    {index + 1 < concepts.length ? "Siguiente concepto" : "Finalizar repaso"}
+                  </button>
+                </div>
               </div>
             )}
           </>

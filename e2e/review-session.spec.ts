@@ -16,6 +16,11 @@ test.describe("review session", () => {
   test.beforeEach(async ({ page }) => configureReviews(page));
   test.afterEach(async ({ page }) => resetReviews(page));
 
+  test("keeps the review action in the normal desktop flow", async ({ page }) => {
+    await page.goto("/repasos");
+    await expect(page.locator(".review-session__action-bar")).toHaveCSS("position", "static");
+  });
+
   test("reveals, rates, reports the next date, and follows the keyboard focus sequence", async ({ page }) => {
     await page.goto("/repasos");
     await expect(page.getByText("Explícalo con tus palabras")).toBeVisible();
@@ -50,6 +55,7 @@ test.describe("review session", () => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/repasos");
     await expect(page.locator(".review-session__sticky")).toHaveCSS("position", "sticky");
+    await expect(page.locator(".review-session__action-bar")).toHaveCSS("position", "sticky");
     const dimensions = await page.evaluate(() => ({
       innerWidth: window.innerWidth,
       scrollWidth: document.documentElement.scrollWidth,
@@ -60,6 +66,8 @@ test.describe("review session", () => {
     expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.innerWidth);
     expect(dimensions.transitionSeconds).toBeLessThanOrEqual(0.00001);
     await page.getByRole("button", { name: "Mostrar respuesta" }).click();
+    await expect(page.locator(".review-session__action-bar")).toBeVisible();
     await expect(page.locator(".review-rating-button").first()).toHaveCSS("min-height", "44px");
+    await expect(page.getByRole("button", { name: /^(0|1|2|3) ·/ })).toHaveCount(4);
   });
 });

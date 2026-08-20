@@ -98,6 +98,7 @@ describe("review session", () => {
 
     const retry = await screen.findByRole("button", { name: "Reintentar guardado" });
     expect(screen.getByRole("alert")).toHaveTextContent(/no sabemos si se guardó/i);
+    await waitFor(() => expect(retry).toHaveFocus());
     fireEvent.click(retry);
     await screen.findByRole("button", { name: "Siguiente concepto" });
 

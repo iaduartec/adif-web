@@ -15,6 +15,21 @@ Implemented in the adaptive-learning worktree. The review route is protected, lo
 - Mobile review progress is sticky, targets are at least 44px, long task links wrap, and reduced motion disables transitions.
 - README and Supabase setup docs describe onboarding, migrations, the deterministic plan, review RPC, and readiness semantics.
 
+## Correction round — mobile action and retry focus
+
+- The session now renders one contextual action bar at a time: reveal, ratings, retry, or next concept. It is sticky only at the mobile breakpoint alongside the existing sticky progress, leaving the desktop flow unchanged.
+- When an uncertain save finishes, focus waits until the retry button is enabled and then moves to `Reintentar guardado`; keyboard users no longer lose focus when the rating controls unmount.
+- RED: the focused component regression showed `document.body` retained focus after an uncertain save, and the desktop Playwright regression showed the action bar was incorrectly sticky outside mobile.
+- GREEN:
+
+  ```text
+  pnpm exec vitest run tests/review-session.test.tsx
+  # 5 tests passed
+
+  pnpm exec playwright test e2e/review-session.spec.ts
+  # 4 tests passed, including desktop flow and 390x844 sticky/44px/no-overflow/reduced-motion coverage
+  ```
+
 ## Verification
 
 - `pnpm verify:content` — passed.
