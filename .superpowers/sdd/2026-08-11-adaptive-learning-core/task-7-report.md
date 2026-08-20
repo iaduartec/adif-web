@@ -38,7 +38,7 @@ Implemented in the adaptive-learning worktree. The review route is protected, lo
 - `pnpm verify:content` — passed.
 - `pnpm lint` — passed with two pre-existing warnings (`user-menu.tsx`, `mock-client.ts`).
 - `pnpm typecheck` — passed.
-- `pnpm test` — 52 files / 364 tests passed.
+- `pnpm test` — 52 files / 365 tests passed.
 - `pnpm exec playwright test` — passed after updating the existing dashboard-flow assertions and mobile wrapping regression.
 - `pnpm build` — passed.
 - `git diff --check` — passed.
