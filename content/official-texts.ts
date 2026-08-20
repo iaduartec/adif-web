@@ -1,3 +1,5 @@
+import { estatutoAdifOfficialText } from "./official-texts-estatuto-adif";
+
 export interface OfficialTextSection {
   title: string;
   articles: Array<{
@@ -83,41 +85,7 @@ export const officialTexts: Record<string, OfficialTextSection> = {
       }
     ]
   },
-  "estatuto-adif": {
-    title: "Real Decreto 2395/2004, Estatuto de la entidad pública empresarial ADIF",
-    articles: [
-      {
-        number: "Artículo 1",
-        title: "Naturaleza y régimen jurídico",
-        content: "1. El Administrador de Infraestructuras Ferroviarias (ADIF) es una entidad pública empresarial de las previstas en el artículo 43.1.b) de la Ley 6/1997, de 14 de abril, de Organización y Funcionamiento de la Administración General del Estado, adscrita al Ministerio de Fomento (actualmente Ministerio de Transportes y Movilidad Sostenible).\n\n2. ADIF tiene personalidad jurídica propia, plena capacidad de obrar para el cumplimiento de sus fines, patrimonio propio y administración independiente."
-      },
-      {
-        number: "Artículo 2",
-        title: "Objeto y funciones de la entidad",
-        content: "ADIF tiene por objeto la administración de las infraestructuras ferroviarias y otras funciones de acuerdo con la Ley del Sector Ferroviario, velando por la seguridad de la circulación y la óptima explotación de la red de transporte ferroviario de su titularidad.\n\nSus funciones específicas incluyen: el mantenimiento y conservación de las vías y catenarias; la gestión de los sistemas de seguridad, bloqueos y enclavamientos; la regulación y control del tráfico ferroviario; y la adjudicación objetiva de surcos y capacidad a los operadores ferroviarios homologados."
-      },
-      {
-        number: "Artículo 13",
-        title: "Órganos de gobierno",
-        content: "Los órganos de gobierno de ADIF son el Consejo de Administración y el Presidente de la entidad. El Consejo de Administración estará integrado por el Presidente y por un número mínimo de nueve y máximo de diez vocales nombrados por el Ministro de Fomento.\n\nEl Consejo de Administración tiene la competencia de aprobar las cuentas anuales, definir los grandes presupuestos de explotación y proponer las tasas y cánones por uso de vía y estaciones."
-      },
-      {
-        number: "Artículo 14",
-        title: "Funciones del Presidente",
-        content: "El Presidente de ADIF es nombrado por el Consejo de Ministros. Es el órgano ejecutivo de la entidad, dirige y representa legalmente a ADIF ante cualquier tribunal o institución, ejecuta los acuerdos aprobados por el Consejo de Administración, y ostenta la jefatura superior de todo el personal directivo y operativo de la empresa."
-      },
-      {
-        number: "Artículo 21",
-        title: "Régimen patrimonial",
-        content: "ADIF tendrá un patrimonio propio, integrado por el conjunto de sus bienes, derechos y obligaciones. La gestión de los bienes adscritos por el Estado se realizará con sujeción a las funciones legalmente atribuidas en materia de administración de infraestructuras ferroviarias. Los bienes de dominio público ferroviario adscritos a ADIF son inalienables, inembargables e imprescriptibles."
-      },
-      {
-        number: "Artículo 23",
-        title: "Régimen de personal",
-        content: "El personal de ADIF se regirá por el Derecho Laboral común (Estatuto de los Trabajadores y Convenio Colectivo de ADIF), sin perjuicio de las especialidades derivadas de su estatuto. Las funciones que impliquen el ejercicio de potestades públicas administrativas están reservadas a personal bajo estatutos públicos específicos."
-      }
-    ]
-  },
+  "estatuto-adif": estatutoAdifOfficialText,
   "ict-rd-346-2011": {
     title: "Real Decreto 346/2011, Reglamento regulador de las Infraestructuras Comunes de Telecomunicaciones (ICT)",
     articles: [
