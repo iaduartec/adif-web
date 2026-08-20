@@ -53,9 +53,14 @@ const dailyPlanInput: DailyPlanInput = {
 };
 
 describe("readiness routes", () => {
-  afterEach(cleanup);
+  afterEach(() => {
+    cleanup();
+    vi.useRealTimers();
+  });
 
   beforeEach(() => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-08-11T10:00:00.000Z"));
     assembleDailyPlanInput.mockReset().mockResolvedValue(dailyPlanInput);
     assembleReadinessInput.mockReset().mockResolvedValue(readinessInput);
     createServerClient.mockReset().mockResolvedValue({
@@ -90,6 +95,10 @@ describe("readiness routes", () => {
     expect(screen.getByRole("heading", { name: "Estado de preparación" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Sesión de hoy" })).toBeVisible();
     expect(screen.getByText("Racha actual")).toBeVisible();
+    expect(screen.getAllByRole("link", { name: "Revisar Concepto A" })[0]).toHaveAttribute(
+      "href",
+      "/repasos?concepts=concept-a",
+    );
   });
 
   it("keeps statistics and adds readiness metrics by lesson and concept", async () => {

@@ -33,9 +33,14 @@ const requiredDestinations = [
 ] as const;
 
 describe("authenticated navigation", () => {
-  afterEach(cleanup);
+  afterEach(() => {
+    cleanup();
+    vi.useRealTimers();
+  });
 
   beforeEach(() => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-08-11T10:00:00.000Z"));
     signOut.mockReset();
     usePathname.mockReset();
     createServerClient.mockReset();

@@ -11,9 +11,8 @@ function formatRate(value: number | null) {
 function taskDestination(task: DailyTask, snapshot: ReadinessSnapshot) {
   switch (task.kind) {
     case "review": {
-      const lessonId = snapshot.concepts.find((concept) => concept.conceptId === task.conceptId)?.lessonId;
       return {
-        href: lessonId ? `/curso/${lessonId}` : "/curso",
+        href: `/repasos?concepts=${encodeURIComponent(task.conceptId)}`,
         label: `Revisar ${task.title}`,
       };
     }
@@ -139,7 +138,7 @@ export function AdaptiveDashboard({
             {overdueReviews.map((review) => (
               <li key={review.conceptId}>
                 <span><strong>{review.conceptTitle}</strong><small>Vencido desde {review.dueOn}</small></span>
-                <Link className="text-link" href={`/curso/${review.lessonId}`}>Revisar {review.conceptTitle}</Link>
+                <Link className="text-link" href={`/repasos?concepts=${encodeURIComponent(review.conceptId)}`}>Revisar {review.conceptTitle}</Link>
               </li>
             ))}
           </ul>

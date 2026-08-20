@@ -74,17 +74,40 @@ pnpm dev
 
 La configuración de Supabase está en [`docs/supabase-setup.md`](docs/supabase-setup.md).
 
+Al iniciar sesión por primera vez, `/onboarding` solicita el objetivo semanal, los días preferidos, la duración de sesión y, de forma opcional, la fecha de examen y un diagnóstico inicial. El perfil se puede volver a editar sin borrar el historial. Hasta completar este paso, las rutas autenticadas conservan el destino solicitado y conducen al onboarding.
+
+## Aprendizaje adaptativo
+
+El panel reconstruye en el servidor un plan diario determinista a partir del contenido activo y del historial del usuario; el plan no se almacena. Prioriza repasos vencidos o en riesgo, lecciones pendientes y práctica oficial con una distribución objetivo 40/35/25, un máximo del 60% del tiempo para repasos y desempates estables. Las acciones de aplazar o reemplazar son preferencias append-only del día de Madrid y no pueden activar contenido retirado ni ampliar la duración disponible.
+
+`/repasos` carga el backlog completo de conceptos activos vencidos o en riesgo. La respuesta permanece oculta hasta que el usuario intenta explicarla y solo muestra las afirmaciones auditadas del concepto. Las valoraciones 0–3 actualizan el intervalo de repaso mediante el RPC autenticado e idempotente `record_recall_review`; un reintento incierto conserva exactamente el concepto, la valoración y el UUID del evento.
+
+El estado de preparación sintetiza cobertura, dominio vigente, retención diferida, precisión, velocidad, simulacros y racha. Sus niveles son una orientación explicable basada en evidencia; no son una probabilidad, predicción ni garantía de aprobar. Cuando no se alcanzan 20 preguntas activas distintas y 10 conceptos revisados, la interfaz indica expresamente que la evidencia es insuficiente.
+
+## Migraciones Supabase
+
+En una instalación nueva o existente se aplican, en este orden, las migraciones versionadas:
+
+1. `202608020001_study_schema.sql`
+2. `202608100002_atomic_simulation_submission.sql`
+3. `202608110003_adaptive_learning_core.sql`
+4. `202608110004_atomic_review_persistence.sql`
+5. `202608110005_daily_plan_actions_rpc.sql`
+
+`supabase db push` respeta ese orden. Consulta la guía de Supabase antes de regenerar tipos o ejecutar las pruebas pgTAP.
+
 ## Verificación local
 
-Ejecuta estas comprobaciones en este orden antes de publicar cambios de contenido o interfaz:
+Ejecuta estas comprobaciones en este orden antes de publicar cambios de contenido, lógica adaptativa o interfaz:
 
 ```bash
-pnpm content:import-official
+pnpm verify:content
 pnpm lint
 pnpm typecheck
 pnpm test
-pnpm build
 pnpm exec playwright test
+pnpm build
+git diff --check
 ```
 
 ## Estructura

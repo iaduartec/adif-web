@@ -114,6 +114,7 @@ export interface MockNote {
 }
 
 class MockStore {
+  reviewRpcFailure: "uncertain" | "definitive" | null = null;
   questionAttempts: MockQuestionAttempt[] = [];
   simulationAttempts: MockSimulationAttempt[] = [];
   simulationAnswers: MockSimulationAnswer[] = [];
@@ -137,6 +138,7 @@ class MockStore {
   ];
 
   reset() {
+    this.reviewRpcFailure = null;
     this.questionAttempts = [];
     this.simulationAttempts = [];
     this.simulationAnswers = [];

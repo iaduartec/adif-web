@@ -185,7 +185,7 @@ export async function CourseTheoryReader({
                 <div className="grid gap-4">
                   <h3 className="text-sm font-bold text-ink uppercase tracking-wider">Conceptos Fundamentales</h3>
                   {theory.concepts.map((concept) => (
-                    <section className="p-4 border border-rail bg-gray-50/50" key={concept.id}>
+                    <section className="p-4 border border-rail bg-gray-50/50 scroll-mt-24" id={`concept-${concept.id}`} key={concept.id}>
                       <h4 className="font-bold text-ink mb-1 text-base">{concept.title}</h4>
                       <div className="space-y-1.5">
                         {concept.claims.map((claim) => (

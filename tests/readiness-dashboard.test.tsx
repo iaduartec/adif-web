@@ -103,7 +103,10 @@ describe("adaptive dashboard", () => {
     expect(screen.getByText("Evidencia insuficiente")).toBeVisible();
     expect(screen.getByText(/Principal obstáculo: Evidencia/i)).toBeVisible();
     expect(container.textContent).not.toMatch(/probabilidad|garant[ií]a|asegura/i);
-    expect(screen.getAllByRole("link", { name: "Revisar Concepto A" })[0]).toHaveAttribute("href", "/curso/lesson-a");
+    expect(screen.getAllByRole("link", { name: "Revisar Concepto A" })[0]).toHaveAttribute(
+      "href",
+      "/repasos?concepts=concept-a",
+    );
     expect(screen.getByRole("link", { name: "Continuar Lección B" })).toHaveAttribute("href", "/curso/lesson-b");
     expect(screen.getByRole("link", { name: "Abrir Examen oficial A" })).toHaveAttribute("href", "/simulacros/exam-a");
     expect(screen.getByText("Racha actual").nextElementSibling).toHaveTextContent("3 días");

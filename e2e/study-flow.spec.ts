@@ -5,9 +5,10 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     // 1. Dashboard initialization
     await page.goto("/");
     await expect(page).toHaveURL("/");
-    await expect(page.locator("h1")).toContainText("Bienvenido de nuevo");
-    await expect(page.getByText("Lecciones completadas")).toBeVisible();
-    await expect(page.getByRole("region", { name: "Siguiente acción recomendada" })).toHaveCount(1);
+    await expect(page.locator("h1")).toContainText("Hola, Usuario");
+    await expect(page.getByRole("heading", { name: "Estado de preparación" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Sesión de hoy" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Recursos complementarios" })).toBeVisible();
 
     // 2. Lesson completion
     await page.goto("/curso");

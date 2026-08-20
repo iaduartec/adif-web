@@ -112,6 +112,8 @@ export function createMockSupabaseClient() {
     const filters: Array<{ type: "eq" | "gte"; column: string; value: any }> = [];
     let orderByColumn: string | null = null;
     let orderAscending = true;
+    let rangeFrom: number | null = null;
+    let rangeTo: number | null = null;
     let operationError: Error | null = null;
 
     const createRow = (row: any) => {
@@ -210,6 +212,12 @@ export function createMockSupabaseClient() {
         orderByColumn = column;
         orderAscending = options?.ascending !== false;
         return builder;
+      },
+      range: async (from: number, to: number) => {
+        rangeFrom = from;
+        rangeTo = to;
+        const data = builder.execute();
+        return { data: operationError ? null : data, error: operationError };
       },
       execute: () => {
         let resultData: any = null;
@@ -315,6 +323,10 @@ export function createMockSupabaseClient() {
             if (a[orderByColumn!] > b[orderByColumn!]) return orderAscending ? 1 : -1;
             return 0;
           });
+        }
+
+        if (rangeFrom !== null && rangeTo !== null && resultData) {
+          resultData = resultData.slice(rangeFrom, rangeTo + 1);
         }
 
         return resultData;
@@ -467,6 +479,17 @@ export function createMockSupabaseClient() {
       }
 
       if (functionName === "record_recall_review") {
+        if (mockStore.reviewRpcFailure) {
+          const failure = mockStore.reviewRpcFailure;
+          mockStore.reviewRpcFailure = null;
+          return Promise.resolve({
+            data: null,
+            error: Object.assign(
+              new Error(failure === "definitive" ? "Invalid recall payload" : "Connection lost"),
+              { code: failure === "definitive" ? "23514" : "08006" },
+            ),
+          });
+        }
         if (
           !validUuid(args.p_client_event_id)
           || !Number.isInteger(args.p_rating)
