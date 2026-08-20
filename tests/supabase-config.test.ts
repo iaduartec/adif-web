@@ -1,13 +1,14 @@
 import { NextRequest } from "next/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-const configError = /Supabase.*NEXT_PUBLIC_SUPABASE_URL.*NEXT_PUBLIC_SUPABASE_ANON_KEY/i;
+const configError = /Supabase.*NEXT_PUBLIC_SUPABASE_URL.*NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.*NEXT_PUBLIC_SUPABASE_ANON_KEY/i;
 
 describe.sequential("Supabase configuration boundary", () => {
   beforeEach(() => {
     vi.resetModules();
     vi.stubEnv("PLAYWRIGHT_TEST", "false");
     vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "");
     vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "");
     delete (globalThis as typeof globalThis & { __mock_supabase_store__?: unknown })
       .__mock_supabase_store__;
@@ -35,6 +36,20 @@ describe.sequential("Supabase configuration boundary", () => {
     const { updateSession } = await import("../lib/supabase/middleware");
 
     await expect(updateSession(new NextRequest("https://example.com/"))).rejects.toThrow(configError);
+  });
+
+  it("accepts Supabase's publishable key name", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://example.supabase.co");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "sb_publishable_test");
+    vi.resetModules();
+
+    const { getSupabaseRuntimeConfig } = await import("../lib/supabase/config");
+
+    expect(getSupabaseRuntimeConfig()).toEqual({
+      mode: "supabase",
+      url: "https://example.supabase.co",
+      anonKey: "sb_publishable_test",
+    });
   });
 
   it("does not initialize the shared Playwright store merely by importing production clients", async () => {

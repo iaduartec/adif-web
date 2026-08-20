@@ -354,10 +354,10 @@ export function createMockSupabaseClient() {
       getUser: () => Promise.resolve({ data: { user: MOCK_USER }, error: null }),
       signInWithOAuth: (options: any) => {
         const redirectTo = options?.options?.redirectTo || "/";
-        if (typeof window !== "undefined") {
+        if (typeof window !== "undefined" && !options?.options?.skipBrowserRedirect) {
           window.location.href = redirectTo;
         }
-        return Promise.resolve({ data: {}, error: null });
+        return Promise.resolve({ data: { url: redirectTo }, error: null });
       },
       signOut: () => {
         if (typeof window !== "undefined") {
