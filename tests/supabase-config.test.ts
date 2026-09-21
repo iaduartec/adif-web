@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const configError = /Supabase.*NEXT_PUBLIC_SUPABASE_URL.*NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.*NEXT_PUBLIC_SUPABASE_ANON_KEY/i;
 
-describe.sequential("Supabase configuration boundary", () => {
+describe("Supabase configuration boundary", { concurrent: false }, () => {
   beforeEach(() => {
     vi.resetModules();
     vi.stubEnv("PLAYWRIGHT_TEST", "false");

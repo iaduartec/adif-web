@@ -47,10 +47,11 @@ export function ReviewSession({ concepts }: { concepts: readonly ReviewConcept[]
   }, [concept, index, isPending, outcome, revealed, retryPayload]);
 
   useEffect(() => {
+    if (isPending) return;
     if (outcome?.kind !== "retryable" || !retryPayload) return;
     const focusRetry = window.setTimeout(() => retryRef.current?.focus(), 0);
     return () => window.clearTimeout(focusRetry);
-  }, [outcome, retryPayload]);
+  }, [isPending, outcome, retryPayload]);
 
   if (!concept) {
     return (
