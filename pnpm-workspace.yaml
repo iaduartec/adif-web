@@ -4,5 +4,6 @@ allowBuilds:
   unrs-resolver: true
 
 overrides:
+  "js-yaml@>=4.0.0 <4.3.2": ^4.3.2
   postcss: ^8.5.18
   sharp: ^0.35.0
