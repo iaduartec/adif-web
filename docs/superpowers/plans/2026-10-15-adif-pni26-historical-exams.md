@@ -61,7 +61,7 @@
 - [x] **Step 2: Run** `pnpm exec vitest run tests/official-corrections.test.ts`; expected FAIL (the correction module did not exist yet).
 - [x] **Step 3: Implement** strict schemas and pure correction application. Preserve the correction resolution URL, publication status and review evidence, year, form, affected question number, and any explicitly named reserve replacement. Never infer a replacement from position alone; derive publishability from the scoped review decision. Task 2 integrates the actual correction sources into `source-manifest.json` before importing the records.
 - [x] **Step 4: Run** `pnpm exec vitest run tests/official-corrections.test.ts tests/official-content-schema.test.ts`; expected PASS; annulled questions have no effective answer unless the official resolution specifies reserve handling.
-- [ ] **Step 5: Commit** with `git add content/official-exams/corrections lib/content/schema.ts lib/content/official-corrections.ts tests/official-corrections.test.ts && git commit -m "feat: model ADIF tribunal corrections"`.
+- [x] **Step 5: Commit** with `git add content/official-exams/corrections lib/content/schema.ts lib/content/official-corrections.ts tests/official-corrections.test.ts && git commit -m "feat: model ADIF tribunal corrections"` (`cd1047d`; plan updates were included in the scoped commit).
 
 ### Task 2: Import final answers and auditable provenance
 
