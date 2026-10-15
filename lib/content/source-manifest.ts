@@ -49,6 +49,8 @@ export const sourceManifestEntrySchema = z
       .strict(),
     sha256: sha256DigestSchema.nullable(),
     hashTarget: z.enum(["downloaded-page", "downloaded-file", "local-snapshot"]).nullable(),
+    etag: z.string().trim().min(1).optional(),
+    lastModified: z.string().trim().min(1).optional(),
     locatorPolicy: z.enum(["document-level", "section", "exact"]),
     artifactPath: z.string().trim().min(1).optional(),
     snapshotCommit: z.string().regex(/^[a-f0-9]{7,40}$/i).optional(),

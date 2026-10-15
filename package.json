@@ -18,6 +18,7 @@
     "verify:theory-claims": "tsx scripts/verify-theory-claims.ts",
     "verify:theory-copy": "tsx scripts/verify-theory-copy.ts",
     "verify:syllabus": "tsx scripts/verify-syllabus-coverage.ts",
+    "sources:check": "tsx scripts/check-source-updates.ts",
     "verify:content": "pnpm verify:theory && pnpm verify:theory-references && pnpm verify:theory-claims && pnpm verify:theory-copy && pnpm verify:syllabus"
   },
   "dependencies": {
