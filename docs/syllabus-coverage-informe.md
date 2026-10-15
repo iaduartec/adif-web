@@ -152,14 +152,37 @@ adyacentes heredados (Constitución, RD 773/1997, RD 902/2020, legislación
 ferroviaria, normas de CEM, psicometría e inglés) se conservan en
 `supplementalItems` y no cuentan como documentos oficiales adicionales.
 Esta fase corrige el mapa de alcance; no declara `reviewed` los claims teóricos
-heredados. La revisión de citas, vigencia normativa y versiones BOE candidatas
-queda para la fase de trazabilidad de claims.
+heredados. La fase posterior incorporó trazabilidad de versiones y controles
+automáticos de citas. La revisión editorial sustantiva de la vigencia, el
+contenido y las versiones BOE candidatas sigue pendiente: los 255 claims
+heredados se conservan explícitamente como `needs_review`, con confianza baja
+y el motivo visible, hasta que se cotejen individualmente.
 
 Verificación de esta actualización:
 
 - `pnpm sources:check`: 32 observaciones; el comprobador clasificó 12 `unchanged`, 18 `candidate` y 2 `needs_check`.
 - `pnpm verify:content`: OK; cobertura del temario: 9 oficiales, 8 parciales, 1 missing.
 - `pnpm test --reporter=dot`: 56 archivos, 412 pruebas OK.
+- `pnpm typecheck`: OK.
+- `pnpm lint`: 0 errores; permanecen 2 warnings preexistentes de navegación interna.
+- `pnpm build`: OK.
+
+### Trazabilidad editorial de claims (2026-10-15)
+
+Cada uno de los 255 claims de teoría conserva estado y confianza editorial en
+`content/claim-review-manifest.json`. Todos los claims heredados están en
+`needs_review`; no se promovieron automáticamente a `reviewed`. Las 146
+referencias de teoría enlazan a 20 identidades y versiones fijadas en
+`content/theory-source-links.json`; el verificador coteja versión, URL y fecha
+de verificación con el manifiesto. Un claim normativo o interpretativo sin
+localizador, versión conocida o evidencia primaria no valida. Un claim solo
+puede constar como `reviewed` con confianza alta, fecha real de revisión y
+evidencia primaria verificada.
+
+Verificación posterior de trazabilidad:
+
+- `pnpm verify:content`: OK, incluidos los validadores estructurales, de referencias, claims, copia y temario.
+- `pnpm test --reporter=dot`: 57 archivos, 429 pruebas OK.
 - `pnpm typecheck`: OK.
 - `pnpm lint`: 0 errores; permanecen 2 warnings preexistentes de navegación interna.
 - `pnpm build`: OK.

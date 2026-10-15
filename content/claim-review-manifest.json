@@ -1,0 +1,1791 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-15",
+  "reviews": {
+    "igualdad-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-intro-2b": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-intro-3": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-intro-4": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c1-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c2-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c3-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c4-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c4-3": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c5-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c6-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c7-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c8-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c9-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c9-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c10-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c11-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c11-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c12-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c13-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c14-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-c15-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-ex-2-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-ex-3-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-ex-4-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-takeaway-1b": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-takeaway-3": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "igualdad-takeaway-4": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c2-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c8-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c8-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c9-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c10-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c11-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c12-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c12-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c13-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c13-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-c14-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-ex-2-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-ex-2-app-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "prl-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c2-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c8-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c9-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c10-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c11-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c12-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c13-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c14-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c15-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c16-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c17-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c18-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c19-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c20-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c21-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c22-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c23-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c24-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c25-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c26-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c27-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c28-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c29-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c30-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c31-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c32-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c33-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c34-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c35-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c36-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c37-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c38-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c39-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c40-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c41-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c42-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c43-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c44-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c45-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c46-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c47-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c48-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c49-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c50-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c51-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c52-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c53-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c54-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c55-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-c56-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-ex-2-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-ex-3-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "estatuto-takeaway-3": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c8-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c9-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c10-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c11-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c12-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c13-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c14-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c15-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c16-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c17-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c18-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c19-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c20-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c21-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c22-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c23-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c24-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c25-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c26-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c27-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c28-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c29-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c30-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c31-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c32-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c33-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c8-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c9-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c10-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c11-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c12-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c13-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-c14-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "cem-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c8-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c9-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c10-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c11-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c12-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-c13-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "rcf-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "psico-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-c6-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "dr-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "conducta-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-intro-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c4-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c5-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c6-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-c7-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "incomp-takeaway-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-intro-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-c1-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-c1-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-c2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-c2-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-c3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-ex-1-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ingles-takeaway-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    }
+  }
+}

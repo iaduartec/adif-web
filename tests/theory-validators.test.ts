@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonTheories } from "../content/lesson-theory";
+import theorySourceLinks from "../content/theory-source-links.json";
 import type { LegalReference, TheoryClaim, TheorySection } from "../content/theory-types";
+import { sourceManifest } from "../lib/content/source-manifest";
 import {
   checkClaim,
   extractMentionedLocators,
@@ -334,6 +336,40 @@ describe("whole content guardrails", () => {
 
   it("leaves no normative claim backed exclusively by syllabus-reference sources on the real lesson theories", () => {
     expect(validateTheoryClaims(lessonTheories).some((e) => e.includes("syllabus-reference sources"))).toBe(false);
+  });
+
+  it("links every theory source to one explicit manifest version and source verification date", () => {
+    for (const theory of Object.values(lessonTheories)) {
+      for (const source of theory.sources) {
+        expect(source.sourceVersion).toBeTruthy();
+        const linked = sourceManifest.sources.find(
+          (entry) => entry.sourceId === source.sourceId && entry.sourceVersion === source.sourceVersion,
+        );
+        const pinned = theorySourceLinks.sources.find(
+          (entry) => entry.sourceId === source.sourceId && entry.sourceUrl === source.sourceUrl,
+        );
+        expect(linked).toBeDefined();
+        expect(source.sourceVersion).toBe(pinned?.sourceVersion);
+        expect(source.verifiedAt).toBe(linked?.verifiedAt ?? undefined);
+      }
+    }
+  });
+
+  it("keeps inherited claim reviews pending with an explicit confidence reason", () => {
+    for (const theory of Object.values(lessonTheories)) {
+      const claims = [
+        ...theory.introduction,
+        ...theory.concepts.flatMap((concept) => concept.claims),
+        ...theory.examples.flatMap((example) => example.application),
+        ...theory.reviewTakeaways,
+      ];
+      for (const currentClaim of claims) {
+        expect(currentClaim.review?.status).toBe("needs_review");
+        expect(currentClaim.review?.confidence.level).toBe("low");
+        expect(currentClaim.review?.confidence.reason.trim()).not.toBe("");
+        expect(currentClaim.review?.reviewedAt).toBeUndefined();
+      }
+    }
   });
 });
 

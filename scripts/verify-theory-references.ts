@@ -1,8 +1,19 @@
 import { pathToFileURL } from "node:url";
 
 import { lessonTheories } from "../content/lesson-theory";
+import theorySourceLinks from "../content/theory-source-links.json";
 import type { LegalReference, TheorySection } from "../content/theory-types";
-import { validateSourceReference } from "../lib/content/source-manifest";
+import { sourceManifest, validateSourceReference } from "../lib/content/source-manifest";
+
+const pinnedTheorySources = theorySourceLinks.sources as Array<Pick<LegalReference, "sourceId" | "sourceUrl" | "sourceVersion">>;
+
+function normalizeSourceUrl(url: string): string | null {
+  try {
+    return new URL(url).toString().replace(/\/$/, "");
+  } catch {
+    return null;
+  }
+}
 
 // Domains accepted for legal/official references. Only hosts actually used by
 // the theory sources: BOE (normativa), ADIF (documentos institucionales) and
@@ -303,6 +314,30 @@ export function validateTheoryReferences(theories: Record<string, TheorySection>
         sourceUrl: source.sourceUrl,
       })) {
         errors.push(`[${name}] Error in source[${idx}] (${source.id}): ${error}`);
+      }
+      if (!source.sourceVersion?.trim()) {
+        errors.push(`[${name}] Error in source[${idx}] (${source.id}): missing explicit sourceVersion`);
+      }
+
+      const pinned = pinnedTheorySources.find(
+        (entry) =>
+          entry.sourceId === source.sourceId &&
+          normalizeSourceUrl(entry.sourceUrl) === normalizeSourceUrl(source.sourceUrl),
+      );
+      if (!pinned) {
+        errors.push(`[${name}] Error in source[${idx}] (${source.id}): source identity has no pinned theory version`);
+      } else if (source.sourceVersion !== pinned.sourceVersion) {
+        errors.push(
+          `[${name}] Error in source[${idx}] (${source.id}): sourceVersion '${source.sourceVersion ?? "missing"}' ` +
+            `differs from pinned version '${pinned.sourceVersion}'`,
+        );
+      }
+
+      const version = sourceManifest.sources.find(
+        (entry) => entry.sourceId === source.sourceId && entry.sourceVersion === source.sourceVersion,
+      );
+      if (version && source.verifiedAt !== (version.verifiedAt ?? undefined)) {
+        errors.push(`[${name}] Error in source[${idx}] (${source.id}): verifiedAt does not match linked source version`);
       }
 
       // 3. Verify locator

@@ -166,6 +166,9 @@ git commit -m "feat: version official ADIF sources"
 ### Task 5: Enforce claim and source-version traceability
 
 **Files:**
+- Create: `content/claim-review-manifest.json`
+- Create: `content/theory-source-links.json`
+- Modify: `content/lesson-theory.ts`
 - Modify: `content/theory-types.ts`
 - Modify: `scripts/verify-theory-claims.ts`
 - Modify: `scripts/verify-theory-references.ts`
@@ -173,11 +176,12 @@ git commit -m "feat: version official ADIF sources"
 - Modify: `tests/theory-validators.test.ts`
 
 **Interfaces:**
-- Claim source lookup resolves `legalBasis` → module `LegalReference` → `sourceId/sourceVersion` → manifest entry.
-- `validateTheoryClaims(input): ValidationIssue[]` emits a blocking issue for a normative claim with only secondary/didactic sources, without a precise locator, or without an explicit editorial confidence (`high | medium | low`) and reason. Persist source, version, exact locator, verification time, confidence and review status on each claim; only high-confidence claims with current primary evidence may be `reviewed`, while medium/low claims remain `draft` or `needs_review` with the reason visible to reviewers.
+- Claim source lookup resolves `legalBasis` → module `LegalReference` → pinned `sourceId/sourceUrl/sourceVersion` → manifest entry and its `verifiedAt`; source pins do not follow new manifest versions automatically.
+- `validateTheoryClaims(input): string[]` emits a blocking issue for a normative claim with only secondary/didactic sources, without a precise locator, or without an explicit editorial confidence (`high | medium | low`) and reason. Persist source, version, exact locator, verification time, confidence and review status on each claim; only high-confidence claims with current primary evidence may be `reviewed`, while medium/low claims remain `draft` or `needs_review` with the reason visible to reviewers.
+- Legacy claims are conservatively assigned `needs_review` / low confidence with a reason in the stable-ID review manifest; no inherited claim is marked reviewed.
 
-- [ ] **Step 1: Add failing tests** for missing source, unknown version, missing locator, missing or invalid claim confidence/reason, secondary-only normative claim, low-confidence reviewed claim, and a valid high-confidence primary citation.
-- [ ] **Step 2: Run** `pnpm exec vitest run tests/source-claim-validation.test.ts tests/theory-validators.test.ts`; expected FAIL.
-- [ ] **Step 3: Implement** the source-version lookup and validator; adapt existing claim records only where verified evidence is available, leaving uncertain claims `draft`/`needs_review`.
-- [ ] **Step 4: Run** `pnpm exec vitest run tests/source-claim-validation.test.ts tests/theory-validators.test.ts && pnpm verify:content`; expected PASS with no uncited normative claims marked reviewed.
-- [ ] **Step 5: Commit** with `git add content/theory-types.ts scripts/verify-theory-claims.ts scripts/verify-theory-references.ts tests/source-claim-validation.test.ts tests/theory-validators.test.ts && git commit -m "feat: validate claim source versions"`.
+- [x] **Step 1: Add failing tests** for missing source, unknown version, missing locator, missing or invalid claim confidence/reason, secondary-only normative claim, low-confidence reviewed claim, and a valid high-confidence primary citation.
+- [x] **Step 2: Run** `pnpm exec vitest run tests/source-claim-validation.test.ts tests/theory-validators.test.ts`; expected FAIL.
+- [x] **Step 3: Implement** the source-version lookup and validator; adapt existing claim records only where verified evidence is available, leaving uncertain claims `draft`/`needs_review`.
+- [x] **Step 4: Run** `pnpm exec vitest run tests/source-claim-validation.test.ts tests/theory-validators.test.ts && pnpm verify:content`; expected PASS with no uncited normative claims marked reviewed.
+- [ ] **Step 5: Commit** with `git add content/claim-review-manifest.json content/theory-source-links.json content/lesson-theory.ts content/theory-types.ts scripts/verify-theory-claims.ts scripts/verify-theory-references.ts tests/source-claim-validation.test.ts tests/theory-validators.test.ts docs/syllabus-coverage-informe.md docs/superpowers/plans/2026-10-15-adif-pni26-sources-syllabus.md && git commit -m "feat: validate claim source versions"`.
