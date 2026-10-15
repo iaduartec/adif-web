@@ -39,6 +39,10 @@ export const correctionSourceReferenceSchema = z
   .strict();
 
 const answerKeySchema = z.enum(["A", "B", "C", "D"]);
+export const officialQuestionIdSchema = z.string().regex(
+  /^ADIF-\d{4}-\d{4}-(?:(?:general|english)-)?Q\d{2}$/,
+  { message: "Official question IDs must retain their form and section identity." },
+);
 
 /** Lowercase SHA-256 digest without an algorithm prefix. */
 export const sha256DigestSchema = z.string().regex(/^[a-f0-9]{64}$/i, {
@@ -163,7 +167,7 @@ export const officialQuestionSourceSchema = z
 
 const officialQuestionRecordSchema = z
   .object({
-    id: z.string().regex(/^ADIF-\d{4}-\d{4}-Q\d{2}$/),
+    id: officialQuestionIdSchema,
     sectionLabel: z.string().trim().min(1),
     prompt: z.string().trim().min(1),
     conceptIds: z
@@ -176,7 +180,8 @@ const officialQuestionRecordSchema = z
         (conceptIds) => conceptIds.every((conceptId) => activeTheoryConceptRegistry.has(conceptId)),
         { message: "Official questions may only reference active theory concepts." },
       ),
-    syllabusNodeId: z.string().trim().min(1),
+    syllabusNodeId: z.string().trim().min(1).optional(),
+    commonTopicId: z.string().trim().min(1).optional(),
     currentness: z.enum(["current", "changed", "out_of_scope", "unknown"]),
     validityReason: z.string().trim().min(1),
     validityEvidence: officialQuestionValidityEvidenceSchema.nullable(),
@@ -206,7 +211,8 @@ export const officialQuestionSchema = officialQuestionRecordSchema
   .superRefine((question, context) => {
     const optionKeys = question.options.map((option) => option.key);
     const requiredKeys = ["A", "B", "C", "D"] as const;
-    const expectedId = `ADIF-${question.source.year}-${question.source.examCode}-Q${String(
+    const sectionSegment = question.source.section === "specific" ? "" : `${question.source.section}-`;
+    const expectedId = `ADIF-${question.source.year}-${question.source.examCode}-${sectionSegment}Q${String(
       question.source.questionNumber,
     ).padStart(2, "0")}`;
 
@@ -234,6 +240,28 @@ export const officialQuestionSchema = officialQuestionRecordSchema
         code: "custom",
         path: ["id"],
         message: "The question ID must match its official source metadata.",
+      });
+    }
+
+    if (question.source.section === "english" && !question.commonTopicId) {
+      context.addIssue({
+        code: "custom",
+        path: ["commonTopicId"],
+        message: "English questions require a stable A2 topic ID.",
+      });
+    }
+    if (question.source.section !== "english" && question.commonTopicId !== undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["commonTopicId"],
+        message: "Only English questions may carry a common A2 topic ID.",
+      });
+    }
+    if (question.source.section !== "english" && !question.syllabusNodeId) {
+      context.addIssue({
+        code: "custom",
+        path: ["syllabusNodeId"],
+        message: "Specific and General questions require an explicit syllabus node mapping.",
       });
     }
 
@@ -299,7 +327,7 @@ export const officialExamSchema = z
     id: z.string().regex(/^ADIF-\d{4}-\d{4}$/),
     title: z.string().trim().min(1),
     source: officialQuestionSourceSchema,
-    questionIds: z.array(z.string().regex(/^ADIF-\d{4}-\d{4}-Q\d{2}$/)).min(1).max(99),
+    questionIds: z.array(officialQuestionIdSchema).min(1).max(99),
     durationMinutes: z.number().int().positive(),
     completeness: z.enum(["complete", "specific_part"]),
     scoring: z
@@ -322,7 +350,11 @@ export const officialExamSchema = z
       });
     }
 
-    if (exam.questionIds.some((questionId) => !questionId.startsWith(`${exam.id}-Q`))) {
+    if (exam.questionIds.some((questionId) => ![
+      `${exam.id}-Q`,
+      `${exam.id}-general-Q`,
+      `${exam.id}-english-Q`,
+    ].some((prefix) => questionId.startsWith(prefix)))) {
       context.addIssue({
         code: "custom",
         path: ["questionIds"],
@@ -420,7 +452,7 @@ export const publicationReviewSchema = z
     scope: z
       .object({
         examIds: z.array(z.string().regex(/^ADIF-\d{4}-\d{4}$/)).min(1),
-        sections: z.array(z.enum(["psychometric", "english", "general"])).optional(),
+        sections: z.array(z.enum(["psychometric", "english", "general", "specific"])).optional(),
         content: z.literal("official_question_text"),
       })
       .strict()

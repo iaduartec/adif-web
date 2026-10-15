@@ -69,7 +69,10 @@ describe("historical Telecom question validity mapping", () => {
     const questions = officialQuestionsSchema.parse(questionRecords);
     const alteredQuestion = { ...questions[0]!, conceptIds: ["rcf-concept-7"] };
 
-    expect(validateStoredHistoricalQuestionValidity(alteredQuestion))
+    expect(validateStoredHistoricalQuestionValidity({
+      ...alteredQuestion,
+      syllabusNodeId: alteredQuestion.syllabusNodeId ?? "",
+    }))
       .toContain(`${alteredQuestion.id} concept mapping differs from its accepted transcription row.`);
   });
 

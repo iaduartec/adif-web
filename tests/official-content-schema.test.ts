@@ -119,6 +119,32 @@ describe("official ADIF content schemas", () => {
     ).toBe(false);
   });
 
+  it.each(["general", "english"] as const)(
+    "accepts collision-safe section-qualified %s IDs while preserving the official form coordinates",
+    (section) => {
+      const conceptIds = section === "english" ? ["ingles-concept-1"] : ["igualdad-concept-1"];
+      const commonQuestion = officialQuestionSchema.safeParse({
+        ...officialQuestion,
+        id: `ADIF-2025-1131-${section}-Q01`,
+        sectionLabel: section === "english" ? "Inglés" : "Conocimientos generales",
+        conceptIds,
+        syllabusNodeId: section === "english" ? "ingles-a2" : "igualdad-capitulo-i",
+        commonTopicId: section === "english" ? "present-simple" : undefined,
+        currentness: "unknown",
+        validity: "pending_review",
+        validityEvidence: null,
+        source: { ...source, section },
+      });
+
+      expect(commonQuestion.success).toBe(true);
+      if (commonQuestion.success) {
+        expect(commonQuestion.data.id).toBe(`ADIF-2025-1131-${section}-Q01`);
+        expect(commonQuestion.data.source.questionNumber).toBe(1);
+        expect(commonQuestion.data.source.section).toBe(section);
+      }
+    },
+  );
+
   it("requires an exact current-source citation before a question can be reconciled", () => {
     expect(officialQuestionSchema.safeParse({
       ...officialQuestion,

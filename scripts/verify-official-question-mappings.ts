@@ -101,7 +101,10 @@ if (!parsed.success) {
   }
 
   for (const question of parsed.data) {
-    errors.push(...validateStoredHistoricalQuestionValidity(question));
+    errors.push(...validateStoredHistoricalQuestionValidity({
+      ...question,
+      syllabusNodeId: question.syllabusNodeId ?? "",
+    }));
   }
 
   if (errors.length) {

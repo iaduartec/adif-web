@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import { activeTheoryConceptRegistry } from "../content/theory-concepts";
 import { officialItems } from "../content/syllabus";
-import { parseOfficialCommonSectionCatalog, validateOfficialCommonQuestionMapping } from "../lib/content/official-common-sections";
+import { isOfficialCommonQuestionMetadataConsistent, isOfficialCommonSectionTextApproved, parseOfficialCommonSectionCatalog, validateOfficialCommonQuestionMapping } from "../lib/content/official-common-sections";
 import { parseSourceManifest } from "../lib/content/source-manifest";
 
 const readJson = (file: string) => JSON.parse(readFileSync(resolve(process.cwd(), file), "utf8")) as unknown;
@@ -149,11 +149,132 @@ describe("official ADIF common-section metadata", () => {
       sources: reviewedRightsSources,
     })).toThrow(/exact section/i);
 
+    const reviewWithWrongFormScope = structuredClone(commonSections);
+    const broadScopeRow = reviewWithWrongFormScope.find((section: any) => section.section === "english");
+    broadScopeRow.publicationStatus = "approved_for_publication";
+    broadScopeRow.publicationReview = {
+      decisionId: "test-broad-form-review",
+      decision: "approved",
+      permittedUse: "public_question_text",
+      reviewedAt: "2026-10-15",
+      reviewerRole: "human_editor",
+      scope: {
+        examIds: [broadScopeRow.examId, "ADIF-2025-4104"],
+        sections: ["english"],
+        content: "official_question_text",
+      },
+      evidence: {
+        sourceId: broadScopeRow.source.sourceId,
+        sourceVersion: broadScopeRow.source.sourceVersion,
+        locator: "PDF p. 1",
+        basis: "documented_legal_review",
+      },
+      rationale: "Test review with a deliberately broad form scope.",
+    };
+    expect(() => parseOfficialCommonSectionCatalog({
+      commonSections: reviewWithWrongFormScope,
+      englishTopics,
+      manifest,
+      sources: reviewedRightsSources,
+    })).toThrow(/only its exact exam form/i);
+
     const psychometricText = structuredClone(commonSections);
     const restricted = psychometricText.find((section: any) => section.section === "psychometric");
     restricted.questionMetadata[0].prompt = "protected";
     expect(() => parseOfficialCommonSectionCatalog({ commonSections: psychometricText, englishTopics, manifest, sources }))
       .toThrow();
+  });
+
+  it("requires a rights review for the exact common-section record before publication", () => {
+    const result = parseOfficialCommonSectionCatalog({ commonSections, englishTopics, manifest, sources });
+    const section = result.commonSections.find((candidate: any) =>
+      candidate.id === "ADIF-2025-1131-english",
+    )!;
+    const reviewed = {
+      ...section,
+      publicationStatus: "approved_for_publication" as const,
+      publicationReview: {
+        decisionId: "test-english-rights",
+        decision: "approved" as const,
+        permittedUse: "public_question_text" as const,
+        reviewedAt: "2026-10-15",
+        reviewerRole: "human_editor" as const,
+        scope: {
+          examIds: [section.examId],
+          sections: ["english" as const],
+          content: "official_question_text" as const,
+        },
+        evidence: {
+          sourceId: "ADIF permission review 2025",
+          sourceVersion: "review-1",
+          locator: "p. 2, section 5",
+          basis: "documented_legal_review" as const,
+        },
+        rationale: "Test fixture with section-specific approval.",
+      },
+    };
+
+    expect(isOfficialCommonSectionTextApproved(section, section.examId, "english")).toBe(false);
+    expect(isOfficialCommonSectionTextApproved(reviewed, section.examId, "english")).toBe(true);
+    expect(isOfficialCommonSectionTextApproved(reviewed, section.examId, "general")).toBe(false);
+    expect(isOfficialCommonSectionTextApproved(reviewed, "ADIF-2025-4104", "english")).toBe(false);
+  });
+
+  it("matches common question numbers and reserve flags to the form section catalog", () => {
+    const result = parseOfficialCommonSectionCatalog({ commonSections, englishTopics, manifest, sources });
+    const section = result.commonSections.find((candidate: any) =>
+      candidate.id === "ADIF-2025-1131-english",
+    )!;
+    const booklet = sourceManifest.sources.find((candidate) =>
+      candidate.sourceId === section.source.sourceId && candidate.sourceVersion === section.source.sourceVersion,
+    )!;
+    const fingerprint = "a".repeat(64);
+    const questionSourceRecords = sourceManifest.sources.map((candidate) =>
+      candidate.sourceId === booklet.sourceId && candidate.sourceVersion === booklet.sourceVersion
+        ? { ...candidate, status: "verified" as const, sha256: fingerprint }
+        : candidate,
+    );
+    const ordinaryQuestion = {
+      id: "ADIF-2025-1131-english-Q19",
+      source: {
+        year: 2025,
+        examCode: "1131",
+        section: "english" as const,
+        questionNumber: 19,
+        isReserve: false,
+        documentUrl: booklet.url,
+        fingerprint: `sha256:${fingerprint}`,
+      },
+    };
+    const reserveQuestion = {
+      id: "ADIF-2025-1131-english-Q34",
+      source: { ...ordinaryQuestion.source, questionNumber: 34, isReserve: true },
+    };
+
+    expect(isOfficialCommonQuestionMetadataConsistent(ordinaryQuestion, result.commonSections, questionSourceRecords)).toBe(true);
+    expect(isOfficialCommonQuestionMetadataConsistent(reserveQuestion, result.commonSections, questionSourceRecords)).toBe(true);
+    expect(isOfficialCommonQuestionMetadataConsistent({
+      ...ordinaryQuestion,
+      id: "ADIF-2025-1131-english-Q99",
+      source: { ...ordinaryQuestion.source, questionNumber: 99 },
+    }, result.commonSections, questionSourceRecords)).toBe(false);
+    expect(isOfficialCommonQuestionMetadataConsistent({
+      ...ordinaryQuestion,
+      source: { ...ordinaryQuestion.source, isReserve: true },
+    }, result.commonSections, questionSourceRecords)).toBe(false);
+    expect(isOfficialCommonQuestionMetadataConsistent({
+      ...reserveQuestion,
+      source: { ...reserveQuestion.source, isReserve: false },
+    }, result.commonSections, questionSourceRecords)).toBe(false);
+    expect(isOfficialCommonQuestionMetadataConsistent({
+      ...ordinaryQuestion,
+      source: { ...ordinaryQuestion.source, documentUrl: "https://www.adif.es/another-exam.pdf" },
+    }, result.commonSections, questionSourceRecords)).toBe(false);
+    expect(isOfficialCommonQuestionMetadataConsistent({
+      ...ordinaryQuestion,
+      source: { ...ordinaryQuestion.source, fingerprint: `sha256:${"b".repeat(64)}` },
+    }, result.commonSections, questionSourceRecords)).toBe(false);
+    expect(isOfficialCommonQuestionMetadataConsistent(ordinaryQuestion, result.commonSections, sourceManifest.sources)).toBe(false);
   });
 
   it("accepts only general mappings to current common syllabus nodes", () => {

@@ -16,6 +16,7 @@ export type QuestionFilter = {
   year?: number;
   examCode?: string;
   section?: OfficialQuestion["source"]["section"];
+  validity?: OfficialQuestion["validity"];
   query?: string;
   ids?: readonly string[];
 };
@@ -41,14 +42,17 @@ export function createContentRepository({
   const examById = new Map(examList.map((exam) => [exam.id, exam]));
 
   for (const exam of examList) {
-    const expectedPrefix = `${exam.id}-Q`;
     for (const questionId of exam.questionIds) {
       const question = questionById.get(questionId);
       if (!question) {
         throw new Error(`${exam.id} references a missing question ID: ${questionId}.`);
       }
       if (
-        !questionId.startsWith(expectedPrefix)
+        ![
+          `${exam.id}-Q`,
+          `${exam.id}-general-Q`,
+          `${exam.id}-english-Q`,
+        ].some((prefix) => questionId.startsWith(prefix))
         || question.source.year !== exam.source.year
         || question.source.examCode !== exam.source.examCode
       ) {
@@ -57,7 +61,7 @@ export function createContentRepository({
     }
   }
 
-  const listOfficialQuestionRecords = (filter?: QuestionFilter): OfficialQuestion[] => {
+  const listOfficialQuestionRecords = (filter?: QuestionFilter, includeQuestionText = false): OfficialQuestion[] => {
     if (!filter) return [...questionList];
 
     const query = filter.query?.trim().toLocaleLowerCase();
@@ -67,21 +71,28 @@ export function createContentRepository({
       if (filter.year && question.source.year !== filter.year) return false;
       if (filter.examCode && question.source.examCode !== filter.examCode) return false;
       if (filter.section && question.source.section !== filter.section) return false;
+      if (filter.validity && question.validity !== filter.validity) return false;
       if (allowedIds && !allowedIds.has(question.id)) return false;
       if (!query) return true;
 
-      return [
-        question.prompt,
+      const searchableValues = [
+        question.id,
         question.sectionLabel,
         question.source.profileName,
+        question.source.call,
         question.source.examCode,
-        ...question.options.map((option) => option.text),
-      ].some((value) => value.toLocaleLowerCase().includes(query));
+        String(question.source.year),
+        question.source.section,
+      ];
+      if (includeQuestionText) {
+        searchableValues.push(question.prompt, ...question.options.map((option) => option.text));
+      }
+      return searchableValues.some((value) => value.toLocaleLowerCase().includes(query));
     });
   };
 
   const listOfficialQuestions = (filter?: QuestionFilter): OfficialQuestion[] =>
-    listOfficialQuestionRecords(filter).filter((question) => isOfficialQuestionPracticeEligible(question));
+    listOfficialQuestionRecords(filter, true).filter((question) => isOfficialQuestionPracticeEligible(question));
 
   const listOfficialExams = (): OfficialExam[] =>
     examList.filter((exam) => isOfficialExamPracticeEligible(exam, questionById));
@@ -110,7 +121,9 @@ export function createContentRepository({
       return questionById.get(id);
     },
     listOfficialQuestions,
-    listOfficialQuestionRecords,
+    listOfficialQuestionRecords(filter?: QuestionFilter): OfficialQuestion[] {
+      return listOfficialQuestionRecords(filter, false);
+    },
     getOfficialExam(id: string): OfficialExam | undefined {
       return getAvailableOfficialExam(id);
     },

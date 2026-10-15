@@ -15,6 +15,7 @@ import {
   isOfficialQuestionPracticeEligible,
 } from "../lib/content/official-publication";
 import {
+  toPublicOfficialQuestionStatus,
   toPublicOfficialExam,
   toPublicOfficialQuestion,
 } from "../lib/content/public-dto";
@@ -52,6 +53,42 @@ describe("official publication gate", () => {
     expect(listOfficialQuestions()).toEqual([]);
   });
 
+  it.each(["link_only", "review_pending", "restricted"] as const)(
+    "returns metadata without protected text or answer keys for %s questions",
+    (publicationStatus) => {
+      const question = {
+        ...getOfficialQuestionRecord("ADIF-2025-1131-Q01")!,
+        publicationStatus,
+      };
+      const metadata = toPublicOfficialQuestionStatus(question);
+
+      expect(metadata).toMatchObject({
+        id: question.id,
+        origin: "official_reference",
+        validity: "pending_review",
+        publicationStatus,
+      });
+      expect(metadata).not.toHaveProperty("prompt");
+      expect(metadata).not.toHaveProperty("options");
+      expect(metadata).not.toHaveProperty("answer");
+      expect(metadata).not.toHaveProperty("initialAnswer");
+      expect(metadata).not.toHaveProperty("effectiveAnswer");
+      expect(toPublicOfficialQuestion(question)).toBeNull();
+    },
+  );
+
+  it("includes the exact form-level final tribunal citation when an item has no individual correction", () => {
+    const question = getOfficialQuestionRecord("ADIF-2024-3403-Q01")!;
+    const metadata = toPublicOfficialQuestionStatus(question);
+
+    expect(metadata.correctionSource).toMatchObject({
+      sourceId: "ADIF PNI24/01 tribunal resolution",
+      sourceVersion: "tribunal-resolution-2024-12-16",
+      sourceUrl: expect.stringContaining("70febb4b-f8a2-de01-d00d-11feba2b6aa3"),
+      locator: expect.stringContaining("plantilla final"),
+    });
+  });
+
   it("retains historical IDs, exam shells, and learner history while excluding restricted content from practice", () => {
     const question = getOfficialQuestionRecord("ADIF-2025-1131-Q01")!;
     const exam = getOfficialExamRecord("ADIF-2025-1131")!;
@@ -63,5 +100,13 @@ describe("official publication gate", () => {
     expect(listOfficialQuestionRecords()).toHaveLength(102);
     expect(listOfficialExamRecords()).toHaveLength(6);
     expect(toPublicOfficialExam(exam)).not.toHaveProperty("answer");
+  });
+
+  it("filters historical records by currentness without enabling them for practice", () => {
+    expect(listOfficialQuestionRecords({ validity: "pending_review" })).toHaveLength(102);
+    expect(listOfficialQuestionRecords({ validity: "changed" })).toEqual([]);
+    expect(listOfficialQuestionRecords({ year: 2024, validity: "pending_review" }))
+      .toHaveLength(36);
+    expect(listOfficialQuestions({ validity: "pending_review" })).toEqual([]);
   });
 });

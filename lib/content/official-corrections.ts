@@ -153,6 +153,18 @@ export function validatePublicationStatus(
   return errors;
 }
 
+export function publicationReviewCoversQuestionSection(
+  review: PublicationReview | null | undefined,
+  examId: string,
+  section: "psychometric" | "english" | "general" | "specific",
+): boolean {
+  if (!review) return false;
+  const parsed = publicationReviewSchema.safeParse(review);
+  return parsed.success &&
+    parsed.data.scope.examIds.includes(examId) &&
+    parsed.data.scope.sections?.includes(section) === true;
+}
+
 export function validateOfficialCorrectionSets(
   input: unknown,
   exams: CorrectionExamRecord[],
@@ -207,6 +219,13 @@ export function validateOfficialCorrectionSets(
       const reviewed = [...set.publicationReview.scope.examIds].sort();
       if (declared.length !== reviewed.length || declared.some((id, index) => id !== reviewed[index])) {
         errors.push(`${set.year}: publication review scope does not exactly match the correction-set forms`);
+      }
+      if (
+        set.publicationReview.decision === "approved" &&
+        set.publicationReview.permittedUse === "public_question_text" &&
+        (!set.publicationReview.scope.sections || set.publicationReview.scope.sections.length === 0)
+      ) {
+        errors.push(`${set.year}: approved publication review must list the exact question sections`);
       }
     }
 

@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { QuestionSession, type PracticeQuestion } from "../components/practice/question-session";
 import { listOfficialQuestions } from "../lib/content/repository";
+import { toPublicOfficialQuestion } from "../lib/content/public-dto";
 
 // These behavior tests use a publication-cleared fixture; the real closed gate is covered separately.
 vi.mock("../lib/content/official-publication", () => ({
@@ -13,7 +14,7 @@ vi.mock("../lib/content/official-publication", () => ({
 }));
 
 const officialQuestion = listOfficialQuestions({ ids: ["ADIF-2025-1131-Q01"] })[0]!;
-const { answer: _answer, ...practiceQuestion } = officialQuestion;
+const practiceQuestion = toPublicOfficialQuestion(officialQuestion)!;
 const questions: PracticeQuestion[] = [practiceQuestion];
 
 describe("QuestionSession", () => {
@@ -50,9 +51,9 @@ describe("QuestionSession", () => {
       clientEventId: expect.stringMatching(/^[0-9a-f-]{36}$/i),
     });
     expect(await screen.findByText("Respuesta incorrecta. Respuesta correcta: A.")).toBeVisible();
-    expect(screen.getByText("Pregunta oficial ADIF")).toBeVisible();
-    expect(screen.getByText("2025 · PNI25/01 · 25/10PO · modelo 1131 · pregunta 1")).toBeVisible();
-    expect(screen.getByRole("link", { name: "Ver en el documento oficial" })).toHaveAttribute(
+    expect(screen.getByText("OFICIAL ADIF 2025")).toBeVisible();
+    expect(screen.getByText("PNI25/01 · 25/10PO · modelo 1131 · pregunta 1")).toBeVisible();
+    expect(screen.getByRole("link", { name: "Ver cuadernillo oficial ADIF" })).toHaveAttribute(
       "href",
       officialQuestion.source.documentUrl,
     );

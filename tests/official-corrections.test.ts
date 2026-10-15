@@ -4,6 +4,7 @@ import {
   applyOfficialCorrections,
   validateOfficialCorrectionSets,
   validatePublicationStatus,
+  publicationReviewCoversQuestionSection,
   type OfficialCorrection,
   type OfficialCorrectionSet,
   type CorrectionSourceRecord,
@@ -45,6 +46,7 @@ const review: PublicationReview = {
   reviewerRole: "human_editor" as const,
   scope: {
     examIds: ["ADIF-2025-1131", "ADIF-2025-4104"],
+    sections: ["specific"],
     content: "official_question_text" as const,
   },
   evidence: {
@@ -323,6 +325,24 @@ describe("official question publication gate", () => {
 
   it("accepts publication only with a dated, exact, verified source and text-use decision", () => {
     expect(validatePublicationStatus("approved_for_publication", review, verifiedSources)).toEqual([]);
+  });
+
+  it("requires an explicit question-section scope for approved public text", () => {
+    const unscopedReview = { ...review, scope: { ...review.scope, sections: undefined } };
+    expect(validateOfficialCorrectionSets([{
+      ...correctionSet([]),
+      publicationStatus: "approved_for_publication",
+      publicationReview: unscopedReview,
+    }], examRecords, verifiedSources).join("\n")).toContain("must list the exact question sections");
+  });
+
+  it("does not let a review for one section authorize another question section", () => {
+    expect(publicationReviewCoversQuestionSection(review, "ADIF-2025-1131", "specific")).toBe(true);
+    expect(publicationReviewCoversQuestionSection(review, "ADIF-2025-1131", "general")).toBe(false);
+    expect(publicationReviewCoversQuestionSection({
+      ...review,
+      scope: { ...review.scope, sections: undefined },
+    }, "ADIF-2025-1131", "specific")).toBe(false);
   });
 
   it("rejects a publication review dated after the evaluation date", () => {

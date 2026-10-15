@@ -133,8 +133,11 @@ export function parseOfficialCommonSectionCatalog(input: unknown) {
     if (section.publicationReview) {
       const rightsErrors = validatePublicationStatus(section.publicationStatus, section.publicationReview, sources);
       if (rightsErrors.length) fail(`${section.id} publication review is invalid: ${rightsErrors.join("; ")}`);
-      if (!section.publicationReview.scope.examIds.includes(section.examId)) {
-        fail(`${section.id} publication review does not cover its exact exam form.`);
+      if (
+        section.publicationReview.scope.examIds.length !== 1 ||
+        section.publicationReview.scope.examIds[0] !== section.examId
+      ) {
+        fail(`${section.id} publication review must cover only its exact exam form.`);
       }
       if (
         !section.publicationReview.scope.sections ||
@@ -228,3 +231,75 @@ export function validateOfficialCommonQuestionMapping(
 
 export type OfficialCommonSection = z.infer<typeof officialCommonSectionsSchema>[number];
 export type EnglishTopicCatalog = z.infer<typeof englishTopicCatalogSchema>;
+
+export type OfficialCommonQuestionCoordinates = {
+  id: string;
+  source: {
+    year: number;
+    examCode: string;
+    section: "english" | "general";
+    questionNumber: number;
+    isReserve: boolean;
+    documentUrl: string;
+    fingerprint: string;
+  };
+};
+
+type OfficialCommonQuestionSourceRecord = {
+  sourceId: string;
+  sourceVersion: string;
+  url: string;
+  sourceType: "primary" | "secondary" | "didactic";
+  scope: string;
+  status: "verified" | "needs_check" | "superseded" | "unavailable";
+  locatorPolicy: "document-level" | "section" | "exact";
+  sha256: string | null;
+};
+
+export function isOfficialCommonQuestionMetadataConsistent(
+  question: OfficialCommonQuestionCoordinates,
+  sections: readonly OfficialCommonSection[],
+  sources: readonly OfficialCommonQuestionSourceRecord[],
+): boolean {
+  const examId = `ADIF-${question.source.year}-${question.source.examCode}`;
+  const section = sections.find((candidate) => candidate.id === `${examId}-${question.source.section}`);
+  const registeredBooklet = section && sources.find((source) =>
+    source.sourceId === section.source.sourceId && source.sourceVersion === section.source.sourceVersion,
+  );
+  const bookletMatches = Boolean(
+    registeredBooklet &&
+    registeredBooklet.sourceType === "primary" &&
+    registeredBooklet.scope === "historical-exam" &&
+    registeredBooklet.status === "verified" &&
+    registeredBooklet.locatorPolicy !== "document-level" &&
+    registeredBooklet.sha256 !== null &&
+    registeredBooklet.url === question.source.documentUrl &&
+    question.source.fingerprint === `sha256:${registeredBooklet.sha256}`,
+  );
+  return Boolean(bookletMatches && section?.questionMetadata.some((metadata) =>
+    metadata.id === question.id &&
+    metadata.questionNumber === question.source.questionNumber &&
+    metadata.isReserve === question.source.isReserve,
+  ));
+}
+
+export function isOfficialCommonSectionTextApproved(
+  section: OfficialCommonSection | undefined,
+  examId: string,
+  expectedSection: "psychometric" | "english" | "general",
+): boolean {
+  const review = section?.publicationReview;
+  return Boolean(
+    section &&
+    section.id === `${examId}-${expectedSection}` &&
+    section.examId === examId &&
+    section.section === expectedSection &&
+    section.publicationStatus === "approved_for_publication" &&
+    review?.decision === "approved" &&
+    review.permittedUse === "public_question_text" &&
+    review.scope.examIds.length === 1 &&
+    review.scope.examIds[0] === examId &&
+    review.scope.sections?.length === 1 &&
+    review.scope.sections[0] === expectedSection,
+  );
+}

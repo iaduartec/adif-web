@@ -28,6 +28,7 @@ const source = {
   answerKeyPage: 19,
   verifiedAt: "2026-08-10",
   fingerprint: "sha256:115f6c60c9433982fffc9172f695afba38a969a92124f97ad8d707b2f7fcf7d0",
+  sourceStatus: "verified" as const,
 };
 
 const questions: ExamQuestion[] = Array.from({ length: 3 }, (_, i) => ({
@@ -53,6 +54,7 @@ const questions: ExamQuestion[] = Array.from({ length: 3 }, (_, i) => ({
   ],
   validity: "current" as const,
   publicationStatus: "approved_for_publication" as const,
+  correctionSource: null,
   origin: "official_reference" as const,
   source: { ...source, questionNumber: i + 1 },
 }));
@@ -355,9 +357,9 @@ describe("SimulationPageClient", () => {
     expect(screen.getByRole("heading", { name: "Examen oficial ADIF 2024 3403" })).toBeVisible();
     expect(screen.getByText(/2024 · PNI24\/01 · 24\/05PO · modelo 3403 · Parte específica/i)).toBeVisible();
     expect(screen.getByText(/3 preguntas · 15 minutos/i)).toBeVisible();
-    expect(screen.getByText("Documento oficial ADIF")).toBeVisible();
+    expect(screen.getByText("ADIF 2024")).toBeVisible();
     expect(screen.queryByText(/pregunta 1/i)).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Ver en el documento oficial/i })).toHaveAttribute("href", source.documentUrl);
+    expect(screen.getByRole("link", { name: /Ver cuadernillo oficial ADIF/i })).toHaveAttribute("href", source.documentUrl);
   });
 
   it("passes the documented exam duration to the runner", () => {
@@ -375,7 +377,7 @@ describe("OfficialSource", () => {
   it("keeps the question label and number for question sessions", () => {
     render(<OfficialSource source={source} />);
 
-    expect(screen.getByText("Pregunta oficial ADIF")).toBeVisible();
+    expect(screen.getByText("OFICIAL ADIF 2024")).toBeVisible();
     expect(screen.getByText(/pregunta 1/i)).toBeVisible();
   });
 });
@@ -403,7 +405,7 @@ describe("SimulationResults", () => {
 
     expect(screen.getByText("-1")).toBeVisible();
     expect(screen.getByText(/puntuación neta de esta parte disponible/i)).toBeVisible();
-    expect(screen.getByRole("link", { name: /Ver en el documento oficial/i })).toHaveAttribute("href", source.documentUrl);
+    expect(screen.getByRole("link", { name: /Ver cuadernillo oficial ADIF/i })).toHaveAttribute("href", source.documentUrl);
     expect(screen.queryByText(/Explicación/)).not.toBeInTheDocument();
   });
 });

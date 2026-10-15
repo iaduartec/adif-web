@@ -123,7 +123,7 @@ export function QuestionSession({
       <p className="course-eyebrow">Pregunta {index + 1} de {questions.length}</p>
       <p className="practice-session__module">{question.sectionLabel}</p>
       <h2 id="practice-question-title">{question.prompt}</h2>
-      <OfficialSource source={question.source} />
+      <OfficialSource source={question.source} questionStatus={question} />
       <form onSubmit={submitAnswer}>
         <fieldset disabled={isPending || result !== null || retryEnvelope !== null}>
           <legend className="sr-only">Elige una respuesta</legend>
