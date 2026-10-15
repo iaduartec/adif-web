@@ -25,6 +25,7 @@ export const officialExamManifestEntrySchema = z
     expectedQuestionNumbers: z.array(questionNumberSchema).min(1),
     /** Exact question IDs represented by the accepted local transcription set. */
     transcribedQuestionNumbers: z.array(questionNumberSchema),
+    commonSectionIds: z.array(z.string().regex(/^ADIF-\d{4}-\d{4}-(psychometric|english|general)$/)).optional(),
     reserveQuestionNumbers: z.array(questionNumberSchema),
     transcriptionStatus: z.enum(["complete", "partial", "metadata_only"]),
     completeness: z.enum(["complete", "specific_part"]),
@@ -56,6 +57,12 @@ export const officialExamManifestEntrySchema = z
     }
     if (new Set(entry.reserveQuestionNumbers).size !== entry.reserveQuestionNumbers.length) {
       context.addIssue({ code: "custom", path: ["reserveQuestionNumbers"], message: "Reserve question numbers must not contain duplicates." });
+    }
+    if (entry.commonSectionIds && new Set(entry.commonSectionIds).size !== entry.commonSectionIds.length) {
+      context.addIssue({ code: "custom", path: ["commonSectionIds"], message: "Common section IDs must not contain duplicates." });
+    }
+    if (entry.commonSectionIds?.some((id) => !id.startsWith(`${entry.id}-`))) {
+      context.addIssue({ code: "custom", path: ["commonSectionIds"], message: "Common section IDs must retain their exact exam-form identity." });
     }
     if (entry.reserveQuestionNumbers.some((number) => !entry.expectedQuestionNumbers.includes(number))) {
       context.addIssue({ code: "custom", path: ["reserveQuestionNumbers"], message: "Reserve questions must be included in the declared form question numbers." });

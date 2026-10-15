@@ -420,11 +420,17 @@ export const publicationReviewSchema = z
     scope: z
       .object({
         examIds: z.array(z.string().regex(/^ADIF-\d{4}-\d{4}$/)).min(1),
+        sections: z.array(z.enum(["psychometric", "english", "general"])).optional(),
         content: z.literal("official_question_text"),
       })
       .strict()
-      .refine((scope) => new Set(scope.examIds).size === scope.examIds.length, {
-        message: "Publication review exam scope must not contain duplicates.",
+      .superRefine((scope, context) => {
+        if (new Set(scope.examIds).size !== scope.examIds.length) {
+          context.addIssue({ code: "custom", path: ["examIds"], message: "Publication review exam scope must not contain duplicates." });
+        }
+        if (scope.sections && new Set(scope.sections).size !== scope.sections.length) {
+          context.addIssue({ code: "custom", path: ["sections"], message: "Publication review section scope must not contain duplicates." });
+        }
       }),
     evidence: z
       .object({
@@ -437,6 +443,171 @@ export const publicationReviewSchema = z
     rationale: z.string().trim().min(1),
   })
   .strict();
+
+export const officialCommonSectionNameSchema = z.enum(["psychometric", "english", "general"]);
+
+export const englishTopicSchema = z
+  .object({
+    id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+    title: z.string().trim().min(1),
+    area: z.enum(["grammar", "vocabulary", "signs", "messages", "situations", "reading"]),
+    activeConceptIds: z.array(z.string().trim().min(1)),
+    mappingStatus: z.enum(["taxonomy_only", "linked_to_active_theory"]),
+    reviewStatus: z.enum(["needs_review", "reviewed"]),
+    reviewEvidence: z.object({
+      sourceId: z.string().trim().min(1),
+      sourceVersion: z.string().trim().min(1),
+      locator: z.string().trim().min(1),
+      reviewedAt: z.iso.date(),
+    }).strict().nullable(),
+    scopeNote: z.string().trim().min(1),
+  })
+  .strict()
+  .superRefine((topic, context) => {
+    if (new Set(topic.activeConceptIds).size !== topic.activeConceptIds.length) {
+      context.addIssue({ code: "custom", path: ["activeConceptIds"], message: "English topic concept IDs must be unique." });
+    }
+    const unknownConceptIds = topic.activeConceptIds.filter((id) => !activeTheoryConceptRegistry.has(id));
+    if (unknownConceptIds.length) {
+      context.addIssue({ code: "custom", path: ["activeConceptIds"], message: `Unknown active English concept IDs: ${unknownConceptIds.join(", ")}.` });
+    }
+    if (topic.mappingStatus === "taxonomy_only" && topic.activeConceptIds.length > 0) {
+      context.addIssue({ code: "custom", path: ["mappingStatus"], message: "Taxonomy-only topics cannot claim active theory mappings." });
+    }
+    if (topic.mappingStatus === "linked_to_active_theory" && topic.activeConceptIds.length === 0) {
+      context.addIssue({ code: "custom", path: ["mappingStatus"], message: "A linked English topic must map to at least one active theory concept." });
+    }
+    if (topic.reviewStatus === "needs_review" && topic.reviewEvidence !== null) {
+      context.addIssue({ code: "custom", path: ["reviewEvidence"], message: "Unreviewed English topics cannot claim review evidence." });
+    }
+    if (topic.reviewStatus === "reviewed" && topic.reviewEvidence === null) {
+      context.addIssue({ code: "custom", path: ["reviewEvidence"], message: "Reviewed English topics require exact versioned review evidence." });
+    }
+  });
+
+export const englishTopicCatalogSchema = z
+  .object({
+    schemaVersion: z.literal(1),
+    level: z.literal("A2-practice"),
+    basis: z.literal("user_requested_curriculum"),
+    levelSource: z.object({
+      sourceId: z.string().trim().min(1),
+      sourceVersion: z.string().trim().min(1),
+      locator: z.string().trim().min(1),
+    }).strict(),
+    note: z.string().trim().min(1),
+    topics: z.array(englishTopicSchema).min(1),
+  })
+  .strict()
+  .superRefine((catalog, context) => {
+    const topicIds = catalog.topics.map((topic) => topic.id);
+    if (new Set(topicIds).size !== topicIds.length) {
+      context.addIssue({ code: "custom", path: ["topics"], message: "English topic IDs must be unique." });
+    }
+    const requiredIds = [
+      "there-is-are", "present-simple", "present-continuous", "past-simple", "future", "modal-verbs",
+      "comparatives", "prepositions", "quantifiers", "countable-uncountable", "simple-conditionals",
+      "vocabulary", "signs-notices", "short-messages", "emails", "everyday-situations", "shops",
+      "hotels", "airports", "health", "reading-comprehension",
+    ];
+    const missing = requiredIds.filter((id) => !topicIds.includes(id));
+    if (missing.length) {
+      context.addIssue({ code: "custom", path: ["topics"], message: `Missing requested A2 topics: ${missing.join(", ")}.` });
+    }
+  });
+
+const commonSectionSourceReferenceSchema = z.object({
+  sourceId: z.string().trim().min(1),
+  sourceVersion: z.string().trim().min(1),
+  locator: z.string().trim().min(1),
+}).strict();
+
+const questionNumberListSchema = z.array(z.number().int().min(1).max(99));
+const commonQuestionMetadataSchema = z.object({
+  id: z.string().regex(/^ADIF-\d{4}-\d{4}-(psychometric|english|general)-Q\d{2}$/),
+  questionNumber: z.number().int().min(1).max(99),
+  isReserve: z.boolean(),
+}).strict();
+
+export const officialCommonSectionSchema = z
+  .object({
+    id: z.string().regex(/^ADIF-\d{4}-\d{4}-(psychometric|english|general)$/),
+    examId: z.string().regex(/^ADIF-\d{4}-\d{4}$/),
+    year: z.number().int().min(2000).max(2100),
+    call: z.string().regex(/^PNI\d{2}\/\d{2}$/),
+    profileCode: z.string().regex(/^\d{2}\/\d{2}PO$/),
+    profileName: z.string().trim().min(1),
+    examCode: z.string().regex(/^\d{4}$/),
+    session: z.object({ date: z.iso.date(), location: z.string().trim().min(1).nullable() }).strict().nullable(),
+    section: officialCommonSectionNameSchema,
+    questionNumbers: questionNumberListSchema.min(1),
+    scoredQuestionNumbers: questionNumberListSchema.min(1),
+    reserveQuestionNumbers: questionNumberListSchema.min(1),
+    questionMetadata: z.array(commonQuestionMetadataSchema).min(1),
+    source: commonSectionSourceReferenceSchema,
+    correctionSource: commonSectionSourceReferenceSchema,
+    publicationStatus: publicationStatusSchema,
+    publicationReview: publicationReviewSchema.nullable(),
+  })
+  .strict()
+  .superRefine((section, context) => {
+    if (section.id !== `${section.examId}-${section.section}` || section.examId !== `ADIF-${section.year}-${section.examCode}`) {
+      context.addIssue({ code: "custom", path: ["id"], message: "Common section IDs must retain exact form identity and section." });
+    }
+    if (new Set(section.questionNumbers).size !== section.questionNumbers.length) {
+      context.addIssue({ code: "custom", path: ["questionNumbers"], message: "Common section question numbers must be unique." });
+    }
+    if (new Set(section.scoredQuestionNumbers).size !== section.scoredQuestionNumbers.length) {
+      context.addIssue({ code: "custom", path: ["scoredQuestionNumbers"], message: "Scored question numbers must be unique." });
+    }
+    if (new Set(section.reserveQuestionNumbers).size !== section.reserveQuestionNumbers.length) {
+      context.addIssue({ code: "custom", path: ["reserveQuestionNumbers"], message: "Reserve question numbers must be unique." });
+    }
+    const declared = new Set([...section.scoredQuestionNumbers, ...section.reserveQuestionNumbers]);
+    if (
+      declared.size !== section.questionNumbers.length ||
+      section.questionNumbers.some((number) => !declared.has(number)) ||
+      [...declared].some((number) => !section.questionNumbers.includes(number))
+    ) {
+      context.addIssue({ code: "custom", path: ["questionNumbers"], message: "Scored and reserve numbers must exactly partition the section questions." });
+    }
+    const metadataNumbers = section.questionMetadata.map((item) => item.questionNumber);
+    if (
+      new Set(metadataNumbers).size !== metadataNumbers.length ||
+      !sameQuestionNumbers(metadataNumbers, section.questionNumbers) ||
+      section.questionMetadata.some((item) =>
+        item.id !== `${section.id}-Q${String(item.questionNumber).padStart(2, "0")}` ||
+        item.isReserve !== section.reserveQuestionNumbers.includes(item.questionNumber),
+      )
+    ) {
+      context.addIssue({ code: "custom", path: ["questionMetadata"], message: "Question metadata must enumerate the exact section numbers and reserve flags." });
+    }
+    if (section.section === "psychometric" && (section.publicationStatus !== "restricted" || section.publicationReview !== null)) {
+      context.addIssue({ code: "custom", path: ["publicationStatus"], message: "Psychometric source material is restricted and must remain metadata-only." });
+    }
+    if (section.publicationStatus === "approved_for_publication" && section.publicationReview === null) {
+      context.addIssue({ code: "custom", path: ["publicationReview"], message: "Approved official text requires scoped human publication review." });
+    }
+  });
+
+function sameQuestionNumbers(actual: readonly number[], expected: readonly number[]): boolean {
+  return actual.length === expected.length && expected.every((number) => actual.includes(number));
+}
+
+export const officialCommonSectionsSchema = z.array(officialCommonSectionSchema).min(1);
+
+export const commonQuestionMappingSchema = z.discriminatedUnion("section", [
+  z.object({
+    section: z.literal("general"),
+    syllabusNodeId: z.string().trim().min(1),
+    conceptIds: z.array(z.string().trim().min(1)).min(1),
+  }).strict(),
+  z.object({
+    section: z.literal("english"),
+    topicId: z.string().trim().min(1),
+    conceptIds: z.array(z.string().trim().min(1)).min(1),
+  }).strict(),
+]);
 
 export const officialCorrectionSetSchema = z
   .object({

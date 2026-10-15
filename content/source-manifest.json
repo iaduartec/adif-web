@@ -1002,7 +1002,7 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "consultedLocator": "Comprobación directa 2026-10-16: apertura de la URL oficial ADIF devuelve HTTP 403. Los resultados indexados muestran fragmentos de portada/instrucciones, pero no equivalen a bytes descargados y no verifican hash ni localizadores PDF exactos; versión, hash y páginas exactas siguen pendientes.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
@@ -1025,7 +1025,7 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "consultedLocator": "Comprobación directa 2026-10-16: apertura de la URL oficial ADIF devuelve HTTP 403. Los resultados indexados muestran fragmentos de portada/instrucciones, pero no equivalen a bytes descargados y no verifican hash ni localizadores PDF exactos; versión, hash y páginas exactas siguen pendientes.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
@@ -1048,7 +1048,7 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "consultedLocator": "Comprobación directa 2026-10-16: apertura de la URL oficial ADIF devuelve HTTP 403. Los resultados indexados muestran fragmentos de portada/instrucciones, pero no equivalen a bytes descargados y no verifican hash ni localizadores PDF exactos; versión, hash y páginas exactas siguen pendientes.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
@@ -1071,7 +1071,7 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "consultedLocator": "Comprobación directa 2026-10-16: apertura de la URL oficial ADIF devuelve HTTP 403. Los resultados indexados muestran fragmentos de portada/instrucciones, pero no equivalen a bytes descargados y no verifican hash ni localizadores PDF exactos; versión, hash y páginas exactas siguen pendientes.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
@@ -1094,7 +1094,7 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "consultedLocator": "Comprobación directa 2026-10-16: apertura de la URL oficial ADIF devuelve HTTP 403. Los resultados indexados muestran fragmentos de portada/instrucciones, pero no equivalen a bytes descargados y no verifican hash ni localizadores PDF exactos; versión, hash y páginas exactas siguen pendientes.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
@@ -1117,7 +1117,7 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "consultedLocator": "Comprobación directa 2026-10-16: apertura de la URL oficial ADIF devuelve HTTP 403. Los resultados indexados muestran fragmentos de portada/instrucciones, pero no equivalen a bytes descargados y no verifican hash ni localizadores PDF exactos; versión, hash y páginas exactas siguen pendientes.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."

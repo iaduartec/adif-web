@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "level": "A2-practice",
+  "basis": "user_requested_curriculum",
+  "levelSource": {
+    "sourceId": "MCER-A2",
+    "sourceVersion": "web-reference-candidate",
+    "locator": "Nivel A2 del MCER; referencia del marco lingüístico, no evidencia sobre la distribución de preguntas ADIF."
+  },
+  "note": "Taxonomía didáctica solicitada por el usuario para preparar inglés funcional A2. Los históricos se mantienen como metadatos: los cuadernillos no se descargaron como bytes verificables y ningún texto de preguntas está publicado aquí. Las categorías no implican que cada estructura aparezca en los exámenes ADIF.",
+  "topics": [
+    {
+      "id": "there-is-are",
+      "title": "There is / There are",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "present-simple",
+      "title": "Present Simple",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "present-continuous",
+      "title": "Present Continuous",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "past-simple",
+      "title": "Past Simple",
+      "area": "grammar",
+      "activeConceptIds": [
+        "ingles-concept-1"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Teoría activa existente; no se afirma frecuencia histórica ADIF.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "future",
+      "title": "Future forms",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "modal-verbs",
+      "title": "Modal verbs",
+      "area": "grammar",
+      "activeConceptIds": [
+        "ingles-concept-2"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Teoría activa existente; no se afirma frecuencia histórica ADIF.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "comparatives",
+      "title": "Comparatives",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "prepositions",
+      "title": "Prepositions",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "quantifiers",
+      "title": "Quantifiers",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "countable-uncountable",
+      "title": "Countable / uncountable nouns",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "simple-conditionals",
+      "title": "Simple conditionals",
+      "area": "grammar",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "vocabulary",
+      "title": "Everyday vocabulary",
+      "area": "vocabulary",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "signs-notices",
+      "title": "Signs and notices",
+      "area": "signs",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "short-messages",
+      "title": "Short messages",
+      "area": "messages",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "emails",
+      "title": "Short emails",
+      "area": "messages",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "everyday-situations",
+      "title": "Everyday situations",
+      "area": "situations",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "shops",
+      "title": "Shops",
+      "area": "situations",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "hotels",
+      "title": "Hotels",
+      "area": "situations",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "airports",
+      "title": "Airports",
+      "area": "situations",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "health",
+      "title": "Health",
+      "area": "situations",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "reading-comprehension",
+      "title": "Reading comprehension",
+      "area": "reading",
+      "activeConceptIds": [],
+      "mappingStatus": "taxonomy_only",
+      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    },
+    {
+      "id": "railway-vocabulary",
+      "title": "Railway vocabulary",
+      "area": "vocabulary",
+      "activeConceptIds": [
+        "ingles-concept-3"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Teoría activa existente; se mantiene como tema complementario, sin afirmar que domine el inglés histórico ADIF.",
+      "reviewStatus": "needs_review",
+      "reviewEvidence": null
+    }
+  ]
+}

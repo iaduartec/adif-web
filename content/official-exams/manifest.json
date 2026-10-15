@@ -65,6 +65,11 @@
       13,
       14,
       15
+    ],
+    "commonSectionIds": [
+      "ADIF-2023-1433-psychometric",
+      "ADIF-2023-1433-english",
+      "ADIF-2023-1433-general"
     ]
   },
   {
@@ -133,6 +138,11 @@
       13,
       14,
       15
+    ],
+    "commonSectionIds": [
+      "ADIF-2023-4101-psychometric",
+      "ADIF-2023-4101-english",
+      "ADIF-2023-4101-general"
     ]
   },
   {
@@ -188,7 +198,12 @@
       "date": "2024-11-10",
       "location": null
     },
-    "transcribedQuestionNumbers": []
+    "transcribedQuestionNumbers": [],
+    "commonSectionIds": [
+      "ADIF-2024-1044-psychometric",
+      "ADIF-2024-1044-english",
+      "ADIF-2024-1044-general"
+    ]
   },
   {
     "id": "ADIF-2024-2442",
@@ -243,7 +258,12 @@
       "date": "2024-11-10",
       "location": null
     },
-    "transcribedQuestionNumbers": []
+    "transcribedQuestionNumbers": [],
+    "commonSectionIds": [
+      "ADIF-2024-2442-psychometric",
+      "ADIF-2024-2442-english",
+      "ADIF-2024-2442-general"
+    ]
   },
   {
     "id": "ADIF-2024-3403",
@@ -317,6 +337,11 @@
       16,
       17,
       18
+    ],
+    "commonSectionIds": [
+      "ADIF-2024-3403-psychometric",
+      "ADIF-2024-3403-english",
+      "ADIF-2024-3403-general"
     ]
   },
   {
@@ -391,6 +416,11 @@
       16,
       17,
       18
+    ],
+    "commonSectionIds": [
+      "ADIF-2024-3413-psychometric",
+      "ADIF-2024-3413-english",
+      "ADIF-2024-3413-general"
     ]
   },
   {
@@ -462,6 +492,11 @@
       16,
       17,
       18
+    ],
+    "commonSectionIds": [
+      "ADIF-2025-1131-psychometric",
+      "ADIF-2025-1131-english",
+      "ADIF-2025-1131-general"
     ]
   },
   {
@@ -533,6 +568,11 @@
       16,
       17,
       18
+    ],
+    "commonSectionIds": [
+      "ADIF-2025-4104-psychometric",
+      "ADIF-2025-4104-english",
+      "ADIF-2025-4104-general"
     ]
   }
 ]

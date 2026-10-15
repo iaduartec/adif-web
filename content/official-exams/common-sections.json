@@ -1,0 +1,3806 @@
+[
+  {
+    "id": "ADIF-2023-1433-psychometric",
+    "examId": "ADIF-2023-1433",
+    "year": 2023,
+    "call": "PNI23/01",
+    "profileCode": "23/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1433",
+    "session": null,
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "Resolución/plantilla final de PNI23/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2023-1433-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-1433-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2023-1433-english",
+    "examId": "ADIF-2023-1433",
+    "year": 2023,
+    "call": "PNI23/01",
+    "profileCode": "23/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1433",
+    "session": null,
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "Resolución/plantilla final de PNI23/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2023-1433-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-1433-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2023-1433-general",
+    "examId": "ADIF-2023-1433",
+    "year": 2023,
+    "call": "PNI23/01",
+    "profileCode": "23/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1433",
+    "session": null,
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "Resolución/plantilla final de PNI23/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2023-1433-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-1433-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2023-4101-psychometric",
+    "examId": "ADIF-2023-4101",
+    "year": 2023,
+    "call": "PNI23/01",
+    "profileCode": "23/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "4101",
+    "session": null,
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "Resolución/plantilla final de PNI23/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2023-4101-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-4101-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2023-4101-english",
+    "examId": "ADIF-2023-4101",
+    "year": 2023,
+    "call": "PNI23/01",
+    "profileCode": "23/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "4101",
+    "session": null,
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "Resolución/plantilla final de PNI23/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2023-4101-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-4101-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2023-4101-general",
+    "examId": "ADIF-2023-4101",
+    "year": 2023,
+    "call": "PNI23/01",
+    "profileCode": "23/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "4101",
+    "session": null,
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "locator": "Resolución/plantilla final de PNI23/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2023-4101-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2023-4101-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-1044-psychometric",
+    "examId": "ADIF-2024-1044",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1044",
+    "session": {
+      "date": "2024-11-10",
+      "location": null
+    },
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-1044-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-1044-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-1044-english",
+    "examId": "ADIF-2024-1044",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1044",
+    "session": {
+      "date": "2024-11-10",
+      "location": null
+    },
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-1044-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-1044-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-1044-general",
+    "examId": "ADIF-2024-1044",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1044",
+    "session": {
+      "date": "2024-11-10",
+      "location": null
+    },
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-1044-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-1044-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-2442-psychometric",
+    "examId": "ADIF-2024-2442",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "2442",
+    "session": {
+      "date": "2024-11-10",
+      "location": null
+    },
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-2442-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-2442-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-2442-english",
+    "examId": "ADIF-2024-2442",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "2442",
+    "session": {
+      "date": "2024-11-10",
+      "location": null
+    },
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-2442-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-2442-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-2442-general",
+    "examId": "ADIF-2024-2442",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "2442",
+    "session": {
+      "date": "2024-11-10",
+      "location": null
+    },
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-2442-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-2442-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-3403-psychometric",
+    "examId": "ADIF-2024-3403",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "3403",
+    "session": {
+      "date": "2024-11-24",
+      "location": "Valencia"
+    },
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-3403-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3403-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-3403-english",
+    "examId": "ADIF-2024-3403",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "3403",
+    "session": {
+      "date": "2024-11-24",
+      "location": "Valencia"
+    },
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-3403-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3403-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-3403-general",
+    "examId": "ADIF-2024-3403",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "3403",
+    "session": {
+      "date": "2024-11-24",
+      "location": "Valencia"
+    },
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-3403-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3403-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-3413-psychometric",
+    "examId": "ADIF-2024-3413",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "3413",
+    "session": {
+      "date": "2024-11-24",
+      "location": "Valencia"
+    },
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-3413-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3413-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-3413-english",
+    "examId": "ADIF-2024-3413",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "3413",
+    "session": {
+      "date": "2024-11-24",
+      "location": "Valencia"
+    },
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-3413-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3413-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2024-3413-general",
+    "examId": "ADIF-2024-3413",
+    "year": 2024,
+    "call": "PNI24/01",
+    "profileCode": "24/05PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "3413",
+    "session": {
+      "date": "2024-11-24",
+      "location": "Valencia"
+    },
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "locator": "Resolución/plantilla final de PNI24/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2024-3413-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2024-3413-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2025-1131-psychometric",
+    "examId": "ADIF-2025-1131",
+    "year": 2025,
+    "call": "PNI25/01",
+    "profileCode": "25/10PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1131",
+    "session": null,
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "locator": "Resolución/plantilla final de PNI25/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2025-1131-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-1131-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2025-1131-english",
+    "examId": "ADIF-2025-1131",
+    "year": 2025,
+    "call": "PNI25/01",
+    "profileCode": "25/10PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1131",
+    "session": null,
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "locator": "Resolución/plantilla final de PNI25/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2025-1131-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-1131-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2025-1131-general",
+    "examId": "ADIF-2025-1131",
+    "year": 2025,
+    "call": "PNI25/01",
+    "profileCode": "25/10PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "1131",
+    "session": null,
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "locator": "Resolución/plantilla final de PNI25/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2025-1131-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-1131-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2025-4104-psychometric",
+    "examId": "ADIF-2025-4104",
+    "year": 2025,
+    "call": "PNI25/01",
+    "profileCode": "25/10PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "4104",
+    "session": null,
+    "section": "psychometric",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scoredQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "reserveQuestionNumbers": [
+      16,
+      17,
+      18
+    ],
+    "source": {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "locator": "Resolución/plantilla final de PNI25/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "restricted",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2025-4104-psychometric-Q01",
+        "questionNumber": 1,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q02",
+        "questionNumber": 2,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q03",
+        "questionNumber": 3,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q04",
+        "questionNumber": 4,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q05",
+        "questionNumber": 5,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q06",
+        "questionNumber": 6,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q07",
+        "questionNumber": 7,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q08",
+        "questionNumber": 8,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q09",
+        "questionNumber": 9,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q10",
+        "questionNumber": 10,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q11",
+        "questionNumber": 11,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q12",
+        "questionNumber": 12,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q13",
+        "questionNumber": 13,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q14",
+        "questionNumber": 14,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q15",
+        "questionNumber": 15,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q16",
+        "questionNumber": 16,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q17",
+        "questionNumber": 17,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-4104-psychometric-Q18",
+        "questionNumber": 18,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2025-4104-english",
+    "examId": "ADIF-2025-4104",
+    "year": 2025,
+    "call": "PNI25/01",
+    "profileCode": "25/10PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "4104",
+    "session": null,
+    "section": "english",
+    "questionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "scoredQuestionNumbers": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "reserveQuestionNumbers": [
+      34,
+      35,
+      36
+    ],
+    "source": {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "locator": "Resolución/plantilla final de PNI25/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2025-4104-english-Q19",
+        "questionNumber": 19,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q20",
+        "questionNumber": 20,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q21",
+        "questionNumber": 21,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q22",
+        "questionNumber": 22,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q23",
+        "questionNumber": 23,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q24",
+        "questionNumber": 24,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q25",
+        "questionNumber": 25,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q26",
+        "questionNumber": 26,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q27",
+        "questionNumber": 27,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q28",
+        "questionNumber": 28,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q29",
+        "questionNumber": 29,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q30",
+        "questionNumber": 30,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q31",
+        "questionNumber": 31,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q32",
+        "questionNumber": 32,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q33",
+        "questionNumber": 33,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q34",
+        "questionNumber": 34,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q35",
+        "questionNumber": 35,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-4104-english-Q36",
+        "questionNumber": 36,
+        "isReserve": true
+      }
+    ]
+  },
+  {
+    "id": "ADIF-2025-4104-general",
+    "examId": "ADIF-2025-4104",
+    "year": 2025,
+    "call": "PNI25/01",
+    "profileCode": "25/10PO",
+    "profileName": "Oficial de Telecomunicaciones de Entrada",
+    "examCode": "4104",
+    "session": null,
+    "section": "general",
+    "questionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "scoredQuestionNumbers": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserveQuestionNumbers": [
+      52,
+      53,
+      54
+    ],
+    "source": {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "locator": "PDF p. 1, instrucciones y rangos por bloque según texto indexado oficialmente; descarga directa devuelve 403 y bytes/localizador exacto pendientes de verificación."
+    },
+    "correctionSource": {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "locator": "Resolución/plantilla final de PNI25/01; claves de esta sección no transcritas, localizador exacto pendiente de descarga verificable."
+    },
+    "publicationStatus": "link_only",
+    "publicationReview": null,
+    "questionMetadata": [
+      {
+        "id": "ADIF-2025-4104-general-Q37",
+        "questionNumber": 37,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q38",
+        "questionNumber": 38,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q39",
+        "questionNumber": 39,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q40",
+        "questionNumber": 40,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q41",
+        "questionNumber": 41,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q42",
+        "questionNumber": 42,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q43",
+        "questionNumber": 43,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q44",
+        "questionNumber": 44,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q45",
+        "questionNumber": 45,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q46",
+        "questionNumber": 46,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q47",
+        "questionNumber": 47,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q48",
+        "questionNumber": 48,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q49",
+        "questionNumber": 49,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q50",
+        "questionNumber": 50,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q51",
+        "questionNumber": 51,
+        "isReserve": false
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q52",
+        "questionNumber": 52,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q53",
+        "questionNumber": 53,
+        "isReserve": true
+      },
+      {
+        "id": "ADIF-2025-4104-general-Q54",
+        "questionNumber": 54,
+        "isReserve": true
+      }
+    ]
+  }
+]

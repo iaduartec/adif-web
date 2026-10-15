@@ -27,6 +27,7 @@ import {
   isHistoricalSyllabusScopeVerified,
   validateHistoricalQuestionMappings,
 } from "../lib/content/official-question-validity";
+import { parseOfficialCommonSectionCatalog } from "../lib/content/official-common-sections";
 
 const optionKeys = ["A", "B", "C", "D"] as const;
 const questionNumbers = z.number().int().min(1).max(99);
@@ -493,6 +494,8 @@ const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(scriptDirectory, "..");
 const officialExamsDirectory = path.join(repositoryRoot, "content", "official-exams");
 const manifestPath = path.join(officialExamsDirectory, "manifest.json");
+const commonSectionsPath = path.join(officialExamsDirectory, "common-sections.json");
+const englishTopicsPath = path.join(officialExamsDirectory, "english-topics.json");
 const correctionDirectory = path.join(officialExamsDirectory, "corrections");
 const transcriptionsDirectory = path.join(officialExamsDirectory, "transcriptions");
 const sourceManifestPath = path.join(repositoryRoot, "content", "source-manifest.json");
@@ -554,6 +557,8 @@ function toFingerprint(text: string): string {
 
 export async function importOfficialExamContent(): Promise<ImportedOfficialExamContent> {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as unknown;
+  const commonSections = JSON.parse(await readFile(commonSectionsPath, "utf8")) as unknown;
+  const englishTopics = JSON.parse(await readFile(englishTopicsPath, "utf8")) as unknown;
   const correctionFiles = (await readdir(correctionDirectory, { withFileTypes: true }))
     .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
     .map((entry) => entry.name)
@@ -573,6 +578,12 @@ export async function importOfficialExamContent(): Promise<ImportedOfficialExamC
     locatorPolicy: source.locatorPolicy,
     rightsBasis: source.rightsBasis,
   }));
+  parseOfficialCommonSectionCatalog({
+    commonSections,
+    englishTopics,
+    manifest,
+    sources: sourceRegistry,
+  });
   const transcriptionFiles = (await readdir(transcriptionsDirectory, { withFileTypes: true }))
     .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
     .map((entry) => entry.name)
