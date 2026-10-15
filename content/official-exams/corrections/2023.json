@@ -1,0 +1,17 @@
+{
+  "year": 2023,
+  "call": "PNI23/01",
+  "profileCode": "23/05PO",
+  "profileName": "Oficial de Telecomunicaciones de Entrada",
+  "examIds": ["ADIF-2023-1433", "ADIF-2023-4101"],
+  "reconciliationStatus": "verified_no_changes",
+  "resolutionSource": {
+    "sourceId": "ADIF PNI23/01 tribunal resolution",
+    "sourceVersion": "tribunal-resolution-2023-11-27",
+    "sourceUrl": "https://www.adif.es/documents/20124/17165113/%2827.11.2023%29%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/ee76d603-4125-febc-93f3-23c0da2cb0e1",
+    "locator": "PDF pp. 4-5/18: alegaciones presentadas y estimadas para 23/05PO; no se estima ninguna de los formularios 1433 ni 4101."
+  },
+  "publicationStatus": "link_only",
+  "publicationReview": null,
+  "corrections": []
+}
