@@ -4,8 +4,8 @@ import vitestConfig from "../vitest.config";
 
 describe("repository hygiene", () => {
   it("excludes orphan worktree snapshots from Vitest discovery", () => {
-    expect(vitestConfig.test.exclude).toContain("**/.worktrees/**");
-    expect(vitestConfig.test.exclude).toContain("**/worktrees/**");
+    expect(vitestConfig.test?.exclude ?? []).toContain("**/.worktrees/**");
+    expect(vitestConfig.test?.exclude ?? []).toContain("**/worktrees/**");
   });
 
   it("ignores the generated TypeScript incremental cache instead of tracking it", () => {
