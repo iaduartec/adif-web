@@ -1,0 +1,62 @@
+{
+  "call": "PNI26/01",
+  "profileCode": "26/12PO",
+  "profileName": "Oficial de Telecomunicaciones de Entrada",
+  "asOf": "2026-10-14",
+  "notice": {
+    "sourceId": "ADIF PNI26/01",
+    "sourceVersion": "page-2026-10-14",
+    "publicationDate": "2026-10-14"
+  },
+  "facts": {
+    "callDate": {
+      "value": "2026-07-14",
+      "status": "announced",
+      "evidence": {
+        "sourceId": "ADIF PNI26/01",
+        "sourceVersion": "page-2026-10-14",
+        "locator": "Datos principales → Fecha de convocatoria"
+      }
+    },
+    "totalPositions": {
+      "value": 1079,
+      "status": "announced",
+      "evidence": {
+        "sourceId": "ADIF PNI26/01",
+        "sourceVersion": "page-2026-10-14",
+        "locator": "Datos principales → Número total de plazas"
+      }
+    },
+    "examDate": {
+      "value": "2026-12-12",
+      "status": "provisional",
+      "evidence": {
+        "sourceId": "ADIF PNI26/01",
+        "sourceVersion": "page-2026-10-14",
+        "locator": "Prueba selectiva → fecha prevista; ADIF indica que hora y distribución se confirmarán"
+      }
+    },
+    "sites": {
+      "value": [
+        "Barcelona",
+        "León",
+        "Madrid",
+        "Sevilla"
+      ],
+      "status": "announced",
+      "evidence": {
+        "sourceId": "ADIF PNI26/01",
+        "sourceVersion": "page-2026-10-14",
+        "locator": "Prueba selectiva → sedes anunciadas"
+      }
+    },
+    "positionsByProfile": {
+      "26/12PO": {
+        "value": 57,
+        "status": "unverified",
+        "evidence": null,
+        "note": "Cifra de partida no confirmada en una fuente primaria ADIF con localizador verificable."
+      }
+    }
+  }
+}

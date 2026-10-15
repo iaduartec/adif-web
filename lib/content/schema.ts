@@ -7,6 +7,11 @@ export const contentOriginSchema = z.enum([
   "original_explanation",
 ]);
 
+/** Lowercase SHA-256 digest without an algorithm prefix. */
+export const sha256DigestSchema = z.string().regex(/^[a-f0-9]{64}$/i, {
+  message: "Expected a 64-character SHA-256 digest.",
+});
+
 export type ContentOrigin = z.infer<typeof contentOriginSchema>;
 
 export const verificationStatusSchema = z.enum([

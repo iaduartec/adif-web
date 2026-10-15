@@ -2,6 +2,7 @@ import { pathToFileURL } from "node:url";
 
 import { lessonTheories } from "../content/lesson-theory";
 import type { LegalReference, TheorySection } from "../content/theory-types";
+import { validateSourceReference } from "../lib/content/source-manifest";
 
 // Domains accepted for legal/official references. Only hosts actually used by
 // the theory sources: BOE (normativa), ADIF (documentos institucionales) and
@@ -294,6 +295,14 @@ export function validateTheoryReferences(theories: Record<string, TheorySection>
       }
       if (!source.sourceTitle || typeof source.sourceTitle !== "string" || source.sourceTitle.trim() === "") {
         errors.push(`[${name}] Error in source[${idx}] (${source.id}): missing/invalid 'sourceTitle'`);
+      }
+
+      for (const error of validateSourceReference({
+        sourceId: source.sourceId,
+        sourceVersion: source.sourceVersion,
+        sourceUrl: source.sourceUrl,
+      })) {
+        errors.push(`[${name}] Error in source[${idx}] (${source.id}): ${error}`);
       }
 
       // 3. Verify locator

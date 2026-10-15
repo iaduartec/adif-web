@@ -28,6 +28,8 @@ export type LegalReference = {
   /** Stable, globally unique ID — e.g. `lo3-2007-art6-2` */
   id: string;
   sourceId: string;
+  /** Versioned manifest entry; optional while older theory modules are migrated. */
+  sourceVersion?: string;
   sourceTitle: string;
   sourceUrl: string;
   /** Human-readable locator — e.g. `Art. 6.2` */
