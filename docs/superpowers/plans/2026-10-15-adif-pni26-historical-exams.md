@@ -68,6 +68,7 @@
 **Files:**
 - Modify: `content/official-exams/manifest.json`
 - Modify: `content/source-manifest.json`
+- Modify: `lib/content/source-manifest.ts`
 - Modify: `tests/source-manifest.test.ts`
 - Modify: `content/official-exams/transcriptions/2023-1433.json`
 - Modify: `content/official-exams/transcriptions/2023-4101.json`
@@ -79,20 +80,32 @@
 - Modify: `content/official-exams/transcriptions/2025-4104.json`
 - Modify: `scripts/import-official-exams.ts`
 - Modify: `tests/official-content-importer.test.ts`
+- Create: `lib/content/official-exam-manifest.ts`
+- Create: `lib/content/official-exam-catalog.ts`
+- Modify: `tests/official-corrections.test.ts`
+- Create: `lib/content/official-publication.ts`
+- Modify: `lib/content/repository.ts`
+- Modify: `lib/content/public-dto.ts`
+- Modify: `app/(dashboard)/tests/page.tsx`
+- Modify: `app/(dashboard)/simulacros/page.tsx`
+- Modify: `app/(dashboard)/simulacros/[id]/page.tsx`
+- Modify: `app/(dashboard)/errores/page.tsx`
+- Create: `tests/withheld-question-bank.test.tsx`
+- Modify: behavior tests to use an explicit publication-cleared fixture; the production publication gate remains unmocked in gate tests.
 - Create: `supabase/migrations/202610150002_official_question_publication_gate.sql`
 - Create: `supabase/tests/official_question_publication_gate.sql`
 
 **Interfaces:**
 - Imported question source contains `initialAnswer`, `effectiveAnswer`, `correctionSource`, `validity`, and `publicationStatus` in addition to the existing official source fields.
 - `validity = "current" | "changed" | "out_of_scope" | "pending_review"`.
-- Add the six 2023–2025 official booklet/final-resolution documents to the hash/versioned primary source manifest, with exact source identity and verified page locators for scoring rules. A 403 or unverified hash keeps the historical exact-mode gate closed.
+- Register the six 2023–2025 official booklet/final-resolution documents in the versioned primary source manifest with exact identity and locators. Direct ADIF PDF requests returned 403 HTML responses, not PDFs; their hashes and exact page checks therefore remain unresolved and historical exact-mode stays closed.
 - All official prompt/options default to link-only or review-pending until a scoped, evidence-backed public-text review approves them. Keep source metadata and learner history, but withhold non-approved text from public DTOs, ordinary practice and simulator banks.
 
-- [ ] **Step 1: Add failing importer/SQL tests** for final-key precedence, reserve flags, exact form identity, missing tribunal evidence, text suppression until an evidence-backed public-use decision exists, and inactive private answer-registry entries for all official questions without approved public-text status. Reject approval if evidence references an unknown/unverified source/version, lacks an exact locator, or only permits metadata use.
-- [ ] **Step 2: Run** `pnpm exec vitest run tests/official-content-importer.test.ts`; expected FAIL.
-- [ ] **Step 3: Update** all eight specific-form transcriptions from published final resolutions, creating the missing 2024 forms 1044/2442 and keeping the two 2024 sessions separate. Preserve initial answers and apply the two annulments as final effective answers of `null`; do not infer a reserve replacement. Keep prompt/options/keys out of public results unless the rights decision permits public question text. The psychometric text remains excluded from transcription/publication.
-- [ ] **Step 4: Implement** importer and public-repository gating. Resolve every correction and publication-evidence reference against the live `source-manifest.json`, then call `validateOfficialCorrectionSets` before importing or applying a correction; schema parsing alone is not an evidence gate. Keep all non-approved official records unavailable to default practice and composite banks. Generate a forward-only migration that disables uncleared private keys while preserving every attempt/history row. Later rights changes require new forward-only migrations.
-- [ ] **Step 5: Run** focused importer/content tests, `supabase test db`, and (after local `supabase start` / `supabase db reset`) `psql "postgresql://postgres:postgres@127.0.0.1:54322/postgres" -v ON_ERROR_STOP=1 -f supabase/tests/official_question_publication_gate.sql`, followed by `pnpm content:import-official`; expected PASS with all eight specific Telecom forms identifiable, corrected keys applied, and no uncleared public text or active private key.
+- [x] **Step 1: Add failing importer/SQL tests** for final-key precedence, reserve flags, exact form identity, missing tribunal evidence, text suppression until an evidence-backed public-use decision exists, and inactive private answer-registry entries for all official questions without approved public-text status. Reject approval if evidence references an unknown/unverified source/version, lacks an exact locator, cites an ordinary booklet instead of a source registered for that rights basis, or only permits metadata use. Add server-rendered tests for withheld text, preserved learner history, and all eight metadata cards without opening uncleared exams.
+- [x] **Step 2: Run** `pnpm exec vitest run tests/official-content-importer.test.ts`; initial expected failures confirmed the publication gate was missing. After implementation, the focused suite passed; broader suites are tracked in final verification.
+- [ ] **Step 3: Reconcile** all eight forms and the two 2024 annulments against the published resolutions. The form/session inventory and correction metadata are registered, and existing local transcriptions remain preserved, but the PDFs could not be fetched as PDF bytes (ADIF returned 403 HTML). Do not claim the raw question text or page references were newly verified; keep exact-source hashes and question-text publication pending.
+- [x] **Step 4: Implement** importer and public-repository gating. Resolve correction and publication evidence against `source-manifest.json`, require the source to be explicitly registered for the declared rights basis, validate reserve flags against the manifest, reject future review dates and source snapshots/downloads, enforce download-before-verification-before-snapshot chronology, hide all non-approved records from practice and public DTOs, preserve raw records and learner history, expose all eight form records as metadata-only catalog cards, and add a forward-only migration to deactivate uncleared private keys without deleting attempts. The tests use a publication-cleared fixture only for flow mechanics; the real gate is tested without a mock.
+- [ ] **Step 5: Verify external data gates.** Full local verification: `pnpm exec vitest run` (468 passed), `pnpm typecheck`, `pnpm lint` (two existing warnings), `pnpm verify:content`, and `pnpm build` passed. `pnpm content:import-official` correctly exits nonzero while tribunal sources are unresolved; SHA-256 hashes of `content/questions.json`, `content/exams.json`, and `content/official-exams/import-report.json` were identical before/after. Supabase CLI and `psql` are unavailable, so `supabase test db` and the SQL test were not executed. Do not mark this step passed until source/rights evidence and local database execution are available.
 - [ ] **Step 6: Commit** with `git add content/official-exams/manifest.json content/official-exams/transcriptions/2023-1433.json content/official-exams/transcriptions/2023-4101.json content/official-exams/transcriptions/2024-1044.json content/official-exams/transcriptions/2024-2442.json content/official-exams/transcriptions/2024-3403.json content/official-exams/transcriptions/2024-3413.json content/official-exams/transcriptions/2025-1131.json content/official-exams/transcriptions/2025-4104.json content/source-manifest.json tests/source-manifest.test.ts scripts/import-official-exams.ts tests/official-content-importer.test.ts supabase/migrations/202610150002_official_question_publication_gate.sql supabase/tests/official_question_publication_gate.sql && git commit -m "feat: reconcile official ADIF exam keys"`.
 
 ### Task 3: Map every imported question to 2026 validity

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
+import { readFile } from "node:fs/promises";
 
-import { parseOfficialExamTranscriptions } from "../scripts/import-official-exams";
+import { importOfficialExamContent, parseOfficialExamTranscriptions } from "../scripts/import-official-exams";
+import type { CorrectionSourceRecord } from "../lib/content/official-corrections";
 
 const manifestEntry = {
   id: "ADIF-2025-1131",
@@ -10,11 +12,59 @@ const manifestEntry = {
   profileName: "Oficial de Telecomunicaciones de Entrada",
   examCode: "1131",
   documentUrl: "https://www.adif.es/documents/20124/45240815/examen.pdf",
+  documentSourceId: "ADIF PNI25/01 initial booklet",
+  documentSourceVersion: "initial-booklet-2025-11-18",
+  initialAnswerKeySourceId: "ADIF PNI25/01 initial booklet",
+  initialAnswerKeySourceVersion: "initial-booklet-2025-11-18",
+  initialAnswerKeyPage: 6,
+  finalAnswerKeySourceId: "ADIF PNI25/01 tribunal resolution",
+  finalAnswerKeySourceVersion: "tribunal-resolution-2025-12-02",
+  finalAnswerKeyPage: 9,
   durationMinutes: 120,
   expectedQuestionNumbers: [1, 2],
+  reserveQuestionNumbers: [] as number[],
+  transcriptionStatus: "complete" as const,
   completeness: "complete" as "complete" | "specific_part",
   scoring: { correct: 1, incorrect: -1 / 3, omitted: 0 },
 };
+
+const resolutionUrl = "https://www.adif.es/documents/20124/45240815/resolucion.pdf";
+const resolutionSource = {
+  sourceId: "ADIF PNI25/01 tribunal resolution",
+  sourceVersion: "tribunal-resolution-2025-12-02",
+  sourceUrl: resolutionUrl,
+  locator: "PDF p. 9/16, plantilla definitiva 25/10PO, formulario 1131.",
+};
+const correctionSet = {
+  year: 2025,
+  call: "PNI25/01",
+  profileCode: "25/10PO",
+  profileName: "Oficial de Telecomunicaciones de Entrada",
+  examIds: ["ADIF-2025-1131"],
+  reconciliationStatus: "verified_no_changes" as const,
+  resolutionSource,
+  publicationStatus: "link_only" as const,
+  publicationReview: null,
+  corrections: [],
+};
+const sourceRegistry: CorrectionSourceRecord[] = [
+  {
+    sourceId: manifestEntry.documentSourceId,
+    sourceVersion: manifestEntry.documentSourceVersion,
+    url: manifestEntry.documentUrl,
+    sourceType: "primary" as const,
+    status: "verified" as const,
+    locatorPolicy: "exact" as const,
+  },
+  {
+    sourceId: resolutionSource.sourceId,
+    sourceVersion: resolutionSource.sourceVersion,
+    url: resolutionUrl,
+    sourceType: "primary" as const,
+    status: "verified" as const,
+    locatorPolicy: "exact" as const,
+  },
+];
 
 const question = {
   section: "specific" as const,
@@ -50,10 +100,22 @@ function validInput() {
         ],
       },
     ],
+    correctionSets: [structuredClone(correctionSet)],
+    sourceRegistry: sourceRegistry.map((entry) => ({ ...entry })),
   };
 }
 
 describe("official ADIF exam importer", () => {
+  it("keeps the production import closed and leaves generated content untouched while ADIF PDFs are unverified", async () => {
+    const targets = ["content/questions.json", "content/exams.json", "content/official-exams/import-report.json"];
+    const before = await Promise.all(targets.map((file) => readFile(file, "utf8")));
+
+    await expect(importOfficialExamContent()).rejects.toThrow(/Correction evidence validation failed|verified primary source/i);
+
+    const after = await Promise.all(targets.map((file) => readFile(file, "utf8")));
+    expect(after).toEqual(before);
+  });
+
   it("creates stable official IDs and SHA-256 fingerprints", () => {
     const first = parseOfficialExamTranscriptions(validInput());
     const second = parseOfficialExamTranscriptions(validInput());
@@ -80,6 +142,143 @@ describe("official ADIF exam importer", () => {
     ]);
   });
 
+  it("returns initial and effective answers with exact versioned provenance and a closed publication status", () => {
+    const result = parseOfficialExamTranscriptions(validInput());
+
+    expect(result.questions[0]).toMatchObject({
+      initialAnswer: "A",
+      effectiveAnswer: "A",
+      correctionSource: null,
+      validity: "pending_review",
+      publicationStatus: "link_only",
+      provenance: {
+        booklet: {
+          sourceId: "ADIF PNI25/01 initial booklet",
+          sourceVersion: "initial-booklet-2025-11-18",
+          locator: "PDF p. 61",
+        },
+        initialAnswerKey: {
+          sourceId: "ADIF PNI25/01 initial booklet",
+          sourceVersion: "initial-booklet-2025-11-18",
+          locator: "PDF p. 6",
+        },
+        tribunalResolution: resolutionSource,
+      },
+    });
+  });
+
+  it("rejects reserve flags that contradict the form manifest", () => {
+    const input = validInput();
+    input.transcriptions[0].questions[0].isReserve = true;
+
+    expect(() => parseOfficialExamTranscriptions(input)).toThrow(/reserve metadata does not match/i);
+
+    const missingReserveFlag = validInput();
+    missingReserveFlag.manifest[0] = { ...manifestEntry, reserveQuestionNumbers: [1] };
+    expect(() => parseOfficialExamTranscriptions(missingReserveFlag)).toThrow(/reserve metadata does not match/i);
+  });
+
+  it("rejects a source registry whose tribunal resolution is unverified before importing", () => {
+    const input = validInput();
+    input.sourceRegistry[1] = { ...sourceRegistry[1], status: "needs_check" };
+
+    expect(() => parseOfficialExamTranscriptions(input)).toThrow(/verified|unresolved/i);
+  });
+
+  it("applies the verified 2024 annulment without inventing a reserve replacement", () => {
+    const bookletUrl = "https://www.adif.es/documents/20124/33942288/cuadernillo.pdf";
+    const annulmentResolutionUrl = "https://www.adif.es/documents/20124/33942288/resolucion.pdf";
+    const annulmentLocator = "PDF p. 11/31, plantilla final 24/05PO, formulario 1044, pregunta 6: ANULADA.";
+    const input = {
+      manifest: [{
+        id: "ADIF-2024-1044",
+        year: 2024,
+        call: "PNI24/01",
+        profileCode: "24/05PO",
+        profileName: "Oficial de Telecomunicaciones de Entrada",
+        examCode: "1044",
+        documentUrl: bookletUrl,
+        documentSourceId: "ADIF PNI24/01 initial booklet",
+        documentSourceVersion: "initial-booklet-2024-11-25",
+        initialAnswerKeySourceId: "ADIF PNI24/01 initial booklet",
+        initialAnswerKeySourceVersion: "initial-booklet-2024-11-25",
+        initialAnswerKeyPage: 6,
+        finalAnswerKeySourceId: "ADIF PNI24/01 tribunal resolution",
+        finalAnswerKeySourceVersion: "tribunal-resolution-2024-12-16",
+        finalAnswerKeyPage: 11,
+        durationMinutes: 15,
+        expectedQuestionNumbers: [6],
+        reserveQuestionNumbers: [],
+        transcriptionStatus: "complete" as const,
+        completeness: "specific_part" as const,
+        scoring: { correct: 1, incorrect: -1 / 3, omitted: 0 },
+      }],
+      transcriptions: [{
+        examId: "ADIF-2024-1044",
+        questions: [{ number: 6, ...question, answerKeyPage: 6, answer: "C" as const }],
+      }],
+      correctionSets: [{
+        year: 2024,
+        call: "PNI24/01",
+        profileCode: "24/05PO",
+        profileName: "Oficial de Telecomunicaciones de Entrada",
+        examIds: ["ADIF-2024-1044"],
+        reconciliationStatus: "verified_with_changes" as const,
+        resolutionSource: {
+          sourceId: "ADIF PNI24/01 tribunal resolution",
+          sourceVersion: "tribunal-resolution-2024-12-16",
+          sourceUrl: annulmentResolutionUrl,
+          locator: "PDF pp. 6 y 11/31: alegaciones estimadas y plantilla final 24/05PO.",
+        },
+        publicationStatus: "link_only" as const,
+        publicationReview: null,
+        corrections: [{
+          examId: "ADIF-2024-1044",
+          questionNumber: 6,
+          initialAnswer: "C" as const,
+          finalAnswer: null,
+          action: "annulled" as const,
+          replacementQuestionNumber: null,
+          correctionSource: {
+            sourceId: "ADIF PNI24/01 tribunal resolution",
+            sourceVersion: "tribunal-resolution-2024-12-16",
+            sourceUrl: annulmentResolutionUrl,
+            locator: annulmentLocator,
+          },
+        }],
+      }],
+      sourceRegistry: [
+        {
+          sourceId: "ADIF PNI24/01 initial booklet",
+          sourceVersion: "initial-booklet-2024-11-25",
+          url: bookletUrl,
+          sourceType: "primary" as const,
+          status: "verified" as const,
+          locatorPolicy: "exact" as const,
+        },
+        {
+          sourceId: "ADIF PNI24/01 tribunal resolution",
+          sourceVersion: "tribunal-resolution-2024-12-16",
+          url: annulmentResolutionUrl,
+          sourceType: "primary" as const,
+          status: "verified" as const,
+          locatorPolicy: "exact" as const,
+        },
+      ],
+    };
+
+    const result = parseOfficialExamTranscriptions(input);
+
+    expect(result.questions[0]).toMatchObject({
+      id: "ADIF-2024-1044-Q06",
+      answer: "C",
+      initialAnswer: "C",
+      effectiveAnswer: null,
+      replacementQuestionNumber: null,
+      correctionSource: { sourceId: "ADIF PNI24/01 tribunal resolution", locator: annulmentLocator },
+    });
+  });
+
   it("rejects mappings to concepts outside the active registry", () => {
     const input = validInput();
     input.transcriptions[0].questions[0].conceptIds = ["missing-concept"];
@@ -88,20 +287,16 @@ describe("official ADIF exam importer", () => {
   });
 
   it("rejects a duplicate year, model, and question number", () => {
-    expect(() =>
-      parseOfficialExamTranscriptions({
-        manifest: [manifestEntry],
-        transcriptions: [
-          {
-            examId: "ADIF-2025-1131",
-            questions: [
-              { number: 1, ...question },
-              { number: 1, ...question },
-            ],
-          },
-        ],
-      }),
-    ).toThrow(/duplicate/i);
+    const input = validInput();
+    input.transcriptions = [{
+      examId: "ADIF-2025-1131",
+      questions: [
+        { number: 1, ...question },
+        { number: 1, ...question },
+      ],
+    }];
+
+    expect(() => parseOfficialExamTranscriptions(input)).toThrow(/duplicate/i);
   });
 
   it("rejects a question without four options or an answer key", () => {
@@ -154,8 +349,10 @@ describe("official ADIF exam importer", () => {
   });
 
   it("rejects unexpected specific-part numbers from publication and reports their real count", () => {
-    const input = validInput();
-    input.manifest[0] = { ...manifestEntry, completeness: "specific_part" };
+    const input = {
+      ...validInput(),
+      manifest: [{ ...manifestEntry, completeness: "specific_part" as const, transcriptionStatus: "partial" as const }],
+    };
     input.transcriptions[0].questions[1] = {
       number: 3,
       ...question,

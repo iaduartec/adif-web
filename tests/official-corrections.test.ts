@@ -88,6 +88,7 @@ const verifiedSources: CorrectionSourceRecord[] = [
     status: "verified",
     locatorPolicy: "exact",
     url: "https://www.adif.es/documents/20124/45240815/rights-review.pdf",
+    rightsBasis: "documented_legal_review",
   },
 ];
 
@@ -322,6 +323,29 @@ describe("official question publication gate", () => {
 
   it("accepts publication only with a dated, exact, verified source and text-use decision", () => {
     expect(validatePublicationStatus("approved_for_publication", review, verifiedSources)).toEqual([]);
+  });
+
+  it("rejects a publication review dated after the evaluation date", () => {
+    const futureReview: PublicationReview = { ...review, reviewedAt: "2026-10-16" };
+
+    expect(
+      validatePublicationStatus("approved_for_publication", futureReview, verifiedSources, "2026-10-15").join("\n"),
+    ).toContain("review date is later than the evaluation date");
+  });
+
+  it("rejects a verified booklet or answer-key source as rights-review evidence", () => {
+    const unrelatedSourceReview: PublicationReview = {
+      ...review,
+      evidence: {
+        ...review.evidence,
+        sourceId: sourceReference.sourceId,
+        sourceVersion: sourceReference.sourceVersion,
+      },
+    };
+
+    expect(
+      validatePublicationStatus("approved_for_publication", unrelatedSourceReview, verifiedSources).join("\n"),
+    ).toContain("not registered for the declared rights basis");
   });
 
   it("does not allow an approved review to be hidden behind a pending publication status", () => {

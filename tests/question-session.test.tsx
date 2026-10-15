@@ -4,6 +4,14 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { QuestionSession, type PracticeQuestion } from "../components/practice/question-session";
 import { listOfficialQuestions } from "../lib/content/repository";
 
+// These behavior tests use a publication-cleared fixture; the real closed gate is covered separately.
+vi.mock("../lib/content/official-publication", () => ({
+  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
+  isOfficialQuestionPracticeEligible: () => true,
+  isOfficialExamPracticeEligible: () => true,
+  validateOfficialPublicationData: () => [],
+}));
+
 const officialQuestion = listOfficialQuestions({ ids: ["ADIF-2025-1131-Q01"] })[0]!;
 const { answer: _answer, ...practiceQuestion } = officialQuestion;
 const questions: PracticeQuestion[] = [practiceQuestion];

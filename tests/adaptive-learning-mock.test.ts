@@ -2,6 +2,14 @@ import { describe, expect, it, vi } from "vitest";
 
 import type { Database } from "../lib/database.types";
 import { createMockSupabaseClient } from "../lib/supabase/mock-client";
+
+// Exercise the learning flows against a deliberately cleared historical-bank fixture.
+vi.mock("../lib/content/official-publication", () => ({
+  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
+  isOfficialQuestionPracticeEligible: () => true,
+  isOfficialExamPracticeEligible: () => true,
+  validateOfficialPublicationData: () => [],
+}));
 import { getMockStore } from "../lib/supabase/mock-store";
 import { getOfficialExam } from "../lib/content/repository";
 import { activeTheoryConceptRegistry } from "../content/theory-concepts";

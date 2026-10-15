@@ -7,6 +7,31 @@ export const contentOriginSchema = z.enum([
   "original_explanation",
 ]);
 
+export const publicationStatusSchema = z.enum([
+  "link_only",
+  "review_pending",
+  "approved_for_publication",
+  "restricted",
+]);
+
+export const officialQuestionValiditySchema = z.enum([
+  "current",
+  "changed",
+  "out_of_scope",
+  "pending_review",
+]);
+
+export const correctionSourceReferenceSchema = z
+  .object({
+    sourceId: z.string().trim().min(1),
+    sourceVersion: z.string().trim().min(1),
+    sourceUrl: z.url().refine((url) => new URL(url).hostname === "www.adif.es"),
+    locator: z.string().trim().min(1),
+  })
+  .strict();
+
+const answerKeySchema = z.enum(["A", "B", "C", "D"]);
+
 /** Lowercase SHA-256 digest without an algorithm prefix. */
 export const sha256DigestSchema = z.string().regex(/^[a-f0-9]{64}$/i, {
   message: "Expected a 64-character SHA-256 digest.",
@@ -128,7 +153,7 @@ export const officialQuestionSourceSchema = z
   })
   .strict();
 
-export const officialQuestionSchema = z
+const officialQuestionRecordSchema = z
   .object({
     id: z.string().regex(/^ADIF-\d{4}-\d{4}-Q\d{2}$/),
     sectionLabel: z.string().trim().min(1),
@@ -144,11 +169,28 @@ export const officialQuestionSchema = z
         { message: "Official questions may only reference active theory concepts." },
       ),
     options: z.array(optionSchema).length(4),
-    answer: z.enum(["A", "B", "C", "D"]),
+    answer: answerKeySchema,
+    initialAnswer: answerKeySchema.optional(),
+    effectiveAnswer: answerKeySchema.nullable().optional(),
+    correctionSource: correctionSourceReferenceSchema.nullable().optional(),
+    replacementQuestionNumber: z.number().int().min(1).max(99).nullable().optional(),
+    validity: officialQuestionValiditySchema.optional(),
+    publicationStatus: publicationStatusSchema.optional(),
     origin: z.literal("official_reference"),
     source: officialQuestionSourceSchema,
   })
-  .strict()
+  .strict();
+
+export const officialQuestionSchema = officialQuestionRecordSchema
+  .transform((question) => ({
+    ...question,
+    initialAnswer: question.initialAnswer ?? question.answer,
+    effectiveAnswer: question.effectiveAnswer ?? null,
+    correctionSource: question.correctionSource ?? null,
+    replacementQuestionNumber: question.replacementQuestionNumber ?? null,
+    validity: question.validity ?? "pending_review" as const,
+    publicationStatus: question.publicationStatus ?? "link_only" as const,
+  }))
   .superRefine((question, context) => {
     const optionKeys = question.options.map((option) => option.key);
     const requiredKeys = ["A", "B", "C", "D"] as const;
@@ -180,6 +222,34 @@ export const officialQuestionSchema = z
         code: "custom",
         path: ["id"],
         message: "The question ID must match its official source metadata.",
+      });
+    }
+
+    if (
+      question.effectiveAnswer !== null &&
+      question.answer !== question.effectiveAnswer
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["answer"],
+        message: "A non-null effective answer must match the question answer used for scoring.",
+      });
+    }
+    if (question.effectiveAnswer === null && question.answer !== question.initialAnswer) {
+      context.addIssue({
+        code: "custom",
+        path: ["answer"],
+        message: "A question without a verified effective answer must retain its initial key only.",
+      });
+    }
+    if (
+      question.publicationStatus === "approved_for_publication" &&
+      (question.validity !== "current" || question.effectiveAnswer === null)
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["publicationStatus"],
+        message: "A published practice question must be current and have an effective answer.",
       });
     }
   });
@@ -221,13 +291,6 @@ export const officialExamSchema = z
     }
   });
 
-export const publicationStatusSchema = z.enum([
-  "link_only",
-  "review_pending",
-  "approved_for_publication",
-  "restricted",
-]);
-
 const isCalendarDate = (value: string): boolean => {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
   if (!match) return false;
@@ -239,15 +302,6 @@ const isCalendarDate = (value: string): boolean => {
     date.getUTCDate() === Number(day)
   );
 };
-
-export const correctionSourceReferenceSchema = z
-  .object({
-    sourceId: z.string().trim().min(1),
-    sourceVersion: z.string().trim().min(1),
-    sourceUrl: z.url().refine((url) => new URL(url).hostname === "www.adif.es"),
-    locator: z.string().trim().min(1),
-  })
-  .strict();
 
 export const officialCorrectionSchema = z
   .object({

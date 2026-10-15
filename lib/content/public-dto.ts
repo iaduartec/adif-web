@@ -3,10 +3,14 @@ import type {
   OfficialQuestion,
   OfficialQuestionSource,
 } from "./schema";
+import { isOfficialQuestionPracticeEligible } from "./official-publication";
 
 export type PublicOfficialQuestionSource = Omit<OfficialQuestionSource, "fingerprint">;
 
-export type PublicOfficialQuestion = Omit<OfficialQuestion, "answer" | "source"> & {
+export type PublicOfficialQuestion = Omit<
+  OfficialQuestion,
+  "answer" | "initialAnswer" | "effectiveAnswer" | "correctionSource" | "replacementQuestionNumber" | "source"
+> & {
   source: PublicOfficialQuestionSource;
 };
 
@@ -32,13 +36,17 @@ function toPublicOfficialSource(source: OfficialQuestionSource): PublicOfficialQ
   };
 }
 
-export function toPublicOfficialQuestion(question: OfficialQuestion): PublicOfficialQuestion {
+export function toPublicOfficialQuestion(question: OfficialQuestion): PublicOfficialQuestion | null {
+  if (!isOfficialQuestionPracticeEligible(question)) return null;
+
   return {
     id: question.id,
     sectionLabel: question.sectionLabel,
     prompt: question.prompt,
     conceptIds: question.conceptIds,
     options: question.options,
+    validity: question.validity,
+    publicationStatus: question.publicationStatus,
     origin: question.origin,
     source: toPublicOfficialSource(question.source),
   };

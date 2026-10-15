@@ -24,7 +24,9 @@ export default async function SimulationDetailPage({ params }: { params: Promise
   const questions: PublicOfficialQuestion[] = exam.questionIds.map((questionId) => {
     const question = getOfficialQuestion(questionId);
     if (!question) throw new Error(`Pregunta oficial ${questionId} no encontrada.`);
-    return toPublicOfficialQuestion(question);
+    const publicQuestion = toPublicOfficialQuestion(question);
+    if (!publicQuestion) notFound();
+    return publicQuestion;
   });
 
   return (

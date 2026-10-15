@@ -49,6 +49,7 @@ export const sourceManifestEntrySchema = z
       .strict(),
     sha256: sha256DigestSchema.nullable(),
     hashTarget: z.enum(["downloaded-page", "downloaded-file", "local-snapshot"]).nullable(),
+    rightsBasis: z.enum(["explicit_license", "written_permission", "documented_legal_review"]).optional(),
     etag: z.string().trim().min(1).optional(),
     lastModified: z.string().trim().min(1).optional(),
     locatorPolicy: z.enum(["document-level", "section", "exact"]),
@@ -58,6 +59,18 @@ export const sourceManifestEntrySchema = z
   })
   .strict()
   .superRefine((source, context) => {
+    if (
+      source.downloadedAt !== null &&
+      source.verifiedAt !== null &&
+      source.downloadedAt > source.verifiedAt
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["downloadedAt"],
+        message: "Source download date is later than verification date.",
+      });
+    }
+
     if (source.status === "verified") {
       if (source.sha256 === null) {
         context.addIssue({ code: "custom", path: ["sha256"], message: "Verified sources require a SHA-256 hash." });
@@ -128,6 +141,22 @@ export const sourceManifestSchema = z
         });
       }
       identities.add(identity);
+
+      if (source.downloadedAt !== null && source.downloadedAt > manifest.generatedAt) {
+        context.addIssue({
+          code: "custom",
+          path: ["sources", index, "downloadedAt"],
+          message: "Source download date is later than manifest snapshot date.",
+        });
+      }
+
+      if (source.verifiedAt !== null && source.verifiedAt > manifest.generatedAt) {
+        context.addIssue({
+          code: "custom",
+          path: ["sources", index, "verifiedAt"],
+          message: "Source verification date is later than manifest snapshot date.",
+        });
+      }
     });
   });
 
@@ -135,8 +164,20 @@ export type SourceManifestEntry = z.infer<typeof sourceManifestEntrySchema>;
 export type SourceManifest = z.infer<typeof sourceManifestSchema>;
 export type SourceVersionStatus = z.infer<typeof sourceVersionStatusSchema>;
 
-export function parseSourceManifest(value: unknown): SourceManifest {
-  return sourceManifestSchema.parse(value);
+export function parseSourceManifest(
+  value: unknown,
+  asOf: string = new Date().toISOString().slice(0, 10),
+): SourceManifest {
+  const parsedAsOf = z.iso.date().safeParse(asOf);
+  if (!parsedAsOf.success) {
+    throw new Error("Source manifest evaluation date must be a valid calendar date.");
+  }
+
+  const manifest = sourceManifestSchema.parse(value);
+  if (manifest.generatedAt > parsedAsOf.data) {
+    throw new Error("Source manifest snapshot date is later than evaluation date.");
+  }
+  return manifest;
 }
 
 export const sourceManifest = parseSourceManifest(sourceManifestJson);

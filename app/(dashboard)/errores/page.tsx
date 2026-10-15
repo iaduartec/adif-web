@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FavoriteButton } from "../../../components/practice/favorite-button";
-import { listOfficialQuestions } from "../../../lib/content/repository";
+import { listOfficialQuestionRecords, listOfficialQuestions } from "../../../lib/content/repository";
 import { deriveErrorNotebook } from "../../../lib/practice/error-notebook";
 import { calculateMetrics, displayModuleName } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
@@ -37,6 +37,12 @@ export default async function ErrorNotebookPage() {
   const favoriteIds = new Set((favRows ?? []).map((r) => r.item_id));
 
   const allQuestions = listOfficialQuestions();
+  const allQuestionRecords = listOfficialQuestionRecords();
+  const activeQuestionIds = new Set(allQuestions.map((question) => question.id));
+  const officialQuestionIds = new Set(allQuestionRecords.map((question) => question.id));
+  const withheldErrorCount = [...latestAttempts].filter(([questionId, attempt]) =>
+    !attempt.is_correct && officialQuestionIds.has(questionId) && !activeQuestionIds.has(questionId),
+  ).length;
   const errorQuestions = deriveErrorNotebook(allQuestions, attemptRows ?? []);
   const metrics = calculateMetrics(attemptRows ?? [], [], allQuestions, new Date());
   const weakestModuleLabel = displayModuleName(metrics.weakestModule);
@@ -63,7 +69,7 @@ export default async function ErrorNotebookPage() {
           <li><strong>Estado dominado:</strong> preguntas anteriormente falladas que has vuelto a responder correctamente; se archivan y desaparecen de esta lista automáticamente.</li>
         </ul>
         <p>
-          <em>El estado se deriva dinámicamente de tu historial de respuestas reales. Los intentos de preguntas retiradas se conservan, pero no se muestran porque ya no pertenecen al banco oficial activo.</em>
+          <em>El estado se deriva de tu historial de respuestas. Los intentos de preguntas que no están disponibles para práctica se conservan; si su enunciado está retenido y el último intento fue incorrecto, el cuaderno lo indica sin mostrar el texto.</em>
         </p>
       </section>
 
@@ -85,11 +91,18 @@ export default async function ErrorNotebookPage() {
         </div>
       </div>
 
-      {errorQuestions.length === 0 ? (
+      {errorQuestions.length === 0 && withheldErrorCount > 0 ? (
+        <div className="empty-state" role="status">
+          <p className="empty-state__title">Historial conservado</p>
+          <p>
+            Conservamos {withheldErrorCount} intento{withheldErrorCount === 1 ? "" : "s"} fallido{withheldErrorCount === 1 ? "" : "s"} de preguntas oficiales retenidas mientras verificamos las fuentes y los derechos de uso. Sus enunciados no están disponibles para repaso todavía.
+          </p>
+        </div>
+      ) : errorQuestions.length === 0 ? (
         <div className="empty-state" role="status">
           <p className="empty-state__title">Todo al día</p>
           <p>
-            No tienes preguntas oficiales pendientes de corregir. Los intentos históricos de preguntas retiradas siguen guardados, pero no alteran este cuaderno.
+            No tienes preguntas oficiales disponibles pendientes de corregir. Los intentos de preguntas que no están disponibles para práctica siguen guardados y no alteran este cuaderno.
           </p>
           <div className="section-actions">
             <Link className="ui-button ui-button--secondary" href="/simulacros">

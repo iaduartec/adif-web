@@ -988,6 +988,144 @@
       "lastModified": "Fri, 31 Jul 2026 10:59:04 GMT",
       "locatorPolicy": "exact",
       "purpose": "Fuente de contenido vigente para capítulos I y II; el adjunto PNI26/01 se conserva aparte como evidencia exacta del material enlazado al perfil."
+    },
+    {
+      "sourceId": "ADIF PNI23/01 initial booklet",
+      "sourceVersion": "initial-booklet-2023-11-07",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Plantillas correctoras y cuadernillos de examen PNI23/01 (plantilla inicial)",
+      "url": "https://www.adif.es/documents/20124/17165113/%2807.11.2023%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/dce76c5e-ae60-a0d0-568e-4f4db30c3823",
+      "scope": "historical-exam",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
+      },
+      "sha256": null,
+      "hashTarget": null,
+      "locatorPolicy": "section",
+      "purpose": "Cuadernillos y plantilla inicial; bytes no verificados en esta revisión."
+    },
+    {
+      "sourceId": "ADIF PNI23/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2023-11-27",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Plantillas correctoras y resolución del Tribunal PNI23/01",
+      "url": "https://www.adif.es/documents/20124/17165113/%2827.11.2023%29%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/ee76d603-4125-febc-93f3-23c0da2cb0e1",
+      "scope": "historical-exam",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
+      },
+      "sha256": null,
+      "hashTarget": null,
+      "locatorPolicy": "section",
+      "purpose": "Alegaciones estimadas y reconciliación final; bytes no verificados en esta revisión."
+    },
+    {
+      "sourceId": "ADIF PNI24/01 initial booklet",
+      "sourceVersion": "initial-booklet-2024-11-25",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Plantillas correctoras y cuadernillos de examen PNI24/01 (plantillas iniciales)",
+      "url": "https://www.adif.es/documents/20124/33942288/%2825.11.2024%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/7d5847b0-d613-65b0-a0a2-ae936d6e0500",
+      "scope": "historical-exam",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
+      },
+      "sha256": null,
+      "hashTarget": null,
+      "locatorPolicy": "section",
+      "purpose": "Cuadernillos y plantillas iniciales de las sesiones del 10 y 24 de noviembre; bytes no verificados."
+    },
+    {
+      "sourceId": "ADIF PNI24/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2024-12-16",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Plantillas correctoras y resolución del Tribunal PNI24/01",
+      "url": "https://www.adif.es/documents/20124/33942288/%2816.12.2024%29%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/70febb4b-f8a2-de01-d00d-11feba2b6aa3",
+      "scope": "historical-exam",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
+      },
+      "sha256": null,
+      "hashTarget": null,
+      "locatorPolicy": "section",
+      "purpose": "Resolución de alegaciones y plantillas finales; bytes no verificados en esta revisión."
+    },
+    {
+      "sourceId": "ADIF PNI25/01 initial booklet",
+      "sourceVersion": "initial-booklet-2025-11-18",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Plantillas correctoras y cuadernillos de examen PNI25/01 (plantillas iniciales)",
+      "url": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "scope": "historical-exam",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
+      },
+      "sha256": null,
+      "hashTarget": null,
+      "locatorPolicy": "section",
+      "purpose": "Cuadernillos y plantillas iniciales; bytes no verificados en esta revisión."
+    },
+    {
+      "sourceId": "ADIF PNI25/01 tribunal resolution",
+      "sourceVersion": "tribunal-resolution-2025-12-02",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Plantillas correctoras y resolución del Tribunal PNI25/01",
+      "url": "https://www.adif.es/documents/20124/45240815/%2802.12.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/8ec22bea-1eff-2619-697e-5d3958e94f74",
+      "scope": "historical-exam",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Comprobación directa 2026-10-15: ADIF devolvió HTTP 403 y HTML en lugar del PDF; versión, hash y localizadores exactos pendientes.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "La referencia y el título se localizaron en ADIF, pero el PDF no se pudo descargar ni hashear; el contenido no autoriza importación exacta."
+      },
+      "sha256": null,
+      "hashTarget": null,
+      "locatorPolicy": "section",
+      "purpose": "Alegaciones y clave definitiva; bytes no verificados en esta revisión."
     }
   ]
 }

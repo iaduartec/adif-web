@@ -19,6 +19,67 @@ const convocation = parseConvocationRecord(
 );
 
 describe("versioned official source manifest", () => {
+  it("records all eight Telecom forms and keeps forms without transcriptions metadata-only", () => {
+    const forms = readJson("content/official-exams/manifest.json") as Array<{
+      id: string;
+      year: number;
+      examCode: string;
+      transcriptionStatus: string;
+      session: { date: string; location: string | null } | null;
+      expectedQuestionNumbers: number[];
+      reserveQuestionNumbers: number[];
+      documentUrl: string;
+      documentSourceId: string;
+      documentSourceVersion: string;
+    }>;
+
+    expect(forms.map((form) => form.id)).toEqual([
+      "ADIF-2023-1433",
+      "ADIF-2023-4101",
+      "ADIF-2024-1044",
+      "ADIF-2024-2442",
+      "ADIF-2024-3403",
+      "ADIF-2024-3413",
+      "ADIF-2025-1131",
+      "ADIF-2025-4104",
+    ]);
+    expect(forms.filter((form) => form.year === 2024 && ["1044", "2442"].includes(form.examCode))
+      .every((form) => form.transcriptionStatus === "metadata_only")).toBe(true);
+    expect(forms.filter((form) => form.year === 2024 && ["1044", "2442"].includes(form.examCode))
+      .every((form) => form.session?.date === "2024-11-10")).toBe(true);
+    expect(forms.filter((form) => form.year === 2024 && ["3403", "3413"].includes(form.examCode))
+      .every((form) => form.session?.date === "2024-11-24" && form.session.location === "Valencia")).toBe(true);
+    expect(forms.every((form) => form.expectedQuestionNumbers.length === 18)).toBe(true);
+    expect(forms.every((form) => form.reserveQuestionNumbers.join(",") === "16,17,18")).toBe(true);
+  });
+
+  it("preserves exact historical PDF identities while their HTTP 403 bytes remain unverified", () => {
+    const requiredVersions = [
+      ["ADIF PNI23/01 initial booklet", "initial-booklet-2023-11-07"],
+      ["ADIF PNI23/01 tribunal resolution", "tribunal-resolution-2023-11-27"],
+      ["ADIF PNI24/01 initial booklet", "initial-booklet-2024-11-25"],
+      ["ADIF PNI24/01 tribunal resolution", "tribunal-resolution-2024-12-16"],
+      ["ADIF PNI25/01 initial booklet", "initial-booklet-2025-11-18"],
+      ["ADIF PNI25/01 tribunal resolution", "tribunal-resolution-2025-12-02"],
+    ];
+
+    for (const [sourceId, sourceVersion] of requiredVersions) {
+      expect(manifest.sources.find((source) =>
+        source.sourceId === sourceId && source.sourceVersion === sourceVersion,
+      )).toMatchObject({
+        sourceType: "primary",
+        scope: "historical-exam",
+        status: "needs_check",
+        downloadedAt: null,
+        verifiedAt: null,
+        sha256: null,
+        hashTarget: null,
+        locatorPolicy: "section",
+        consultedLocator: expect.stringContaining("HTTP 403"),
+      });
+    }
+  });
+
   it("contains six common and three 26/12PO official sources", () => {
     expect(
       new Set(
@@ -108,6 +169,77 @@ describe("versioned official source manifest", () => {
     };
 
     expect(() => parseSourceManifest(invalid)).toThrow(/sha.?256/i);
+  });
+
+  it("rejects verification dates later than the manifest snapshot date", () => {
+    const raw = readJson("content/source-manifest.json") as {
+      generatedAt: string;
+      schemaVersion: number;
+      sources: Array<Record<string, unknown>>;
+    };
+    const verified = raw.sources.find((entry) => entry.status === "verified");
+    expect(verified).toBeDefined();
+    const invalid = {
+      ...raw,
+      sources: raw.sources.map((entry) => entry === verified
+        ? { ...entry, verifiedAt: "2026-10-16" }
+        : entry),
+    };
+
+    expect(() => parseSourceManifest(invalid)).toThrow(/later than manifest snapshot/i);
+  });
+
+  it("rejects a manifest snapshot dated after the evaluation date", () => {
+    const raw = readJson("content/source-manifest.json") as {
+      generatedAt: string;
+      schemaVersion: number;
+      sources: Array<Record<string, unknown>>;
+    };
+    const invalid = {
+      ...raw,
+      generatedAt: "2099-01-01",
+      sources: raw.sources.map((entry) => entry.status === "verified"
+        ? { ...entry, downloadedAt: "2099-01-01", verifiedAt: "2099-01-01" }
+        : entry),
+    };
+
+    expect(() => parseSourceManifest(invalid, "2026-10-15")).toThrow(/later than evaluation date/i);
+  });
+
+  it("rejects source download dates later than their verification date", () => {
+    const raw = readJson("content/source-manifest.json") as {
+      generatedAt: string;
+      schemaVersion: number;
+      sources: Array<Record<string, unknown>>;
+    };
+    const verified = raw.sources.find((entry) => entry.status === "verified");
+    expect(verified).toBeDefined();
+    const invalid = {
+      ...raw,
+      sources: raw.sources.map((entry) => entry === verified
+        ? { ...entry, downloadedAt: "2026-10-16", verifiedAt: "2026-10-15" }
+        : entry),
+    };
+
+    expect(() => parseSourceManifest(invalid)).toThrow(/download date is later than verification date/i);
+  });
+
+  it("rejects source download dates later than the manifest snapshot", () => {
+    const raw = readJson("content/source-manifest.json") as {
+      generatedAt: string;
+      schemaVersion: number;
+      sources: Array<Record<string, unknown>>;
+    };
+    const unchecked = raw.sources.find((entry) => entry.status === "needs_check");
+    expect(unchecked).toBeDefined();
+    const invalid = {
+      ...raw,
+      sources: raw.sources.map((entry) => entry === unchecked
+        ? { ...entry, downloadedAt: "2026-10-16" }
+        : entry),
+    };
+
+    expect(() => parseSourceManifest(invalid, "2026-10-16")).toThrow(/download date is later than manifest snapshot/i);
   });
 
   it("rejects duplicate source versions", () => {

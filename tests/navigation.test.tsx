@@ -19,6 +19,12 @@ const { createServerClient, serverRows, signOut, usePathname } = vi.hoisted(() =
 vi.mock("next/navigation", () => ({ redirect: vi.fn(), usePathname }));
 vi.mock("../lib/supabase/browser", () => ({ createBrowserClient: () => ({ auth: { signOut } }) }));
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
+vi.mock("../lib/content/official-publication", () => ({
+  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
+  isOfficialQuestionPracticeEligible: () => true,
+  isOfficialExamPracticeEligible: () => true,
+  validateOfficialPublicationData: () => [],
+}));
 
 const requiredDestinations = [
   ["Preparación", "/"],

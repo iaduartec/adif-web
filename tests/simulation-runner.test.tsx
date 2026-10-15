@@ -9,9 +9,9 @@ import { SimulationRunner } from "../components/practice/simulation-runner";
 import { SimulationResults } from "../components/practice/simulation-results";
 import { OfficialSource } from "../components/practice/official-source";
 import { SimulationPageClient } from "../app/(dashboard)/simulacros/[id]/client";
-import type { OfficialQuestion } from "../lib/content/schema";
+import type { PublicOfficialQuestion } from "../lib/content/public-dto";
 
-type ExamQuestion = Omit<OfficialQuestion, "answer">;
+type ExamQuestion = PublicOfficialQuestion;
 
 const source = {
   kind: "official_adif_exam" as const,
@@ -41,6 +41,8 @@ const questions: ExamQuestion[] = Array.from({ length: 3 }, (_, i) => ({
     { key: "C" as const, text: "Opción C" },
     { key: "D" as const, text: "Opción D" },
   ],
+  validity: "current" as const,
+  publicationStatus: "approved_for_publication" as const,
   origin: "official_reference" as const,
   source: { ...source, questionNumber: i + 1 },
 }));

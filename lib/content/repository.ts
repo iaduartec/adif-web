@@ -10,6 +10,7 @@ import {
   officialQuestionsSchema,
 } from "./schema";
 import type { PublicOfficialQuestion } from "./public-dto";
+import { isOfficialExamPracticeEligible, isOfficialQuestionPracticeEligible } from "./official-publication";
 
 export type QuestionFilter = {
   year?: number;
@@ -56,7 +57,7 @@ export function createContentRepository({
     }
   }
 
-  const listOfficialQuestions = (filter?: QuestionFilter): OfficialQuestion[] => {
+  const listOfficialQuestionRecords = (filter?: QuestionFilter): OfficialQuestion[] => {
     if (!filter) return [...questionList];
 
     const query = filter.query?.trim().toLocaleLowerCase();
@@ -79,6 +80,22 @@ export function createContentRepository({
     });
   };
 
+  const listOfficialQuestions = (filter?: QuestionFilter): OfficialQuestion[] =>
+    listOfficialQuestionRecords(filter).filter((question) => isOfficialQuestionPracticeEligible(question));
+
+  const listOfficialExams = (): OfficialExam[] =>
+    examList.filter((exam) => isOfficialExamPracticeEligible(exam, questionById));
+
+  const getAvailableOfficialQuestion = (id: string): OfficialQuestion | undefined => {
+    const question = questionById.get(id);
+    return question && isOfficialQuestionPracticeEligible(question) ? question : undefined;
+  };
+
+  const getAvailableOfficialExam = (id: string): OfficialExam | undefined => {
+    const exam = examById.get(id);
+    return exam && isOfficialExamPracticeEligible(exam, questionById) ? exam : undefined;
+  };
+
   return {
     getLesson(slug: string): Lesson | undefined {
       return lessonBySlug.get(slug);
@@ -87,13 +104,23 @@ export function createContentRepository({
       return lessonList;
     },
     getOfficialQuestion(id: string): OfficialQuestion | undefined {
+      return getAvailableOfficialQuestion(id);
+    },
+    getOfficialQuestionRecord(id: string): OfficialQuestion | undefined {
       return questionById.get(id);
     },
     listOfficialQuestions,
+    listOfficialQuestionRecords,
     getOfficialExam(id: string): OfficialExam | undefined {
+      return getAvailableOfficialExam(id);
+    },
+    getOfficialExamRecord(id: string): OfficialExam | undefined {
       return examById.get(id);
     },
     listOfficialExams(): readonly OfficialExam[] {
+      return listOfficialExams();
+    },
+    listOfficialExamRecords(): readonly OfficialExam[] {
       return examList;
     },
   };
@@ -117,14 +144,30 @@ export function getOfficialQuestion(id: string): OfficialQuestion | undefined {
   return repository.getOfficialQuestion(id);
 }
 
+export function getOfficialQuestionRecord(id: string): OfficialQuestion | undefined {
+  return repository.getOfficialQuestionRecord(id);
+}
+
 export function listOfficialQuestions(filter?: QuestionFilter): OfficialQuestion[] {
   return repository.listOfficialQuestions(filter);
+}
+
+export function listOfficialQuestionRecords(filter?: QuestionFilter): OfficialQuestion[] {
+  return repository.listOfficialQuestionRecords(filter);
 }
 
 export function getOfficialExam(id: string): OfficialExam | undefined {
   return repository.getOfficialExam(id);
 }
 
+export function getOfficialExamRecord(id: string): OfficialExam | undefined {
+  return repository.getOfficialExamRecord(id);
+}
+
 export function listOfficialExams(): readonly OfficialExam[] {
   return repository.listOfficialExams();
+}
+
+export function listOfficialExamRecords(): readonly OfficialExam[] {
+  return repository.listOfficialExamRecords();
 }

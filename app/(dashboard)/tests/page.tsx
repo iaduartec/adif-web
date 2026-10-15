@@ -3,8 +3,8 @@ import { redirect } from "next/navigation";
 import { FavoriteButton } from "../../../components/practice/favorite-button";
 import { OfficialSource } from "../../../components/practice/official-source";
 import { QuestionSession, type PracticeQuestion } from "../../../components/practice/question-session";
-import { listOfficialQuestions } from "../../../lib/content/repository";
-import { toPublicOfficialQuestion } from "../../../lib/content/public-dto";
+import { listOfficialQuestionRecords, listOfficialQuestions } from "../../../lib/content/repository";
+import { toPublicOfficialQuestion, type PublicOfficialQuestion } from "../../../lib/content/public-dto";
 import type { OfficialQuestion } from "../../../lib/content/schema";
 import { displayModuleName } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
@@ -93,6 +93,7 @@ export default async function TestsPage({
   );
 
   const activeQuestions = listOfficialQuestions();
+  const withheldQuestionCount = listOfficialQuestionRecords().length - activeQuestions.length;
   const activeQuestionById = new Map(activeQuestions.map((question) => [question.id, question]));
   const plannedQuestionsAreValid = plannedSelection.kind === "absent" || (
     plannedSelection.kind === "valid"
@@ -148,13 +149,20 @@ export default async function TestsPage({
           <section aria-labelledby="invalid-practice-title" className="empty-state" role="alert">
             <p className="page-kicker">Práctica dirigida</p>
             <h1 id="invalid-practice-title">No se puede iniciar esta práctica</h1>
-            <p>La selección planificada ya no coincide con el banco oficial activo.</p>
+            <p>
+              {withheldQuestionCount > 0
+                ? `La selección no puede abrirse: ${withheldQuestionCount} preguntas oficiales siguen retenidas mientras verificamos las fuentes y los derechos de uso.`
+                : "La selección planificada ya no coincide con el banco oficial activo."}
+            </p>
             <Link className="ui-button" href="/tests">Volver a preguntas oficiales</Link>
           </section>
         </div>
       );
     }
-    const practiceQuestions = filtered.slice(0, PRACTICE_QUESTION_LIMIT).map(toPublicOfficialQuestion);
+    const practiceQuestions = filtered
+      .slice(0, PRACTICE_QUESTION_LIMIT)
+      .map(toPublicOfficialQuestion)
+      .filter((question): question is PublicOfficialQuestion => question !== null);
     const backParams = new URLSearchParams(buildUrl({ practice: null }).split("?")[1]);
 
     return (
@@ -174,6 +182,11 @@ export default async function TestsPage({
               Finalizar sesión
             </Link>
           </div>
+          {withheldQuestionCount > 0 && practiceQuestions.length > 0 && (
+            <p className="empty-state" role="status">
+              {withheldQuestionCount} pregunta{withheldQuestionCount === 1 ? " oficial sigue retenida" : "s oficiales siguen retenidas"} mientras verificamos las fuentes y los derechos de uso.
+            </p>
+          )}
           {filtered.length > PRACTICE_QUESTION_LIMIT && (
             <p className="practice-limit-note">
               Practicando {PRACTICE_QUESTION_LIMIT} de las {filtered.length} preguntas que coinciden con los filtros aplicados.
@@ -182,7 +195,11 @@ export default async function TestsPage({
         </header>
 
         {practiceQuestions.length === 0 ? (
-          <p className="empty-state" role="status">No hay preguntas que coincidan con estos filtros.</p>
+          <p className="empty-state" role="status">
+            {withheldQuestionCount > 0
+              ? `No hay preguntas oficiales disponibles para esta sesión: ${withheldQuestionCount} enunciados siguen retenidos mientras verificamos las fuentes y los derechos de uso.`
+              : "No hay preguntas que coincidan con estos filtros."}
+          </p>
         ) : (
           <QuestionSession questions={practiceQuestions} />
         )}
@@ -197,8 +214,15 @@ export default async function TestsPage({
       <header className="page-header">
         <p className="page-kicker">Banco oficial</p>
         <h1>Preguntas oficiales</h1>
-        <p>Consulta y practica con los enunciados y opciones publicados por ADIF.</p>
+        <p>Practica con preguntas de procedencia oficial cuando sus fuentes y permisos de uso estén verificados.</p>
       </header>
+
+      {withheldQuestionCount > 0 && (
+        <div className="empty-state" role="alert">
+          {withheldQuestionCount} pregunta{withheldQuestionCount === 1 ? " oficial tiene el enunciado retenido" : "s oficiales tienen los enunciados retenidos"} mientras verificamos las fuentes y los derechos de uso.
+          Se conservan las referencias y el historial de estudio.
+        </div>
+      )}
 
       <form className="filter-panel" method="GET" action="/tests">
         <div className="filter-field">
@@ -252,7 +276,11 @@ export default async function TestsPage({
       </div>
 
       {paginatedQuestions.length === 0 ? (
-        <div className="empty-state" role="status">No hay preguntas que coincidan con los filtros aplicados.</div>
+        <div className="empty-state" role="status">
+          {withheldQuestionCount > 0 && activeQuestions.length === 0
+            ? "El banco oficial está temporalmente retenido mientras se verifican sus fuentes y derechos de uso."
+            : "No hay preguntas que coincidan con los filtros aplicados."}
+        </div>
       ) : (
         <div className="official-question-list">
           {paginatedQuestions.map((question) => {

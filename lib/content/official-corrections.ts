@@ -24,6 +24,7 @@ export type CorrectionSourceRecord = {
   sourceType: "primary" | "secondary" | "didactic";
   status: "verified" | "needs_check" | "superseded" | "unavailable";
   locatorPolicy: "document-level" | "section" | "exact";
+  rightsBasis?: PublicationReview["evidence"]["basis"];
 };
 
 export type CorrectableQuestion = {
@@ -90,6 +91,7 @@ export function validatePublicationStatus(
   status: PublicationStatus,
   review: PublicationReview | null,
   sources: CorrectionSourceRecord[],
+  asOf: string = new Date().toISOString().slice(0, 10),
 ): string[] {
   if (review === null) {
     return status === "approved_for_publication"
@@ -105,18 +107,32 @@ export function validatePublicationStatus(
   }
 
   const { decision, permittedUse, evidence } = parsed.data;
+  const parsedAsOf = publicationReviewSchema.shape.reviewedAt.safeParse(asOf);
+  if (!parsedAsOf.success) {
+    return ["evaluation date must be a valid calendar date"];
+  }
+
+  const errors: string[] = [];
+  if (parsed.data.reviewedAt > parsedAsOf.data) {
+    errors.push("publication review date is later than the evaluation date");
+  }
+
   const matchingSource = sources.find(
     (source) =>
       source.sourceId === evidence.sourceId && source.sourceVersion === evidence.sourceVersion,
   );
-  const errors: string[] = [];
-
   if (
     !matchingSource ||
     matchingSource.status !== "verified" ||
     matchingSource.locatorPolicy !== "exact"
   ) {
     errors.push("publication review evidence references an unresolved source version or non-exact locator");
+  }
+  if (
+    matchingSource?.sourceType !== "primary" ||
+    matchingSource.rightsBasis !== evidence.basis
+  ) {
+    errors.push("publication review evidence source is not registered for the declared rights basis");
   }
 
   if (decision === "approved" && permittedUse === "public_question_text") {

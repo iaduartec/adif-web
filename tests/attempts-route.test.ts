@@ -6,6 +6,12 @@ const { createServerClient, rpc } = vi.hoisted(() => ({
 }));
 
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
+vi.mock("../lib/content/official-publication", () => ({
+  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
+  isOfficialQuestionPracticeEligible: () => true,
+  isOfficialExamPracticeEligible: () => true,
+  validateOfficialPublicationData: () => [],
+}));
 
 import { POST } from "../app/api/attempts/route";
 import { getOfficialExam, listOfficialExams, listOfficialQuestions } from "../lib/content/repository";
