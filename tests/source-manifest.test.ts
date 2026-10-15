@@ -79,6 +79,13 @@ describe("versioned official source manifest", () => {
         sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       }).join(" "),
     ).toMatch(/manifest/i);
+    expect(
+      validateSourceReference({
+        sourceId: "Ley 31/1995",
+        sourceVersion: "",
+        sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      }).join(" "),
+    ).toMatch(/version/i);
   });
 
   it("keeps a superseded primary capture while resolving legacy references to the current version", () => {
@@ -133,5 +140,50 @@ describe("versioned official source manifest", () => {
     };
 
     expect(() => parseConvocationRecord(invalid, manifest)).toThrow(/evidence|verified/i);
+  });
+
+  it("rejects confirmed call facts backed by a non-ADIF primary source", () => {
+    const notice = manifest.sources.find((source) => source.sourceId === "ADIF PNI26/01");
+    expect(notice).toBeDefined();
+    const otherPrimaryCallSource = {
+      ...notice!,
+      sourceId: "Other agency call notice",
+      sourceVersion: "2026-current",
+      organization: "Example Agency",
+      url: "https://example.com/call-notice",
+      status: "verified",
+      downloadedAt: "2026-10-14",
+      verifiedAt: "2026-10-14",
+      sha256: "a".repeat(64),
+      hashTarget: "downloaded-page",
+    };
+    const manifestWithOtherPrimary = parseSourceManifest({
+      ...manifest,
+      sources: [...manifest.sources, otherPrimaryCallSource],
+    });
+    const raw = readJson("content/convocation/PNI26-01.json") as Record<string, unknown>;
+    const facts = raw.facts as Record<string, unknown>;
+    const positions = facts.positionsByProfile as Record<string, Record<string, unknown>>;
+
+    const invalid = {
+      ...raw,
+      facts: {
+        ...facts,
+        positionsByProfile: {
+          ...positions,
+          "26/12PO": {
+            ...positions["26/12PO"],
+            status: "confirmed",
+            evidence: {
+              sourceId: "Other agency call notice",
+              sourceVersion: "2026-current",
+              locator: "Call notice → profile allocation",
+            },
+          },
+        },
+      },
+    };
+
+    expect(() => parseConvocationRecord(invalid, manifestWithOtherPrimary)).toThrow(/ADIF/i);
   });
 });

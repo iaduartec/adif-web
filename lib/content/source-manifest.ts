@@ -214,7 +214,11 @@ export function validateSourceReference(
     return [`sourceUrl for '${reference.sourceId}' does not match any manifest version`];
   }
 
-  if (reference.sourceVersion) {
+  if (reference.sourceVersion !== undefined) {
+    if (typeof reference.sourceVersion !== "string" || reference.sourceVersion.trim() === "") {
+      errors.push(`sourceVersion for '${reference.sourceId}' must be a non-empty version identifier`);
+      return errors;
+    }
     if (!urlMatches.some((source) => source.sourceVersion === reference.sourceVersion)) {
       errors.push(
         `sourceVersion '${reference.sourceVersion}' for '${reference.sourceId}' is missing or does not match the source URL`,
@@ -233,14 +237,25 @@ export function validateSourceReference(
   return errors;
 }
 
+function isAdifPrimaryCallSource(source: SourceManifestEntry): boolean {
+  let hostname: string;
+  try {
+    hostname = new URL(source.url).hostname.toLowerCase();
+  } catch {
+    return false;
+  }
+  const isAdifHost = hostname === "adif.es" || hostname.endsWith(".adif.es");
+  return source.sourceType === "primary" && source.authority === "A" && source.scope === "call" && isAdifHost;
+}
+
 export function parseConvocationRecord(value: unknown, manifest: SourceManifest = sourceManifest): ConvocationRecord {
   const record = convocationRecordSchema.parse(value);
   const notice = manifest.sources.find(
     (source) =>
       source.sourceId === record.notice.sourceId && source.sourceVersion === record.notice.sourceVersion,
   );
-  if (!notice || notice.scope !== "call" || notice.sourceType !== "primary") {
-    throw new Error("Convocation notice must resolve to a primary call source in the manifest.");
+  if (!notice || !isAdifPrimaryCallSource(notice)) {
+    throw new Error("Convocation notice must resolve to a primary ADIF call source in the manifest.");
   }
 
   const facts = [
@@ -264,7 +279,7 @@ export function parseConvocationRecord(value: unknown, manifest: SourceManifest 
       (source) =>
         source.sourceId === fact.evidence?.sourceId && source.sourceVersion === fact.evidence?.sourceVersion,
     );
-    if (!evidence || evidence.sourceType !== "primary" || evidence.scope !== "call") {
+    if (!evidence || !isAdifPrimaryCallSource(evidence)) {
       throw new Error("Call fact evidence must resolve to a primary ADIF call source.");
     }
     if (fact.status === "confirmed" && evidence.status !== "verified") {
