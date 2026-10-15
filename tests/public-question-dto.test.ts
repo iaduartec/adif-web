@@ -38,8 +38,16 @@ describe("official publication gate", () => {
       ...question,
       effectiveAnswer: "A",
       validity: "current",
+      currentness: "current",
+      validityEvidence: {
+        sourceId: "RD 346/2011",
+        sourceVersion: "consolidated-page-2026-10-15",
+        sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+        locator: "Anexo II, apartado de interconexión de fibra óptica",
+        reviewedAt: "2026-10-15",
+      },
       publicationStatus: "approved_for_publication",
-    })).toBe(false);
+    }, { status: "approved_for_publication", evidenceValid: true, errors: [] })).toBe(false);
     expect(getOfficialQuestion(question.id)).toBeUndefined();
     expect(listOfficialQuestions()).toEqual([]);
   });

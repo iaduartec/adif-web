@@ -4,6 +4,7 @@ import correction2025 from "../../content/official-exams/corrections/2025.json";
 import examManifestJson from "../../content/official-exams/manifest.json";
 import { officialCorrectionSetsSchema, type OfficialExam, type OfficialQuestion, type PublicationStatus } from "./schema";
 import { sourceManifest } from "./source-manifest";
+import { validateStoredHistoricalQuestionValidity } from "./official-question-validity";
 import { validateOfficialCorrectionSets, type CorrectionExamRecord, type CorrectionSourceRecord } from "./official-corrections";
 
 type ManifestForm = {
@@ -86,6 +87,8 @@ export function isOfficialQuestionPracticeEligible(
     decision.status === "approved_for_publication" &&
     question.publicationStatus === "approved_for_publication" &&
     question.validity === "current" &&
+    question.currentness === "current" &&
+    validateStoredHistoricalQuestionValidity(question).length === 0 &&
     question.effectiveAnswer !== null
   );
 }

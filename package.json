@@ -18,8 +18,9 @@
     "verify:theory-claims": "tsx scripts/verify-theory-claims.ts",
     "verify:theory-copy": "tsx scripts/verify-theory-copy.ts",
     "verify:syllabus": "tsx scripts/verify-syllabus-coverage.ts",
+    "verify:question-mappings": "tsx scripts/verify-official-question-mappings.ts",
     "sources:check": "tsx scripts/check-source-updates.ts",
-    "verify:content": "pnpm verify:theory && pnpm verify:theory-references && pnpm verify:theory-claims && pnpm verify:theory-copy && pnpm verify:syllabus"
+    "verify:content": "pnpm verify:theory && pnpm verify:theory-references && pnpm verify:theory-claims && pnpm verify:theory-copy && pnpm verify:syllabus && pnpm verify:question-mappings"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",

@@ -21,6 +21,14 @@ export const officialQuestionValiditySchema = z.enum([
   "pending_review",
 ]);
 
+export const officialQuestionValidityEvidenceSchema = z.object({
+  sourceId: z.string().trim().min(1),
+  sourceVersion: z.string().trim().min(1),
+  sourceUrl: z.url().refine((url) => new URL(url).protocol === "https:"),
+  locator: z.string().trim().min(1),
+  reviewedAt: z.iso.date(),
+}).strict();
+
 export const correctionSourceReferenceSchema = z
   .object({
     sourceId: z.string().trim().min(1),
@@ -168,6 +176,10 @@ const officialQuestionRecordSchema = z
         (conceptIds) => conceptIds.every((conceptId) => activeTheoryConceptRegistry.has(conceptId)),
         { message: "Official questions may only reference active theory concepts." },
       ),
+    syllabusNodeId: z.string().trim().min(1),
+    currentness: z.enum(["current", "changed", "out_of_scope", "unknown"]),
+    validityReason: z.string().trim().min(1),
+    validityEvidence: officialQuestionValidityEvidenceSchema.nullable(),
     options: z.array(optionSchema).length(4),
     answer: answerKeySchema,
     initialAnswer: answerKeySchema.optional(),
@@ -250,6 +262,34 @@ export const officialQuestionSchema = officialQuestionRecordSchema
         code: "custom",
         path: ["publicationStatus"],
         message: "A published practice question must be current and have an effective answer.",
+      });
+    }
+    if (question.validity !== "pending_review" && question.validityEvidence === null) {
+      context.addIssue({
+        code: "custom",
+        path: ["validityEvidence"],
+        message: "A reconciled historical question requires an exact current-source review citation.",
+      });
+    }
+    if (question.currentness === "unknown" && question.validity !== "pending_review") {
+      context.addIssue({
+        code: "custom",
+        path: ["validity"],
+        message: "A question with unknown currentness must remain pending review.",
+      });
+    }
+    if (question.currentness !== "unknown" && question.validityEvidence === null) {
+      context.addIssue({
+        code: "custom",
+        path: ["validityEvidence"],
+        message: "A classified historical question requires its exact current-source review citation.",
+      });
+    }
+    if (question.validity !== "pending_review" && question.validity !== question.currentness) {
+      context.addIssue({
+        code: "custom",
+        path: ["validity"],
+        message: "A reconciled question validity must match its reviewed currentness classification.",
       });
     }
   });

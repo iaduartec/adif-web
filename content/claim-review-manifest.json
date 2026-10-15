@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-15",
+  "updatedAt": "2026-10-16",
   "reviews": {
     "igualdad-intro-1": {
       "status": "needs_review",
@@ -1785,6 +1785,13 @@
       "confidence": {
         "level": "low",
         "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+      }
+    },
+    "ict-c34-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Definición añadida desde el artículo 2.5.4 consolidado; requiere cotejo con el PDF oficial de la convocatoria y revisión editorial final."
       }
     }
   }

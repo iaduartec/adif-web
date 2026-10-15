@@ -112,19 +112,26 @@
 
 **Files:**
 - Modify: `content/questions.json`
+- Modify: `content/official-exams/manifest.json`, `lib/content/official-exam-manifest.ts`
 - Modify: `scripts/import-official-exams.ts`
+- Modify: `lib/content/schema.ts`, `lib/content/public-dto.ts`, `lib/content/official-publication.ts`, `package.json`
 - Create: `tests/official-question-validity.test.ts`
-- Modify: `tests/official-content-importer.test.ts`
+- Modify: `tests/official-content-importer.test.ts`, `tests/official-content-schema.test.ts`, `tests/public-question-dto.test.ts`, `tests/simulation-runner.test.tsx`, `tests/error-notebook.test.ts`, `tests/source-manifest.test.ts`
+- Create: `lib/content/official-question-validity.ts`
+- Create: `content/official-exams/concept-syllabus-mappings.json`
+- Create: `scripts/verify-official-question-mappings.ts`
 
 **Interfaces:**
-- `conceptIds` remain active theory concepts; `syllabusNodeId` identifies a 2026 official node or explicit supplemental node.
-- `classifyHistoricalQuestion(question, sourceState): OfficialQuestionValidity` returns a status plus a human-readable reason.
+- `conceptIds` remain active theory concepts; `syllabusNodeId` identifies the uniquely mapped official 26/12PO node.
+- `classifyHistoricalQuestion(question, sourceState)` returns the mapped 2026 node, stored currentness, the evidence-gated study validity, a human-readable reason, and the exact current-source citation whenever currentness has been reviewed.
+- A question cannot leave `pending_review` until its exact historic booklet, tribunal key and ADIF scope are verified, its currentness is reviewed, and the cited current source version is verified and locatable.
+- Practice eligibility reconstructs the exact exam form, accepted transcription concept IDs, tribunal evidence, current source citation and stored classification before exposing official text; changing a status or concept field alone cannot open a question.
 
-- [ ] **Step 1: Add failing tests** that require each practice-eligible existing specific question to map to an official or explicitly supplemental node and to one or more active learning `conceptIds`; require changed/out-of-scope status for non-current evidence. Task 4 adds the same active-concept and current-syllabus mapping gates for cleared General questions, plus reviewed topic/concept mappings for English.
-- [ ] **Step 2: Run** `pnpm exec vitest run tests/official-question-validity.test.ts`; expected FAIL on missing/unresolved mappings.
-- [ ] **Step 3: Add** reviewed mappings and validity reasons. Do not map from keywords alone when a reviewer must compare the question's legal basis with current law.
-- [ ] **Step 4: Run** `pnpm exec vitest run tests/official-question-validity.test.ts tests/official-content-importer.test.ts`; expected PASS with no pending item used by a default practice filter.
-- [ ] **Step 5: Commit** with `git add content/questions.json scripts/import-official-exams.ts tests/official-question-validity.test.ts tests/official-content-importer.test.ts && git commit -m "feat: map historical questions to 2026 scope"`.
+- [x] **Step 1: Add failing tests** that require all 102 preserved specific questions to resolve to one current official 26/12PO node via active concepts; missing and cross-node mappings fail rather than guessing from wording; pending historic evidence stays pending; promotion needs verified historic, tribunal, scope and exact current-source evidence.
+- [x] **Step 2: Run** `pnpm exec vitest run tests/official-question-validity.test.ts`; initial run failed on the missing mapping module, then the focused tests passed after implementation.
+- [x] **Step 3: Add** explicit concept-to-syllabus mappings, stored node IDs, currentness, validity reasons and nullable current-source citations for all 102 questions. Pin each form's accepted `transcribedQuestionNumbers` in the official-exam manifest so deleting a transcription row cannot silently shrink the expected set. The historic PDFs/resolutions remain unresolved, so no question was promoted. Corrected ICT Annex II/IV/V references, separated the two BAT appearances into their own concept tied to RD 346/2011 Annex II §2.5.4, and corrected six RCF Chapter 5 question mappings after independent review. Normalized 2025 booklet URLs to the exact manifest references.
+- [x] **Step 4: Verify** currentness/evidence recomputation at the practice boundary, exact form identities, exact concept mapping to accepted transcription rows and exact coverage of every manifest-pinned transcription ID. Full verification passed: 479 tests; typecheck; lint with two existing warnings; `pnpm verify:content`; production build; and `git diff --check`. The import command still rejects unresolved tribunal sources (ADIF 403); hashes of questions, exams and import report were identical before/after. Independent adversarial review approved the fix and found no remaining Important issue.
+- [ ] **Step 5: Commit** the scoped Task 3 files, excluding the user-local design-spec edit, with `git commit -m "feat: map historical questions to 2026 scope"`.
 
 ### Task 4: Reconcile official general and English sections without copying restricted psychometrics
 

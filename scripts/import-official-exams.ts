@@ -22,6 +22,11 @@ import {
   type CorrectionSourceRecord,
 } from "../lib/content/official-corrections";
 import { parseSourceManifest } from "../lib/content/source-manifest";
+import {
+  classifyHistoricalQuestion,
+  isHistoricalSyllabusScopeVerified,
+  validateHistoricalQuestionMappings,
+} from "../lib/content/official-question-validity";
 
 const optionKeys = ["A", "B", "C", "D"] as const;
 const questionNumbers = z.number().int().min(1).max(99);
@@ -270,6 +275,15 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
     }
   }
 
+  const mappingErrors = validateHistoricalQuestionMappings(
+    transcriptions.flatMap((transcription) =>
+      transcription.questions.map((question) => ({
+        id: `${transcription.examId}-Q${String(question.number).padStart(2, "0")}`,
+        conceptIds: question.conceptIds,
+      }))),
+  );
+  if (mappingErrors.length) importError(`Historical question syllabus mapping failed: ${mappingErrors.join("; ")}`);
+
   const retiredDistractors = new Set(retiredSyntheticDistractors);
   const questions: ImportedOfficialQuestion[] = [];
   const exams: OfficialExam[] = [];
@@ -293,6 +307,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
 
     const seenNumbers = new Set<number>();
     const expectedNumbers = new Set(entry.expectedQuestionNumbers);
+    const acceptedTranscriptionNumbers = new Set(entry.transcribedQuestionNumbers);
     let rejectedCount = 0;
     const examQuestions: OfficialQuestion[] = [];
     for (const transcribedQuestion of transcription.questions) {
@@ -301,7 +316,7 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
       }
       seenNumbers.add(transcribedQuestion.number);
 
-      if (!expectedNumbers.has(transcribedQuestion.number)) {
+      if (!expectedNumbers.has(transcribedQuestion.number) || !acceptedTranscriptionNumbers.has(transcribedQuestion.number)) {
         rejectedCount++;
         continue;
       }
@@ -334,6 +349,31 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
         },
         correctionSet.corrections,
       );
+      const bookletSource = sourceRegistry.find(
+        (source) => source.sourceId === entry.documentSourceId && source.sourceVersion === entry.documentSourceVersion,
+      );
+      const tribunalSource = sourceRegistry.find(
+        (source) => source.sourceId === correctionSet.resolutionSource.sourceId &&
+          source.sourceVersion === correctionSet.resolutionSource.sourceVersion &&
+          source.url === correctionSet.resolutionSource.sourceUrl,
+      );
+      const validity = classifyHistoricalQuestion(
+        {
+          id: `${entry.id}-Q${String(transcribedQuestion.number).padStart(2, "0")}`,
+          conceptIds: transcribedQuestion.conceptIds,
+        },
+        {
+          sourceStatus: bookletSource?.status ?? "unavailable",
+          tribunalVerified: tribunalSource?.sourceType === "primary" &&
+            tribunalSource.status === "verified" && tribunalSource.locatorPolicy === "exact",
+          syllabusScopeVerified: isHistoricalSyllabusScopeVerified({
+            id: `${entry.id}-Q${String(transcribedQuestion.number).padStart(2, "0")}`,
+            conceptIds: transcribedQuestion.conceptIds,
+          }),
+          currentness: "unknown",
+        },
+      );
+      if (!validity.syllabusNodeId) importError(validity.validityReason);
       const provenance = {
         booklet: {
           sourceId: entry.documentSourceId,
@@ -366,13 +406,17 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
         sectionLabel: transcribedQuestion.sectionLabel,
         prompt: transcribedQuestion.prompt,
         conceptIds: transcribedQuestion.conceptIds,
+        syllabusNodeId: validity.syllabusNodeId,
+        currentness: validity.currentness,
+        validityReason: validity.validityReason,
+        validityEvidence: validity.validityEvidence,
         options,
         answer: corrected.effectiveAnswer ?? corrected.initialAnswer,
         initialAnswer: corrected.initialAnswer,
         effectiveAnswer: corrected.effectiveAnswer,
         correctionSource: corrected.correctionSource,
         replacementQuestionNumber: corrected.replacementQuestionNumber,
-        validity: "pending_review",
+        validity: validity.validity,
         publicationStatus: correctionSet.publicationStatus,
         origin: "official_reference",
         source: {
@@ -401,6 +445,11 @@ export function parseOfficialExamTranscriptions(input: unknown): ImportedOfficia
         ...officialQuestion.data,
         provenance,
       });
+    }
+
+    const missingTranscribedQuestionNumbers = entry.transcribedQuestionNumbers.filter((number) => !seenNumbers.has(number));
+    if (missingTranscribedQuestionNumbers.length) {
+      importError(`Accepted transcription ${entry.id} is missing declared questions: ${missingTranscribedQuestionNumbers.join(", ")}.`);
     }
 
     const missingQuestionNumbers = entry.expectedQuestionNumbers.filter((number) => !seenNumbers.has(number));

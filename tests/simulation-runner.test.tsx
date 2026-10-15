@@ -35,6 +35,16 @@ const questions: ExamQuestion[] = Array.from({ length: 3 }, (_, i) => ({
   sectionLabel: "Parte específica",
   prompt: `Pregunta oficial ${i + 1}`,
   conceptIds: ["ict-concept-1"],
+  syllabusNodeId: "ict-capitulo-i",
+  currentness: "current" as const,
+  validityReason: "Revisada contra el texto oficial vigente.",
+  validityEvidence: {
+    sourceId: "PNI26-12PO-SPECIFIC-01",
+    sourceVersion: "adif-live-2026-10-15",
+    sourceUrl: "https://www.adif.es/documents/20124/55031380/01%2BRD%2B346_2011%2C%2Bde%2B11%2Bde%2Bmarzo%2BRTEL.pdf/3193fbb8-641f-884f-f6b7-156d26203ee7",
+    locator: "Capítulo I",
+    reviewedAt: "2026-10-15",
+  },
   options: [
     { key: "A" as const, text: "Opción A" },
     { key: "B" as const, text: "Opción B" },

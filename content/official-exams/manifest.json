@@ -48,7 +48,24 @@
       "incorrect": -0.3333333333333333,
       "omitted": 0
     },
-    "session": null
+    "session": null,
+    "transcribedQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
   },
   {
     "id": "ADIF-2023-4101",
@@ -99,7 +116,24 @@
       "incorrect": -0.3333333333333333,
       "omitted": 0
     },
-    "session": null
+    "session": null,
+    "transcribedQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
   },
   {
     "id": "ADIF-2024-1044",
@@ -153,7 +187,8 @@
     "session": {
       "date": "2024-11-10",
       "location": null
-    }
+    },
+    "transcribedQuestionNumbers": []
   },
   {
     "id": "ADIF-2024-2442",
@@ -207,7 +242,8 @@
     "session": {
       "date": "2024-11-10",
       "location": null
-    }
+    },
+    "transcribedQuestionNumbers": []
   },
   {
     "id": "ADIF-2024-3403",
@@ -261,7 +297,27 @@
     "session": {
       "date": "2024-11-24",
       "location": "Valencia"
-    }
+    },
+    "transcribedQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
   },
   {
     "id": "ADIF-2024-3413",
@@ -315,7 +371,27 @@
     "session": {
       "date": "2024-11-24",
       "location": "Valencia"
-    }
+    },
+    "transcribedQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
   },
   {
     "id": "ADIF-2025-1131",
@@ -366,7 +442,27 @@
       "incorrect": -0.3333333333333333,
       "omitted": 0
     },
-    "session": null
+    "session": null,
+    "transcribedQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
   },
   {
     "id": "ADIF-2025-4104",
@@ -417,6 +513,26 @@
       "incorrect": -0.3333333333333333,
       "omitted": 0
     },
-    "session": null
+    "session": null,
+    "transcribedQuestionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
   }
 ]

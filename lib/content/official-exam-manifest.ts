@@ -23,6 +23,8 @@ export const officialExamManifestEntrySchema = z
     finalAnswerKeyPage: z.number().int().positive(),
     durationMinutes: z.number().int().positive(),
     expectedQuestionNumbers: z.array(questionNumberSchema).min(1),
+    /** Exact question IDs represented by the accepted local transcription set. */
+    transcribedQuestionNumbers: z.array(questionNumberSchema),
     reserveQuestionNumbers: z.array(questionNumberSchema),
     transcriptionStatus: z.enum(["complete", "partial", "metadata_only"]),
     completeness: z.enum(["complete", "specific_part"]),
@@ -46,6 +48,12 @@ export const officialExamManifestEntrySchema = z
     if (new Set(entry.expectedQuestionNumbers).size !== entry.expectedQuestionNumbers.length) {
       context.addIssue({ code: "custom", path: ["expectedQuestionNumbers"], message: "Expected question numbers must not contain duplicates." });
     }
+    if (new Set(entry.transcribedQuestionNumbers).size !== entry.transcribedQuestionNumbers.length) {
+      context.addIssue({ code: "custom", path: ["transcribedQuestionNumbers"], message: "Transcribed question numbers must not contain duplicates." });
+    }
+    if (entry.transcribedQuestionNumbers.some((number) => !entry.expectedQuestionNumbers.includes(number))) {
+      context.addIssue({ code: "custom", path: ["transcribedQuestionNumbers"], message: "Transcribed questions must be included in the declared form question numbers." });
+    }
     if (new Set(entry.reserveQuestionNumbers).size !== entry.reserveQuestionNumbers.length) {
       context.addIssue({ code: "custom", path: ["reserveQuestionNumbers"], message: "Reserve question numbers must not contain duplicates." });
     }
@@ -54,6 +62,18 @@ export const officialExamManifestEntrySchema = z
     }
     if (entry.transcriptionStatus === "metadata_only" && entry.completeness === "complete") {
       context.addIssue({ code: "custom", path: ["transcriptionStatus"], message: "A metadata-only form cannot be treated as a complete exam transcription." });
+    }
+    if (entry.transcriptionStatus === "metadata_only" && entry.transcribedQuestionNumbers.length > 0) {
+      context.addIssue({ code: "custom", path: ["transcribedQuestionNumbers"], message: "A metadata-only form cannot declare transcribed question numbers." });
+    }
+    if (entry.transcriptionStatus === "partial" && entry.transcribedQuestionNumbers.length === 0) {
+      context.addIssue({ code: "custom", path: ["transcribedQuestionNumbers"], message: "A partial transcription must declare at least one accepted question." });
+    }
+    if (entry.transcriptionStatus === "complete" && (
+      entry.transcribedQuestionNumbers.length !== entry.expectedQuestionNumbers.length ||
+      entry.expectedQuestionNumbers.some((number) => !entry.transcribedQuestionNumbers.includes(number))
+    )) {
+      context.addIssue({ code: "custom", path: ["transcribedQuestionNumbers"], message: "A complete transcription must include every expected question number." });
     }
   });
 

@@ -193,6 +193,40 @@ describe("instrument coherence", () => {
   });
 });
 
+describe("ICT annex references", () => {
+  it("anchors recintos and canalization in Anexo II, not Anexo IV", () => {
+    const ict = lessonTheories["ict-rd-346-2011"]!;
+    const concept = ict.concepts.find((entry) => entry.id === "ict-concept-7")!;
+    const reference = ict.sources.find((entry) => entry.id === concept.claims[0]!.legalBasis[0])!;
+
+    expect(reference).toMatchObject({
+      sourceId: "RD 346/2011",
+      locator: "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    });
+  });
+
+  it("cites ICT earthing and equipotential bonding in Anexo II safety sections", () => {
+    const ict = lessonTheories["ict-rd-346-2011"]!;
+    const concept = ict.concepts.find((entry) => entry.id === "ict-concept-10")!;
+    const reference = ict.sources.find((entry) => entry.id === concept.claims[0]!.legalBasis[0])!;
+
+    expect(reference).toMatchObject({
+      sourceId: "RD 346/2011",
+      locator: "Anexo II, apartados 7.2.3 y 7.3",
+    });
+  });
+
+  it("describes Annexes IV and V according to their actual topics", () => {
+    const ict = lessonTheories["ict-rd-346-2011"]!;
+    const annexIv = ict.sources.find((entry) => entry.id === "rd346-2011-anex4")!;
+    const annexV = ict.sources.find((entry) => entry.id === "rd346-2011-anex5")!;
+
+    expect(annexIv.locator).toMatch(/^Anexo IV/);
+    expect(annexIv.excerpt).toMatch(/inspección técnica.*mantenimiento/i);
+    expect(annexV.excerpt).toMatch(/hogar digital/i);
+  });
+});
+
 describe("global ID uniqueness", () => {
   it("rejects duplicate source IDs across different modules", () => {
     const a: TheorySection = {

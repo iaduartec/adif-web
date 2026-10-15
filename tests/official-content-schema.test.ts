@@ -27,6 +27,10 @@ const officialQuestion = {
   sectionLabel: "Conocimiento específico",
   prompt: "Pregunta oficial de prueba de contrato.",
   conceptIds: ["ict-concept-1"],
+  syllabusNodeId: "ict-capitulo-i",
+  currentness: "unknown" as const,
+  validityReason: "Pendiente de verificar con las fuentes del examen histórico.",
+  validityEvidence: null,
   options: [
     { key: "A", text: "Opción A" },
     { key: "B", text: "Opción B" },
@@ -113,6 +117,29 @@ describe("official ADIF content schemas", () => {
         id: "ADIF-2025-1131-Q02",
       }).success,
     ).toBe(false);
+  });
+
+  it("requires an exact current-source citation before a question can be reconciled", () => {
+    expect(officialQuestionSchema.safeParse({
+      ...officialQuestion,
+      currentness: "current",
+      validity: "current",
+    }).success).toBe(false);
+  });
+
+  it("persists reviewed currentness evidence even while historic provenance remains pending", () => {
+    expect(officialQuestionSchema.safeParse({
+      ...officialQuestion,
+      currentness: "current",
+      validity: "pending_review",
+      validityEvidence: {
+        sourceId: "RD 346/2011",
+        sourceVersion: "consolidated-page-2026-10-15",
+        sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+        locator: "Anexo II, apartado 2.4",
+        reviewedAt: "2026-10-15",
+      },
+    }).success).toBe(true);
   });
 
   it("rejects exam IDs and question IDs that do not match the official source", () => {

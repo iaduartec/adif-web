@@ -7,6 +7,7 @@ import {
   parseSourceManifest,
   validateSourceReference,
 } from "../lib/content/source-manifest";
+import { officialExamManifestSchema } from "../lib/content/official-exam-manifest";
 
 function readJson(path: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), path), "utf8"));
@@ -27,6 +28,7 @@ describe("versioned official source manifest", () => {
       transcriptionStatus: string;
       session: { date: string; location: string | null } | null;
       expectedQuestionNumbers: number[];
+      transcribedQuestionNumbers: number[];
       reserveQuestionNumbers: number[];
       documentUrl: string;
       documentSourceId: string;
@@ -51,6 +53,13 @@ describe("versioned official source manifest", () => {
       .every((form) => form.session?.date === "2024-11-24" && form.session.location === "Valencia")).toBe(true);
     expect(forms.every((form) => form.expectedQuestionNumbers.length === 18)).toBe(true);
     expect(forms.every((form) => form.reserveQuestionNumbers.join(",") === "16,17,18")).toBe(true);
+    expect(officialExamManifestSchema.safeParse(forms).success).toBe(true);
+    expect(forms.filter((form) => form.transcriptionStatus === "metadata_only")
+      .every((form) => form.transcribedQuestionNumbers.length === 0)).toBe(true);
+    expect(forms.filter((form) => form.transcriptionStatus === "complete")
+      .every((form) => form.transcribedQuestionNumbers.join(",") === "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18")).toBe(true);
+    expect(forms.filter((form) => form.year === 2023)
+      .every((form) => form.transcribedQuestionNumbers.join(",") === "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15")).toBe(true);
   });
 
   it("preserves exact historical PDF identities while their HTTP 403 bytes remain unverified", () => {

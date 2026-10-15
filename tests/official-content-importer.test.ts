@@ -22,6 +22,7 @@ const manifestEntry = {
   finalAnswerKeyPage: 9,
   durationMinutes: 120,
   expectedQuestionNumbers: [1, 2],
+  transcribedQuestionNumbers: [1, 2],
   reserveQuestionNumbers: [] as number[],
   transcriptionStatus: "complete" as const,
   completeness: "complete" as "complete" | "specific_part",
@@ -140,6 +141,8 @@ describe("official ADIF exam importer", () => {
       ["ict-concept-1"],
       ["ict-concept-1"],
     ]);
+    expect(result.questions.map((item) => item.syllabusNodeId)).toEqual(["ict-capitulo-i", "ict-capitulo-i"]);
+    expect(result.questions.every((item) => item.validity === "pending_review" && item.validityReason.length > 0)).toBe(true);
   });
 
   it("returns initial and effective answers with exact versioned provenance and a closed publication status", () => {
@@ -208,6 +211,7 @@ describe("official ADIF exam importer", () => {
         finalAnswerKeyPage: 11,
         durationMinutes: 15,
         expectedQuestionNumbers: [6],
+        transcribedQuestionNumbers: [6],
         reserveQuestionNumbers: [],
         transcriptionStatus: "complete" as const,
         completeness: "specific_part" as const,
@@ -348,23 +352,30 @@ describe("official ADIF exam importer", () => {
     });
   });
 
+  it("rejects a transcription with a declared accepted question missing", () => {
+    const input = validInput();
+    input.transcriptions[0].questions.pop();
+
+    expect(() => parseOfficialExamTranscriptions(input)).toThrow(/missing declared questions: 2/i);
+  });
+
   it("rejects unexpected specific-part numbers from publication and reports their real count", () => {
     const input = {
       ...validInput(),
       manifest: [{ ...manifestEntry, completeness: "specific_part" as const, transcriptionStatus: "partial" as const }],
     };
-    input.transcriptions[0].questions[1] = {
+    input.transcriptions[0].questions.push({
       number: 3,
       ...question,
       prompt: "Pregunta fuera del tramo publicado.",
-    };
+    });
 
     const result = parseOfficialExamTranscriptions(input);
 
-    expect(result.questions.map((item) => item.id)).toEqual(["ADIF-2025-1131-Q01"]);
+    expect(result.questions.map((item) => item.id)).toEqual(["ADIF-2025-1131-Q01", "ADIF-2025-1131-Q02"]);
     expect(result.report.modelResults).toEqual({
-      "ADIF-2025-1131": { accepted: 1, rejected: 1 },
+      "ADIF-2025-1131": { accepted: 2, rejected: 1 },
     });
-    expect(result.report.acceptedQuestionCount).toBe(1);
+    expect(result.report.acceptedQuestionCount).toBe(2);
   });
 });
