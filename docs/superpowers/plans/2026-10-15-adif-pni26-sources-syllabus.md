@@ -157,10 +157,10 @@ git commit -m "feat: version official ADIF sources"
 - Each child node links `sourceId`, `sourceVersion`, exact locator, `linkedModules`, and `status: "covered" | "partial" | "missing" | "reference-only" | "unresolved"`.
 - Existing supplemental items remain represented outside official coverage.
 
-- [ ] **Step 1: Add failing tests** asserting nine official parents, exact LPRL/EBEP/DR scope, and that supplemental nodes do not affect `officialItemsTotal`.
-- [ ] **Step 2: Run** `pnpm exec vitest run tests/syllabus-coverage.test.ts`; expected FAIL against the current 17 unresolved provisional items.
-- [ ] **Step 3: Build** the official hierarchy from the ADIF source documents and their verified page/chapter locators. Keep a node `unresolved` where the current PDF could not be inspected; do not invent lower-level coverage.
-- [ ] **Step 4: Run** `pnpm exec vitest run tests/syllabus-coverage.test.ts && pnpm verify:syllabus`; expected PASS, with coverage computed only from verified official nodes.
+- [x] **Step 1: Add failing tests** asserting nine official parents, exact LPRL/EBEP/DR scope, and that supplemental nodes do not affect `officialItemsTotal`.
+- [x] **Step 2: Run** `pnpm exec vitest run tests/syllabus-coverage.test.ts`; expected FAIL against the current 17 unresolved provisional items.
+- [x] **Step 3: Build** the official hierarchy from the ADIF source documents and their verified page/chapter locators. Keep a node `unresolved` where the current PDF could not be inspected; do not invent lower-level coverage.
+- [x] **Step 4: Run** `pnpm exec vitest run tests/syllabus-coverage.test.ts && pnpm verify:syllabus`; expected PASS, with coverage computed only from verified official nodes.
 - [ ] **Step 5: Commit** with `git add content/syllabus.ts content/syllabus-sources.ts scripts/verify-syllabus-coverage.ts tests/syllabus-coverage.test.ts && git commit -m "feat: align syllabus with PNI26 26-12PO"`.
 
 ### Task 5: Enforce claim and source-version traceability

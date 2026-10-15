@@ -314,7 +314,12 @@ export async function collectSourceObservations(
   const timeoutMs = options.timeoutMs ?? 15_000;
   const concurrency = Math.max(1, Math.min(options.concurrency ?? 3, 8));
   const sources = manifest.sources.filter(
-    (source) => source.sourceType === "primary" && source.status !== "superseded" && source.status !== "unavailable",
+    (source) =>
+      (source.sourceType === "primary" ||
+        source.scope === "common" ||
+        source.scope === "specific-26-12po") &&
+      source.status !== "superseded" &&
+      source.status !== "unavailable",
   );
   const observations: SourceObservation[] = new Array(sources.length);
   let cursor = 0;

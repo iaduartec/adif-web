@@ -97,3 +97,69 @@ hasta obtener el PDF/anexo de bases itemizado desde ADIF o desde el portal ofici
 correspondiente. El siguiente paso es incorporar ese documento como
 `SyllabusSource`, extraer todos sus ítems y activar `sourceComplete: true` solo
 después de validar la exhaustividad.
+
+---
+
+## Addendum de actualización — 2026-10-15
+
+El estado anterior se conserva como registro histórico de la consulta realizada
+el 2026-08-11. La [página oficial PNI26/01 de ADIF](https://www.adif.es/w/pni26-01-personal-operativo)
+ahora muestra el temario por perfil. En sus secciones «2. Temario común» y «6.
+Parte específica» para 26/12PO enumera seis documentos comunes y tres
+específicos. La ausencia de una lista pública que describía el estado anterior
+ya no aplica a esta revisión.
+
+Los nueve adjuntos vinculados por ADIF se descargaron completos el 2026-10-15,
+se revisaron sus portadas/índices y se guardaron como versiones `verified` con
+SHA-256 en `content/source-manifest.json`. Los snapshots locales de agosto se
+conservan como versiones anteriores; no se eliminaron. La última ejecución de
+`pnpm sources:check` clasificó 32 observaciones: 12 sin cambios, 18 candidatas
+a revisión y 2 `needs_check`. El JSON conserva las observaciones descargadas;
+la clasificación se calcula al ejecutar el comprobador. Ninguna candidatura
+de fuentes ajenas a estos nueve documentos se promovió automáticamente.
+
+### Alcance oficial reconstruido
+
+- **Común:** LO 3/2007; Ley 31/1995 limitada a exposición de motivos y capítulos
+  I, III y V; RD 2395/2004; Declaración sobre la Red ADIF 2027, capítulos I y
+  II; RDL 5/2015 EBEP, capítulo VI del título III (arts. 52–54); y Ley 53/1984.
+- **26/12PO:** RD 346/2011 con capítulos I–II y anexos I–V; el documento de
+  compatibilidad electromagnética enlazado por ADIF; y RCF, Libro Primero, con
+  sus cinco capítulos.
+
+ADIF identifica la edición de la Declaración sobre la Red 2027 publicada el
+31-07-2026 en su [ficha de documentos vigentes](https://www.adif.es/sobre-adif/declaracion-red).
+El PDF completo descargado desde esa ficha conserva internamente la leyenda
+«V.0 (ED 27/02/2026)», mientras que el PDF enlazado desde la página PNI26/01
+también presenta esa leyenda. Se conservan los registros de ambas versiones,
+sus hashes y la diferencia; la teoría de capítulos I–II debe cotejarse con la
+edición que ADIF identifica como vigente.
+
+El adjunto de compatibilidad electromagnética es un artículo de *REE* (mayo de
+2015) que señala que fue cedido por Cemdal. ADIF es la fuente primaria para
+confirmar su inclusión en el temario, pero el contenido del artículo es una
+fuente secundaria y debe atribuirse a su autor/publicación. La Directiva
+2014/30/UE, el RD 186/2016 y EN 50121 se mantienen como material relacionado,
+no como documentos oficiales independientes de PNI26/01.
+
+### Cobertura de teoría heredada
+
+El inventario oficial contiene nueve padres y unidades hijas trazadas a
+versiones y localizadores concretos. El estado observado del contenido actual
+es: **8 materias parcialmente mapeadas, 1 sin teoría trazada al documento
+asignado, 0 materias con cobertura completa y 0 nodos sin resolver**. Los temas
+adyacentes heredados (Constitución, RD 773/1997, RD 902/2020, legislación
+ferroviaria, normas de CEM, psicometría e inglés) se conservan en
+`supplementalItems` y no cuentan como documentos oficiales adicionales.
+Esta fase corrige el mapa de alcance; no declara `reviewed` los claims teóricos
+heredados. La revisión de citas, vigencia normativa y versiones BOE candidatas
+queda para la fase de trazabilidad de claims.
+
+Verificación de esta actualización:
+
+- `pnpm sources:check`: 32 observaciones; el comprobador clasificó 12 `unchanged`, 18 `candidate` y 2 `needs_check`.
+- `pnpm verify:content`: OK; cobertura del temario: 9 oficiales, 8 parciales, 1 missing.
+- `pnpm test --reporter=dot`: 56 archivos, 412 pruebas OK.
+- `pnpm typecheck`: OK.
+- `pnpm lint`: 0 errores; permanecen 2 warnings preexistentes de navegación interna.
+- `pnpm build`: OK.

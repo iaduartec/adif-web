@@ -20,8 +20,71 @@ const convocation = parseConvocationRecord(
 
 describe("versioned official source manifest", () => {
   it("contains six common and three 26/12PO official sources", () => {
-    expect(manifest.sources.filter((source) => source.scope === "common")).toHaveLength(6);
-    expect(manifest.sources.filter((source) => source.scope === "specific-26-12po")).toHaveLength(3);
+    expect(
+      new Set(
+        manifest.sources
+          .filter((source) => source.scope === "common" && source.sourceId.startsWith("PNI26-COMMON-"))
+          .map((source) => source.sourceId),
+      ).size,
+    ).toBe(6);
+    expect(
+      new Set(
+        manifest.sources
+          .filter((source) => source.scope === "specific-26-12po" && source.sourceId.startsWith("PNI26-12PO-SPECIFIC-"))
+          .map((source) => source.sourceId),
+      ).size,
+    ).toBe(3);
+  });
+
+  it("preserves old ADIF snapshots and records the nine reviewed live PDFs", () => {
+    const syllabusIds = [
+      "PNI26-COMMON-01",
+      "PNI26-COMMON-02",
+      "PNI26-COMMON-03",
+      "PNI26-COMMON-04",
+      "PNI26-COMMON-05",
+      "PNI26-COMMON-06",
+      "PNI26-12PO-SPECIFIC-01",
+      "PNI26-12PO-SPECIFIC-02",
+      "PNI26-12PO-SPECIFIC-03",
+    ];
+
+    for (const sourceId of syllabusIds) {
+      const versions = manifest.sources.filter((source) => source.sourceId === sourceId);
+      expect(versions.some((source) => source.hashTarget === "local-snapshot")).toBe(true);
+      expect(
+        versions.some(
+          (source) =>
+            source.status === "verified" &&
+            source.hashTarget === "downloaded-file" &&
+            source.sourceVersion === "adif-live-2026-10-15",
+        ),
+      ).toBe(true);
+    }
+  });
+
+  it("records the current 2027 network declaration PDF independently of the older PNI attachment", () => {
+    expect(
+      manifest.sources.find(
+        (source) => source.sourceId === "DR 2027 Libro 2027" && source.status === "verified",
+      ),
+    ).toMatchObject({
+      sourceVersion: "edition-2027-2026-07-31",
+      scope: "common",
+      hashTarget: "downloaded-file",
+    });
+  });
+
+  it("classifies the ADIF-linked CEM article as secondary material", () => {
+    expect(
+      manifest.sources.find(
+        (source) => source.sourceId === "PNI26-12PO-SPECIFIC-02" && source.sourceVersion === "adif-live-2026-10-15",
+      ),
+    ).toMatchObject({
+      sourceType: "secondary",
+      authority: "B",
+      purpose: expect.stringContaining("no se deben tratar sus afirmaciones técnicas como normativa de ADIF"),
+    });
   });
 
   it("stores authority, consulted locator, and a reasoned confidence for every source", () => {

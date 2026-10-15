@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T21:01:57.374Z",
+  "generatedAt": "2026-10-15T21:17:12.565Z",
   "observations": [
     {
       "sourceId": "ADIF PNI23/01",
       "sourceVersion": "official-booklets-23/01",
       "url": "https://www.adif.es/documents/20124/17165113/%2807.11.2023%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/dce76c5e-ae60-a0d0-568e-4f4db30c3823",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.477Z",
+      "checkedAt": "2026-10-15T21:17:09.663Z",
       "lastModified": "Tue, 17 Feb 2026 15:57:50 GMT",
       "contentLength": 2188347,
       "sha256": "91b60b1e6bbc86fb9e90ce1e5e7a8827a47d74de82be2563252e125fecc2fc75"
@@ -17,7 +17,7 @@
       "sourceVersion": "official-booklets-24/01",
       "url": "https://www.adif.es/documents/20124/33942288/%2825.11.2024%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/7d5847b0-d613-65b0-a0a2-ae936d6e0500",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.500Z",
+      "checkedAt": "2026-10-15T21:17:09.688Z",
       "lastModified": "Mon, 25 Nov 2024 13:32:42 GMT",
       "contentLength": 2238328,
       "sha256": "681fd52fb382e5cb7a8397fb0b364bf0e15c26639bf4ac5ee8f02acea852885e"
@@ -27,26 +27,17 @@
       "sourceVersion": "official-booklets-25/01",
       "url": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.501Z",
+      "checkedAt": "2026-10-15T21:17:09.688Z",
       "lastModified": "Tue, 18 Nov 2025 12:11:35 GMT",
       "contentLength": 3024577,
       "sha256": "e060058e0311d42d7dde2e886c5cc0ac920601b600abee4f47f2651d04c5ab41"
-    },
-    {
-      "sourceId": "ADIF PNI26/01",
-      "sourceVersion": "page-2026-10-14",
-      "url": "https://www.adif.es/w/pni26-01-personal-operativo",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.688Z",
-      "contentLength": 249777,
-      "sha256": "80c885ce2ac4ae8ca772e0625e50a379b74af24eb9977358e739ecae205cbdad"
     },
     {
       "sourceId": "ADIF PNI26/01 distribución por sede",
       "sourceVersion": "notice-2026-10-14",
       "url": "https://www.adif.es/documents/20124/55031380/%2814.10.2026%29%2B-%2BFecha%2Bde%2Bexamen%2C%2Bdistribuci%C3%B3n%2Bgeneral%2Bpor%2Bsede%2By%2Brelaci%C3%B3n%2Bdefinitiva%2Bde%2Bpersonas%2Badmitidas%2By%2Bexcluidas.pdf/e897a84d-1484-8cb7-eefa-4920cc233ffc",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.803Z",
+      "checkedAt": "2026-10-15T21:17:09.980Z",
       "lastModified": "Wed, 14 Oct 2026 13:53:06 GMT",
       "contentLength": 4346253,
       "sha256": "d2afe4d709d058d6e02bebb251eeeddf1b00ca52315c39b234e4a216219de6f8"
@@ -56,7 +47,7 @@
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.901Z",
+      "checkedAt": "2026-10-15T21:17:10.014Z",
       "contentLength": 294770,
       "sha256": "3b7d76b5016c694a987d1a0e5b7eb6756dafc28eaaa08b7b6b9e1b9c42bb8253"
     },
@@ -65,16 +56,16 @@
       "sourceVersion": "edition-2027-page-candidate",
       "url": "https://www.adif.es/sobre-adif/declaracion-red",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:55.984Z",
+      "checkedAt": "2026-10-15T21:17:10.042Z",
       "contentLength": 366070,
-      "sha256": "8d11314aaf4a30111652882beb37103740ca23d821c4bf27b58b169f67dbed97"
+      "sha256": "62254edc748f62410f0aa98f19ca1ee5e63297e928deb6824c9e3d70cc20ebc5"
     },
     {
       "sourceId": "Directiva 2014/30/UE",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.028Z",
+      "checkedAt": "2026-10-15T21:17:10.131Z",
       "contentLength": 136129,
       "sha256": "8e448cc712aefedff6ac6ac97b83af88d7b1fa8d7b059c06846ad89ca79aaee3"
     },
@@ -83,16 +74,16 @@
       "sourceVersion": "syllabus-reference-2026",
       "url": "https://www.adif.es/w/pni26-01-personal-operativo",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.064Z",
-      "contentLength": 249797,
-      "sha256": "54a6ed5be073c4022185d13a5a59b5e109c38d440ef3171b68b9c69395c10204"
+      "checkedAt": "2026-10-15T21:17:10.265Z",
+      "contentLength": 251249,
+      "sha256": "82bada645897d3d2a2d9ee4ef29615ff5604bb960948cec2b94dbb7daaeea0f3"
     },
     {
       "sourceId": "LO 3/2007",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.136Z",
+      "checkedAt": "2026-10-15T21:17:10.324Z",
       "contentLength": 417987,
       "sha256": "0e36e6190232a6b7698f15c75959c6d1be4b02d6b19a9e2390cbb62ab242314d"
     },
@@ -101,7 +92,7 @@
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.147Z",
+      "checkedAt": "2026-10-15T21:17:10.350Z",
       "contentLength": 439265,
       "sha256": "2ba0028cb3ab46347e5f5c827b35172ecd8b111997aa30e2e926aa46df269725"
     },
@@ -110,16 +101,16 @@
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.173Z",
+      "checkedAt": "2026-10-15T21:17:10.374Z",
       "contentLength": 777355,
-      "sha256": "5c5574a71c8b1716cde16e68f4cedd9f5da0b7ec124d8433978baf490d43ba30"
+      "sha256": "11d668978465b37fd4c409e6e3387bb8861ebe8f6fa5148540b6cc37544e3c2b"
     },
     {
       "sourceId": "Ley 53/1984",
       "sourceVersion": "consolidated-page-2026-10-15-current",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-151",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.177Z",
+      "checkedAt": "2026-10-15T21:17:10.466Z",
       "contentLength": 215672,
       "sha256": "34f97d4930df3cb6a4a0bb1e9f061e346d793beb6d7890d5474c7a6d122a2d86"
     },
@@ -128,122 +119,32 @@
       "sourceVersion": "web-reference-candidate",
       "url": "https://www.coe.int/en/web/common-european-framework-reference-languages/introduction-and-context",
       "httpStatus": 403,
-      "checkedAt": "2026-10-15T21:01:56.207Z"
+      "checkedAt": "2026-10-15T21:17:10.486Z"
     },
     {
       "sourceId": "MET-PSI-01",
       "sourceVersion": "syllabus-reference-2026",
       "url": "https://www.adif.es/w/pni26-01-personal-operativo",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.278Z",
-      "contentLength": 249797,
-      "sha256": "54a6ed5be073c4022185d13a5a59b5e109c38d440ef3171b68b9c69395c10204"
-    },
-    {
-      "sourceId": "PNI26-12PO-SPECIFIC-01",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/01%2BRD%2B346_2011%2C%2Bde%2B11%2Bde%2Bmarzo%2BRTEL.pdf/3193fbb8-641f-884f-f6b7-156d26203ee7",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.293Z",
-      "lastModified": "Wed, 30 Sep 2026 11:37:57 GMT",
-      "contentLength": 5444764,
-      "sha256": "3d1a475459d64a06d66dc6516d1710449dc287d270f3a02c70ab48e043e3c053"
-    },
-    {
-      "sourceId": "PNI26-12PO-SPECIFIC-02",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/02%2BCompatibilidad%2Belectromagn%C3%A9tica%2By%2Bseguridad%2Ben%2Blos%2Bferrocarriles.pdf/66b0c76b-4910-3415-fd83-0672ec9a3068",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.307Z",
-      "lastModified": "Wed, 30 Sep 2026 11:38:04 GMT",
-      "contentLength": 1264893,
-      "sha256": "2697bebd7bac056f669fd575b7e84a057c658628ef30568fe9dba034cc9f015e"
-    },
-    {
-      "sourceId": "PNI26-12PO-SPECIFIC-03",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/03%2BReglamento%2Bde%2BCirculaci%C3%B3n%2BFerroviaria%2B%28RCF%29%2BLibro%2B1.pdf/5de77381-c63e-e333-5f65-09eed7785e0b",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.368Z",
-      "lastModified": "Wed, 30 Sep 2026 11:38:22 GMT",
-      "contentLength": 412965,
-      "sha256": "6acd35c6778bd1f01118d9630b4724ee1b9b1ff2c060547b15ee7dda1643c45e"
-    },
-    {
-      "sourceId": "PNI26-COMMON-01",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/1.%2BLey%2BOrg%C3%A1nica%2B3_2007%2C%2Bde%2B22%2Bde%2Bmarzo%2C%2Bpara%2Bla%2Bigualdad%2Befectiva%2Bde%2Bmujeres%2By%2Bhombres.pdf/cd8d0c61-a1b0-e86b-c381-b6b6bb5c0b5c",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.451Z",
-      "lastModified": "Wed, 30 Sep 2026 11:10:42 GMT",
-      "contentLength": 981924,
-      "sha256": "48d693e56648ea0684aba74f8655b8b3c3c58bd339d6f0c24ca3c54c1d168804"
-    },
-    {
-      "sourceId": "PNI26-COMMON-02",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/2.%2B%2BLey%2B31_1995%2C%2Bde%2B8%2Bde%2Bnoviembre%2C%2Bde%2BPrevenci%C3%B3n%2Bde%2BRiesgos%2BLaborales.%2BExposici%C3%B3n%2Bmotivos%2By%2Bcap.I%2C%2BIII%2By%2BV.pdf/6a781aad-ccff-882f-4e7d-7758374b2133",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.467Z",
-      "lastModified": "Wed, 30 Sep 2026 11:10:41 GMT",
-      "contentLength": 311118,
-      "sha256": "9c183272237594b170297b2290cad6d7157547a8f2b0aa5f710d210c85d0db04"
-    },
-    {
-      "sourceId": "PNI26-COMMON-03",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/3.%2BRD%2B2395_2004%2C%2Bde%2B30%2Bde%2Bdiciembre%2C%2Bpor%2Bel%2Bque%2Bse%2Baprueba%2Bel%2BEstatuto%2Bde%2Bla%2Bentidad%2Bp%C3%BAblica%2Bempresarial%2BADIF.pdf/9ecf4446-0745-66b7-c457-7159100c255b",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.555Z",
-      "lastModified": "Wed, 30 Sep 2026 11:10:40 GMT",
-      "contentLength": 468539,
-      "sha256": "e88d928cb3ccc90622e8accc9f7a6ede4f0ec0e5cf61e37617fe3231bda6fd0c"
-    },
-    {
-      "sourceId": "PNI26-COMMON-04",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/4.%2BDeclaraci%C3%B3n%2Bsobre%2Bla%2BRed%2BAdif%2B2027.%2BCap%C3%ADtulos%2BI%2By%2BII.pdf/4a6acc23-e409-9dd8-ad1e-305d7f6e7b01",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.609Z",
-      "lastModified": "Wed, 30 Sep 2026 11:22:37 GMT",
-      "contentLength": 11192712,
-      "sha256": "362a3f68b7b81c0464515cf1ee026c785e6b1594395042d3e1d69c9255a4b080"
-    },
-    {
-      "sourceId": "PNI26-COMMON-05",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/5.%2BLey%2B5_2015%2Bdel%2BEstatuto%2BBasico%2Bdel%2BEmpleado%2BPublico.%2BCapitulo%2BVI%2B%28Tit.%2BIII%29%2BDeberes%2Bde%2Blos%2Bempleados%2Bpublicos.%2BCodigo%2Bde%2Bconducta.pdf/4e92d690-5354-80f7-f033-a48bcc8483ca",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.624Z",
-      "lastModified": "Wed, 30 Sep 2026 11:10:44 GMT",
-      "contentLength": 609074,
-      "sha256": "dd083f554a10d264053ba324ecead1f1fee931dae9830cb3c27db3a9b43a1997"
-    },
-    {
-      "sourceId": "PNI26-COMMON-06",
-      "sourceVersion": "adif-linked-local-snapshot-2026-08",
-      "url": "https://www.adif.es/documents/20124/55031380/6.%2BLey%2B53_1984%2BIncompatibilidades%2Bdel%2Bpersonal%2Bde%2Blas%2BAAPP.pdf/bb0a7cd8-ddf2-4a4a-bd0a-2d015fdab70b",
-      "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.644Z",
-      "lastModified": "Wed, 30 Sep 2026 11:10:43 GMT",
-      "contentLength": 320301,
-      "sha256": "e3f3629222f466b80f9e5e00c7529a4e0ca586ee719d9ba2b045b9f470f8aced"
+      "checkedAt": "2026-10-15T21:17:10.565Z",
+      "contentLength": 251249,
+      "sha256": "82bada645897d3d2a2d9ee4ef29615ff5604bb960948cec2b94dbb7daaeea0f3"
     },
     {
       "sourceId": "RD 2395/2004",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-21913",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.786Z",
+      "checkedAt": "2026-10-15T21:17:10.699Z",
       "contentLength": 178311,
-      "sha256": "38a1a754580bf3768843f43847175dfbae3e76ad39afafaa07a3985e55c73719"
+      "sha256": "932cc7e156d9fbac44e2d5ffb47dde8efe6296df1fc15e7261cc2ac1fa17206f"
     },
     {
       "sourceId": "RD 346/2011",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.796Z",
+      "checkedAt": "2026-10-15T21:17:10.936Z",
       "contentLength": 509095,
       "sha256": "cacb9bd1ad115161a6cea695cfd00a87c8d168cb60c8bf96b26f1b741749c00e"
     },
@@ -252,45 +153,154 @@
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.864Z",
+      "checkedAt": "2026-10-15T21:17:10.951Z",
       "contentLength": 971114,
-      "sha256": "6e5ded12129553a78a8bb307467da73b7160e10b8b8a0beda4141ce3a0262a1b"
+      "sha256": "119dae6fa158b769b1ab8a3a66d669482e1b268977b659f6f070c87ab804668a"
     },
     {
       "sourceId": "RD 773/1997",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.921Z",
+      "checkedAt": "2026-10-15T21:17:11.035Z",
       "contentLength": 151571,
-      "sha256": "cbeb25062025e0a9365d29807b5ecbef5a1f894f0ae8e06e87328abdfd8beda9"
+      "sha256": "a93407f7dd3f33a09c86bcfd0b7f6c77722bc4fd5a44b5169a3ea1bb70d2cc7f"
     },
     {
       "sourceId": "RD 902/2020",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.943Z",
+      "checkedAt": "2026-10-15T21:17:11.124Z",
       "contentLength": 92746,
-      "sha256": "845aa157ee45fa651f0687de5138f83eb5761a0b1a97d2be21464dacadda7342"
+      "sha256": "5a5ce51af476ae794e946f7825bf5170a7e5f860aa24f34397b46aa11b85ccd7"
     },
     {
       "sourceId": "Real Decreto 186/2016",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.969Z",
+      "checkedAt": "2026-10-15T21:17:11.136Z",
       "contentLength": 183813,
-      "sha256": "2d89d75c003b130bfeed1498af2cb7a2c881f2c2d79ef4fc228f7e120e3a8000"
+      "sha256": "391ec2f3f0ed31cdf31f4d05560dc40e8edecc3dc7c6e5e4f86884efa024d3eb"
     },
     {
       "sourceId": "TREBEP",
       "sourceVersion": "consolidated-page-2026-10-15",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:01:56.988Z",
+      "checkedAt": "2026-10-15T21:17:11.240Z",
       "contentLength": 523730,
       "sha256": "59613fcca234f3f5d5160055caf84a78b3971ab3919e243f6fe0fcdeb9ae9c20"
+    },
+    {
+      "sourceId": "PNI26-COMMON-01",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/1.%2BLey%2BOrg%C3%A1nica%2B3_2007%2C%2Bde%2B22%2Bde%2Bmarzo%2C%2Bpara%2Bla%2Bigualdad%2Befectiva%2Bde%2Bmujeres%2By%2Bhombres.pdf/cd8d0c61-a1b0-e86b-c381-b6b6bb5c0b5c",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.295Z",
+      "lastModified": "Wed, 30 Sep 2026 11:10:42 GMT",
+      "contentLength": 981924,
+      "sha256": "48d693e56648ea0684aba74f8655b8b3c3c58bd339d6f0c24ca3c54c1d168804"
+    },
+    {
+      "sourceId": "PNI26-COMMON-02",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/2.%2B%2BLey%2B31_1995%2C%2Bde%2B8%2Bde%2Bnoviembre%2C%2Bde%2BPrevenci%C3%B3n%2Bde%2BRiesgos%2BLaborales.%2BExposici%C3%B3n%2Bmotivos%2By%2Bcap.I%2C%2BIII%2By%2BV.pdf/6a781aad-ccff-882f-4e7d-7758374b2133",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.317Z",
+      "lastModified": "Wed, 30 Sep 2026 11:10:41 GMT",
+      "contentLength": 311118,
+      "sha256": "9c183272237594b170297b2290cad6d7157547a8f2b0aa5f710d210c85d0db04"
+    },
+    {
+      "sourceId": "PNI26-COMMON-03",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/3.%2BRD%2B2395_2004%2C%2Bde%2B30%2Bde%2Bdiciembre%2C%2Bpor%2Bel%2Bque%2Bse%2Baprueba%2Bel%2BEstatuto%2Bde%2Bla%2Bentidad%2Bp%C3%BAblica%2Bempresarial%2BADIF.pdf/9ecf4446-0745-66b7-c457-7159100c255b",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.363Z",
+      "lastModified": "Wed, 30 Sep 2026 11:10:40 GMT",
+      "contentLength": 468539,
+      "sha256": "e88d928cb3ccc90622e8accc9f7a6ede4f0ec0e5cf61e37617fe3231bda6fd0c"
+    },
+    {
+      "sourceId": "PNI26-COMMON-04",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/4.%2BDeclaraci%C3%B3n%2Bsobre%2Bla%2BRed%2BAdif%2B2027.%2BCap%C3%ADtulos%2BI%2By%2BII.pdf/4a6acc23-e409-9dd8-ad1e-305d7f6e7b01",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.370Z",
+      "lastModified": "Wed, 30 Sep 2026 11:22:37 GMT",
+      "contentLength": 11192712,
+      "sha256": "362a3f68b7b81c0464515cf1ee026c785e6b1594395042d3e1d69c9255a4b080"
+    },
+    {
+      "sourceId": "PNI26-COMMON-05",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/5.%2BLey%2B5_2015%2Bdel%2BEstatuto%2BBasico%2Bdel%2BEmpleado%2BPublico.%2BCapitulo%2BVI%2B%28Tit.%2BIII%29%2BDeberes%2Bde%2Blos%2Bempleados%2Bpublicos.%2BCodigo%2Bde%2Bconducta.pdf/4e92d690-5354-80f7-f033-a48bcc8483ca",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.393Z",
+      "lastModified": "Wed, 30 Sep 2026 11:10:44 GMT",
+      "contentLength": 609074,
+      "sha256": "dd083f554a10d264053ba324ecead1f1fee931dae9830cb3c27db3a9b43a1997"
+    },
+    {
+      "sourceId": "PNI26-COMMON-06",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/6.%2BLey%2B53_1984%2BIncompatibilidades%2Bdel%2Bpersonal%2Bde%2Blas%2BAAPP.pdf/bb0a7cd8-ddf2-4a4a-bd0a-2d015fdab70b",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.477Z",
+      "lastModified": "Wed, 30 Sep 2026 11:10:43 GMT",
+      "contentLength": 320301,
+      "sha256": "e3f3629222f466b80f9e5e00c7529a4e0ca586ee719d9ba2b045b9f470f8aced"
+    },
+    {
+      "sourceId": "PNI26-12PO-SPECIFIC-01",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/01%2BRD%2B346_2011%2C%2Bde%2B11%2Bde%2Bmarzo%2BRTEL.pdf/3193fbb8-641f-884f-f6b7-156d26203ee7",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.544Z",
+      "lastModified": "Wed, 30 Sep 2026 11:37:57 GMT",
+      "contentLength": 5444764,
+      "sha256": "3d1a475459d64a06d66dc6516d1710449dc287d270f3a02c70ab48e043e3c053"
+    },
+    {
+      "sourceId": "PNI26-12PO-SPECIFIC-02",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/02%2BCompatibilidad%2Belectromagn%C3%A9tica%2By%2Bseguridad%2Ben%2Blos%2Bferrocarriles.pdf/66b0c76b-4910-3415-fd83-0672ec9a3068",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.581Z",
+      "lastModified": "Wed, 30 Sep 2026 11:38:04 GMT",
+      "contentLength": 1264893,
+      "sha256": "2697bebd7bac056f669fd575b7e84a057c658628ef30568fe9dba034cc9f015e"
+    },
+    {
+      "sourceId": "PNI26-12PO-SPECIFIC-03",
+      "sourceVersion": "adif-live-2026-10-15",
+      "url": "https://www.adif.es/documents/20124/55031380/03%2BReglamento%2Bde%2BCirculaci%C3%B3n%2BFerroviaria%2B%28RCF%29%2BLibro%2B1.pdf/5de77381-c63e-e333-5f65-09eed7785e0b",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.775Z",
+      "lastModified": "Wed, 30 Sep 2026 11:38:22 GMT",
+      "contentLength": 412965,
+      "sha256": "6acd35c6778bd1f01118d9630b4724ee1b9b1ff2c060547b15ee7dda1643c45e"
+    },
+    {
+      "sourceId": "ADIF PNI26/01",
+      "sourceVersion": "page-capture-2026-10-15",
+      "url": "https://www.adif.es/w/pni26-01-personal-operativo",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.813Z",
+      "contentLength": 251249,
+      "sha256": "82bada645897d3d2a2d9ee4ef29615ff5604bb960948cec2b94dbb7daaeea0f3"
+    },
+    {
+      "sourceId": "DR 2027 Libro 2027",
+      "sourceVersion": "edition-2027-2026-07-31",
+      "url": "https://www.adif.es/documents/20124/56199951/20260731_01_DR+ADIF_V1_LIBRO_2027.pdf/456354ff-f670-f8e9-2d97-bf3717a1b466",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-15T21:17:11.815Z",
+      "lastModified": "Fri, 31 Jul 2026 10:59:04 GMT",
+      "contentLength": 15531546,
+      "sha256": "0c9d55a6dd82ffd5884f6425479be1d8ba9dcd40f1f2fc26e03fc6eb81649a62"
     }
   ]
 }

@@ -117,6 +117,30 @@ describe("official source update observations", () => {
     expect(report.observations[0]).toMatchObject({ httpStatus: null, failureKind: "network" });
   });
 
+  it("monitors an ADIF-selected syllabus attachment even when its underlying article is secondary", async () => {
+    const selectedArticle = {
+      ...previous,
+      sourceId: "PNI26-12PO-SPECIFIC-02",
+      sourceVersion: "adif-live-2026-10-15",
+      sourceType: "secondary" as const,
+      scope: "specific-26-12po" as const,
+      url: "https://www.adif.es/documents/example.pdf",
+    };
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("article bytes", { status: 200 })));
+
+    const report = await collectSourceObservations(
+      { ...sourceManifest, sources: [selectedArticle] },
+      { concurrency: 1 },
+    );
+
+    expect(report.observations).toHaveLength(1);
+    expect(report.observations[0]).toMatchObject({
+      sourceId: "PNI26-12PO-SPECIFIC-02",
+      sourceVersion: "adif-live-2026-10-15",
+      httpStatus: 200,
+    });
+  });
+
   it("records an aborted request as a timeout", async () => {
     vi.stubGlobal(
       "fetch",
