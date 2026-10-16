@@ -3,11 +3,14 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import questionsJson from "../content/questions.json";
 import PsicotecnicosPage from "../app/(dashboard)/psicotecnicos/page";
 import { PsychometricPractice } from "../components/practice/psychometric-practice";
 import { listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
 import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
 import { originalPracticeQuestionSchema } from "../lib/content/original-practice-schema";
+import { officialQuestionsSchema } from "../lib/content/schema";
+import { sourceManifest } from "../lib/content/source-manifest";
 import {
   psychometricAptitudes,
   originalPsychometricTopicIds,
@@ -71,6 +74,18 @@ describe("original psychometric practice", () => {
       expect(dto?.origin, question.id).toBe("original");
       expect(dto, question.id).not.toHaveProperty("answer");
       expect(dto, question.id).not.toHaveProperty("explanation");
+      expect(Object.keys(dto ?? {}).sort(), question.id).toEqual([
+        "difficulty",
+        "domain",
+        "id",
+        "options",
+        "origin",
+        "prompt",
+        "skill",
+        "tags",
+        "topic",
+        "topicId",
+      ]);
     }
   });
 
@@ -110,6 +125,24 @@ describe("original psychometric practice", () => {
       reviewedAt: undefined,
       conceptIds: [],
     }).success).toBe(true);
+  });
+
+  it("never grounds an original psychometric answer in a normative ADIF source", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+    const booklet = sourceManifest.sources.find((source) =>
+      source.url === officialQuestion.source.documentUrl && source.sourceType === "primary",
+    );
+    expect(booklet).toBeDefined();
+
+    const reviewedWithSource = {
+      ...reviewedFixture,
+      sourceId: booklet!.sourceId,
+      sourceVersion: booklet!.sourceVersion,
+      sourceLocator: "Localizador de prueba: una fuente ADIF no acredita la respuesta de una aptitud.",
+    };
+
+    expect(originalPracticeQuestionSchema.safeParse(reviewedWithSource).success).toBe(false);
+    expect(toPublicPracticeQuestion(reviewedWithSource)).toBeNull();
   });
 
   it("changes timing, not answer provenance, when a mode is selected", () => {
@@ -161,6 +194,10 @@ describe("original psychometric practice", () => {
       expect(html).not.toContain(question.explanation);
     }
     expect(html).not.toContain('"answer":');
+    expect(html).not.toContain('"explanation":');
+    expect(html).not.toContain('"reviewedAt":');
+    expect(html).not.toContain('"conceptIds":');
+    expect(html).not.toContain('"sourceId":');
     expect(screen.getByText(/no hay preguntas oficiales públicas disponibles/i)).toBeVisible();
   });
 });

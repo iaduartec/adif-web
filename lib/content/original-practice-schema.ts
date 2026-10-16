@@ -186,6 +186,13 @@ export const originalPracticeQuestionSchema = z.object({
     }
   }
   if (question.domain === "psychometric") {
+    if (question.sourceId !== undefined || question.sourceVersion !== undefined || question.sourceLocator !== undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["sourceId"],
+        message: "Original psychometric items are not officially grounded and cannot claim an ADIF normative source.",
+      });
+    }
     const aptitude = psychometricAptitudesById.get(question.topicId);
     if (!aptitude) {
       context.addIssue({
