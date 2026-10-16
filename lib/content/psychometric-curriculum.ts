@@ -21,7 +21,6 @@ export const originalPsychometricTopicIds = [
 export type PsychometricAptitudeId = (typeof originalPsychometricTopicIds)[number];
 
 export const psychometricAptitudeSchema = z.enum(originalPsychometricTopicIds);
-export const psychometricSkillSchema = psychometricAptitudeSchema;
 
 export function psychometricAptitudeConceptId(id: PsychometricAptitudeId): string {
   return `psico-topic-${id}`;
@@ -56,10 +55,6 @@ export const psychometricAptitudes = originalPsychometricTopicIds.map((id) => {
   }
   return { id, title: aptitudeTitles[id], skill: id, activeConceptIds };
 });
-
-export function getPsychometricCurriculum() {
-  return structuredClone(psychometricAptitudes);
-}
 
 export {
   psychometricModeSchema,
