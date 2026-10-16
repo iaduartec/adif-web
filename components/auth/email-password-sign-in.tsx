@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, useState } from "react";
+import { registerUser } from "../../app/(auth)/login/actions";
 import { getSafeRedirectPath } from "../../lib/auth/redirect";
 import { createBrowserClient } from "../../lib/supabase/browser";
 import { SUPABASE_CONFIG_ERROR } from "../../lib/supabase/config";
@@ -25,18 +26,15 @@ export function EmailPasswordSignIn({
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [notice, setNotice] = useState<string | null>(null);
 
   function switchMode() {
     setMode((current) => (current === "signin" ? "signup" : "signin"));
     setError(null);
-    setNotice(null);
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
-    setNotice(null);
     setPending(true);
 
     try {
@@ -45,28 +43,17 @@ export function EmailPasswordSignIn({
         getSafeRedirectPath(new URLSearchParams(window.location.search).get("next")) ?? "/";
 
       if (mode === "signup") {
-        const { data, error: signUpError } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: new URL("/auth/callback", window.location.origin).toString(),
-          },
-        });
+        const registration = await registerUser(email, password);
 
-        if (signUpError) {
-          throw signUpError;
+        if (!registration.ok) {
+          throw new Error(registration.error);
         }
+      }
 
-        if (!data.session) {
-          setNotice("Te enviamos un correo para confirmar tu cuenta. Revisá tu correo para activarla.");
-          return;
-        }
-      } else {
-        const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+      const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
 
-        if (signInError) {
-          throw signInError;
-        }
+      if (signInError) {
+        throw signInError;
       }
 
       onAuthenticated(next);
@@ -76,7 +63,7 @@ export function EmailPasswordSignIn({
       } else {
         setError(
           mode === "signup"
-            ? "No hemos podido crear la cuenta. Revisá los datos e inténtalo de nuevo."
+            ? "No hemos podido completar el alta. Revisá los datos e inténtalo de nuevo."
             : "No hemos podido iniciar sesión. Revisá el correo y la contraseña.",
         );
       }
@@ -125,11 +112,6 @@ export function EmailPasswordSignIn({
       {error ? (
         <p className="auth-form__message" role="alert">
           {error}
-        </p>
-      ) : null}
-      {notice ? (
-        <p className="auth-form__message" role="status">
-          {notice}
         </p>
       ) : null}
     </form>

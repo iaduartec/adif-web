@@ -3,18 +3,19 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { EmailPasswordSignIn } from "../components/auth/email-password-sign-in";
 import { SUPABASE_CONFIG_ERROR } from "../lib/supabase/config";
 
-const { createBrowserClient, signInWithPassword, signUp } = vi.hoisted(() => {
+const { createBrowserClient, signInWithPassword, registerUser } = vi.hoisted(() => {
   const signInWithPassword = vi.fn();
-  const signUp = vi.fn();
+  const registerUser = vi.fn();
 
   return {
     signInWithPassword,
-    signUp,
-    createBrowserClient: vi.fn(() => ({ auth: { signInWithPassword, signUp } })),
+    registerUser,
+    createBrowserClient: vi.fn(() => ({ auth: { signInWithPassword } })),
   };
 });
 
 vi.mock("../lib/supabase/browser", () => ({ createBrowserClient }));
+vi.mock("../app/(auth)/login/actions", () => ({ registerUser }));
 
 describe("EmailPasswordSignIn", () => {
   const onAuthenticated = vi.fn();
@@ -23,8 +24,9 @@ describe("EmailPasswordSignIn", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    createBrowserClient.mockReturnValue({ auth: { signInWithPassword } });
     signInWithPassword.mockResolvedValue({ data: { session: { access_token: "token" } }, error: null });
-    signUp.mockResolvedValue({ data: { session: { access_token: "token" } }, error: null });
+    registerUser.mockResolvedValue({ ok: true });
     window.history.replaceState({}, "", "/login");
   });
 
@@ -51,6 +53,7 @@ describe("EmailPasswordSignIn", () => {
       });
       expect(onAuthenticated).toHaveBeenCalledWith("/curso");
     });
+    expect(registerUser).not.toHaveBeenCalled();
   });
 
   it("falls back to the dashboard when no safe next route is present", async () => {
@@ -64,7 +67,7 @@ describe("EmailPasswordSignIn", () => {
     });
   });
 
-  it("creates an account and continues when a session is returned", async () => {
+  it("registers the account then signs in", async () => {
     renderForm();
 
     fireEvent.click(screen.getByRole("button", { name: "¿No tenés cuenta? Creá una" }));
@@ -72,24 +75,25 @@ describe("EmailPasswordSignIn", () => {
     fireEvent.click(screen.getByRole("button", { name: "Crear cuenta" }));
 
     await waitFor(() => {
-      expect(signUp).toHaveBeenCalledWith({
+      expect(registerUser).toHaveBeenCalledWith("alumno@example.com", "secreto123");
+      expect(signInWithPassword).toHaveBeenCalledWith({
         email: "alumno@example.com",
         password: "secreto123",
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
       });
       expect(onAuthenticated).toHaveBeenCalledWith("/");
     });
   });
 
-  it("asks the user to confirm the email when sign-up returns no session", async () => {
-    signUp.mockResolvedValue({ data: { session: null }, error: null });
+  it("shows an inline error when registration fails", async () => {
+    registerUser.mockResolvedValue({ ok: false, error: "boom" });
     renderForm();
 
     fireEvent.click(screen.getByRole("button", { name: "¿No tenés cuenta? Creá una" }));
     fillCredentials();
     fireEvent.click(screen.getByRole("button", { name: "Crear cuenta" }));
 
-    expect(await screen.findByRole("status")).toHaveTextContent("Te enviamos un correo para confirmar");
+    expect(await screen.findByRole("alert")).toHaveTextContent("No hemos podido completar el alta");
+    expect(signInWithPassword).not.toHaveBeenCalled();
     expect(onAuthenticated).not.toHaveBeenCalled();
   });
 
@@ -107,7 +111,9 @@ describe("EmailPasswordSignIn", () => {
   });
 
   it("explains that access is unavailable when Supabase is not configured", async () => {
-    signInWithPassword.mockRejectedValue(new Error(SUPABASE_CONFIG_ERROR));
+    createBrowserClient.mockImplementationOnce(() => {
+      throw new Error(SUPABASE_CONFIG_ERROR);
+    });
     renderForm();
 
     fillCredentials();
