@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -110,12 +109,7 @@ export function contentFingerprint(question: {
   options: readonly { key: string; text: string }[];
   answer: string;
 }): string {
-  const payload = [
-    question.prompt,
-    ...question.options.map((option) => option.text),
-    question.answer,
-  ].join("\n");
-  return `sha256:${createHash("sha256").update(payload, "utf8").digest("hex")}`;
+  return questionContentFingerprint(question);
 }
 
 function importError(message: string): never {
