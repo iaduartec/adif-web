@@ -2,6 +2,7 @@ import questionsJson from "../content/questions.json";
 import { officialItems } from "../content/syllabus";
 import { officialQuestionsSchema } from "../lib/content/schema";
 import { sourceManifest } from "../lib/content/source-manifest";
+import { questionContentFingerprint } from "../lib/content/question-content-fingerprint";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -57,16 +58,16 @@ describe("original practice question schema", () => {
 
   it("accepts a reviewed normative original only with active concepts and exact verified primary evidence", () => {
     const parsed = originalPracticeQuestionSchema.parse(question({
-      id: "orig-telecom-rcf-chapter-5-001",
+      id: "orig-telecom-rcf-chapter-1-001",
       domain: "telecom",
-      topicId: "rcf-capitulo-5",
-      syllabusNodeId: "rcf-capitulo-5",
-      topic: "Capítulo 5 del RCF",
+      topicId: "rcf-capitulo-1",
+      syllabusNodeId: "rcf-capitulo-1",
+      topic: "Capítulo 1 del RCF",
       skill: "circulación ferroviaria",
       conceptIds: ["rcf-concept-1"],
       sourceId: "RD 664/2015",
       sourceVersion: "consolidated-page-2026-10-15",
-      sourceLocator: "Artículo 1, apartado 1",
+      sourceLocator: "Capítulo 1, 1.1.1.1 Objeto del Reglamento",
       status: "reviewed",
       reviewedAt: "2026-10-16",
     }));
@@ -74,7 +75,17 @@ describe("original practice question schema", () => {
     expect(parsed.origin).toBe("original");
     expect(parsed.status).toBe("reviewed");
     expect(parsed.sourceId).toBe("RD 664/2015");
-    expect(parsed.syllabusNodeId).toBe("rcf-capitulo-5");
+    expect(parsed.syllabusNodeId).toBe("rcf-capitulo-1");
+  });
+
+  it("uses the same content fingerprint as the official exam importer", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+
+    expect(questionContentFingerprint({
+      prompt: officialQuestion.prompt,
+      options: officialQuestion.options,
+      answer: officialQuestion.initialAnswer,
+    })).toBe(officialQuestion.source.fingerprint);
   });
 
   it("keeps an original original when it cites the exact ADIF booklet URL used by an official question", () => {
@@ -108,7 +119,7 @@ describe("original practice question schema", () => {
       syllabusNodeId: "ict-capitulo-i",
       sourceId: hashedPrimarySource!.sourceId,
       sourceVersion: hashedPrimarySource!.sourceVersion,
-      sourceLocator: "Artículo 1; fuente ligada por sourceId y sourceVersion.",
+      sourceLocator: "Artículo 1",
     }));
 
     expect(sourceManifest.sources.find((source) =>
@@ -201,7 +212,7 @@ describe("original practice question schema", () => {
       ...reviewed,
       sourceId: "LO 3/2007",
       sourceVersion: "consolidated-page-2026-10-15",
-      sourceLocator: "Artículo 5",
+      sourceLocator: "Artículo 3",
     })).success).toBe(true);
     expect(originalPracticeQuestionSchema.safeParse(question({
       ...reviewed,
@@ -240,8 +251,56 @@ describe("original practice question schema", () => {
     })).success).toBe(false);
   });
 
+  it("rejects a normative locator that is not an exact reference for the question's active concept", () => {
+    const rcfQuestion = {
+      id: "orig-telecom-rcf-locator-check-001",
+      domain: "telecom",
+      topicId: "rcf-capitulo-1",
+      syllabusNodeId: "rcf-capitulo-1",
+      topic: "Capítulo 1 del RCF",
+      skill: "circulación ferroviaria",
+      conceptIds: ["rcf-concept-1"],
+      sourceId: "RD 664/2015",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceLocator: "Ley Orgánica 3/2007, artículo 5",
+      status: "reviewed",
+      reviewedAt: "2026-10-16",
+    };
+
+    expect(originalPracticeQuestionSchema.safeParse(question(rcfQuestion)).success).toBe(false);
+    expect(originalPracticeQuestionSchema.safeParse(question({
+      ...rcfQuestion,
+      sourceLocator: "Capítulo 1, 1.1.1.1 Objeto del Reglamento",
+      conceptIds: ["rcf-concept-2"],
+    })).success).toBe(false);
+    expect(originalPracticeQuestionSchema.safeParse(question({
+      ...rcfQuestion,
+      status: "draft",
+      reviewedAt: undefined,
+      conceptIds: [],
+    })).success).toBe(false);
+  });
+
   it("rejects repeated question IDs within one original dataset", () => {
     const sameId = question();
     expect(originalPracticeQuestionsSchema.safeParse([sameId, { ...sameId, prompt: "Otro enunciado sintético." }]).success).toBe(false);
+  });
+
+  it("rejects repeated original content fingerprints even when IDs differ", () => {
+    const first = question();
+    const duplicateContent = { ...first, id: "orig-english-there-is-are-002" };
+
+    expect(originalPracticeQuestionsSchema.safeParse([first, duplicateContent]).success).toBe(false);
+  });
+
+  it("rejects repeated original prompts and options even if the keyed answer is changed", () => {
+    const first = question();
+    const conflictingAnswer = {
+      ...first,
+      id: "orig-english-there-is-are-003",
+      answer: "C",
+    };
+
+    expect(originalPracticeQuestionsSchema.safeParse([first, conflictingAnswer]).success).toBe(false);
   });
 });

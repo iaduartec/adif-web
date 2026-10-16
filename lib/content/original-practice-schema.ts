@@ -1,9 +1,15 @@
 import { z } from "zod";
 
 import englishTopicCatalog from "../../content/official-exams/english-topics.json";
+import questionsJson from "../../content/questions.json";
+import { lessonTheories } from "../../content/lesson-theory";
 import { activeTheoryConceptRegistry } from "../../content/theory-concepts";
 import { officialItems } from "../../content/syllabus";
-import { officialQuestionIdSchema } from "./schema";
+import { officialQuestionIdSchema, officialQuestionsSchema } from "./schema";
+import {
+  questionContentFingerprint,
+  questionPromptOptionsFingerprint,
+} from "./question-content-fingerprint";
 import { sourceManifest } from "./source-manifest";
 
 export const originalPracticeDomainSchema = z.enum([
@@ -40,12 +46,57 @@ export const originalPsychometricTopicIds = [
 
 const englishTopicIds = new Set(englishTopicCatalog.topics.map((topic) => topic.id));
 const psychometricTopicIds = new Set<string>(originalPsychometricTopicIds);
+const parsedOfficialQuestions = officialQuestionsSchema.parse(questionsJson);
+const officialQuestionFingerprints = new Set(parsedOfficialQuestions.flatMap((question) => {
+  const answers = new Set([
+    question.answer,
+    question.initialAnswer,
+    question.effectiveAnswer,
+  ].filter((answer): answer is "A" | "B" | "C" | "D" => answer !== null));
+
+  return [
+    question.source.fingerprint,
+    ...[...answers].map((answer) => questionContentFingerprint({
+      prompt: question.prompt,
+      options: question.options,
+      answer,
+    })),
+  ];
+}));
+const officialQuestionPromptOptionFingerprints = new Set(
+  parsedOfficialQuestions.map((question) => questionPromptOptionsFingerprint(question)),
+);
 const syllabusNodeById = new Map(
   officialItems.flatMap((item) => item.children.map((node) => [
     node.id,
-    { scope: item.scope, materialSourceIds: node.materialSourceIds },
+    { scope: item.scope, materialSourceIds: node.materialSourceIds, linkedModules: node.linkedModules },
   ] as const)),
 );
+
+function hasExactConceptCitation(
+  question: Pick<OriginalPracticeQuestion, "conceptIds" | "sourceId" | "sourceVersion" | "sourceLocator" | "syllabusNodeId">,
+) {
+  const node = question.syllabusNodeId ? syllabusNodeById.get(question.syllabusNodeId) : undefined;
+  if (!node || !question.sourceId || !question.sourceVersion || !question.sourceLocator) return false;
+
+  return node.linkedModules.some((moduleId) => {
+    const theory = lessonTheories[moduleId];
+    if (!theory) return false;
+
+    const matchingReference = theory.sources.find((source) =>
+      source.sourceId === question.sourceId &&
+      source.sourceVersion === question.sourceVersion &&
+      source.locator === question.sourceLocator,
+    );
+    if (!matchingReference) return false;
+
+    if (question.conceptIds.length === 0) return true;
+    return theory.concepts.some((concept) =>
+      question.conceptIds.includes(concept.id) &&
+      concept.claims.some((claim) => claim.legalBasis.includes(matchingReference.id)),
+    );
+  });
+}
 
 const questionSourceFields = {
   sourceId: z.string().trim().min(1).optional(),
@@ -99,6 +150,17 @@ export const originalPracticeQuestionSchema = z.object({
       code: "custom",
       path: ["answer"],
       message: "The answer must reference one of the four original question options.",
+    });
+  }
+
+  if (
+    officialQuestionFingerprints.has(questionContentFingerprint(question)) ||
+    officialQuestionPromptOptionFingerprints.has(questionPromptOptionsFingerprint(question))
+  ) {
+    context.addIssue({
+      code: "custom",
+      path: ["prompt"],
+      message: "Original question content matches an official ADIF question and cannot be registered as original practice.",
     });
   }
 
@@ -187,6 +249,18 @@ export const originalPracticeQuestionSchema = z.object({
     });
   }
 
+  if (
+    (question.domain === "general-knowledge" || question.domain === "telecom") &&
+    question.sourceId && question.sourceVersion && question.sourceLocator &&
+    !hasExactConceptCitation(question)
+  ) {
+    context.addIssue({
+      code: "custom",
+      path: ["sourceLocator"],
+      message: "Normative question locator must match an exact source reference linked to its syllabus node and mapped concept.",
+    });
+  }
+
   if (question.status === "reviewed") {
     if (!question.reviewedAt) {
       context.addIssue({
@@ -220,6 +294,7 @@ export const originalPracticeQuestionSchema = z.object({
 
 export const originalPracticeQuestionsSchema = z.array(originalPracticeQuestionSchema).superRefine((questions, context) => {
   const firstIndexById = new Map<string, number>();
+  const firstIndexByFingerprint = new Map<string, number>();
   questions.forEach((question, index) => {
     const firstIndex = firstIndexById.get(question.id);
     if (firstIndex !== undefined) {
@@ -230,6 +305,18 @@ export const originalPracticeQuestionsSchema = z.array(originalPracticeQuestionS
       });
     } else {
       firstIndexById.set(question.id, index);
+    }
+
+    const fingerprint = questionPromptOptionsFingerprint(question);
+    const firstFingerprintIndex = firstIndexByFingerprint.get(fingerprint);
+    if (firstFingerprintIndex !== undefined) {
+      context.addIssue({
+        code: "custom",
+        path: [index, "prompt"],
+        message: `Duplicate original question prompt and options fingerprint (first used at index ${firstFingerprintIndex}).`,
+      });
+    } else {
+      firstIndexByFingerprint.set(fingerprint, index);
     }
   });
 });

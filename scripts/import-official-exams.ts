@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -28,6 +27,7 @@ import {
   validateHistoricalQuestionMappings,
 } from "../lib/content/official-question-validity";
 import { parseOfficialCommonSectionCatalog } from "../lib/content/official-common-sections";
+import { questionContentFingerprint } from "../lib/content/question-content-fingerprint";
 
 const optionKeys = ["A", "B", "C", "D"] as const;
 const questionNumbers = z.number().int().min(1).max(99);
@@ -110,12 +110,7 @@ export function contentFingerprint(question: {
   options: readonly { key: string; text: string }[];
   answer: string;
 }): string {
-  const payload = [
-    question.prompt,
-    ...question.options.map((option) => option.text),
-    question.answer,
-  ].join("\n");
-  return `sha256:${createHash("sha256").update(payload, "utf8").digest("hex")}`;
+  return questionContentFingerprint(question);
 }
 
 function importError(message: string): never {

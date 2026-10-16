@@ -77,6 +77,18 @@ describe("original practice public DTO", () => {
     expect(toPublicPracticeQuestion({ ...reviewedOriginal, answer: "E" })).toBeNull();
   });
 
+  it("does not publish a reviewed original that duplicates official question content", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+    const dto = toPublicPracticeQuestion({
+      ...reviewedOriginal,
+      prompt: officialQuestion.prompt,
+      options: officialQuestion.options,
+      answer: officialQuestion.answer,
+    });
+
+    expect(dto).toBeNull();
+  });
+
   it("keeps an original grounded in the same ADIF booklet URL used by an official item", () => {
     const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
     const booklet = sourceManifest.sources.find((source) =>
@@ -125,7 +137,7 @@ describe("original practice public DTO", () => {
       conceptIds: ["rcf-concept-1"],
       sourceId: "RD 664/2015",
       sourceVersion: "consolidated-page-2026-10-15",
-      sourceLocator: "Artículo 1, apartado 1; enunciado propio de prueba.",
+      sourceLocator: "Capítulo 1, 1.1.1.1 Objeto del Reglamento",
     });
 
     expect(dto?.origin).toBe("original");

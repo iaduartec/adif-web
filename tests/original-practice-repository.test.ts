@@ -46,7 +46,7 @@ function normativeQuestion(
     topicId: node.id,
     syllabusNodeId: node.id,
     topic: node.title,
-    prompt: "Normative synthetic source-grounded example for this repository test.",
+    prompt: `Normative synthetic ${domain} source-grounded example for this repository test.`,
   };
 }
 
@@ -60,6 +60,7 @@ function repositoryInputs(overrides: Record<string, unknown[]> = {}) {
       domain: "psychometric",
       topicId: "numerical",
       topic: "Numerical reasoning",
+      prompt: "A distinct synthetic numerical reasoning item for this repository test.",
     }],
     telecom: [normativeQuestion("telecom", "specific-26-12po", "orig-telecom-001")],
     ...overrides,
@@ -89,7 +90,7 @@ describe("original practice repository", () => {
     expect(repository.listOriginalPracticeQuestions({ topic: "THERE IS" }).map(({ id }) => id)).toEqual([
       "orig-a2-there-is-001",
     ]);
-    expect(repository.listOriginalPracticeQuestions({ query: "SYNTHETIC PRACTICE" })).toHaveLength(2);
+    expect(repository.listOriginalPracticeQuestions({ query: "SYNTHETIC" })).toHaveLength(4);
   });
 
   it("does not add official questions or records to the original repository", () => {
@@ -110,6 +111,7 @@ describe("original practice repository", () => {
       topicId: officialQuestion!.syllabusNodeId!,
       syllabusNodeId: officialQuestion!.syllabusNodeId!,
       topic: "Syllabus node shared with an official historical item",
+      prompt: "An original, independently authored question using a shared syllabus node.",
     };
     const repository = createOriginalPracticeRepository(repositoryInputs({ telecom: [original] }));
 
@@ -136,6 +138,44 @@ describe("original practice repository", () => {
     expect(() => createOriginalPracticeRepository(repositoryInputs({
       psychometric: [{ ...baseQuestion, domain: "psychometric", topicId: "numerical", id: baseQuestion.id }],
     }))).toThrow(/duplicate/i);
+  });
+
+  it("rejects original records whose content fingerprint matches an official ADIF question", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson).find((question) =>
+      question.syllabusNodeId && question.source.section === "specific",
+    );
+    expect(officialQuestion).toBeDefined();
+
+    const copiedQuestion = {
+      ...normativeQuestion("telecom", "specific-26-12po", "orig-copied-official-content-001"),
+      syllabusNodeId: officialQuestion!.syllabusNodeId,
+      topicId: officialQuestion!.syllabusNodeId,
+      prompt: officialQuestion!.prompt,
+      options: officialQuestion!.options,
+      answer: officialQuestion!.answer,
+    };
+
+    expect(() => createOriginalPracticeRepository(repositoryInputs({ telecom: [copiedQuestion] })))
+      .toThrow(/matches an official ADIF question/i);
+  });
+
+  it("rejects copied official prompts and options even if an original record changes the keyed answer", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson).find((question) =>
+      question.syllabusNodeId && question.source.section === "specific",
+    );
+    expect(officialQuestion).toBeDefined();
+    const changedAnswer = officialQuestion!.answer === "A" ? "B" : "A";
+    const copiedQuestion = {
+      ...normativeQuestion("telecom", "specific-26-12po", "orig-copied-official-content-answer-change-001"),
+      syllabusNodeId: officialQuestion!.syllabusNodeId,
+      topicId: officialQuestion!.syllabusNodeId,
+      prompt: officialQuestion!.prompt,
+      options: [...officialQuestion!.options].reverse(),
+      answer: changedAnswer,
+    };
+
+    expect(() => createOriginalPracticeRepository(repositoryInputs({ telecom: [copiedQuestion] })))
+      .toThrow(/matches an official ADIF question/i);
   });
 
   it("returns deterministic defensive copies without mutating repository inputs", () => {
