@@ -10,7 +10,7 @@ const baseQuestion = {
   domain: "english-a2",
   topicId: "there-is-are",
   topic: "There is / There are",
-  skill: "grammar",
+  skill: "GRAMMAR",
   prompt: "Synthetic practice prompt authored for this repository test.",
   options: [
     { key: "A", text: "Option A" },

@@ -115,7 +115,7 @@ describe("active official course content", () => {
     expect(parsed.success).toBe(true);
     if (!parsed.success) return;
 
-    expect(activeTheoryConceptRegistry.size).toBe(173);
+    expect(activeTheoryConceptRegistry.size).toBe(192);
     expect(parsed.data).toHaveLength(102);
     for (const question of parsed.data) {
       expect(question.conceptIds.length, question.id).toBeGreaterThan(0);

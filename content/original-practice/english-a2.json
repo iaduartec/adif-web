@@ -1,1 +1,882 @@
-[]
+[
+  {
+    "id": "orig-a2-there-is-are-001",
+    "domain": "english-a2",
+    "topicId": "there-is-are",
+    "topic": "There is / There are",
+    "skill": "GRAMMAR",
+    "prompt": "___ two clean towels in the bathroom.",
+    "options": [
+      {
+        "key": "A",
+        "text": "There is"
+      },
+      {
+        "key": "B",
+        "text": "There are"
+      },
+      {
+        "key": "C",
+        "text": "It is"
+      },
+      {
+        "key": "D",
+        "text": "There was"
+      }
+    ],
+    "answer": "B",
+    "explanation": "There are acompaña a un sustantivo plural: two towels.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "there-is-are"
+    ],
+    "conceptIds": [
+      "ingles-topic-there-is-are"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-present-simple-001",
+    "domain": "english-a2",
+    "topicId": "present-simple",
+    "topic": "Present Simple",
+    "skill": "GRAMMAR",
+    "prompt": "Mara ___ her bicycle to work every Monday.",
+    "options": [
+      {
+        "key": "A",
+        "text": "ride"
+      },
+      {
+        "key": "B",
+        "text": "riding"
+      },
+      {
+        "key": "C",
+        "text": "rides"
+      },
+      {
+        "key": "D",
+        "text": "is ride"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Every Monday indica una rutina. En tercera persona singular se añade -s: rides.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "present-simple"
+    ],
+    "conceptIds": [
+      "ingles-topic-present-simple"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-present-continuous-001",
+    "domain": "english-a2",
+    "topicId": "present-continuous",
+    "topic": "Present Continuous",
+    "skill": "GRAMMAR",
+    "prompt": "Please be quiet. The baby ___ now.",
+    "options": [
+      {
+        "key": "A",
+        "text": "sleeps"
+      },
+      {
+        "key": "B",
+        "text": "sleep"
+      },
+      {
+        "key": "C",
+        "text": "is sleeping"
+      },
+      {
+        "key": "D",
+        "text": "slept"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Una acción en curso ahora se expresa con be + verbo en -ing: is sleeping.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "present-continuous"
+    ],
+    "conceptIds": [
+      "ingles-topic-present-continuous"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-past-simple-001",
+    "domain": "english-a2",
+    "topicId": "past-simple",
+    "topic": "Past Simple",
+    "skill": "GRAMMAR",
+    "prompt": "Yesterday, Omar ___ his keys under the sofa.",
+    "options": [
+      {
+        "key": "A",
+        "text": "find"
+      },
+      {
+        "key": "B",
+        "text": "finding"
+      },
+      {
+        "key": "C",
+        "text": "finds"
+      },
+      {
+        "key": "D",
+        "text": "found"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Yesterday sitúa la acción terminada en pasado. El pasado irregular de find es found.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "past-simple"
+    ],
+    "conceptIds": [
+      "ingles-concept-1"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-future-001",
+    "domain": "english-a2",
+    "topicId": "future",
+    "topic": "Future forms",
+    "skill": "GRAMMAR",
+    "prompt": "Look at those black clouds. It ___ rain.",
+    "options": [
+      {
+        "key": "A",
+        "text": "going"
+      },
+      {
+        "key": "B",
+        "text": "is going to"
+      },
+      {
+        "key": "C",
+        "text": "goes"
+      },
+      {
+        "key": "D",
+        "text": "is go"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Be going to + infinitivo permite una predicción apoyada en indicios presentes: las nubes.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "future"
+    ],
+    "conceptIds": [
+      "ingles-topic-future"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-modal-verbs-001",
+    "domain": "english-a2",
+    "topicId": "modal-verbs",
+    "topic": "Modal verbs",
+    "skill": "GRAMMAR",
+    "prompt": "The sign says 'Do not touch'. Visitors ___ touch the paintings.",
+    "options": [
+      {
+        "key": "A",
+        "text": "must not"
+      },
+      {
+        "key": "B",
+        "text": "do not have to"
+      },
+      {
+        "key": "C",
+        "text": "must"
+      },
+      {
+        "key": "D",
+        "text": "need to"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Must not expresa prohibición. Do not have to indica que no es necesario, no que esté prohibido.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "modal-verbs"
+    ],
+    "conceptIds": [
+      "ingles-concept-2"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-comparatives-001",
+    "domain": "english-a2",
+    "topicId": "comparatives",
+    "topic": "Comparatives",
+    "skill": "GRAMMAR",
+    "prompt": "This bag weighs 3 kg. That bag weighs 8 kg. This bag is ___ than that one.",
+    "options": [
+      {
+        "key": "A",
+        "text": "lightest"
+      },
+      {
+        "key": "B",
+        "text": "more light"
+      },
+      {
+        "key": "C",
+        "text": "lighter"
+      },
+      {
+        "key": "D",
+        "text": "the light"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Para comparar dos objetos con el adjetivo corto light se usa lighter than.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "comparatives"
+    ],
+    "conceptIds": [
+      "ingles-topic-comparatives"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-prepositions-001",
+    "domain": "english-a2",
+    "topicId": "prepositions",
+    "topic": "Prepositions",
+    "skill": "GRAMMAR",
+    "prompt": "The class starts ___ 9:15 on Friday.",
+    "options": [
+      {
+        "key": "A",
+        "text": "at"
+      },
+      {
+        "key": "B",
+        "text": "in"
+      },
+      {
+        "key": "C",
+        "text": "on"
+      },
+      {
+        "key": "D",
+        "text": "for"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Se usa at con horas concretas y on con días: at 9:15 on Friday.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "prepositions"
+    ],
+    "conceptIds": [
+      "ingles-topic-prepositions"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-quantifiers-001",
+    "domain": "english-a2",
+    "topicId": "quantifiers",
+    "topic": "Quantifiers",
+    "skill": "GRAMMAR",
+    "prompt": "There isn't ___ milk left in the bottle.",
+    "options": [
+      {
+        "key": "A",
+        "text": "many"
+      },
+      {
+        "key": "B",
+        "text": "any"
+      },
+      {
+        "key": "C",
+        "text": "a few"
+      },
+      {
+        "key": "D",
+        "text": "a"
+      }
+    ],
+    "answer": "B",
+    "explanation": "En esta oración negativa any acompaña al sustantivo incontable milk. Many y a few se usan con plurales contables.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "quantifiers"
+    ],
+    "conceptIds": [
+      "ingles-topic-quantifiers"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-countable-uncountable-001",
+    "domain": "english-a2",
+    "topicId": "countable-uncountable",
+    "topic": "Countable / uncountable nouns",
+    "skill": "GRAMMAR",
+    "prompt": "Which noun is normally uncountable?",
+    "options": [
+      {
+        "key": "A",
+        "text": "apple"
+      },
+      {
+        "key": "B",
+        "text": "chair"
+      },
+      {
+        "key": "C",
+        "text": "advice"
+      },
+      {
+        "key": "D",
+        "text": "suitcase"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Advice es incontable: some advice o a piece of advice. Apple, chair y suitcase admiten plural contable.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "countable-uncountable"
+    ],
+    "conceptIds": [
+      "ingles-topic-countable-uncountable"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-simple-conditionals-001",
+    "domain": "english-a2",
+    "topicId": "simple-conditionals",
+    "topic": "Simple conditionals",
+    "skill": "GRAMMAR",
+    "prompt": "If the bus is late tomorrow, I ___ to work.",
+    "options": [
+      {
+        "key": "A",
+        "text": "walked"
+      },
+      {
+        "key": "B",
+        "text": "will walk"
+      },
+      {
+        "key": "C",
+        "text": "walking"
+      },
+      {
+        "key": "D",
+        "text": "walks"
+      }
+    ],
+    "answer": "B",
+    "explanation": "El primer condicional expresa una posibilidad futura: if + presente, will + infinitivo.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "simple-conditionals"
+    ],
+    "conceptIds": [
+      "ingles-topic-simple-conditionals"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-vocabulary-001",
+    "domain": "english-a2",
+    "topicId": "vocabulary",
+    "topic": "Everyday vocabulary",
+    "skill": "VOCABULARY",
+    "prompt": "You use a ___ to open a locked door.",
+    "options": [
+      {
+        "key": "A",
+        "text": "plate"
+      },
+      {
+        "key": "B",
+        "text": "pillow"
+      },
+      {
+        "key": "C",
+        "text": "key"
+      },
+      {
+        "key": "D",
+        "text": "spoon"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Key significa llave y encaja con abrir una puerta cerrada con llave.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "vocabulary"
+    ],
+    "conceptIds": [
+      "ingles-topic-vocabulary"
+    ],
+    "errorCategory": "VOCABULARY",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-signs-notices-001",
+    "domain": "english-a2",
+    "topicId": "signs-notices",
+    "topic": "Signs and notices",
+    "skill": "SIGN",
+    "prompt": "A shop notice says 'Closed on Sundays'. What does it mean?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The shop opens only on Sunday."
+      },
+      {
+        "key": "B",
+        "text": "You cannot shop there on Sunday."
+      },
+      {
+        "key": "C",
+        "text": "The shop is closed every day."
+      },
+      {
+        "key": "D",
+        "text": "The shop closes later on Sunday."
+      }
+    ],
+    "answer": "B",
+    "explanation": "Closed on Sundays indica que el establecimiento permanece cerrado los domingos.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "signs-notices"
+    ],
+    "conceptIds": [
+      "ingles-topic-signs-notices"
+    ],
+    "errorCategory": "SIGN",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-short-messages-001",
+    "domain": "english-a2",
+    "topicId": "short-messages",
+    "topic": "Short messages",
+    "skill": "READING",
+    "prompt": "Message from Ana: 'I am at the café. Meet me here at six.' Where should you go?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ana's home"
+      },
+      {
+        "key": "B",
+        "text": "The café"
+      },
+      {
+        "key": "C",
+        "text": "The school"
+      },
+      {
+        "key": "D",
+        "text": "The bus stop"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Here se refiere al lugar desde el que Ana escribe, el café. La hora de encuentro es las seis.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "short-messages"
+    ],
+    "conceptIds": [
+      "ingles-topic-short-messages"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-emails-001",
+    "domain": "english-a2",
+    "topicId": "emails",
+    "topic": "Short emails",
+    "skill": "READING",
+    "prompt": "Email: 'Your appointment is on Tuesday at 10. Please arrive ten minutes early.' When should you arrive?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tuesday at 9:50"
+      },
+      {
+        "key": "B",
+        "text": "Tuesday at 10:10"
+      },
+      {
+        "key": "C",
+        "text": "Wednesday at 9:50"
+      },
+      {
+        "key": "D",
+        "text": "Tuesday at 11:00"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Ten minutes early significa diez minutos antes: el martes a las 9:50, no después de las diez.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "emails"
+    ],
+    "conceptIds": [
+      "ingles-topic-emails"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-everyday-situations-001",
+    "domain": "english-a2",
+    "topicId": "everyday-situations",
+    "topic": "Everyday situations",
+    "skill": "CONTEXT",
+    "prompt": "Someone says 'Thank you for your help.' Which reply fits?",
+    "options": [
+      {
+        "key": "A",
+        "text": "You are welcome."
+      },
+      {
+        "key": "B",
+        "text": "I am thirty."
+      },
+      {
+        "key": "C",
+        "text": "It is a kilo."
+      },
+      {
+        "key": "D",
+        "text": "On Thursday."
+      }
+    ],
+    "answer": "A",
+    "explanation": "You are welcome es una respuesta natural a un agradecimiento por una ayuda.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "everyday-situations"
+    ],
+    "conceptIds": [
+      "ingles-topic-everyday-situations"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-shops-001",
+    "domain": "english-a2",
+    "topicId": "shops",
+    "topic": "Shops",
+    "skill": "CONTEXT",
+    "prompt": "A notebook costs £4. You pay with a £10 note. How much change should you receive?",
+    "options": [
+      {
+        "key": "A",
+        "text": "£4"
+      },
+      {
+        "key": "B",
+        "text": "£6"
+      },
+      {
+        "key": "C",
+        "text": "£10"
+      },
+      {
+        "key": "D",
+        "text": "£14"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Change significa el dinero que te devuelven al pagar: diez menos cuatro son seis libras.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "shops"
+    ],
+    "conceptIds": [
+      "ingles-topic-shops"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-hotels-001",
+    "domain": "english-a2",
+    "topicId": "hotels",
+    "topic": "Hotels",
+    "skill": "CONTEXT",
+    "prompt": "You arrive at a hotel with a reservation. What do you say at reception?",
+    "options": [
+      {
+        "key": "A",
+        "text": "I would like to check in."
+      },
+      {
+        "key": "B",
+        "text": "I would like to take off."
+      },
+      {
+        "key": "C",
+        "text": "I would like to turn left."
+      },
+      {
+        "key": "D",
+        "text": "I would like to try these shoes."
+      }
+    ],
+    "answer": "A",
+    "explanation": "Check in es registrarse al llegar a un hotel. Take off se usa, entre otros sentidos, para despegar.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "hotels"
+    ],
+    "conceptIds": [
+      "ingles-topic-hotels"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-airports-001",
+    "domain": "english-a2",
+    "topicId": "airports",
+    "topic": "Airports",
+    "skill": "CONTEXT",
+    "prompt": "Your plane leaves at 14:20. The screen says 'Boarding: Gate 6'. Where should you go?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The arrivals exit"
+      },
+      {
+        "key": "B",
+        "text": "Gate 6"
+      },
+      {
+        "key": "C",
+        "text": "The taxi rank"
+      },
+      {
+        "key": "D",
+        "text": "The car park"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Boarding indica embarque y gate significa puerta. Debes dirigirte a la puerta seis.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "airports"
+    ],
+    "conceptIds": [
+      "ingles-topic-airports"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-health-001",
+    "domain": "english-a2",
+    "topicId": "health",
+    "topic": "Health",
+    "skill": "CONTEXT",
+    "prompt": "You have toothache. Who should you make an appointment with?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A chef"
+      },
+      {
+        "key": "B",
+        "text": "A mechanic"
+      },
+      {
+        "key": "C",
+        "text": "A dentist"
+      },
+      {
+        "key": "D",
+        "text": "A pilot"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Toothache significa dolor de muelas o dientes. El profesional correspondiente es el dentista.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "health"
+    ],
+    "conceptIds": [
+      "ingles-topic-health"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-comprehension-001",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Nora works from 8 to 12. She has lunch at home, then works again from 13 to 16. Where does she eat lunch?",
+    "options": [
+      {
+        "key": "A",
+        "text": "At the office"
+      },
+      {
+        "key": "B",
+        "text": "At a restaurant"
+      },
+      {
+        "key": "C",
+        "text": "At home"
+      },
+      {
+        "key": "D",
+        "text": "On a train"
+      }
+    ],
+    "answer": "C",
+    "explanation": "El texto dice has lunch at home. La respuesta se localiza directamente sin deducir dónde trabaja Nora.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-railway-vocabulary-001",
+    "domain": "english-a2",
+    "topicId": "railway-vocabulary",
+    "topic": "Railway vocabulary",
+    "skill": "VOCABULARY",
+    "prompt": "The departure board says 'Train delayed by 15 minutes'. What does delayed mean?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Early"
+      },
+      {
+        "key": "B",
+        "text": "Late"
+      },
+      {
+        "key": "C",
+        "text": "Cancelled"
+      },
+      {
+        "key": "D",
+        "text": "Full"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Delayed significa retrasado. No implica que el tren esté cancelado ni que vaya lleno. Es vocabulario complementario.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "railway-vocabulary"
+    ],
+    "conceptIds": [
+      "ingles-concept-3"
+    ],
+    "errorCategory": "VOCABULARY",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  }
+]

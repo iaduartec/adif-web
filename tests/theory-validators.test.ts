@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonTheories } from "../content/lesson-theory";
+import inheritedClaimReviews from "../content/claim-review-manifest.json";
 import theorySourceLinks from "../content/theory-source-links.json";
 import type { LegalReference, TheoryClaim, TheorySection } from "../content/theory-types";
 import { sourceManifest } from "../lib/content/source-manifest";
@@ -390,6 +391,8 @@ describe("whole content guardrails", () => {
   });
 
   it("keeps inherited claim reviews pending with an explicit confidence reason", () => {
+    const inheritedIds = new Set(Object.keys(inheritedClaimReviews.reviews));
+    const seen = new Set<string>();
     for (const theory of Object.values(lessonTheories)) {
       const claims = [
         ...theory.introduction,
@@ -398,12 +401,15 @@ describe("whole content guardrails", () => {
         ...theory.reviewTakeaways,
       ];
       for (const currentClaim of claims) {
+        if (!inheritedIds.has(currentClaim.id)) continue;
+        seen.add(currentClaim.id);
         expect(currentClaim.review?.status).toBe("needs_review");
         expect(currentClaim.review?.confidence.level).toBe("low");
         expect(currentClaim.review?.confidence.reason.trim()).not.toBe("");
         expect(currentClaim.review?.reviewedAt).toBeUndefined();
       }
     }
+    expect([...seen].sort()).toEqual([...inheritedIds].sort());
   });
 });
 

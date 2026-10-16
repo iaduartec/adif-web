@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import englishTopicCatalog from "../../content/official-exams/english-topics.json";
+import { getEnglishCurriculum, englishKnowledgeErrorSchema } from "./english-a2-curriculum";
 import questionsJson from "../../content/questions.json";
 import { lessonTheories } from "../../content/lesson-theory";
 import { activeTheoryConceptRegistry } from "../../content/theory-concepts";
@@ -44,7 +44,7 @@ export const originalPsychometricTopicIds = [
   "perceptual-speed",
 ] as const;
 
-const englishTopicIds = new Set(englishTopicCatalog.topics.map((topic) => topic.id));
+const englishTopics = new Map(getEnglishCurriculum().topics.map((topic) => [topic.id, topic]));
 const psychometricTopicIds = new Set<string>(originalPsychometricTopicIds);
 const parsedOfficialQuestions = officialQuestionsSchema.parse(questionsJson);
 const officialQuestionFingerprints = new Set(parsedOfficialQuestions.flatMap((question) => {
@@ -180,12 +180,18 @@ export const originalPracticeQuestionSchema = z.object({
     });
   }
 
-  if (question.domain === "english-a2" && !englishTopicIds.has(question.topicId)) {
-    context.addIssue({
-      code: "custom",
-      path: ["topicId"],
-      message: "English A2 topicId must exist in the shared A2 taxonomy.",
-    });
+  if (question.domain === "english-a2") {
+    const topic = englishTopics.get(question.topicId);
+    if (!topic) context.addIssue({ code: "custom", path: ["topicId"], message: "English A2 topicId must exist in the shared A2 taxonomy." });
+    if (!englishKnowledgeErrorSchema.safeParse(question.skill).success) {
+      context.addIssue({ code: "custom", path: ["skill"], message: "English skills must use a knowledge category, never an attempt cause." });
+    }
+    if (question.errorCategory && (!englishKnowledgeErrorSchema.safeParse(question.errorCategory).success || question.errorCategory !== question.skill)) {
+      context.addIssue({ code: "custom", path: ["errorCategory"], message: "English item errorCategory must match its primary knowledge skill." });
+    }
+    if (topic && question.conceptIds.some((id) => !topic.activeConceptIds.includes(id))) {
+      context.addIssue({ code: "custom", path: ["conceptIds"], message: "English concept IDs must belong to the selected stable topic." });
+    }
   }
   if (question.domain === "psychometric" && !psychometricTopicIds.has(question.topicId)) {
     context.addIssue({

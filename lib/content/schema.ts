@@ -540,7 +540,7 @@ export const englishTopicCatalogSchema = z
       "there-is-are", "present-simple", "present-continuous", "past-simple", "future", "modal-verbs",
       "comparatives", "prepositions", "quantifiers", "countable-uncountable", "simple-conditionals",
       "vocabulary", "signs-notices", "short-messages", "emails", "everyday-situations", "shops",
-      "hotels", "airports", "health", "reading-comprehension",
+      "hotels", "airports", "health", "reading-comprehension", "railway-vocabulary",
     ];
     const missing = requiredIds.filter((id) => !topicIds.includes(id));
     if (missing.length) {
