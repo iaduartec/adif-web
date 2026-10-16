@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { PsychometricPractice } from "../../../components/practice/psychometric-practice";
 import { createServerClient } from "../../../lib/supabase/server";
+import { listOriginalPracticeQuestions } from "../../../lib/content/original-practice-repository";
+import { toPublicPracticeQuestion } from "../../../lib/content/original-practice-public-dto";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +30,10 @@ export default async function PsicotecnicosPage() {
   const supabase = await createServerClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+
+  const questions = listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" })
+    .map(toPublicPracticeQuestion)
+    .filter((question) => question !== null);
 
   return (
     <section className="course-index" aria-labelledby="psico-title">
@@ -58,6 +65,7 @@ export default async function PsicotecnicosPage() {
           </h2>
           <p className="text-sm text-gray-600">
             No hay preguntas oficiales públicas disponibles: los cuadernillos psicométricos privados están excluidos.
+            Usa la práctica original por aptitud que aparece más abajo.
           </p>
         </div>
       </div>
@@ -76,6 +84,8 @@ export default async function PsicotecnicosPage() {
           ))}
         </div>
       </section>
+
+      <PsychometricPractice questions={questions} />
 
       {/* Quick access to full bank */}
       <div className="mt-10 pt-6 border-t border-rail flex justify-center">

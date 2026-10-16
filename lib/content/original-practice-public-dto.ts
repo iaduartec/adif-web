@@ -7,6 +7,7 @@ import {
 } from "./original-practice-schema";
 import { sourceManifest } from "./source-manifest";
 import { englishKnowledgeErrorSchema, englishTopicIdSchema } from "./english-a2-curriculum";
+import { psychometricAptitudeSchema } from "./psychometric-curriculum";
 
 export const originalPracticeAnswerGroundingDtoSchema = z.object({
   sourceId: z.string().trim().min(1),
@@ -30,12 +31,21 @@ export const originalPracticePublicQuestionSchema = z.object({
   tags: z.array(z.string().trim().min(1)),
   answerGrounding: originalPracticeAnswerGroundingDtoSchema.optional(),
 }).strict().superRefine((question, context) => {
-  if (question.domain !== "english-a2") return;
-  if (!englishTopicIdSchema.safeParse(question.topicId).success) {
-    context.addIssue({ code: "custom", path: ["topicId"], message: "Unknown stable A2 topic ID." });
+  if (question.domain === "english-a2") {
+    if (!englishTopicIdSchema.safeParse(question.topicId).success) {
+      context.addIssue({ code: "custom", path: ["topicId"], message: "Unknown stable A2 topic ID." });
+    }
+    if (!englishKnowledgeErrorSchema.safeParse(question.skill).success) {
+      context.addIssue({ code: "custom", path: ["skill"], message: "English DTO skills must be knowledge categories." });
+    }
   }
-  if (!englishKnowledgeErrorSchema.safeParse(question.skill).success) {
-    context.addIssue({ code: "custom", path: ["skill"], message: "English DTO skills must be knowledge categories." });
+  if (question.domain === "psychometric") {
+    if (!psychometricAptitudeSchema.safeParse(question.topicId).success) {
+      context.addIssue({ code: "custom", path: ["topicId"], message: "Unknown psychometric aptitude ID." });
+    }
+    if (question.skill !== question.topicId) {
+      context.addIssue({ code: "custom", path: ["skill"], message: "Psychometric DTO skills must name the aptitude tested." });
+    }
   }
 });
 

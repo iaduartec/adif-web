@@ -1,5 +1,191 @@
 import type { TheorySection } from "../lesson-theory";
 
+const reviewedOriginalAptitude = {
+  status: "reviewed",
+  reviewedAt: "2026-10-16",
+  reviewedBy: "opencode-editorial",
+  confidence: {
+    level: "high",
+    reason: "Explicación didáctica original verificada junto con sus cuatro opciones; no acredita contenido oficial ADIF.",
+  },
+} as const;
+
+/**
+ * One teaching concept per original aptitude. The supported aptitude IDs live in
+ * `lib/content/psychometric-curriculum.ts`, which fails at load if a concept is missing.
+ */
+const aptitudeConcepts: TheorySection["concepts"] = [
+  {
+    id: "psico-topic-verbal",
+    title: "Aptitud verbal",
+    claims: [
+      {
+        id: "psico-topic-verbal-rule",
+        text: "Evalúa la comprensión de relaciones semánticas entre palabras: sinónimos, antónimos y significado contextual dentro de una frase.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-synonym-antonym",
+    title: "Sinónimos y antónimos",
+    claims: [
+      {
+        id: "psico-topic-synonym-antonym-rule",
+        text: "Mide la capacidad de identificar sinónimos y antónimos, distinguiendo el matiz que separa palabras de significado próximo pero no equivalente.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-numerical",
+    title: "Aptitud numérica",
+    claims: [
+      {
+        id: "psico-topic-numerical-rule",
+        text: "Resuelve problemas aritméticos aplicados sobre proporciones, porcentajes y velocidades, eligiendo la operación mínima necesaria.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-calculation",
+    title: "Cálculo mental",
+    claims: [
+      {
+        id: "psico-topic-calculation-rule",
+        text: "Mide la velocidad y la precisión del cálculo mental combinando sumas, restas, multiplicaciones y divisiones con la jerarquía de operaciones.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-series",
+    title: "Series numéricas",
+    claims: [
+      {
+        id: "psico-topic-series-rule",
+        text: "Detecta la regla que genera una sucesión numérica: progresiones aditivas, multiplicativas o de diferencias sucesivas.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-logic",
+    title: "Razonamiento lógico",
+    claims: [
+      {
+        id: "psico-topic-logic-rule",
+        text: "Evalúa el razonamiento deductivo sobre proposiciones condicionales y cuantificadores, separando lo que se sigue necesariamente de lo meramente posible.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-matrices",
+    title: "Matrices",
+    claims: [
+      {
+        id: "psico-topic-matrices-rule",
+        text: "Resuelve cuadrículas en las que una regla de fila o columna determina el valor ausente.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-abstract-patterns",
+    title: "Patrones abstractos",
+    claims: [
+      {
+        id: "psico-topic-abstract-patterns-rule",
+        text: "Identifica la transformación que gobierna una figura abstracta (giros, simetrías o alternancias) y la proyecta sobre el siguiente paso.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-attention",
+    title: "Atención",
+    claims: [
+      {
+        id: "psico-topic-attention-rule",
+        text: "Mide la concentración sostenida en tareas de búsqueda y conteo de elementos dentro de una secuencia.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-difference-detection",
+    title: "Detección de diferencias",
+    claims: [
+      {
+        id: "psico-topic-difference-detection-rule",
+        text: "Localiza la diferencia exacta entre dos cadenas alfanuméricas casi idénticas comparando el conjunto completo y no solo sus extremos.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-memory",
+    title: "Memoria",
+    claims: [
+      {
+        id: "psico-topic-memory-rule",
+        text: "Evalúa la retención a corto plazo de claves, secuencias o listas reproducidas sin alterar el orden ni los caracteres.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-sequences",
+    title: "Secuencias",
+    claims: [
+      {
+        id: "psico-topic-sequences-rule",
+        text: "Completa secuencias ordenadas de letras o símbolos alternos reconociendo el criterio de avance.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-perceptual-speed",
+    title: "Velocidad perceptiva",
+    claims: [
+      {
+        id: "psico-topic-perceptual-speed-rule",
+        text: "Mide la rapidez de discriminación visual sobre cadenas de símbolos, priorizando la precisión sobre la precipitación.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+];
+
 export const psicometriaTheory: TheorySection = {
   sources: [
     {
@@ -93,7 +279,8 @@ export const psicometriaTheory: TheorySection = {
           legalBasis: ["guia-aptitudes-cognitivas"]
         }
       ]
-    }
+    },
+    ...aptitudeConcepts
   ],
 
   examples: [

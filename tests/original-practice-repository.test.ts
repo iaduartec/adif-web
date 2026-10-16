@@ -60,6 +60,7 @@ function repositoryInputs(overrides: Record<string, unknown[]> = {}) {
       domain: "psychometric",
       topicId: "numerical",
       topic: "Numerical reasoning",
+      skill: "numerical",
       prompt: "A distinct synthetic numerical reasoning item for this repository test.",
     }],
     telecom: [normativeQuestion("telecom", "specific-26-12po", "orig-telecom-001")],
@@ -136,7 +137,7 @@ describe("original practice repository", () => {
 
   it("rejects duplicate original IDs across the separated domain datasets", () => {
     expect(() => createOriginalPracticeRepository(repositoryInputs({
-      psychometric: [{ ...baseQuestion, domain: "psychometric", topicId: "numerical", id: baseQuestion.id }],
+      psychometric: [{ ...baseQuestion, domain: "psychometric", topicId: "numerical", skill: "numerical", id: baseQuestion.id }],
     }))).toThrow(/duplicate/i);
   });
 
