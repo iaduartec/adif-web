@@ -13,9 +13,11 @@
       "id": "there-is-are",
       "title": "There is / There are",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-there-is-are"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -23,9 +25,11 @@
       "id": "present-simple",
       "title": "Present Simple",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-present-simple"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -33,9 +37,11 @@
       "id": "present-continuous",
       "title": "Present Continuous",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-present-continuous"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -47,7 +53,7 @@
         "ingles-concept-1"
       ],
       "mappingStatus": "linked_to_active_theory",
-      "scopeNote": "Teoría activa existente; no se afirma frecuencia histórica ADIF.",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -55,9 +61,11 @@
       "id": "future",
       "title": "Future forms",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-future"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -69,7 +77,7 @@
         "ingles-concept-2"
       ],
       "mappingStatus": "linked_to_active_theory",
-      "scopeNote": "Teoría activa existente; no se afirma frecuencia histórica ADIF.",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -77,9 +85,11 @@
       "id": "comparatives",
       "title": "Comparatives",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-comparatives"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -87,9 +97,11 @@
       "id": "prepositions",
       "title": "Prepositions",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-prepositions"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -97,9 +109,11 @@
       "id": "quantifiers",
       "title": "Quantifiers",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-quantifiers"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -107,9 +121,11 @@
       "id": "countable-uncountable",
       "title": "Countable / uncountable nouns",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-countable-uncountable"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -117,9 +133,11 @@
       "id": "simple-conditionals",
       "title": "Simple conditionals",
       "area": "grammar",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-simple-conditionals"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -127,9 +145,11 @@
       "id": "vocabulary",
       "title": "Everyday vocabulary",
       "area": "vocabulary",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-vocabulary"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -137,9 +157,11 @@
       "id": "signs-notices",
       "title": "Signs and notices",
       "area": "signs",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-signs-notices"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -147,9 +169,11 @@
       "id": "short-messages",
       "title": "Short messages",
       "area": "messages",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-short-messages"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -157,9 +181,11 @@
       "id": "emails",
       "title": "Short emails",
       "area": "messages",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-emails"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -167,9 +193,11 @@
       "id": "everyday-situations",
       "title": "Everyday situations",
       "area": "situations",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-everyday-situations"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -177,9 +205,11 @@
       "id": "shops",
       "title": "Shops",
       "area": "situations",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-shops"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -187,9 +217,11 @@
       "id": "hotels",
       "title": "Hotels",
       "area": "situations",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-hotels"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -197,9 +229,11 @@
       "id": "airports",
       "title": "Airports",
       "area": "situations",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-airports"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -207,9 +241,11 @@
       "id": "health",
       "title": "Health",
       "area": "situations",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-health"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -217,9 +253,11 @@
       "id": "reading-comprehension",
       "title": "Reading comprehension",
       "area": "reading",
-      "activeConceptIds": [],
-      "mappingStatus": "taxonomy_only",
-      "scopeNote": "Tema incluido en el programa de práctica solicitado; su presencia y frecuencia en exámenes históricos ADIF no están confirmadas.",
+      "activeConceptIds": [
+        "ingles-topic-reading-comprehension"
+      ],
+      "mappingStatus": "linked_to_active_theory",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     },
@@ -231,7 +269,7 @@
         "ingles-concept-3"
       ],
       "mappingStatus": "linked_to_active_theory",
-      "scopeNote": "Teoría activa existente; se mantiene como tema complementario, sin afirmar que domine el inglés histórico ADIF.",
+      "scopeNote": "Concepto didáctico original activo; no implica frecuencia histórica ni inclusión en el temario normativo ADIF. Vocabulario complementario.",
       "reviewStatus": "needs_review",
       "reviewEvidence": null
     }

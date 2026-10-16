@@ -6,6 +6,7 @@ import {
   originalPracticeQuestionSchema,
 } from "./original-practice-schema";
 import { sourceManifest } from "./source-manifest";
+import { englishKnowledgeErrorSchema, englishTopicIdSchema } from "./english-a2-curriculum";
 
 export const originalPracticeAnswerGroundingDtoSchema = z.object({
   sourceId: z.string().trim().min(1),
@@ -28,7 +29,15 @@ export const originalPracticePublicQuestionSchema = z.object({
   difficulty: z.number().int().min(1).max(3),
   tags: z.array(z.string().trim().min(1)),
   answerGrounding: originalPracticeAnswerGroundingDtoSchema.optional(),
-}).strict();
+}).strict().superRefine((question, context) => {
+  if (question.domain !== "english-a2") return;
+  if (!englishTopicIdSchema.safeParse(question.topicId).success) {
+    context.addIssue({ code: "custom", path: ["topicId"], message: "Unknown stable A2 topic ID." });
+  }
+  if (!englishKnowledgeErrorSchema.safeParse(question.skill).success) {
+    context.addIssue({ code: "custom", path: ["skill"], message: "English DTO skills must be knowledge categories." });
+  }
+});
 
 export type OriginalPracticeAnswerGroundingDto = z.infer<typeof originalPracticeAnswerGroundingDtoSchema>;
 export type OriginalPracticeQuestionDto = z.infer<typeof originalPracticePublicQuestionSchema>;

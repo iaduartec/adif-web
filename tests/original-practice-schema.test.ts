@@ -218,7 +218,7 @@ describe("original practice question schema", () => {
     expect(originalPracticeQuestionSchema.safeParse(question({
       status: "reviewed",
       reviewedAt: "2026-10-16",
-      conceptIds: ["ingles-concept-1"],
+      conceptIds: ["ingles-topic-there-is-are"],
     })).success).toBe(true);
   });
 
