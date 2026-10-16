@@ -24,9 +24,8 @@ export function questionContentFingerprint(question: FingerprintedQuestion): str
 /** Identifies the stem and answer choices even if a record changes its key. */
 export function questionPromptOptionsFingerprint(question: Omit<FingerprintedQuestion, "answer">): string {
   const optionTexts = [...question.options]
-    .sort((left, right) => left.key.localeCompare(right.key))
     .map((option) => option.text);
-  return fingerprint([question.prompt, ...optionTexts]);
+  return fingerprint([question.prompt, ...optionTexts.sort()]);
 }
 
 function fingerprint(parts: readonly string[]): string {

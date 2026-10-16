@@ -89,6 +89,24 @@ describe("original practice public DTO", () => {
     expect(dto).toBeNull();
   });
 
+  it("does not publish an official question copied with option letters reassigned", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+    const keys = ["A", "B", "C", "D"] as const;
+    const relabeledOptions = officialQuestion.options.map((option, index) => ({
+      key: keys[(index + 1) % keys.length]!,
+      text: option.text,
+    }));
+    const correctOptionText = officialQuestion.options.find((option) => option.key === officialQuestion.answer)!.text;
+    const relabeledAnswer = relabeledOptions.find((option) => option.text === correctOptionText)!.key;
+
+    expect(toPublicPracticeQuestion({
+      ...reviewedOriginal,
+      prompt: officialQuestion.prompt,
+      options: relabeledOptions,
+      answer: relabeledAnswer,
+    })).toBeNull();
+  });
+
   it("keeps an original grounded in the same ADIF booklet URL used by an official item", () => {
     const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
     const booklet = sourceManifest.sources.find((source) =>

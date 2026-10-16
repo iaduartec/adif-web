@@ -91,10 +91,10 @@ function hasExactConceptCitation(
     if (!matchingReference) return false;
 
     if (question.conceptIds.length === 0) return true;
-    return theory.concepts.some((concept) =>
-      question.conceptIds.includes(concept.id) &&
-      concept.claims.some((claim) => claim.legalBasis.includes(matchingReference.id)),
-    );
+    return question.conceptIds.every((conceptId) => {
+      const concept = theory.concepts.find((candidate) => candidate.id === conceptId);
+      return concept?.claims.some((claim) => claim.legalBasis.includes(matchingReference.id)) ?? false;
+    });
   });
 }
 

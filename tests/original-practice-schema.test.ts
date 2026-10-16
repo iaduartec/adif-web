@@ -88,6 +88,23 @@ describe("original practice question schema", () => {
     })).toBe(officialQuestion.source.fingerprint);
   });
 
+  it("rejects an official question copied with option letters reassigned", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+    const keys = ["A", "B", "C", "D"] as const;
+    const relabeledOptions = officialQuestion.options.map((option, index) => ({
+      key: keys[(index + 1) % keys.length]!,
+      text: option.text,
+    }));
+    const correctOptionText = officialQuestion.options.find((option) => option.key === officialQuestion.answer)!.text;
+    const relabeledAnswer = relabeledOptions.find((option) => option.text === correctOptionText)!.key;
+
+    expect(originalPracticeQuestionSchema.safeParse(question({
+      prompt: officialQuestion.prompt,
+      options: relabeledOptions,
+      answer: relabeledAnswer,
+    })).success).toBe(false);
+  });
+
   it("keeps an original original when it cites the exact ADIF booklet URL used by an official question", () => {
     const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
     const booklet = sourceManifest.sources.find((source) =>
@@ -272,6 +289,11 @@ describe("original practice question schema", () => {
       ...rcfQuestion,
       sourceLocator: "Capítulo 1, 1.1.1.1 Objeto del Reglamento",
       conceptIds: ["rcf-concept-2"],
+    })).success).toBe(false);
+    expect(originalPracticeQuestionSchema.safeParse(question({
+      ...rcfQuestion,
+      sourceLocator: "Capítulo 1, 1.1.1.1 Objeto del Reglamento",
+      conceptIds: ["rcf-concept-1", "igualdad-concept-1"],
     })).success).toBe(false);
     expect(originalPracticeQuestionSchema.safeParse(question({
       ...rcfQuestion,
