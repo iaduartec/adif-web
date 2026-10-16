@@ -1,6 +1,6 @@
 # PNI26/01 26/12PO Implementation Roadmap
 
-> Status: architecture specification approved; implementation plans drafted for user review. Product implementation has not started.
+> Status: architecture specification approved; implementation is underway. Plan 3 Task 3 (original psychometric practice) is complete; later Plan 3 tasks remain unstarted.
 
 ## Preserve and Extend the Existing Product
 

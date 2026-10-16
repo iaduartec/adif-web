@@ -1,6 +1,10 @@
 import { z } from "zod";
 
 import { getEnglishCurriculum, englishKnowledgeErrorSchema } from "./english-a2-curriculum";
+import {
+  originalPsychometricTopicIds,
+  psychometricAptitudes,
+} from "./psychometric-curriculum";
 import questionsJson from "../../content/questions.json";
 import { lessonTheories } from "../../content/lesson-theory";
 import { activeTheoryConceptRegistry } from "../../content/theory-concepts";
@@ -28,24 +32,12 @@ export const originalPracticeOptionSchema = z.object({
   text: z.string().trim().min(1),
 }).strict();
 
-export const originalPsychometricTopicIds = [
-  "verbal",
-  "synonym-antonym",
-  "numerical",
-  "calculation",
-  "series",
-  "logic",
-  "matrices",
-  "abstract-patterns",
-  "attention",
-  "difference-detection",
-  "memory",
-  "sequences",
-  "perceptual-speed",
-] as const;
+export { originalPsychometricTopicIds };
 
 const englishTopics = new Map(getEnglishCurriculum().topics.map((topic) => [topic.id, topic]));
-const psychometricTopicIds = new Set<string>(originalPsychometricTopicIds);
+const psychometricAptitudesById = new Map<string, (typeof psychometricAptitudes)[number]>(
+  psychometricAptitudes.map((aptitude) => [aptitude.id, aptitude]),
+);
 const parsedOfficialQuestions = officialQuestionsSchema.parse(questionsJson);
 const officialQuestionFingerprints = new Set(parsedOfficialQuestions.flatMap((question) => {
   const answers = new Set([
@@ -193,12 +185,44 @@ export const originalPracticeQuestionSchema = z.object({
       context.addIssue({ code: "custom", path: ["conceptIds"], message: "English concept IDs must belong to the selected stable topic." });
     }
   }
-  if (question.domain === "psychometric" && !psychometricTopicIds.has(question.topicId)) {
-    context.addIssue({
-      code: "custom",
-      path: ["topicId"],
-      message: "Psychometric topicId must use a controlled original aptitude identifier.",
-    });
+  if (question.domain === "psychometric") {
+    if (question.sourceId !== undefined || question.sourceVersion !== undefined || question.sourceLocator !== undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["sourceId"],
+        message: "Original psychometric items are not officially grounded and cannot claim an ADIF normative source.",
+      });
+    }
+    const aptitude = psychometricAptitudesById.get(question.topicId);
+    if (!aptitude) {
+      context.addIssue({
+        code: "custom",
+        path: ["topicId"],
+        message: "Psychometric topicId must use a controlled original aptitude identifier.",
+      });
+    } else {
+      if (question.skill !== aptitude.id) {
+        context.addIssue({
+          code: "custom",
+          path: ["skill"],
+          message: "Psychometric skills must name the aptitude tested by the item.",
+        });
+      }
+      if (question.topic !== aptitude.title) {
+        context.addIssue({
+          code: "custom",
+          path: ["topic"],
+          message: "Psychometric topic label must match the selected aptitude.",
+        });
+      }
+      if (question.conceptIds.some((id) => !aptitude.activeConceptIds.includes(id))) {
+        context.addIssue({
+          code: "custom",
+          path: ["conceptIds"],
+          message: "Psychometric concept IDs must belong to the selected aptitude.",
+        });
+      }
+    }
   }
   if (question.domain === "general-knowledge" || question.domain === "telecom") {
     const expectedScope = question.domain === "general-knowledge" ? "common" : "specific-26-12po";

@@ -27,6 +27,7 @@ import {
   validateHistoricalQuestionMappings,
 } from "../lib/content/official-question-validity";
 import { parseOfficialCommonSectionCatalog } from "../lib/content/official-common-sections";
+import { questionContentFingerprint } from "../lib/content/question-content-fingerprint";
 
 const optionKeys = ["A", "B", "C", "D"] as const;
 const questionNumbers = z.number().int().min(1).max(99);

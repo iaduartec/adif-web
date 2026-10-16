@@ -25,4 +25,14 @@ describe("A2 curriculum page", () => {
     expect(html).not.toContain('"answer":');
     expect(screen.getByText(/progreso del temario oficial/i)).toBeVisible();
   });
+
+  it("links every topic concept into the theory view of the course reader", async () => {
+    const page = await InglesA2Page();
+    render(page);
+    const conceptLinks = screen.getAllByRole("link", { name: "Repasar el concepto" });
+    expect(conceptLinks.length).toBeGreaterThan(0);
+    for (const link of conceptLinks) {
+      expect(link).toHaveAttribute("href", expect.stringMatching(/^\/curso\/ingles-a2\?view=theory#concept-/));
+    }
+  });
 });

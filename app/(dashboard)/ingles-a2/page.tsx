@@ -42,7 +42,7 @@ export default async function InglesA2Page() {
               <p className="text-sm text-gray-600">{areaLabels[topic.area]}</p>
               <h3 className="font-bold text-ink">{topic.title}</h3>
               {topic.id === "railway-vocabulary" && <p>Vocabulario complementario</p>}
-              <Link href={`/curso/ingles-a2#concept-${topic.activeConceptIds[0]}`}>Repasar el concepto</Link>
+              <Link href={`/curso/ingles-a2?view=theory#concept-${topic.activeConceptIds[0]}`}>Repasar el concepto</Link>
             </article>
           ))}
         </div>

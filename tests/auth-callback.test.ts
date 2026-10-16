@@ -34,6 +34,14 @@ describe("GET /auth/callback", () => {
     expect(response.headers.get("location")).toBe("http://localhost/");
   });
 
+  it("rejects a control-character next destination that URL parsing would strip", async () => {
+    const response = await GET(
+      new Request("http://localhost/auth/callback?code=oauth-code&next=%2F%09%2Fattacker.example"),
+    );
+
+    expect(response.headers.get("location")).toBe("http://localhost/");
+  });
+
   it("returns a non-sensitive login error when Google authorization is cancelled", async () => {
     const response = await GET(new Request("http://localhost/auth/callback?error=access_denied"));
 

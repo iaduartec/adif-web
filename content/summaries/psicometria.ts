@@ -11,6 +11,7 @@ export const psicometriaSummary: LessonSummary = {
     "El razonamiento espacial exige detectar simetrías, giros y piezas fijas antes de empezar a rotar mentalmente opciones.",
     "En verbal, la lectura rápida y la precisión importan más que el vocabulario rebuscado.",
     "Conviene hacer una primera pasada por las preguntas seguras y dejar las dudosas para el final.",
+    "La práctica original se organiza por aptitud y por modo (entrenamiento, contrarreloj y simulacro): el modo cambia el tiempo, no las preguntas.",
   ],
   sections: [
     {
@@ -41,6 +42,14 @@ export const psicometriaSummary: LessonSummary = {
         "Comparar solo el principio o el final de una cadena y no el conjunto completo.",
         "Gastar demasiado tiempo en una sola duda y perder preguntas fáciles después.",
         "Checklist: entender el tipo de ejercicio, localizar la regla, resolver con el mínimo cálculo y cerrar la pregunta sin dudar demasiado.",
+      ],
+    },
+    {
+      title: "Práctica original por aptitud",
+      points: [
+        "Las preguntas originales se agrupan por aptitud: verbal, sinónimos y antónimos, numérica, cálculo, series, lógica, matrices, patrones abstractos, atención, detección de diferencias, memoria, secuencias y velocidad perceptiva.",
+        "El modo entrenamiento no usa cronómetro; contrarreloj y simulacro añaden un límite de tiempo pero mantienen exactamente las mismas preguntas.",
+        "Razona el patrón antes de responder y revisa la explicación al corregir: el modo nunca cambia la procedencia del contenido.",
       ],
     },
   ],
