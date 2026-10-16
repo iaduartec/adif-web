@@ -105,6 +105,16 @@ describe("original practice question schema", () => {
     })).success).toBe(false);
   });
 
+  it("rejects an official question copied with only prompt casing changed", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+
+    expect(originalPracticeQuestionSchema.safeParse(question({
+      prompt: officialQuestion.prompt.toLocaleLowerCase(),
+      options: officialQuestion.options,
+      answer: officialQuestion.answer,
+    })).success).toBe(false);
+  });
+
   it("keeps an original original when it cites the exact ADIF booklet URL used by an official question", () => {
     const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
     const booklet = sourceManifest.sources.find((source) =>

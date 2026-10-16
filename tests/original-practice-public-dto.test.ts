@@ -107,6 +107,17 @@ describe("original practice public DTO", () => {
     })).toBeNull();
   });
 
+  it("does not publish an official question copied with only prompt casing changed", () => {
+    const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
+
+    expect(toPublicPracticeQuestion({
+      ...reviewedOriginal,
+      prompt: officialQuestion.prompt.toLocaleLowerCase(),
+      options: officialQuestion.options,
+      answer: officialQuestion.answer,
+    })).toBeNull();
+  });
+
   it("keeps an original grounded in the same ADIF booklet URL used by an official item", () => {
     const officialQuestion = officialQuestionsSchema.parse(questionsJson)[0]!;
     const booklet = sourceManifest.sources.find((source) =>

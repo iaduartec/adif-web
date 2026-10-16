@@ -21,11 +21,15 @@ export function questionContentFingerprint(question: FingerprintedQuestion): str
   ]);
 }
 
-/** Identifies the stem and answer choices even if a record changes its key. */
+/** Identifies an exact stem and answer set even if its letters or casing change. */
 export function questionPromptOptionsFingerprint(question: Omit<FingerprintedQuestion, "answer">): string {
-  const optionTexts = [...question.options]
-    .map((option) => option.text);
-  return fingerprint([question.prompt, ...optionTexts.sort()]);
+  const normalize = (text: string) => text
+    .normalize("NFKC")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+  const optionTexts = question.options.map((option) => normalize(option.text)).sort();
+  return fingerprint([normalize(question.prompt), ...optionTexts]);
 }
 
 function fingerprint(parts: readonly string[]): string {
