@@ -65,14 +65,31 @@ describe("original common-law practice", () => {
       expect(source!.locatorPolicy, question.id).toBe("exact");
 
       expect(located!.node.materialSourceIds, question.id).toContain(question.sourceId);
-      const matchesTheoryReference = located!.node.linkedModules.some((moduleId) =>
+
+      const anchorModuleId = located!.node.linkedModules.find((moduleId) =>
         lessonTheories[moduleId]?.sources.some((candidate) =>
           candidate.sourceId === question.sourceId &&
           candidate.sourceVersion === question.sourceVersion &&
           candidate.locator === question.sourceLocator,
         ),
       );
-      expect(matchesTheoryReference, question.id).toBe(true);
+      expect(anchorModuleId, question.id).toBeDefined();
+
+      const anchorTheory = lessonTheories[anchorModuleId!];
+      const matchedReference = anchorTheory.sources.find(
+        (candidate) =>
+          candidate.sourceId === question.sourceId &&
+          candidate.sourceVersion === question.sourceVersion &&
+          candidate.locator === question.sourceLocator,
+      );
+      expect(matchedReference, question.id).toBeDefined();
+
+      for (const conceptId of question.conceptIds) {
+        const concept = anchorTheory.concepts.find((candidate) => candidate.id === conceptId);
+        expect(concept, `${question.id}/${conceptId}`).toBeDefined();
+        const citesReference = concept!.claims.some((claim) => claim.legalBasis.includes(matchedReference!.id));
+        expect(citesReference, `${question.id}/${conceptId}`).toBe(true);
+      }
     }
   });
 
