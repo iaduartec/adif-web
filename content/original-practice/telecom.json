@@ -1,1 +1,1034 @@
-[]
+[
+  {
+    "id": "orig-tel-ict-001",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-i",
+    "syllabusNodeId": "ict-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–3)",
+    "skill": "ICT",
+    "prompt": "Según el Reglamento regulador de las infraestructuras comunes de telecomunicaciones (RD 346/2011), la ICT comprende:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los sistemas y canalizaciones interiores de los edificios que posibilitan el acceso a los servicios de telecomunicaciones."
+      },
+      {
+        "key": "B",
+        "text": "Las redes troncales de los operadores hasta sus centrales."
+      },
+      {
+        "key": "C",
+        "text": "Únicamente el cableado de fibra óptica del interior de las viviendas."
+      },
+      {
+        "key": "D",
+        "text": "Las acometidas y equipos propiedad de los operadores situados fuera del edificio."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El Reglamento delimita la ICT a los sistemas y canalizaciones interiores de los edificios de nueva planta o rehabilitación integral que permiten el acceso a los servicios de telecomunicaciones.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-1"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-002",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-i",
+    "syllabusNodeId": "ict-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–3)",
+    "skill": "ICT",
+    "prompt": "La ICT debe proporcionar acceso, entre otros, a los siguientes servicios:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente televisión por satélite."
+      },
+      {
+        "key": "B",
+        "text": "Radiodifusión sonora y televisión, telefonía disponible al público y telecomunicaciones de banda ancha mediante redes públicas."
+      },
+      {
+        "key": "C",
+        "text": "Solo telefonía fija conmutada."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente los servicios de radiodifusión sonora y televisión."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 2 detalla que la ICT da acceso a radiodifusión sonora y televisión (terrestre y por satélite), a telefonía disponible al público y a telecomunicaciones de banda ancha mediante redes públicas.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-27"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 2.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-003",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "Según el artículo 9 del Reglamento, los planos del proyecto técnico de la ICT recogen:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente el presupuesto de materiales."
+      },
+      {
+        "key": "B",
+        "text": "Solo el listado de operadores habilitados."
+      },
+      {
+        "key": "C",
+        "text": "Esquemas, elementos, canalizaciones, recintos e interferencias."
+      },
+      {
+        "key": "D",
+        "text": "Exclusivamente las condiciones de montaje."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 9 exige que los planos recojan esquemas, elementos, canalizaciones, recintos e interferencias, y que el pliego de condiciones determine calidades de materiales y equipos y condiciones de montaje.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-16"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 9, apartados 1 y 2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-004",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En la ICT, el recinto de instalaciones de telecomunicación inferior (RITI) alberga:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los equipos de captación de señales radioeléctricas y de televisión."
+      },
+      {
+        "key": "B",
+        "text": "Las bases de acceso terminal de cada vivienda."
+      },
+      {
+        "key": "C",
+        "text": "Las antenas de televisión del edificio."
+      },
+      {
+        "key": "D",
+        "text": "Los repartidores de entrada de las operadoras."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El RITI aloja los repartidores de entrada de las operadoras; los equipos de captación de señales radioeléctricas y de televisión se ubican en el RITS.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-7"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-005",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Según el Reglamento, se permite instalar un único recinto de telecomunicaciones (RITU) en edificios de hasta:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tres alturas y planta baja, con un máximo de dieciséis Puntos de Acceso al Usuario."
+      },
+      {
+        "key": "B",
+        "text": "Diez alturas y planta baja, con cualquier número de Puntos de Acceso al Usuario."
+      },
+      {
+        "key": "C",
+        "text": "Dos alturas, sin límite de Puntos de Acceso al Usuario."
+      },
+      {
+        "key": "D",
+        "text": "Cinco alturas, con un máximo de ocho Puntos de Acceso al Usuario."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El RITU se admite en edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja y con un máximo de dieciséis puntos de acceso al usuario (PAU).",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-8"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-006",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Respecto de la canalización principal de la ICT, el Reglamento establece que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Puede atravesar viviendas siempre que vaya canalizada."
+      },
+      {
+        "key": "B",
+        "text": "Discurre en vertical por las zonas de copropiedad y no puede atravesar viviendas o locales de dominio privado."
+      },
+      {
+        "key": "C",
+        "text": "Discurre horizontalmente por cada planta."
+      },
+      {
+        "key": "D",
+        "text": "Solo puede instalarse en la fachada del edificio."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La canalización principal discurre en vertical por las zonas de copropiedad y bajo ninguna circunstancia técnica atraviesa viviendas o locales de dominio privado.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-9"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-007",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "¿Dónde finaliza físicamente cada acometida de pares trenzados de la red de dispersión?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un conector de fibra óptica SC/APC."
+      },
+      {
+        "key": "B",
+        "text": "Un repartidor de entrada de operadoras."
+      },
+      {
+        "key": "C",
+        "text": "Una roseta hembra miniatura de ocho vías (RJ45) que sirve como Punto de Acceso al Usuario."
+      },
+      {
+        "key": "D",
+        "text": "Una arqueta de entrada."
+      }
+    ],
+    "answer": "C",
+    "explanation": "Cada acometida de pares trenzados de la red de dispersión termina en una roseta hembra miniatura de ocho vías (RJ45) que actúa como PAU.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-31"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.5.1 a 2.5.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-008",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En el cableado de fibra óptica de la ICT, la fibra termina en una Base de Acceso Terminal (BAT) con:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Conector RJ45."
+      },
+      {
+        "key": "B",
+        "text": "Roseta hembra de ocho vías."
+      },
+      {
+        "key": "C",
+        "text": "Conector de tipo F."
+      },
+      {
+        "key": "D",
+        "text": "Adaptador de tipo SC/APC."
+      }
+    ],
+    "answer": "D",
+    "explanation": "En el cableado de fibra óptica, la fibra termina en una BAT de fibra óptica con adaptador de tipo SC/APC.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-19"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.5.1.c y 2.5.4.c",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-009",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "El Punto de Acceso al Usuario (PAU) es el dispositivo que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Delimita técnica y jurídicamente la red de dispersión de la comunidad y la red interior del usuario final."
+      },
+      {
+        "key": "B",
+        "text": "Une la red de alimentación de los operadores con la red de distribución del edificio."
+      },
+      {
+        "key": "C",
+        "text": "Une la red de distribución con la red de dispersión."
+      },
+      {
+        "key": "D",
+        "text": "Constituye la arqueta de entrada del edificio."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El PAU separa la red de dispersión de la comunidad y la red interior del usuario final; la unión alimentación–distribución es el punto de interconexión y la unión distribución–dispersión, el punto de distribución.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-6"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-010",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Radiodifusión sonora y televisión",
+    "skill": "ICT",
+    "prompt": "El Anexo I del Reglamento de ICT contiene la norma técnica relativa a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La telefonía disponible al público y la banda ancha."
+      },
+      {
+        "key": "B",
+        "text": "La captación, adaptación y distribución de señales de radiodifusión sonora y televisión terrestres y por satélite."
+      },
+      {
+        "key": "C",
+        "text": "El hogar digital."
+      },
+      {
+        "key": "D",
+        "text": "La inspección y el mantenimiento de las infraestructuras."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El Anexo I desarrolla la norma técnica de ICT para la captación, adaptación y distribución de las señales de radiodifusión sonora y televisión terrestres y por satélite.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-20"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, título y apartado 2.3.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-011",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Radiodifusión sonora y televisión",
+    "skill": "ICT",
+    "prompt": "El Anexo I exige que el cable coaxial de acometida exterior presente, en la banda de 5 MHz a 3 GHz, una impedancia característica media de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "50 ± 5 Ω."
+      },
+      {
+        "key": "B",
+        "text": "120 Ω."
+      },
+      {
+        "key": "C",
+        "text": "75 ± 3 Ω."
+      },
+      {
+        "key": "D",
+        "text": "300 Ω."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El Anexo I fija en 75 ± 3 Ω la impedancia característica media de los cables coaxiales de acometida exterior entre 5 MHz y 3 GHz.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-26"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, apartado 5.4",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-012",
+    "domain": "telecom",
+    "topicId": "ict-anexo-v",
+    "syllabusNodeId": "ict-anexo-v",
+    "topic": "Anexo V. Hogar Digital",
+    "skill": "ICT",
+    "prompt": "En los grupos de servicios del hogar digital, el control de iluminación se encuadra en el grupo de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Control del entorno."
+      },
+      {
+        "key": "B",
+        "text": "Seguridad."
+      },
+      {
+        "key": "C",
+        "text": "Comunicaciones."
+      },
+      {
+        "key": "D",
+        "text": "Eficiencia energética."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El control de iluminación pertenece al grupo de eficiencia energética; el control del entorno agrupa toldos y persianas, ambientes, temperatura y telecontrol.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-18"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo V, apartados 4.2 y 4.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-001",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "El Reglamento de Circulación Ferroviaria (RD 664/2015) tiene por objeto que la circulación de trenes y maniobras se realice de forma:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Segura, eficiente y puntual, tanto en condiciones de explotación normal como degradada."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente segura, anteponiendo la puntualidad a la seguridad."
+      },
+      {
+        "key": "C",
+        "text": "Económica, sin considerar la seguridad."
+      },
+      {
+        "key": "D",
+        "text": "Solo en condiciones de explotación normal."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El objeto del Reglamento es que la circulación de trenes y maniobras se realice de forma segura, eficiente y puntual, tanto en condiciones normales como degradadas.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-1"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.1 Objeto del Reglamento",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-002",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "En caso de discrepancia entre documentos sobre un mismo objeto, el orden de prevalencia del RCF es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Empresas Ferroviarias, después los Administradores de Infraestructuras y por último la AESF."
+      },
+      {
+        "key": "B",
+        "text": "AESF y normas europeas, después los Administradores de Infraestructuras y por último las Empresas Ferroviarias."
+      },
+      {
+        "key": "C",
+        "text": "Solo las normas europeas, sin más orden."
+      },
+      {
+        "key": "D",
+        "text": "El documento de fecha más reciente, con independencia de su emisor."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El orden de prevalencia sitúa primero a la AESF y las normas europeas, después a los Administradores de Infraestructuras y por último a las Empresas Ferroviarias.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-2"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.2.1.1 Documentación",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-003",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "A efectos del RCF, además de la instalación de vías y sus aparatos asociados protegida por señales, se consideran estación:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente los apeaderos."
+      },
+      {
+        "key": "B",
+        "text": "Solo las terminales de mercancías."
+      },
+      {
+        "key": "C",
+        "text": "Los PB, PBA, PCA, PAET y las bifurcaciones."
+      },
+      {
+        "key": "D",
+        "text": "Los talleres de material rodante."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El RCF asimila a estación los PB, PBA, PCA, PAET y las bifurcaciones.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-3"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.3 Definiciones",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-004",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "En la marcha de maniobras, si la locomotora va empujando al tren, la velocidad no debe exceder de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "30 km/h."
+      },
+      {
+        "key": "B",
+        "text": "40 km/h."
+      },
+      {
+        "key": "C",
+        "text": "5 km/h."
+      },
+      {
+        "key": "D",
+        "text": "20 km/h."
+      }
+    ],
+    "answer": "D",
+    "explanation": "En la marcha de maniobras la velocidad no excede los 30 km/h si la locomotora tira del tren y los 20 km/h si lo empuja.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-4"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.5.1.4 Condiciones de marcha especiales",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-005",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "La marcha a la vista obliga al maquinista a regular la velocidad conforme a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La longitud de vía que visualiza, de forma que pueda detener el tren ante cualquier obstáculo o señal de parada."
+      },
+      {
+        "key": "B",
+        "text": "Una velocidad fija de 30 km/h."
+      },
+      {
+        "key": "C",
+        "text": "El horario previsto, aunque no visualice la vía."
+      },
+      {
+        "key": "D",
+        "text": "Las órdenes de un telemando automático."
+      }
+    ],
+    "answer": "A",
+    "explanation": "En marcha a la vista el maquinista avanza con la precaución que requiera el caso y regula la velocidad según la longitud de vía que visualiza, de modo que pueda detener el tren ante cualquier obstáculo o señal de parada.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-5"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.5.1.4 Condiciones de marcha especiales",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-006",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "El telefonema, como comunicación reglamentaria del RCF, se identifica mediante:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente la firma manuscrita del maquinista."
+      },
+      {
+        "key": "B",
+        "text": "Un número secuencial, la hora de transmisión y la identificación del emisor."
+      },
+      {
+        "key": "C",
+        "text": "El número de tren y la fecha de la última revisión de la vía."
+      },
+      {
+        "key": "D",
+        "text": "Un código alfanumérico asignado por el puesto de mando."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El telefonema es una comunicación reglamentaria con formato preestablecido, identificada mediante un número secuencial, la hora de transmisión y la identificación del emisor, y queda registrada en los soportes contemplados en el Reglamento.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-6"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.3 Definiciones",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-007",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "Para poder iniciar servicio, el tren debe disponer en la cabina de conducción y tener operativos:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Solo el sistema de protección de tren."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente la radiotelefonía."
+      },
+      {
+        "key": "C",
+        "text": "Un sistema de protección de tren compatible, el dispositivo de vigilancia y la radiotelefonía."
+      },
+      {
+        "key": "D",
+        "text": "El registrador de velocidad y el freno de estacionamiento exclusivamente."
+      }
+    ],
+    "answer": "C",
+    "explanation": "Para iniciar servicio, el tren debe llevar en cabina y operativos un sistema de protección de tren compatible con alguno de la infraestructura (si esta dispone de ellos), un dispositivo de vigilancia y la radiotelefonía.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-8"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.7 Criterios generales de operación de trenes",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-008",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "Cuando el sistema de protección del tren no es compatible con el de la infraestructura, o alguno de ellos no está operativo, el RCF establece:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La prohibición absoluta de circular."
+      },
+      {
+        "key": "B",
+        "text": "Una velocidad máxima de circulación de 160 km/h."
+      },
+      {
+        "key": "C",
+        "text": "La obligación de circular con dos maquinistas."
+      },
+      {
+        "key": "D",
+        "text": "Una velocidad máxima de circulación de 120 km/h."
+      }
+    ],
+    "answer": "D",
+    "explanation": "Ante la incompatibilidad o la indisponibilidad de los sistemas de protección del tren y de la infraestructura, el RCF limita la velocidad máxima de circulación a 120 km/h.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-9"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.7 Criterios generales de operación de trenes",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-009",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "Según el RCF, atendiendo a su función, las paradas prescritas pueden ser:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Comercial, restringida o técnica."
+      },
+      {
+        "key": "B",
+        "text": "Normal o de emergencia."
+      },
+      {
+        "key": "C",
+        "text": "Programada o imprevista."
+      },
+      {
+        "key": "D",
+        "text": "Principal o secundaria."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El RCF clasifica funcionalmente las paradas prescritas en comercial, restringida y técnica.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-10"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.5.1.6 Paradas de los trenes",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-010",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "La zona de riesgo para los trabajos es la comprendida entre:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La vía y el andén."
+      },
+      {
+        "key": "B",
+        "text": "La franja comprendida entre la zona de peligro para los trabajos y la zona de seguridad para los trabajos."
+      },
+      {
+        "key": "C",
+        "text": "La zona de seguridad y el carril más próximo."
+      },
+      {
+        "key": "D",
+        "text": "El gálibo y la plataforma."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La zona de riesgo para los trabajos es la comprendida entre la zona de peligro para los trabajos y la zona de seguridad para los trabajos.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-11"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.3, definición 59",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-011",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "Para trenes formados con material convencional, se realiza una prueba parcial de frenado antes de la salida de una estación o dependencia en la que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cambie el maquinista."
+      },
+      {
+        "key": "B",
+        "text": "Se efectúe una parada comercial."
+      },
+      {
+        "key": "C",
+        "text": "Se agreguen vehículos a la composición."
+      },
+      {
+        "key": "D",
+        "text": "Se invierta el sentido de la marcha."
+      }
+    ],
+    "answer": "C",
+    "explanation": "Para trenes formados con material convencional se realiza una prueba parcial de frenado antes de la salida de una estación o dependencia en la que se agreguen vehículos a la composición.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-12"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.5.1.21 Pruebas de frenado",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-012",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "La orden de marcha queda invalidada, entre otros supuestos enumerados por el Reglamento, cuando:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El tren circula a la velocidad máxima autorizada."
+      },
+      {
+        "key": "B",
+        "text": "Se efectúa una parada técnica."
+      },
+      {
+        "key": "C",
+        "text": "Cambia el personal de conducción."
+      },
+      {
+        "key": "D",
+        "text": "Un tren directo queda detenido en una estación."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El RCF invalida la orden de marcha, entre los supuestos que enumera, cuando un tren directo queda detenido en una estación.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-13"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.5.1.9 Invalidación de la orden de marcha",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  }
+]

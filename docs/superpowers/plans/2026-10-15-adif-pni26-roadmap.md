@@ -1,10 +1,10 @@
 # PNI26/01 26/12PO Implementation Roadmap
 
-> Status: architecture specification approved; implementation is underway. Plan 3 Task 3 (original psychometric practice) and Task 4 (original common-law practice, five verified common scopes) are complete; the Declaración sobre la Red scope is draft-only until its source is verified. Later Plan 3 tasks remain unstarted.
+> Status: architecture specification approved; implementation is underway. Plan 3 Task 3 (original psychometric practice), Task 4 (original common-law practice, five verified common scopes) and Task 5 (original telecom practice, 12 ICT + 12 RCF) are complete. The Declaración sobre la Red scope is draft-only until its source is verified and the CEM scope stays out of the bank (no verified material source). Later Plan 3 tasks remain unstarted.
 
 ## Preserve and Extend the Existing Product
 
-This program builds on the existing Next.js, TypeScript, Supabase, Google OAuth, and Vercel project. The repository already contains the authenticated study shell, 11 theory modules, 172 concepts, 146 sources, 255 claims, source hashing and content validators, a 102-question official specific bank, course reader, notes, favorites, flashcards, English and psychometric pages, a per-form official exam runner, error notebook, review scheduling, daily planning, and readiness statistics.
+This program builds on the existing Next.js, TypeScript, Supabase Auth (email/password) and Vercel project. The repository already contains the authenticated study shell, 11 theory modules, 172 concepts, 146 sources, 255 claims, source hashing and content validators, a 102-question official specific bank, course reader, notes, favorites, flashcards, English and psychometric pages, a per-form official exam runner, error notebook, review scheduling, daily planning, and readiness statistics.
 
 The work should first correct discovery of orphan worktree tests. A previous 923-pass Vitest baseline included failures from stale ignored worktree snapshots. The focused suite must exclude .worktrees/ and worktrees/ before aggregate test counts become a gate. Do not discard or prune those worktrees as part of that fix.
 
