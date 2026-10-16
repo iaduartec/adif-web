@@ -12,13 +12,13 @@ revoke all on table private.official_simulation_allowlist from public, anon, aut
 delete from private.official_simulation_allowlist existing
 where not exists (
   select 1
-  from jsonb_to_recordset('[{"simulationId":"ADIF-2023-1433","expectedQuestionCount":15},{"simulationId":"ADIF-2023-4101","expectedQuestionCount":15},{"simulationId":"ADIF-2024-1044","expectedQuestionCount":0},{"simulationId":"ADIF-2024-2442","expectedQuestionCount":0},{"simulationId":"ADIF-2024-3403","expectedQuestionCount":18},{"simulationId":"ADIF-2024-3413","expectedQuestionCount":18},{"simulationId":"ADIF-2025-1131","expectedQuestionCount":18},{"simulationId":"ADIF-2025-4104","expectedQuestionCount":18}]'::jsonb) as current(simulation_id text, expected_question_count integer)
+  from jsonb_to_recordset('[{"simulation_id":"ADIF-2023-1433","expected_question_count":15},{"simulation_id":"ADIF-2023-4101","expected_question_count":15},{"simulation_id":"ADIF-2024-1044","expected_question_count":0},{"simulation_id":"ADIF-2024-2442","expected_question_count":0},{"simulation_id":"ADIF-2024-3403","expected_question_count":18},{"simulation_id":"ADIF-2024-3413","expected_question_count":18},{"simulation_id":"ADIF-2025-1131","expected_question_count":18},{"simulation_id":"ADIF-2025-4104","expected_question_count":18}]'::jsonb) as current(simulation_id text, expected_question_count integer)
   where current.simulation_id = existing.simulation_id
 );
 
 insert into private.official_simulation_allowlist (simulation_id, expected_question_count)
 select row.simulation_id, row.expected_question_count
-from jsonb_to_recordset('[{"simulationId":"ADIF-2023-1433","expectedQuestionCount":15},{"simulationId":"ADIF-2023-4101","expectedQuestionCount":15},{"simulationId":"ADIF-2024-1044","expectedQuestionCount":0},{"simulationId":"ADIF-2024-2442","expectedQuestionCount":0},{"simulationId":"ADIF-2024-3403","expectedQuestionCount":18},{"simulationId":"ADIF-2024-3413","expectedQuestionCount":18},{"simulationId":"ADIF-2025-1131","expectedQuestionCount":18},{"simulationId":"ADIF-2025-4104","expectedQuestionCount":18}]'::jsonb) as row(simulation_id text, expected_question_count integer)
+from jsonb_to_recordset('[{"simulation_id":"ADIF-2023-1433","expected_question_count":15},{"simulation_id":"ADIF-2023-4101","expected_question_count":15},{"simulation_id":"ADIF-2024-1044","expected_question_count":0},{"simulation_id":"ADIF-2024-2442","expected_question_count":0},{"simulation_id":"ADIF-2024-3403","expected_question_count":18},{"simulation_id":"ADIF-2024-3413","expected_question_count":18},{"simulation_id":"ADIF-2025-1131","expected_question_count":18},{"simulation_id":"ADIF-2025-4104","expected_question_count":18}]'::jsonb) as row(simulation_id text, expected_question_count integer)
 on conflict (simulation_id) do update
 set expected_question_count = excluded.expected_question_count;
 

@@ -35,6 +35,10 @@ insert into public.question_attempts (
   'ADIF-2025-1131-Q01', 'A', true, 'practice', 900
 );
 
+-- Model a legacy attempt that predates the fail-closed official-form trigger.
+-- The transaction rolls this local fixture back after the retention assertion.
+alter table public.simulation_attempts disable trigger simulation_attempts_official_allowlist;
+
 insert into public.simulation_attempts (
   id, user_id, simulation_id, correct_count, incorrect_count, omitted_count, score, elapsed_ms
 ) values (
@@ -42,6 +46,8 @@ insert into public.simulation_attempts (
   'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
   'ADIF-2025-1131', 1, 0, 0, 1, 900
 );
+
+alter table public.simulation_attempts enable trigger simulation_attempts_official_allowlist;
 
 insert into public.simulation_answers (
   user_id, attempt_id, question_id, selected_answer, is_correct

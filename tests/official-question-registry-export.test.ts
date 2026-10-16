@@ -19,6 +19,27 @@ describe("official private answer registry export", () => {
     expect(generateOfficialQuestionRegistryMigration(rows, forms, exams)).toContain("'[]'::jsonb");
   });
 
+  it("serializes allowlist fields into the PostgreSQL recordset columns", () => {
+    const sql = generateOfficialQuestionRegistryMigration([], forms, exams);
+    const recordsets = [...sql.matchAll(
+      /jsonb_to_recordset\('(.+?)'::jsonb\) as (?:current|row)\(simulation_id text, expected_question_count integer\)/g,
+    )];
+
+    expect(recordsets).toHaveLength(2);
+    for (const recordset of recordsets) {
+      expect(JSON.parse(recordset[1]!)).toEqual([
+        { simulation_id: "ADIF-2023-1433", expected_question_count: 15 },
+        { simulation_id: "ADIF-2023-4101", expected_question_count: 15 },
+        { simulation_id: "ADIF-2024-1044", expected_question_count: 0 },
+        { simulation_id: "ADIF-2024-2442", expected_question_count: 0 },
+        { simulation_id: "ADIF-2024-3403", expected_question_count: 18 },
+        { simulation_id: "ADIF-2024-3413", expected_question_count: 18 },
+        { simulation_id: "ADIF-2025-1131", expected_question_count: 18 },
+        { simulation_id: "ADIF-2025-4104", expected_question_count: 18 },
+      ]);
+    }
+  });
+
   it("pins official form simulation eligibility to the accepted transcription manifest", () => {
     const form = forms.find((candidate) => candidate.id === "ADIF-2025-1131")!;
     const exam = exams.find((candidate) => candidate.id === form.id)!;
