@@ -1,0 +1,51 @@
+{
+  "year": 2024,
+  "call": "PNI24/01",
+  "profileCode": "24/05PO",
+  "profileName": "Oficial de Telecomunicaciones de Entrada",
+  "examIds": [
+    "ADIF-2024-1044",
+    "ADIF-2024-2442",
+    "ADIF-2024-3403",
+    "ADIF-2024-3413"
+  ],
+  "reconciliationStatus": "verified_with_changes",
+  "resolutionSource": {
+    "sourceId": "ADIF PNI24/01 tribunal resolution",
+    "sourceVersion": "tribunal-resolution-2024-12-16",
+    "sourceUrl": "https://www.adif.es/documents/20124/33942288/%2816.12.2024%29%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/70febb4b-f8a2-de01-d00d-11feba2b6aa3",
+    "locator": "PDF pp. 6 y 11/31: alegaciones estimadas y plantilla final de 24/05PO."
+  },
+  "publicationStatus": "link_only",
+  "publicationReview": null,
+  "corrections": [
+    {
+      "examId": "ADIF-2024-1044",
+      "questionNumber": 6,
+      "initialAnswer": "C",
+      "finalAnswer": null,
+      "action": "annulled",
+      "replacementQuestionNumber": null,
+      "correctionSource": {
+        "sourceId": "ADIF PNI24/01 tribunal resolution",
+        "sourceVersion": "tribunal-resolution-2024-12-16",
+        "sourceUrl": "https://www.adif.es/documents/20124/33942288/%2816.12.2024%29%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/70febb4b-f8a2-de01-d00d-11feba2b6aa3",
+        "locator": "PDF p. 11/31, plantilla final, perfil 24/05PO, formulario 1044, pregunta 6: ANULADA."
+      }
+    },
+    {
+      "examId": "ADIF-2024-2442",
+      "questionNumber": 8,
+      "initialAnswer": "C",
+      "finalAnswer": null,
+      "action": "annulled",
+      "replacementQuestionNumber": null,
+      "correctionSource": {
+        "sourceId": "ADIF PNI24/01 tribunal resolution",
+        "sourceVersion": "tribunal-resolution-2024-12-16",
+        "sourceUrl": "https://www.adif.es/documents/20124/33942288/%2816.12.2024%29%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/70febb4b-f8a2-de01-d00d-11feba2b6aa3",
+        "locator": "PDF p. 11/31, plantilla final, perfil 24/05PO, formulario 2442, pregunta 8: ANULADA."
+      }
+    }
+  ]
+}

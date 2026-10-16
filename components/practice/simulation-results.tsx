@@ -81,7 +81,7 @@ export function SimulationResults({
                       <strong>Correcta:</strong> {correction.correctAnswer}
                     </p>
                   </div>
-                  {question && <OfficialSource source={question.source} />}
+                  {question && <OfficialSource source={question.source} questionStatus={question} />}
                 </div>
               );
             })}

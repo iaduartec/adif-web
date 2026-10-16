@@ -8,6 +8,12 @@ values
   ('22222222-2222-4222-8222-222222222222', 'adaptive-rpc-other@example.invalid')
 on conflict (id) do nothing;
 
+-- Exercise RPC behavior with a synthetic cleared-form fixture. This activation
+-- is local to the rollback-only test transaction and never changes the registry.
+update private.learning_questions
+set active = true
+where simulation_id = 'ADIF-2025-1131';
+
 select jsonb_agg(
   jsonb_build_object('question_id', question_id, 'selected_answer', null)
   order by question_id
@@ -29,18 +35,18 @@ select public.record_practice_attempt(
 );
 
 select public.record_recall_review(
-  'ict-concept-24', 1,
+  'ict-concept-24', 1::smallint,
   'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaab'
 );
 select public.record_recall_review(
-  'ict-concept-24', 1,
+  'ict-concept-24', 1::smallint,
   'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaab'
 );
 
 do $$
 begin
   perform public.record_recall_review(
-    'ict-concept-24', 2,
+    'ict-concept-24', 2::smallint,
     'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaab'
   );
   raise exception 'Expected changed recall payload to be rejected';

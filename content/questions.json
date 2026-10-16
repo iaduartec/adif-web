@@ -41,14 +41,19 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:dba1bd10294c989b9c08a7e7e433aa0dcfcf9551660b0319de2344f851011fcd"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q02",
     "sectionLabel": "Conocimiento Específico",
     "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, se conoce con la abreviatura \"BAT\" a las:",
     "conceptIds": [
-      "ict-concept-5"
+      "ict-concept-34"
     ],
     "options": [
       {
@@ -85,7 +90,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:8dd77cfa4994567b989a5a602f7a4d2fc73374db6768be093264ff249fdb16cc"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q03",
@@ -129,7 +139,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:a581439011476ba73e66cc24a113538d6088ed51914626ed6d02a0d34e49d4e4"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q04",
@@ -173,7 +188,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:30bba9312809adbda9979af1a35263e3239a3cb279671e67e8bd2ffc36697955"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q05",
@@ -217,7 +237,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:fe418dcd9b15124d3b0f6178890f5bceb1fe3826f986487292972531808daf43"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q06",
@@ -261,7 +286,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b601af4bf8032de2d7a00e6e055679a9defb209136a426fa82ca50c4148e6460"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q07",
@@ -305,7 +335,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:9ad3783a3ee66dc5cbb4ec1ecb1170a70ae457470070d163999d11908bcd5ccf"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-5",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-5; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q08",
@@ -349,7 +384,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:adbaf45da6fbf49022b2b8584fa4548fdb4fa5a6b84cac0b3662870d4174e825"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q09",
@@ -393,7 +433,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:299217c89ca4551306b20ef4d25d95c1726a1329820f9d6fc58a928320710e4a"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q10",
@@ -437,7 +482,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:22a5294fdd225bca592ca874976e1ffcf0f40f1d84fd2086b460a58301b68ce0"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q11",
@@ -481,7 +531,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:7e0c17844ae27e81532a265082f17f155c0b35a6c9d817ab8b5eafd015fc41de"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q12",
@@ -525,7 +580,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:e190613a0340d95341f0be971a7d27a54e7375cbd4cac3e66d8c4951b14fdc51"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q13",
@@ -569,7 +629,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:aa281563bc2d0ae083badbbce30c2d6530a0cb6a8b30817c01e8298ad2d4ac55"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q14",
@@ -613,7 +678,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:f79d6184d522d73a7b2db68ce68d10a2b66b9d816cb3a4c7c208d6e5e8a70929"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-1433-Q15",
@@ -657,7 +727,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:4e31857daab08f87663841e6fd368602533111e6bcce66cc04f9689f10727f82"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q01",
@@ -701,7 +776,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:cda322080530864cde36257cf28c1139a8786ac3f5d19ca61e4e7b6d99ed8aa8"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q02",
@@ -745,7 +825,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:8be6a0f461476a76502775b7b025a93c8e815b42203f94eb99fb3e1b9a329ab3"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q03",
@@ -789,7 +874,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:299217c89ca4551306b20ef4d25d95c1726a1329820f9d6fc58a928320710e4a"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q04",
@@ -833,14 +923,19 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:ab43b16347b1a5a43ee0e74044b226b7702ee0d4cee3d1d8990dfe299118d7de"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q05",
     "sectionLabel": "Conocimiento Específico",
     "prompt": "Según el RD 346/2011 por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones, se conoce con la abreviatura \"BAT\" a las:",
     "conceptIds": [
-      "ict-concept-5"
+      "ict-concept-34"
     ],
     "options": [
       {
@@ -877,7 +972,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b9d1c47dcf6237f0a0fb2add107093005531066f0e7ab5a24c39e8407763fa77"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q06",
@@ -921,7 +1021,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:ce1549a0c71e7ef109c1eac5ad7ae2058e380146ab2424de64c529542ced9ad3"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q07",
@@ -965,7 +1070,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b4114cdaa32ef7db4e50b238e2f74aeb389e910aa0b2413fda8eca0a4831dbb8"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q08",
@@ -1009,7 +1119,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:1be63ef5c0046097a94fc400cf027527ee22847808efe27a7f5c7be6a36bb649"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q09",
@@ -1053,7 +1168,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:c660aafc76394df66c2246f40b98b78cf6d7f5ed7c35306889737713d670cb7c"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-5",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-5; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q10",
@@ -1097,7 +1217,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:c2d2077190ab8a57aa24794def13c836a2709fb052a28145252e0c627699a78e"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q11",
@@ -1141,7 +1266,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:7f7b44471f2f30b91272f24378569ecd5c2ba9d53b07fe8e32c57e6180cbacda"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q12",
@@ -1185,7 +1315,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:524a4155f78a1b243f64b8ff2b706c17eab793eb29f8f4901723a323aa0397f3"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q13",
@@ -1229,7 +1364,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:5c53c68a9b5a8f889d2241712b0ba511b594c4113dbd14898e43034924be90fb"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q14",
@@ -1273,7 +1413,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:52be28f6886a64435bddaad502b21f7cb7fffb3ee65a543030194872306bfc0e"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2023-4101-Q15",
@@ -1317,7 +1462,12 @@
       "answerKeyPage": 6,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:234cad078deb76a326d1c24006ecd278b31018a51a1a1d06207f0e7c80ca6456"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q01",
@@ -1361,7 +1511,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:115f6c60c9433982fffc9172f695afba38a969a92124f97ad8d707b2f7fcf7d0"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q02",
@@ -1405,7 +1560,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:8c9e6189771ee706bb9187e8933a82ce22dbf5b289841c38756181b4965efd12"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q03",
@@ -1449,7 +1609,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:2403ceeb4e43abfea8cf9636f02931ebdf8afe00d0b6ea770b87fa2682dd2a1e"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-v",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-v; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q04",
@@ -1493,7 +1658,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b1eb69b8964ade7ac7f41eda0552c0d7817c2cedb89ac52e884168b6b8d8df26"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-v",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-v; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q05",
@@ -1537,7 +1707,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:a02e041426ed5d2a3b74cc2d117fe6f423feed6cabacc253680af73577f861ed"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q06",
@@ -1581,7 +1756,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:3a26a4201e4511fcfba9865f093878cacda59ab54d9ab6225bec0b2939cefa72"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q07",
@@ -1625,7 +1805,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:043d96a46c047080ee9a8a81e6e5759adca34bcbebbb6e65abfac083f41c7942"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q08",
@@ -1669,7 +1854,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:af8d58da9b78517c649013bd8aaf642f6eaa5bb3a73beb77019c113bdca75d30"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q09",
@@ -1713,7 +1903,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:58b6dae45de82ddb6360e207ad66151f75d31e2ea25203f1c4d228b8bdc51cd7"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q10",
@@ -1757,7 +1952,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:654883a8bf762763f18e46401796ea293f527f26df48375423d30cdbeaceb7d8"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q11",
@@ -1801,7 +2001,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:468747f2fac99fe285a950cd1d2a0c29fa9a8c0017123959aa9f8da0c2348868"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q12",
@@ -1845,7 +2050,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:29ceeef45f8ef60fbe6c37386d3feb41495c59ab91b8d027987c31432ef2c895"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q13",
@@ -1889,7 +2099,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:f7b82fa2071b56f30c5bc7cf94176ffc0fe3c0e4175d06a4ab931c4332d24757"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q14",
@@ -1933,7 +2148,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:2928455a5908dbd60906b988e53d4fb88aa06980c333e7ce2d8deeaed87f6f98"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q15",
@@ -1977,7 +2197,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:7b4c170003b06414733f880ad828b8c2ae6d7743688acda2fc05155f42cc62a4"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q16",
@@ -2021,7 +2246,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:268c1ecfc1c0ac278f2ecaa70adc2fcb53b11b33e549b802755a11f8e28d8cc6"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q17",
@@ -2065,7 +2295,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:33bde17be15584d1a6912fe71cccaefab01da4ad23eff3242d58226d7d0f57de"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-5",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-5; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3403-Q18",
@@ -2109,7 +2344,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:6b2dbc6731301ad454965a734cec79b85f9b0d206d4ce3ac38b905f0ca32d5c7"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-v",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-v; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q01",
@@ -2153,7 +2393,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:3a26a4201e4511fcfba9865f093878cacda59ab54d9ab6225bec0b2939cefa72"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q02",
@@ -2197,7 +2442,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:af8d58da9b78517c649013bd8aaf642f6eaa5bb3a73beb77019c113bdca75d30"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q03",
@@ -2241,7 +2491,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:2403ceeb4e43abfea8cf9636f02931ebdf8afe00d0b6ea770b87fa2682dd2a1e"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-v",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-v; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q04",
@@ -2285,7 +2540,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:a02e041426ed5d2a3b74cc2d117fe6f423feed6cabacc253680af73577f861ed"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q05",
@@ -2329,7 +2589,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:115f6c60c9433982fffc9172f695afba38a969a92124f97ad8d707b2f7fcf7d0"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q06",
@@ -2373,7 +2638,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:29ceeef45f8ef60fbe6c37386d3feb41495c59ab91b8d027987c31432ef2c895"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q07",
@@ -2417,7 +2687,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:8c9e6189771ee706bb9187e8933a82ce22dbf5b289841c38756181b4965efd12"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q08",
@@ -2461,7 +2736,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:468747f2fac99fe285a950cd1d2a0c29fa9a8c0017123959aa9f8da0c2348868"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q09",
@@ -2505,7 +2785,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:043d96a46c047080ee9a8a81e6e5759adca34bcbebbb6e65abfac083f41c7942"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q10",
@@ -2549,7 +2834,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b1eb69b8964ade7ac7f41eda0552c0d7817c2cedb89ac52e884168b6b8d8df26"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-v",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-v; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q11",
@@ -2593,7 +2883,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:58b6dae45de82ddb6360e207ad66151f75d31e2ea25203f1c4d228b8bdc51cd7"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q12",
@@ -2637,7 +2932,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:654883a8bf762763f18e46401796ea293f527f26df48375423d30cdbeaceb7d8"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q13",
@@ -2681,7 +2981,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:2928455a5908dbd60906b988e53d4fb88aa06980c333e7ce2d8deeaed87f6f98"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q14",
@@ -2725,7 +3030,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:7b4c170003b06414733f880ad828b8c2ae6d7743688acda2fc05155f42cc62a4"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q15",
@@ -2769,7 +3079,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:f7b82fa2071b56f30c5bc7cf94176ffc0fe3c0e4175d06a4ab931c4332d24757"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q16",
@@ -2813,7 +3128,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b7896f65187abd293895c93f317071fab7e5ed7a5fc5704bd32cc49062e74431"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q17",
@@ -2857,7 +3177,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:d95cc4b42ba4fdba3e13e0c1162b84363b7ffe92ef7bcf8c3dc8e5a4337876f3"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-5",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-5; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2024-3413-Q18",
@@ -2901,7 +3226,12 @@
       "answerKeyPage": 19,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:f9145037876b793ac8504f9d65e7b8676f6315455aec39dd53c908ac79bdc093"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-v",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-v; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q01",
@@ -2940,12 +3270,17 @@
       "questionNumber": 1,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 63,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:aa658ebc10fec7125bf69058e7ec19c3346298864ac94ea92d935a37588799b0"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q02",
@@ -2984,12 +3319,17 @@
       "questionNumber": 2,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 63,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:87e87356a81d3dafe8a6c2dc7e4411881f750da26918f5e79ff1d4e1e0f38f27"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q03",
@@ -3028,12 +3368,17 @@
       "questionNumber": 3,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 63,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:8d04de425c6324b676a03b6ed004892433240f6cefb779bd2256e606d6c3807a"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q04",
@@ -3072,12 +3417,17 @@
       "questionNumber": 4,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 63,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:17ac655f8fa6566049962f541922a2a586dd978587372affc41b4d9b4f3af5a0"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q05",
@@ -3116,12 +3466,17 @@
       "questionNumber": 5,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 63,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:10c06ddca64799110d9c71b284b889d92238723aadf57f4d2bce67384acf9a21"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q06",
@@ -3160,12 +3515,17 @@
       "questionNumber": 6,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 63,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:3050cbc4086d37ae2e95ff4c1ad9e074e5f8aa13eefb38a079b3428f45171598"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q07",
@@ -3204,12 +3564,17 @@
       "questionNumber": 7,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 64,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:5e920f2153c525e3e3ae604f0b9dddfcd9d9d399c11065e4437a03e9981ea155"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q08",
@@ -3248,12 +3613,17 @@
       "questionNumber": 8,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 64,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:30dbabdd7d7f4a9ba6a2970099e52d3a676aadc0bfa6ac7433c3f00c3ead8197"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q09",
@@ -3292,12 +3662,17 @@
       "questionNumber": 9,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 64,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:d180771409f4b6dd8a4d1a680eb2a66ae133d92f73f020cdb800a8aadf5a555a"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q10",
@@ -3336,12 +3711,17 @@
       "questionNumber": 10,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 64,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:e4f9be67287b6b24639409d816b2dbd569a0dc4131a5f72b0d34a866faed77be"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q11",
@@ -3380,12 +3760,17 @@
       "questionNumber": 11,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 64,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:30a8791e73266adae2f8620a1c5e0804699589df8186b189c611df3d364594e5"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q12",
@@ -3424,12 +3809,17 @@
       "questionNumber": 12,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 64,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:b97fe0054e13f5f4e21c6c9b387faa1ddb639b9497e169fccc6b08e482565fb7"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q13",
@@ -3468,12 +3858,17 @@
       "questionNumber": 13,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 65,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:ef6b34046495047a5abae385afb17b4f63bb59306b7693796ec36fa6b226c609"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q14",
@@ -3512,12 +3907,17 @@
       "questionNumber": 14,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 65,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:a1c1dd28b0830ccbed01cd4662971d6ff40b72bc451a8669d00f326131e1d4e0"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q15",
@@ -3556,12 +3956,17 @@
       "questionNumber": 15,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 65,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:4df8a1c10ff28252335e50729cf025794d9f00fb5c55a5edb4a9b30f0f4edb02"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q16",
@@ -3600,12 +4005,17 @@
       "questionNumber": 16,
       "section": "specific",
       "isReserve": true,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 66,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:f352d7335eb3b97aa67951115a820b5a70891f8491dbbb98faf69523ba244005"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q17",
@@ -3644,12 +4054,17 @@
       "questionNumber": 17,
       "section": "specific",
       "isReserve": true,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 66,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:2fb7f2c310d7232c737164014ce30eea30e2d92fbf4fbbca8c521a1710813784"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-1131-Q18",
@@ -3688,12 +4103,17 @@
       "questionNumber": 18,
       "section": "specific",
       "isReserve": true,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 66,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:d083c1721c846da7d386bc706f413597538bee65bc932ceb180939db21db0fe5"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-5",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-5; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q01",
@@ -3732,12 +4152,17 @@
       "questionNumber": 1,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 68,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:87e87356a81d3dafe8a6c2dc7e4411881f750da26918f5e79ff1d4e1e0f38f27"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q02",
@@ -3776,12 +4201,17 @@
       "questionNumber": 2,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 68,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:8d04de425c6324b676a03b6ed004892433240f6cefb779bd2256e606d6c3807a"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q03",
@@ -3820,12 +4250,17 @@
       "questionNumber": 3,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 68,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:10c06ddca64799110d9c71b284b889d92238723aadf57f4d2bce67384acf9a21"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q04",
@@ -3864,12 +4299,17 @@
       "questionNumber": 4,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 68,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:30dbabdd7d7f4a9ba6a2970099e52d3a676aadc0bfa6ac7433c3f00c3ead8197"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q05",
@@ -3908,12 +4348,17 @@
       "questionNumber": 5,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 68,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:d180771409f4b6dd8a4d1a680eb2a66ae133d92f73f020cdb800a8aadf5a555a"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q06",
@@ -3952,12 +4397,17 @@
       "questionNumber": 6,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 68,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:30a8791e73266adae2f8620a1c5e0804699589df8186b189c611df3d364594e5"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q07",
@@ -3996,12 +4446,17 @@
       "questionNumber": 7,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 69,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:5e920f2153c525e3e3ae604f0b9dddfcd9d9d399c11065e4437a03e9981ea155"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q08",
@@ -4040,12 +4495,17 @@
       "questionNumber": 8,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 69,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:17ac655f8fa6566049962f541922a2a586dd978587372affc41b4d9b4f3af5a0"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-1",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-1; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q09",
@@ -4084,12 +4544,17 @@
       "questionNumber": 9,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 69,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:3050cbc4086d37ae2e95ff4c1ad9e074e5f8aa13eefb38a079b3428f45171598"
-    }
+    },
+    "syllabusNodeId": "ict-capitulo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-capitulo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q10",
@@ -4128,12 +4593,17 @@
       "questionNumber": 10,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 69,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:f4482204ee61cfce0d44af2eb2401821d6b692b26d542e278f13ad231aefc2c6"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q11",
@@ -4172,12 +4642,17 @@
       "questionNumber": 11,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 69,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:e4f9be67287b6b24639409d816b2dbd569a0dc4131a5f72b0d34a866faed77be"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q12",
@@ -4216,12 +4691,17 @@
       "questionNumber": 12,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 70,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:aa658ebc10fec7125bf69058e7ec19c3346298864ac94ea92d935a37588799b0"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-ii",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-ii; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q13",
@@ -4260,12 +4740,17 @@
       "questionNumber": 13,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 70,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:a1c1dd28b0830ccbed01cd4662971d6ff40b72bc451a8669d00f326131e1d4e0"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q14",
@@ -4304,12 +4789,17 @@
       "questionNumber": 14,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 70,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:4df8a1c10ff28252335e50729cf025794d9f00fb5c55a5edb4a9b30f0f4edb02"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q15",
@@ -4348,12 +4838,17 @@
       "questionNumber": 15,
       "section": "specific",
       "isReserve": false,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 70,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:ef6b34046495047a5abae385afb17b4f63bb59306b7693796ec36fa6b226c609"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q16",
@@ -4392,12 +4887,17 @@
       "questionNumber": 16,
       "section": "specific",
       "isReserve": true,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 71,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:d8da78b03de192d05b3d00a347c4cbe81a1d1e9fe58fac4f8bba71e8cb9df4e6"
-    }
+    },
+    "syllabusNodeId": "cem-articulo-ree-completo",
+    "validity": "pending_review",
+    "validityReason": "Mapped to cem-articulo-ree-completo; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q17",
@@ -4436,12 +4936,17 @@
       "questionNumber": 17,
       "section": "specific",
       "isReserve": true,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 71,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:e2a1db10d47b59b27e71c6ec82ce33c03c223e82b22f49d60bc407f5ddf415d9"
-    }
+    },
+    "syllabusNodeId": "ict-anexo-i",
+    "validity": "pending_review",
+    "validityReason": "Mapped to ict-anexo-i; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   },
   {
     "id": "ADIF-2025-4104-Q18",
@@ -4480,11 +4985,16 @@
       "questionNumber": 18,
       "section": "specific",
       "isReserve": true,
-      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
+      "documentUrl": "https://www.adif.es/documents/20124/45240815/%2818.11.2025%2B-%2BPlantillas%2Bcorrectoras%2By%2Bcuadernillos%2Bde%2Bexamen.pdf/a2b9f608-83b0-34ee-0aa4-aba4ee6baf6b",
       "bookletPage": 71,
       "answerKeyPage": 7,
       "verifiedAt": "2026-08-10",
       "fingerprint": "sha256:e5950491a7769e102019297c770ec26c5ce89bb0adc6d90e2e311b469013b0b8"
-    }
+    },
+    "syllabusNodeId": "rcf-capitulo-5",
+    "validity": "pending_review",
+    "validityReason": "Mapped to rcf-capitulo-5; pending because the exact historic booklet version is not verified; the final tribunal answer key is not verified; the ADIF 2026 syllabus scope capture is not marked verified; the question has not been reconciled with the current 2026 rule and scope.",
+    "validityEvidence": null,
+    "currentness": "unknown"
   }
 ]

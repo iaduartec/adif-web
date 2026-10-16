@@ -115,7 +115,7 @@ describe("active official course content", () => {
     expect(parsed.success).toBe(true);
     if (!parsed.success) return;
 
-    expect(activeTheoryConceptRegistry.size).toBe(172);
+    expect(activeTheoryConceptRegistry.size).toBe(173);
     expect(parsed.data).toHaveLength(102);
     for (const question of parsed.data) {
       expect(question.conceptIds.length, question.id).toBeGreaterThan(0);
@@ -138,7 +138,7 @@ describe("active official course content", () => {
       questionIds: string[];
     }> = [
       { conceptId: "rcf-concept-9", claimPattern: /120 km\/h/i, questionIds: ["ADIF-2023-1433-Q01", "ADIF-2023-4101-Q06", "ADIF-2024-3403-Q10", "ADIF-2024-3413-Q12"] },
-      { conceptId: "ict-concept-5", claimPattern: /Bases de Acceso Terminal.*BAT/i, questionIds: ["ADIF-2023-1433-Q02", "ADIF-2023-4101-Q05"] },
+      { conceptId: "ict-concept-34", claimPattern: /bases de acceso terminal.*BAT/i, questionIds: ["ADIF-2023-1433-Q02", "ADIF-2023-4101-Q05"] },
       { conceptId: "rcf-concept-7", claimPattern: /personal.*EF.*AI.*otras empresas/i, questionIds: ["ADIF-2023-1433-Q03", "ADIF-2023-4101-Q02"] },
       { conceptId: "ict-concept-11", claimPattern: /SI 1-3/i, questionIds: ["ADIF-2023-1433-Q04", "ADIF-2023-4101-Q10"] },
       { conceptId: "ict-concept-12", claimPattern: /normas armonizadas.*Diario Oficial/i, questionIds: ["ADIF-2023-1433-Q05", "ADIF-2023-4101-Q07"] },

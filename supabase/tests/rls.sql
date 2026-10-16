@@ -2,8 +2,10 @@ begin;
 
 select plan(6);
 
-select tests.create_supabase_user('owner@example.com');
-select tests.create_supabase_user('other@example.com');
+insert into auth.users (id, email)
+values
+  ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'owner@example.com'),
+  ('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb', 'other@example.com');
 
 select set_config(
   'request.jwt.claim.sub',
@@ -25,12 +27,12 @@ select is(
 
 select throws_ok(
   $$insert into public.notes (user_id, lesson_id, body) values (
-    (select id from auth.users where email = 'other@example.com'),
+    'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
     'lesson-1',
     'Cross-user write'
   )$$,
   '42501',
-  null,
+  'new row violates row-level security policy for table "notes"',
   'a user cannot insert a row owned by someone else'
 );
 
@@ -51,16 +53,14 @@ select is(
   'a user cannot select another user''s row'
 );
 
+with changed as (
+  update public.notes
+  set body = 'Attempted overwrite'
+  where lesson_id = 'lesson-1'
+  returning 1
+)
 select is(
-  (
-    with changed as (
-      update public.notes
-      set body = 'Attempted overwrite'
-      where lesson_id = 'lesson-1'
-      returning 1
-    )
-    select count(*) from changed
-  ),
+  (select count(*) from changed),
   0::bigint,
   'a user cannot update another user''s row'
 );

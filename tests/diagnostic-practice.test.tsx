@@ -11,6 +11,12 @@ vi.mock("next/navigation", async (importOriginal) => ({
   redirect,
 }));
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
+vi.mock("../lib/content/official-publication", () => ({
+  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
+  isOfficialQuestionPracticeEligible: () => true,
+  isOfficialExamPracticeEligible: () => true,
+  validateOfficialPublicationData: () => [],
+}));
 
 import TestsPage from "../app/(dashboard)/tests/page";
 import { listOfficialQuestions } from "../lib/content/repository";

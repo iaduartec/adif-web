@@ -2,6 +2,7 @@ import { pathToFileURL } from "node:url";
 
 import { lessonTheories } from "../content/lesson-theory";
 import type { LegalReference, TheoryClaim, TheorySection } from "../content/theory-types";
+import { sourceManifest, validateSourceReference } from "../lib/content/source-manifest";
 import { getSourceKind } from "./verify-theory-references";
 
 // Source titles whose ID should never appear in a `didactic` claim's legalBasis.
@@ -58,6 +59,15 @@ const LEGAL_OBLIGATION_MARKERS = [
   "constituye infracción",
   "la ley exige",
 ];
+
+const CLAIM_REVIEW_STATUSES = ["draft", "needs_review", "reviewed"] as const;
+const EDITORIAL_CONFIDENCE_LEVELS = ["high", "medium", "low"] as const;
+
+function isRealIsoDate(value: unknown): value is string {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return Number.isFinite(date.valueOf()) && date.toISOString().slice(0, 10) === value;
+}
 
 /**
  * Stable instrument registry. `sourceIds` lists the accepted `sourceId` strings
@@ -318,9 +328,92 @@ export function validateTheoryClaims(theories: Record<string, TheorySection>): s
     const sourcesById = new Map<string, LegalReference>();
     theory.sources?.forEach((s) => sourcesById.set(s.id, s));
 
+    const validateProvenance = (location: string, claim: TheoryClaim) => {
+      const review = claim.review as unknown as
+        | { status?: unknown; confidence?: { level?: unknown; reason?: unknown }; reviewedAt?: unknown }
+        | undefined;
+      if (!review) {
+        errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): missing editorial confidence and reason.`);
+      } else {
+        if (!CLAIM_REVIEW_STATUSES.includes(review.status as (typeof CLAIM_REVIEW_STATUSES)[number])) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): invalid review status.`);
+        }
+        if (!review.confidence || !EDITORIAL_CONFIDENCE_LEVELS.includes(review.confidence.level as (typeof EDITORIAL_CONFIDENCE_LEVELS)[number])) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): missing or invalid confidence level.`);
+        }
+        if (typeof review.confidence?.reason !== "string" || review.confidence.reason.trim() === "") {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): confidence reason must be non-empty.`);
+        }
+        if (review.status === "reviewed") {
+          if (review.confidence?.level !== "high") {
+            errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): reviewed claims require high confidence.`);
+          }
+          if (!isRealIsoDate(review.reviewedAt)) {
+            errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): reviewed claims require a valid reviewedAt date.`);
+          }
+        }
+      }
+
+      if (claim.kind !== "normative" && claim.kind !== "interpretative") return;
+
+      let hasPrimaryEvidence = false;
+      let hasVerifiedPrimaryEvidence = false;
+      for (const sourceId of claim.legalBasis ?? []) {
+        const reference = sourcesById.get(sourceId);
+        if (!reference) continue;
+        if (!reference.locator?.trim()) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): citation '${sourceId}' requires an exact locator.`);
+        }
+        if (!reference.sourceVersion?.trim()) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): citation '${sourceId}' requires an explicit sourceVersion.`);
+          continue;
+        }
+
+        const manifestVersion = sourceManifest.sources.find(
+          (entry) => entry.sourceId === reference.sourceId && entry.sourceVersion === reference.sourceVersion,
+        );
+        if (!manifestVersion) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): citation '${sourceId}' has unknown sourceVersion '${reference.sourceVersion}'.`);
+          continue;
+        }
+        for (const issue of validateSourceReference(
+          { sourceId: reference.sourceId, sourceVersion: reference.sourceVersion, sourceUrl: reference.sourceUrl },
+          sourceManifest,
+        )) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): ${issue}.`);
+        }
+        if (reference.verifiedAt !== (manifestVersion.verifiedAt ?? undefined)) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): citation '${sourceId}' verifiedAt does not match its source version.`);
+        }
+
+        const primary =
+          manifestVersion.sourceType === "primary" &&
+          manifestVersion.authority === "A" &&
+          manifestVersion.scope !== "historical-exam" &&
+          manifestVersion.scope !== "call" &&
+          manifestVersion.sourceKind !== "syllabus-reference" &&
+          manifestVersion.sourceKind !== "pedagogical";
+        hasPrimaryEvidence ||= primary;
+        hasVerifiedPrimaryEvidence ||= primary && manifestVersion.status === "verified" && manifestVersion.verifiedAt !== null;
+
+        if (review?.status === "reviewed" && (!primary || manifestVersion.status !== "verified")) {
+          errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): reviewed claim citations require a verified primary source version.`);
+        }
+      }
+
+      if (!hasPrimaryEvidence) {
+        errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): normative/interpretative claim requires at least one primary source.`);
+      }
+      if (review?.status === "reviewed" && !hasVerifiedPrimaryEvidence) {
+        errors.push(`[${name}] Error in ${location} (claim ID: ${claim.id}): reviewed claim requires verified primary evidence.`);
+      }
+    };
+
     if (Array.isArray(theory.introduction)) {
       theory.introduction.forEach((claim, idx) => {
-        errors.push(...checkClaim(name, `introduction[${idx}]`, claim, sourcesById));
+        const location = `introduction[${idx}]`;
+        errors.push(...checkClaim(name, location, claim, sourcesById));
+        validateProvenance(location, claim);
       });
     }
 
@@ -328,7 +421,9 @@ export function validateTheoryClaims(theories: Record<string, TheorySection>): s
       theory.concepts.forEach((concept) => {
         if (Array.isArray(concept.claims)) {
           concept.claims.forEach((claim, idx) => {
-            errors.push(...checkClaim(name, `concept ${concept.id} claim[${idx}]`, claim, sourcesById));
+            const location = `concept ${concept.id} claim[${idx}]`;
+            errors.push(...checkClaim(name, location, claim, sourcesById));
+            validateProvenance(location, claim);
           });
         }
       });
@@ -338,7 +433,9 @@ export function validateTheoryClaims(theories: Record<string, TheorySection>): s
       theory.examples.forEach((example) => {
         if (Array.isArray(example.application)) {
           example.application.forEach((claim, idx) => {
-            errors.push(...checkClaim(name, `example ${example.id} application[${idx}]`, claim, sourcesById));
+            const location = `example ${example.id} application[${idx}]`;
+            errors.push(...checkClaim(name, location, claim, sourcesById));
+            validateProvenance(location, claim);
           });
         }
       });
@@ -346,7 +443,9 @@ export function validateTheoryClaims(theories: Record<string, TheorySection>): s
 
     if (Array.isArray(theory.reviewTakeaways)) {
       theory.reviewTakeaways.forEach((claim, idx) => {
-        errors.push(...checkClaim(name, `reviewTakeaways[${idx}]`, claim, sourcesById));
+        const location = `reviewTakeaways[${idx}]`;
+        errors.push(...checkClaim(name, location, claim, sourcesById));
+        validateProvenance(location, claim);
       });
     }
   }

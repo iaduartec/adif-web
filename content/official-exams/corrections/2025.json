@@ -1,0 +1,17 @@
+{
+  "year": 2025,
+  "call": "PNI25/01",
+  "profileCode": "25/10PO",
+  "profileName": "Oficial de Telecomunicaciones de Entrada",
+  "examIds": ["ADIF-2025-1131", "ADIF-2025-4104"],
+  "reconciliationStatus": "verified_no_changes",
+  "resolutionSource": {
+    "sourceId": "ADIF PNI25/01 tribunal resolution",
+    "sourceVersion": "tribunal-resolution-2025-12-02",
+    "sourceUrl": "https://www.adif.es/documents/20124/45240815/%2802.12.2025%29%2B-%2BPlantillas%2Bcorrectoras%2By%2Bresoluci%C3%B3n%2Bdel%2BTribunal.pdf/8ec22bea-1eff-2619-697e-5d3958e94f74",
+    "locator": "PDF pp. 3-4 y 9/16: alegaciones del perfil 25/10PO, declaración de que las respuestas del 18/11/2025 son correctas y definitivas, y clave final Telecom."
+  },
+  "publicationStatus": "link_only",
+  "publicationReview": null,
+  "corrections": []
+}

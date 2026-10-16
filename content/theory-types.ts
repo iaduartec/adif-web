@@ -28,6 +28,10 @@ export type LegalReference = {
   /** Stable, globally unique ID — e.g. `lo3-2007-art6-2` */
   id: string;
   sourceId: string;
+  /** Versioned manifest entry. Legacy references are resolved through the manifest at registry load. */
+  sourceVersion?: string;
+  /** Copied from the linked manifest version to make the citation self-describing. */
+  verifiedAt?: string;
   sourceTitle: string;
   sourceUrl: string;
   /** Human-readable locator — e.g. `Art. 6.2` */
@@ -45,12 +49,28 @@ export type TheoryClaimKind =
   | "didactic"
   | "example";
 
+export type EditorialConfidenceLevel = "high" | "medium" | "low";
+export type ClaimReviewStatus = "draft" | "needs_review" | "reviewed";
+
+export type ClaimEditorialReview = {
+  status: ClaimReviewStatus;
+  confidence: {
+    level: EditorialConfidenceLevel;
+    reason: string;
+  };
+  /** Date on which this claim was actually reviewed, not its source date. */
+  reviewedAt?: string;
+  reviewedBy?: string;
+};
+
 export type TheoryClaim = {
   id: string;
   text: string;
   kind: TheoryClaimKind;
   /** IDs of LegalReference entries in the same module's `sources` array. */
   legalBasis: string[];
+  /** Editorial state is attached from the claim review manifest for legacy claims. */
+  review?: ClaimEditorialReview;
 };
 
 export type TheoryConcept = {

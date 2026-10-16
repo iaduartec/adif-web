@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
 import { lessonTheories } from "../content/lesson-theory";
+import theorySourceLinks from "../content/theory-source-links.json";
 import type { LegalReference, TheoryClaim, TheorySection } from "../content/theory-types";
+import { sourceManifest } from "../lib/content/source-manifest";
 import {
   checkClaim,
   extractMentionedLocators,
@@ -191,6 +193,40 @@ describe("instrument coherence", () => {
   });
 });
 
+describe("ICT annex references", () => {
+  it("anchors recintos and canalization in Anexo II, not Anexo IV", () => {
+    const ict = lessonTheories["ict-rd-346-2011"]!;
+    const concept = ict.concepts.find((entry) => entry.id === "ict-concept-7")!;
+    const reference = ict.sources.find((entry) => entry.id === concept.claims[0]!.legalBasis[0])!;
+
+    expect(reference).toMatchObject({
+      sourceId: "RD 346/2011",
+      locator: "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    });
+  });
+
+  it("cites ICT earthing and equipotential bonding in Anexo II safety sections", () => {
+    const ict = lessonTheories["ict-rd-346-2011"]!;
+    const concept = ict.concepts.find((entry) => entry.id === "ict-concept-10")!;
+    const reference = ict.sources.find((entry) => entry.id === concept.claims[0]!.legalBasis[0])!;
+
+    expect(reference).toMatchObject({
+      sourceId: "RD 346/2011",
+      locator: "Anexo II, apartados 7.2.3 y 7.3",
+    });
+  });
+
+  it("describes Annexes IV and V according to their actual topics", () => {
+    const ict = lessonTheories["ict-rd-346-2011"]!;
+    const annexIv = ict.sources.find((entry) => entry.id === "rd346-2011-anex4")!;
+    const annexV = ict.sources.find((entry) => entry.id === "rd346-2011-anex5")!;
+
+    expect(annexIv.locator).toMatch(/^Anexo IV/);
+    expect(annexIv.excerpt).toMatch(/inspección técnica.*mantenimiento/i);
+    expect(annexV.excerpt).toMatch(/hogar digital/i);
+  });
+});
+
 describe("global ID uniqueness", () => {
   it("rejects duplicate source IDs across different modules", () => {
     const a: TheorySection = {
@@ -334,6 +370,40 @@ describe("whole content guardrails", () => {
 
   it("leaves no normative claim backed exclusively by syllabus-reference sources on the real lesson theories", () => {
     expect(validateTheoryClaims(lessonTheories).some((e) => e.includes("syllabus-reference sources"))).toBe(false);
+  });
+
+  it("links every theory source to one explicit manifest version and source verification date", () => {
+    for (const theory of Object.values(lessonTheories)) {
+      for (const source of theory.sources) {
+        expect(source.sourceVersion).toBeTruthy();
+        const linked = sourceManifest.sources.find(
+          (entry) => entry.sourceId === source.sourceId && entry.sourceVersion === source.sourceVersion,
+        );
+        const pinned = theorySourceLinks.sources.find(
+          (entry) => entry.sourceId === source.sourceId && entry.sourceUrl === source.sourceUrl,
+        );
+        expect(linked).toBeDefined();
+        expect(source.sourceVersion).toBe(pinned?.sourceVersion);
+        expect(source.verifiedAt).toBe(linked?.verifiedAt ?? undefined);
+      }
+    }
+  });
+
+  it("keeps inherited claim reviews pending with an explicit confidence reason", () => {
+    for (const theory of Object.values(lessonTheories)) {
+      const claims = [
+        ...theory.introduction,
+        ...theory.concepts.flatMap((concept) => concept.claims),
+        ...theory.examples.flatMap((example) => example.application),
+        ...theory.reviewTakeaways,
+      ];
+      for (const currentClaim of claims) {
+        expect(currentClaim.review?.status).toBe("needs_review");
+        expect(currentClaim.review?.confidence.level).toBe("low");
+        expect(currentClaim.review?.confidence.reason.trim()).not.toBe("");
+        expect(currentClaim.review?.reviewedAt).toBeUndefined();
+      }
+    }
   });
 });
 

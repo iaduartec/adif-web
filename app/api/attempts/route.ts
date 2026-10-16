@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getOfficialQuestion } from "../../../lib/content/repository";
+import { officialQuestionIdSchema } from "../../../lib/content/schema";
 import { createServerClient } from "../../../lib/supabase/server";
 
 const rawAttemptSchema = z.object({
-  questionId: z.string().regex(/^ADIF-\d{4}-\d{4}-Q\d{2}$/),
+  questionId: officialQuestionIdSchema,
   answer: z.enum(["A", "B", "C", "D"]).optional(),
   selectedAnswer: z.enum(["A", "B", "C", "D"]).optional(),
   mode: z.enum(["practice", "simulation"]).optional(),

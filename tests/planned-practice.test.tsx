@@ -12,6 +12,12 @@ vi.mock("next/navigation", async (importOriginal) => ({
   redirect,
 }));
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
+vi.mock("../lib/content/official-publication", () => ({
+  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
+  isOfficialQuestionPracticeEligible: () => true,
+  isOfficialExamPracticeEligible: () => true,
+  validateOfficialPublicationData: () => [],
+}));
 vi.mock("../components/practice/question-session", () => ({
   QuestionSession: ({ questions }: { questions: { id: string }[] }) => (
     <output aria-label="Preguntas planificadas">{questions.map(({ id }) => id).join("|")}</output>

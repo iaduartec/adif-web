@@ -5,6 +5,9 @@ export type SyllabusSource = {
   title: string;
   url: string;
   kind: SyllabusSourceKind;
+  /** Corresponding versioned source-manifest identity when one exists. */
+  manifestSourceId?: string;
+  sourceVersion?: string;
 };
 
 /** Sources that establish exam scope; material sources live in the theory registry. */
@@ -14,6 +17,8 @@ export const SYLLABUS_SOURCES: Record<string, SyllabusSource> = {
     title: "PNI26/01 - Convocatoria Pública de Ingreso en categorías de Personal Operativo",
     url: "https://www.adif.es/w/pni26-01-personal-operativo",
     kind: "call",
+    manifestSourceId: "ADIF PNI26/01",
+    sourceVersion: "page-capture-2026-10-15",
   },
   "pni26-01-instructions": {
     id: "pni26-01-instructions",
