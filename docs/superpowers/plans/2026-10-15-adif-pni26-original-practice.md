@@ -125,20 +125,21 @@
 
 **Files:**
 - Modify: `content/original-practice/telecom.json`
-- Modify: `content/theories/ict-rd-346-2011.ts`
-- Modify: `content/theories/compatibilidad-electromagnetica.ts`
-- Modify: `content/theories/rcf-libro-1.ts`
 - Create: `tests/telecom-practice.test.ts`
+
+**Deviation from the planned file list:** no theory file was modified. `content/theories/ict-rd-346-2011.ts`, `content/theories/compatibilidad-electromagnetica.ts` and `content/theories/rcf-libro-1.ts` already existed in `main` with the curated claims needed to ground the items, so Task 5 only added the bank and its test.
 
 **Interfaces:**
 - Every question has a `syllabusNodeId` from the verified source/syllabus manifest and preserves `origin: "original"`.
 - The bank distinguishes RD 346/2011, the ADIF CEM document, and RCF Libro 1 as separate domains.
 
-- [ ] **Step 1: Add failing tests** for required node linkage, at least 18 distinct reviewed eligible items, original origin, one correct answer, explanation and rejection of an unmapped node.
-- [ ] **Step 2: Run** `pnpm exec vitest run tests/telecom-practice.test.ts`; expected FAIL.
-- [ ] **Step 3: Add** reviewed original questions only after the source/syllabus plan supplies verified node IDs.
-- [ ] **Step 4: Run** `pnpm exec vitest run tests/telecom-practice.test.ts && pnpm verify:content`; expected PASS, with every reviewed telecom item linked to an official node.
-- [ ] **Step 5: Commit** with `git add content/original-practice/telecom.json content/theories/ict-rd-346-2011.ts content/theories/compatibilidad-electromagnetica.ts content/theories/rcf-libro-1.ts tests/telecom-practice.test.ts && git commit -m "feat: add original telecom questions"`.
+- [x] **Step 1: Add failing tests** for required node linkage, at least 18 distinct reviewed eligible items, original origin, one correct answer, explanation and rejection of an unmapped node.
+- [x] **Step 2: Run** `pnpm exec vitest run tests/telecom-practice.test.ts`; expected FAIL.
+- [x] **Step 3: Add** reviewed original questions only after the source/syllabus plan supplies verified node IDs. 24 items (12 ICT, 12 RCF) were added, all linked to verified nodes.
+- [x] **Step 4: Run** `pnpm exec vitest run tests/telecom-practice.test.ts && pnpm verify:content`; expected PASS, with every reviewed telecom item linked to an official node.
+- [x] **Step 5: Commit** `content/original-practice/telecom.json` and `tests/telecom-practice.test.ts` (the theory files were not modified).
+
+Independent adversarial review: PASS WITH FINDINGS, 0 CRITICAL / 2 IMPORTANT / 4 MINOR / 1 NIT. The IMPORTANTs were every answer key on "A" and near-duplicate official items; resolved by redistributing keys to A/B/C/D (6 each) and rewriting the flagged items, with a positional-diversity assertion now guarding the spread. Fact-level overlap with the official 102-question bank is inherent and documented as a limitation (the guard only catches exact fingerprints).
 
 ### Task 6: Persist original practice attempts through the existing owner-scoped pipeline
 
