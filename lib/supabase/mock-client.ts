@@ -352,13 +352,10 @@ export function createMockSupabaseClient() {
   return {
     auth: {
       getUser: () => Promise.resolve({ data: { user: MOCK_USER }, error: null }),
-      signInWithOAuth: (options: any) => {
-        const redirectTo = options?.options?.redirectTo || "/";
-        if (typeof window !== "undefined" && !options?.options?.skipBrowserRedirect) {
-          window.location.href = redirectTo;
-        }
-        return Promise.resolve({ data: { url: redirectTo }, error: null });
-      },
+      signInWithPassword: () =>
+        Promise.resolve({ data: { user: MOCK_USER, session: { access_token: "mock" } }, error: null }),
+      signUp: () =>
+        Promise.resolve({ data: { user: MOCK_USER, session: { access_token: "mock" } }, error: null }),
       signOut: () => {
         if (typeof window !== "undefined") {
           window.location.href = "/login";

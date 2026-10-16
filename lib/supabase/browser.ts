@@ -10,13 +10,3 @@ export function createBrowserClient() {
 
   return createSupabaseBrowserClient(config.url, config.anonKey);
 }
-
-export function getSupabaseOAuthAuthorizeUrl() {
-  const config = getSupabaseRuntimeConfig();
-
-  if (config.mode === "mock") {
-    return null;
-  }
-
-  return new URL("/auth/v1/authorize", config.url).toString();
-}
