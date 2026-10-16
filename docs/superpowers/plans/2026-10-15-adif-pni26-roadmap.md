@@ -1,6 +1,6 @@
 # PNI26/01 26/12PO Implementation Roadmap
 
-> Status: architecture specification approved; implementation is underway. Plan 3 Task 3 (original psychometric practice) is complete; later Plan 3 tasks remain unstarted.
+> Status: architecture specification approved; implementation is underway. Plan 3 Task 3 (original psychometric practice) and Task 4 (original common-law practice, five verified common scopes) are complete; the Declaración sobre la Red scope is draft-only until its source is verified. Later Plan 3 tasks remain unstarted.
 
 ## Preserve and Extend the Existing Product
 

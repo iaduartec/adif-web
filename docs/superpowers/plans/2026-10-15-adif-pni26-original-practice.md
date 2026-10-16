@@ -108,11 +108,18 @@
 - The common-general bank covers all six current official common syllabus scopes through original wording. Each reviewed legal item links to its official syllabus node, primary source version and exact article/section locator.
 - A composite historical-format paper may use cleared official General items where allowed; otherwise it uses reviewed original General items. Every item retains its official/original badge. If a reviewed bank cannot provide 18 eligible items including reserves, paper creation is disabled with a clear content-readiness reason.
 
-- [ ] **Step 1: Add failing tests** for coverage of LO 3/2007, LPRL in ADIF's stated scope, ADIF Statute, Declaración sobre la Red 2027 chapters I–II, EBEP chapter VI/title III and conduct code, and Ley 53/1984; require exact primary locators, four unique options, one answer and explanation.
-- [ ] **Step 2: Run** `pnpm exec vitest run tests/general-knowledge-practice.test.ts`; expected FAIL because the common bank is absent.
-- [ ] **Step 3: Write and review original questions from current primary texts**, preserving source versions and exact locators. Do not copy academy material or treat a historical question as original by paraphrasing it.
-- [ ] **Step 4: Run** `pnpm exec vitest run tests/general-knowledge-practice.test.ts tests/original-practice-schema.test.ts`; expected PASS with all six official scopes represented, at least 18 distinct reviewed eligible questions, and no reviewed normative item without a primary locator.
-- [ ] **Step 5: Commit** with `git add content/original-practice/general-knowledge.json lib/content/original-practice-schema.ts tests/general-knowledge-practice.test.ts && git commit -m "feat: add original common-law practice"`.
+- [x] **Step 1: Add failing tests** for coverage of LO 3/2007, LPRL in ADIF's stated scope, ADIF Statute, Declaración sobre la Red 2027 chapters I–II, EBEP chapter VI/title III and conduct code, and Ley 53/1984; require exact primary locators, four unique options, one answer and explanation.
+- [x] **Step 2: Run** `pnpm exec vitest run tests/general-knowledge-practice.test.ts`; expected FAIL because the common bank is absent. → 3 failing / 1 vacuous pass (empty bank).
+- [x] **Step 3: Write and review original questions from current primary texts**, preserving source versions and exact locators. Do not copy academy material or treat a historical question as original by paraphrasing it. → 24 items (22 reviewed + 2 draft), each anchored to a curated theory source and its exact locator.
+- [x] **Step 4: Run** `pnpm exec vitest run tests/general-knowledge-practice.test.ts tests/original-practice-schema.test.ts`; expected PASS with all six official scopes represented, at least 18 distinct reviewed eligible questions, and no reviewed normative item without a primary locator. → 4 files / 47 tests pass; full suite 72 files / 591 tests pass; typecheck, `verify:content` (205 concepts / 288 claims) and build (Next 16.3.6) pass; lint 0 errors / 2 pre-existing warnings.
+- [x] **Step 5: Commit** with `git add content/original-practice/general-knowledge.json lib/content/original-practice-schema.ts tests/general-knowledge-practice.test.ts && git commit -m "feat: add original common-law practice"`. → `9e6c5a0` feature, `13f15f1` test hardening, `c3dd68f` lint config.
+
+**Task 4 notes and deviations**
+- 22 reviewed items across the five verified common scopes (LO 3/2007, Ley 31/1995, RD 2395/2004, TREBEP, Ley 53/1984), plus 2 draft items for the Declaración sobre la Red scope.
+- The Declaración sobre la Red 2027 scope cannot carry reviewed items yet: its only material source `DR 2027` is `status: needs_check` / `locatorPolicy: document-level` in `source-manifest`, and the reviewed gate requires `verified` + `exact`. Promoting it needs a retrievable official PDF (ADIF downloads returned 403), so the scope stays draft-only with a content-readiness reason rather than marking an unverified source as confirmed.
+- `lib/content/original-practice-schema.ts` was listed but not modified: no schema change was needed.
+- `eslint.config.mjs` now ignores the gitignored `.worktrees/**` and `worktrees/**` snapshots (the roadmap's orphan-worktree discovery fix); eslint was linting generated `.next` chunks from stale snapshots.
+- Independent adversarial review: PASS WITH FINDINGS, 0 CRITICAL / 0 IMPORTANT / 2 MINOR / 2 NIT. The MINORs are pre-existing design, not Task 4 defects: "reviewed" is the item's state (the curated anchor claims are repo-wide `needs_review`), and the pre-submission DTO intentionally carries `answerGrounding` (citation only, never the key or explanation).
 
 ### Task 5: Add original telecom questions for mapped 2026 nodes
 
