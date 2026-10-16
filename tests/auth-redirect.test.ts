@@ -37,4 +37,19 @@ describe("resolveProtectedRoute", () => {
       expect(getSafeRedirectPath(next)).toBeNull();
     },
   );
+
+  it.each([
+    "/\t/attacker.example",
+    "/\n/attacker.example",
+    "/\r/attacker.example",
+    "/%09/attacker.example",
+    "/%0A/attacker.example",
+    "/%0D/attacker.example",
+  ])(
+    "rejects control characters that URL parsing strips from the callback destination %s",
+    (next) => {
+      const decoded = new URLSearchParams(`next=${next}`).get("next") ?? "";
+      expect(getSafeRedirectPath(decoded)).toBeNull();
+    },
+  );
 });

@@ -26,5 +26,12 @@ export function getSafeRedirectPath(next: string | null): string | null {
     return null;
   }
 
+  // WHATWG URL parsing strips C0 control characters and DEL, so a value like
+  // "/\t/attacker.example" would otherwise resolve to a protocol-relative,
+  // off-origin destination. Reject them before they reach the redirect.
+  if (/[\u0000-\u001f\u007f]/.test(next)) {
+    return null;
+  }
+
   return next;
 }
