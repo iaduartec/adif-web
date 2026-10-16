@@ -1,8 +1,10 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import PsicotecnicosPage from "../app/(dashboard)/psicotecnicos/page";
+import { PsychometricPractice } from "../components/practice/psychometric-practice";
 import { listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
 import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
 import { originalPracticeQuestionSchema } from "../lib/content/original-practice-schema";
@@ -82,6 +84,8 @@ describe("original psychometric practice", () => {
       { skill: "nope" },
       { skill: "logic" },
       { skill: "GRAMMAR" },
+      { topic: "Aptitud verbal" },
+      { topic: "Aptitud equivocada" },
       { conceptIds: ["psico-topic-logic"] },
       { conceptIds: ["ingles-topic-there-is-are"] },
       { conceptIds: ["concept-not-in-active-theory"] },
@@ -124,6 +128,22 @@ describe("original psychometric practice", () => {
     expect(psychometricModes.find(({ value }) => value === "timed")!.secondsPerQuestion).toBeGreaterThan(0);
     expect(psychometricModes.find(({ value }) => value === "simulation")!.secondsPerQuestion).toBeGreaterThan(0);
     expect(() => selectPsychometricQuestions(questions, "not-a-mode")).toThrow();
+  });
+
+  it("keeps the rendered questions identical when the practice mode changes", () => {
+    const questions = listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" })
+      .map((question) => toPublicPracticeQuestion(question))
+      .filter((question) => question !== null);
+    const prompts = questions.map(({ prompt }) => prompt);
+    expect(prompts.length).toBeGreaterThanOrEqual(18);
+
+    render(createElement(PsychometricPractice, { questions }));
+    for (const prompt of prompts) expect(screen.getByText(prompt)).toBeInTheDocument();
+
+    for (const mode of psychometricModes) {
+      fireEvent.click(screen.getByRole("radio", { name: new RegExp(mode.label) }));
+      for (const prompt of prompts) expect(screen.getByText(prompt)).toBeInTheDocument();
+    }
   });
 
   it("exposes only sanitized original records from the page", async () => {

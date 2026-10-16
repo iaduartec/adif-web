@@ -3,7 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { OriginalPracticeQuestionDto } from "../../lib/content/original-practice-public-dto";
-import { psychometricModes, type PsychometricMode } from "../../lib/content/psychometric-modes";
+import {
+  psychometricModes,
+  selectPsychometricQuestions,
+  type PsychometricMode,
+} from "../../lib/content/psychometric-modes";
 
 function formatElapsed(elapsedMs: number) {
   const totalSeconds = Math.floor(elapsedMs / 1000);
@@ -39,13 +43,13 @@ export function PsychometricPractice({
 
   const questionsByAptitude = useMemo(() => {
     const groups = new Map<string, OriginalPracticeQuestionDto[]>();
-    for (const question of questions) {
+    for (const question of selectPsychometricQuestions(questions, mode)) {
       const group = groups.get(question.topic) ?? [];
       group.push(question);
       groups.set(question.topic, group);
     }
     return [...groups.entries()];
-  }, [questions]);
+  }, [questions, mode]);
 
   return (
     <section className="mt-10" aria-labelledby="psico-practice">
@@ -83,7 +87,8 @@ export function PsychometricPractice({
             {running ? "Cronómetro en marcha" : "Cronómetro detenido"}: {formatElapsed(elapsedMs)}
           </p>
           <p className="text-sm text-gray-600 mt-1">
-            Tiempo de referencia: {activeMode.secondsPerQuestion} segundos por pregunta.
+            Ritmo objetivo orientativo: {activeMode.secondsPerQuestion} segundos por pregunta. El bloque
+            no se corta automáticamente.
           </p>
           <button
             className="ui-button ui-button--secondary mt-3"

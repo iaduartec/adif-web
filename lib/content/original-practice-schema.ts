@@ -201,6 +201,13 @@ export const originalPracticeQuestionSchema = z.object({
           message: "Psychometric skills must name the aptitude tested by the item.",
         });
       }
+      if (question.topic !== aptitude.title) {
+        context.addIssue({
+          code: "custom",
+          path: ["topic"],
+          message: "Psychometric topic label must match the selected aptitude.",
+        });
+      }
       if (question.conceptIds.some((id) => !aptitude.activeConceptIds.includes(id))) {
         context.addIssue({
           code: "custom",

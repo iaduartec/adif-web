@@ -18,13 +18,13 @@ export const psychometricModes = [
     value: "timed",
     label: "Contrarreloj",
     secondsPerQuestion: 30,
-    description: "Cronómetro opcional por pregunta para ganar velocidad sin sacrificar precisión.",
+    description: "Cronómetro opcional en bloque para ganar velocidad sin sacrificar precisión.",
   },
   {
     value: "simulation",
     label: "Simulacro",
     secondsPerQuestion: 24,
-    description: "Bloque cronometrado separado; la procedencia de las preguntas no cambia, solo el tiempo.",
+    description: "Bloque cronometrado separado; mismas preguntas y procedencia, solo cambia el tiempo.",
   },
 ] as const satisfies readonly {
   value: PsychometricMode;
