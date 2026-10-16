@@ -1,3 +1,8 @@
+---
+name: project-bridge-handoff
+description: Use when creating, accepting, completing, or troubleshooting structured Project Bridge handoffs between Codex, OpenCode, and AGY.
+---
+
 # Project Bridge structured handoffs
 
 Project Bridge is a local coordination inbox for Codex, OpenCode and AGY. It

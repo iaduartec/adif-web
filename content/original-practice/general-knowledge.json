@@ -1,1 +1,1034 @@
-[]
+[
+  {
+    "id": "orig-gen-igualdad-001",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "¿Qué prohíbe, en particular, el principio de igualdad de trato que consagra el artículo 3 de la Ley Orgánica 3/2007?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Toda discriminación, directa o indirecta, por razón de sexo."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente las diferencias salariales entre puestos de igual valor."
+      },
+      {
+        "key": "C",
+        "text": "Solo las discriminaciones producidas en el ámbito de la Administración pública."
+      },
+      {
+        "key": "D",
+        "text": "Las diferencias de trato justificadas por razones objetivas y razonables."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 3 consagra el principio de igualdad de trato, que supone la ausencia de toda discriminación, directa o indirecta, por razón de sexo.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-1"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-002",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "La situación en que una persona es tratada, en atención a su sexo, de manera menos favorable que otra en situación comparable se denomina:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Discriminación indirecta."
+      },
+      {
+        "key": "B",
+        "text": "Discriminación directa."
+      },
+      {
+        "key": "C",
+        "text": "Acoso por razón de sexo."
+      },
+      {
+        "key": "D",
+        "text": "Discriminación por asociación."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 6.1 de la Ley Orgánica 3/2007 define la discriminación directa por razón de sexo como el trato menos favorable a una persona en situación comparable.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-2"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 6.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-003",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Una disposición, criterio o práctica aparentemente neutros que sitúan a personas de un sexo en desventaja particular respecto del otro constituye:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Discriminación directa."
+      },
+      {
+        "key": "B",
+        "text": "Discriminación indirecta."
+      },
+      {
+        "key": "C",
+        "text": "Una acción positiva."
+      },
+      {
+        "key": "D",
+        "text": "Acoso sexual."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 6.2 tipifica la discriminación indirecta, que solo es lícita si se justifica objetivamente en una finalidad legítima con medios necesarios y adecuados.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-3"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 6.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-004",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Las medidas específicas que los Poderes Públicos adoptan en favor de las mujeres para corregir situaciones patentes de desigualdad de hecho se denominan:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Planes de igualdad."
+      },
+      {
+        "key": "B",
+        "text": "Acciones positivas."
+      },
+      {
+        "key": "C",
+        "text": "Medidas de discriminación inversa permanente."
+      },
+      {
+        "key": "D",
+        "text": "Cupos obligatorios en los órganos de gobierno."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 11 regula las acciones positivas: medidas razonables y proporcionadas, aplicables mientras subsista la situación de desigualdad de hecho.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-7"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 11",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-001",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "La Ley 31/1995 reconoce a los trabajadores el derecho a una protección eficaz en materia de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Seguridad y salud en el trabajo."
+      },
+      {
+        "key": "B",
+        "text": "Formación profesional continua."
+      },
+      {
+        "key": "C",
+        "text": "Estabilidad en el empleo."
+      },
+      {
+        "key": "D",
+        "text": "Promoción interna."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 14 reconoce el derecho a una protección eficaz en materia de seguridad y salud en el trabajo, con el correlativo deber de protección del empresario.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-1"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 14",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-002",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Según el artículo 15 de la Ley 31/1995, el primer principio de la acción preventiva consiste en:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Evaluar los riesgos que no se puedan evitar."
+      },
+      {
+        "key": "B",
+        "text": "Evitar los riesgos."
+      },
+      {
+        "key": "C",
+        "text": "Combatir los riesgos en su origen."
+      },
+      {
+        "key": "D",
+        "text": "Sustituir lo peligroso por lo que entrañe poco o ningún peligro."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El orden jerárquico del artículo 15 comienza por evitar los riesgos; solo después procede evaluarlos, combatirlos en su origen o sustituirlos.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-2"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 15",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-003",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Conforme al artículo 19 de la Ley 31/1995, la formación preventiva de cada trabajador debe impartirse:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Siempre fuera de la jornada y a cargo del trabajador."
+      },
+      {
+        "key": "B",
+        "text": "Siempre que sea posible dentro de la jornada de trabajo y sin coste para el trabajador."
+      },
+      {
+        "key": "C",
+        "text": "Únicamente cuando la solicite expresamente el trabajador."
+      },
+      {
+        "key": "D",
+        "text": "Solo después de un accidente con baja laboral."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 19 exige una formación teórica y práctica suficiente y adecuada, impartida siempre que sea posible dentro de la jornada y sin coste para el trabajador.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-6"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 19",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-004",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Ante un riesgo grave e inminente, el artículo 21 de la Ley 31/1995 reconoce al trabajador:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El derecho a interrumpir su actividad y abandonar el lugar de trabajo."
+      },
+      {
+        "key": "B",
+        "text": "La obligación de continuar la tarea hasta terminar el turno."
+      },
+      {
+        "key": "C",
+        "text": "El derecho a una indemnización automática."
+      },
+      {
+        "key": "D",
+        "text": "La potestad de sancionar al empresario."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 21 reconoce el derecho a interrumpir la actividad y abandonar el puesto cuando la tarea entrañe un riesgo grave e inminente para la vida o la salud.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-8"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 21",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-005",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-v",
+    "syllabusNodeId": "prl-capitulo-v",
+    "topic": "Capítulo V (artículos 33–40)",
+    "skill": "PRL",
+    "prompt": "Los Delegados de Prevención son:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los representantes de los trabajadores con funciones específicas en materia de prevención de riesgos en el trabajo."
+      },
+      {
+        "key": "B",
+        "text": "Los técnicos contratados por la empresa para dirigir la actividad preventiva."
+      },
+      {
+        "key": "C",
+        "text": "Los miembros del Comité de Seguridad y Salud elegidos por la dirección."
+      },
+      {
+        "key": "D",
+        "text": "Los funcionarios de la Inspección de Trabajo asignados al centro."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 35 define a los Delegados de Prevención como representantes del personal con funciones específicas en materia de prevención, en número según la escala de plantilla.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-13"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 35",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-001",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-i",
+    "syllabusNodeId": "estatuto-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–2)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 1 del Estatuto de ADIF, ADIF es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un organismo autónomo de la Administración General del Estado."
+      },
+      {
+        "key": "B",
+        "text": "Una entidad pública empresarial con personalidad jurídica propia y patrimonio propio."
+      },
+      {
+        "key": "C",
+        "text": "Una sociedad mercantil estatal."
+      },
+      {
+        "key": "D",
+        "text": "Una agencia estatal con régimen administrativo."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 1 define ADIF como entidad pública empresarial con personalidad jurídica propia, plena capacidad de obrar y patrimonio propio.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-1"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-002",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "De acuerdo con el artículo 3 del Estatuto, entre las funciones de ADIF se encuentra:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La prestación del servicio de transporte de viajeros."
+      },
+      {
+        "key": "B",
+        "text": "La administración de sus infraestructuras y el control de la circulación."
+      },
+      {
+        "key": "C",
+        "text": "La fabricación de material rodante."
+      },
+      {
+        "key": "D",
+        "text": "La venta de billetes de las empresas ferroviarias."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 3 enumera funciones como administrar las infraestructuras ferroviarias, controlar e inspeccionar la infraestructura y la circulación y adjudicar capacidad.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-3"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-003",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 15 del Estatuto de ADIF, el Consejo de Administración es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El órgano de gobierno que ejerce la superior dirección de la entidad."
+      },
+      {
+        "key": "B",
+        "text": "Un órgano meramente consultivo sin capacidad de decisión."
+      },
+      {
+        "key": "C",
+        "text": "El órgano de control externo de la entidad."
+      },
+      {
+        "key": "D",
+        "text": "Una comisión delegada del Ministerio de adscripción."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 15 configura el Consejo de Administración como el órgano que ejerce la superior dirección y gestión de ADIF.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-4"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 15",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-004",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "El Presidente de ADIF y de su Consejo de Administración es nombrado por:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El propio Consejo de Administración de la entidad."
+      },
+      {
+        "key": "B",
+        "text": "El Consejo de Ministros, a propuesta del Ministro de Fomento."
+      },
+      {
+        "key": "C",
+        "text": "El Congreso de los Diputados."
+      },
+      {
+        "key": "D",
+        "text": "La Comisión Nacional de los Mercados y la Competencia."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 23 establece que el Presidente es nombrado por el Consejo de Ministros a propuesta del Ministro de Fomento.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-5"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 23",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-005",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iv",
+    "syllabusNodeId": "estatuto-capitulo-iv",
+    "topic": "Capítulo IV. Personal (artículos 27–29)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el Estatuto de ADIF, el personal laboral de la entidad se rige por:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Derecho administrativo, como personal funcionario."
+      },
+      {
+        "key": "B",
+        "text": "El Derecho laboral, los contratos y los convenios colectivos."
+      },
+      {
+        "key": "C",
+        "text": "El régimen estatutario del EBEP en exclusiva."
+      },
+      {
+        "key": "D",
+        "text": "Las instrucciones internas del Ministerio de adscripción."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 27 somete el personal laboral de ADIF al Derecho laboral, los contratos, los convenios colectivos y las demás normas aplicables.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-9"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 27",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-006",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-vi",
+    "syllabusNodeId": "estatuto-capitulo-vi",
+    "topic": "Capítulo VI. Régimen económico-financiero (artículos 33–44)",
+    "skill": "ESTATUTO",
+    "prompt": "El control financiero permanente de ADIF corresponde a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La Intervención General de la Administración del Estado, sin perjuicio de la fiscalización del Tribunal de Cuentas."
+      },
+      {
+        "key": "B",
+        "text": "El Tribunal de Cuentas en exclusiva."
+      },
+      {
+        "key": "C",
+        "text": "La Comisión Nacional de los Mercados y la Competencia."
+      },
+      {
+        "key": "D",
+        "text": "La Agencia Estatal de Seguridad Ferroviaria."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 39 somete a ADIF al control financiero permanente de la Intervención General de la Administración del Estado y a la fiscalización del Tribunal de Cuentas.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-10"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 39",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-conducta-001",
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "prompt": "Según el artículo 52 del EBEP, los empleados públicos deben desempeñar sus funciones velando permanentemente por:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los intereses generales."
+      },
+      {
+        "key": "B",
+        "text": "Los intereses del departamento en el que prestan servicio."
+      },
+      {
+        "key": "C",
+        "text": "Los objetivos económicos de su unidad."
+      },
+      {
+        "key": "D",
+        "text": "Las instrucciones de sus superiores jerárquicos."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 52 exige a los empleados públicos actuar con diligencia, objetividad, integridad, neutralidad y transparencia, velando por los intereses generales.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "conceptIds": [
+      "conducta-concept-1"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 52",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-conducta-002",
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "prompt": "Entre los principios éticos del artículo 53 del EBEP se encuentra:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Aceptar regalos de empresas colaboradoras cuando sean de escaso valor."
+      },
+      {
+        "key": "B",
+        "text": "Abstenerse en los asuntos en los que el empleado tenga un interés personal."
+      },
+      {
+        "key": "C",
+        "text": "Priorizar a los usuarios que ofrezcan ventajas comerciales."
+      },
+      {
+        "key": "D",
+        "text": "Compartir información confidencial con los proveedores."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 53 incluye entre los principios éticos la abstención en los asuntos con interés personal y la no aceptación de tratos de favor o ventajas injustificadas.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "conceptIds": [
+      "conducta-concept-2"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 53",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-conducta-003",
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "prompt": "En cuanto a las órdenes de sus superiores, los empleados públicos:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Deben obedecerlas siempre, sin excepción alguna."
+      },
+      {
+        "key": "B",
+        "text": "Pueden desobedecerlas libremente si no las comparten."
+      },
+      {
+        "key": "C",
+        "text": "Deben obedecerlas salvo que constituyan una infracción manifiesta del ordenamiento jurídico."
+      },
+      {
+        "key": "D",
+        "text": "Solo deben obedecer las órdenes que estén por escrito."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 54 obliga a obedecer las órdenes profesionales salvo que supongan una infracción manifiesta del ordenamiento jurídico, en cuyo caso deben comunicarse a la inspección.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "conceptIds": [
+      "conducta-concept-4"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 54",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-001",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "El principio de dedicación única de la Ley 53/1984 prohíbe con carácter general:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Compatibilizar dos actividades retribuidas en el sector público o con cargo a presupuestos públicos."
+      },
+      {
+        "key": "B",
+        "text": "Cualquier actividad privada remunerada, sin excepciones."
+      },
+      {
+        "key": "C",
+        "text": "Recibir una única retribución pública."
+      },
+      {
+        "key": "D",
+        "text": "El ejercicio de la docencia universitaria a tiempo parcial."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 1 consagra el principio de dedicación única: se prohíbe con carácter general compatibilizar dos actividades retribuidas en el sector público.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-1"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-002",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "¿Cuál de los siguientes supuestos permite, como excepción, compatibilizar dos puestos públicos según el artículo 3 de la Ley 53/1984?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El desempeño de dos puestos de gestión con dedicación exclusiva."
+      },
+      {
+        "key": "B",
+        "text": "La docencia universitaria a tiempo parcial."
+      },
+      {
+        "key": "C",
+        "text": "El ejercicio de cualquier cargo electivo con dedicación exclusiva."
+      },
+      {
+        "key": "D",
+        "text": "La prestación de servicios en dos ministerios a jornada completa."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 3 admite como excepciones la docencia universitaria a tiempo parcial, la sanidad a tiempo parcial y los cargos electivos sin exclusividad.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-3"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-003",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "Según el artículo 11 de la Ley 53/1984, se prohíbe con carácter absoluto ejercer actividades privadas:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Que se relacionen directamente con las que desarrolla el organismo donde el empleado está destinado."
+      },
+      {
+        "key": "B",
+        "text": "De cualquier naturaleza, aunque no guarden relación con el puesto."
+      },
+      {
+        "key": "C",
+        "text": "Únicamente las de asesoría fiscal."
+      },
+      {
+        "key": "D",
+        "text": "Solo cuando exista un conflicto de intereses declarado judicialmente."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 11 prohíbe las actividades privadas, por cuenta propia o ajena, relacionadas directamente con las del organismo de destino, como asesorar a contratistas.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-5"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 11",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-004",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "El ejercicio de actividades profesionales o mercantiles fuera de las Administraciones Públicas requiere, según la Ley 53/1984:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ningún trámite adicional."
+      },
+      {
+        "key": "B",
+        "text": "El previo reconocimiento de compatibilidad."
+      },
+      {
+        "key": "C",
+        "text": "Solo una comunicación posterior al organismo."
+      },
+      {
+        "key": "D",
+        "text": "La autorización expresa de la CNMC."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 14 exige el previo reconocimiento de compatibilidad, que se resuelve mediante resolución motivada dictada en el plazo de dos meses.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-6"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 14",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-16",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-001",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-i",
+    "syllabusNodeId": "declaracion-red-capitulo-i",
+    "topic": "Capítulo I. Información general",
+    "skill": "DECLARACION",
+    "prompt": "La Declaración sobre la Red, regulada por la Ley del Sector Ferroviario, es el documento oficial que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Expone las características de la infraestructura y las condiciones de acceso a la red."
+      },
+      {
+        "key": "B",
+        "text": "Recoge el contrato-programa entre ADIF y el Estado."
+      },
+      {
+        "key": "C",
+        "text": "Contiene el catálogo de puestos de trabajo de ADIF."
+      },
+      {
+        "key": "D",
+        "text": "Aprueba el plan anual de seguridad ferroviaria."
+      }
+    ],
+    "answer": "A",
+    "explanation": "La Declaración sobre la Red informa sobre la capacidad y las condiciones técnicas de cada tramo y las condiciones de acceso a la infraestructura.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-1"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo I, 1.4 Los agentes del sector ferroviario",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-002",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-i",
+    "syllabusNodeId": "declaracion-red-capitulo-i",
+    "topic": "Capítulo I. Información general",
+    "skill": "DECLARACION",
+    "prompt": "Según las cifras oficiales de la red recogidas en la Declaración sobre la Red, la longitud en explotación suma aproximadamente:",
+    "options": [
+      {
+        "key": "A",
+        "text": "11.675,9 km"
+      },
+      {
+        "key": "B",
+        "text": "5.000 km"
+      },
+      {
+        "key": "C",
+        "text": "30.000 km"
+      },
+      {
+        "key": "D",
+        "text": "2.000 km"
+      }
+    ],
+    "answer": "A",
+    "explanation": "La Declaración recoge una longitud en explotación de unos 11.675,9 km, con predominio del ancho ibérico convencional.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-6"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo I, 1.2 Estructura organizativa. RFIG",
+    "status": "draft",
+    "origin": "original"
+  }
+]
