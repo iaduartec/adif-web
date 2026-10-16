@@ -7,7 +7,7 @@ import questionsJson from "../content/questions.json";
 import PsicotecnicosPage from "../app/(dashboard)/psicotecnicos/page";
 import { PsychometricPractice } from "../components/practice/psychometric-practice";
 import { listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
-import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
+import { toPublicPracticeQuestion, originalPracticePublicQuestionSchema } from "../lib/content/original-practice-public-dto";
 import { originalPracticeQuestionSchema } from "../lib/content/original-practice-schema";
 import { officialQuestionsSchema } from "../lib/content/schema";
 import { sourceManifest } from "../lib/content/source-manifest";
@@ -143,6 +143,36 @@ describe("original psychometric practice", () => {
 
     expect(originalPracticeQuestionSchema.safeParse(reviewedWithSource).success).toBe(false);
     expect(toPublicPracticeQuestion(reviewedWithSource)).toBeNull();
+  });
+
+  it("keeps the public psychometric DTO closed to wrong labels and official grounding", () => {
+    const dto = {
+      id: "orig-psico-dto-001",
+      origin: "original",
+      domain: "psychometric",
+      topicId: "series",
+      topic: "Series numéricas",
+      skill: "series",
+      prompt: "Completa la serie sintética: 1, 2, 3, ___.",
+      options,
+      difficulty: 1,
+      tags: ["synthetic-dto"],
+    };
+
+    expect(originalPracticePublicQuestionSchema.safeParse(dto).success).toBe(true);
+    expect(originalPracticePublicQuestionSchema.safeParse({ ...dto, topic: "Aptitud verbal" }).success).toBe(false);
+    expect(originalPracticePublicQuestionSchema.safeParse({ ...dto, skill: "logic" }).success).toBe(false);
+    expect(originalPracticePublicQuestionSchema.safeParse({
+      ...dto,
+      answerGrounding: {
+        sourceId: "ADIF-BOOKLET",
+        sourceVersion: "2026",
+        title: "Cuadernillo",
+        organization: "ADIF",
+        url: "https://www.adif.es/",
+        locator: "Localizador sintético",
+      },
+    }).success).toBe(false);
   });
 
   it("changes timing, not answer provenance, when a mode is selected", () => {

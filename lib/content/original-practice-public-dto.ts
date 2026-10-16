@@ -7,7 +7,11 @@ import {
 } from "./original-practice-schema";
 import { sourceManifest } from "./source-manifest";
 import { englishKnowledgeErrorSchema, englishTopicIdSchema } from "./english-a2-curriculum";
-import { psychometricAptitudeSchema } from "./psychometric-curriculum";
+import { psychometricAptitudeSchema, psychometricAptitudes } from "./psychometric-curriculum";
+
+const psychometricAptitudeTitleById = new Map<string, string>(
+  psychometricAptitudes.map((aptitude) => [aptitude.id, aptitude.title]),
+);
 
 export const originalPracticeAnswerGroundingDtoSchema = z.object({
   sourceId: z.string().trim().min(1),
@@ -45,6 +49,12 @@ export const originalPracticePublicQuestionSchema = z.object({
     }
     if (question.skill !== question.topicId) {
       context.addIssue({ code: "custom", path: ["skill"], message: "Psychometric DTO skills must name the aptitude tested." });
+    }
+    if (question.topic !== psychometricAptitudeTitleById.get(question.topicId)) {
+      context.addIssue({ code: "custom", path: ["topic"], message: "Psychometric DTO topic label must match the selected aptitude." });
+    }
+    if (question.answerGrounding !== undefined) {
+      context.addIssue({ code: "custom", path: ["answerGrounding"], message: "Original psychometric answers are not officially grounded." });
     }
   }
 });
