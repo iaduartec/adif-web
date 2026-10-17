@@ -23,10 +23,12 @@ const LanguageIcon = createIcon(["M4 5h10M9 3v2c0 5-2 8-5 10M6 9c1.5 2 3.5 3.7 6
 const CardsIcon = createIcon(["M7 5h11v12H7zM4 8v11h11"]);
 const ErrorsIcon = createIcon(["M5 4.5h14v15H5zM8 8h8M8 12h5M8 16h3", "m16 15 2 2m0-2-2 2"]);
 const StatisticsIcon = createIcon(["M5 19V11M10 19V5M15 19v-7M20 19V8"]);
+const SyllabusIcon = createIcon(["M6 3.75h7.5L18 8.25v12H6z", "M13.5 3.75v4.5H18", "M9 12.5h6M9 16h4"]);
 
 export const NAV_ITEMS: readonly NavigationItem[] = [
   { href: "/", icon: RailIcon, label: "Preparación" },
   { href: "/curso", icon: CourseIcon, label: "Curso" },
+  { href: "/temario", icon: SyllabusIcon, label: "Temario" },
   { href: "/tests", icon: TestsIcon, label: "Preguntas oficiales" },
   { href: "/simulacros", icon: SimulationIcon, label: "Exámenes oficiales" },
   { href: "/psicotecnicos", icon: AptitudeIcon, label: "Psicotécnicos" },
