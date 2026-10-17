@@ -1030,5 +1030,1209 @@
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-013",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Conforme al Anexo II del Reglamento de ICT (RD 346/2011), la red propiedad del operador que enlaza sus centrales o nodos con el punto de interconexión del edificio introduciéndose hasta el registro principal del RITI se denomina:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Red de alimentación."
+      },
+      {
+        "key": "B",
+        "text": "Red de dispersión."
+      },
+      {
+        "key": "C",
+        "text": "Red interior de usuario."
+      },
+      {
+        "key": "D",
+        "text": "Red de distribución vertical."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El Anexo II define la red de alimentación como la parte de la red propiedad del operador que enlaza sus centrales o nodos con el punto de interconexión del inmueble en el registro principal del RITI.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-2"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.1.1–2.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-014",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En la arquitectura de la ICT regulada en el Anexo II del RD 346/2011, el tramo que discurre por las canalizaciones comunes del inmueble desde los repartidores del RITI hasta los registros secundarios de planta constituye la:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Red de alimentación de operadoras."
+      },
+      {
+        "key": "B",
+        "text": "Red de distribución."
+      },
+      {
+        "key": "C",
+        "text": "Red interior privativa."
+      },
+      {
+        "key": "D",
+        "text": "Acometida exterior subterránea."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.2 del Anexo II define la red de distribución como el tramo entre el punto de interconexión en el RITI y los puntos de distribución situados en los registros secundarios de planta.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-3"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartado 2.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-015",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Según el Anexo II del RD 346/2011, ¿qué tramo de la red de la ICT enlaza los puntos de distribución situados en los registros secundarios de cada planta con el Punto de Acceso al Usuario (PAU) de cada vivienda o local?",
+    "options": [
+      {
+        "key": "A",
+        "text": "La red troncal de interconexión."
+      },
+      {
+        "key": "B",
+        "text": "La red de alimentación radioeléctrica."
+      },
+      {
+        "key": "C",
+        "text": "La red de dispersión."
+      },
+      {
+        "key": "D",
+        "text": "La red interior multiservicio."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.3 del Anexo II define la red de dispersión como el tramo que une la red de distribución (en los registros secundarios) con el PAU de cada vivienda, local o estancia común.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-4"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartado 2.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-016",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "De acuerdo con el Anexo II del RD 346/2011, el tendido que discurre en el interior de cada domicilio desde el PAU hasta las Bases de Acceso Terminal (BAT), ejecutado bajo responsabilidad de la propiedad de la edificación, es la:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Red de dispersión comunitaria."
+      },
+      {
+        "key": "B",
+        "text": "Canalización externa de enlace."
+      },
+      {
+        "key": "C",
+        "text": "Red de distribución secundaria."
+      },
+      {
+        "key": "D",
+        "text": "Red interior de usuario."
+      }
+    ],
+    "answer": "D",
+    "explanation": "Los apartados 2.4 y 5.1.2 del Anexo II regulan la red interior de usuario como el tendido interior de cada domicilio entre el PAU y las BAT, bajo responsabilidad de la propiedad.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-5"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.4 y 5.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-017",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Según el apartado 7.2.3 del Anexo II del RD 346/2011, el sistema de puesta a tierra local de cada recinto de telecomunicaciones consta de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un anillo interior de cobre con una barra colectora, conectado al sistema general de tierra de la edificación y al que se unen los equipos y masas metálicas."
+      },
+      {
+        "key": "B",
+        "text": "Una pica independiente aislada galvánicamente de la tierra general del edificio."
+      },
+      {
+        "key": "C",
+        "text": "Una conexión directa al conductor neutro de la red de alumbrado interior."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente la puesta a tierra del mástil de televisión situado en cubierta."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 7.2.3 del Anexo II exige en cada recinto de telecomunicaciones un anillo interior de cobre con barra colectora conectado al sistema general de tierra del inmueble.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-10"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 7.2.3 y 7.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-018",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En los pasos de canalizaciones de la ICT a través de elementos de compartimentación frente a incendios, el Anexo II del RD 346/2011 exige mantener la resistencia al fuego conforme a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Reglamento de Circulación Ferroviaria."
+      },
+      {
+        "key": "B",
+        "text": "La sección SI 1-3 del documento básico DB SI del Código Técnico de la Edificación."
+      },
+      {
+        "key": "C",
+        "text": "La norma UNE-EN 50346 de certificación de pares trenzados."
+      },
+      {
+        "key": "D",
+        "text": "Las especificaciones particulares de cada operador de telefonía."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 7.3 del Anexo II establece que las penetraciones por elementos de compartimentación contra incendios deben conservar la resistencia al fuego exigible según la sección SI 1-3 del DB SI del CTE.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-11"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 7.2.3 y 7.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-019",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Conforme al apartado 8 del Anexo II del RD 346/2011, para acreditar el cumplimiento de los requisitos de compatibilidad electromagnética de la ICT pueden emplearse como presunción de conformidad:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Declaraciones verbales del promotor de la edificación."
+      },
+      {
+        "key": "B",
+        "text": "Certificados de eficiencia energética del inmueble."
+      },
+      {
+        "key": "C",
+        "text": "Normas armonizadas cuyas referencias se hayan publicado en el Diario Oficial de la Unión Europea."
+      },
+      {
+        "key": "D",
+        "text": "Acuerdos de la junta de propietarios de la comunidad."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 8 del Anexo II dispone que pueden utilizarse normas armonizadas publicadas en el Diario Oficial de la Unión Europea para conferir presunción de conformidad con los requisitos de compatibilidad electromagnética.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-12"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartado 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-020",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Según el apartado 6.2 del Anexo II del RD 346/2011, las redes de distribución y dispersión ejecutadas con cables de pares trenzados deben certificarse con arreglo a la norma:",
+    "options": [
+      {
+        "key": "A",
+        "text": "ISO 9001 de gestión de la calidad."
+      },
+      {
+        "key": "B",
+        "text": "EN 50121 de aplicaciones ferroviarias."
+      },
+      {
+        "key": "C",
+        "text": "UNE 20460 de instalaciones eléctricas en edificios."
+      },
+      {
+        "key": "D",
+        "text": "UNE-EN 50346, Tecnologías de la información. Instalación de cableado. Ensayo de cableados instalados."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 6.2 del Anexo II exige certificar las redes de distribución y dispersión de pares trenzados conforme a la norma UNE-EN 50346 de ensayo de cableados instalados.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-13"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartado 6.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-021",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "De acuerdo con el Anexo II del RD 346/2011, el elemento que realiza la unión entre las redes de distribución y de dispersión de la ICT y que, cuando existe, se aloja en los registros secundarios es el:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Punto de distribución."
+      },
+      {
+        "key": "B",
+        "text": "Punto de interconexión."
+      },
+      {
+        "key": "C",
+        "text": "Punto de acceso al usuario (PAU)."
+      },
+      {
+        "key": "D",
+        "text": "Registro de terminación de red de RTV."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El Anexo II establece que el punto de distribución une la red de distribución con la red de dispersión y se ubica en los registros secundarios de planta.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-14"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.5.1 a 2.5.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-022",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En la ICT del RD 346/2011, el punto que une las redes de alimentación de los operadores con las redes de distribución de la edificación, delimitando las responsabilidades de mantenimiento en el registro principal del RITI, se denomina:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Base de acceso terminal (BAT)."
+      },
+      {
+        "key": "B",
+        "text": "Punto de interconexión."
+      },
+      {
+        "key": "C",
+        "text": "Punto de distribución secundario."
+      },
+      {
+        "key": "D",
+        "text": "Registro de toma de usuario."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El punto de interconexión une la red de alimentación de los operadores con la red de distribución del edificio en el registro principal del RITI y delimita las responsabilidades de mantenimiento.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-15"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.5.1 a 2.5.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-023",
+    "domain": "telecom",
+    "topicId": "ict-anexo-v",
+    "syllabusNodeId": "ict-anexo-v",
+    "topic": "Anexo V. Hogar Digital",
+    "skill": "ICT",
+    "prompt": "Según la introducción del Anexo V del RD 346/2011, la incorporación de funcionalidades de Hogar Digital contribuye en materia de ahorro y eficiencia energética a los objetivos de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente la Ley del Sector Ferroviario."
+      },
+      {
+        "key": "B",
+        "text": "El Reglamento General de Vehículos."
+      },
+      {
+        "key": "C",
+        "text": "El Código Técnico de la Edificación (CTE) y el Reglamento de Instalaciones Térmicas de los Edificios (RITE)."
+      },
+      {
+        "key": "D",
+        "text": "El Plan General de Contabilidad Pública."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La introducción del Anexo V destaca que las funcionalidades del hogar digital contribuyen a alcanzar los objetivos de ahorro y eficiencia energética del CTE y del RITE.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-17"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo V, introducción",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-024",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Cuando el enlace de la red de alimentación del operador en una ICT se realiza por medios radioeléctricos, el Anexo II del RD 346/2011 dispone que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Las antenas receptoras deben instalarse en el sótano junto a la arqueta de entrada."
+      },
+      {
+        "key": "B",
+        "text": "Los equipos de recepción y procesado deben instalarse dentro del PAU de cada vivienda."
+      },
+      {
+        "key": "C",
+        "text": "Queda prohibido el paso de cables desde la cubierta hasta el RITS."
+      },
+      {
+        "key": "D",
+        "text": "Los elementos de captación se sitúan en la cubierta o azotea de la edificación y los equipos de recepción y procesado se instalan en el RITS."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 2.1.2 del Anexo II prevé que, en enlaces radioeléctricos, los elementos de captación vayan en la cubierta o azotea y los equipos de recepción y procesado se alojen en el RITS.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-21"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 1, 2.1.1 y 2.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-025",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Conforme al Anexo II del RD 346/2011, la pantalla de los cables con portadores metálicos procedentes del exterior debe conectarse a la tierra local cerca de la entrada al recinto del punto de interconexión, a una distancia nunca superior a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "2 metros."
+      },
+      {
+        "key": "B",
+        "text": "10 metros."
+      },
+      {
+        "key": "C",
+        "text": "15 metros."
+      },
+      {
+        "key": "D",
+        "text": "25 metros."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 7.2.3 del Anexo II establece que las pantallas de los cables con portadores metálicos procedentes del exterior deben conectarse a tierra local cerca de la entrada al recinto, nunca a más de 2 metros.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-22"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 7.2.3 y 7.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-026",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En la terminología técnica del Anexo II del Reglamento de ICT (RD 346/2011), la sigla «STDP» designa los:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sistemas de Transmisión Digital por Pares."
+      },
+      {
+        "key": "B",
+        "text": "Servicios de Telefonía Disponible al Público."
+      },
+      {
+        "key": "C",
+        "text": "Soportes Técnicos de Distribución Principal."
+      },
+      {
+        "key": "D",
+        "text": "Servicios de Televisión Digital por Parábola."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 1 del Anexo II utiliza la abreviatura STDP para referirse a los Servicios de Telefonía Disponible al Público.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-23"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 1, 2.1.1 y 2.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-027",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Según el Anexo II del RD 346/2011, la interconexión óptica entre el panel común de salida de la red del edificio y los repartidores de entrada de los operadores se realiza mediante:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Latiguillos coaxiales con conector CEI."
+      },
+      {
+        "key": "B",
+        "text": "Puentes de hilo telefónico multipar sin conectorizar."
+      },
+      {
+        "key": "C",
+        "text": "Cordones o latiguillos de fibra óptica terminados en conectores SC/APC."
+      },
+      {
+        "key": "D",
+        "text": "Regletas de corte e inserción para cable de categoría 3."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.5.1.c del Anexo II dispone que la conexión entre el panel de salida de la red de fibra del edificio y los repartidores de entrada de los operadores se efectúa con cordones o latiguillos terminados en conectores SC/APC.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-24"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 2.5.1.c y 2.5.4.c",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-028",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "De acuerdo con el Anexo II del RD 346/2011, cuando el enlace de los operadores con la edificación se produce mediante cable, la red de alimentación:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Accede directamente por la azotea hasta el RITS."
+      },
+      {
+        "key": "B",
+        "text": "Finaliza en el registro de toma de cada habitación."
+      },
+      {
+        "key": "C",
+        "text": "Discurre sin canalización por el hueco del ascensor."
+      },
+      {
+        "key": "D",
+        "text": "Entra en la ICT por la arqueta de entrada y llega hasta el RITI, donde se ubica el punto de interconexión."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 2.1.1 del Anexo II señala que, cuando el enlace se produce mediante cable, la red de alimentación se introduce en la ICT por la arqueta de entrada y discurre hasta el RITI, donde se halla el punto de interconexión.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-25"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 1, 2.1.1 y 2.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-029",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Radiodifusión sonora y televisión",
+    "skill": "ICT",
+    "prompt": "Según el apartado 4.2.1 del Anexo I del RD 346/2011, los mástiles de antena deberán conectarse a la toma de tierra del edificio por el camino más corto posible con un conductor cuya sección mínima sea de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "25 mm²."
+      },
+      {
+        "key": "B",
+        "text": "1,5 mm²."
+      },
+      {
+        "key": "C",
+        "text": "4 mm²."
+      },
+      {
+        "key": "D",
+        "text": "6 mm²."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 4.2.1 del Anexo I exige conectar los mástiles de antena a la toma de tierra del edificio por el camino más corto posible mediante un cable de al menos 25 mm² de sección.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-28"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, apartado 4.2.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-030",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Radiodifusión sonora y televisión",
+    "skill": "ICT",
+    "prompt": "Con carácter general en la red coaxial de radiodifusión y televisión del Anexo I del RD 346/2011, la impedancia característica o nominal de los cables coaxiales y elementos pasivos es de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "50 Ω."
+      },
+      {
+        "key": "B",
+        "text": "75 Ω."
+      },
+      {
+        "key": "C",
+        "text": "100 Ω."
+      },
+      {
+        "key": "D",
+        "text": "150 Ω."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El Anexo I establece en 75 Ω la impedancia nominal de los elementos y cables coaxiales de la red de distribución, dispersión e interior de usuario para señales de radiodifusión y televisión.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-29"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, apartados 4.1.2, 5.2.3 y 5.2.4",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-031",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "Conforme al Anexo II del RD 346/2011, ¿cómo deben interconectarse los armarios, bastidores y demás estructuras metálicas accesibles de los recintos de telecomunicaciones?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dejando cada bastidor flotante y aislado respecto del anillo de tierra."
+      },
+      {
+        "key": "B",
+        "text": "Conectándolos únicamente al chasis de las tomas de antena de televisión."
+      },
+      {
+        "key": "C",
+        "text": "Mediante una red mallada de equipotencialidad conectada entre sí y al anillo de tierra del inmueble."
+      },
+      {
+        "key": "D",
+        "text": "A través de los pares trenzados de reserva de la red de dispersión."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 7.2.3 del Anexo II prescribe que los armarios, bastidores y estructuras metálicas accesibles se unan mediante una red mallada de equipotencialidad entre sí y al anillo de tierra del edificio.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-30"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 7.2.3 y 7.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-032",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Radiodifusión sonora y televisión",
+    "skill": "ICT",
+    "prompt": "Según el Anexo I del RD 346/2011, las redes de distribución, dispersión e interior de usuario de RTV deben permitir distribuir de forma transparente la señal entre la cabecera y la toma de usuario en la banda de frecuencias de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "300 Hz a 3.400 Hz."
+      },
+      {
+        "key": "B",
+        "text": "10 GHz a 40 GHz."
+      },
+      {
+        "key": "C",
+        "text": "88 MHz a 108 MHz exclusivamente."
+      },
+      {
+        "key": "D",
+        "text": "5 MHz a 2.150 MHz."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 4.1.2 del Anexo I exige que las redes de distribución, dispersión e interior de usuario distribuyan transparentemente la señal entre la cabecera y la toma de usuario en la banda de 5 MHz a 2.150 MHz.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-32"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, apartados 4.1.2, 5.2.3 y 5.2.4",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-033",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Radiodifusión sonora y televisión",
+    "skill": "ICT",
+    "prompt": "En la ICT de radiodifusión sonora y televisión regulada en el Anexo I del RD 346/2011, la función de la red de distribución es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Enlazar el equipo de cabecera con la red de dispersión."
+      },
+      {
+        "key": "B",
+        "text": "Conectar la central telefónica externa con la arqueta de entrada."
+      },
+      {
+        "key": "C",
+        "text": "Unir exclusivamente el PAU con el televisor del salón."
+      },
+      {
+        "key": "D",
+        "text": "Sustituir a los elementos de captación situados en la cubierta."
+      }
+    ],
+    "answer": "A",
+    "explanation": "Según el apartado 2.3.1 del Anexo I, en la ICT de radiodifusión sonora y televisión la red de distribución es la parte que enlaza el equipo de cabecera con la red de dispersión.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-33"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, título y apartado 2.3.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-034",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "De acuerdo con el apartado 2.5.4 del Anexo II del RD 346/2011, la función técnica de las Bases de Acceso Terminal (BAT) en el interior de la vivienda o local es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Alojar los amplificadores de cabecera de toda la comunidad."
+      },
+      {
+        "key": "B",
+        "text": "Permitir conectar los equipos de telecomunicación del usuario final con la red interior multiservicio."
+      },
+      {
+        "key": "C",
+        "text": "Servir de punto de interconexión entre los operadores en el RITI."
+      },
+      {
+        "key": "D",
+        "text": "Conectar el anillo de puesta a tierra del edificio con los mástiles."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.5.4 del Anexo II define las Bases de Acceso Terminal (BAT) como los puntos que dan acceso a los equipos de telecomunicación del usuario final a la red interior multiservicio.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-34"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartado 2.5.4",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-013",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "Según el apartado 1.1.1.2 del Libro Primero del RCF (RD 664/2015), el ámbito subjetivo de aplicación del Reglamento comprende:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Exclusivamente al personal de conducción de las Empresas Ferroviarias."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente a los responsables de circulación de los Administradores de Infraestructuras."
+      },
+      {
+        "key": "C",
+        "text": "A todo el personal de las Empresas Ferroviarias, de los Administradores de Infraestructuras y de otras empresas que interviene, directa o indirectamente, en los procesos de circulación de trenes y maniobras."
+      },
+      {
+        "key": "D",
+        "text": "Solo al personal inspector de la Agencia Estatal de Seguridad Ferroviaria."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 1.1.1.2 del RCF incluye en su ámbito subjetivo a todo el personal de las EF, de los AI y de otras empresas que interviene directa o indirectamente en los procesos de circulación de trenes y maniobras.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-7"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.2 Ámbito de aplicación",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-014",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-2",
+    "syllabusNodeId": "rcf-capitulo-2",
+    "topic": "Capítulo 2. Documentación reglamentaria",
+    "skill": "RCF",
+    "prompt": "Si una consigna operativa de una Empresa Ferroviaria contradice una prescripción de circulación emitida por el Administrador de Infraestructuras Ferroviarias sobre un mismo objeto, conforme al apartado 1.2.1.1 del RCF prevalece:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La consigna de la Empresa Ferroviaria, por ser el operador del tren."
+      },
+      {
+        "key": "B",
+        "text": "La norma que tenga fecha de publicación más antigua."
+      },
+      {
+        "key": "C",
+        "text": "El criterio discrecional del maquinista en ruta."
+      },
+      {
+        "key": "D",
+        "text": "La documentación del Administrador de Infraestructuras sobre la de la Empresa Ferroviaria, respetando en primer lugar la de la AESF y las normas europeas."
+      }
+    ],
+    "answer": "D",
+    "explanation": "Conforme al orden de prevalencia documental del apartado 1.2.1.1 del RCF (AESF y normas europeas, después AI y por último EF), la norma del Administrador de Infraestructuras prevalece sobre la de la Empresa Ferroviaria.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-2"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.2.1.1 Documentación",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-015",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-4",
+    "syllabusNodeId": "rcf-capitulo-4",
+    "topic": "Capítulo 4. Comunicaciones reglamentarias",
+    "skill": "RCF",
+    "prompt": "En los procesos de circulación regulados por el RCF, ¿qué requisito caracteriza obligatoriamente a toda comunicación reglamentaria transmitida mediante telefonema?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ajustarse a un formato preestablecido y quedar registrada en los soportes contemplados en el Reglamento."
+      },
+      {
+        "key": "B",
+        "text": "Transmitirse únicamente mediante señales acústicas de silbato."
+      },
+      {
+        "key": "C",
+        "text": "Efectuarse de forma verbal libre sin necesidad de registro."
+      },
+      {
+        "key": "D",
+        "text": "Ser validada previamente por el Tribunal de Cuentas."
+      }
+    ],
+    "answer": "A",
+    "explanation": "La definición 42 del apartado 1.1.1.3 del RCF caracteriza el telefonema por su formato preestablecido, su identificación mediante número secuencial, hora y emisor, y su registro obligatorio.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-6"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.3 Definiciones",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-016",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-5",
+    "syllabusNodeId": "rcf-capitulo-5",
+    "topic": "Capítulo 5. Conceptos básicos de circulación",
+    "skill": "RCF",
+    "prompt": "Cuando un movimiento se realiza en régimen de marcha de maniobras y la locomotora va tirando de la composición, el apartado 1.5.1.4 del RCF impone al maquinista no exceder la velocidad de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "20 km/h."
+      },
+      {
+        "key": "B",
+        "text": "30 km/h."
+      },
+      {
+        "key": "C",
+        "text": "50 km/h."
+      },
+      {
+        "key": "D",
+        "text": "60 km/h."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 1.5.1.4 del RCF establece que en marcha de maniobras el maquinista no excederá de 30 km/h cuando la locomotora vaya tirando del tren (y de 20 km/h cuando vaya empujándolo).",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-4"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.5.1.4 Condiciones de marcha especiales",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-017",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-1",
+    "syllabusNodeId": "rcf-capitulo-1",
+    "topic": "Capítulo 1. Generalidades",
+    "skill": "RCF",
+    "prompt": "Conforme a la definición de estación del apartado 1.1.1.3 del RCF, además de los PB, PBA, PCA, PAET y las bifurcaciones, también se consideran estación a efectos reglamentarios los cambiadores de ancho y las bases de mantenimiento cuando:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dispongan de servicio comercial de viajeros."
+      },
+      {
+        "key": "B",
+        "text": "Estén situados exclusivamente en líneas de ancho métrico."
+      },
+      {
+        "key": "C",
+        "text": "No estén integrados dentro de otra estación."
+      },
+      {
+        "key": "D",
+        "text": "Cuenten con más de diez vías de apartado."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La definición 17 del apartado 1.1.1.3 del RCF precisa que también se consideran estación los cambiadores de ancho y las bases de mantenimiento cuando no estén integrados dentro de otra estación.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-3"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.3 Definiciones",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-018",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-5",
+    "syllabusNodeId": "rcf-capitulo-5",
+    "topic": "Capítulo 5. Conceptos básicos de circulación",
+    "skill": "RCF",
+    "prompt": "Según el apartado 1.1.1.7 del RCF sobre criterios generales de operación de trenes, para que un tren pueda iniciar servicio en una infraestructura dotada de sistemas de protección de tren es requisito indispensable disponer en la cabina de conducción y tener operativos:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente el alumbrado de gran intensidad y el silbato."
+      },
+      {
+        "key": "B",
+        "text": "Solo el freno de estacionamiento manual."
+      },
+      {
+        "key": "C",
+        "text": "Exclusivamente el registrador jurídico."
+      },
+      {
+        "key": "D",
+        "text": "El sistema de protección de tren compatible con alguno de la infraestructura, el dispositivo de vigilancia y la radiotelefonía."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 1.1.1.7 del RCF exige disponer en cabina y tener operativos para iniciar servicio: sistema de protección de tren compatible, dispositivo de vigilancia y radiotelefonía.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-8"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 1, 1.1.1.7 Criterios generales de operación de trenes",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
   }
 ]

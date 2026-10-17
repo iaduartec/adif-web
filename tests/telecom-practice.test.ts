@@ -107,4 +107,25 @@ describe("original telecom practice", () => {
 
     expect(Math.max(...counts) - Math.min(...counts)).toBeLessThanOrEqual(2);
   });
+
+  it("covers all 34 ICT concepts and all four mapped RCF chapters", () => {
+    const coveredConcepts = new Set(reviewed.flatMap((question) => question.conceptIds));
+    for (const concept of lessonTheories["ict-rd-346-2011"]!.concepts) {
+      expect(coveredConcepts.has(concept.id), concept.id).toBe(true);
+    }
+    for (const concept of lessonTheories["rcf-libro-1"]!.concepts) {
+      expect(coveredConcepts.has(concept.id), concept.id).toBe(true);
+    }
+
+    const rcfParent = specificParents.find((item) => item.id === "syllabus-rcf");
+    expect(rcfParent).toBeDefined();
+    const mappedRcfNodeIds = rcfParent!.children
+      .filter((node) => node.linkedModules.includes("rcf-libro-1"))
+      .map((node) => node.id);
+    const coveredNodeIds = new Set(reviewed.map((question) => question.topicId));
+
+    for (const nodeId of mappedRcfNodeIds) {
+      expect(coveredNodeIds.has(nodeId), nodeId).toBe(true);
+    }
+  });
 });
