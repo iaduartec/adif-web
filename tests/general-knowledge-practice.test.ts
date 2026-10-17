@@ -106,4 +106,25 @@ describe("original common-law practice", () => {
     expect(declarationSource).toBeDefined();
     expect(declarationSource!.status).not.toBe("verified");
   });
+
+  it("covers every mapped Estatuto ADIF chapter I–VI and spreads correct answers across A–D", () => {
+    const estatutoParent = commonParents.find((item) => item.id === "syllabus-estatuto-adif");
+    expect(estatutoParent).toBeDefined();
+    const reviewedNodeIds = new Set(reviewed.map((question) => question.topicId));
+
+    for (const child of estatutoParent!.children) {
+      expect(reviewedNodeIds.has(child.id), child.id).toBe(true);
+    }
+
+    const distribution = reviewed.reduce<Record<string, number>>((counts, question) => {
+      counts[question.answer] = (counts[question.answer] ?? 0) + 1;
+      return counts;
+    }, {});
+
+    const counts = ["A", "B", "C", "D"].map((key) => distribution[key] ?? 0);
+    for (const [index, count] of counts.entries()) {
+      expect(count, "ABCD"[index]).toBeGreaterThan(0);
+    }
+    expect(Math.max(...counts) - Math.min(...counts)).toBeLessThanOrEqual(2);
+  });
 });

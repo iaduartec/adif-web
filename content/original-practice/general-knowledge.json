@@ -946,6 +946,1554 @@
     "origin": "original"
   },
   {
+    "id": "orig-gen-igualdad-005",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Conforme al artículo 7 de la Ley Orgánica 3/2007, cualquier comportamiento, verbal o físico, de naturaleza sexual que tenga el propósito o produzca el efecto de atentar contra la dignidad de una persona constituye:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Discriminación indirecta justificable por razones organizativas."
+      },
+      {
+        "key": "B",
+        "text": "Acoso por razón de sexo sin relevancia disciplinaria."
+      },
+      {
+        "key": "C",
+        "text": "Acoso sexual, considerándose en todo caso discriminatorio."
+      },
+      {
+        "key": "D",
+        "text": "Un conflicto interpersonal ajeno al ámbito de aplicación de la ley."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 7.1 y 7.3 de la Ley Orgánica 3/2007 define como acoso sexual cualquier comportamiento verbal o físico de naturaleza sexual que atente contra la dignidad de una persona y lo califica en todo caso como discriminatorio.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-4"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 7",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-006",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "¿Cómo califica el artículo 7.2 de la Ley Orgánica 3/2007 cualquier comportamiento realizado en función del sexo de una persona con el propósito o el efecto de atentar contra su dignidad y de crear un entorno intimidatorio, degradante u ofensivo?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Acción positiva de carácter correctivo."
+      },
+      {
+        "key": "B",
+        "text": "Acoso sexual de carácter ambiental."
+      },
+      {
+        "key": "C",
+        "text": "Diferencia de trato amparada en la libertad de empresa."
+      },
+      {
+        "key": "D",
+        "text": "Acoso por razón de sexo."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 7.2 tipifica el acoso por razón de sexo cuando el comportamiento se realiza en función del sexo de una persona con el propósito o efecto de atentar contra su dignidad y crear un entorno intimidatorio, degradante u ofensivo.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-5"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 7",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-007",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "De acuerdo con el artículo 8 de la Ley Orgánica 3/2007, todo trato desfavorable a las mujeres relacionado con el embarazo o la maternidad constituye:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Discriminación directa por razón de sexo."
+      },
+      {
+        "key": "B",
+        "text": "Discriminación indirecta por razón de sexo."
+      },
+      {
+        "key": "C",
+        "text": "Una medida organizativa sujeta a compensación económica."
+      },
+      {
+        "key": "D",
+        "text": "Un supuesto excluido del principio de igualdad de trato."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 8 establece expresamente que constituye discriminación directa por razón de sexo todo trato desfavorable a las mujeres relacionado con el embarazo o la maternidad.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-12"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-008",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Según el artículo 9 de la Ley Orgánica 3/2007, cualquier trato adverso o efecto negativo que se produzca en una persona como consecuencia de la presentación por su parte de una queja, reclamación o denuncia destinada a impedir su discriminación y a exigir el cumplimiento efectivo del principio de igualdad se considera:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Una falta leve de convivencia laboral sin calificación discriminatoria."
+      },
+      {
+        "key": "B",
+        "text": "Un ejercicio legítimo del poder de dirección empresarial."
+      },
+      {
+        "key": "C",
+        "text": "Discriminación por razón de sexo, en virtud de la garantía de indemnidad frente a represalias."
+      },
+      {
+        "key": "D",
+        "text": "Una controversia colectiva reservada exclusivamente al orden contencioso-administrativo."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 9 regula la indemnidad frente a represalias y califica como discriminación por razón de sexo todo trato adverso derivado de presentar quejas, reclamaciones, denuncias, demandas o recursos para exigir el principio de igualdad.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-6"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 9",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-009",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "En los procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, el artículo 13 de la Ley Orgánica 3/2007 establece que corresponderá a la persona demandada:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Solicitar el archivo inmediato salvo que exista sentencia penal firme."
+      },
+      {
+        "key": "B",
+        "text": "Exigir a la parte actora la prueba plena de la intencionalidad subjetiva."
+      },
+      {
+        "key": "C",
+        "text": "Remitir las actuaciones a la Comisión Nacional de los Mercados y la Competencia."
+      },
+      {
+        "key": "D",
+        "text": "Probar la ausencia de discriminación en las medidas adoptadas y su proporcionalidad."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 13 regula la prueba en los procedimientos sobre discriminación por razón de sexo (salvo los procesos penales), atribuyendo al demandado la carga de probar la ausencia de discriminación y la proporcionalidad de las medidas.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-8"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 13",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-010",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Según el artículo 44 de la Ley Orgánica 3/2007, los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y las trabajadoras en forma que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Fomenten la asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio."
+      },
+      {
+        "key": "B",
+        "text": "Queden reservados en exclusiva a las trabajadoras con hijos menores de tres años."
+      },
+      {
+        "key": "C",
+        "text": "Supediten el disfrute de permisos a la renuncia de la promoción profesional."
+      },
+      {
+        "key": "D",
+        "text": "Se apliquen únicamente al personal funcionario de carrera."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 44 dispone que los derechos de conciliación se reconocerán a trabajadores y trabajadoras fomentando la asunción equilibrada de las responsabilidades familiares y evitando cualquier discriminación por su ejercicio.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-13"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 44",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-011",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Con arreglo al artículo 45.2 de la Ley Orgánica 3/2007, ¿a partir de qué umbral de plantilla están obligadas las empresas a elaborar y aplicar un plan de igualdad?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Más de doscientas cincuenta personas trabajadoras exclusivamente."
+      },
+      {
+        "key": "B",
+        "text": "Diez o más personas trabajadoras."
+      },
+      {
+        "key": "C",
+        "text": "Cincuenta o más personas trabajadoras."
+      },
+      {
+        "key": "D",
+        "text": "Quinientas o más personas trabajadoras."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 45.2 establece la obligatoriedad de elaborar y aplicar un plan de igualdad negociado en las empresas de cincuenta o más personas trabajadoras.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-9"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 45",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-012",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "El artículo 51 de la Ley Orgánica 3/2007 dispone que las Administraciones públicas, en el ámbito de sus respectivas competencias y en aplicación del principio de igualdad entre mujeres y hombres, deberán:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Limitar las medidas de igualdad al personal eventual."
+      },
+      {
+        "key": "B",
+        "text": "Reservar la totalidad de las plazas de promoción interna a un solo sexo."
+      },
+      {
+        "key": "C",
+        "text": "Suprimir las pruebas objetivas en los procesos selectivos."
+      },
+      {
+        "key": "D",
+        "text": "Remover los obstáculos que impliquen la pervivencia de cualquier tipo de discriminación para ofrecer condiciones de igualdad efectiva en el acceso al empleo público y en el desarrollo de la carrera profesional."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 51 impone a las Administraciones públicas el deber de remover obstáculos y garantizar la igualdad efectiva en el acceso al empleo público, la formación, la promoción y las condiciones de trabajo.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-14"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 51",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-013",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "A los efectos de la Ley Orgánica 3/2007, su Disposición Adicional Primera entiende por composición equilibrada la presencia de mujeres y hombres de forma que, en el conjunto a que se refiera, las personas de cada sexo:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Representen exactamente el cincuenta por ciento en todos los casos."
+      },
+      {
+        "key": "B",
+        "text": "No superen el sesenta por ciento ni sean menos del cuarenta por ciento."
+      },
+      {
+        "key": "C",
+        "text": "No superen el setenta por ciento ni sean menos del treinta por ciento."
+      },
+      {
+        "key": "D",
+        "text": "Alcancen al menos el veinticinco por ciento del órgano correspondiente."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La Disposición Adicional Primera fija la horquilla de presencia o composición equilibrada entre el 40 % como mínimo y el 60 % como máximo para las personas de cada sexo.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-11"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Disposición Adicional 1ª",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-014",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
+    "skill": "IGUALDAD",
+    "prompt": "Según el artículo 77 de la Ley Orgánica 3/2007, en todos los Ministerios se encomendará el desarrollo de las funciones relacionadas con el principio de igualdad entre mujeres y hombres a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Una entidad privada externa contratada mediante licitación."
+      },
+      {
+        "key": "B",
+        "text": "El Tribunal de Cuentas."
+      },
+      {
+        "key": "C",
+        "text": "Uno de sus órganos directivos, como Unidad de Igualdad."
+      },
+      {
+        "key": "D",
+        "text": "Las secciones sindicales con representación minoritaria."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 77 regula las Unidades de Igualdad y prevé que en todos los Ministerios se encomiende a uno de sus órganos directivos el desarrollo de las funciones vinculadas al principio de igualdad.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad"
+    ],
+    "conceptIds": [
+      "igualdad-concept-15"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 77",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-006",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "De acuerdo con el artículo 16 de la Ley 31/1995, la prevención de riesgos laborales deberá integrarse en el sistema general de gestión de la empresa, tanto en el conjunto de sus actividades como en todos los niveles jerárquicos, a través de la implantación y aplicación de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un protocolo voluntario de buenas prácticas sin carácter vinculante."
+      },
+      {
+        "key": "B",
+        "text": "Un seguro de responsabilidad civil patronal sustitutorio."
+      },
+      {
+        "key": "C",
+        "text": "Un plan de prevención de riesgos laborales."
+      },
+      {
+        "key": "D",
+        "text": "Una auditoría contable trimestral."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 16.1 establece que la prevención debe integrarse en el sistema general de gestión de la empresa mediante la implantación y aplicación de un plan de prevención de riesgos laborales.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-3"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 16",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-007",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Según el artículo 16 de la Ley 31/1995, cuando el resultado de la evaluación lo hiciera necesario, el empresario planificará la actividad preventiva asegurándose de su efectiva ejecución e incluyendo para cada actividad:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente la relación nominal de los trabajadores de nuevo ingreso."
+      },
+      {
+        "key": "B",
+        "text": "Solo el importe de las sanciones impuestas en ejercicios anteriores."
+      },
+      {
+        "key": "C",
+        "text": "Exclusivamente el calendario laboral de vacaciones anuales."
+      },
+      {
+        "key": "D",
+        "text": "El plazo para llevarla a cabo, la designación de responsables y los recursos humanos y materiales necesarios para su ejecución."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 16.2.b dispone que la planificación de la actividad preventiva incluirá, para cada actividad preventiva, el plazo para llevarla a cabo, la designación de responsables y los recursos humanos y materiales necesarios.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-4"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 16",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-008",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Conforme al artículo 18 de la Ley 31/1995, el empresario adoptará las medidas adecuadas para que los trabajadores reciban todas las informaciones necesarias en relación con:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los riesgos para la seguridad y la salud en el trabajo, las medidas y actividades de protección y prevención aplicables y las medidas de emergencia adoptadas."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente los resultados financieros anuales de la empresa."
+      },
+      {
+        "key": "C",
+        "text": "Los datos médicos confidenciales del resto de la plantilla sin anonimizar."
+      },
+      {
+        "key": "D",
+        "text": "Exclusivamente los riesgos generales de la empresa, excluyendo los específicos de cada puesto."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 18.1 obliga al empresario a informar sobre los riesgos generales y específicos de cada puesto o función, las medidas de protección y prevención aplicables y las medidas de emergencia del artículo 20.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-5"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 18",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-009",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "En aplicación del artículo 20 de la Ley 31/1995 sobre medidas de emergencia, el empresario deberá analizar las posibles situaciones de emergencia y designar al personal encargado de poner en práctica las medidas en materia de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Auditoría retributiva y negociación colectiva."
+      },
+      {
+        "key": "B",
+        "text": "Primeros auxilios, lucha contra incendios y evacuación de los trabajadores."
+      },
+      {
+        "key": "C",
+        "text": "Inspección tributaria y control presupuestario."
+      },
+      {
+        "key": "D",
+        "text": "Representación sindical en procesos electorales."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 20 exige analizar las situaciones de emergencia, adoptar las medidas necesarias en primeros auxilios, lucha contra incendios y evacuación, y designar para ello a personal con formación y medios suficientes.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-7"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 20",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-010",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Respecto a la vigilancia periódica de la salud de los trabajadores regulada en el artículo 22 de la Ley 31/1995, la regla general establece que:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Es obligatoria en todos los puestos de trabajo sin excepción ni informe previo."
+      },
+      {
+        "key": "B",
+        "text": "Los resultados médicos completos se publican en el tablón del centro de trabajo."
+      },
+      {
+        "key": "C",
+        "text": "Solo podrá llevarse a cabo cuando el trabajador preste su consentimiento, salvo las excepciones legalmente previstas previo informe de los representantes de los trabajadores."
+      },
+      {
+        "key": "D",
+        "text": "El coste de los reconocimientos médicos se descuenta de la nómina del trabajador."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 22.1 configura la vigilancia de la salud como voluntaria para el trabajador, exceptuándose únicamente, previo informe de los representantes de los trabajadores, cuando sea imprescindible por riesgo propio o de terceros o esté fijado en una disposición legal.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-9"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 22",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-011",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Según el artículo 23 de la Ley 31/1995, el empresario debe elaborar y conservar a disposición de la autoridad laboral la relación de accidentes de trabajo y enfermedades profesionales que hayan causado al trabajador una incapacidad laboral superior a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Quince días naturales."
+      },
+      {
+        "key": "B",
+        "text": "Treinta días hábiles."
+      },
+      {
+        "key": "C",
+        "text": "Siete días laborables."
+      },
+      {
+        "key": "D",
+        "text": "Un día de trabajo."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 23.1.e incluye dentro de la documentación preventiva obligatoria la relación de accidentes de trabajo y enfermedades profesionales que hayan causado al trabajador una incapacidad laboral superior a un día de trabajo.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-10"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 23",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-012",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "Cuando en un mismo centro de trabajo desarrollen actividades trabajadores de dos o más empresas, el artículo 24 de la Ley 31/1995 dispone que estas deberán:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Eximir de toda obligación preventiva a las empresas subcontratistas."
+      },
+      {
+        "key": "B",
+        "text": "Cooperar en la aplicación de la normativa sobre prevención de riesgos laborales, estableciendo los medios de coordinación que sean necesarios."
+      },
+      {
+        "key": "C",
+        "text": "Unificar sus plantillas en un único contrato mercantil."
+      },
+      {
+        "key": "D",
+        "text": "Suspender la vigilancia de la salud mientras dure la concurrencia."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 24.1 regula la coordinación de actividades empresariales y exige a las empresas concurrentes en un mismo centro cooperar en la aplicación de la normativa preventiva e informarse recíprocamente sobre los riesgos.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-14"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 24",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-013",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "De acuerdo con el artículo 29 de la Ley 31/1995, respecto de las obligaciones de los trabajadores en materia de prevención de riesgos:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los trabajadores pueden poner fuera de funcionamiento los dispositivos de seguridad si dificultan su ritmo de trabajo."
+      },
+      {
+        "key": "B",
+        "text": "Los trabajadores deben costear a su cargo los equipos de protección individual."
+      },
+      {
+        "key": "C",
+        "text": "Los trabajadores carecen de obligaciones preventivas, al recaer estas exclusivamente en el empresario."
+      },
+      {
+        "key": "D",
+        "text": "Cada trabajador debe velar por su propia seguridad y salud y por la de aquellas otras personas a las que pueda afectar su actividad, usando adecuadamente equipos, medios y dispositivos de protección."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 29 impone a cada trabajador el deber de velar por su seguridad y salud y la de terceros afectados, utilizando correctamente los equipos de trabajo, los EPI y los dispositivos de seguridad sin inutilizarlos.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-11"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 29",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-014",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-v",
+    "syllabusNodeId": "prl-capitulo-v",
+    "topic": "Capítulo V (artículos 33–40)",
+    "skill": "PRL",
+    "prompt": "Conforme al artículo 38 de la Ley 31/1995, el Comité de Seguridad y Salud se constituirá como órgano paritario y colegiado de participación en todas las empresas o centros de trabajo que cuenten con:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Diez o más trabajadores."
+      },
+      {
+        "key": "B",
+        "text": "Veinticinco o más trabajadores."
+      },
+      {
+        "key": "C",
+        "text": "Cincuenta o más trabajadores."
+      },
+      {
+        "key": "D",
+        "text": "Doscientos cincuenta o más trabajadores."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 38.1 y 38.2 define el Comité de Seguridad y Salud como órgano paritario y colegiado de participación, de constitución obligatoria en empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "conceptIds": [
+      "prl-concept-13"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 38",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-007",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-i",
+    "syllabusNodeId": "estatuto-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–2)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 2 del Estatuto de ADIF (RD 2395/2004), en el cumplimiento de sus fines la entidad actúa con:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dependencia jerárquica funcional respecto de las empresas ferroviarias operadoras."
+      },
+      {
+        "key": "B",
+        "text": "Sujeción exclusiva al Derecho mercantil sin límites estatutarios."
+      },
+      {
+        "key": "C",
+        "text": "Autonomía de gestión, dentro de los límites establecidos en la Ley del Sector Ferroviario y en su Estatuto."
+      },
+      {
+        "key": "D",
+        "text": "Carácter de órgano directivo integrado en la estructura central de la CNMC."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 2 reconoce a ADIF autonomía de gestión dentro de los límites legales y estatutarios, atendiendo en todo caso a la garantía del interés público, la seguridad de los usuarios y la eficacia global del sistema ferroviario.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-22"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-008",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "Conforme al artículo 11 del Estatuto de ADIF, las funciones inherentes a la gestión del sistema de control, de circulación y de seguridad:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Pueden subcontratarse libremente con cualquier operador privado de transporte."
+      },
+      {
+        "key": "B",
+        "text": "Corresponden en exclusiva a los ayuntamientos por los que discurre la vía."
+      },
+      {
+        "key": "C",
+        "text": "Se delegan obligatoriamente en las empresas ferroviarias de mercancías."
+      },
+      {
+        "key": "D",
+        "text": "No podrán encomendarse a terceros, salvo la excepción legalmente prevista respecto de ADIF-Alta Velocidad."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 11 establece que las funciones inherentes a la gestión del sistema de control, circulación y seguridad no pueden encomendarse a terceros, sin perjuicio de la excepción prevista legalmente para ADIF-Alta Velocidad.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-30"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 11",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-009",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "De acuerdo con el artículo 12 del Estatuto de ADIF, las solicitudes, comunicaciones y escritos recibidos en un día inhábil en el registro telemático para la adjudicación de capacidad se entenderán presentados:",
+    "options": [
+      {
+        "key": "A",
+        "text": "En la primera hora del primer día hábil siguiente."
+      },
+      {
+        "key": "B",
+        "text": "En el último minuto del día hábil inmediatamente anterior."
+      },
+      {
+        "key": "C",
+        "text": "Transcurridos diez días naturales desde su envío."
+      },
+      {
+        "key": "D",
+        "text": "Como nulos de pleno derecho por presentarse fuera de horario."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 12 dispone que el registro telemático permite la presentación permanente de solicitudes sobre adjudicación de capacidad, entendiéndose recibidas en la primera hora del primer día hábil siguiente las entradas en día inhábil.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-31"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 12",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-010",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 17 del Estatuto de ADIF, ¿cuál de las siguientes competencias del Consejo de Administración está expresamente excluida de delegación?",
+    "options": [
+      {
+        "key": "A",
+        "text": "La firma de comunicaciones ordinarias de trámite."
+      },
+      {
+        "key": "B",
+        "text": "La gestión cotidiana de los suministros menores."
+      },
+      {
+        "key": "C",
+        "text": "La aprobación de la Declaración sobre la Red."
+      },
+      {
+        "key": "D",
+        "text": "La expedición de certificaciones de las actas de las sesiones."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 17 impide delegar, entre otras materias reservadas al Consejo de Administración, la aprobación de la Declaración sobre la Red, así como determinadas facultades esenciales en materia de contratación.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-35"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 17",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-011",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "Con arreglo al artículo 18 del Estatuto de ADIF, las Comisiones Delegadas que constituya el Consejo de Administración estarán integradas, además de por el Presidente y el Secretario, por:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Entre diez y quince vocales."
+      },
+      {
+        "key": "B",
+        "text": "Un único vocal designado por el Tribunal de Cuentas."
+      },
+      {
+        "key": "C",
+        "text": "Todos los Directores Corporativos con voz y voto."
+      },
+      {
+        "key": "D",
+        "text": "Un número de vocales no inferior a tres ni superior a siete."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 18 establece que las Comisiones Delegadas del Consejo de Administración tendrán entre tres y siete vocales, presididas por el Presidente de la entidad y actuando como Secretario quien lo sea del Consejo.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-36"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 18",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-012",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 19 del Estatuto de ADIF, el Consejo de Administración se reunirá con carácter ordinario, como mínimo:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dos veces al año, con convocatoria verbal en el mismo día."
+      },
+      {
+        "key": "B",
+        "text": "Seis veces al año, sin necesidad de orden del día previo."
+      },
+      {
+        "key": "C",
+        "text": "Cuatro veces al año, exigiendo unanimidad de todos los vocales para su constitución."
+      },
+      {
+        "key": "D",
+        "text": "Once veces al año, cursándose la convocatoria escrita con al menos cuarenta y ocho horas de antelación."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 19 dispone que el Consejo de Administración se reúne como mínimo once veces al año y que el Secretario cursa la convocatoria por escrito con al menos 48 horas de antelación.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-37"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 19",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-013",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "Conforme al artículo 26 del Estatuto de ADIF, el Secretario del Consejo de Administración habrá de ser licenciado en Derecho y asistirá a las sesiones:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Siempre con voto de calidad dirimente en caso de empate."
+      },
+      {
+        "key": "B",
+        "text": "Sin voz ni voto en ningún supuesto."
+      },
+      {
+        "key": "C",
+        "text": "Con voz y sin voto, salvo que tenga la condición de vocal."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente cuando se debatan modificaciones presupuestarias."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 26 prevé que el Secretario del Consejo, licenciado en Derecho y nombrado por el Consejo a propuesta del Presidente, asista a las sesiones con voz y sin voto, salvo que ostente la condición de vocal.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-43"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 26",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-014",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iv",
+    "syllabusNodeId": "estatuto-capitulo-iv",
+    "topic": "Capítulo IV. Personal (artículos 27–29)",
+    "skill": "ESTATUTO",
+    "prompt": "De acuerdo con el artículo 27 del Estatuto de ADIF, tienen la consideración de personal directivo de la entidad:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Todo el personal técnico y administrativo sujeto a convenio colectivo."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente los vocales externos del Consejo de Administración."
+      },
+      {
+        "key": "C",
+        "text": "Los delegados sindicales y miembros del Comité de Seguridad y Salud."
+      },
+      {
+        "key": "D",
+        "text": "Los Directores Generales, los Directores Gerentes de las Unidades de negocio y los Directores Corporativos."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 27 delimita como personal directivo de ADIF a los Directores Generales, los Directores Gerentes de las Unidades de negocio y los Directores Corporativos.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-6"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 27",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-015",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-v",
+    "syllabusNodeId": "estatuto-capitulo-v",
+    "topic": "Capítulo V. Régimen patrimonial (artículos 30–32)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 30 del Estatuto de ADIF, la gestión del patrimonio propio de la entidad se somete a la Ley del Sector Ferroviario, al propio Estatuto y, supletoriamente, a:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Código de Comercio en exclusiva."
+      },
+      {
+        "key": "B",
+        "text": "La Ley de Arrendamientos Urbanos."
+      },
+      {
+        "key": "C",
+        "text": "El Reglamento General de Circulación por Carretera."
+      },
+      {
+        "key": "D",
+        "text": "La Ley del Patrimonio de las Administraciones Públicas."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 30 reconoce a ADIF un patrimonio propio, distinto del de la Administración General del Estado, cuya gestión se rige por la Ley del Sector Ferroviario, el Estatuto y, supletoriamente, por la Ley del Patrimonio de las Administraciones Públicas.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-7"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 30",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-016",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-v",
+    "syllabusNodeId": "estatuto-capitulo-v",
+    "topic": "Capítulo V. Régimen patrimonial (artículos 30–32)",
+    "skill": "ESTATUTO",
+    "prompt": "Conforme al artículo 31 del Estatuto de ADIF, los bienes de dominio público de su titularidad que resulten innecesarios para la prestación de servicios de interés general podrán ser desafectados por ADIF:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Previa declaración de innecesariedad acordada por su Consejo de Administración, pasando a integrarse en su patrimonio propio."
+      },
+      {
+        "key": "B",
+        "text": "Automáticamente por el mero transcurso de seis meses sin circulación de trenes."
+      },
+      {
+        "key": "C",
+        "text": "Por decisión unilateral de las empresas ferroviarias usuarias de la línea."
+      },
+      {
+        "key": "D",
+        "text": "Sin necesidad de acuerdo alguno, pero con prohibición absoluta de enajenación o permuta."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 31 prevé que los bienes demaniales de ADIF innecesarios puedan desafectarse previa declaración de innecesariedad del Consejo de Administración, pasando a su patrimonio propio y pudiendo enajenarse o permutarse.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-8"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 31",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-017",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-v",
+    "syllabusNodeId": "estatuto-capitulo-v",
+    "topic": "Capítulo V. Régimen patrimonial (artículos 30–32)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 32 del Estatuto de ADIF, el inventario de los bienes y derechos que integran su patrimonio se actualizará anualmente con referencia al 31 de diciembre y se someterá a la aprobación del Consejo de Administración en:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El último trimestre del segundo año posterior."
+      },
+      {
+        "key": "B",
+        "text": "El mes de agosto de cada año par."
+      },
+      {
+        "key": "C",
+        "text": "El primer trimestre del ejercicio siguiente."
+      },
+      {
+        "key": "D",
+        "text": "Un plazo máximo de cinco años desde el cierre contable."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 32 obliga a ADIF a formar y mantener actualizado su inventario con referencia al 31 de diciembre de cada año y a someterlo a aprobación del Consejo en el primer trimestre del ejercicio siguiente.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-46"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 32",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-018",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-vi",
+    "syllabusNodeId": "estatuto-capitulo-vi",
+    "topic": "Capítulo VI. Régimen económico-financiero (artículos 33–44)",
+    "skill": "ESTATUTO",
+    "prompt": "De acuerdo con el artículo 43 del Estatuto de ADIF, antes de ingresar en el Tesoro Público el remanente del excedente anual, ADIF podrá detraer para dotar un fondo de necesidades organizativas y operativas un:",
+    "options": [
+      {
+        "key": "A",
+        "text": "50 por ciento, sin límite respecto de los gastos de explotación."
+      },
+      {
+        "key": "B",
+        "text": "5 por ciento, hasta alcanzar el 50 por ciento del capital social."
+      },
+      {
+        "key": "C",
+        "text": "100 por ciento del remanente de forma indefinida."
+      },
+      {
+        "key": "D",
+        "text": "20 por ciento, hasta un importe máximo total equivalente al 10 por ciento de los gastos de explotación del último ejercicio cerrado."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 43 dispone que el remanente se ingresa en el Tesoro Público previa detracción del 20 % para un fondo de necesidades organizativas y operativas, dotado hasta un máximo del 10 % de los gastos de explotación del último ejercicio cerrado.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-55"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 43",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-conducta-004",
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "prompt": "Dentro de los principios de conducta del artículo 54 del TREBEP, respecto a los recursos y bienes públicos se establece que los empleados públicos:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Podrán emplearlos para fines particulares fuera del horario de oficina."
+      },
+      {
+        "key": "B",
+        "text": "Pueden ceder su uso a familiares allegados cuando no estén asignados a un servicio urgente."
+      },
+      {
+        "key": "C",
+        "text": "Solo responden de su conservación si ocupan puestos de libre designación."
+      },
+      {
+        "key": "D",
+        "text": "Los administrarán con austeridad y no utilizarán los mismos en provecho propio o de personas allegadas."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 54.5 del TREBEP establece que los empleados públicos administrarán los recursos y bienes públicos con austeridad y no los utilizarán en provecho propio o de personas allegadas, velando además por su conservación.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "conceptIds": [
+      "conducta-concept-3"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 54",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-conducta-005",
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "prompt": "Según el artículo 53.12 del TREBEP, en relación con el deber de secreto y discreción, los empleados públicos:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Quedan liberados de guardar reserva sobre materias clasificadas al cambiar de puesto."
+      },
+      {
+        "key": "B",
+        "text": "Pueden difundir información interna reservada si no existe perjuicio económico directo."
+      },
+      {
+        "key": "C",
+        "text": "Guardarán secreto de las materias clasificadas u otras cuya difusión esté prohibida legalmente y mantendrán la debida discreción sobre los asuntos que conozcan por razón de su cargo."
+      },
+      {
+        "key": "D",
+        "text": "Pueden valerse de la información obtenida en el cargo para asesorar privadamente a terceros."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 53.12 exige guardar secreto de las materias clasificadas o de difusión prohibida legalmente y mantener la debida discreción sobre los asuntos conocidos por razón del cargo, sin usarlos para beneficio propio o de terceros.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "conceptIds": [
+      "conducta-concept-5"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 53",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-005",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "Conforme al artículo 2 de la Ley 53/1984, su régimen de incompatibilidades se aplica al personal que preste servicios en empresas en que la participación del capital, directa o indirectamente, de las Administraciones Públicas sea:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Al menos del 10 por 100, pero solo respecto del personal funcionario."
+      },
+      {
+        "key": "B",
+        "text": "Exclusivamente del 100 por 100 de titularidad estatal directa."
+      },
+      {
+        "key": "C",
+        "text": "Superior al 50 por 100, cualquiera que sea la naturaleza jurídica de la relación de empleo."
+      },
+      {
+        "key": "D",
+        "text": "Inferior al 25 por 100 cuando coticen en mercados regulados."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 2.1.h y 2.2 incluye en el ámbito de aplicación de la Ley 53/1984 al personal de entidades públicas y empresas con participación pública superior al 50 %, cualquiera que sea la naturaleza jurídica de la relación de empleo.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-2"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 2",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-006",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "Para autorizar la compatibilidad de actividades públicas conforme al artículo 7 de la Ley 53/1984, la cantidad total percibida por ambos puestos no podrá superar la remuneración prevista en los Presupuestos Generales del Estado para el cargo de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Jefe de Servicio o categoría equivalente."
+      },
+      {
+        "key": "B",
+        "text": "Ministro del Gobierno."
+      },
+      {
+        "key": "C",
+        "text": "Delegado del Gobierno en la Comunidad Autónoma."
+      },
+      {
+        "key": "D",
+        "text": "Director General."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 7.1 de la Ley 53/1984 establece como límite económico general para compatibilizar dos puestos públicos que la cantidad total percibida no supere la remuneración prevista para el cargo de Director General ni los topes por grupo.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-4"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 7",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-007",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "Según el artículo 19 de la Ley 53/1984, queda exceptuado del régimen de incompatibilidades el dictado de cursos o conferencias en centros oficiales destinados a la formación de funcionarios o profesorado cuando no tenga carácter permanente o habitual ni suponga más de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Setenta y cinco horas al año."
+      },
+      {
+        "key": "B",
+        "text": "Doscientas horas al semestre."
+      },
+      {
+        "key": "C",
+        "text": "Treinta horas a la semana."
+      },
+      {
+        "key": "D",
+        "text": "Quinientas horas al año."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 19.b exceptúa del régimen de incompatibilidades la dirección de seminarios o el dictado de cursos o conferencias en centros oficiales de formación de funcionarios cuando no sean permanentes o habituales ni superen las 75 horas al año.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "incompatibilidades"
+    ],
+    "conceptIds": [
+      "incomp-concept-7"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 19",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
     "id": "orig-gen-declaracion-001",
     "domain": "general-knowledge",
     "topicId": "declaracion-red-capitulo-i",
@@ -1028,6 +2576,92 @@
     "sourceId": "DR 2027",
     "sourceVersion": "edition-2027-page-candidate",
     "sourceLocator": "Capítulo I, 1.2 Estructura organizativa. RFIG",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-003",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-i",
+    "syllabusNodeId": "declaracion-red-capitulo-i",
+    "topic": "Capítulo I. Información general",
+    "skill": "DECLARACION",
+    "prompt": "Conforme a los datos de longitud de la red titularidad de ADIF recogidos en el capítulo I de la Declaración sobre la Red, la extensión correspondiente al ancho métrico (1.000 mm) y a la red mixta con tercer carril es, respectivamente, de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "10.212,5 km de ancho métrico y 1.195,3 km de tercer carril."
+      },
+      {
+        "key": "B",
+        "text": "1.195,3 km de ancho métrico y 126,8 km de red mixta con tercer carril."
+      },
+      {
+        "key": "C",
+        "text": "500 km de ancho métrico y 2.500 km de red mixta."
+      },
+      {
+        "key": "D",
+        "text": "11.675,9 km de ancho métrico y 1.668 km de red mixta."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La Declaración sobre la Red detalla que, dentro de los 11.675,9 km de red titularidad de ADIF, la red de vía estrecha de ancho métrico (1.000 mm) abarca 1.195,3 km y la red mixta con tercer carril suma 126,8 km.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-6"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo I, 1.2 Estructura organizativa. RFIG",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-004",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-i",
+    "syllabusNodeId": "declaracion-red-capitulo-i",
+    "topic": "Capítulo I. Información general",
+    "skill": "DECLARACION",
+    "prompt": "De acuerdo con el capítulo I de la Declaración sobre la Red de ADIF, ¿qué entidad actúa como autoridad responsable de la seguridad en la RFIG, emitiendo certificados de seguridad y habilitaciones del personal ferroviario?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Tribunal de Cuentas."
+      },
+      {
+        "key": "B",
+        "text": "La Entidad Pública Empresarial RENFE-Operadora."
+      },
+      {
+        "key": "C",
+        "text": "La Agencia Estatal de Seguridad Ferroviaria (AESF)."
+      },
+      {
+        "key": "D",
+        "text": "La Secretaría de Estado de Presupuestos y Gastos."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La Agencia Estatal de Seguridad Ferroviaria (AESF) es la autoridad responsable de la seguridad en la RFIG y expide licencias, certificados de seguridad y habilitaciones del personal ferroviario.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-5"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo I, 1.4 Los agentes del sector ferroviario",
     "status": "draft",
     "origin": "original"
   }

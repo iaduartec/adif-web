@@ -2,11 +2,41 @@ import Link from "next/link";
 import { lessonSummaries } from "../../content/lesson-summaries";
 import { lessonTheories } from "../../content/lesson-theory";
 import { officialTexts } from "../../content/official-texts";
+import { officialItems } from "../../content/syllabus";
 import { loadFullText } from "../../lib/content/full-text";
+import { toPublicPracticeQuestion, type OriginalPracticeQuestionDto } from "../../lib/content/original-practice-public-dto";
+import { listOriginalPracticeQuestions } from "../../lib/content/original-practice-repository";
 import type { Lesson } from "../../lib/content/schema";
 import type { LegalReference, TheoryClaim } from "../../content/theory-types";
 import { OriginLabel } from "./origin-label";
 import { CourseProgressShell } from "./course-progress-shell";
+
+function listModulePracticeQuestions(slug: string): OriginalPracticeQuestionDto[] {
+  if (slug === "ingles-a2") {
+    return listOriginalPracticeQuestions({ domain: "english-a2", status: "reviewed" })
+      .map(toPublicPracticeQuestion)
+      .filter((question): question is OriginalPracticeQuestionDto => question !== null);
+  }
+  if (slug === "psicometria") {
+    return listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" })
+      .map(toPublicPracticeQuestion)
+      .filter((question): question is OriginalPracticeQuestionDto => question !== null);
+  }
+
+  const linkedNodeIds = new Set(
+    officialItems.flatMap((item) =>
+      item.children
+        .filter((node) => node.linkedModules.includes(slug))
+        .map((node) => node.id),
+    ),
+  );
+  if (linkedNodeIds.size === 0) return [];
+
+  return listOriginalPracticeQuestions({ status: "reviewed" })
+    .filter((question) => question.syllabusNodeId !== undefined && linkedNodeIds.has(question.syllabusNodeId))
+    .map(toPublicPracticeQuestion)
+    .filter((question): question is OriginalPracticeQuestionDto => question !== null);
+}
 
 export type CourseView = "summary" | "theory" | "official";
 
@@ -109,6 +139,7 @@ export async function CourseTheoryReader({
   const officialNorm = officialTexts[lesson.slug];
   const theory = lessonTheories[lesson.slug];
   const summary = lessonSummaries[lesson.slug];
+  const modulePracticeQuestions = view === "theory" ? listModulePracticeQuestions(lesson.slug) : [];
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase();
   const filteredArticles = officialNorm?.articles.filter((article) =>
     !normalizedQuery || [article.number, article.title, article.content]
@@ -279,6 +310,56 @@ export async function CourseTheoryReader({
               <li>Confundir una regla general con su condición o excepción.</li>
             </ul>
           </section>
+          {modulePracticeQuestions.length > 0 && (
+            <section aria-labelledby="course-practice-questions" className="p-8 bg-white border border-rail space-y-4">
+              <div className="space-y-1">
+                <span className="text-xs uppercase font-bold tracking-wider text-accent">Autoevaluación del Módulo</span>
+                <h2 id="course-practice-questions" className="text-lg font-bold text-ink">
+                  Preguntas Originales del Tema ({modulePracticeQuestions.length})
+                </h2>
+                <p className="text-sm text-gray-600">
+                  Preguntas de elaboración propia fundamentadas en la fuente oficial vigente. Abre cada supuesto para razonar sus opciones y consultar su referencia normativa.
+                </p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {modulePracticeQuestions.map((question, index) => (
+                  <details className="p-5 border border-rail bg-gray-50/40" key={question.id}>
+                    <summary className="font-bold text-ink cursor-pointer text-sm">
+                      {String(index + 1).padStart(2, "0")}. {question.topic}
+                    </summary>
+                    <p className="text-xs font-bold uppercase tracking-wider text-accent mt-3">
+                      {question.domain === "english-a2"
+                        ? "PRÁCTICA A2 ORIGINAL"
+                        : question.domain === "psychometric"
+                          ? "PSICOTÉCNICO ORIGINAL"
+                          : "SIMULACIÓN ORIGINAL"}
+                    </p>
+                    <p className="mt-2 text-sm text-ink font-medium leading-relaxed">{question.prompt}</p>
+                    <ul className="mt-3 space-y-1.5 text-sm text-gray-700" aria-label="Opciones">
+                      {question.options.map((option) => (
+                        <li key={option.key}>
+                          <strong>{option.key}.</strong> {option.text}
+                        </li>
+                      ))}
+                    </ul>
+                    {question.answerGrounding && (
+                      <p className="mt-3 text-xs text-gray-500">
+                        Fuente:{" "}
+                        <a
+                          className="text-accent underline"
+                          href={question.answerGrounding.url}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {question.answerGrounding.sourceId} · {question.answerGrounding.locator}
+                        </a>
+                      </p>
+                    )}
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       ) : (
         <section aria-labelledby="official-text-title" className="course-official space-y-6">

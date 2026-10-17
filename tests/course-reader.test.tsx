@@ -85,6 +85,8 @@ describe("course reader provenance and notes", () => {
     expect(screen.getByRole("heading", { name: "Reglas Nemotécnicas y Tips" })).toBeVisible();
     expect(screen.getByText(/no admite justificación ordinaria/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
+    expect(screen.getByRole("heading", { name: /Preguntas Originales del Tema/i })).toBeVisible();
+    expect(screen.getAllByText("SIMULACIÓN ORIGINAL").length).toBeGreaterThan(0);
   });
 
   it("labels claims in study language without exposing internal ids or kind names", async () => {
