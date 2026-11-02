@@ -127,4 +127,14 @@ describe("original common-law practice", () => {
     }
     expect(Math.max(...counts) - Math.min(...counts)).toBeLessThanOrEqual(2);
   });
+
+  it("withholds legacy PRL questions pending re-review against the current source version", () => {
+    const legacyPrlItems = questions.filter((question) => question.id.startsWith("orig-gen-prl-"));
+
+    expect(legacyPrlItems.length).toBeGreaterThan(0);
+    expect(legacyPrlItems.every((question) => question.status === "draft")).toBe(true);
+    expect(legacyPrlItems.every((question) => question.reviewedAt === undefined)).toBe(true);
+    expect(legacyPrlItems.every((question) => question.sourceVersion === "consolidated-page-2026-11-02")).toBe(true);
+    expect(legacyPrlItems.every((question) => toPublicPracticeQuestion(question) === null)).toBe(true);
+  });
 });
