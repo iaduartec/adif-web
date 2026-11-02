@@ -49,6 +49,7 @@ export function OriginalPracticeSession({
   const [message, setMessage] = useState("");
   const [messageIsError, setMessageIsError] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const [now, setNow] = useState(nowMs());
   const questionStartedAt = useRef<Record<string, number>>({});
   const questionElapsedMs = useRef<Record<string, number>>({});
   const topics = [...new Map(questions.map((item) => [item.topicId, item.topic])).entries()]
@@ -70,6 +71,12 @@ export function OriginalPracticeSession({
     window.addEventListener("beforeunload", warnOnExit);
     return () => window.removeEventListener("beforeunload", warnOnExit);
   }, [hasUnfinishedWork]);
+
+  useEffect(() => {
+    if (!started || complete) return;
+    const timer = setInterval(() => setNow(nowMs()), 1000);
+    return () => clearInterval(timer);
+  }, [started, complete]);
 
   if (!questions.length) return <p role="status">No hay preguntas originales disponibles para esta práctica.</p>;
 
@@ -301,7 +308,7 @@ export function OriginalPracticeSession({
 
       {started && question && <div className="p-5 border border-rail bg-white space-y-4">
         {!complete && <p role="note">Al recargar o salir se pierde el bloque en curso. Los intentos ya confirmados siguen guardados; la sesión no se reanuda automáticamente.</p>}
-        <p className="course-eyebrow">Pregunta {index + 1} de {activeQuestions.length} · {question.topic}</p>
+        <p className="course-eyebrow">Pregunta {index + 1} de {activeQuestions.length} · {question.topic} · Tiempo: {Math.round(elapsedFor(question.id, now) / 1000)}s</p>
         <h3 className="font-bold text-ink">{question.prompt}</h3>
         {question.answerGrounding && (
           <p className="text-sm text-gray-600">
