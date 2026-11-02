@@ -410,6 +410,13 @@ button:focus-visible,
 .course-error p { line-height: 1.55; }
 .course-error button { min-height: 2.75rem; border: 1px solid var(--accent); padding: .5rem .75rem; background: transparent; color: var(--accent-strong); cursor: pointer; font: inherit; font-weight: 700; }
 
+/* Course surfaces: single column, wide reading layout. */
+.course-index { width: 100%; max-width: min(100%, 72rem); margin-inline: auto; }
+.course-index__header { max-width: none; }
+.course-block { max-width: none; }
+.course-page { width: 100%; max-width: min(100%, 72rem); margin-inline: auto; }
+.temario-page { width: 100%; max-width: min(100%, 72rem); margin-inline: auto; }
+
 /* Course reader: editorial study-sheet treatment shared by every lesson. */
 .course-reader { --course-marker: #c38b2b; }
 .course-reader__views { align-items: end; gap: 0; }

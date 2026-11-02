@@ -228,7 +228,7 @@ export function TemarioView() {
   }));
 
   return (
-    <div className="space-y-8">
+    <div className="temario-page space-y-8">
       <header className="space-y-3 border-b border-rail pb-6">
         <p className="text-xs font-bold uppercase tracking-widest text-accent">PNI26/01 · Itinerario 26/12PO</p>
         <h1 className="text-3xl font-bold leading-tight text-ink md:text-4xl">Temario oficial completo</h1>

@@ -63,17 +63,19 @@ test.describe("Mobile viewport verification (390x844)", () => {
       await page.screenshot({ path: process.env.TASK7_FIX1_FILTER_SCREENSHOT, fullPage: true });
     }
 
-    // 4. Verify readable measure limits on lesson page
+    // 4. Verify wide single-column reading layout on lesson pages
     await page.goto("/curso/igualdad");
     const readingContainer = page.locator(".dashboard-reading");
     await expect(readingContainer).toBeVisible();
 
-    const maxWidth = await readingContainer.evaluate((el) => {
-      return window.getComputedStyle(el).maxWidth;
+    const lessonHasHorizontalScroll = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > window.innerWidth;
     });
-    // Max width computes to a pixel value representing 72ch (typically around 640px)
-    const numericWidth = parseFloat(maxWidth);
-    expect(numericWidth).toBeGreaterThanOrEqual(500);
-    expect(numericWidth).toBeLessThanOrEqual(700);
+    expect(lessonHasHorizontalScroll).toBe(false);
+
+    const readingWidth = await readingContainer.evaluate((el) => el.getBoundingClientRect().width);
+    expect(readingWidth).toBeGreaterThan(0);
+    // On mobile the reading column must fill the panel without a forced narrow measure.
+    expect(readingWidth).toBeLessThanOrEqual(390);
   });
 });
