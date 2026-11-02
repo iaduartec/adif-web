@@ -2,6 +2,12 @@
 
 Fecha: 2 de noviembre de 2026. Base `09f7b9c`; cambios locales en `codex/auditoria-adif-26`. No se ha desplegado ni aplicado ninguna migración a una base real.
 
+## Verificación independiente de la referencia actual
+
+En `codex/auditoria-adif-26` HEAD `451217f`, se ejecutaron `pnpm exec vitest run --reporter=dot` (82 archivos, 645 pruebas PASS), `pnpm verify:content` (PASS), `pnpm lint` (0 errores, 2 avisos), `pnpm typecheck` (PASS) y `PLAYWRIGHT_TEST=true pnpm build` (PASS, Supabase simulado). La suite `pnpm exec playwright test` quedó en **7/10**: falló la prueba móvil al esperar 25 `.official-question-options` y obtener 0; falló onboarding al no aparecer “Pregunta 1 de 15”; falló `study-flow` al no encontrar el enlace “Iniciar práctica”. No se cambiaron pruebas ni producto para ocultar esos fallos. Playwright usa el mock local y no acredita autenticación, Supabase ni RLS reales.
+
+La suite Vitest no ejecuta las pruebas SQL. En esta auditoría no se volvió a aplicar ni a reproducir ninguna migración, y no se consultó la base remota. El último commit de la rama modifica la idempotencia de una migración, por lo que el resultado histórico de PostgreSQL aislado debe repetirse sobre el commit actual antes de integrar o desplegar. No se atribuye el deployment Vercel `READY` al SHA de la rama: su metadato Git no quedó disponible.
+
 ## Continuación: progreso y revisión ICT
 
 Se añade una tabla de estadísticas para intentos originales registrados, por materia: aciertos sobre número de intentos, preguntas distintas respecto al banco revisado, tiempo registrado y última práctica. No incorpora borradores ni preguntas desconocidas; se mantiene separada de la cobertura de exámenes oficiales y no estima probabilidad de aprobar.

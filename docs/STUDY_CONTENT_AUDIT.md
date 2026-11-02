@@ -34,14 +34,51 @@ Estos niveles son provisionales y se asignan por lagunas documentales; faltan da
 |---|---|---|
 | Histórico específico | 102 registros, 2023–2025; seis formularios importados | No equivalen a 102 preguntas independientes ni a exámenes completos. Los registros tienen vigencia pendiente y los controles de publicación/corrección bloquean la práctica. No activar sin resolver evidencia y derechos. |
 | Conocimiento general original | 62: 58 con etiqueta editorial `reviewed`, 4 `draft` | La etiqueta no acredita revisión normativa independiente ni vigencia actual. Los cuatro borradores son de Declaración sobre la Red. |
-| Telecomunicaciones original | 52 con etiqueta `reviewed`, 2 versiones anteriores en `draft` | No implica cobertura completa del temario ni revisión externa de cada solución; la activación de las versiones nuevas requiere aplicar la migración correctora en el entorno correspondiente. |
+| Telecomunicaciones original | 52 con etiqueta `reviewed`, 2 versiones anteriores en `draft` | El archivo contiene 54 registros; dos IDs antiguos permanecen como borradores y la práctica depende del registro privado/migración. No implica cobertura completa ni revisión externa de todas las soluciones. |
 | Inglés A2 | 22 originales con etiqueta `reviewed`; todas de dificultad 1 | Cobertura de la taxonomía no demuestra nivel validado ni variedad suficiente. Mantener separado del denominador del temario oficial. |
-| Psicotécnicos | 26 originales con etiqueta `reviewed`, dos por cada una de 13 aptitudes | Cantidad y variedad insuficientes; ejercicios de aptitud visual expresados en texto. La pantalla muestra preguntas y opciones sin registrar ni corregir respuestas. |
+| Psicotécnicos | 26 originales con etiqueta `reviewed`, dos por cada una de 13 aptitudes | La rama de auditoría permite responder/corregir y registra intentos; dos ejercicios por aptitud no sostienen variedad ni estimación estable. Hay aptitudes visuales representadas en texto. |
 
 Todas las cifras se refieren a los JSON del repositorio, no a la disponibilidad efectiva para responder. Las preguntas originales no se atribuyen a ADIF. Los metadatos `reviewed` no prueban por sí solos una revisión independiente ni que cada explicación descarte adecuadamente los distractores.
 
-## Matriz pendiente de revisión fina
+## Matriz materia → tema → nodo de temario
 
-El desglose materia → tema → concepto, fuente primaria y artículo/apartado, versión exigida y vigente, fecha de comprobación, preguntas elegibles, explicación de distractores, práctica de recuperación y dominio personal requiere contrastar cada unidad. `content/syllabus.ts`, `content/source-manifest.json`, `content/claim-review-manifest.json` y `content/official-exams/concept-syllabus-mappings.json` son puntos de partida, no sustitutos de esa revisión. El dominio individual es **desconocido** hasta medir intentos y retención diferida; leer una página o acertar una vez no demuestra dominio.
+El repositorio registra 28 nodos de alcance: 23 `partial` y 5 `missing`; ninguno figura `covered`. Esta tabla cruza esa cobertura con el número de preguntas que tienen el mapeo correspondiente en el JSON. “Históricas” son transcripciones locales 2023–2025, **no habilitadas para práctica**; “originales” son registros brutos, pueden incluir borradores o versiones retiradas y no equivalen a preguntas elegibles. Dominio personal: **desconocido en todos los nodos** (sin datos de una cuenta del estudiante). Importancia significa pertenencia al alcance oficial, no predicción de aparición.
 
-La guía psicométrica `MET-PSI-01` y la referencia MCER-A2 figuran como `needs_check` en el manifiesto. No deben tratarse como fuentes oficiales verificadas del contenido. El curso externo `comoserferroviario.es/course/view.php?id=170` no respondió durante la consulta y no se ha comprobado su edición o acceso.
+Los localizadores y versiones exactos son los campos `sourceId`, `sourceVersion` y `sourceLocator` de [`content/syllabus.ts`](../content/syllabus.ts); los PDFs ADIF enlazados están identificados como `adif-live-2026-10-15`. La [página oficial actual de ADIF](https://www.adif.es/w/pni26-01-personal-operativo) se consultó el 2-11-2026. Los PDF específicos dieron 403, por lo que no se cotejaron sus bytes frente a esas capturas.
+
+| Materia → tema / concepto de alcance | Cobertura | Históricas mapeadas | Originales brutas | Dominio | Acción prioritaria |
+|---|---:|---:|---:|---|---|
+| Igualdad → LO 3/2007 completa (preámbulo, títulos preliminar y I–VIII) | Parcial | 0 | 14 | Desconocido | Completar la ley exigida y vincular conceptos con artículo y excepciones. |
+| PRL → exposición de motivos | Falta | 0 | 0 | Desconocido | Crear teoría y recuperación con fuente exacta. |
+| PRL → capítulo I, arts. 1–4 | Falta | 0 | 0 | Desconocido | Crear explicación y preguntas originales revisadas. |
+| PRL → capítulo III, arts. 14–29 | Parcial | 0 | 12 | Desconocido | Completar artículos y validar distractores. |
+| PRL → capítulo V, arts. 33–40 | Parcial | 0 | 2 | Desconocido | Completar capítulo y ampliar práctica más allá de dos ítems. |
+| Estatuto ADIF → capítulo I, arts. 1–2 | Parcial | 0 | 2 | Desconocido | Desarrollar conceptos y excepciones. |
+| Estatuto ADIF → capítulo II, arts. 3–13 | Parcial | 0 | 3 | Desconocido | Completar funciones y diferencias entre órganos. |
+| Estatuto ADIF → capítulo III, arts. 14–26 | Parcial | 0 | 6 | Desconocido | Completar artículos y validar vigencia. |
+| Estatuto ADIF → capítulo IV, arts. 27–29 | Parcial | 0 | 2 | Desconocido | Completar régimen de personal. |
+| Estatuto ADIF → capítulo V, arts. 30–32 | Parcial | 0 | 3 | Desconocido | Completar régimen patrimonial. |
+| Estatuto ADIF → capítulo VI, arts. 33–44 | Parcial | 0 | 2 | Desconocido | Completar régimen económico-financiero. |
+| Declaración sobre la Red 2027 → capítulo I | Parcial | 0 | 4 | Desconocido | Contrastar PDF de edición 31-07-2026 y completar el capítulo. |
+| Declaración sobre la Red 2027 → capítulo II | Falta | 0 | 0 | Desconocido | Obtener edición oficial exigida; desglosar infraestructura y preguntas. |
+| EBEP, RDL 5/2015 → capítulo VI, título III, arts. 52–54 | Parcial | 0 | 5 | Desconocido | Completar deberes, principios y código de conducta artículo por artículo. |
+| Incompatibilidades → Ley 53/1984 completa | Parcial | 0 | 7 | Desconocido | Cotejar compatibilidades, autorizaciones, excepciones y plazos. |
+| ICT → capítulo I, arts. 1–3 | Parcial | 2 | 2 | Desconocido | Completar alcance y definiciones. |
+| ICT → capítulo II, arts. 4–15 | Parcial | 6 | 1 | Desconocido | Cubrir articulado y requisitos de infraestructura. |
+| ICT → anexo I, radiodifusión y TV | Parcial | 12 | 6 | Desconocido | Contrastar versiones y ampliar recuperación. |
+| ICT → anexo II, telefonía y banda ancha | Parcial | 36 | 21 | Desconocido | Separar definiciones próximas, cifras y excepciones; revisar claves. |
+| ICT → anexo III, especificaciones técnicas de edificios | Parcial | 0 | 4 | Desconocido | Completar trazabilidad; conservar corregidas las preguntas 006/017-v2. |
+| ICT → anexo IV, inspección y mantenimiento | Parcial | 0 | 0 | Desconocido | Crear cobertura y práctica desde fuente primaria. |
+| ICT → anexo V, Hogar Digital | Parcial | 6 | 2 | Desconocido | Completar servicios, grupos y excepciones. |
+| Compatibilidad electromagnética → artículo completo REE, pp. 80–86 del documento asignado | Falta | 24 | 0 | Desconocido | Obtener PDF ADIF (403 actual), comprobar autoría/cesión y enlazar apartados. |
+| RCF Libro 1 → capítulo 1, generalidades | Parcial | 10 | 14 | Desconocido | Completar conceptos y verificar la versión de convocatoria. |
+| RCF Libro 1 → capítulo 2, documentación reglamentaria | Parcial | 0 | 1 | Desconocido | Completar cobertura y generar más de una pregunta. |
+| RCF Libro 1 → capítulo 3, distribución de documentos y útiles | Falta | 0 | 0 | Desconocido | Crear teoría y preguntas originales; carencia explícita del inventario. |
+| RCF Libro 1 → capítulo 4, comunicaciones reglamentarias | Parcial | 0 | 1 | Desconocido | Completar reglas de comunicación y errores frecuentes. |
+| RCF Libro 1 → capítulo 5, conceptos básicos de circulación | Parcial | 6 | 2 | Desconocido | Completar conceptos y medir precisión antes de velocidad. |
+
+**Lectura de prioridad:** los 28 nodos son temario exigido. Los cinco nodos ausentes y cualquier fuente sin cotejar son prioridad P0 por laguna, no por probabilidad calculada de examen. Las cifras históricas describen frecuencia observada en el inventario mapeado y no predicen PNI26. Las 24 preguntas CEM históricas no están habilitadas y requieren revisión de vigencia y fuente.
+
+Esta matriz confirma cobertura estructural, no suficiencia didáctica. Falta revisar cada uno de los 205 conceptos: explicación, fuente/artículo, ejemplos, fichas, distractores y retención diferida. El manifiesto registra 49 fuentes (23 `verified`, 15 `needs_check`, 11 `superseded`); `MET-PSI-01` y `MCER-A2` siguen `needs_check`. La etiqueta `verified` no demuestra por sí sola que el texto y todos sus detalles sigan vigentes.
+
+El curso externo `comoserferroviario.es/course/view.php?id=170` no fue cotejado en esta auditoría: versión, fecha, acceso y correspondencia con PNI26 quedan pendientes. No se extrajo contenido privado ni se reprodujeron bancos de terceros.

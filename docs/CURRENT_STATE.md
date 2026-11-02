@@ -1,45 +1,56 @@
-# Estado real de ADIF 26/12PO — auditoría inicial
+# Estado real de ADIF 26/12PO
 
-Fecha: 2 de noviembre de 2026. Estado parcial y verificable; no es una certificación de la plataforma.
+Fecha de corte: 2 de noviembre de 2026. Auditoría local y parcial; no certifica el contenido académico completo, la autenticación real ni la producción.
 
-## Continuación: circuito original
+## Resumen de estado
 
-Actualización posterior: la página de estadísticas añade precisión, cantidad de intentos, preguntas distintas, tiempo registrado y última práctica para los bancos originales revisados, separados de las cifras oficiales. La corrección documental de ICT se detalla en [STUDY_CONTENT_AUDIT.md](STUDY_CONTENT_AUDIT.md); requiere una nueva migración local antes de practicar la versión nueva de la pregunta. No se ha aplicado a producción. La recuperación de sesiones y el bloqueo efectivo de correcciones anticipadas siguen pendientes de diseño aprobado.
+| Área | Estado verificado |
+|---|---|
+| Rama y base principal | `main`, `23e6c938f527`, igual que `origin/main` al consultar GitHub. |
+| Referencia más completa | `codex/auditoria-adif-26`, `451217fbe497`, worktree `.worktrees/codex-adif-audit`; incluye 4 commits no integrados. Es la referencia de esta auditoría funcional, no la rama desplegada. |
+| Worktree histórico | `/home/kiri_/.codex/worktrees/6c02/adif-web`, `deaeeef`; anterior y menos completo. La rama remota histórica aparece eliminada. |
+| Estado local preservado | En el checkout principal quedan `skills-lock.json` modificado y `.agents/skills/supabase-postgres-best-practices/`, `docs/db-repair-informe.md` sin seguimiento. No se tocaron. Las ramas `main` y auditoría están divergidas desde `a20aa29`. |
+| Temario | 9 documentos oficiales; 28 subdivisiones registradas: 0 completas, 23 parciales y 5 sin cobertura (ver matriz en `STUDY_CONTENT_AUDIT.md`). |
+| Fuentes | Rama de auditoría: 49 registros, 23 `verified`, 15 `needs_check`, 11 `superseded`. La validez del estado del manifiesto no reemplaza la revisión del documento actual. |
+| Bancos | 102 transcripciones históricas de conocimientos específicos (2023–2025); 158 originales etiquetadas `reviewed` y 6 borradores. Etiqueta editorial no equivale a revisión independiente ni habilitación de publicación. |
+| Aprendizaje | Ya existen teoría, prioridades, plan, fichas, repasos, errores, estadísticas, inglés A2, psicotécnicos y simulacros. La rama de auditoría añade corrección/registro de práctica original. La retención personal no se puede inferir del contenido; no hay historial personal disponible en esta auditoría. |
+| Reglas de examen | PNI26: fecha prevista 12-12-2026; falta confirmación definitiva de fecha, hora y aulas. Puntuaciones, mínimos, penalización, cantidad y tiempos de prueba no verificados. El modo 2026 no debe activarse con las reglas históricas. |
+| Autenticación | El despliegue web redirige `/` a `/login`; no se probaron credenciales, OAuth/callback real, cookies, logout ni rutas privadas con una cuenta real. |
+| Base de datos | Migraciones, RPC y SQL RLS están en Git. No hay CLI Supabase ni servicio local Supabase observado; el único contenedor Docker activo observado es ajeno al proyecto. No se consultó ni modificó una base remota. |
+| Producción | Vercel reporta un deployment `READY` (`dpl_GGCDTQ6bVcZTUGZx5YeJc4nLon1Y`) para el alias `adif-web.vercel.app`. El alias responde `307 /login`. Vercel CLI no expuso `gitSource`/SHA: no atribuirlo a un commit por coincidencia temporal. |
 
-En la rama de auditoría se ha añadido práctica para preguntas originales revisadas: selección de tema y cantidad, entrenamiento con corrección por pregunta y práctica con entrega al final. La API autentica y utiliza el RPC privado de intentos para corregir y registrar; el cuaderno puede repetir preguntas originales cuyo último intento guardado fue incorrecto. Las preguntas históricas continúan bloqueadas según sus contratos.
+## Convocatoria y fuentes primarias
 
-El circuito aún es parcial: un bloque abierto no se reanuda al recargar; la interfaz lo advierte. La práctica en bloque envía intentos individuales al entregar y no es una sesión de examen protegida por servidor; un cliente que invoque directamente el endpoint de entrenamiento puede obtener la corrección de una pregunta. No se presenta como simulacro oficial ni se ha validado la persistencia en un Supabase completo. La migración existe en Git pero **no se ha aplicado a producción**.
+La [página oficial PNI26/01 de ADIF](https://www.adif.es/w/pni26-01-personal-operativo) indica 1.079 plazas y enumera seis documentos comunes y los tres documentos específicos 26/12PO: RD 346/2011, “Compatibilidad electromagnética y seguridad en los ferrocarriles” y RCF Libro 1. La página incluye el aviso de 14-10-2026: fecha prevista 12 de diciembre y sedes Barcelona, León, Madrid y Sevilla; aún anuncia confirmación de fecha definitiva, hora y facultades/aulas. Los tres PDF específicos de 26/12PO y el PDF de distribución devolvieron HTTP 403 en la consulta actual; se verificaron los títulos en la página, no el contenido ni los bytes de esos anexos. El anuncio [BOE-B-2026-24123](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-24123) anuncia la convocatoria, pero remite a las bases de ADIF.
 
-Véase [IMPLEMENTATION_EVIDENCE.md](IMPLEMENTATION_EVIDENCE.md) para pruebas y límites. El estado de la auditoría original se conserva a continuación como registro histórico; las frases sobre ausencia de interacción o API solo para originales describen el estado anterior a esta continuación.
+No se consideran confirmados los datos de 2025 (40/40/120 puntos, mínimos del 40 %, 100/200 puntos globales, 45/15 minutos, reservas ni penalización) para el examen 2026. La cita de ADIF “Ley 5/2015” se normaliza como Real Decreto Legislativo 5/2015 conservando por separado el rótulo de la convocatoria.
 
-## Versiones y entornos
+## Pruebas y compilación ejecutadas
 
-- Checkout principal: `/home/kiri_/projects/adif-web`, `main` en `a8b544cf814bded0998a19e7b994fff03659b850`. Existe un cambio previo en `.codex/config.toml`, conservado. Tras consultar GitHub, `origin/main` está siete commits por delante.
-- Referencia de esta auditoría: `a20aa297c17554f356cb00d523ac2c2c6a6a482a`, rama local `codex/auditoria-adif-26`, worktree `.worktrees/codex-adif-audit`. Incluye la vista `/temario` de la antigua rama `feat/temario-estudio-fullwidth` y actualizaciones posteriores de dependencias. No se ha fusionado ni modificado `main`.
-- Worktree histórico `/home/kiri_/.codex/worktrees/6c02/adif-web`: `deaeeef`, limpio; es antecesor de la versión principal local, no la versión más avanzada.
-- Vercel informa de un despliegue de producción READY para `a20aa297c17554f356cb00d523ac2c2c6a6a482a`; el dominio responde HTTP 200. Esto no demuestra autenticación ni el funcionamiento completo del despliegue.
-- Supabase: migraciones y pruebas SQL presentes en el repositorio; no se ha verificado el estado remoto ni ejecutado una migración. No se observó un servicio Supabase local activo ni CLI en PATH. La autenticación real, RLS efectiva y recuperación de sesión permanecen sin verificar en esta auditoría.
+| Checkout | Verificación | Resultado |
+|---|---|---|
+| `main` `23e6c93` | `pnpm test -- --reporter=dot` | PASS, 76 archivos / 623 pruebas. |
+| `main` `23e6c93` | `pnpm verify:content` | PASS: validaciones estructurales, referencias, claims, copia, alcance y mapeos. Informa 9 documentos: 8 parciales, 1 sin cobertura, 0 % completos; 102 mapeos históricos. |
+| `codex/auditoria-adif-26` `451217f` | `pnpm exec vitest run --reporter=dot` | PASS, 82 archivos / 645 pruebas. |
+| `codex/auditoria-adif-26` `451217f` | `pnpm verify:content` | PASS: 11 módulos, 205 conceptos, 154 fuentes, 288 claims; 9 documentos: 8 parciales, 1 sin cobertura, 0 % completos; 102 mapeos históricos. |
+| `codex/auditoria-adif-26` `451217f` | `pnpm lint` / `pnpm typecheck` | PASS: 0 errores de lint, 2 avisos de navegación; tipado PASS. |
+| `codex/auditoria-adif-26` `451217f` | `PLAYWRIGHT_TEST=true pnpm build` | PASS. Build local con cliente Supabase simulado; no verifica auth ni persistencia real. |
+| `codex/auditoria-adif-26` `451217f` | `pnpm exec playwright test` | FAIL: 7/10 pasan; fallan móvil por expectativa de 25 `.official-question-options` y recibir 0, onboarding por no encontrar “Pregunta 1 de 15”, y flujo completo por no encontrar “Iniciar práctica”. Primera ejecución no pudo lanzar Chromium; se instaló el navegador y se repitió. |
 
-## Alcance y comportamiento
+Los validadores comprueban consistencia y trazabilidad estructural, no que cada lección permita contestar el examen. El Playwright local usa el cliente de Supabase simulado. No se ejecutó SQL contra una base Supabase ni se verificó RLS/autenticación integrada.
 
-Existen curso, temario, plan diario, fichas, repasos, errores, estadísticas, simulacros, inglés y psicotécnicos. La existencia de páginas y pruebas no demuestra el recorrido de estudio completo. En particular, `app/api/attempts/route.ts` admite identificadores oficiales, no `ORIG-`; la tarea 6 de `docs/superpowers/plans/2026-10-15-adif-pni26-original-practice.md` está pendiente. Las preguntas psicotécnicas se muestran con opciones pero sin controles de respuesta ni corrección; su cronómetro es orientativo y no entrega automáticamente.
+## Estado Git y cambios de esta auditoría
 
-Las 102 transcripciones históricas de conocimientos específicos están sujetas a filtros de publicación y vigencia: el inventario no equivale a un banco habilitado para práctica. No se han levantado las restricciones de derechos o validación. Los modos y reglas de un examen compuesto de 2026 siguen pendientes de cotejo y ejecución completa.
+- Base del informe: `23e6c938f527`; HEAD de referencia funcional: `451217fbe497`.
+- Cambios de producto o contenido en esta auditoría: ninguno.
+- Push, merge, deploy y migración remota: ninguno.
+- `next dev` añadió instrucciones Next.js en el `AGENTS.md` de la rama de auditoría y el build actualizó `next-env.d.ts`; son efectos locales de la verificación y no forman parte del cambio de producto.
 
-La convocatoria [PNI26/01](https://www.adif.es/w/pni26-01-personal-operativo) indicaba al consultarse que la prueba sería **previsiblemente el 12 de diciembre de 2026**; ADIF dice que confirmará fecha definitiva, hora y distribución. No debe presentarse como confirmada. No se ha verificado aquí el detalle completo de puntuación, mínimos ni tiempos en las bases oficiales.
+## Prioridades P0–P3
 
-## Comprobaciones
-
-En el checkout principal `a8b544c`, `pnpm lint` terminó con 0 errores y 2 avisos, `pnpm typecheck`, `pnpm verify:content`, `pnpm build` y `pnpm test --reporter=dot` pasaron; Vitest informó 74 archivos y 601 pruebas. El build generó un cambio en `next-env.d.ts`, que se restituyó a su estado inicial limpio. Estas pruebas no acreditan el comportamiento de producción ni sustituyen validación académica.
-
-En la referencia `a20aa29`, instalación offline con lockfile congelado, `pnpm lint` (0 errores, 2 avisos), `pnpm typecheck`, `pnpm verify:content` y `pnpm test --reporter=dot` pasaron: 76 archivos y 623 pruebas. `pnpm build` sin configuración de Supabase falló al prerenderizar `/temario`; `PLAYWRIGHT_TEST=true pnpm build` pasó con el cliente simulado. Esta última comprobación no valida las credenciales, autenticación ni persistencia reales.
-
-La auditoría de fuentes, conceptos, sesiones reales y móvil debe completarse antes de declarar cerrada esta fase. No se han realizado push, despliegue, cambios en datos reales ni migraciones remotas.
-
-## Prioridades de continuación
-
-1. Revisar en el estado de referencia la elegibilidad de las preguntas y recuperar el circuito responder → corregir → guardar con respuestas originales y aislamiento por usuario, conforme al plan aprobado y con pruebas SQL locales seguras.
-2. Contrastar los nueve documentos y sus conceptos con la versión exigida por ADIF y la vigencia del BOE; corregir primero carencias de temario.
-3. Verificar bases, mínimos, puntuación y reglas antes de presentar un simulacro como oficial.
-4. Comprobar autenticación, persistencia, recuperación tras desconexión y experiencia móvil con un entorno aislado.
-5. Ampliar práctica de inglés y psicotécnicos con variedad y revisión real, tras habilitar una corrección utilizable.
+1. **P0 — cerrar vacíos de cobertura y vigencia:** redactar teoría trazable para los siete nodos ausentes y completar los 23 parciales, empezando por PRL exposición/Cap. I, Declaración 2027 Cap. II, compatibilidad electromagnética y RCF Cap. 3. Obtener o cotejar los PDFs ADIF que dieron 403 y vincular cada claim normativo a fuente, versión y apartado exacto.
+2. **P0 — reglas del simulacro:** descargar/leer bases e instrucciones vigentes cuando ADIF lo permita; conservar modo 2025 histórico y mantener `official-2026` no disponible mientras falte evidencia primaria.
+3. **P1 — práctica útil:** revisar cada original (enunciado, clave, distractores y explicación), cerrar bloque/sesión y medir conceptos; no aumentar bancos por volumen. Mantener transcripciones históricas bloqueadas hasta resolver fuente, elegibilidad y derechos.
+4. **P1 — fiabilidad del aprendizaje:** reanudar sesiones tras recarga/desconexión, comprobar corrección en servidor y persistencia con Supabase local completo/RLS real simulado de forma autorizada.
+5. **P2 — adaptación:** conectar evidencia por concepto a repaso, prioridad diaria y riesgo por prueba; separar inglés, psicotécnicos y progreso oficial. No mostrar probabilidad calibrada con muestras insuficientes.
+6. **P3 — UX:** reparar las tres regresiones E2E observadas y verificar el recorrido móvil completo. No anteponer cambios visuales a la cobertura académica.
