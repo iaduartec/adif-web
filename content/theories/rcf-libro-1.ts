@@ -339,6 +339,19 @@ export const rcfLibro1Theory: TheorySection = {
       ]
     },
 
+    {
+      id: "rcf-acronimos",
+      title: "Acrónimos y abreviaturas del RCF",
+      claims: [
+        {
+          id: "rcf-acronimo-1",
+          text: "AESF: Agencia Estatal de Seguridad Ferroviaria. AI: Administrador de Infraestructuras. EF: Empresa Ferroviaria. SGS: Sistema de Gestión de la Seguridad. PB: Puesto de Bloqueo. PBA: Puesto de Bloqueo de Apartado. PCA: Puesto de Cambio de Apartado. PAET: Punto de Apartado Especial para Trenes.",
+          kind: "didactic",
+          legalBasis: []
+        }
+      ]
+    },
+
   ],
 
   examples: [

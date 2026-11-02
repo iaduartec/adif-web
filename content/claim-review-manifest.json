@@ -1905,6 +1905,13 @@
         "level": "low",
         "reason": "Pendiente de verificación del documento original (ADIF 403)."
       }
+    },
+    "rcf-acronimo-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Definiciones de acrónimos; requiere cotejo editorial."
+      }
     }
   }
 }
