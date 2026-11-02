@@ -1679,74 +1679,84 @@
       }
     },
     "conducta-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-intro-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "conducta-takeaway-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra TREBEP Arts. 52-54 (BOE-A-2015-11719)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-intro-1": {
       "status": "needs_review",
