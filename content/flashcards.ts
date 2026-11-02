@@ -419,4 +419,210 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Quién es competente para emitir las Consignas y quién el Libro de Normas del Maquinista?",
     back: "Las Consignas (A, B, C) y los Avisos son competencia del Administrador de Infraestructuras (AI). El Libro de Normas del Maquinista, Horario y Libro de Itinerarios son competencia de las Empresas Ferroviarias (EF).",
   },
+
+  // E2 CEM — ampliación técnica
+  {
+    id: "F0040",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué exige el Real Decreto 186/2016 al fabricante de un equipo?",
+    back: "Elaborar la documentación técnica, realizar el procedimiento de evaluación de la conformidad aplicable y colocar el marcado CE de forma visible, legible e indeleble.",
+  },
+  {
+    id: "F0041",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué diferencia al modo diferencial del modo común en una perturbación conducida?",
+    back: "En el modo diferencial la perturbación circula únicamente por los conductores activos; en el modo común circula por todos los conductores, incluido el de protección.",
+  },
+  {
+    id: "F0042",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿A qué distancia y con qué detector se miden las emisiones radiadas del material rodante en prueba estacionaria?",
+    back: "A 10 metros de distancia, utilizando detector de cuasi-pico, conforme a la norma armonizada EN 50121.",
+  },
+  {
+    id: "F0043",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Por qué se miden las emisiones de los trenes en movimiento con varias antenas simultáneas?",
+    back: "Para capturar todo el ancho de banda que debe medirse, debido al carácter transitorio de la perturbación durante la circulación.",
+  },
+  {
+    id: "F0044",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué sistemas de señalización requieren niveles de inmunidad elevados según la EN 50121?",
+    back: "Los equipos de señalización, telecomunicación y control embarcados, para evitar fallos de seguridad por perturbaciones externas.",
+  },
+
+  // DR 2027
+  {
+    id: "F0045",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué ley obliga a los administradores de infraestructuras a publicar la Declaración sobre la Red?",
+    back: "La Ley 38/2015, de 29 de septiembre, del sector ferroviario (artículo 32), que exige elaborar, aprobar y publicar la DR previa consulta a las partes interesadas.",
+  },
+  {
+    id: "F0046",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cuáles son las tensiones de electrificación de la red ferroviaria española según la DR?",
+    back: "25 kV en corriente alterna, 3 kV en corriente continua y 1.5 kV en corriente continua, según tramos.",
+  },
+  {
+    id: "F0047",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué sistemas de señalización menciona la DR en el capítulo II?",
+    back: "ERTMS/ETCS, ASFA digital y sistemas de bloqueo automático, con niveles de protección crecientes.",
+  },
+  {
+    id: "F0048",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cómo expresa la DR la capacidad de la infraestructura?",
+    back: "En surcos ofertados por tramo y periodo, considerando las restricciones de mantenimiento y las ventanas de capacidad.",
+  },
+  {
+    id: "F0049",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué edición de la DR se enlaza desde la convocatoria PNI26/01?",
+    back: "La edición V.0 (ED 27/02/2026); la ficha general de ADIF lista la edición 31/07/2026 como vigente, por lo que conviene contrastar diferencias.",
+  },
+
+  // DR 2027 — Capítulo II (Infraestructura): definiciones, enumeraciones, magnitudes, restricciones
+  {
+    id: "F0050",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cómo se estructura el Capítulo II (Infraestructura) de la DR 2027?",
+    back: "En seis apartados: 2.1 Introducción, 2.2 Ámbito de la Red Gestionada por Adif, 2.3 Descripción de la Red (quince subapartados), 2.4 Restricciones de Tráfico (cinco), 2.5 Disponibilidad de la Infraestructura y 2.6 Desarrollo de la Infraestructura.",
+  },
+  {
+    id: "F0051",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "Enumera los quince subapartados de la sección 2.3 (Descripción de la Red) de la DR 2027.",
+    back: "2.3.1 Tipología de vías; 2.3.2 Anchos de vía y tercer carril; 2.3.3 Estaciones y terminales; 2.3.4 Gálibos; 2.3.5 Límite de carga; 2.3.6 Rampas características; 2.3.7 Velocidades máximas; 2.3.8 Longitud máxima de los trenes; 2.3.9 Suministro de energía eléctrica; 2.3.10 Sistemas de seguridad y señalización; 2.3.11 Control y gestión del tráfico; 2.3.12 Sistemas de comunicación; 2.3.13 Control y protección del tren; 2.3.14 Autopistas ferroviarias; 2.3.15 Protección y seguridad.",
+  },
+  {
+    id: "F0052",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cuáles son las cinco restricciones de la sección 2.4 (Restricciones de Tráfico) de la DR 2027?",
+    back: "2.4.1 Infraestructuras especializadas; 2.4.2 Normativa medioambiental; 2.4.3 Transporte de mercancías peligrosas; 2.4.4 Restricciones en túneles; 2.4.5 Restricciones en puentes y viaductos.",
+  },
+  {
+    id: "F0053",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué anchos de vía contempla la Red Ferroviaria de Interés General (RFIG) según la DR 2027?",
+    back: "Ancho ibérico de 1.668 mm, ancho internacional UIC de 1.435 mm (a través de tercer carril en la Red Mixta) y ancho métrico de 1.000 mm.",
+  },
+  {
+    id: "F0054",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cuáles son las longitudes de la RFIG por tipo de vía (DR 2027)?",
+    back: "Red Convencional de Ancho Ibérico puro: 10.212,5 km; Red Mixta (tercer carril): 126,8 km; Red de Vía Estrecha de Ancho Métrico (1.000 mm): 1.195,3 km. Total titularidad Adif: 11.675,9 km.",
+  },
+  {
+    id: "F0055",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué tensiones de electrificación utiliza la red de Adif según la DR 2027?",
+    back: "25.000 V en corriente alterna (50 Hz), circunscrita normalmente a la Red de Alta Velocidad; 3.000 V en corriente continua en la Red Convencional; y 1.500 V en corriente continua en la Red de Ancho Métrico.",
+  },
+  {
+    id: "F0056",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "En la DR 2027, ¿qué limita el 'gálibo' (2.3.4) y qué el 'límite de carga' (2.3.5)?",
+    back: "El gálibo es el perfil de contorno que limita las dimensiones de los vehículos y las cargas; el límite de carga fija la masa máxima admisible por eje y por metro lineal de tren.",
+  },
+  {
+    id: "F0057",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué sistema de control y protección del tren destaca la DR 2027 en el apartado 2.3.13?",
+    back: "El ERTMS (versión en servicio 2.3.0d), que combina el ETCS (señalización y protección en cabina que supervisa continuamente la velocidad) y el GSM-R (comunicaciones). El ASFA está instalado en todas las líneas principales de la RFIG.",
+  },
+  {
+    id: "F0058",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué clases de material rodante por aceleración sin compensar y qué sistemas de bloqueo cita la DR 2027 (apartado 2.3)?",
+    back: "Aceleración: N 0,65; A 1; B 1,2; C 1,5; D 1,8 m/s². Bloqueo: BCA, BSL, BLA, BA (con BAU/BAD/BAB), BEM y BT.",
+  },
+  {
+    id: "F0059",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "En la DR 2027, ¿cómo se publican las restricciones en túneles y puentes/viaductos (2.4.4 y 2.4.5)?",
+    back: "Se publican en la Información de Circulación de las Líneas (ICL), disponible para las empresas ferroviarias en el RGD; las de puentes/viaductos suelen vincularse a la masa máxima admisible por eje y metro lineal (2.3.5).",
+  },
+  {
+    id: "F0060",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué prohíbe la DR 2027 (2.4.3) en relación con mercancías peligrosas y túneles?",
+    back: "En general impide programar estacionamientos en estaciones de núcleos habitados y paradas en túneles de más de 100 m de longitud; la empresa debe replantear esas paradas o usar líneas de circunvalación.",
+  },
+
+  // CEM — definiciones, comparaciones, magnitudes, restricciones (módulo compatibilidad-electromagnetica)
+  {
+    id: "F0061",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué es la compatibilidad electromagnética (CEM) y qué dos vertientes tiene?",
+    back: "Es la capacidad de un equipo para funcionar en su entorno electromagnético sin producir perturbaciones indebidas a otros equipos. Sus dos vertientes son la emisión (energía que el equipo libera) y la inmunidad (capacidad de funcionar sin degradarse ante perturbaciones externas).",
+  },
+  {
+    id: "F0062",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿En qué se diferencian la Directiva 2014/30/UE y la Directiva 2004/108/CE?",
+    back: "La 2004/108/CE era la directiva previa de CEM; la 2014/30/UE es la versión vigente del marco europeo, transpuesta en España por el Real Decreto 186/2016.",
+  },
+  {
+    id: "F0063",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué relación hay entre la Directiva 2014/30/UE y el Real Decreto 186/2016?",
+    back: "El RD 186/2016 es la norma española que transpone (incorpora al ordenamiento interno) la Directiva 2014/30/UE, fijando los requisitos de comercialización de equipos y el procedimiento de evaluación de conformidad (marcado CE).",
+  },
+  {
+    id: "F0064",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Cuáles son las partes de la familia EN 50121 según el artículo asignado?",
+    back: "-1 Generalidades; -2 Emisión del sistema ferroviario completo al mundo exterior; -3-1 Material rodante (tren y vehículo completo); -3-2 Material rodante (aparatos); -4 Emisión e inmunidad de aparatos de señalización y telecomunicaciones; -5 Emisión e inmunidad de instalaciones fijas de suministro de energía y equipos asociados.",
+  },
+  {
+    id: "F0065",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué partes de la EN 50121 exigen pruebas 'in situ' y no solo de laboratorio?",
+    back: "Las partes 2, 3-1 y 5 requieren mediciones in situ (en la vía o instalación real), por lo que no tienen el mismo grado de control que las pruebas de laboratorio de CEM.",
+  },
+  {
+    id: "F0066",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Cómo se clasifica el acoplamiento electromagnético según el modo de transferencia de energía?",
+    back: "Puede ser conducido (por los cables), inductivo (campo magnético) o capacitivo (campo eléctrico), describiendo cómo la energía perturbadora pasa de la fuente a la víctima.",
+  },
+  {
+    id: "F0067",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿En qué se diferencian el modo diferencial y el modo común de una perturbación conducida?",
+    back: "En el modo diferencial la perturbación circula únicamente por los conductores activos; en el modo común lo hace por todos los conductores, incluido el de protección (tierra).",
+  },
+  {
+    id: "F0068",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿A qué distancia y con qué detector se miden las emisiones radiadas del material rodante en prueba estacionaria (EN 50121-2 / -3-1)?",
+    back: "A 10 metros de distancia al lado de la vía, utilizando detector de cuasi-pico; los límites representados son límites de cuasi-pico a 10 metros.",
+  },
+  {
+    id: "F0069",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Cuál es la línea de tiempo de la norma EN 50121 citada en el artículo asignado?",
+    back: "Se introdujo en 1995 como norma previa, fue adoptada definitivamente en 2000, la versión de 2006 entró plenamente en vigor en julio de 2009 y la versión española UNE_EN_50121 se presentó en 2007.",
+  },
+  {
+    id: "F0070",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué equivalencia internacional tiene la EN 50121 y qué norma suele confundirse con ella?",
+    back: "La serie IEC 62236-x es la propuesta equivalente de la IEC a nivel internacional. La EN 50155 suele causar confusión porque también contiene requisitos de CEM, pero está enfocada al funcionamiento del producto y no a la obtención del Marcado CE como la EN 50121.",
+  },
+  {
+    id: "F0071",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Cómo se define la longitud de onda y el índice de distorsión armónica (THD) en el contexto de la CEM?",
+    back: "La longitud de onda es la distancia recorrida por una onda durante una oscilación completa. El índice de distorsión armónica (THD) mide la distorsión armónica introducida por los convertidores de potencia ferroviarios en la red.",
+  },
+  {
+    id: "F0072",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Por qué el carril es una fuente de acoplamiento relevante en el ferrocarril (multi-uso del carril)?",
+    back: "En el entorno ferroviario el carril se emplea como conductor de retorno de corriente y como vía de circulación a la vez, lo que favorece el acoplamiento conductivo/inductivo de las perturbaciones hacia los equipos vecinos.",
+  },
 ];

@@ -188,6 +188,18 @@ export const OFFICIAL_SOURCE_REGISTRY: Record<string, OfficialSourceIdentity> = 
       "https://www.coe.int/en/web/common-european-framework-reference-languages/introduction-and-context",
     kind: "official-document",
   },
+  "PNI26-12PO-SPECIFIC-02": {
+    canonicalTitle: "Compatibilidad electromagnética y seguridad en los ferrocarriles",
+    canonicalUrl:
+      "https://www.adif.es/documents/20124/55031380/02%2BCompatibilidad%2Belectromagn%C3%A9tica%2By%2Bseguridad%2Ben%2Blos%2Bferrocarriles.pdf/66b0c76b-4910-3415-fd83-0672ec9a3068",
+    kind: "official-document",
+  },
+  "PNI26-COMMON-04": {
+    canonicalTitle: "Declaración sobre la Red Adif 2027. Capítulos I y II",
+    canonicalUrl:
+      "https://www.adif.es/documents/20124/55031380/4.%2BDeclaraci%C3%B3n%2Bsobre%2Bla%2BRed%2BAdif%2B2027.%2BCap%C3%ADtulos%2BI%2By%2BII.pdf/4a6acc23-e409-9dd8-ad1e-305d7f6e7b01",
+    kind: "official-document",
+  },
 };
 
 /**

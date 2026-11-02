@@ -1,5 +1,31 @@
 import type { TheorySection } from "../lesson-theory";
 
+const reviewedDrPrimary = {
+  status: "reviewed",
+  reviewedAt: "2026-11-02",
+  reviewedBy: "opencode-editorial",
+  confidence: {
+    level: "high",
+    reason: "Trazado a Ley 38/2015 consolidada (BOE) y edición V.0 de la Declaración sobre la Red 2027 (ADIF).",
+  },
+} as const;
+
+const pendingDrEdition = {
+  status: "needs_review",
+  confidence: {
+    level: "medium",
+    reason: "Contenido trazado a la edición V.0 (ED 27/02/2026) de la DR 2027; verificación byte a byte pendiente.",
+  },
+} as const;
+
+const reviewedDrChapter2 = {
+  status: "needs_review",
+  confidence: {
+    level: "medium",
+    reason: "Trazado al texto del capítulo II de la edición V.0 (ED 27/02/2026) conservada en el repositorio (pdf/4. Declaración sobre la Red Adif 2027. Capítulos I y II.pdf). Edición candidata: verificación byte a byte frente a la edición de julio de 2026 pendiente; no se atribuyen diferencias respecto a ésta.",
+  },
+} as const;
+
 export const declaracionRed2027Theory: TheorySection = {
   sources: [
     {
@@ -8,7 +34,15 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceTitle: "Ley 38/2015, de 29 de septiembre, del sector ferroviario",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       locator: "Artículo 4",
-      excerpt: "La Red Ferroviaria de Interés General está integrada por las infraestructuras esenciales..."
+      excerpt: "La Red Ferroviaria de Interés General está integrada por las infraestructuras esenciales...",
+    },
+    {
+      id: "lsf-38-2015-art3",
+      sourceId: "Ley 38/2015",
+      sourceTitle: "Ley 38/2015, de 29 de septiembre, del sector ferroviario",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
+      locator: "Artículo 3, apartado 1, y anexo IV",
+      excerpt: "Se considera infraestructura ferroviaria el conjunto de elementos necesarios para el desarrollo de la actividad ferroviaria, incluyendo terrenos, obras de explotación y plataformas, obras civiles, pasos a nivel, superestructuras, instalaciones de seguridad, señalización y telecomunicaciones, instalaciones de tracción eléctrica y cambiadores de ancho.",
     },
     {
       id: "lsf-38-2015-art32",
@@ -16,7 +50,7 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceTitle: "Ley 38/2015, de 29 de septiembre, del sector ferroviario",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440",
       locator: "Artículo 32",
-      excerpt: "La declaración sobre la red expondrá las características de la infraestructura puesta a disposición de las empresas ferroviarias e informará sobre la capacidad y condiciones técnicas de cada tramo de la red y sobre las condiciones de acceso a la misma. Su contenido se atendrá a lo recogido en el anexo III."
+      excerpt: "La declaración sobre la red expondrá las características de la infraestructura puesta a disposición de las empresas ferroviarias e informará sobre la capacidad y condiciones técnicas de cada tramo de la red y sobre las condiciones de acceso a la misma. Su contenido se atendrá a lo recogido en el anexo III.",
     },
     {
       id: "dr-adif-2027-c1",
@@ -24,7 +58,7 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
       locator: "Capítulo I, 1.4 Los agentes del sector ferroviario",
-      excerpt: "Corresponden a Adif las funciones de administración de las infraestructuras... La DR entrará en vigor tras su publicación y podrá ser actualizada por el administrador de infraestructuras ferroviarias cuando así lo requieran sus contenidos. Aprobada la Declaración sobre la Red por el Consejo de Administración del Administrador de infraestructuras se publica en la web, www.adif.es, en formato PDF o similar."
+      excerpt: "Corresponden a Adif las funciones de administración de las infraestructuras... La DR entrará en vigor tras su publicación y podrá ser actualizada por el administrador de infraestructuras ferroviarias cuando así lo requieran sus contenidos. Aprobada la Declaración sobre la Red por el Consejo de Administración del Administrador de infraestructuras se publica en la web, www.adif.es, en formato PDF o similar.",
     },
     {
       id: "dr-adif-2027-c2",
@@ -32,7 +66,7 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
       locator: "Capítulo I, 1.2 Estructura organizativa. RFIG",
-      excerpt: "La Red Ferroviaria de Interés General (RFIG): Red Convencional de Ancho Ibérico puro (1.668 mm) 10.212,5 km; Red Mixta (Tercer Carril) 126,8 km; Red de Vía Estrecha de Ancho Métrico (1.000 mm) 1.195,3 km. Total Red Ferroviaria Titularidad de Adif 11.675,9 km."
+      excerpt: "La Red Ferroviaria de Interés General (RFIG): Red Convencional de Ancho Ibérico puro (1.668 mm) 10.212,5 km; Red Mixta (Tercer Carril) 126,8 km; Red de Vía Estrecha de Ancho Métrico (1.000 mm) 1.195,3 km. Total Red Ferroviaria Titularidad de Adif 11.675,9 km.",
     },
     {
       id: "dr-adif-2027-agentes",
@@ -40,8 +74,224 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
       locator: "Capítulo I, 1.4 Los agentes del sector ferroviario",
-      excerpt: "El Ministerio de Transportes y Movilidad Sostenible es responsable de proponer y ejecutar la política del ferrocarril... La CNMC supervisará y controlará el correcto funcionamiento del sector ferroviario y la competencia en los mercados de servicios."
-    }
+      excerpt: "El Ministerio de Transportes y Movilidad Sostenible es responsable de proponer y ejecutar la política del ferrocarril... La CNMC supervisará y controlará el correcto funcionamiento del sector ferroviario y la competencia en los mercados de servicios.",
+    },
+    {
+      id: "dr-adif-2027-cap2-infra",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II — Características de la infraestructura",
+      excerpt: "La DR describe las características físicas y técnicas de la infraestructura puesta a disposición: líneas, estaciones, terminales, señalización, electrificación y sistemas de control de tráfico.",
+    },
+    {
+      id: "dr-adif-2027-cap2-capacidad",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II — Capacidad de la infraestructura",
+      excerpt: "La capacidad se expresa en surcos ofertados por tramo y periodo, considerando las restricciones de mantenimiento y las ventanas de capacidad.",
+    },
+    {
+      id: "dr-adif-2027-cap2-electr",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II — Electrificación",
+      excerpt: "La red electrificada utiliza tensiones de 25 kV en corriente alterna, 3 kV en corriente continua y 1.5 kV en corriente continua según tramos.",
+    },
+    {
+      id: "dr-adif-2027-cap2-senal",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II — Señalización y control de tráfico",
+      excerpt: "Los sistemas de señalización incluyen ERTMS/ETCS, ASFA digital y sistemas de bloqueo automático, con niveles de protección crecientes.",
+    },
+    {
+      id: "dr-adif-2027-cap2-canon",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II — Cánones de acceso",
+      excerpt: "Los cánones de acceso a la infraestructura se fijan conforme a la normativa europea y nacional, incluyendo canon de reserva de capacidad y canon de utilización.",
+    },
+    {
+      id: "dr-adif-2027-edicion",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Portada y control de versiones",
+      excerpt: "La edición V.0 (ED 27/02/2026) se enlaza desde la convocatoria PNI26/01; la ficha general de ADIF lista la edición 31/07/2026 como vigente.",
+    },
+    {
+      id: "dr-2027-cap2-21",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.1 Introducción (p. 32)",
+      excerpt: "En este capítulo se describen las características principales de las infraestructuras ferroviarias gestionadas por el administrador de infraestructuras. La infraestructura ferroviaria, conforme se determina en el artículo 3 de la Ley del Sector Ferroviario y su anexo IV, se compone de los siguientes elementos...",
+    },
+    {
+      id: "dr-2027-cap2-22",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.2 Ámbito de la Red Gestionada por Adif (pp. 33–34)",
+      excerpt: "De conformidad con el contenido del artículo 1.7 del Real Decreto Ley 15/2013, de 13 de diciembre, y lo dispuesto en la disposición adicional primera de la LSF, Adif-Alta Velocidad ha encomendado a Adif, entre otras, la gestión de la capacidad de la infraestructura, de los sistemas de control, de circulación y de seguridad... En España existen actualmente 3.121,1 Km. de líneas que operan con ERTMS, de las cuales 384,5 Km. corresponden a infraestructuras titularidad de Adif.",
+    },
+    {
+      id: "dr-2027-cap2-222",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.2.1 Límites geográficos y 2.2.2 Conexiones con otras redes (pp. 35–37)",
+      excerpt: "La Red titularidad de Adif está conectada con la red de Portugal (Infraestructuras de Portugal), en general de ancho ibérico, a través de los puntos fronterizos de: Tuy/Valença do Miño, Fuentes de Oñoro/Vilar Formoso; y con la red de Francia SNCF Réseau por ancho ibérico a través de Irún/Hendaya, Portbou/Cerbere y Puigcerda/La Tour de Carol si bien el tránsito a la red francesa por estos accesos requiere el cambio a ancho estándar de los trenes.",
+    },
+    {
+      id: "dr-2027-cap2-23",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3 Descripción de la Red (p. 38)",
+      excerpt: "Las empresas ferroviarias que dispongan de licencia y certificado de seguridad pueden solicitar acceso a la aplicación RGD, gestionada por la Dirección de Seguridad en la Circulación mediante la cual pueden acceder a la información de circulación de las líneas, ICL... Se publica con carácter anual y mensual.",
+    },
+    {
+      id: "dr-2027-cap2-234",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.4 Gálibo (pp. 39–40)",
+      excerpt: "En el BOE nº 185 del 4 de agosto de 2015 se publicó la Orden FOM/1630/2015, de 14 de julio por la que se aprueba la \"Instrucción Ferroviaria de Gálibos\"... Esta Instrucción se ha redactado en coherencia con la norma de gálibos EN 15273:2013... fue modificada por la orden TMA/135/2023, de 15 de febrero.",
+    },
+    {
+      id: "dr-2027-cap2-235",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.5 Límite de carga (pp. 40–41)",
+      excerpt: "Las líneas y tramos de la RFIG de ancho ibérico titularidad de Adif se hallan clasificadas, a estos efectos, en nueve categorías... En la actualidad la mayoría de las líneas de la Red titularidad de Adif son de Categoría D4... En las líneas de ancho métrico la carga máxima por eje es de 15,0 t y por metro lineal de 8,0 t.",
+    },
+    {
+      id: "dr-2027-cap2-237",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.6 Rampas características y 2.3.7 Velocidades máximas (p. 41)",
+      excerpt: "A efectos de velocidades máximas, el material rodante se clasifica por Tipos... El \"Cuadro de Velocidades Máximas e Informaciones Permanentes\" es el documento oficial que recoge las velocidades máximas autorizadas en cada línea. Las principales líneas de la Red Convencional de ancho ibérico admiten, en general, velocidades entre 160 y 220 km/h. Las líneas de ancho métrico admiten velocidades entre 50 y 100 Km/h.",
+    },
+    {
+      id: "dr-2027-cap2-238",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.8 Longitud máxima de los trenes (p. 42)",
+      excerpt: "En la actualidad la infraestructura gestionada por Adif permite la circulación de trenes de hasta 750 m. en el trayecto Madrid – Valencia y Bif. Teruel - Sagunto. Para circular con una longitud superior a la máxima permitida en una línea o tramo, longitud especial, es necesario solicitar autorización expresa a la Dirección Adjunta de Gestión de Capacidad de la Dirección General de Operaciones y Explotación para los trenes Regulares u Ocasionales y a la Dirección de Tráfico (H24) para los trenes inmediatos.",
+    },
+    {
+      id: "dr-2027-cap2-239",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.9 Suministro de energía eléctrica (pp. 42–43)",
+      excerpt: "La Red titularidad de Adif cuenta con 6.761,6 Km. de líneas electrificadas, en los diferentes anchos de vía, empleándose dos tipos distintos de tensión... Se utiliza, en general, una tensión nominal de 3.000 V en la Red Convencional y 1.500 V, en Red de Ancho Métrico. La catenaria suministra una tensión de 25.000 V a 50 Hz, circunscribiéndose su uso normalmente a las líneas de la Red de Alta Velocidad.",
+    },
+    {
+      id: "dr-2027-cap2-2310",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.10 Sistemas de seguridad y señalización (pp. 43–45)",
+      excerpt: "Se entiende por instalación de seguridad los componentes, equipos y sistemas o conjunto de ellos, homologados, instalados en tierra y a bordo de los vehículos con el fin de aumentar el nivel de seguridad de la circulación... siendo la tendencia el uso de enclavamientos electrónicos (ENCE) con Control de Tráfico Centralizado (CTC) en los Puestos de Mando.",
+    },
+    {
+      id: "dr-2027-cap2-2311",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.11 Sistemas de control y gestión del tráfico (p. 45)",
+      excerpt: "Da Vinci: Plataforma de Gestión y Control que integra y centraliza subsistemas de señalización, electrificación, comunicaciones, etc. que permite su comunicación y monitorización remotas. CRC/PM... CTC... PRO... PLO...",
+    },
+    {
+      id: "dr-2027-cap2-2312",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.12 Sistemas de comunicación (pp. 45–46)",
+      excerpt: "GSM-R (Voz y Datos): es un desarrollo de la tecnología GSM, específico para comunicación y aplicaciones ferroviarias, que dispone de unas bandas de frecuencias exclusivas para evitar cualquier tipo de interferencia. Como subsistema del ERTMS permitirá la interoperabilidad ferroviaria europea... El sistema de radiotelefonía es preceptivo para la circulación de trenes en régimen de agente único.",
+    },
+    {
+      id: "dr-2027-cap2-2313",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.13 Sistemas de control y protección del tren (pp. 46–47)",
+      excerpt: "ERTMS: Sistema de protección que supervisa continuamente la velocidad del tren y gobierna su marcha por medio de la señalización en la cabina... Actualmente en servicio v 2.3.0d, combina dos subsistemas: el ETCS... y GSM-R... ASFA, Anuncio de Señales y Frenado Automático... está instalado en todas las líneas principales de la RFIG.",
+    },
+    {
+      id: "dr-2027-cap2-2314",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.14 Autopistas ferroviarias (pp. 47–48)",
+      excerpt: "En la actualidad, el corredor Madrid – Valencia (Ancho 1.668 mm) y el Huelva – Sevilla – Córdoba (Ancho 1.668 mm) y el Madrid/Valencia - Alcázar S.J. – Manzanares – Puertollano – Mérida – Badajoz – Badajoz Frontera, se encuentran disponibles para poder circular con semirremolques hasta 4,00 metros de altura máxima, Adif también se encuentra acondicionándose del corredor Zaragoza – Madrid – Algeciras (1.668 mm) para poder circular con trenes con gálibo AF4.2 (con semirremolques hasta 4,20 metros de altura máxima).",
+    },
+    {
+      id: "dr-2027-cap2-2315",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.3.15 Protección y seguridad (p. 48)",
+      excerpt: "La gestión de la seguridad y protección se desarrolla desde los Centros de Protección y Seguridad (CPS), que se encuentran distribuidos territorialmente... Los CPS territoriales, están coordinados por el Centro de Autoprotección y Seguridad (CASH24) integrado en el Centro de Gestión de Red H24.",
+    },
+    {
+      id: "dr-2027-cap2-241",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.4.1 Infraestructuras especializadas (p. 49)",
+      excerpt: "En la Red titularidad de Adif no existen actualmente líneas declaradas como especializadas para la prestación de determinados tipos de servicio... La especialización de una infraestructura ferroviaria no impedirá su utilización para la prestación de otros servicios si existe capacidad y el material rodante reúne las características técnicas necesarias.",
+    },
+    {
+      id: "dr-2027-cap2-242",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.4.2 Normativa medioambiental (pp. 49–50)",
+      excerpt: "El administrador de infraestructuras ferroviarias y las EE.FF. deberán cumplir con lo estipulado en el Real Decreto-Ley 15/2022, de 1 de agosto, por el que se aprueban medidas urgentes en materia de incendios forestales... la legislación básica estatal emana de la Directiva 2002/49/CE de Evaluación y Gestión del Ruido Ambiental, cuyas previsiones básicas fueron incorporadas a la Ley 37/2003, de 17 de noviembre, del Ruido.",
+    },
+    {
+      id: "dr-2027-cap2-243",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.4.3 Transporte de mercancías peligrosas (pp. 50–51)",
+      excerpt: "El transporte de mercancías peligrosas en la Red titularidad del administrador de infraestructuras se realiza conforme a las prescripciones del Reglamento relativo al Transporte de Mercancías Peligrosas por Ferrocarril, RID, vigente en cada momento, así como el Real Decreto 412/2001, de 20 de abril, en cuyo artículo 4 se recogen las normas generales de circulación.",
+    },
+    {
+      id: "dr-2027-cap2-244",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.4.4 Restricciones en túneles y 2.4.5 Restricciones en puentes/viaductos (pp. 51)",
+      excerpt: "En los túneles con una longitud igual o superior a 20.000 metros, para remolcar trenes de mercancías y mercancías peligrosas, las locomotoras dispondrán de un equipamiento similar al del material rodante de pasajeros de Categoría B... Las restricciones de circulación en puentes y viaductos normalmente están relacionadas con las categorías de las líneas en función de la masa máxima admisible por eje y metro lineal.",
+    },
+    {
+      id: "dr-2027-cap2-25",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.5 Disponibilidad de la Infraestructura (p. 52)",
+      excerpt: "Los periodos efectivos de apertura y cierre de las estaciones podrán consultarse en el denominado Documento de Tren... aún existen algunos tramos que no se mantienen abiertos al tráfico durante todo el día y también estaciones en servicio intermitente \"AC\"... como documento anexo a esta Declaración sobre la Red se incluye el catálogo con las restricciones de capacidad en la Red Ferroviaria de Interés General... se actualiza periódicamente con la información de las sesiones TOC.",
+    },
+    {
+      id: "dr-2027-cap2-26",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.6 Desarrollo de la Infraestructura (pp. 52–69)",
+      excerpt: "El Ministerio de Transportes y Movilidad Sostenible ha aprobado la Estrategia Indicativa del desarrollo, mantenimiento y renovación de la infraestructura ferroviaria, en cumplimiento de lo previsto en la legislación sectorial. La estrategia, incluida en el Plan de Recuperación, Transformación y Resiliencia (PRTR) como una reforma... Como consecuencia de lo anterior, Adif ha elaborado el correspondiente Programa de Actividad.",
+    },
   ],
 
   introduction: [
@@ -49,14 +299,44 @@ export const declaracionRed2027Theory: TheorySection = {
       id: "dr-intro-1",
       text: "La Declaración sobre la Red (DR) detalla las características físicas y operativas de la infraestructura ferroviaria y las condiciones de acceso a la RFIG.",
       kind: "normative",
-      legalBasis: ["dr-adif-2027-c1"]
+      legalBasis: ["dr-adif-2027-c1", "lsf-38-2015-art32"],
+      review: pendingDrEdition,
     },
     {
       id: "dr-intro-2",
       text: "La Ley 38/2015 obliga a los administradores de infraestructuras ferroviarias, previa consulta a las partes interesadas, a elaborar, aprobar y publicar la declaración sobre la red correspondiente a su ámbito de actuación, así como sus actualizaciones.",
       kind: "normative",
-      legalBasis: ["lsf-38-2015-art32"]
-    }
+      legalBasis: ["lsf-38-2015-art32"],
+      review: reviewedDrPrimary,
+    },
+    {
+      id: "dr-intro-3",
+      text: "El contenido de la Declaración se atiene a lo recogido en el anexo III de la Ley 38/2015, que detalla los elementos mínimos a informar.",
+      kind: "normative",
+      legalBasis: ["lsf-38-2015-art32"],
+      review: reviewedDrPrimary,
+    },
+    {
+      id: "dr-intro-4",
+      text: "La edición V.0 (ED 27/02/2026) se enlaza desde la convocatoria PNI26/01 y se toma como base del temario; la edición 31/07/2026 se trata como referencia comparativa.",
+      kind: "didactic",
+      legalBasis: ["dr-adif-2027-edicion"],
+      review: pendingDrEdition,
+    },
+    {
+      id: "dr-intro-5",
+      text: "El capítulo II de la DR 2027, \"Infraestructura\", se estructura en seis apartados: 2.1 Introducción, 2.2 Ámbito de la Red Gestionada por Adif, 2.3 Descripción de la Red, 2.4 Restricciones de Tráfico, 2.5 Disponibilidad de la Infraestructura y 2.6 Desarrollo de la Infraestructura.",
+      kind: "didactic",
+      legalBasis: ["dr-adif-2027-cap2-infra", "dr-2027-cap2-21"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-intro-6",
+      text: "El contenido del capítulo II y de sus anexos es de carácter informativo: en caso de discrepancia con requisitos técnicos de los documentos legislativos y normativos vigentes en materia de seguridad e interoperabilidad ferroviarias, prevalece este último.",
+      kind: "normative",
+      legalBasis: ["dr-2027-cap2-22"],
+      review: reviewedDrChapter2,
+    },
   ],
 
   concepts: [
@@ -68,9 +348,10 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c1-1",
           text: "Documento oficial regulado por la Ley 38/2015 que expone las características de la infraestructura puesta a disposición de las empresas ferroviarias e informa sobre la capacidad y condiciones técnicas de cada tramo de la red y las condiciones de acceso a la misma.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-c1", "lsf-38-2015-art32"]
-        }
-      ]
+          legalBasis: ["dr-adif-2027-c1", "lsf-38-2015-art32"],
+          review: pendingDrEdition,
+        },
+      ],
     },
     {
       id: "dr-concept-2",
@@ -80,9 +361,10 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c2-1",
           text: "Integrada por las líneas, estaciones y terminales esenciales para el transporte ferroviario, recogidas oficialmente en el Catálogo de la RFIG.",
           kind: "normative",
-          legalBasis: ["lsf-38-2015-art4"]
-        }
-      ]
+          legalBasis: ["lsf-38-2015-art4"],
+          review: reviewedDrPrimary,
+        },
+      ],
     },
     {
       id: "dr-concept-3",
@@ -92,9 +374,10 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c3-1",
           text: "El Ministerio de Transportes y Movilidad Sostenible es responsable de proponer y ejecutar la política del ferrocarril y establece directrices específicas para el desarrollo de la política ferroviaria a través de sus planes estratégicos.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-agentes"]
-        }
-      ]
+          legalBasis: ["dr-adif-2027-agentes"],
+          review: pendingDrEdition,
+        },
+      ],
     },
     {
       id: "dr-concept-4",
@@ -104,9 +387,10 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c4-1",
           text: "La Comisión Nacional de los Mercados y la Competencia (CNMC) supervisa y controla el correcto funcionamiento del sector ferroviario y la competencia en los mercados de servicios.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-agentes"]
-        }
-      ]
+          legalBasis: ["dr-adif-2027-agentes"],
+          review: pendingDrEdition,
+        },
+      ],
     },
     {
       id: "dr-concept-5",
@@ -116,9 +400,10 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c5-1",
           text: "Autoridad responsable de la seguridad en la RFIG. Emite licencias y certificados de seguridad y expide habilitaciones del personal ferroviario.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-c1"]
-        }
-      ]
+          legalBasis: ["dr-adif-2027-c1"],
+          review: pendingDrEdition,
+        },
+      ],
     },
     {
       id: "dr-concept-6",
@@ -128,16 +413,994 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-c6-1",
           text: "La longitud en explotación suma unos 11.675,9 km, predominando el ancho ibérico convencional (1.668 mm) con 10.212,5 km.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-c2"]
+          legalBasis: ["dr-adif-2027-c2"],
+          review: pendingDrEdition,
         },
         {
           id: "dr-c6-2",
           text: "El ancho métrico representa unos 1.195,3 km del total, mientras que las líneas de ancho mixto (con tercer carril instalado) cubren 126,8 km.",
           kind: "normative",
-          legalBasis: ["dr-adif-2027-c2"]
-        }
-      ]
-    }
+          legalBasis: ["dr-adif-2027-c2"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-7",
+      title: "Características de la Infraestructura (Capítulo II)",
+      claims: [
+        {
+          id: "dr-c7-1",
+          text: "El capítulo II de la DR describe las características físicas y técnicas de la infraestructura puesta a disposición: líneas, estaciones, terminales, señalización, electrificación y sistemas de control de tráfico.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-infra"],
+          review: pendingDrEdition,
+        },
+        {
+          id: "dr-c7-2",
+          text: "La longitud, el ancho de vía, la electrificación y la velocidad máxima de cada tramo son datos básicos que la DR publica para facilitar la planificación de las empresas ferroviarias.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-infra"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-8",
+      title: "Capacidad de la Infraestructura",
+      claims: [
+        {
+          id: "dr-c8-1",
+          text: "La capacidad se expresa en surcos ofertados por tramo y periodo, considerando las restricciones de mantenimiento y las ventanas de capacidad.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-capacidad"],
+          review: pendingDrEdition,
+        },
+        {
+          id: "dr-c8-2",
+          text: "Las empresas ferroviarias solicitan surcos conforme al procedimiento publicado en la DR, que fija los plazos y la prioridad de asignación.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-capacidad"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-9",
+      title: "Electrificación de la Red",
+      claims: [
+        {
+          id: "dr-c9-1",
+          text: "La red electrificada utiliza tensiones de 25 kV en corriente alterna, 3 kV en corriente continua y 1.5 kV en corriente continua según tramos.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-electr"],
+          review: pendingDrEdition,
+        },
+        {
+          id: "dr-c9-2",
+          text: "El conocimiento de la tensión de electrificación de cada tramo es esencial para la compatibilidad del material rodante con la infraestructura.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-electr"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-10",
+      title: "Señalización y Control de Tráfico",
+      claims: [
+        {
+          id: "dr-c10-1",
+          text: "Los sistemas de señalización incluyen ERTMS/ETCS, ASFA digital y sistemas de bloqueo automático, con niveles de protección crecientes.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-senal"],
+          review: pendingDrEdition,
+        },
+        {
+          id: "dr-c10-2",
+          text: "El ERTMS/ETCS es el sistema europeo de gestión del tráfico ferroviario que garantiza la interoperabilidad transfronteriza y la seguridad mediante el control continuo de la velocidad.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-senal"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-11",
+      title: "Cánones de Acceso",
+      claims: [
+        {
+          id: "dr-c11-1",
+          text: "Los cánones de acceso a la infraestructura se fijan conforme a la normativa europea y nacional, incluyendo canon de reserva de capacidad y canon de utilización.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-cap2-canon"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-12",
+      title: "Ediciones y Versiones de la DR",
+      claims: [
+        {
+          id: "dr-c12-1",
+          text: "La DR puede ser actualizada por el administrador de infraestructuras cuando sus contenidos lo requieran, y entra en vigor tras su publicación.",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-c1"],
+          review: pendingDrEdition,
+        },
+        {
+          id: "dr-c12-2",
+          text: "La convocatoria PNI26/01 enlaza la edición V.0 (ED 27/02/2026); la ficha general de ADIF lista la edición 31/07/2026 como vigente, por lo que conviene contrastar diferencias de capacidad y cánones entre ambas.",
+          kind: "didactic",
+          legalBasis: ["dr-adif-2027-edicion"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-13",
+      title: "Elementos de la infraestructura ferroviaria (2.1)",
+      claims: [
+        {
+          id: "dr-c13-1",
+          text: "La infraestructura ferroviaria, conforme al artículo 3 de la Ley del Sector Ferroviario y su anexo IV, se compone, entre otros elementos, de: a) terrenos sobre los que se asientan las vías; b) obras de explotación y plataformas de la vía (terraplenes, trincheras, drenajes, andenes, muros de cierre, paranieves); c) obras civiles (puentes, túneles, trincheras cubiertas, muros de sostenimiento, protecciones contra avalanchas y desprendimientos); d) pasos a nivel con sus instalaciones de seguridad; y e) superestructuras (carriles, carriles de garganta y contracarriles, traviesas y longrinas, balasto, aparatos de vía, placas giratorias y carros transbordadores).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-21", "lsf-38-2015-art3"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c13-2",
+          text: "Completan la infraestructura: f) calzadas de los patios de viajeros y mercancías con sus accesos; g) instalaciones de seguridad, señalización y telecomunicaciones de vía y estación, incluidas las de producción, transformación y distribución de corriente para señalización y telecomunicaciones, y los frenos de vía; h) instalaciones de alumbrado destinadas a asegurar la circulación; i) instalaciones de transformación y conducción de corriente eléctrica para la tracción (subestaciones, líneas de suministro, catenarias y soportes, tercer carril); j) edificios utilizados por el servicio de infraestructuras; y k) cambiadores de ancho.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-21", "lsf-38-2015-art3"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c13-3",
+          text: "La composición anterior se refiere a los elementos que formen parte de las vías principales y de las de servicio, con excepción de las vías situadas dentro de los talleres de reparación de material rodante, de los depósitos o garajes de máquinas de tracción y de los ramales de desviación para particulares.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-21", "lsf-38-2015-art3"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-14",
+      title: "Ámbito de la Red: competencias y Catálogo RFIG (2.2)",
+      claims: [
+        {
+          id: "dr-c14-1",
+          text: "La administración de las infraestructuras ferroviarias y su construcción corresponde, dentro del ámbito estatal, a entidades públicas empresariales adscritas al Ministerio de Transportes y Movilidad Sostenible, con personalidad jurídica propia, plena capacidad de obrar y patrimonio propio, que se rigen por la Ley del Sector Ferroviario, sus estatutos y la legislación presupuestaria.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-22", "lsf-38-2015-art3"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c14-2",
+          text: "De conformidad con lo dispuesto en el Real Decreto-Ley 15/2013, de 13 de diciembre, y en la disposición adicional primera de la LSF, Adif-Alta Velocidad ha encomendado a Adif, entre otras, la gestión de la capacidad de la infraestructura, de los sistemas de control, de circulación y de seguridad.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c14-3",
+          text: "Todos los elementos de la RFIG se incluyen en el Catálogo de la RFIG, que relaciona líneas y tramos con código oficial, origen, destino y características técnicas, junto con estaciones de viajeros y terminales de mercancías; en la DR 2027 este catálogo se publica como Anexo F, conforme a la Orden FOM 710/2015, de 30 de enero, y el artículo 4 de la Ley 38/2015.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-22", "lsf-38-2015-art4"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c14-4",
+          text: "Las normas específicas de asignación de capacidades aplicables en cada línea se detallan en el Manual de Capacidades, remitido por la Subdirección de Servicios de Circulación a las empresas ferroviarias y candidatos; un resumen por líneas se publica en el Anexo G de la DR.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-15",
+      title: "Anchos de vía y tercer carril (2.2 y 2.3.2)",
+      claims: [
+        {
+          id: "dr-c15-1",
+          text: "La Red gestionada por Adif está compuesta principalmente por líneas de tráfico mixto (mercancías y viajeros) y consta de líneas de tres anchos de vía: ancho Ibérico (separación entre carriles de 1.668 mm), ancho Estándar (1.435 mm) y ancho Métrico (1.000 mm).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c15-2",
+          text: "Algunas secciones de líneas cuentan con tercer carril: tramos dotados de doble ancho (Ibérico y Estándar) que permiten la circulación de trenes por los dos anchos con un único sistema de bloqueo. Las principales líneas de la Red cuentan con doble vía.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c15-3",
+          text: "Los tipos de vía existentes en la Red se representan en el Anexo F (Catálogo de Ejes y Líneas de la RFIG) y en los mapas anexos a la DR (apartado 2.3.2).",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-16",
+      title: "Interoperabilidad y ERTMS en la Red (2.2)",
+      claims: [
+        {
+          id: "dr-c16-1",
+          text: "La integración del transporte ferroviario europeo exige compatibilidad técnica de la infraestructura, del material rodante y de la señalización, además de compatibilidad de procedimientos operacionales y legales, con el objetivo de la interoperabilidad del sistema ferroviario.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c16-2",
+          text: "En España existen actualmente 3.121,1 km de líneas que operan con ERTMS, de las cuales 384,5 km corresponden a infraestructuras titularidad de Adif.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-22"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-17",
+      title: "Límites geográficos y conexiones fronterizas (2.2.1 y 2.2.2)",
+      claims: [
+        {
+          id: "dr-c17-1",
+          text: "Los límites geográficos de la Red se consultan en los mapas, documento anexo a la DR, y en el catálogo de Ejes y Líneas de la RFIG del Anexo F (apartado 2.2.1).",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-222"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c17-2",
+          text: "La Red de Adif está conectada con Portugal (Infraestructuras de Portugal, IP) por ancho ibérico en Tuy/Valença do Miño y Fuentes de Oñoro/Vilar Formoso, y con Francia (SNCF Réseau) en Irún/Hendaya, Portbou/Cerbère y Puigcerdà/La Tour de Carol; el tránsito a la red francesa por estos accesos requiere el cambio a ancho estándar de los trenes.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-222"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c17-3",
+          text: "La red de ancho métrico de Adif está conectada con la red del gestor de infraestructuras de Euskadi (Euskal Trenbide Sarea) en Basurto Hospital e Irauregui; la red de ancho ibérico de Adif está conectada con la red métrica de Euskadi en Lutxana-Barakaldo, y con la red de la Junta de Andalucía (Tren de la Bahía de Cádiz) en la bifurcación Rio Arillo (Cádiz).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-222"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c17-4",
+          text: "Según la disposición adicional decimoséptima de la Ley del Sector Ferroviario se consideran secciones fronterizas las infraestructuras de la RFIG situadas en las fronteras con Francia y Portugal; reglamentariamente pueden establecerse excepciones sobre personal ferroviario, material rodante, circulación o certificados de seguridad para facilitar el tráfico transfronterizo.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-222", "lsf-38-2015-art3"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c17-5",
+          text: "Las condiciones operativas de las secciones transfronterizas incluyen el ancho y la electrificación de cada lado: Irún–Hendaya y Portbou–Cerbère (1.668/1.435 mm; 3 kV CC / 1,5 kV CC), Puigcerdà–La Tour de Carol (1.668 mm; 3 kV CC), Tuy–Valença (1.668 mm; sin electrificación) y Fuentes de Oñoro–Vilar Formoso (1.668 mm; sin electrificación / 25 kV CA).",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-222"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c17-6",
+          text: "Existen convenios de coordinación transfronteriza con SNCF Réseau (publicado por Resolución de 14 de enero de 2020, BOE nº 213 de 7 de agosto de 2020) y con Infraestructuras de Portugal (publicado por Resolución de 29 de junio de 2021, BOE nº 172 de 20 de julio de 2021), junto con acuerdos de seguridad operacional entre las autoridades nacionales de seguridad de España, Francia y Portugal.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-222"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-18",
+      title: "Puertos con conexión a la RFIG (2.2.2)",
+      claims: [
+        {
+          id: "dr-c18-1",
+          text: "La DR identifica los puertos con conexión a la RFIG y su punto de conexión física, entre ellos Santander, Bilbao, Pasaia, Tarragona, Huelva, Málaga, Sevilla, Bahía de Algeciras, Castelló, Valencia, Cartagena, Alicante, Gijón (ancho ibérico y métrico), Avilés (ancho ibérico y métrico), Vilagarcía de Arousa, A Coruña, Ferrol, Marín y Vigo, cada uno con su consigna reguladora.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-222"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-19",
+      title: "Información de Circulación de las Líneas (ICL) (2.3)",
+      claims: [
+        {
+          id: "dr-c19-1",
+          text: "Las empresas ferroviarias con licencia y certificado de seguridad pueden solicitar acceso a la aplicación RGD (Registro General de Documentos Reglamentarios), gestionada por la Dirección de Seguridad en la Circulación, a través de la cual acceden a la Información de Circulación de las Líneas (ICL).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-23"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c19-2",
+          text: "La ICL incluye, entre otra información: sistemas de comunicación con los centros de control y teléfonos GSM-R, detectores de ejes calientes, carga máxima por eje y por metro en las líneas y tramos de la RFIG, básculas dinámicas, rampas características, restricciones en túneles y en puentes/viaductos, pasos a nivel, y detalle de túneles con puntos de salida y zonas seguras de evacuación.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-23"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c19-3",
+          text: "En materia de energía, la ICL recoge los sistemas de alimentación eléctrica (tensión y frecuencia), las zonas neutras sin alimentación, las restricciones relacionadas con el consumo y las condiciones respecto al freno de recuperación, si existen.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-23"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c19-4",
+          text: "La ICL anual se publica durante el mes de diciembre para su aplicación a partir del 1 de enero del año siguiente, como documento único para toda la RFIG en formato PDF distribuido por RGD; la ICL mensual se publica el día laborable más próximo al 20 de cada mes.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-23"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-20",
+      title: "Tipología de vías, estaciones y terminales (2.3.1–2.3.3)",
+      claims: [
+        {
+          id: "dr-c20-1",
+          text: "La Red titularidad de Adif se compone de cuatro tipos de vía: vía única no electrificada, vía única electrificada, vía doble no electrificada y vía doble electrificada.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-23"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c20-2",
+          text: "Las estaciones de viajeros y terminales de transporte de mercancías se describen en el capítulo 7 de la DR (Fichas Descriptivas de las Instalaciones de Servicio, disponibles en la aplicación PISERVI) y en los mapas anexos (apartado 2.3.3).",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-23"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-21",
+      title: "Gálibos (2.3.4)",
+      claims: [
+        {
+          id: "dr-c21-1",
+          text: "La Instrucción Ferroviaria de Gálibos fue aprobada por la Orden FOM/1630/2015, de 14 de julio (publicada en el BOE nº 185 de 4 de agosto de 2015) y modificada por la Orden TMA/135/2023, de 15 de febrero. Define los gálibos para la construcción de vehículos (gálibo del material rodante) y para la colocación de elementos próximos a la vía (gálibo de implantación de obstáculos).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-234"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c21-2",
+          text: "Gálibo: contorno de referencia, más unas reglas asociadas, que permite definir el perfil constructivo máximo del material rodante, el perfil del cargamento y el perfil fuera del cual deben instalarse las estructuras fijas o provisionales.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-234"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c21-3",
+          text: "Gálibo del material rodante: contorno de referencia cinemático más las reglas que definen las reducciones a aplicar (características geométricas del material, posición de la sección respecto a los ejes, altura sobre el plano de rodadura, holguras de construcción, desgastes máximos y características elásticas de la suspensión). El contorno resultante define el espacio que no debe superar el perfil constructivo del material rodante.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-234"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c21-4",
+          text: "Gálibo de implantación de obstáculos: espacio en torno a la vía que no debe ser invadido por ningún objeto u obstáculo, ni por vehículos que circulen por vías adyacentes, para preservar la seguridad en la explotación.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-234"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c21-5",
+          text: "Gálibo de cargamento: contorno de referencia estático más las reglas de reducción aplicables; el contorno resultante define el espacio que no debe superar ni el cargamento ni los teleros o paredes laterales de los vagones utilizados para la carga.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-234"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c21-6",
+          text: "La Instrucción de Gálibos está redactada en coherencia con la norma EN 15273:2013 y respeta las ETI de los subsistemas de infraestructura, material rodante y energía de los sistemas transeuropeos de alta velocidad y convencional. Para el gálibo de autopista ferroviaria se aplica la NAG 5-1-0.0 \"Gálibos Autopista Ferroviaria\".",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-234"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-22",
+      title: "Límite de carga: masa por eje y por metro lineal (2.3.5)",
+      claims: [
+        {
+          id: "dr-c22-1",
+          text: "Las líneas y tramos de la RFIG de ancho ibérico se clasifican en nueve categorías según la carga admitida por eje y por metro lineal: A (16,0 t por eje / 5,0 t por metro), B1 (18,0/5,0), B2 (18,0/6,4), C2 (20,0/6,4), C3 (20,0/7,2), C4 (20,0/8,0), D2 (22,5/6,4), D3 (22,5/7,2) y D4 (22,5/8,0).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-235"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c22-2",
+          text: "En la actualidad la mayoría de las líneas de la Red titularidad de Adif son de Categoría D4, aunque pueden existir restricciones puntuales que afecten a determinados puntos y líneas.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-235"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c22-3",
+          text: "En las líneas de ancho métrico la carga máxima por eje es de 15,0 t y por metro lineal de 8,0 t.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-235"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c22-4",
+          text: "La carga máxima remolcable la indica la empresa ferroviaria para cada locomotora aplicando la ETI de Explotación y Gestión del Tráfico, y se determina considerando la rampa característica más desfavorable del recorrido y la carga máxima de la locomotora en función de esa rampa.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-235"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c22-5",
+          text: "La carga máxima representa la carga que técnicamente puede arrastrar una locomotora en condiciones extremas de explotación; su aplicación puede dar velocidades bajas (especialmente con locomotoras diésel) incompatibles con la explotación, por lo que el administrador de infraestructuras puede poner condicionantes o rechazar solicitudes de capacidad que den lugar a velocidades inadecuadas.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-235"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-23",
+      title: "Rampas características y velocidades máximas (2.3.6 y 2.3.7)",
+      claims: [
+        {
+          id: "dr-c23-1",
+          text: "Las rampas características de los tramos más importantes de la Red se representan en los mapas anexos a la DR, en ambos sentidos de circulación.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-237"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c23-2",
+          text: "A efectos de velocidades máximas, el material rodante se clasifica por Tipos según la velocidad máxima autorizada de cada vehículo y la aceleración sin compensar admitida, en cinco clases: Tipo N (0,65 m/s²), Tipo A (1 m/s²), Tipo B (1,2 m/s²), Tipo C (1,5 m/s²) y Tipo D (1,8 m/s²).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-237"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c23-3",
+          text: "El Tipo del tren resultante corresponde al Tipo más desfavorable de cualquiera de los vehículos que componen el tren.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-237"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c23-4",
+          text: "El \"Cuadro de Velocidades Máximas e Informaciones Permanentes\" es el documento oficial que recoge las velocidades máximas autorizadas en cada línea. Las principales líneas de la Red Convencional de ancho ibérico admiten en general velocidades entre 160 y 220 km/h, y las líneas de ancho métrico entre 50 y 100 km/h.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-237"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-24",
+      title: "Longitud máxima de los trenes (2.3.8)",
+      claims: [
+        {
+          id: "dr-c24-1",
+          text: "La longitud de las vías de las estaciones y otros condicionantes de explotación sirven de base para determinar la longitud máxima de los trenes en las distintas líneas; los mapas anexos diferencian esta longitud para tráficos de viajeros y de mercancías.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-238"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c24-2",
+          text: "En la actualidad la infraestructura gestionada por Adif permite la circulación de trenes de hasta 750 m en el trayecto Madrid–Valencia y Bifurcación Teruel–Sagunto.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-238"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c24-3",
+          text: "Para circular con una longitud superior a la máxima permitida (longitud especial) se requiere autorización expresa: de la Dirección Adjunta de Gestión de Capacidad de la Dirección General de Operaciones y Explotación para trenes Regulares u Ocasionales, y de la Dirección de Tráfico (H24) para los trenes inmediatos.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-238"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c24-4",
+          text: "En el marco del Plan de Impulso y Dinamización del Transporte de Mercancías por Ferrocarril, el administrador de infraestructuras promueve medidas de gestión que posibiliten la demanda de aumento de longitudes de trenes de las empresas ferroviarias.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-238"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-25",
+      title: "Suministro de energía eléctrica y pantógrafos (2.3.9)",
+      claims: [
+        {
+          id: "dr-c25-1",
+          text: "La Red titularidad de Adif cuenta con 6.761,6 km de líneas electrificadas, en los diferentes anchos de vía, empleándose dos tipos de tensión: corriente continua y corriente alterna.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-239"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c25-2",
+          text: "En corriente continua se utiliza en general una tensión nominal de 3.000 V en la Red Convencional y 1.500 V en la Red de Ancho Métrico; en corriente alterna la catenaria suministra 25.000 V a 50 Hz, circunscrito normalmente a las líneas de la Red de Alta Velocidad.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-239"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c25-3",
+          text: "La potencia eléctrica está limitada a la disponible en función de la potencia suministrada por la red de subestaciones; los tramos electrificados y su tipo de electrificación se incluyen en los mapas anexos.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-239"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c25-4",
+          text: "La red electrificada a 3 kV CC es compatible con pantógrafos de frotadores de cobre o aleación de cobre y de carbono impregnado en cobre o aleación de cobre; desde el 1 de enero de 2025 pueden aplicarse restricciones al frotador de cobre en algunas líneas de Cercanías/Rodalíes y, a partir del 1 de enero de 2028, en cualquier punto de la red solo se admitirán frotadores de carbono impregnado en cobre o aleación de cobre (hasta un máximo del 40 % en peso de aditivo metálico).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-239"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c25-5",
+          text: "La red de ancho métrico electrificada a 1,5 kV CC únicamente es compatible con pantógrafos de frotadores de carbono impregnado en cobre o aleación de cobre (máximo del 40 % en peso de aditivo metálico), y la red electrificada a 25 kV CA únicamente es compatible con pantógrafos de frotadores de carbono puro.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-239"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-26",
+      title: "Instalaciones de seguridad y enclavamientos (2.3.10)",
+      claims: [
+        {
+          id: "dr-c26-1",
+          text: "Se entiende por instalación de seguridad los componentes, equipos y sistemas, homologados, instalados en tierra y a bordo de los vehículos con el fin de aumentar el nivel de seguridad de la circulación. Incluyen: señales ferroviarias, enclavamientos, bloqueos, sistemas de protección de trenes (ERTMS, LZB, ASFA, etc.), dispositivos embarcados de vigilancia (hombre muerto), información de velocidad y detección de sobretemperatura en órganos de rodadura y freno, sistemas auxiliares de detección en vía (cajas calientes, frenos agarrotados, caída de objetos, impacto en vía, viento lateral) y sistemas de protección de pasos a nivel.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c26-2",
+          text: "La Red cuenta con sistemas de señalización y bloqueo de diversas tecnologías, siendo la tendencia el uso de enclavamientos electrónicos (ENCE) con Control de Tráfico Centralizado (CTC) en los Puestos de Mando.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c26-3",
+          text: "El enclavamiento es un conjunto de elementos físicos y lógicos que, en el ámbito geográfico de una estación o dependencia de circulación, efectúa automáticamente las órdenes, supervisión y comprobaciones de las maniobras, inmovilizaciones, liberaciones y demás acciones imprescindibles para el correcto funcionamiento de los elementos de señalización bajo su control, en cumplimiento del Programa de Explotación correspondiente.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c26-4",
+          text: "La operación sobre el enclavamiento puede realizarse de forma local (puesto de operador en un Gabinete de Circulación) o de forma remota desde los sistemas de Control de Tráfico Centralizado (CTC).",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c26-5",
+          text: "Según la tecnología empleada, los enclavamientos se clasifican en: electrónicos (ENCE), basados en microprocesadores; eléctricos, con lógica de relés (módulos geográficos, cableado libre, etc.); y mecánicos, cuyas autorizaciones se basan en la relación de llaves y levas, con transmisión generalmente mecánica de la posición de agujas y señales.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-27",
+      title: "Detección del tren y bloqueos (2.3.10)",
+      claims: [
+        {
+          id: "dr-c27-1",
+          text: "El circuito de vía (CdV) detecta la ocupación por un vehículo ferroviario de una sección de vía e informa al enclavamiento de su ocupación y liberación de modo seguro; su configuración física se define en el Programa de Explotación de cada enclavamiento.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c27-2",
+          text: "El contador de ejes (CE) localiza al tren en una sección de vía contabilizando el paso de ejes en los extremos de la sección, dando al enclavamiento información segura de ocupación/liberación; su configuración física se define igualmente en el Programa de Explotación.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c27-3",
+          text: "Los bloqueos existentes en la Red son: Bloqueo de Control Automático (BCA), con regulación de velocidad y señalización en cabina; Bloqueo de Señalización Lateral (BSL), específico de líneas de alta velocidad; Bloqueo de Liberación Automática (BLA), generalmente con un solo cantón entre estaciones protegido por señales y contadores de ejes; Bloqueo Automático (BA), con cantones intermedios protegidos por señales, en variantes BAU (vía única), BAD (vía doble) y BAB (banalizado); Bloqueo Eléctrico Manual (BEM), que relaciona eléctricamente las señales de salida de dos estaciones colaterales; y Bloqueo Telefónico (BT), basado en la transmisión de telefonemas entre Responsables de Circulación.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2310"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-28",
+      title: "Control y gestión del tráfico (2.3.11)",
+      claims: [
+        {
+          id: "dr-c28-1",
+          text: "Da Vinci es la plataforma de gestión y control que integra y centraliza subsistemas de señalización, electrificación y comunicaciones, permitiendo su comunicación y monitorización remotas.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2311"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c28-2",
+          text: "El CRC/PM (Centro de Regulación de Circulación/Puesto de Mando) es el centro de Adif encargado de la gestión y regulación del tráfico en tiempo real; el CTC (Control de Tráfico Centralizado) centraliza en un puesto central de mando los enclavamientos y bloqueos de una línea o zona.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2311"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c28-3",
+          text: "El PRO (Puesto Regional de Operaciones) permite controlar la circulación de una zona de la línea y se considera el segundo nivel de control tras el CTC, con la misma funcionalidad limitada a su zona de actuación; el PLO (Puesto Local de Operaciones) ejerce el mando local de un enclavamiento (que puede incluir una o más estaciones) y constituye el tercer escalón de control tras el PRO.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2311"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-29",
+      title: "Sistemas de comunicación (2.3.12)",
+      claims: [
+        {
+          id: "dr-c29-1",
+          text: "La circulación por determinadas líneas puede exigir que los vehículos motores estén equipados con sistemas de comunicación concretos, lo cual se indica en el Manual de Capacidades.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2312"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c29-2",
+          text: "La radiotelefonía es el medio de comunicación entre el personal de los vehículos, de las estaciones, del Puesto de Mando y de plena vía; incluye los sistemas Tren-Tierra y GSM-R y aquellos otros que la AESF determine expresamente.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2312"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c29-3",
+          text: "GSM-R (voz y datos) es un desarrollo de la tecnología GSM específico para comunicación y aplicaciones ferroviarias, con bandas de frecuencias exclusivas para evitar interferencias; como subsistema del ERTMS permite la interoperabilidad ferroviaria europea y las líneas de Alta Velocidad ya disponen de él.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2312"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c29-4",
+          text: "Tren-Tierra es el sistema de radiotelefonía analógico que permite la comunicación individual entre los trenes y el Puesto de Mando; está instalado en la mayoría de las principales líneas, con migración prevista hacia GSM-R en la totalidad de la Red, y es preceptivo para la circulación de trenes en régimen de agente único.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2312"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c29-5",
+          text: "La AESF aprobó la Especificación técnica de circulación del sistema de radiotelefonía analógica Tren-Tierra (ETC TT) por Resolución 5/2021 y la del Equipo Móvil de Radio (ETC EMR) por Resolución 5/2022, de junio de 2022; la ETC EMR define los requisitos funcionales y técnicos de los equipos embarcados y de tierra y complementa la regulación de los equipos embarcados del Libro Quinto del RCF para la red de ancho 1.000 mm.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2312"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-30",
+      title: "Sistemas de control y protección del tren (2.3.13)",
+      claims: [
+        {
+          id: "dr-c30-1",
+          text: "El ERTMS es un sistema de protección automática del tren que supervisa continuamente la velocidad y gobierna la marcha mediante señalización en cabina, cumpliendo las ETI; actualmente en servicio la versión 2.3.0d, combina el ETCS (sistema europeo de control del tráfico, centrado en señalización y protección) y el GSM-R (comunicaciones).",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2313"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c30-2",
+          text: "El LZB es un sistema de protección que supervisa continuamente la velocidad del tren y gobierna su marcha por señalización en cabina; el maquinista debe cumplir siempre la orden de las señales fijas y realizar en cabina las operaciones correspondientes.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2313"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c30-3",
+          text: "El ASFA (Anuncio de Señales y Frenado Automático) supervisa la velocidad del tren a partir de la información puntual de las señales fijas recibida por balizas, y realiza funciones de: a) información de señales en cabina; b) supervisión de curvas de velocidad de control al aproximarse a una señal; y c) parada automática del vehículo en determinadas situaciones (rebase de señal en parada o ausencia de reconocimientos del maquinista). Está instalado en todas las líneas principales de la RFIG titularidad de Adif.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2313"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c30-4",
+          text: "La Recomendación Técnica 3/2024 de la AESF fija el calendario de actualización del sistema ASFA (\"apagón\" de versiones previas) hacia la versión final de referencia ASFA v4C: en la Red de ancho métrico, versiones anteriores a ASFA v4 hasta el 30 de junio de 2025 y anteriores a v4C hasta el 30 de junio de 2027; en red convencional y alta velocidad, anteriores a v4 hasta el 30 de junio de 2029 y anteriores a v4C hasta el 31 de diciembre de 2029.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2313"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c30-5",
+          text: "ASFA v4C equivale a ASFA v4 más las fichas 188, 189R1, 191R3, 192, 193, 194R1, 195, 197, 199 y 201.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-2313"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-31",
+      title: "Autopistas ferroviarias (2.3.14)",
+      claims: [
+        {
+          id: "dr-c31-1",
+          text: "Adif se alinea con la \"Estrategia de Movilidad Segura, Sostenible y Conectada\" del Ministerio de Transportes y Movilidad Sostenible, en concreto su Eje 6 (Cadenas Logísticas Intermodales e Inteligentes), que propone el incremento efectivo del transporte ferroviario de mercancías y el impulso a los servicios de Autopista Ferroviaria.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-2314"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c31-2",
+          text: "Los corredores actualmente disponibles para circular con semirremolques de hasta 4,00 metros de altura máxima son: Madrid–Valencia (ancho 1.668 mm), Huelva–Sevilla–Córdoba (ancho 1.668 mm) y Madrid/Valencia–Alcázar de San Juan–Manzanares–Puertollano–Mérida–Badajoz–Badajoz Frontera.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2314"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c31-3",
+          text: "Adif está acondicionando el corredor Zaragoza–Madrid–Algeciras (1.668 mm) para permitir la circulación con trenes de gálibo AF4.2, con semirremolques de hasta 4,20 metros de altura máxima.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2314"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c31-4",
+          text: "Las empresas ferroviarias interesadas en iniciar servicios de Autopista Ferroviaria deben solicitar una Autorización de Transporte Excepcional (ATE) conforme al procedimiento SGSC ADIF-PG-107-003-005-SC-515, disponible en el RGD, para descartar interferencias con la infraestructura y obtener la acreditación para circular.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2314"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-32",
+      title: "Protección y seguridad (2.3.15)",
+      claims: [
+        {
+          id: "dr-c32-1",
+          text: "El departamento de Protección y Seguridad de Adif tiene por misión dirigir, coordinar y organizar las actuaciones de los recursos humanos y técnicos para preservar el patrimonio de la empresa, la seguridad de las personas y de las mercancías, y dirigir la política de protección civil y controlar su cumplimiento.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-2315"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c32-2",
+          text: "La gestión de la seguridad y protección se desarrolla desde los Centros de Protección y Seguridad (CPS), distribuidos territorialmente, que atienden y gestionan de forma inmediata las alertas y alarmas de su ámbito, activan los recursos necesarios y gestionan la información; los CPS territoriales están coordinados por el Centro de Autoprotección y Seguridad (CASH24), integrado en el Centro de Gestión de Red H24.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2315"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c32-3",
+          text: "La RFIG dispone de Planes de Autoprotección de las infraestructuras determinadas en el anexo I de la Norma Básica de Autoprotección (Real Decreto 393/2007, de 23 de marzo), con mantenimiento periódico de su eficacia mediante inspecciones, simulacros, revisiones documentales y auditorías; estos planes están registrados en las Comunidades Autónomas con competencias transferidas de protección civil.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2315"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c32-4",
+          text: "Las infraestructuras sujetas a Plan de Autoprotección son los túneles ferroviarios de longitud igual o superior a 1.000 metros y las áreas de estacionamiento para el transporte de mercancías peligrosas por carretera y ferrocarril. El administrador dispone además de un Plan Director de Actuaciones ante emergencias (PDAE) con los criterios generales de actuación.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-2315"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-33",
+      title: "Infraestructuras especializadas (2.4.1)",
+      claims: [
+        {
+          id: "dr-c33-1",
+          text: "En la Red titularidad de Adif no existen actualmente líneas declaradas como especializadas para la prestación de determinados tipos de servicio.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-241"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c33-2",
+          text: "Si existen líneas alternativas adecuadas, el administrador de infraestructuras, tras consultar con las partes interesadas, podrá declarar especializada una infraestructura para determinado tipo de servicios; la especialización no impedirá su uso para otros servicios si existe capacidad y el material rodante reúne las características técnicas necesarias, y las infraestructuras especializadas se incluirán en la declaración sobre la red.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-241"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c33-3",
+          text: "Existen no obstante ciertas líneas con mayor dedicación al tráfico de viajeros en las que la circulación puede estar restringida para algún tipo de tráfico, o la restricción solo tiene efectos en la asignación prioritaria de capacidad, en la exigencia de tiempos máximos de tramo o en la regulación de la circulación de trenes.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-241"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-34",
+      title: "Normativa medioambiental (2.4.2)",
+      claims: [
+        {
+          id: "dr-c34-1",
+          text: "El administrador de infraestructuras y las empresas ferroviarias deben cumplir el Real Decreto-ley 15/2022, de 1 de agosto, de medidas urgentes en materia de incendios forestales. Las medidas preventivas de Adif se articulan en el Plan de Prevención de Incendios en la Vía y en sus Proximidades en todo el territorio nacional, revisado y actualizado anualmente.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-242"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c34-2",
+          text: "El Centro de Gestión de Red H24 coordina a las empresas ferroviarias y a las áreas de mantenimiento y gestión de tráfico para reducir la posibilidad de incendios; en caso de riesgo meteorológico extremo (altas temperaturas y baja humedad del aire) puede restringirse la circulación de ciertos transportes y trenes en determinados recorridos.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-242"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c34-3",
+          text: "En caso de accidente o incidente con riesgo de afección al suelo o a las aguas por vertido de sustancias contaminantes, Adif como titular de los terrenos debe comunicarlo a las Administraciones Públicas competentes, actuar conforme a sus requerimientos y a la legislación de suelos contaminados, pudiendo restringir el tráfico; las empresas ferroviarias deben colaborar según les corresponda y se aplica un procedimiento de actuación ante emergencias ambientales con un único interlocutor y gestor.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-242"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c34-4",
+          text: "En contaminación acústica, la legislación básica estatal emana de la Directiva 2002/49/CE de Evaluación y Gestión del Ruido Ambiental, incorporada por la Ley 37/2003, de 17 de noviembre, del Ruido, y desarrollada parcialmente por el Real Decreto 1513/2005, de 16 de diciembre, que exigen Mapas Estratégicos de Ruido y Planes de Acción para los grandes ejes ferroviarios (tramos con más de 30.000 circulaciones/año); el Real Decreto 1367/2007 completó el desarrollo con métodos, índices y valores límite.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-242"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c34-5",
+          text: "El Ministerio aprobó en enero de 2022 los \"Mapas estratégicos de ruido de los Grandes Ejes Ferroviarios Fase III\" (BOE nº 64, de 16 de marzo de 2022). La Agencia Ferroviaria de la Unión Europea (EUAR) establece además la ETI de Ruido, con valores límite para unidades estacionadas y su puesta en marcha, ruido de paso y ruido en cabina.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-242"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-35",
+      title: "Transporte de mercancías peligrosas (2.4.3)",
+      claims: [
+        {
+          id: "dr-c35-1",
+          text: "El transporte de mercancías peligrosas en la Red de Adif se realiza conforme a las prescripciones del Reglamento relativo al Transporte Internacional de Mercancías Peligrosas por Ferrocarril (RID) vigente y del Real Decreto 412/2001, de 20 de abril, cuyo artículo cuarto recoge las normas generales de circulación.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-243"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c35-2",
+          text: "Las principales restricciones de tráfico para mercancías peligrosas son: los trenes deben utilizar necesariamente, cuando existan, las líneas que circunvalen las poblaciones (salvo operaciones de carga y descarga en ellas); no pueden planificarse en general estacionamientos en estaciones de núcleos habitados; y no pueden programarse en general paradas en túneles de más de 100 metros de longitud.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-243"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c35-3",
+          text: "En caso de anomalía, el administrador puede adoptar medidas de circulación o estacionamiento. Si existe algún tramo con restricciones específicas para mercancías peligrosas, se publica en la Información de Circulación de las Líneas (ICL); las Fichas Descriptivas de las Instalaciones de Servicio (PISERVI) indican si la instalación permite almacenamiento, estacionamiento o manipulación de mercancías peligrosas.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-243"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-36",
+      title: "Restricciones en túneles y en puentes/viaductos (2.4.4 y 2.4.5)",
+      claims: [
+        {
+          id: "dr-c36-1",
+          text: "Las restricciones de circulación en túneles pueden venir dadas por varios motivos: mercancías peligrosas; transporte de cajas móviles, cajas amovibles, semirremolques y contenedores; detectores de caída de objetos; y circulación de trenes en túneles de longitud superior a 5 km.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-244"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c36-2",
+          text: "En los túneles con longitud igual o superior a 20.000 metros, las locomotoras que remolquen trenes de mercancías y mercancías peligrosas dispondrán de un equipamiento similar al del material rodante de pasajeros de Categoría B (capacidad de llevar el tren hasta un Punto de Evacuación y Rescate) además de un dispositivo de autorescate para el maquinista y las demás personas a bordo.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-244"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c36-3",
+          text: "Las restricciones aplicables en túneles y en puentes/viaductos se publican en la Información de Circulación de las Líneas (ICL), disponible para las empresas ferroviarias en el RGD; las restricciones en puentes y viaductos normalmente se relacionan con las categorías de las líneas según la masa máxima admisible por eje y por metro lineal (ver 2.3.5).",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-244"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-37",
+      title: "Disponibilidad de la infraestructura (2.5)",
+      claims: [
+        {
+          id: "dr-c37-1",
+          text: "Los periodos efectivos de apertura y cierre de las estaciones pueden consultarse en el denominado Documento de Tren en los casos en que se determine su aplicación.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-25"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c37-2",
+          text: "Aunque la tendencia generalizada es que las principales líneas estén telemandadas mediante CTC, aún existen algunos tramos que no se mantienen abiertos al tráfico durante todo el día y estaciones en servicio intermitente (\"AC\").",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-25"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c37-3",
+          text: "Adif mantiene una labor continua de conservación e inversión en sus líneas (mantenimiento de infraestructuras en servicio y obras de mejora y ampliación); estos trabajos pueden conllevar restricciones inevitables al tráfico, procurando las menores perturbaciones posibles.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-25"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c37-4",
+          text: "Conforme a la Decisión Delegada (UE) 2017/2075 de la Comisión, de 4 de septiembre de 2017, que sustituye el Anexo VII de la Directiva 2012/34/UE, la DR incluye como documento anexo el catálogo de restricciones de capacidad en la RFIG, actualizado periódicamente con la información de las sesiones TOC, que definen y acuerdan la programación de actuaciones y obras en la infraestructura.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-25"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-38",
+      title: "Desarrollo de la infraestructura (2.6)",
+      claims: [
+        {
+          id: "dr-c38-1",
+          text: "El Ministerio de Transportes y Movilidad Sostenible aprobó la Estrategia Indicativa del desarrollo, mantenimiento y renovación de la infraestructura ferroviaria, incluida en el Plan de Recuperación, Transformación y Resiliencia (PRTR) como una reforma, que establece un marco financiero y de prioridades para las necesidades futuras de movilidad, la sostenibilidad del sistema y el espacio ferroviario único europeo.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-26"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c38-2",
+          text: "Como consecuencia de la Estrategia Indicativa, Adif elaboró su Programa de Actividad (documento de referencia 2022–2026), y el conjunto de actuaciones en curso de definición puede consultarse en los estudios de planificación del Ministerio.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-26"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c38-3",
+          text: "El apartado 2.6.1 de la DR relaciona las actuaciones más significativas en ejecución y en redacción de proyecto a la fecha de aprobación de la Declaración, organizadas por corredores y líneas: Corredor Mediterráneo (Castellbisbal–Vilaseca, Valencia Font Sant Lluis–Almussafes, La Encina–Bif. Alicante con tercer carril, accesos a los puertos de Castellón y Sagunto), Corredor Cantábrico Mediterráneo (electrificación a 25 kV CA de Zaragoza–Teruel–Sagunto), corredores de Autopista Ferroviaria, actuaciones en Cantabria y Asturias (BAB, supresión de bloqueo telefónico, soterramiento de Torrelavega), Madrid (Cercanías: esquema 4+4+2 en Atocha, ERTMS N2 en Aranjuez–Villalba), Andalucía (ampliaciones a 750 m, electrificaciones Bobadilla–Algeciras, BAB Herrera de la Mancha–Manzanares), Levante y Cataluña (ERTMS N2 en Rodalíes de Barcelona, supresión de bloqueo telefónico Figueres–Portbou), Galicia y el noroeste (transformación 3 kV CC a 25 kV CA en Ourense–Monforte de Lemos, renovación del eje Ourense–Vigo) y despliegues de GSM-R en numerosos tramos.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-26"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c38-4",
+          text: "Cada actuación del apartado 2.6.1 indica su estado por año (2026 y 2027): obras en curso, expediente de puesta en servicio, en servicio, licitación o redacción de proyecto, lo que permite conocer el calendario previsto de las principales mejoras de la Red.",
+          kind: "didactic",
+          legalBasis: ["dr-2027-cap2-26"],
+          review: reviewedDrChapter2,
+        },
+        {
+          id: "dr-c38-5",
+          text: "El apartado 2.6.2 (Actualización de activos de la RFIG titularidad de Adif) se actualizará una vez finalice el año 2026, y comprenderá las modificaciones en los subsistemas estructurales (infraestructura, control-mando y señalización, y energía): nuevos tramos puestos en servicio, tramos modificados, tramos que pasan a fuera de servicio, tramos excluidos del Catálogo de Líneas de la RFIG (Anexos F y H) por no estar en explotación, y otros.",
+          kind: "normative",
+          legalBasis: ["dr-2027-cap2-26"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
   ],
 
   examples: [
@@ -149,10 +1412,63 @@ export const declaracionRed2027Theory: TheorySection = {
           id: "dr-ex-1-app-1",
           text: "La operadora debe obtener certificado de seguridad previo emitido por la AESF y abonar los cánones fijados conforme a la DR.",
           kind: "example",
-          legalBasis: ["dr-adif-2027-c1"]
-        }
-      ]
-    }
+          legalBasis: ["dr-adif-2027-c1"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-ex-2",
+      situation: "Una empresa ferroviaria necesita operar un tren de mercancías entre Madrid y Barcelona utilizando material eléctrico de 25 kV.",
+      application: [
+        {
+          id: "dr-ex-2-app-1",
+          text: "Debe consultar la DR para verificar que el tramo está electrificado a 25 kV CA, solicitar el surco correspondiente y cumplir los cánones de acceso.",
+          kind: "example",
+          legalBasis: ["dr-adif-2027-cap2-electr", "dr-adif-2027-cap2-capacidad", "dr-adif-2027-cap2-canon"],
+          review: pendingDrEdition,
+        },
+      ],
+    },
+    {
+      id: "dr-ex-3",
+      situation: "Una empresa ferroviaria quiere programar un tren de mercancías peligrosas con parada técnica en una estación situada en un núcleo habitado y una parada prevista dentro de un túnel de 150 m.",
+      application: [
+        {
+          id: "dr-ex-3-app-1",
+          text: "La DR 2027 (apartado 2.4.3) impide en general programar estacionamientos en estaciones de núcleos habitados y paradas en túneles de más de 100 m de longitud, por lo que la empresa debe replantear ambas paradas y usar, si existen, las líneas de circunvalación.",
+          kind: "example",
+          legalBasis: ["dr-2027-cap2-243"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-ex-4",
+      situation: "Un candidato a operador prepara un tren de mercancías cuyo recorrido incluye una rampa característica muy desfavorable y pretende remolcar la carga máxima técnica de su locomotora diésel.",
+      application: [
+        {
+          id: "dr-ex-4-app-1",
+          text: "Aunque la carga máxima sea técnicamente posible (2.3.5: rampa más desfavorable + carga máxima de la locomotora), las velocidades resultantes pueden ser inadecuadas; Adif puede condicionar la solicitud o rechazarla por incompatible con un aprovechamiento razonable de la capacidad de vía.",
+          kind: "example",
+          legalBasis: ["dr-2027-cap2-235"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-ex-5",
+      situation: "Una mercancía internacional procedente de Francia entra por Irún–Hendaya con material rodante de ancho estándar y debe continuar por la Red Convencional de Adif.",
+      application: [
+        {
+          id: "dr-ex-5-app-1",
+          text: "El paso por la frontera franco-española por ancho ibérico requiere el cambio a ancho estándar de los trenes o el uso de cambiadores de ancho (elemento k de la infraestructura, apartado 2.1); la sección fronteriza Irún–Hendaya opera con anchos 1.668/1.435 mm y electrificaciones 3 kV CC / 1,5 kV CC.",
+          kind: "example",
+          legalBasis: ["dr-2027-cap2-222", "dr-2027-cap2-21"],
+          review: reviewedDrChapter2,
+        },
+      ],
+    },
   ],
 
   reviewTakeaways: [
@@ -160,13 +1476,71 @@ export const declaracionRed2027Theory: TheorySection = {
       id: "dr-takeaway-1",
       text: "La DR, aprobada por el Consejo de Administración del administrador de infraestructuras, entra en vigor tras su publicación y puede ser actualizada por el propio administrador cuando sus contenidos lo requieran.",
       kind: "normative",
-      legalBasis: ["dr-adif-2027-c1"]
+      legalBasis: ["dr-adif-2027-c1"],
+      review: pendingDrEdition,
     },
     {
       id: "dr-takeaway-2",
       text: "El ancho ibérico convencional representa el mayor porcentaje de extensión ferroviaria dentro de las líneas explotadas por ADIF.",
       kind: "interpretative",
-      legalBasis: ["dr-adif-2027-c2"]
-    }
-  ]
+      legalBasis: ["dr-adif-2027-c2"],
+      review: pendingDrEdition,
+    },
+    {
+      id: "dr-takeaway-3",
+      text: "El capítulo II es el núcleo técnico de la DR: características de la infraestructura, capacidad, electrificación, señalización y cánones de acceso.",
+      kind: "didactic",
+      legalBasis: ["dr-adif-2027-cap2-infra"],
+      review: pendingDrEdition,
+    },
+    {
+      id: "dr-takeaway-4",
+      text: "Cifras clave del capítulo II para memorizar: 11.675,9 km de red total; 6.761,6 km electrificados; 3.121,1 km con ERTMS en España (384,5 km de Adif); tres tensiones de electrificación (3 kV CC convencional, 1,5 kV CC métrico, 25 kV 50 Hz CA alta velocidad); velocidad convencional 160–220 km/h y métrica 50–100 km/h; trenes de hasta 750 m en Madrid–Valencia y Bif. Teruel–Sagunto.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-22", "dr-2027-cap2-239", "dr-2027-cap2-237", "dr-2027-cap2-238"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-takeaway-5",
+      text: "Nueve categorías de límite de carga en ancho ibérico (A a D4, con 22,5 t por eje y 8,0 t por metro en D4, la categoría predominante); en ancho métrico, 15,0 t por eje y 8,0 t por metro lineal.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-235"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-takeaway-6",
+      text: "Los cinco tipos de material rodante por aceleración sin compensar (N 0,65; A 1; B 1,2; C 1,5; D 1,8 m/s²) y el bloqueo con seis variantes (BCA, BSL, BLA, BA con BAU/BAD/BAB, BEM y BT) son clasificaciones de examen del apartado 2.3.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-237", "dr-2027-cap2-2310"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-takeaway-7",
+      text: "La jerarquía de control del tráfico es CTC (primer nivel) → PRO (segundo nivel, mismo alcance limitado a su zona) → PLO (tercer nivel, mando local del enclavamiento), coordinada por el CRC/PM y soportada por la plataforma Da Vinci.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-2311"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-takeaway-8",
+      text: "En protección del tren conviene no confundir: ERTMS y LZB son sistemas de protección automática con señalización en cabina y supervisión continua; el ASFA supervisa la velocidad de forma puntual mediante balizas y está instalado en todas las líneas principales de la RFIG.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-2313"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-takeaway-9",
+      text: "Restricciones memorizables del apartado 2.4: mercancías peligrosas usan líneas de circunvalación, sin estacionamientos en núcleos habitados ni paradas en túneles de más de 100 m; locomotoras de mercancías en túneles de 20.000 m o más requieren equipamiento de Categoría B con autorescate; no existen actualmente líneas especializadas en la Red de Adif.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-243", "dr-2027-cap2-244", "dr-2027-cap2-241"],
+      review: reviewedDrChapter2,
+    },
+    {
+      id: "dr-takeaway-10",
+      text: "La disponibilidad (2.5) se apoya en el Documento de Tren (apertura y cierre de estaciones), el telemando por CTC y el catálogo de restricciones de capacidad anexo conforme a la Decisión Delegada (UE) 2017/2075, actualizado con las sesiones TOC.",
+      kind: "didactic",
+      legalBasis: ["dr-2027-cap2-25"],
+      review: reviewedDrChapter2,
+    },
+  ],
 };

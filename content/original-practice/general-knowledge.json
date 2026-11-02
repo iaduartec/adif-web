@@ -2664,5 +2664,1080 @@
     "sourceLocator": "Capítulo I, 1.4 Los agentes del sector ferroviario",
     "status": "draft",
     "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-005",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el artículo 3 de la Ley del Sector Ferroviario y su anexo IV, recogido en el apartado 2.1 de la Declaración sobre la Red, ¿cuál de los siguientes forma parte de los elementos que componen la infraestructura ferroviaria?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los talleres de reparación de material rodante y sus vías interiores."
+      },
+      {
+        "key": "B",
+        "text": "Los terrenos sobre los que se asientan las vías, obras de plataforma, obras civiles, pasos a nivel y superestructuras."
+      },
+      {
+        "key": "C",
+        "text": "Exclusivamente las estaciones de viajeros y las terminales de mercancías."
+      },
+      {
+        "key": "D",
+        "text": "Los ramales de desviación para particulares y los depósitos o garajes de máquinas de tracción."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El art. 3 LSF y su anexo IV (apartado 2.1) enumera como elementos de la infraestructura los terrenos, obras de plataforma, obras civiles, pasos a nivel y superestructuras; quedan expresamente excluidas las vías interiores de talleres, depósitos o ramales de desviación para particulares.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-13"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.1 Introducción (p. 32)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-006",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.2 de la Declaración sobre la Red, ¿qué documento relaciona las líneas y tramos con código oficial, origen, destino y características técnicas, y se publica como Anexo F?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Manual de Capacidades."
+      },
+      {
+        "key": "B",
+        "text": "El Catálogo de la RFIG."
+      },
+      {
+        "key": "C",
+        "text": "El Cuadro de Velocidades Máximas e Informaciones Permanentes."
+      },
+      {
+        "key": "D",
+        "text": "El Documento de Tren."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.2 indica que todos los elementos de la RFIG se incluyen en el Catálogo de la RFIG (Anexo F), conforme a la Orden FOM 710/2015 y el artículo 4 de la Ley 38/2015.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-14"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.2 Ámbito de la Red Gestionada por Adif (pp. 33–34)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-007",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Conforme al apartado 2.2 de la Declaración sobre la Red, la Red gestionada por Adif está compuesta por líneas de tres anchos de vía. ¿Cuáles son?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ancho ibérico (1.668 mm), ancho estándar (1.435 mm) y ancho métrico (1.000 mm)."
+      },
+      {
+        "key": "B",
+        "text": "Ancho ibérico (1.435 mm), ancho estándar (1.668 mm) y ancho métrico (1.000 mm)."
+      },
+      {
+        "key": "C",
+        "text": "Ancho ibérico (1.668 mm), ancho métrico (1.000 mm) y ancho ruso (1.520 mm)."
+      },
+      {
+        "key": "D",
+        "text": "Solo ancho ibérico y ancho estándar."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.2 (dr-c15-1) establece que la Red consta de líneas de ancho Ibérico (1.668 mm), ancho Estándar (1.435 mm) y ancho Métrico (1.000 mm).",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-15"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.2 Ámbito de la Red Gestionada por Adif (pp. 33–34)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-008",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.2 de la DR sobre la interoperabilidad, ¿qué longitud de líneas que operan con ERTMS existe en España y cuánto corresponde a infraestructuras titularidad de Adif?",
+    "options": [
+      {
+        "key": "A",
+        "text": "3.121,1 km en total, de los cuales 384,5 km son de Adif."
+      },
+      {
+        "key": "B",
+        "text": "384,5 km en total, todos de Adif."
+      },
+      {
+        "key": "C",
+        "text": "11.675,9 km en total, de los cuales 3.121,1 km son de Adif."
+      },
+      {
+        "key": "D",
+        "text": "6.761,6 km en total, de los cuales 1.195,3 km son de Adif."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.2 (dr-c16-2) cifra en 3.121,1 km las líneas españolas con ERTMS, de las cuales 384,5 km corresponden a Adif.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-16"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.2 Ámbito de la Red Gestionada por Adif (pp. 33–34)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-009",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "De acuerdo con el apartado 2.2.2 de la DR, ¿cuál de los siguientes accesos fronterizos con Francia requiere el cambio a ancho estándar de los trenes que transitan a la red francesa?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tuy / Valença do Miño."
+      },
+      {
+        "key": "B",
+        "text": "Fuentes de Oñoro / Vilar Formoso."
+      },
+      {
+        "key": "C",
+        "text": "Irún / Hendaya, Portbou / Cerbère y Puigcerdà / La Tour de Carol."
+      },
+      {
+        "key": "D",
+        "text": "Lutxana-Barakaldo."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.2.2 (dr-c17-2) vincula a Francia (SNCF Réseau) por ancho ibérico en Irún/Hendaya, Portbou/Cerbère y Puigcerdà/La Tour de Carol, y el tránsito exige cambio a ancho estándar. Tuy y Fuentes de Oñoro conectan con Portugal.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-17"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.2.1 Límites geográficos y 2.2.2 Conexiones con otras redes (pp. 35–37)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-010",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3 de la DR, ¿qué aplicación gestionada por la Dirección de Seguridad en la Circulación permite a las empresas ferroviarias con licencia y certificado de seguridad acceder a la Información de Circulación de las Líneas (ICL)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "PISERVI."
+      },
+      {
+        "key": "B",
+        "text": "RGD (Registro General de Documentos Reglamentarios)."
+      },
+      {
+        "key": "C",
+        "text": "Da Vinci."
+      },
+      {
+        "key": "D",
+        "text": "CASH24."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3 (dr-c19-1) indica que las empresas acceden a la ICL a través de la aplicación RGD, gestionada por la Dirección de Seguridad en la Circulación.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-19"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3 Descripción de la Red (p. 38)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-011",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3 de la DR, la Red titularidad de Adif se compone de cuatro tipos de vía. ¿Cuáles son?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Vía única no electrificada, vía única electrificada, vía doble no electrificada y vía doble electrificada."
+      },
+      {
+        "key": "B",
+        "text": "Vía simple, vía doble, vía triple y vía múltiple."
+      },
+      {
+        "key": "C",
+        "text": "Vía convencional, vía de alta velocidad, vía métrica y vía de ancho variable."
+      },
+      {
+        "key": "D",
+        "text": "Vía electrificada a 3 kV, a 1,5 kV, a 25 kV y sin electrificar."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.3.1 (dr-c20-1) clasifica la Red en cuatro tipos de vía según electrificación y vía única o doble.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-20"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3 Descripción de la Red (p. 38)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-012",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3.4 de la DR, la Instrucción Ferroviaria de Gálibos fue aprobada por la Orden FOM/1630/2015 y está redactada en coherencia con una norma europea. ¿Cuál?",
+    "options": [
+      {
+        "key": "A",
+        "text": "EN 50121:2013."
+      },
+      {
+        "key": "B",
+        "text": "EN 15273:2013."
+      },
+      {
+        "key": "C",
+        "text": "EN 45545."
+      },
+      {
+        "key": "D",
+        "text": "Directiva 2014/30/UE."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.4 (dr-c21-6) precisa que la Instrucción de Gálibos se redacta en coherencia con la norma EN 15273:2013; la familia EN 50121 es de compatibilidad electromagnética y la Directiva 2014/30/UE es el marco legal de CEM.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-21"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.4 Gálibo (pp. 39–40)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-013",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.5 de la DR, las líneas de ancho ibérico se clasifican en nueve categorías según la carga por eje y por metro lineal. ¿Qué categoría es actualmente la más frecuente en la Red de Adif?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Categoría A (16,0 t/eje y 5,0 t/m)."
+      },
+      {
+        "key": "B",
+        "text": "Categoría C4 (20,0 t/eje y 7,2 t/m)."
+      },
+      {
+        "key": "C",
+        "text": "Categoría D4 (22,5 t/eje y 8,0 t/m)."
+      },
+      {
+        "key": "D",
+        "text": "Categoría B1 (18,0 t/eje y 5,0 t/m)."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.3.5 (dr-c22-2) indica que la mayoría de las líneas de la Red titularidad de Adif son de Categoría D4, con restricciones puntuales en algunos puntos.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-22"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.5 Límite de carga (pp. 40–41)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-014",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Conforme al apartado 2.3.5 de la DR, en las líneas de ancho métrico la carga máxima es de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "22,5 t por eje y 8,0 t por metro lineal."
+      },
+      {
+        "key": "B",
+        "text": "16,0 t por eje y 5,0 t por metro lineal."
+      },
+      {
+        "key": "C",
+        "text": "15,0 t por eje y 8,0 t por metro lineal."
+      },
+      {
+        "key": "D",
+        "text": "20,0 t por eje y 7,2 t por metro lineal."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.3.5 (dr-c22-3) fija para el ancho métrico una carga máxima de 15,0 t por eje y 8,0 t por metro lineal.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-22"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.5 Límite de carga (pp. 40–41)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-015",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.7 de la DR, el material rodante se clasifica por Tipos según la velocidad máxima autorizada y la aceleración sin compensar admitida. ¿Qué Tipo admite la mayor aceleración (1,8 m/s²)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tipo A."
+      },
+      {
+        "key": "B",
+        "text": "Tipo D."
+      },
+      {
+        "key": "C",
+        "text": "Tipo N."
+      },
+      {
+        "key": "D",
+        "text": "Tipo B."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.7 (dr-c23-2) establece cinco clases: N (0,65), A (1), B (1,2), C (1,5) y D (1,8 m/s²). El Tipo del tren resultante es el más desfavorable de sus vehículos.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-23"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.6 Rampas características y 2.3.7 Velocidades máximas (p. 41)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-016",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3.8 de la DR, para circular con una longitud de tren superior a la máxima permitida en una línea (longitud especial) se requiere autorización expresa. ¿A quién corresponde la autorización para los trenes inmediatos?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A la Dirección Adjunta de Gestión de Capacidad de la DG de Operaciones y Explotación."
+      },
+      {
+        "key": "B",
+        "text": "A la Dirección de Tráfico (H24)."
+      },
+      {
+        "key": "C",
+        "text": "A la AESF."
+      },
+      {
+        "key": "D",
+        "text": "Al Consejo de Administración de Adif."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.8 (dr-c24-3) atribuye a la Dirección Adjunta de Gestión de Capacidad la autorización de trenes Regulares u Ocasionales, y a la Dirección de Tráfico (H24) la de los trenes inmediatos.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-24"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.8 Longitud máxima de los trenes (p. 42)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-017",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.9 de la DR, ¿cuántos kilómetros de líneas electrificadas tiene la Red titularidad de Adif?",
+    "options": [
+      {
+        "key": "A",
+        "text": "11.675,9 km."
+      },
+      {
+        "key": "B",
+        "text": "6.761,6 km."
+      },
+      {
+        "key": "C",
+        "text": "3.121,1 km."
+      },
+      {
+        "key": "D",
+        "text": "1.195,3 km."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.9 (dr-c25-1) cifra en 6.761,6 km las líneas electrificadas de la Red titularidad de Adif en los distintos anchos de vía.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-25"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.9 Suministro de energía eléctrica (pp. 42–43)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-018",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3.9 de la DR, ¿qué tensión de electrificación se aplica normalmente a las líneas de la Red de Alta Velocidad?",
+    "options": [
+      {
+        "key": "A",
+        "text": "3.000 V en corriente continua."
+      },
+      {
+        "key": "B",
+        "text": "1.500 V en corriente continua."
+      },
+      {
+        "key": "C",
+        "text": "25.000 V a 50 Hz en corriente alterna."
+      },
+      {
+        "key": "D",
+        "text": "1.500 V en corriente alterna."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.3.9 (dr-c25-2) indica que la catenaria suministra 25.000 V a 50 Hz, circunscrito normalmente a las líneas de Alta Velocidad; en convencional se usa 3.000 V CC y en ancho métrico 1.500 V CC.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-25"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.9 Suministro de energía eléctrica (pp. 42–43)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-019",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.10 de la DR, la tendencia en los sistemas de señalización y bloqueo de la Red es el uso de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Enclavamientos mecánicos con transmisión de levas."
+      },
+      {
+        "key": "B",
+        "text": "Enclavamientos electrónicos (ENCE) con Control de Tráfico Centralizado (CTC) en los Puestos de Mando."
+      },
+      {
+        "key": "C",
+        "text": "Bloqueo telefónico en todas las líneas."
+      },
+      {
+        "key": "D",
+        "text": "Señalización lateral exclusiva."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.10 (dr-c26-2) señala como tendencia los enclavamientos electrónicos (ENCE) con CTC en los Puestos de Mando.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-26"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.10 Sistemas de seguridad y señalización (pp. 43–45)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-020",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3.10 de la DR, ¿cuál de los siguientes bloqueos es específico de líneas de alta velocidad?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Bloqueo Automático (BA)."
+      },
+      {
+        "key": "B",
+        "text": "Bloqueo de Señalización Lateral (BSL)."
+      },
+      {
+        "key": "C",
+        "text": "Bloqueo Eléctrico Manual (BEM)."
+      },
+      {
+        "key": "D",
+        "text": "Bloqueo Telefónico (BT)."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.10 (dr-c27-3) lista el Bloqueo de Señalización Lateral (BSL) como específico de líneas de alta velocidad; el BA, BEM y BT se emplean en otros contextos.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-27"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.10 Sistemas de seguridad y señalización (pp. 43–45)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-021",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.11 de la DR, Da Vinci es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El subsistema europeo de protección de tren (ETCS)."
+      },
+      {
+        "key": "B",
+        "text": "La plataforma de gestión y control que integra subsistemas de señalización, electrificación y comunicaciones."
+      },
+      {
+        "key": "C",
+        "text": "El radioteléfono de Tren-Tierra."
+      },
+      {
+        "key": "D",
+        "text": "El Centro Nacional de Autoprotección y Seguridad."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.11 (dr-c28-1) define Da Vinci como la plataforma que integra y centraliza subsistemas de señalización, electrificación y comunicaciones, permitiendo su monitorización remota.",
+    "difficulty": 1,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-28"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.11 Sistemas de control y gestión del tráfico (p. 45)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-022",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3.12 de la DR, GSM-R es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un sistema de radiotelefonía analógico para Tren-Tierra."
+      },
+      {
+        "key": "B",
+        "text": "Un desarrollo de la tecnología GSM específico para comunicación y aplicaciones ferroviarias, con bandas de frecuencias exclusivas, como subsistema del ERTMS."
+      },
+      {
+        "key": "C",
+        "text": "El sistema de protección ASFA."
+      },
+      {
+        "key": "D",
+        "text": "El enclavamiento electrónico de la Red."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.12 (dr-c29-3) define GSM-R como desarrollo del GSM para ferrocarril, con frecuencias exclusivas para evitar interferencias, y como subsistema del ERTMS que permite la interoperabilidad europea.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-29"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.12 Sistemas de comunicación (pp. 45–46)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-023",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.13 de la DR, ¿qué versión de ERTMS está actualmente en servicio, combinando el ETCS y el GSM-R?",
+    "options": [
+      {
+        "key": "A",
+        "text": "v2.3.0d."
+      },
+      {
+        "key": "B",
+        "text": "v3.0.0."
+      },
+      {
+        "key": "C",
+        "text": "v1.5."
+      },
+      {
+        "key": "D",
+        "text": "v4C."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.3.13 (dr-c30-1) indica que está en servicio la versión 2.3.0d de ERTMS (ETCS + GSM-R). La versión v4C corresponde a ASFA, no a ERTMS.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-30"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.13 Sistemas de control y protección del tren (pp. 46–47)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-024",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.3.14 de la DR, ¿cuál de los siguientes corredores NO está actualmente disponible para circular con semirremolques de hasta 4,00 m de altura máxima?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Madrid – Valencia."
+      },
+      {
+        "key": "B",
+        "text": "Huelva – Sevilla – Córdoba."
+      },
+      {
+        "key": "C",
+        "text": "Zaragoza – Madrid – Algeciras (se acondiciona para gálibo AF4.2 de 4,20 m)."
+      },
+      {
+        "key": "D",
+        "text": "Madrid/Valencia – Alcázar de San Juan – Mérida – Badajoz."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 2.3.14 (dr-c31-3) aclara que Zaragoza–Madrid–Algeciras se está acondicionando para gálibo AF4.2 (4,20 m) y aún no está disponible; los corredores de 4,00 m ya operativos son los de dr-c31-2.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-31"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.14 Autopistas ferroviarias (pp. 47–48)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-025",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.3.15 de la DR, los Centros de Protección y Seguridad (CPS) territoriales están coordinados por:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Centro de Gestión de Red H24 de forma autónoma."
+      },
+      {
+        "key": "B",
+        "text": "El Centro de Autoprotección y Seguridad (CASH24), integrado en el Centro de Gestión de Red H24."
+      },
+      {
+        "key": "C",
+        "text": "La Agencia Estatal de Seguridad Ferroviaria (AESF)."
+      },
+      {
+        "key": "D",
+        "text": "La Comisión Nacional de los Mercados y la Competencia (CNMC)."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.3.15 (dr-c32-2) indica que los CPS territoriales se coordinan a través del Centro de Autoprotección y Seguridad (CASH24), que está integrado en el Centro de Gestión de Red H24.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-32"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.3.15 Protección y seguridad (p. 48)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-026",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.4.3 de la DR, el transporte de mercancías peligrosas en la Red de Adif se realiza conforme al RID y al:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Real Decreto 186/2016."
+      },
+      {
+        "key": "B",
+        "text": "Real Decreto 412/2001, cuyo artículo 4 recoge las normas generales de circulación."
+      },
+      {
+        "key": "C",
+        "text": "Real Decreto-ley 15/2022."
+      },
+      {
+        "key": "D",
+        "text": "Directiva 2002/49/CE."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 2.4.3 (dr-c35-1) indica que el transporte de mercancías peligrosas se rige por el RID y el RD 412/2001 (art. 4, normas generales de circulación). El RD 186/2016 es de CEM, el RD-ley 15/2022 de incendios forestales y la Directiva 2002/49/CE de ruido.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-35"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.4.3 Transporte de mercancías peligrosas (pp. 50–51)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-027",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Conforme al apartado 2.4.4 de la DR, en los túneles con longitud igual o superior a 20.000 metros, las locomotoras que remolquen trenes de mercancías y mercancías peligrosas deben disponer de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un equipamiento similar al del material rodante de pasajeros de Categoría B, además de un dispositivo de autorescate."
+      },
+      {
+        "key": "B",
+        "text": "Exclusivamente un dispositivo de autorescate para el maquinista."
+      },
+      {
+        "key": "C",
+        "text": "Doble tracción diésel obligatoria."
+      },
+      {
+        "key": "D",
+        "text": "Sistema de señalización ASFA digital en todas las unidades."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.4.4 (dr-c36-2) exige en túneles ≥ 20.000 m que las locomotoras de mercancías/peligrosas dispongan de equipamiento similar al material de pasajeros Categoría B (llegar a Punto de Evacuación y Rescate) y un dispositivo de autorescate.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-36"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.4.4 Restricciones en túneles y 2.4.5 Restricciones en puentes/viaductos (pp. 51)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-028",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "Según el apartado 2.5 de la DR, el catálogo de restricciones de capacidad en la RFIG, actualizado con la información de las sesiones TOC, se incluye como documento anexo en cumplimiento de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La Decisión Delegada (UE) 2017/2075 de la Comisión."
+      },
+      {
+        "key": "B",
+        "text": "La Directiva 2012/34/UE en su versión original sin modificar."
+      },
+      {
+        "key": "C",
+        "text": "El Real Decreto 186/2016."
+      },
+      {
+        "key": "D",
+        "text": "La Orden FOM 710/2015."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.5 (dr-c37-4) fundamenta el catálogo de restricciones de capacidad en la Decisión Delegada (UE) 2017/2075, que sustituye el Anexo VII de la Directiva 2012/34/UE.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-37"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.5 Disponibilidad de la Infraestructura (p. 52)",
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-declaracion-029",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION",
+    "prompt": "En el apartado 2.6 de la DR, la Estrategia Indicativa del desarrollo, mantenimiento y renovación de la infraestructura ferroviaria está incluida en el:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Plan de Recuperación, Transformación y Resiliencia (PRTR) como una reforma."
+      },
+      {
+        "key": "B",
+        "text": "Contrato-Programa con el Ministerio de Transportes."
+      },
+      {
+        "key": "C",
+        "text": "Manual de Capacidades."
+      },
+      {
+        "key": "D",
+        "text": "Documento de Tren."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 2.6 (dr-c38-1) sitúa la Estrategia Indicativa dentro del PRTR como una reforma, estableciendo el marco financiero y de prioridades para la movilidad y la sostenibilidad del sistema.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red",
+      "borrador-no-verificado"
+    ],
+    "conceptIds": [
+      "dr-concept-38"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edition-2027-page-candidate",
+    "sourceLocator": "Capítulo II, 2.6 Desarrollo de la Infraestructura (pp. 52–69)",
+    "status": "draft",
+    "origin": "original"
   }
 ]
