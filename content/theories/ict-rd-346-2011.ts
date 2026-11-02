@@ -673,7 +673,259 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-bat"],
         },
       ],
-    }
+    },
+    {
+      id: "ict-concept-35",
+      title: "Ámbito de aplicación: edificios nuevos y rehabilitaciones",
+      claims: [
+        {
+          id: "ict-c35-1",
+          text: "La ICT es obligatoria en edificios de nueva planta que requieran licencia de obra y en los de rehabilitación integral cuando el presupuesto supere el 50% del valor de la edificación.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-art1"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-36",
+      title: "Obligaciones del promotor",
+      claims: [
+        {
+          id: "ict-c36-1",
+          text: "El promotor de la edificación tiene la obligación de dotar al inmueble de ICT y de presentar el proyecto técnico ante la jefatura provincial de inspección de telecomunicaciones antes de solicitar la licencia de obras.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-art9-project"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-37",
+      title: "Boletín de instalación y certificación de fin de obra",
+      claims: [
+        {
+          id: "ict-c37-1",
+          text: "Una vez concluida la ICT, el instalador emite el Boletín de Instalación y el director de obra el Certificado de Fin de Obra (o Protocolo de Pruebas), documentos necesarios para la licencia de primera ocupación.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex4"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-38",
+      title: "Arqueta de entrada y canalización de enlace",
+      claims: [
+        {
+          id: "ict-c38-1",
+          text: "La arqueta de entrada, localizada en el límite de la propiedad, y la canalización de enlace son los elementos que conectan la red exterior del operador con el RITI del edificio.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-infrastructure"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-39",
+      title: "Registro secundario de planta",
+      claims: [
+        {
+          id: "ict-c39-1",
+          text: "Los registros secundarios de planta alojan el punto de distribución donde se bifurcan los cables de la red de distribución hacia cada vivienda o local de la planta, mediante los cables de la red de dispersión.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-connection-points"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-40",
+      title: "Canalización secundaria y registro de paso",
+      claims: [
+        {
+          id: "ict-c40-1",
+          text: "La canalización secundaria parte del registro secundario de planta y discurre por zonas comunes hasta el PAU de cada vivienda o local, pudiendo incluir registros de paso intermedios.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-infrastructure"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-41",
+      title: "Canalización interior de usuario",
+      claims: [
+        {
+          id: "ict-c41-1",
+          text: "La canalización interior de usuario comienza en el PAU y termina en los registros de toma donde se ubican las BAT; es responsabilidad del propietario de la vivienda o local.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-user-network"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-42",
+      title: "Bandas de frecuencia RTV terrestre",
+      claims: [
+        {
+          id: "ict-c42-1",
+          text: "La ICT debe captar y distribuir señales de televisión digital terrestre (TDT) en la banda UHF (470–790 MHz) y de radiodifusión sonora digital (DAB) en la banda III (174–240 MHz).",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex1-scope"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-43",
+      title: "Señales de satélite (FI y DiSEqC)",
+      claims: [
+        {
+          id: "ict-c43-1",
+          text: "Para satélite, la ICT trabaja con señales en la banda de frecuencia intermedia (FI) de 950 MHz a 2.150 MHz; el protocolo DiSEqC permite controlar hasta cuatro posiciones de satélite desde el receptor.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex1-network"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-44",
+      title: "Amplificadores de cabecera",
+      claims: [
+        {
+          id: "ict-c44-1",
+          text: "La cabecera amplifica y acondiciona las señales de RTV captadas por las antenas; su salida se inyecta en la red de distribución. Los amplificadores deben mantener el nivel de señal dentro de los umbrales establecidos en el Anexo I.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex1-network"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-45",
+      title: "Nivel de señal en la toma de usuario (RTV)",
+      claims: [
+        {
+          id: "ict-c45-1",
+          text: "En la toma de usuario, la señal de televisión digital terrestre debe estar entre 47 y 77 dBμV y la de televisión por satélite entre 47 y 77 dBμV (FI). Para FM (radiodifusión sonora analógica), el nivel mínimo es de 40 dBμV.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex1-network"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-46",
+      title: "Redes de pares trenzados (STDP y banda ancha)",
+      claims: [
+        {
+          id: "ict-c46-1",
+          text: "La red de distribución para STDP y banda ancha puede ser de pares trenzados de categoría 6 o superior, conforme a la norma UNE-EN 50288; el cable de la red de dispersión puede ser de categoría 5e como mínimo.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-cabling"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-47",
+      title: "Registro principal de telefonía",
+      claims: [
+        {
+          id: "ict-c47-1",
+          text: "El Registro Principal de telefonía se ubica en el RITI y alberga el Punto de Interconexión entre la red del operador y la red de distribución del edificio para servicios de pares trenzados.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-connection-points"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-48",
+      title: "Nivel de servicios del Hogar Digital",
+      claims: [
+        {
+          id: "ict-c48-1",
+          text: "El Anexo V define tres niveles de equipamiento del hogar digital: Nivel 1 (servicios básicos de telecomunicación interior), Nivel 2 (añade control del entorno y eficiencia energética) y Nivel 3 (automatización plena con gestión remota).",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex5-services"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-49",
+      title: "Inspección y periodicidad de revisiones",
+      claims: [
+        {
+          id: "ict-c49-1",
+          text: "El Anexo IV establece que la ICT debe inspeccionarse con carácter previo a su puesta en servicio y, posteriormente, con la periodicidad que fije la comunidad de propietarios, sin que en ningún caso supere los 15 años entre inspecciones obligatorias.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex4"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-50",
+      title: "Documentos normalizados del Anexo IV",
+      claims: [
+        {
+          id: "ict-c50-1",
+          text: "El Anexo IV incluye modelos normalizados de: Protocolo de Pruebas, Boletín de instalación de telecomunicaciones en edificios (BITE) y ficha de mantenimiento preventivo.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex4"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-51",
+      title: "Número mínimo de tomas de usuario por estancia",
+      claims: [
+        {
+          id: "ict-c51-1",
+          text: "El Reglamento ICT exige al menos una BAT por estancia habitable (excepto baños y aseos) y en el salón al menos dos tomas de televisión y dos de telefonía.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-user-network"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-52",
+      title: "Relación de cruce entre canalizaciones eléctricas e ICT",
+      claims: [
+        {
+          id: "ict-c52-1",
+          text: "Las canalizaciones de la ICT deben mantener una separación mínima de 10 cm con las canalizaciones eléctricas de baja tensión cuando discurran en paralelo, y de 3 cm cuando se crucen.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-safety"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-53",
+      title: "Protección contra sobretensiones transitorias",
+      claims: [
+        {
+          id: "ict-c53-1",
+          text: "Los cables con portadores metálicos que entren en el recinto desde el exterior deben protegerse contra sobretensiones transitorias mediante dispositivos de protección (descargadores) conectados a tierra local en el punto de entrada al recinto.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-safety"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-54",
+      title: "Telecomunicaciones de banda ancha: nodo de acceso",
+      claims: [
+        {
+          id: "ict-c54-1",
+          text: "Para las redes de telecomunicación de banda ancha, el punto de interconexión sitúa el nodo de acceso del operador en el RITI, desde donde la red de distribución del edificio puede ser de fibra óptica o de pares trenzados.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex2-feeding"]
+        }
+      ]
+    },
+    {
+      id: "ict-concept-55",
+      title: "Conservación y mantenimiento de la ICT",
+      claims: [
+        {
+          id: "ict-c55-1",
+          text: "La comunidad de propietarios es la responsable de la conservación, mantenimiento y adecuación permanente de la ICT; puede contratar a una empresa instaladora habilitada para realizar estas tareas.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex4"]
+        }
+      ]
+    },
   ],
 
   examples: [
@@ -694,7 +946,7 @@ export const ictTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "ict-takeaway-1",
-      text: "El RITU unifica RITI y RITS y está reservado para edificios pequeños, de hasta tres alturas y planta baja y un máximo de 16 PAU.",
+      text: "El RITU unifica RITI y RITS y está reservado para edificios pequeños: hasta tres alturas y planta baja, máximo 16 PAU.",
       kind: "normative",
       legalBasis: ["rd346-2011-anex2-infrastructure"]
     },
@@ -703,6 +955,30 @@ export const ictTheory: TheorySection = {
       text: "En viviendas unifamiliares, la canalización principal discurre por zona común siempre que sea razonable y, en todo caso, por zonas accesibles.",
       kind: "interpretative",
       legalBasis: ["rd346-2011-anex3-canalizacion-principal"]
+    },
+    {
+      id: "ict-takeaway-3",
+      text: "El orden de las redes ICT siempre es: alimentación → distribución → dispersión → interior de usuario. El PAU separa la parte común de la privada.",
+      kind: "normative",
+      legalBasis: ["rd346-2011-anex2"]
+    },
+    {
+      id: "ict-takeaway-4",
+      text: "La ICT es obligatoria en edificios nuevos y en rehabilitaciones integrales (presupuesto > 50% del valor del edificio). El promotor presenta el proyecto técnico antes de solicitar la licencia de obras.",
+      kind: "normative",
+      legalBasis: ["rd346-2011-art1", "rd346-2011-art9-project"]
+    },
+    {
+      id: "ict-takeaway-5",
+      text: "Los cables coaxiales de la ICT tienen impedancia de 75 Ω; la banda de distribución de RTV es de 5 MHz a 2.150 MHz. Los mástiles de antena se conectan a tierra con cable de mínimo 25 mm².",
+      kind: "normative",
+      legalBasis: ["rd346-2011-anex1-cables", "rd346-2011-anex1-masts"]
+    },
+    {
+      id: "ict-takeaway-6",
+      text: "El Hogar Digital del Anexo V tiene tres niveles: Nivel 1 (telecomunicaciones básicas), Nivel 2 (control del entorno + eficiencia energética), Nivel 3 (automatización plena con gestión remota).",
+      kind: "normative",
+      legalBasis: ["rd346-2011-anex5-services"]
     }
   ]
 };
