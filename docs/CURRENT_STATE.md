@@ -4,6 +4,8 @@ Fecha: 2 de noviembre de 2026. Estado parcial y verificable; no es una certifica
 
 ## Continuación: circuito original
 
+Actualización posterior: la página de estadísticas añade precisión, cantidad de intentos, preguntas distintas, tiempo registrado y última práctica para los bancos originales revisados, separados de las cifras oficiales. La corrección documental de ICT se detalla en [STUDY_CONTENT_AUDIT.md](STUDY_CONTENT_AUDIT.md); requiere una nueva migración local antes de practicar la versión nueva de la pregunta. No se ha aplicado a producción. La recuperación de sesiones y el bloqueo efectivo de correcciones anticipadas siguen pendientes de diseño aprobado.
+
 En la rama de auditoría se ha añadido práctica para preguntas originales revisadas: selección de tema y cantidad, entrenamiento con corrección por pregunta y práctica con entrega al final. La API autentica y utiliza el RPC privado de intentos para corregir y registrar; el cuaderno puede repetir preguntas originales cuyo último intento guardado fue incorrecto. Las preguntas históricas continúan bloqueadas según sus contratos.
 
 El circuito aún es parcial: un bloque abierto no se reanuda al recargar; la interfaz lo advierte. La práctica en bloque envía intentos individuales al entregar y no es una sesión de examen protegida por servidor; un cliente que invoque directamente el endpoint de entrenamiento puede obtener la corrección de una pregunta. No se presenta como simulacro oficial ni se ha validado la persistencia en un Supabase completo. La migración existe en Git pero **no se ha aplicado a producción**.

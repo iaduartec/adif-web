@@ -6,6 +6,10 @@ Fecha: 2 de noviembre de 2026. Esta matriz inventaría los datos y etiquetas del
 
 Se contrastaron las claves de `orig-tel-ict-002`, `-029` y `-033` con el [RD 346/2011, artículo 2.1 y anexo I, apartados 4.2.1 y 2.3.1](https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834), y las de `orig-gen-prl-001`, `-002` y `-004` con la [Ley 31/1995, artículos 14.1, 15.1.a y 21.2](https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292). Las seis claves eran compatibles con los textos consultados. En `orig-gen-prl-004` se ha precisado que el abandono del lugar procede **en caso necesario**, matiz omitido en la opción y explicación originales. Esta muestra no verifica el resto de preguntas, distractores, temario ni las versiones concretas de los documentos de examen.
 
+Se revisaron además `orig-tel-ict-001` y `orig-tel-ict-003` a `007` contra el [RD 346/2011 consolidado en el BOE](https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834): la versión consolidada indica actualización global publicada el 26/03/2025, mientras que el anexo III indica actualización publicada el 03/10/2019. El identificador interno `consolidated-page-2026-10-15` identifica la captura registrada, no una fecha de publicación normativa. Se corrigió la explicación del ítem 001 y la trazabilidad de 004 y 005 al anexo III. La versión antigua 006 se conserva en borrador porque contenía una prohibición absoluta no respaldada por el apartado citado; la pregunta corregida se identifica como `orig-tel-ict-006-v2` y se fundamenta en el anexo III, apartado 5.7. Los intentos anteriores conservan el ID antiguo. La migración correctora es local y no se ha aplicado remotamente. La revisión de esta muestra no certifica los demás ítems ni sus distractores.
+
+En una comprobación adicional de la fuente se detectó que `orig-tel-ict-017` atribuía al anexo II, apartado 7.2.3, una descripción del anillo de tierra de los recintos que figura en el anexo III, apartado 7.1. Se conserva la versión anterior en borrador y se añade `orig-tel-ict-017-v2` con la fuente correcta y la precisión de que el anillo se aplica a recintos no modulares; también se corrige el concepto `ict-concept-10`. La migración local desactiva los dos IDs antiguos sin modificar los intentos históricos y registra las versiones nuevas. No se ha aplicado en producción.
+
 ## Cobertura de los documentos del temario
 
 El inventario local `content/syllabus.ts`, basado en capturas identificadas como octubre de 2026, clasifica nueve documentos padres: ocho parciales y uno sin cobertura del material oficial. El validador pasa porque verifica consistencia del inventario, no porque garantice cobertura completa. La actualización actual de cada texto y su cotejo con el documento de ADIF y BOE siguen pendientes.
@@ -18,7 +22,7 @@ El inventario local `content/syllabus.ts`, basado en capturas identificadas como
 | Declaración sobre la Red 2027, capítulos I–II | Parcial | Capítulo II sin cobertura vinculada; preguntas originales del área en borrador. Verificar edición y documento primario. | 1 |
 | EBEP, capítulo VI título III | Parcial | Revisar deberes y código de conducta, artículos 52–54. | 1 |
 | Incompatibilidades, Ley 53/1984 | Parcial | Se inventaría la ley completa; contrastar excepciones y plazos. | 1 |
-| ICT, RD 346/2011 | Parcial | Anexo III sin teoría vinculada; restantes capítulos y anexos parciales. | 1 |
+| ICT, RD 346/2011 | Parcial | El anexo III ya tiene algunos conceptos vinculados; faltan secciones, como ocurre también en otros capítulos y anexos. | 1 |
 | Compatibilidad electromagnética y seguridad ferroviaria | Sin cobertura trazada al documento oficial | Existe teoría relacionada, pero no demuestra cobertura del artículo concreto. Comprobar fuente y derechos. | 1 |
 | RCF, libro 1 | Parcial | Capítulo 3 sin teoría vinculada; capítulos restantes parciales. | 1 |
 
@@ -30,7 +34,7 @@ Estos niveles son provisionales y se asignan por lagunas documentales; faltan da
 |---|---|---|
 | Histórico específico | 102 registros, 2023–2025; seis formularios importados | No equivalen a 102 preguntas independientes ni a exámenes completos. Los registros tienen vigencia pendiente y los controles de publicación/corrección bloquean la práctica. No activar sin resolver evidencia y derechos. |
 | Conocimiento general original | 62: 58 con etiqueta editorial `reviewed`, 4 `draft` | La etiqueta no acredita revisión normativa independiente ni vigencia actual. Los cuatro borradores son de Declaración sobre la Red. |
-| Telecomunicaciones original | 52 con etiqueta `reviewed` | No implica cobertura completa del temario ni revisión externa de cada solución. |
+| Telecomunicaciones original | 52 con etiqueta `reviewed`, 2 versiones anteriores en `draft` | No implica cobertura completa del temario ni revisión externa de cada solución; la activación de las versiones nuevas requiere aplicar la migración correctora en el entorno correspondiente. |
 | Inglés A2 | 22 originales con etiqueta `reviewed`; todas de dificultad 1 | Cobertura de la taxonomía no demuestra nivel validado ni variedad suficiente. Mantener separado del denominador del temario oficial. |
 | Psicotécnicos | 26 originales con etiqueta `reviewed`, dos por cada una de 13 aptitudes | Cantidad y variedad insuficientes; ejercicios de aptitud visual expresados en texto. La pantalla muestra preguntas y opciones sin registrar ni corregir respuestas. |
 

@@ -1,7 +1,8 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import DashboardPage from "../app/(dashboard)/page";
 import ErrorNotebookPage from "../app/(dashboard)/errores/page";
+import EstadisticasPage from "../app/(dashboard)/estadisticas/page";
 import TestsPage from "../app/(dashboard)/tests/page";
 import { DashboardNavigation } from "../components/shell/dashboard-navigation";
 import { MobileNavigation } from "../components/shell/mobile-navigation";
@@ -216,6 +217,19 @@ describe("authenticated navigation", () => {
     expect(container.querySelectorAll("h1")).toHaveLength(1);
     expect(container.querySelector(".official-question-card h2")).toHaveTextContent(question.prompt);
     expect(container.querySelector(".official-question-card h3")).toBeNull();
+  });
+
+  it("shows saved original practice separately from official exam coverage", async () => {
+    serverRows.current = { question_attempts: [
+      { question_id: "orig-a2-there-is-are-001", is_correct: false, elapsed_ms: 1000, mode: "practice", created_at: "2026-08-10T09:00:00.000Z" },
+      { question_id: "orig-a2-there-is-are-001", is_correct: true, elapsed_ms: 2000, mode: "practice", created_at: "2026-08-10T10:00:00.000Z" },
+    ] };
+    render(await EstadisticasPage());
+    const table = screen.getByRole("table", { name: "Progreso por materia de preguntas originales" });
+    const row = within(table).getByRole("row", { name: /Inglés A2/ });
+    expect(row).toHaveTextContent("50% (1/2)");
+    expect(row).toHaveTextContent("1 de 22 revisadas");
+    expect(screen.getByRole("heading", { name: "Precisión por sección oficial" })).toBeVisible();
   });
 
   it("exposes every study destination and identifies the current page", () => {

@@ -26,7 +26,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "El Reglamento delimita la ICT a los sistemas y canalizaciones interiores de los edificios de nueva planta o rehabilitación integral que permiten el acceso a los servicios de telecomunicaciones.",
+    "explanation": "El reglamento establece normas técnicas para las infraestructuras comunes que permiten acceder a servicios de telecomunicación en el interior de las edificaciones. Su ámbito no se limita a edificios nuevos o rehabilitados.",
     "difficulty": 2,
     "tags": [
       "original-especifico",
@@ -131,9 +131,9 @@
   {
     "id": "orig-tel-ict-004",
     "domain": "telecom",
-    "topicId": "ict-anexo-ii",
-    "syllabusNodeId": "ict-anexo-ii",
-    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
     "skill": "ICT",
     "prompt": "En la ICT, el recinto de instalaciones de telecomunicación inferior (RITI) alberga:",
     "options": [
@@ -166,7 +166,7 @@
     ],
     "sourceId": "RD 346/2011",
     "sourceVersion": "consolidated-page-2026-10-15",
-    "sourceLocator": "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    "sourceLocator": "Anexo III, apartados 4.5.1–4.5.3 y 4.6",
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -174,9 +174,9 @@
   {
     "id": "orig-tel-ict-005",
     "domain": "telecom",
-    "topicId": "ict-anexo-ii",
-    "syllabusNodeId": "ict-anexo-ii",
-    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
     "skill": "ICT",
     "prompt": "Según el Reglamento, se permite instalar un único recinto de telecomunicaciones (RITU) en edificios de hasta:",
     "options": [
@@ -209,7 +209,7 @@
     ],
     "sourceId": "RD 346/2011",
     "sourceVersion": "consolidated-page-2026-10-15",
-    "sourceLocator": "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    "sourceLocator": "Anexo III, apartados 4.5.1–4.5.3 y 4.6",
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -250,12 +250,51 @@
     "conceptIds": [
       "ict-concept-9"
     ],
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-006-v2",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "En edificaciones en altura, la canalización principal de la ICT debe:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Alojar exclusivamente los cables de radiodifusión sonora."
+      },
+      {
+        "key": "B",
+        "text": "Ser rectilínea, fundamentalmente vertical y discurrir próxima al hueco de ascensores o escalera."
+      },
+      {
+        "key": "C",
+        "text": "Discurrir horizontalmente por cada planta."
+      },
+      {
+        "key": "D",
+        "text": "Instalarse exclusivamente en la fachada del edificio."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El anexo III, apartado 5.7, dispone que en edificaciones en altura sea rectilínea y fundamentalmente vertical, con capacidad para los cables necesarios y próxima al hueco de ascensores o escalera.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-9"
+    ],
     "sourceId": "RD 346/2011",
     "sourceVersion": "consolidated-page-2026-10-15",
-    "sourceLocator": "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+    "sourceLocator": "Anexo III, apartado 5.7",
     "status": "reviewed",
-    "reviewedAt": "2026-10-16",
-    "origin": "original"
+    "origin": "original",
+    "reviewedAt": "2026-11-02"
   },
   {
     "id": "orig-tel-ict-007",
@@ -1239,11 +1278,50 @@
     "conceptIds": [
       "ict-concept-10"
     ],
+    "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-017-v2",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "Según el anexo III del RD 346/2011, el sistema de puesta a tierra local de un recinto de telecomunicaciones no modular consta de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un anillo interior de cobre con una barra colectora, conectado al sistema general de tierra de la edificación y al que se unen los equipos y masas metálicas."
+      },
+      {
+        "key": "B",
+        "text": "Una pica independiente aislada galvánicamente de la tierra general del edificio."
+      },
+      {
+        "key": "C",
+        "text": "Una conexión directa al conductor neutro de la red de alumbrado interior."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente la puesta a tierra del mástil de televisión situado en cubierta."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El anexo III, apartado 7.1, describe un anillo interior de cobre —solo en recintos no modulares— con barra colectora conectada al sistema general de tierra del edificio.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-concept-10"
+    ],
     "sourceId": "RD 346/2011",
     "sourceVersion": "consolidated-page-2026-10-15",
-    "sourceLocator": "Anexo II, apartados 7.2.3 y 7.3",
+    "sourceLocator": "Anexo III, apartado 7.1",
     "status": "reviewed",
-    "reviewedAt": "2026-10-17",
+    "reviewedAt": "2026-11-02",
     "origin": "original"
   },
   {

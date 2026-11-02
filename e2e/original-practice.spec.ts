@@ -18,6 +18,17 @@ test("responde, corrige, guarda y recupera un fallo original", async ({ page }, 
   await page.reload();
   await expect(page.getByRole("heading", { name: "Repetir errores de preguntas originales" })).toBeVisible();
   await expect(page.getByText("Un acierto no demuestra dominio duradero.")).toBeVisible();
+
+  await page.goto("/estadisticas");
+  const progress = testInfo.project.name === "mobile"
+    ? page.getByRole("list", { name: "Progreso móvil por materia de preguntas originales" })
+    : page.getByRole("table", { name: "Progreso por materia de preguntas originales" });
+  const englishProgress = testInfo.project.name === "mobile"
+    ? progress.getByRole("listitem").filter({ hasText: "Inglés A2" })
+    : progress.getByRole("row", { name: /Inglés A2/ });
+  await expect(englishProgress).toContainText("1 de 22 revisadas");
+  await progress.scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath("estadisticas.png") });
 });
 
 test("practica las otras tres materias y permite cambiar una respuesta", async ({ page }) => {
