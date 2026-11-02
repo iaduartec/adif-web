@@ -52,6 +52,7 @@ export function OriginalPracticeSession({
   const [now, setNow] = useState(nowMs());
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [sessionVersion, setSessionVersion] = useState<number>(1);
   const questionStartedAt = useRef<Record<string, number>>({});
   const questionElapsedMs = useRef<Record<string, number>>({});
   const topics = [...new Map(questions.map((item) => [item.topicId, item.topic])).entries()]
@@ -127,6 +128,7 @@ export function OriginalPracticeSession({
       if (res.ok) {
         const data = await res.json();
         setSessionId(data.sessionId);
+        setSessionVersion(data.version ?? 1);
         setSaveStatus("saved");
       } else {
         setSaveStatus("error");
@@ -150,11 +152,21 @@ export function OriginalPracticeSession({
           selectedAnswer: key,
           elapsedMs: Math.round(elapsedFor(question.id, nowMs())),
           clientEventId,
-          expectedVersion: 1,
+          expectedVersion: sessionVersion,
         }),
-      }).then((res) => {
-        if (res.ok) setSaveStatus("saved");
-        else setSaveStatus("error");
+      }).then(async (res) => {
+        if (res.ok) {
+          const data = await res.json();
+          if (data.version) setSessionVersion(data.version);
+          setSaveStatus("saved");
+        } else if (res.status === 409) {
+          // Version conflict - refetch session
+          setSaveStatus("error");
+          setMessage("Conflicto de versión. Recarga la página.");
+          setMessageIsError(true);
+        } else {
+          setSaveStatus("error");
+        }
       }).catch(() => setSaveStatus("error"));
     }
   }
