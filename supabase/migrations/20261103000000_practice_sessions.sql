@@ -506,3 +506,10 @@ CREATE TRIGGER trg_practice_sessions_updated_at
 CREATE TRIGGER trg_practice_session_answers_updated_at
   BEFORE UPDATE ON public.practice_session_answers
   FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+-- Security fix: revoke PUBLIC and anon EXECUTE on RPCs
+REVOKE EXECUTE ON FUNCTION public.create_practice_session FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.get_practice_session FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.save_practice_answer FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.submit_practice_session FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.abandon_practice_session FROM PUBLIC, anon;
