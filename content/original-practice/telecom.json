@@ -2312,5 +2312,177 @@
     "status": "reviewed",
     "reviewedAt": "2026-10-17",
     "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-019",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-3",
+    "syllabusNodeId": "rcf-capitulo-3",
+    "topic": "Capítulo 3. Distribución de documentos y útiles de servicio",
+    "skill": "RCF",
+    "prompt": "De acuerdo con el apartado 1.3.1.1 del RCF, ¿qué obligación preceptiva asume el personal que interviene en la circulación cuando recibe una modificación de su documentación de seguridad a título personal?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Acusar recibo y acreditar conocimiento de su contenido conforme a lo establecido en el SGS de su empresa."
+      },
+      {
+        "key": "B",
+        "text": "Reenviarla inmediatamente a la Agencia Estatal de Seguridad Ferroviaria para su visado."
+      },
+      {
+        "key": "C",
+        "text": "Realizar un examen práctico presencial en un plazo máximo improrrogable de 48 horas."
+      },
+      {
+        "key": "D",
+        "text": "Ninguna, ya que la validez del documento opera de forma automática desde su publicación en el BOE."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 1.3.1.1.3 del RCF impone que el personal que reciba una modificación de su documentación de seguridad a título personal estará obligado a acusar recibo y acreditará conocimiento de su contenido conforme al SGS de su empresa.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-14"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 3, 1.3.1.1 Distribución de documentos",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-020",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-3",
+    "syllabusNodeId": "rcf-capitulo-3",
+    "topic": "Capítulo 3. Distribución de documentos y útiles de servicio",
+    "skill": "RCF",
+    "prompt": "Según el artículo 1.3.1.2 del RCF, los colectivos de personal que intervienen en la circulación recibirán de su Administrador de Infraestructuras (AI) o Empresa Ferroviaria (EF):",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un complemento salarial de disponibilidad para la adquisición de su propio instrumental de trabajo."
+      },
+      {
+        "key": "B",
+        "text": "A título individual, los útiles de servicio necesarios para desarrollar su función."
+      },
+      {
+        "key": "C",
+        "text": "Únicamente el uniforme oficial homologado por el Ministerio de Transportes."
+      },
+      {
+        "key": "D",
+        "text": "Un terminal de telefonía móvil de uso comercial general sin requerimientos de seguridad."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El apartado 1.3.1.2 del RCF establece literalmente que los colectivos de personal que intervienen en la circulación recibirán de su AI o EF, a título individual, los útiles de servicio necesarios para desarrollar su función.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-15"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 3, 1.3.1.2 Útiles de servicio",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-021",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-2",
+    "syllabusNodeId": "rcf-capitulo-2",
+    "topic": "Capítulo 2. Documentación reglamentaria",
+    "skill": "RCF",
+    "prompt": "Dentro de la distribución de competencias documentales del RCF, ¿a cuál de las entidades corresponde reglamentariamente la elaboración y difusión del Libro de Normas del Maquinista y del Libro de Itinerarios?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A la Agencia Estatal de Seguridad Ferroviaria (AESF)."
+      },
+      {
+        "key": "B",
+        "text": "Al Administrador de Infraestructuras (AI)."
+      },
+      {
+        "key": "C",
+        "text": "A las Empresas Ferroviarias (EF)."
+      },
+      {
+        "key": "D",
+        "text": "Al Ministerio de Transportes y Movilidad Sostenible."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 1.2.1.4 del RCF atribuye a las Empresas Ferroviarias (EF) la responsabilidad de elaborar, difundir y asegurar la disponibilidad a su personal del Libro de Normas del Maquinista, Horario de los Trenes y Libro de Itinerarios.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-16"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 2, 1.2.1.4 Documentación competencia de las EF",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-022",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-5",
+    "syllabusNodeId": "rcf-capitulo-5",
+    "topic": "Capítulo 5. Conceptos básicos de circulación",
+    "skill": "RCF",
+    "prompt": "¿Qué margen de tolerancia sobre la velocidad máxima admite el RCF antes de considerar formalmente que se ha producido un rebase de velocidad?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hasta 3 km/h durante no más de 10 segundos."
+      },
+      {
+        "key": "B",
+        "text": "Hasta 10 km/h durante no más de 30 segundos."
+      },
+      {
+        "key": "C",
+        "text": "No se admite ningún margen de tolerancia bajo ninguna circunstancia."
+      },
+      {
+        "key": "D",
+        "text": "Hasta 5 km/h durante no más de 20 segundos sobre lo observado en el lector de velocidad."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 1.5.1.10.1 del RCF dispone que se admite un margen de tolerancia de hasta 5 km/h (sobre lo observado por el maquinista en su lector de velocidad), durante no más de 20 segundos, por encima del cual se considera rebase de la velocidad máxima.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-concept-17"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Capítulo 5, 1.5.1.10 Velocidades",
+    "status": "reviewed",
+    "reviewedAt": "2026-10-17",
+    "origin": "original"
   }
 ]

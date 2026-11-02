@@ -165,4 +165,96 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué diferencia gramatical existe entre 'must' y 'have to'?",
     back: "'Must' suele expresar una obligación interna o personal impuesta por el hablante, mientras que 'have to' denota una obligación externa impuesta por normas o circunstancias de la situación.",
   },
+
+  // E3 RCF Libro 1 — Recuperación activa avanzada
+  {
+    id: "F0025",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuál es el orden de prevalencia documental en caso de discrepancia según el RCF?",
+    back: "1.º AESF y normas europeas.\n2.º Administradores de Infraestructuras (AI).\n3.º Empresas Ferroviarias (EF).",
+  },
+  {
+    id: "F0026",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué tres equipamientos debe tener operativos en cabina un tren para poder iniciar servicio?",
+    back: "1. Sistema de protección de tren compatible con la infraestructura.\n2. Dispositivo de vigilancia.\n3. Radiotelefonía (GSM-R o Tren-Tierra).",
+  },
+  {
+    id: "F0027",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuál es la velocidad máxima si el sistema de protección de tren es incompatible o está averiado?",
+    back: "La velocidad máxima de circulación es de 120 km/h en toda la RFIG.",
+  },
+  {
+    id: "F0028",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuáles son las velocidades máximas autorizadas en la marcha de maniobras?",
+    back: "Máximo 30 km/h si la locomotora va tirando del convoy; máximo 20 km/h si la locomotora va empujando.",
+  },
+  {
+    id: "F0029",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué obligación impone al maquinista la marcha a la vista?",
+    back: "Avanzar con la precaución que requiera el caso, regulando la velocidad según la distancia de vía visible por delante, de modo que pueda detener el tren ante cualquier obstáculo o señal de parada.",
+  },
+  {
+    id: "F0030",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué dependencias se consideran 'estación' a efectos del Reglamento de Circulación Ferroviaria?",
+    back: "Los Puestos de Bloqueo (PB), Puestos de Bloqueo de Apartado (PBA), Puestos de Cambio de Apartado (PCA), Puntos de Apartado Especial para Trenes (PAET), Bifurcaciones, y los Cambiadores de Ancho y Bases de Mantenimiento cuando no estén integrados en otra estación.",
+  },
+  {
+    id: "F0031",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué elementos identifican preceptivamente a un telefonema reglamentario?",
+    back: "Formato preestablecido, número secuencial correlativo anual, hora exacta de transmisión, identificación de emisor y receptor, colacionado obligatorio y registro en soporte reglamentario.",
+  },
+  {
+    id: "F0032",
+    module: "E3 RCF Libro 1",
+    front: "¿Cómo se clasifican las paradas prescritas según su función?",
+    back: "1. Comercial: para subida o bajada de viajeros.\n2. Restringida: para personal de servicio o técnico.\n3. Técnica: por necesidades de la gestión del tráfico, cruces o rebase.",
+  },
+  {
+    id: "F0033",
+    module: "E3 RCF Libro 1",
+    front: "¿En qué supuesto pierde automáticamente la orden de marcha un tren directo?",
+    back: "Cuando un tren directo queda detenido en una estación, su orden de marcha queda automáticamente invalidada.",
+  },
+  {
+    id: "F0034",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuándo se realiza la Prueba Completa de frenado y qué garantiza?",
+    back: "Se realiza antes de la salida del tren de la estación o dependencia origen de su composición. Asegura la estanqueidad y continuidad de la TFA y el funcionamiento de apriete y afloje de todos los frenos en servicio.",
+  },
+  {
+    id: "F0035",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuándo se realiza la Prueba Parcial de frenado y qué garantiza?",
+    back: "Se realiza antes de la salida cuando se agregan vehículos a la composición. Asegura estanqueidad y continuidad de TFA, apriete y afloje del último vehículo y el funcionamiento de cada vehículo agregado.",
+  },
+  {
+    id: "F0036",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuándo debe realizarse la Prueba de Continuidad de frenado?",
+    back: "Al agregar locomotora por cola, segregar vehículos de la composición, tras interrumpir la TFA sin segregar vehículos, o al acoplar dos ramas de tren.",
+  },
+  {
+    id: "F0037",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuándo debe realizarse la Verificación del Acoplamiento en el freno?",
+    back: "Al cambiar la locomotora de cabeza, al agregar/segregar locomotora en tracción múltiple, o al segregar vehículos situados inmediatamente tras las locomotoras de cabeza.",
+  },
+  {
+    id: "F0038",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué margen de tolerancia se admite antes de considerar rebase de la velocidad máxima?",
+    back: "Hasta 5 km/h por encima de la velocidad máxima observada por el maquinista durante un tiempo no superior a 20 segundos.",
+  },
+  {
+    id: "F0039",
+    module: "E3 RCF Libro 1",
+    front: "¿Quién es competente para emitir las Consignas y quién el Libro de Normas del Maquinista?",
+    back: "Las Consignas (A, B, C) y los Avisos son competencia del Administrador de Infraestructuras (AI). El Libro de Normas del Maquinista, Horario y Libro de Itinerarios son competencia de las Empresas Ferroviarias (EF).",
+  },
 ];

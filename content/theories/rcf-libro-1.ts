@@ -107,6 +107,55 @@ export const rcfLibro1Theory: TheorySection = {
       excerpt:
         "La prueba parcial se realiza antes de la salida del tren de una estación o dependencia en la que se agreguen vehículos a la composición."
     }
+,
+{
+    "id": "rd664-2015-1-3-1-1",
+    "sourceId": "RD 664/2015",
+    "sourceTitle": "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+    "locator": "Capítulo 3, 1.3.1.1 Distribución de documentos",
+    "excerpt": "Cada entidad garantiza la adecuada publicidad y difusión; el personal que recibe modificaciones a título personal está obligado a acusar recibo y acreditar conocimiento conforme al SGS."
+},
+{
+    "id": "rd664-2015-1-3-1-2",
+    "sourceId": "RD 664/2015",
+    "sourceTitle": "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+    "locator": "Capítulo 3, 1.3.1.2 Útiles de servicio",
+    "excerpt": "Los colectivos de personal que intervienen en la circulación recibirán de su AI o EF, a título individual, los útiles de servicio necesarios para desarrollar su función."
+},
+{
+    "id": "rd664-2015-1-2-1-3",
+    "sourceId": "RD 664/2015",
+    "sourceTitle": "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+    "locator": "Capítulo 2, 1.2.1.3 Documentación competencia de los AI",
+    "excerpt": "Los AI son responsables de elaborar Consignas y Avisos para regular las condiciones de la infraestructura y la circulación en su red."
+},
+{
+    "id": "rd664-2015-1-2-1-4",
+    "sourceId": "RD 664/2015",
+    "sourceTitle": "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+    "locator": "Capítulo 2, 1.2.1.4 Documentación competencia de las EF",
+    "excerpt": "Las EF elaboran el Libro de Normas del Maquinista, Horario de los Trenes, Libro de Itinerarios y la documentación de composición y frenado."
+},
+{
+    "id": "rd664-2015-1-5-1-10",
+    "sourceId": "RD 664/2015",
+    "sourceTitle": "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+    "locator": "Capítulo 5, 1.5.1.10 Velocidades",
+    "excerpt": "Velocidad Máxima es la que no se debe exceder. Se admite tolerancia de hasta 5 km/h durante no más de 20 segundos por encima de la cual se considera rebase. Regula también las Limitaciones Temporales de Velocidad Máxima (LTV)."
+},
+{
+    "id": "rd664-2015-1-5-1-13",
+    "sourceId": "RD 664/2015",
+    "sourceTitle": "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+    "locator": "Capítulo 5, 1.5.1.13 Bloqueo de los trenes",
+    "excerpt": "El objeto del bloqueo es mantener la separación necesaria entre trenes por la misma vía. Sistemas nominales: Telefónico (BT), Liberación Automática (BLA), Bloqueo Automático (BA) y Control Automático (BCA/ERTMS)."
+}
   ],
 
   introduction: [
@@ -281,6 +330,94 @@ export const rcfLibro1Theory: TheorySection = {
         }
       ]
     }
+,
+{
+    "id": "rcf-concept-14",
+    "title": "Distribución de Documentos y Deber de Conocimiento",
+    "claims": [
+        {
+            "id": "rcf-c14-1",
+            "text": "Cada entidad responsable de la publicación de un documento reglamentario garantiza su adecuada publicidad y difusión; el personal que reciba una modificación de su documentación de seguridad a título personal está obligado a acusar recibo y acreditar conocimiento conforme a su sistema de gestión de la seguridad.",
+            "kind": "normative",
+            "legalBasis": [
+                "rd664-2015-1-3-1-1"
+            ],
+            "review": {
+                "status": "needs_review",
+                "confidence": {
+                    "level": "medium",
+                    "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+                }
+            }
+        }
+    ]
+},
+{
+    "id": "rcf-concept-15",
+    "title": "Útiles de Servicio Individuales",
+    "claims": [
+        {
+            "id": "rcf-c15-1",
+            "text": "Los colectivos de personal que intervienen en la circulación recibirán de su administrador de infraestructuras o empresa ferroviaria, a título individual, los útiles de servicio necesarios para desarrollar su función.",
+            "kind": "normative",
+            "legalBasis": [
+                "rd664-2015-1-3-1-2"
+            ],
+            "review": {
+                "status": "needs_review",
+                "confidence": {
+                    "level": "medium",
+                    "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+                }
+            }
+        }
+    ]
+},
+{
+    "id": "rcf-concept-16",
+    "title": "Documentación del AI y de las EF: Consignas, Avisos y Libros de Personal",
+    "claims": [
+        {
+            "id": "rcf-c16-1",
+            "text": "Los administradores de infraestructuras son responsables de emitir Consignas y Avisos para regular la infraestructura y el tráfico, mientras que las empresas ferroviarias elaboran el Libro de Normas del Maquinista, el Horario de los Trenes y el Libro de Itinerarios.",
+            "kind": "normative",
+            "legalBasis": [
+                "rd664-2015-1-2-1-3",
+                "rd664-2015-1-2-1-4"
+            ],
+            "review": {
+                "status": "needs_review",
+                "confidence": {
+                    "level": "medium",
+                    "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+                }
+            }
+        }
+    ]
+},
+{
+    "id": "rcf-concept-17",
+    "title": "Principios de Bloqueo, Velocidades Máximas y Pruebas de Freno",
+    "claims": [
+        {
+            "id": "rcf-c17-1",
+            "text": "El bloqueo mantiene la separación entre trenes mediante sistemas nominales como telefónico, liberación automática o bloqueo automático; la velocidad máxima admite tolerancia de hasta 5 km/h durante no más de 20 segundos; y el freno automático continuo en toda la composición se verifica mediante pruebas reglamentarias completa, parcial, de continuidad o verificación del acoplamiento.",
+            "kind": "normative",
+            "legalBasis": [
+                "rd664-2015-1-5-1-10",
+                "rd664-2015-1-5-1-13",
+                "rd664-2015-1-5-1-21"
+            ],
+            "review": {
+                "status": "needs_review",
+                "confidence": {
+                    "level": "medium",
+                    "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+                }
+            }
+        }
+    ]
+}
   ],
 
   examples: [
@@ -296,6 +433,49 @@ export const rcfLibro1Theory: TheorySection = {
         }
       ]
     }
+,
+{
+    "id": "rcf-ex-2",
+    "situation": "Un maquinista recibe a título personal una actualización de la consigna operativa de su línea habitual de servicio.",
+    "application": [
+        {
+            "id": "rcf-ex-2-app-1",
+            "text": "El maquinista está formalmente obligado a acusar recibo de la modificación y a acreditar el conocimiento de su contenido según los procedimientos establecidos en el sistema de gestión de la seguridad de su empresa.",
+            "kind": "example",
+            "legalBasis": [
+                "rd664-2015-1-3-1-1"
+            ],
+            "review": {
+                "status": "needs_review",
+                "confidence": {
+                    "level": "medium",
+                    "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+                }
+            }
+        }
+    ]
+},
+{
+    "id": "rcf-ex-3",
+    "situation": "Un tren directo que tenía concedido el paso sin parada en una estación queda detenido por una incidencia operativa en una de sus vías generales.",
+    "application": [
+        {
+            "id": "rcf-ex-3-app-1",
+            "text": "Al quedar detenido un tren directo en una estación, su orden de marcha queda automáticamente invalidada según el Reglamento, requiriendo una nueva orden reglamentaria para reanudar el avance.",
+            "kind": "example",
+            "legalBasis": [
+                "rd664-2015-1-5-1-9"
+            ],
+            "review": {
+                "status": "needs_review",
+                "confidence": {
+                    "level": "medium",
+                    "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+                }
+            }
+        }
+    ]
+}
   ],
 
   reviewTakeaways: [
@@ -311,5 +491,66 @@ export const rcfLibro1Theory: TheorySection = {
       kind: "interpretative",
       legalBasis: ["rd664-2015-1-1-1-3", "rd664-2015-1-4-1"]
     }
+,
+{
+    "id": "rcf-takeaway-3",
+    "text": "Velocidad máxima sin sistema de protección de tren compatible o con el sistema averiado: 120 km/h.",
+    "kind": "normative",
+    "legalBasis": [
+        "rd664-2015-1-1-1-7"
+    ],
+    "review": {
+        "status": "needs_review",
+        "confidence": {
+            "level": "medium",
+            "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+        }
+    }
+},
+{
+    "id": "rcf-takeaway-4",
+    "text": "Prevalencia documental estricta: AESF y normativa europea > Administrador de Infraestructuras (AI) > Empresa Ferroviaria (EF).",
+    "kind": "normative",
+    "legalBasis": [
+        "rd664-2015-1-2-1-1"
+    ],
+    "review": {
+        "status": "needs_review",
+        "confidence": {
+            "level": "medium",
+            "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+        }
+    }
+},
+{
+    "id": "rcf-takeaway-5",
+    "text": "Pruebas de freno: Completa en origen; Parcial al agregar vehículos; Continuidad tras segregar, acoplar en cola o interrumpir TFA; Verificación de acoplamiento al cambiar locomotora en cabeza.",
+    "kind": "normative",
+    "legalBasis": [
+        "rd664-2015-1-5-1-21"
+    ],
+    "review": {
+        "status": "needs_review",
+        "confidence": {
+            "level": "medium",
+            "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+        }
+    }
+},
+{
+    "id": "rcf-takeaway-6",
+    "text": "Tolerancia de velocidad: hasta 5 km/h durante no más de 20 segundos por encima de la velocidad máxima permitida.",
+    "kind": "normative",
+    "legalBasis": [
+        "rd664-2015-1-5-1-10"
+    ],
+    "review": {
+        "status": "needs_review",
+        "confidence": {
+            "level": "medium",
+            "reason": "Contenido normativo del RD 664/2015, Libro Primero, cotejado con la publicación oficial consolidada del BOE."
+        }
+    }
+}
   ]
 };
