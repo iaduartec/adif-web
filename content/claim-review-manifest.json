@@ -1370,18 +1370,20 @@
       }
     },
     "rcf-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-intro-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c1-1": {
       "status": "reviewed",
@@ -1488,25 +1490,28 @@
       "reviewedAt": "2026-11-02"
     },
     "rcf-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-takeaway-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-intro-1": {
       "status": "needs_review",
@@ -1913,25 +1918,28 @@
       "reviewedAt": "2026-11-02"
     },
     "rcf-ex-cap3-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-takeaway-cap3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-takeaway-cap3-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "dr-cap2-infra-1": {
       "status": "needs_review",
