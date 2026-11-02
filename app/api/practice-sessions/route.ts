@@ -44,4 +44,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Servicio no disponible.", retryable: true }, { status: 503 });
   }
 }
-MD

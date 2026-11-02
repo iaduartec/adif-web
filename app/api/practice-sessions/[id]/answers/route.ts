@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createServerClient } from "../../../../lib/supabase/server";
+import { createServerClient } from "../../../../../lib/supabase/server";
 
 const saveSchema = z.object({
   questionId: z.string().min(1),
@@ -55,4 +55,3 @@ export async function PATCH(
     return NextResponse.json({ error: "Servicio no disponible.", retryable: true }, { status: 503 });
   }
 }
-MD

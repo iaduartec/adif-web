@@ -77,7 +77,7 @@ function hasExactConceptCitation(
 
     const matchingReference = theory.sources.find((source) =>
       source.sourceId === question.sourceId &&
-      source.sourceVersion === question.sourceVersion &&
+      (source.sourceVersion === undefined || source.sourceVersion === question.sourceVersion) &&
       source.locator === question.sourceLocator,
     );
     if (!matchingReference) return false;

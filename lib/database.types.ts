@@ -383,6 +383,51 @@ export type Database = {
         };
         Relationships: [];
       };
+      practice_sessions: {
+        Row: {
+          id: string;
+          user_id: string;
+          domain: string;
+          topic_id: string | null;
+          mode: "training" | "practice";
+          question_count: number;
+          question_ids: string[];
+          status: string;
+          version: number;
+          started_at: string;
+          completed_at: string | null;
+          total_elapsed_ms: number;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          domain: string;
+          topic_id?: string | null;
+          mode: "training" | "practice";
+          question_count?: number;
+          question_ids?: string[];
+          status?: string;
+          version?: number;
+          started_at?: string;
+          completed_at?: string | null;
+          total_elapsed_ms?: number;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          domain?: string;
+          topic_id?: string | null;
+          mode?: "training" | "practice";
+          question_count?: number;
+          question_ids?: string[];
+          status?: string;
+          version?: number;
+          started_at?: string;
+          completed_at?: string | null;
+          total_elapsed_ms?: number;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -419,6 +464,47 @@ export type Database = {
           p_client_event_id: string;
           p_elapsed_ms: number;
           p_simulation_id: string;
+        };
+        Returns: Json;
+      };
+      create_practice_session: {
+        Args: {
+          p_domain: string;
+          p_topic_id: string | null;
+          p_mode: string;
+          p_question_ids: string[];
+          p_client_event_id: string;
+        };
+        Returns: Json;
+      };
+      get_practice_session: {
+        Args: {
+          p_session_id: string;
+        };
+        Returns: Json;
+      };
+      save_practice_answer: {
+        Args: {
+          p_session_id: string;
+          p_question_id: string;
+          p_selected_answer: string;
+          p_elapsed_ms: number;
+          p_client_event_id: string;
+          p_expected_version: number;
+        };
+        Returns: Json;
+      };
+      submit_practice_session: {
+        Args: {
+          p_session_id: string;
+          p_client_event_id: string;
+        };
+        Returns: Json;
+      };
+      abandon_practice_session: {
+        Args: {
+          p_session_id: string;
+          p_client_event_id: string;
         };
         Returns: Json;
       };

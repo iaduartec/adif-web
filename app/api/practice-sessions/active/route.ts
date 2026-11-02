@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createServerClient } from "../../../lib/supabase/server";
+import { createServerClient } from "../../../../lib/supabase/server";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -32,4 +32,3 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Servicio no disponible.", retryable: true }, { status: 503 });
   }
 }
-MD

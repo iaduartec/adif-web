@@ -43,4 +43,3 @@ export type AbandonPracticeSessionInput = {
   sessionId: string;
   clientEventId: string;
 };
-MD

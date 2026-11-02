@@ -34,4 +34,3 @@ export async function GET(
     return NextResponse.json({ error: "Servicio no disponible.", retryable: true }, { status: 503 });
   }
 }
-MD
