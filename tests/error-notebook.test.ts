@@ -13,6 +13,15 @@ const questions: OfficialQuestion[] = [
 ];
 
 describe("deriveErrorNotebook", () => {
+  it("selects pending original questions by their latest saved answer", () => {
+    const original = [{ id: "orig-english-a2-001", topic: "Grammar" }, { id: "orig-english-a2-002", topic: "Reading" }];
+    const items = deriveErrorNotebook(original, [
+      { question_id: "orig-english-a2-001", is_correct: false, created_at: "2026-10-01T09:00:00Z" },
+      { question_id: "orig-english-a2-002", is_correct: false, created_at: "2026-10-01T10:00:00Z" },
+      { question_id: "orig-english-a2-001", is_correct: true, created_at: "2026-10-01T11:00:00Z" },
+    ]);
+    expect(items).toEqual([original[1]]);
+  });
   it("keeps only questions whose latest attempt is incorrect and joins their static content", () => {
     const items = deriveErrorNotebook(questions, [
       { question_id: "ADIF-2025-1131-Q01", is_correct: false, created_at: "2026-08-01T09:00:00.000Z" },

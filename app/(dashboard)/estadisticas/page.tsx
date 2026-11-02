@@ -6,6 +6,9 @@ import { ReadinessStatistics } from "../../../components/dashboard/readiness-sta
 import { calculateReadiness } from "../../../lib/adaptive/readiness";
 import { assembleReadinessInput, ReadinessUnavailableError } from "../../../lib/adaptive/readiness-server";
 import { listOfficialQuestions } from "../../../lib/content/repository";
+import { listOriginalPracticeQuestions } from "../../../lib/content/original-practice-repository";
+import { toPublicPracticeQuestion } from "../../../lib/content/original-practice-public-dto";
+import { calculateOriginalProgress } from "../../../lib/progress/original-progress";
 import { calculateMetrics } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
 
@@ -27,6 +30,12 @@ export default async function EstadisticasPage() {
     throw error;
   }
   const snapshot = calculateReadiness(readinessInput);
+  const originalProgress = calculateOriginalProgress(
+    listOriginalPracticeQuestions({ status: "reviewed" })
+      .map(toPublicPracticeQuestion)
+      .filter((question) => question !== null),
+    readinessInput.questionAttempts,
+  );
   const questions = listOfficialQuestions();
   const metrics = calculateMetrics(
     readinessInput.questionAttempts.map((attempt) => ({
@@ -49,6 +58,12 @@ export default async function EstadisticasPage() {
     english: "Inglés",
     specific: "Conocimiento específico",
   };
+  const originalLabels: Record<string, string> = {
+    "general-knowledge": "Conocimientos generales",
+    telecom: "Telecomunicaciones",
+    "english-a2": "Inglés A2",
+    psychometric: "Psicotécnicos",
+  };
   const rankedSections = Object.entries(metrics.accuracyByModule)
     .map(([section, stats]) => ({ section, stats, percentage: Math.round(stats.accuracy * 100) }))
     .sort((left, right) => left.stats.accuracy - right.stats.accuracy);
@@ -66,6 +81,42 @@ export default async function EstadisticasPage() {
 
       <ReadinessStatistics snapshot={snapshot} />
       <LazyChartWrapper activity={metrics.sevenDayActivity} />
+
+      <section aria-labelledby="original-progress-title" className="data-panel">
+        <h2 id="original-progress-title">Práctica de preguntas originales</h2>
+        <p>Intentos registrados, incluidos los repetidos. La precisión no mide dominio ni probabilidad de aprobar.</p>
+        <ul aria-label="Progreso móvil por materia de preguntas originales" className="grid gap-3 md:hidden">
+          {originalProgress.map((item) => (
+            <li className="border border-rail p-4" key={item.domain}>
+              <h3 className="font-bold">{originalLabels[item.domain] ?? item.domain}</h3>
+              <dl className="mt-2 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+                <dt>Precisión</dt><dd>{item.attempts ? `${Math.round(item.correct * 100 / item.attempts)}% (${item.correct}/${item.attempts})` : "Sin intentos"}</dd>
+                <dt>Intentos</dt><dd>{item.attempts}</dd>
+                <dt>Preguntas distintas</dt><dd>{item.attemptedQuestions} de {item.totalQuestions} revisadas</dd>
+                <dt>Tiempo registrado</dt><dd>{item.attempts ? `${Math.round(item.elapsedMs / 60000)} min` : "—"}</dd>
+                <dt>Última práctica</dt><dd>{item.latestAt ? new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid", dateStyle: "medium" }).format(new Date(item.latestAt)) : "—"}</dd>
+              </dl>
+            </li>
+          ))}
+        </ul>
+        <div className="data-table-wrap hidden md:block">
+          <table aria-label="Progreso por materia de preguntas originales" className="data-table">
+            <thead><tr><th>Materia</th><th>Precisión</th><th>Intentos</th><th>Preguntas distintas</th><th>Tiempo registrado</th><th>Última práctica</th></tr></thead>
+            <tbody>
+              {originalProgress.map((item) => (
+                <tr key={item.domain}>
+                  <td>{originalLabels[item.domain] ?? item.domain}</td>
+                  <td>{item.attempts ? `${Math.round(item.correct * 100 / item.attempts)}% (${item.correct}/${item.attempts})` : "Sin intentos"}</td>
+                  <td>{item.attempts}</td>
+                  <td>{item.attemptedQuestions} de {item.totalQuestions} revisadas</td>
+                  <td>{item.attempts ? `${Math.round(item.elapsedMs / 60000)} min` : "—"}</td>
+                  <td>{item.latestAt ? new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid", dateStyle: "medium" }).format(new Date(item.latestAt)) : "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <section aria-labelledby="accuracy-title" className="data-panel">
         <h2 id="accuracy-title">Precisión por sección oficial</h2>

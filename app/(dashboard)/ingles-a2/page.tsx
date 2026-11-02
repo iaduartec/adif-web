@@ -4,6 +4,7 @@ import { createServerClient } from "../../../lib/supabase/server";
 import { getEnglishCurriculum, englishAttemptCauseOptions } from "../../../lib/content/english-a2-curriculum";
 import { listOriginalPracticeQuestions } from "../../../lib/content/original-practice-repository";
 import { toPublicPracticeQuestion } from "../../../lib/content/original-practice-public-dto";
+import { OriginalPracticeSession } from "../../../components/practice/original-practice-session";
 
 export const dynamic = "force-dynamic";
 
@@ -50,19 +51,8 @@ export default async function InglesA2Page() {
 
       <section className="mt-8" aria-labelledby="a2-original-practice">
         <h2 id="a2-original-practice">Preguntas originales por tema</h2>
-        <p>Abre un tema y razona la respuesta. Puedes consultar su concepto en la guía de teoría.</p>
-        <div className="grid gap-4 md:grid-cols-2 mt-4">
-          {questions.map((question) => (
-            <details className="p-5 border border-rail bg-white" key={question.id}>
-              <summary className="font-bold text-ink cursor-pointer">{question.topic}</summary>
-              <p className="text-sm mt-3">PRÁCTICA A2 ORIGINAL</p>
-              <p className="mt-2">{question.prompt}</p>
-              <ul className="mt-3 space-y-2" aria-label="Opciones">
-                {question.options.map((option) => <li key={option.key}>{option.key}. {option.text}</li>)}
-              </ul>
-            </details>
-          ))}
-        </div>
+        <p>Responde preguntas originales y consulta las correcciones al finalizar el bloque.</p>
+        <div className="mt-4"><OriginalPracticeSession questions={questions} title="Práctica de inglés A2" /></div>
       </section>
 
       <section className="mt-8" aria-labelledby="a2-errors">

@@ -10,6 +10,7 @@ import type { Lesson } from "../../lib/content/schema";
 import type { LegalReference, TheoryClaim } from "../../content/theory-types";
 import { OriginLabel } from "./origin-label";
 import { CourseProgressShell } from "./course-progress-shell";
+import { OriginalPracticeSession } from "../practice/original-practice-session";
 
 function listModulePracticeQuestions(slug: string): OriginalPracticeQuestionDto[] {
   if (slug === "ingles-a2") {
@@ -136,10 +137,16 @@ export async function CourseTheoryReader({
   showFullDocument?: boolean;
   view?: CourseView;
 }) {
-  const officialNorm = officialTexts[lesson.slug];
+  // These curated teaching guides are not official ADIF texts or source documents.
+  const isSupplementaryGuide = lesson.slug === "ingles-a2" || lesson.slug === "psicometria";
+  const officialNorm = isSupplementaryGuide ? undefined : officialTexts[lesson.slug];
   const theory = lessonTheories[lesson.slug];
   const summary = lessonSummaries[lesson.slug];
   const modulePracticeQuestions = view === "theory" ? listModulePracticeQuestions(lesson.slug) : [];
+  const practiceByDomain = modulePracticeQuestions.reduce((groups, question) => {
+    (groups[question.domain] ??= []).push(question);
+    return groups;
+  }, {} as Partial<Record<OriginalPracticeQuestionDto["domain"], OriginalPracticeQuestionDto[]>>);
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase();
   const filteredArticles = officialNorm?.articles.filter((article) =>
     !normalizedQuery || [article.number, article.title, article.content]
@@ -158,7 +165,7 @@ export async function CourseTheoryReader({
         {([
           ["summary", "Resumen Ejecutivo"],
           ["theory", "Teoría y Práctica"],
-          ["official", "Temario Original"],
+          ["official", isSupplementaryGuide ? "Referencias" : "Temario Original"],
         ] as const).map(([targetView, label]) => (
           <Link
             aria-current={view === targetView ? "page" : undefined}
@@ -318,44 +325,22 @@ export async function CourseTheoryReader({
                   Preguntas Originales del Tema ({modulePracticeQuestions.length})
                 </h2>
                 <p className="text-sm text-gray-600">
-                  Preguntas de elaboración propia fundamentadas en la fuente oficial vigente. Abre cada supuesto para razonar sus opciones y consultar su referencia normativa.
+                  Preguntas de elaboración propia. No son una simulación oficial; las respuestas se guardan y corrigen al finalizar cada bloque.
                 </p>
               </div>
-              <div className="grid gap-4 md:grid-cols-2">
-                {modulePracticeQuestions.map((question, index) => (
-                  <details className="p-5 border border-rail bg-gray-50/40" key={question.id}>
-                    <summary className="font-bold text-ink cursor-pointer text-sm">
-                      {String(index + 1).padStart(2, "0")}. {question.topic}
-                    </summary>
-                    <p className="text-xs font-bold uppercase tracking-wider text-accent mt-3">
-                      {question.domain === "english-a2"
-                        ? "PRÁCTICA A2 ORIGINAL"
-                        : question.domain === "psychometric"
-                          ? "PSICOTÉCNICO ORIGINAL"
-                          : "SIMULACIÓN ORIGINAL"}
-                    </p>
-                    <p className="mt-2 text-sm text-ink font-medium leading-relaxed">{question.prompt}</p>
-                    <ul className="mt-3 space-y-1.5 text-sm text-gray-700" aria-label="Opciones">
-                      {question.options.map((option) => (
-                        <li key={option.key}>
-                          <strong>{option.key}.</strong> {option.text}
-                        </li>
-                      ))}
-                    </ul>
-                    {question.answerGrounding && (
-                      <p className="mt-3 text-xs text-gray-500">
-                        Fuente:{" "}
-                        <a
-                          className="text-accent underline"
-                          href={question.answerGrounding.url}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          {question.answerGrounding.sourceId} · {question.answerGrounding.locator}
-                        </a>
-                      </p>
-                    )}
-                  </details>
+              <div className="space-y-8">
+                {Object.entries(practiceByDomain).map(([domain, questions]) => (
+                  <OriginalPracticeSession
+                    key={domain}
+                    questions={questions!}
+                    title={domain === "telecom"
+                      ? "Práctica original de telecomunicaciones"
+                      : domain === "general-knowledge"
+                        ? "Práctica original de conocimientos generales"
+                        : domain === "english-a2"
+                          ? "Práctica original de inglés A2"
+                          : "Práctica original psicotécnica"}
+                  />
                 ))}
               </div>
             </section>
@@ -363,7 +348,7 @@ export async function CourseTheoryReader({
         </div>
       ) : (
         <section aria-labelledby="official-text-title" className="course-official space-y-6">
-          <h2 id="official-text-title">Texto Oficial Integrado</h2>
+          <h2 id="official-text-title">{isSupplementaryGuide ? "Referencias de apoyo" : "Texto Oficial Integrado"}</h2>
           {officialNorm ? (
             <div className="bg-gray-50 border border-rail p-6 space-y-4">
               <h3 className="text-lg font-bold text-ink">{officialNorm.title}</h3>
@@ -397,7 +382,11 @@ export async function CourseTheoryReader({
                 )) : <p className="empty-state">No se encontraron artículos para esta búsqueda.</p>}
               </div>
             </div>
-          ) : <p className="empty-state">No hay texto oficial integrado disponible para esta lección.</p>}
+          ) : <p className="empty-state">
+            {isSupplementaryGuide
+              ? "No hay un texto oficial integrado para esta lección. Las guías de inglés y psicometría son material didáctico complementario, no documentos oficiales de ADIF."
+              : "No hay texto oficial integrado disponible para esta lección."}
+          </p>}
         </section>
       )}
     </CourseProgressShell>

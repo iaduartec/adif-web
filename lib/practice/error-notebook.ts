@@ -1,12 +1,10 @@
-import type { OfficialQuestion } from "../content/schema";
-
 export interface QuestionAttempt {
   question_id: string;
   is_correct: boolean;
   created_at: string;
 }
 
-export function deriveErrorNotebook<T extends OfficialQuestion>(
+export function deriveErrorNotebook<T extends { id: string }>(
   questions: readonly T[],
   attempts: readonly QuestionAttempt[]
 ): T[] {

@@ -77,6 +77,15 @@ describe("course reader provenance and notes", () => {
     expect(links[0]).toHaveAttribute("href", "/curso/igualdad?view=official");
   });
 
+  it.each(["ingles-a2", "psicometria"])("does not label the %s didactic guide as an official ADIF text", async (slug) => {
+    const { container } = render(await CourseTheoryReader({ lesson: getLesson(slug)!, progress: 0, view: "official" }));
+
+    expect(screen.getByRole("heading", { name: "Referencias de apoyo" })).toBeVisible();
+    expect(screen.getByText(/no hay un texto oficial integrado/i)).toBeVisible();
+    expect(screen.queryByRole("heading", { name: "Texto Oficial Integrado" })).not.toBeInTheDocument();
+    expect(container.querySelectorAll(".course-article")).toHaveLength(0);
+  });
+
   it("preserves practical examples, review takeaways, and exam-error guidance in the server theory view", async () => {
     render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 
@@ -86,7 +95,10 @@ describe("course reader provenance and notes", () => {
     expect(screen.getByText(/no admite justificación ordinaria/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
     expect(screen.getByRole("heading", { name: /Preguntas Originales del Tema/i })).toBeVisible();
-    expect(screen.getAllByText("SIMULACIÓN ORIGINAL").length).toBeGreaterThan(0);
+    expect(screen.getByRole("radio", { name: /Entrenamiento/ })).toBeVisible();
+    expect(screen.getByRole("radio", { name: /Práctica/ })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Comenzar bloque" }));
+    expect(screen.getByRole("button", { name: "Comprobar respuesta" })).toBeVisible();
   });
 
   it("labels claims in study language without exposing internal ids or kind names", async () => {

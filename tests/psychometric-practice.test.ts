@@ -193,20 +193,21 @@ describe("original psychometric practice", () => {
     expect(() => selectPsychometricQuestions(questions, "not-a-mode")).toThrow();
   });
 
-  it("keeps the rendered questions identical when the practice mode changes", () => {
+  it("renders interactive training and block-practice controls", () => {
     const questions = listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" })
       .map((question) => toPublicPracticeQuestion(question))
       .filter((question) => question !== null);
-    const prompts = questions.map(({ prompt }) => prompt);
-    expect(prompts.length).toBeGreaterThanOrEqual(18);
+    expect(questions.length).toBeGreaterThanOrEqual(18);
 
     render(createElement(PsychometricPractice, { questions }));
-    for (const prompt of prompts) expect(screen.getByText(prompt)).toBeInTheDocument();
-
-    for (const mode of psychometricModes) {
-      fireEvent.click(screen.getByRole("radio", { name: new RegExp(mode.label) }));
-      for (const prompt of prompts) expect(screen.getByText(prompt)).toBeInTheDocument();
-    }
+    expect(screen.getByRole("radio", { name: /Entrenamiento/ })).toBeVisible();
+    expect(screen.getByRole("radio", { name: /Práctica/ })).toBeVisible();
+    expect(screen.getByRole("combobox", { name: "Tema" })).toBeVisible();
+    expect(screen.getByRole("spinbutton", { name: "Cantidad de preguntas" })).toBeVisible();
+    fireEvent.click(screen.getByRole("radio", { name: /Práctica/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Comenzar bloque" }));
+    expect(screen.getByText(questions[0]!.prompt)).toBeVisible();
+    expect(screen.getByText(questions[0]!.prompt)).toBeVisible();
   });
 
   it("exposes only sanitized original records from the page", async () => {
@@ -216,13 +217,10 @@ describe("original psychometric practice", () => {
 
     const questions = listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" });
     expect(screen.getByRole("heading", { name: /Práctica original/i })).toBeVisible();
-    for (const mode of psychometricModes) {
-      expect(screen.getByText(mode.label)).toBeVisible();
-    }
-    for (const question of questions) {
-      expect(screen.getByText(question.prompt)).toBeInTheDocument();
-      expect(html).not.toContain(question.explanation);
-    }
+    expect(screen.getByRole("radio", { name: /Entrenamiento/ })).toBeVisible();
+    expect(screen.getByRole("radio", { name: /Práctica/ })).toBeVisible();
+    expect(screen.getByRole("button", { name: "Comenzar bloque" })).toBeVisible();
+    for (const question of questions) expect(html).not.toContain(question.explanation);
     expect(html).not.toContain('"answer":');
     expect(html).not.toContain('"explanation":');
     expect(html).not.toContain('"reviewedAt":');

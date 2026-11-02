@@ -311,7 +311,7 @@
     "options": [
       {
         "key": "A",
-        "text": "El derecho a interrumpir su actividad y abandonar el lugar de trabajo."
+        "text": "El derecho a interrumpir su actividad y, en caso necesario, abandonar el lugar de trabajo."
       },
       {
         "key": "B",
@@ -327,7 +327,7 @@
       }
     ],
     "answer": "A",
-    "explanation": "El artículo 21 reconoce el derecho a interrumpir la actividad y abandonar el puesto cuando la tarea entrañe un riesgo grave e inminente para la vida o la salud.",
+    "explanation": "El artículo 21.2 reconoce el derecho a interrumpir la actividad y, en caso necesario, abandonar el lugar de trabajo cuando el trabajador considere que aquella entraña un riesgo grave e inminente para su vida o su salud.",
     "difficulty": 1,
     "tags": [
       "original-comun",

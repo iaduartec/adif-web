@@ -16,10 +16,13 @@ describe("A2 curriculum page", () => {
     const html = renderToStaticMarkup(page);
     render(page);
     const questions = listOriginalPracticeQuestions({ domain: "english-a2", status: "reviewed" });
-    expect(screen.getAllByText("PRÁCTICA A2 ORIGINAL")).toHaveLength(22);
+    expect(screen.getByRole("heading", { name: "Práctica de inglés A2" })).toBeVisible();
+    expect(screen.getByRole("radio", { name: /Entrenamiento/ })).toBeVisible();
+    expect(screen.getByRole("radio", { name: /Práctica/ })).toBeVisible();
+    expect(screen.getByRole("combobox", { name: "Tema" })).toBeVisible();
+    expect(screen.getByRole("spinbutton", { name: "Cantidad de preguntas" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Currículo A2" })).toBeVisible();
     for (const question of questions) {
-      expect(screen.getByText(question.prompt)).toBeInTheDocument();
       expect(html).not.toContain(question.explanation);
     }
     expect(html).not.toContain('"answer":');

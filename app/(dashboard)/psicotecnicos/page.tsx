@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 const tips = [
   {
     title: "Gestión del tiempo",
-    text: "No inviertas más de 30 segundos por pregunta. Si no ves la solución rápido, márcala y sigue adelante.",
+    text: "Entrena primero la precisión y mide tu ritmo; ajusta el tiempo por pregunta a las condiciones confirmadas de cada prueba.",
   },
   {
     title: "Series numéricas",
@@ -22,7 +22,7 @@ const tips = [
   },
   {
     title: "Atención y concentración",
-    text: "Avanza de forma lineal, sin saltar filas. La velocidad importa, pero un error de patrón resta más que una omisión.",
+    text: "Avanza de forma ordenada y comprueba las diferencias con cuidado. La puntuación de errores y omisiones depende de las reglas aplicables.",
   },
 ];
 

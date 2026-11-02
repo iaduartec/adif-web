@@ -1,14 +1,14 @@
 # Plataforma de Estudio — Oficial de Telecomunicaciones ADIF
 
-Aplicación web para preparar el perfil de **Oficial de Telecomunicaciones de Entrada de ADIF** con un banco histórico de preguntas oficiales. La práctica muestra texto, opciones y plantilla correctora publicados por ADIF; cada resultado conserva su procedencia verificable.
+Aplicación web para preparar el perfil de **Oficial de Telecomunicaciones de Entrada de ADIF**. Incluye contenido de estudio, preguntas originales y un inventario de transcripciones históricas sometidas a controles de publicación y vigencia.
 
 ## Contenido oficial
 
-La plataforma publica únicamente transcripciones revisadas de cuadernillos y plantillas correctoras oficiales de ADIF. No se inventan enunciados, opciones ni respuestas; tampoco se reformula el texto para completar lagunas.
+Las transcripciones históricas conservan su procedencia y se mantienen separadas de las preguntas originales. Un registro importado no está necesariamente habilitado: para practicar debe superar los controles de publicación, corrección y vigencia.
 
 La importación inicial contiene 102 apariciones de pregunta procedentes de seis modelos históricos. Hay 72 huellas de contenido distintas y 30 pares de reutilización literal oficial: la reutilización se conserva como apariciones independientes porque pertenece a modelos y claves oficiales diferentes.
 
-| Convocatoria | Perfil | Modelo | Preguntas publicadas |
+| Convocatoria | Perfil | Modelo | Registros importados |
 | --- | --- | ---: | ---: |
 | PNI23/01 (2023) | 23/05PO | 1433 | 15 |
 | PNI23/01 (2023) | 23/05PO | 4101 | 15 |
@@ -21,11 +21,11 @@ Los seis modelos se presentan como **Parte específica**, no como la reproducci�
 
 ### Preguntas oficiales
 
-En la ruta **Preguntas oficiales** se puede practicar con preguntas filtradas por año, modelo y sección. Tras responder, la corrección indica la opción marcada en la plantilla y enlaza el documento oficial; no añade explicaciones inventadas.
+La ruta permite filtrar por año, modelo y sección las preguntas que superen los controles de publicación y vigencia. En el estado auditado el 2 de noviembre de 2026 las 102 transcripciones históricas permanecen pendientes de revisión de vigencia y sus plantillas están en `link_only`; por ello no están habilitadas para práctica. Consulta [el estado real](docs/CURRENT_STATE.md).
 
 ### Exámenes oficiales
 
-La ruta **Exámenes oficiales** agrupa las preguntas de un único modelo, mantiene su orden y señala de forma expresa que es una parte específica. No mezcla convocatorias ni crea sesiones a partir de preguntas de varios modelos.
+La ruta de simulacros agrupa las preguntas por modelo y señala su alcance de parte específica. La disponibilidad efectiva depende de los mismos controles de contenido: no se debe interpretar el inventario como un examen completo listo para practicar.
 
 ## Procedencia y revisión
 
@@ -54,7 +54,7 @@ El importador valida la estructura, la procedencia, los números de pregunta, la
 
 - Next.js (App Router), React y TypeScript
 - Tailwind CSS
-- Supabase para autenticación con Google y progreso por usuario
+- Supabase para autenticación y progreso por usuario
 - Vitest para pruebas unitarias y de contrato
 - Playwright para recorridos end-to-end
 

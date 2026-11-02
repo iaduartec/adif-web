@@ -12,6 +12,12 @@ export interface MockQuestionAttempt {
   created_at: string;
 }
 
+export interface MockLearningQuestion {
+  correct_answer: "A" | "B" | "C" | "D";
+  concept_ids: string[];
+  active: boolean;
+}
+
 export interface MockSimulationAttempt {
   id: string;
   client_event_id: string | null;
@@ -116,6 +122,8 @@ export interface MockNote {
 class MockStore {
   reviewRpcFailure: "uncertain" | "definitive" | null = null;
   questionAttempts: MockQuestionAttempt[] = [];
+  /** Private server fixture registry; never projected through mock table/select APIs. */
+  learningQuestions = new Map<string, MockLearningQuestion>();
   simulationAttempts: MockSimulationAttempt[] = [];
   simulationAnswers: MockSimulationAnswer[] = [];
   lessonProgress: MockLessonProgress[] = [];
@@ -140,6 +148,7 @@ class MockStore {
   reset() {
     this.reviewRpcFailure = null;
     this.questionAttempts = [];
+    this.learningQuestions.clear();
     this.simulationAttempts = [];
     this.simulationAnswers = [];
     this.lessonProgress = [];

@@ -6,6 +6,7 @@ node_modules/
 coverage/
 playwright-report/
 test-results/
+.cache/playwright/
 tsconfig.tsbuildinfo
 .superpowers/
 .worktrees/

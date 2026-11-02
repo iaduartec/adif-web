@@ -26,8 +26,24 @@ export const ictTheory: TheorySection = {
       sourceTitle:
         "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
-      locator: "Anexo II, apartados 4.5.1–4.5.3 y 4.6",
+      locator: "Anexo III, apartados 4.5.1–4.5.3 y 4.6",
       excerpt: "Regula los recintos RITI, RITS y RITU, y la canalización principal de la ICT.",
+    },
+    {
+      id: "rd346-2011-anex3-canalizacion-principal",
+      sourceId: "RD 346/2011",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo III, apartado 5.7",
+      excerpt: "En edificaciones en altura, la canalización principal deberá ser rectilínea, fundamentalmente vertical y de capacidad suficiente.",
+    },
+    {
+      id: "rd346-2011-anex3-tierra-local",
+      sourceId: "RD 346/2011",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo III, apartado 7.1",
+      excerpt: "El sistema de tierra del recinto incluye un anillo interior de cobre aplicable solo a recintos no modulares y una barra colectora conectada al sistema general de tierra.",
     },
     {
       id: "rd346-2011-anex2-feeding",
@@ -352,9 +368,9 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c9-1",
-          text: "Discurre en vertical por las zonas de copropiedad del edificio. Bajo ninguna circunstancia técnica se permite que atraviese viviendas o locales de dominio privado.",
+          text: "En edificaciones en altura, la canalización principal debe ser rectilínea y fundamentalmente vertical, y discurrirá próxima al hueco de ascensores o escalera.",
           kind: "normative",
-          legalBasis: ["rd346-2011-anex2-infrastructure"]
+          legalBasis: ["rd346-2011-anex3-canalizacion-principal"]
         }
       ]
     },
@@ -364,9 +380,9 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c10-1",
-          text: "El sistema de puesta a tierra de cada recinto consta de un anillo interior de cobre con una barra colectora, conectado al sistema general de tierra de la edificación y al que se conectan los equipos y masas metálicas.",
+          text: "En recintos no modulares, el sistema de tierra incluye un anillo interior de cobre con una barra colectora conectada al sistema general de tierra de la edificación, al que se unen los equipos y masas metálicas.",
           kind: "normative",
-          legalBasis: ["rd346-2011-anex2-safety"]
+          legalBasis: ["rd346-2011-anex3-tierra-local"]
         }
       ]
     },
@@ -684,9 +700,9 @@ export const ictTheory: TheorySection = {
     },
     {
       id: "ict-takeaway-2",
-      text: "Las canalizaciones principales de ICT deben transcurrir de forma imperativa a través de zonas y elementos de propiedad común.",
+      text: "En viviendas unifamiliares, la canalización principal discurre por zona común siempre que sea razonable y, en todo caso, por zonas accesibles.",
       kind: "interpretative",
-      legalBasis: ["rd346-2011-anex2-infrastructure"]
+      legalBasis: ["rd346-2011-anex3-canalizacion-principal"]
     }
   ]
 };

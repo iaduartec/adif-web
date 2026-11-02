@@ -1,5 +1,6 @@
 import { getMockStore, MOCK_USER } from "./mock-store";
 import { getOfficialExam, getOfficialQuestion } from "../content/repository";
+import { listOriginalPracticeQuestions } from "../content/original-practice-repository";
 import { activeTheoryConceptRegistry } from "../../content/theory-concepts";
 import {
   applyReviewSchedule,
@@ -10,6 +11,18 @@ import {
 
 export function createMockSupabaseClient() {
   const mockStore = getMockStore();
+
+  // Seed the same private answer-key contract used by the database RPC. This map is
+  // server-side test state and is not exposed through the mock Data API.
+  if (mockStore.learningQuestions.size === 0) {
+    for (const question of listOriginalPracticeQuestions({ status: "reviewed" })) {
+      mockStore.learningQuestions.set(question.id, {
+        correct_answer: question.answer,
+        concept_ids: [...question.conceptIds],
+        active: true,
+      });
+    }
+  }
 
   const persistEvidence = ({
     clientEventId,
@@ -419,19 +432,30 @@ export function createMockSupabaseClient() {
 
       if (functionName === "record_practice_attempt") {
         const mode = args.p_mode ?? "practice";
+        if (mode === "simulation" && typeof args.p_question_id === "string" && args.p_question_id.startsWith("orig-")) {
+          return Promise.resolve({
+            data: null,
+            error: constraintError("Original practice questions cannot be submitted in simulation mode."),
+          });
+        }
         const question = getOfficialQuestion(args.p_question_id);
+        const privateQuestion = mockStore.learningQuestions.get(args.p_question_id);
+        const answer = question?.answer ?? (privateQuestion?.active ? privateQuestion.correct_answer : undefined);
+        const conceptIds = question?.conceptIds ?? (privateQuestion?.active ? privateQuestion.concept_ids : undefined);
         if (
           !validUuid(args.p_client_event_id)
           || !["A", "B", "C", "D"].includes(args.p_selected_answer)
           || !["practice", "simulation"].includes(mode)
           || !validElapsed(args.p_elapsed_ms)
-          || !question
-          || question.conceptIds.some((conceptId) => !activeTheoryConceptRegistry.has(conceptId))
+          || !answer
+          || !conceptIds
+          || conceptIds.some((conceptId) => !activeTheoryConceptRegistry.has(conceptId))
         ) {
           return Promise.resolve({ data: null, error: constraintError("Invalid practice payload") });
         }
+        const questionId = args.p_question_id as string;
         const requestFingerprint = JSON.stringify([
-          question.id,
+          questionId,
           args.p_selected_answer,
           args.p_elapsed_ms,
           mode,
@@ -447,13 +471,13 @@ export function createMockSupabaseClient() {
           });
         }
         const createdAt = new Date().toISOString();
-        const isCorrect = question.answer === args.p_selected_answer;
+        const isCorrect = answer === args.p_selected_answer;
         const attempt = {
           id: Math.random().toString(36).substring(7),
           client_event_id: args.p_client_event_id,
           request_fingerprint: requestFingerprint,
           user_id: MOCK_USER.id,
-          question_id: question.id,
+          question_id: questionId,
           selected_answer: args.p_selected_answer,
           is_correct: isCorrect,
           mode: mode as "practice" | "simulation",
@@ -461,13 +485,13 @@ export function createMockSupabaseClient() {
           created_at: createdAt,
         };
         mockStore.questionAttempts.push(attempt);
-        for (const conceptId of [...question.conceptIds].sort()) {
+        for (const conceptId of [...conceptIds].sort()) {
           persistEvidence({
-            clientEventId: `${args.p_client_event_id}:${question.id}:${conceptId}`,
+            clientEventId: `${args.p_client_event_id}:${questionId}:${conceptId}`,
             conceptId,
             isCorrect,
             occurredAt: createdAt,
-            questionId: question.id,
+            questionId,
             rating: isCorrect ? 2 : 0,
             sourceKind: "question",
           });

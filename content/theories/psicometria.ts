@@ -270,11 +270,11 @@ export const psicometriaTheory: TheorySection = {
     },
     {
       id: "psico-concept-6",
-      title: "Tasa de Penalización por Error",
+      title: "Puntuación y respuestas dudosas",
       claims: [
         {
           id: "psico-c6-1",
-          text: "Se penalizan las respuestas erróneas mediante la aplicación de la corrección del azar en preguntas de respuesta múltiple, por lo que responder al azar empeora la puntuación esperada.",
+          text: "Las consecuencias de acertar, fallar o dejar una respuesta en blanco dependen de las reglas de puntuación confirmadas para cada convocatoria. Consulta esas reglas antes de elegir una estrategia.",
           kind: "didactic",
           legalBasis: ["guia-aptitudes-cognitivas"]
         }
@@ -301,7 +301,7 @@ export const psicometriaTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "psico-takeaway-1",
-      text: "La estrategia óptima de realización del test psicotécnico consiste en contestar primero las respuestas de seguridad absoluta, omitiendo aquellas de resolución dudosa para evitar la penalización por fallos.",
+      text: "Practica primero con precisión y después con tiempo limitado; decide qué hacer con las preguntas dudosas según las reglas confirmadas y el tiempo disponible.",
       kind: "didactic",
       legalBasis: ["guia-aptitudes-cognitivas"]
     }
