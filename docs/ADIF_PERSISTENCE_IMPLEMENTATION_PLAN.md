@@ -68,21 +68,22 @@ CREATE POLICY "Users can only access their own sessions"
 CREATE INDEX idx_practice_sessions_user ON practice_sessions(user_id);
 CREATE INDEX idx_practice_sessions_status ON practice_sessions(status);
 CREATE UNIQUE INDEX idx_practice_sessions_client_event ON practice_sessions(client_event_id);
+-- Composite unique for FK from answers (P0: ownership integrity)
+ALTER TABLE practice_sessions ADD CONSTRAINT uq_practice_sessions_id_user UNIQUE (id, user_id);
 
 -- practice_session_answers
 CREATE TABLE practice_session_answers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  session_id UUID NOT NULL REFERENCES practice_sessions(id) ON DELETE CASCADE,
+  session_id UUID NOT NULL,
   user_id UUID NOT NULL REFERENCES auth.users(id),
   question_id TEXT NOT NULL,
   selected_answer TEXT NOT NULL CHECK (selected_answer IN ('A', 'B', 'C', 'D')),
-  is_correct BOOLEAN,
-  correct_answer TEXT,
-  explanation TEXT,
   elapsed_ms INTEGER,
   client_event_id UUID NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  -- Composite FK: ensures session_id and user_id belong together (P0)
+  FOREIGN KEY (session_id, user_id) REFERENCES practice_sessions(id, user_id) ON DELETE CASCADE,
   UNIQUE(session_id, question_id)
 );
 
@@ -275,6 +276,59 @@ SUBMITTED → ABANDONED (si no se reciben correcciones en X minutos)
 1. Flujo completo: seleccionar → responder → guardar → recargar → recuperar → finalizar → resultados.
 2. Cronómetro visible y funcional.
 3. Estado de guardado visible.
+
+## 7.5. Seguridad revisada (P0)
+
+### Protección de soluciones
+- `practice_session_answers` NO almacena `correct_answer`, `is_correct`, `explanation`.
+- Las claves se resuelven en el servidor a partir del banco autorizado.
+- El servidor revela la corrección según modalidad y estado de sesión.
+
+### Propiedad e integridad
+- FK compuesta (session_id, user_id) → practice_sessions(id, user_id).
+- RLS por operación: SELECT/INSERT/UPDATE/DELETE con `auth.uid() = user_id`.
+- Permisos mínimos: `anon` sin acceso; `authenticated` solo sus propias filas.
+- Sesiones finalizadas: no modificables (trigger o validación en API).
+- Preguntas validadas contra el conjunto autorizado del servidor.
+- Puntuación calculada por el servidor, no por el cliente.
+
+### Finalización atómica
+- Transacción: validar auth/propiedad → verificar estado → verificar respuestas → calcular puntuación → registrar resultado → cambiar estado.
+- Idempotencia: si ya está COMPLETED, devolver resultados existentes.
+- Concurrencia: `SELECT ... FOR UPDATE` o optimistic locking con `updated_at`.
+- Compatibilidad con `attempts`: se insertan attempts individuales durante la finalización (sin duplicar existentes).
+
+### Idempotencia y concurrencia
+- `clientEventId` único por operación (UNIQUE constraint).
+- Repetir mismo evento → devolver resultado existente (200).
+- Reutilizar mismo ID con payload diferente → 409 Conflict.
+- Control de versiones: `updated_at` como optimistic lock.
+- Política de modificación por modalidad:
+  - Training: puede cambiar respuesta hasta finalizar.
+  - Practice: puede cambiar respuesta hasta finalizar.
+  - Simulation: puede cambiar respuesta hasta finalizar.
+
+### Tiempo y versiones
+- `started_at`: establecido por el servidor en creación.
+- `completed_at`: establecido por el servidor en finalización.
+- `total_elapsed_ms`: calculado por el servidor (suma de elapsed_ms de respuestas), no aceptado del cliente sin validación.
+- Recarga: `started_at` se recupera del servidor; cronómetro calcula tiempo transcurrido.
+- Cambio de reloj del cliente: no afecta (servidor es fuente de verdad).
+- Preguntas: se almacenan `question_ids[]` en la sesión; el banco se consulta al corregir, no se copian respuestas correctas.
+
+### Pruebas de seguridad (ampliadas)
+- Usuario A no accede a sesiones de B.
+- Usuario A no inserta respuestas en sesiones de B.
+- No se puede leer soluciones prematuramente.
+- Consultar directamente Supabase no revela claves correctas.
+- No se puede alterar una sesión finalizada.
+- Dos finalizaciones concurrentes producen un solo resultado.
+- Repetir clientEventId no duplica operaciones.
+- Reutilizar mismo evento con datos distintos se rechaza.
+- No se aceptan preguntas fuera de la sesión.
+- No se aceptan puntuaciones manipuladas.
+- Una desconexión no produce una confirmación falsa de guardado.
+- Los resultados antiguos de attempts permanecen intactos.
 
 ## Fase 8 — Archivos a modificar
 

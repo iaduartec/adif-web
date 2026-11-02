@@ -28,9 +28,7 @@ CREATE TABLE practice_sessions (
   topic_id TEXT, -- 'all' or specific topic
   mode TEXT NOT NULL CHECK (mode IN ('training', 'practice')),
   question_count INTEGER NOT NULL,
-  question_ids UUID[] NOT NULL,
-  answers JSONB DEFAULT '{}', -- { questionId: "A"|"B"|"C"|"D" }
-  results JSONB DEFAULT '{}', -- { questionId: { isCorrect, correctAnswer, explanation } }
+  question_ids TEXT[] NOT NULL, -- IDs de preguntas originales
   status TEXT NOT NULL DEFAULT 'CREATED' CHECK (status IN ('CREATED', 'IN_PROGRESS', 'SUBMITTED', 'COMPLETED', 'ABANDONED')),
   started_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   completed_at TIMESTAMPTZ,
@@ -50,6 +48,38 @@ CREATE POLICY "Users can only access their own sessions"
 CREATE INDEX idx_practice_sessions_user ON practice_sessions(user_id);
 CREATE INDEX idx_practice_sessions_status ON practice_sessions(status);
 CREATE UNIQUE INDEX idx_practice_sessions_client_event ON practice_sessions(client_event_id);
+-- Composite unique for FK from answers (P0: ownership integrity)
+ALTER TABLE practice_sessions ADD CONSTRAINT uq_practice_sessions_id_user UNIQUE (id, user_id);
+```
+
+### Tabla: `practice_session_answers` (normalizada)
+
+```sql
+CREATE TABLE practice_session_answers (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  session_id UUID NOT NULL,
+  user_id UUID NOT NULL REFERENCES auth.users(id),
+  question_id TEXT NOT NULL,
+  selected_answer TEXT NOT NULL CHECK (selected_answer IN ('A', 'B', 'C', 'D')),
+  elapsed_ms INTEGER,
+  client_event_id UUID NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  -- Composite FK: ensures session_id and user_id belong together (P0)
+  FOREIGN KEY (session_id, user_id) REFERENCES practice_sessions(id, user_id) ON DELETE CASCADE,
+  UNIQUE(session_id, question_id) -- idempotencia por pregunta
+);
+
+-- RLS
+ALTER TABLE practice_session_answers ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Users can only access their own answers"
+  ON practice_session_answers FOR ALL
+  USING (auth.uid() = user_id);
+
+-- Indexes
+CREATE INDEX idx_session_answers_session ON practice_session_answers(session_id);
+CREATE INDEX idx_session_answers_user ON practice_session_answers(user_id);
+CREATE UNIQUE INDEX idx_session_answers_client_event ON practice_session_answers(client_event_id);
 ```
 
 ### Tabla: `attempts` (existente, posiblemente)
@@ -170,12 +200,32 @@ No aplicar a producción sin aprobación.
 - **Concurrencia**: mitigado por transacciones y optimistic locking.
 - **Compatibilidad**: no afecta datos existentes (tabla nueva).
 
-## 9. Decisiones que requieren aprobación
+## 8.5. Protección de soluciones (P0)
 
-1. ¿Crear tabla `practice_sessions` o reutilizar `attempts` con un campo `session_id`?
-2. ¿Guardar respuestas en JSONB o en tabla separada `session_answers`?
-3. ¿Implementar persistencia en localStorage como fallback offline?
-4. ¿Migrar datos existentes de attempts a sessions?
+**La tabla `practice_session_answers` NO almacena:**
+- `correct_answer`
+- `is_correct`
+- `explanation`
+
+**Las claves correctas y explicaciones se resuelven exclusivamente en el servidor** a partir del banco autorizado de preguntas (`original-practice-repository`).
+
+**El servidor revela la corrección según:**
+- Modalidad (training: inmediata; practice: tras finalización).
+- Estado de la sesión (COMPLETED: todas las correcciones; IN_PROGRESS: solo training).
+
+**Verificación de no filtración:**
+- RLS impide lectura directa de soluciones (no existen en la tabla).
+- Endpoints API filtran campos según estado/modalidad.
+- Vistas y RPC no exponen claves.
+- Consultas directas a Supabase no revelan soluciones (no están almacenadas).
+
+## 9. Decisiones aprobadas
+
+1. **Crear tabla `practice_sessions`** — NO reutilizar `attempts`. Las sesiones son entidades independientes.
+2. **Respuestas normalizadas** en `practice_session_answers` — integridad referencial, no JSONB.
+3. **Sin fallback offline** — sin localStorage. Estado visible de guardado, confirmación solo tras respuesta del servidor, reintentos controlados.
+4. **Sin migración de intentos históricos** — estructuras nuevas aditivas, no se modifican intentos existentes.
+5. **Compatibilidad** — `attempts` se mantiene para resultados existentes; `practice_sessions` es aditiva.
 
 ## 10. Diagrama de flujo
 
