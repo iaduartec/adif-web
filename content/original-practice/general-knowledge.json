@@ -3010,5 +3010,93 @@
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-exposicion-motivos",
+    "syllabusNodeId": "prl-exposicion-motivos",
+    "topic": "Exposición de motivos de la Ley 31/1995",
+    "skill": "PRL",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "exposicion"
+    ],
+    "conceptIds": [
+      "prl-exposicion-fundamentos"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Exposición de motivos, apartado 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original",
+    "id": "orig-gen-prl-expo-001",
+    "prompt": "Según el apartado 1 de la exposición de motivos, ¿qué combinación recoge los tres fundamentos mencionados?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El mandato constitucional y el marco europeo, sin referencia a compromisos de la OIT."
+      },
+      {
+        "key": "B",
+        "text": "El marco europeo y el Convenio 155 de la OIT, sin mandato constitucional."
+      },
+      {
+        "key": "C",
+        "text": "El mandato constitucional y el Convenio 155 de la OIT, sin marco europeo."
+      },
+      {
+        "key": "D",
+        "text": "El mandato constitucional, el marco europeo y el Convenio 155 de la OIT."
+      }
+    ],
+    "answer": "D",
+    "explanation": "A) Incorrecta: omite el Convenio 155 de la OIT. B) Incorrecta: omite el mandato constitucional. C) Incorrecta: omite el marco europeo. D) Correcta: el apartado 1 cita los tres fundamentos; recuerda Constitución, Unión Europea y OIT."
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-exposicion-motivos",
+    "syllabusNodeId": "prl-exposicion-motivos",
+    "topic": "Exposición de motivos de la Ley 31/1995",
+    "skill": "PRL",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "exposicion"
+    ],
+    "conceptIds": [
+      "prl-exposicion-fundamentos"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Exposición de motivos, apartados 1 a 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original",
+    "id": "orig-gen-prl-expo-002",
+    "prompt": "Al estudiar una excepción actual a la Ley 31/1995, ¿cómo debe utilizarse su exposición de motivos?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Aplicar la descripción del preámbulo aunque el artículo vigente establezca condiciones distintas."
+      },
+      {
+        "key": "B",
+        "text": "Utilizar el preámbulo como único texto para decidir el alcance de la excepción."
+      },
+      {
+        "key": "C",
+        "text": "Usar el preámbulo como contexto y contrastar la excepción con el artículo vigente."
+      },
+      {
+        "key": "D",
+        "text": "Determinar la excepción atendiendo únicamente al objetivo general de la ley."
+      }
+    ],
+    "answer": "C",
+    "explanation": "A) Incorrecta: las condiciones de la disposición vigente no se desplazan por la descripción del preámbulo. B) Incorrecta: el preámbulo no sustituye la consulta del artículo aplicable. C) Correcta: el preámbulo aporta contexto y la excepción se comprueba en la disposición vigente. D) Incorrecta: el objetivo general ayuda a interpretar, pero por sí solo no concreta las condiciones de una excepción."
   }
 ]

@@ -9,8 +9,8 @@ begin
   select count(*) into v_original_count
   from private.learning_questions
   where question_id like 'orig-%' and active;
-  if v_original_count <> 158 then
-    raise exception 'Expected 158 active reviewed original questions, found %.', v_original_count;
+  if v_original_count <> 160 then
+    raise exception 'Expected 160 active reviewed original questions, found %.', v_original_count;
   end if;
 
   if exists (

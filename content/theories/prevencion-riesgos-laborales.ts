@@ -14,6 +14,26 @@ function reviewedAgainst(article: number) {
 export const prlTheory: TheorySection = {
   sources: [
     {
+      id: "lprl-exposicion-1",
+      sourceId: "Ley 31/1995",
+      sourceVersion: "consolidated-page-2026-11-02",
+      verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Exposición de motivos, apartado 1",
+      excerpt: "Fundamentos constitucionales, europeos e internacionales de la prevención."
+    },
+    {
+      id: "lprl-exposicion",
+      sourceId: "Ley 31/1995",
+      sourceVersion: "consolidated-page-2026-11-02",
+      verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Exposición de motivos, apartados 1 a 8",
+      excerpt: "Fundamentos, objetivos y organización de la política preventiva expuestos por el legislador."
+    },
+    {
       id: "lprl-31-1995-art1",
       sourceId: "Ley 31/1995",
       sourceVersion: "consolidated-page-2026-11-02",
@@ -206,6 +226,26 @@ export const prlTheory: TheorySection = {
 
   concepts: [
     {
+      id: "prl-exposicion-fundamentos",
+      title: "Exposición de motivos: mapa para recordar",
+      claims: [
+        {
+          id: "prl-exposicion-origen",
+          text: "Apartados 1 y 2: la exposición sitúa el origen de la ley en el mandato constitucional de protección, el marco europeo y los compromisos internacionales; también busca superar la dispersión y actualizar la normativa.",
+          kind: "interpretative",
+          legalBasis: ["lprl-exposicion", "lprl-exposicion-1"],
+          review: { status: "needs_review", confidence: { level: "medium", reason: "Contraste inicial con BOE; revisión académica independiente pendiente." } }
+        },
+        {
+          id: "prl-exposicion-mapa",
+          text: "Apartados 3 a 8: presenta el marco mínimo y su ámbito; la política pública y la cultura preventiva; los derechos y la organización preventiva; la consulta y participación; las responsabilidades y la tramitación del proyecto. Es contexto explicativo: las reglas y excepciones deben estudiarse en los artículos vigentes.",
+          kind: "interpretative",
+          legalBasis: ["lprl-exposicion"],
+          review: { status: "needs_review", confidence: { level: "medium", reason: "Contraste inicial con BOE; revisión académica independiente pendiente." } }
+        }
+      ]
+    },
+    {
       id: "prl-concept-1",
       title: "Deber de Protección del Empresario",
       claims: [
@@ -265,7 +305,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c5-1",
-          text: "El empresario debe informar directamente a cada trabajador sobre los riesgos de su puesto, medidas de protección y planes de emergencia.",
+          text: "Cuando existan representantes, la información general sobre riesgos y medidas se facilita a través de ellos; además, cada trabajador recibe directamente información sobre los riesgos específicos de su puesto y las medidas aplicables.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art18"]
         }
@@ -301,7 +341,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c8-1",
-          text: "El trabajador tiene derecho a interrumpir su actividad y abandonar el lugar de trabajo cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud.",
+          text: "El trabajador tiene derecho a interrumpir su actividad y abandonar el lugar de trabajo, en caso necesario, cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art21"]
         },

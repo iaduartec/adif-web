@@ -16,6 +16,16 @@ export const prevencionRiesgosLaboralesSummary: LessonSummary = {
   ],
   sections: [
     {
+      title: "Exposición de motivos: mapa de los ocho apartados",
+      points: [
+        "Apartados 1 y 2: fundamentos constitucionales, europeos e internacionales; necesidad de superar dispersión y actualizar la normativa.",
+        "Apartados 3 y 4: marco de garantías, ámbito laboral y público, política coordinada, participación y cultura preventiva.",
+        "Apartado 5: derechos y obligaciones, coordinación de empresas y organización preventiva. Apartado 6: consulta y participación mediante representantes, delegados y comité.",
+        "Apartados 7 y 8: fabricantes, importadores y suministradores, responsabilidades, fundación y órganos consultados durante la tramitación.",
+        "La exposición describe la intención y el contexto; no sustituye las reglas y excepciones de los artículos vigentes. Fuente: BOE-A-1995-24292, exposición de motivos, apartados 1–8.",
+      ],
+    },
+    {
       title: "Capítulo I: objeto, ámbito y definiciones (arts. 1–4)",
       points: [
         "Art. 1 amplía la normativa preventiva más allá de la propia LPRL: incluye normas legales y convencionales con prescripciones preventivas.",
