@@ -1,4 +1,5 @@
 import { EmailPasswordSignIn } from "../../../components/auth/email-password-sign-in";
+import { GoogleSignIn } from "../../../components/auth/google-sign-in";
 
 export default function LoginPage() {
   return (
@@ -16,6 +17,7 @@ export default function LoginPage() {
           </p>
         </div>
         <div className="login-access">
+          <GoogleSignIn />
           <EmailPasswordSignIn />
         </div>
       </section>

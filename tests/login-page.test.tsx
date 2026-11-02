@@ -12,6 +12,7 @@ describe("LoginPage", () => {
     expect(screen.getByLabelText("Correo electrónico")).toBeVisible();
     expect(screen.getByLabelText("Contraseña")).toBeVisible();
     expect(screen.getByRole("button", { name: "Iniciar sesión" })).toBeEnabled();
+    expect(screen.getByRole("button", { name: "Continuar con Google" })).toBeEnabled();
     expect(screen.getByText("no pertenece a ADIF")).toBeVisible();
   });
 });
