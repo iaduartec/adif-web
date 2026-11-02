@@ -276,7 +276,12 @@ export const ictTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd346-2011-art1"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "ict-concept-2",
@@ -288,7 +293,12 @@ export const ictTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd346-2011-anex2-feeding"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "ict-concept-3",
@@ -300,7 +310,12 @@ export const ictTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd346-2011-anex2-distribution"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "ict-concept-4",
@@ -312,7 +327,12 @@ export const ictTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd346-2011-anex2-dispersion"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "ict-concept-5",
@@ -324,7 +344,12 @@ export const ictTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd346-2011-anex2-user-network"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "ict-concept-6",

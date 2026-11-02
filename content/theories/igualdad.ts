@@ -245,7 +245,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c1-2",
           text: "La igualdad de trato prohíbe las diferencias injustificadas, mientras que la igualdad de oportunidades promueve medidas activas para corregir los desequilibrios existentes de partida.",
           kind: "didactic",
-          legalBasis: []
+          legalBasis: [],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -263,7 +268,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c2-2",
           text: "No requiere acreditar intención discriminatoria por parte del sujeto y, por regla general, no admite justificaciones objetivas de licitud en la normativa ordinaria.",
           kind: "interpretative",
-          legalBasis: ["lo3-2007-art6-1"]
+          legalBasis: ["lo3-2007-art6-1"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -281,7 +291,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c3-2",
           text: "Esta conducta es lícita únicamente si se justifica de forma objetiva en atención a una finalidad legítima y los medios empleados son necesarios y adecuados.",
           kind: "interpretative",
-          legalBasis: ["lo3-2007-art6-2"]
+          legalBasis: ["lo3-2007-art6-2"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -299,7 +314,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c4-2",
           text: "El acoso sexual y el acoso por razón de sexo se consideran en todo caso discriminatorios.",
           kind: "normative",
-          legalBasis: ["lo3-2007-art7"]
+          legalBasis: ["lo3-2007-art7"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
         },
         {
           id: "igualdad-c4-3",
@@ -323,7 +343,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c5-2",
           text: "Se diferencia del acoso sexual en que la motivación se fundamenta en el género o sexo de la víctima, y no en la naturaleza sexual de la conducta.",
           kind: "didactic",
-          legalBasis: []
+          legalBasis: [],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },

@@ -52,7 +52,7 @@ function legalBasis(locator: string) {
   return [sourceByLocator.get(locator)?.id ?? sourceId(locator)];
 }
 
-function normativeClaim(id: string, text: string, locator: string) {
+function normativeClaim(id: string, text: string, locator: string, reviewed?: boolean) {
   const basis = new Set(legalBasis(locator));
   for (const token of text.matchAll(/\bartículo\s+(\d+)/gi)) {
     const referenced = sourceByLocator.get(`Artículo ${token[1]}`);
@@ -60,52 +60,56 @@ function normativeClaim(id: string, text: string, locator: string) {
   }
   if (/Ley 38\/2015|Ley del Sector Ferroviario/i.test(text)) basis.add("ley-38-2015");
   if (/Declaración sobre la Red/i.test(text)) basis.add("dr-2027");
-  return { id, text, kind: "normative" as const, legalBasis: [...basis] };
+  const claim: Record<string, unknown> = { id, text, kind: "normative" as const, legalBasis: [...basis] };
+  if (reviewed) {
+    claim.review = { status: "reviewed", confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." }, reviewedAt: "2026-11-02" };
+  }
+  return claim as any;
 }
 
 const existingConcepts: TheoryConcept[] = [
   {
     id: "estatuto-concept-1",
     title: "Naturaleza jurídica",
-    claims: [normativeClaim("estatuto-c1-1", "ADIF es una entidad pública empresarial con personalidad jurídica propia, plena capacidad de obrar y patrimonio propio; en defecto de las normas que le son aplicables se rige por el ordenamiento jurídico privado.", "Artículo 1")],
+    claims: [normativeClaim("estatuto-c1-1", "ADIF es una entidad pública empresarial con personalidad jurídica propia, plena capacidad de obrar y patrimonio propio; en defecto de las normas que le son aplicables se rige por el ordenamiento jurídico privado.", "Artículo 1", true)],
   },
   {
     id: "estatuto-concept-2",
     title: "Adscripción y control de eficacia",
     claims: [
-      normativeClaim("estatuto-c2-1", "El Estatuto adscribe ADIF al Ministerio de Fomento a través de la Secretaría General de Infraestructuras; el control técnico y de eficacia corresponde al Ministerio en los términos del artículo 38.", "Artículo 1"),
-      normativeClaim("estatuto-c2-2", "El Ministerio puede realizar inspecciones y auditorías de gestión y requerir a ADIF información o documentación para ejercer el control.", "Artículo 38"),
+      normativeClaim("estatuto-c2-1", "El Estatuto adscribe ADIF al Ministerio de Fomento a través de la Secretaría General de Infraestructuras; el control técnico y de eficacia corresponde al Ministerio en los términos del artículo 38.", "Artículo 1", true),
+      normativeClaim("estatuto-c2-2", "El Ministerio puede realizar inspecciones y auditorías de gestión y requerir a ADIF información o documentación para ejercer el control.", "Artículo 38", true),
     ],
   },
   {
     id: "estatuto-concept-3",
     title: "Funciones del administrador",
-    claims: [normativeClaim("estatuto-c3-1", "ADIF administra sus infraestructuras, controla e inspecciona la infraestructura y la circulación, adjudica capacidad y desarrolla el resto de funciones enumeradas en el artículo 3.", "Artículo 3")],
+    claims: [normativeClaim("estatuto-c3-1", "ADIF administra sus infraestructuras, controla e inspecciona la infraestructura y la circulación, adjudica capacidad y desarrolla el resto de funciones enumeradas en el artículo 3.", "Artículo 3", true)],
   },
   {
     id: "estatuto-concept-4",
     title: "Consejo de Administración",
-    claims: [normativeClaim("estatuto-c4-1", "El Consejo ejerce la superior dirección de la administración y gestión de ADIF y está formado por el Presidente y entre nueve y diez vocales.", "Artículo 15")],
+    claims: [normativeClaim("estatuto-c4-1", "El Consejo ejerce la superior dirección de la administración y gestión de ADIF y está formado por el Presidente y entre nueve y diez vocales.", "Artículo 15", true)],
   },
   {
     id: "estatuto-concept-5",
     title: "Presidente",
-    claims: [normativeClaim("estatuto-c5-1", "El Presidente de ADIF y de su Consejo es nombrado por el Consejo de Ministros a propuesta del Ministro de Fomento; representa a la entidad, convoca y preside el Consejo y ejecuta sus acuerdos.", "Artículo 23")],
+    claims: [normativeClaim("estatuto-c5-1", "El Presidente de ADIF y de su Consejo es nombrado por el Consejo de Ministros a propuesta del Ministro de Fomento; representa a la entidad, convoca y preside el Consejo y ejecuta sus acuerdos.", "Artículo 23", true)],
   },
   {
     id: "estatuto-concept-6",
     title: "Personal directivo",
-    claims: [normativeClaim("estatuto-c6-1", "Son personal directivo los Directores Generales, los Directores Gerentes de las Unidades de negocio y los Directores Corporativos.", "Artículo 27")],
+    claims: [normativeClaim("estatuto-c6-1", "Son personal directivo los Directores Generales, los Directores Gerentes de las Unidades de negocio y los Directores Corporativos.", "Artículo 27", true)],
   },
   {
     id: "estatuto-concept-7",
     title: "Régimen patrimonial",
-    claims: [normativeClaim("estatuto-c7-1", "ADIF tiene patrimonio propio, distinto del de la AGE, y su gestión se somete a la Ley del Sector Ferroviario, el Estatuto y, supletoriamente, la Ley del Patrimonio de las Administraciones Públicas.", "Artículo 30")],
+    claims: [normativeClaim("estatuto-c7-1", "ADIF tiene patrimonio propio, distinto del de la AGE, y su gestión se somete a la Ley del Sector Ferroviario, el Estatuto y, supletoriamente, la Ley del Patrimonio de las Administraciones Públicas.", "Artículo 30", true)],
   },
   {
     id: "estatuto-concept-8",
     title: "Desafectación de bienes",
-    claims: [normativeClaim("estatuto-c8-1", "Los bienes de dominio público de ADIF que resulten innecesarios pueden desafectarse previa declaración de innecesariedad del Consejo; pasan a su patrimonio y pueden enajenarse o permutarse.", "Artículo 31")],
+    claims: [normativeClaim("estatuto-c8-1", "Los bienes de dominio público de ADIF que resulten innecesarios pueden desafectarse previa declaración de innecesariedad del Consejo; pasan a su patrimonio y pueden enajenarse o permutarse.", "Artículo 31", true)],
   },
   {
     id: "estatuto-concept-9",
@@ -115,7 +119,7 @@ const existingConcepts: TheoryConcept[] = [
   {
     id: "estatuto-concept-10",
     title: "Control económico-financiero",
-    claims: [normativeClaim("estatuto-c10-1", "ADIF está sometida al control financiero permanente de la Intervención General de la Administración del Estado, sin perjuicio de la fiscalización del Tribunal de Cuentas.", "Artículo 39")],
+    claims: [normativeClaim("estatuto-c10-1", "ADIF está sometida al control financiero permanente de la Intervención General de la Administración del Estado, sin perjuicio de la fiscalización del Tribunal de Cuentas.", "Artículo 39", true)],
   },
 ];
 
