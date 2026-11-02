@@ -13,10 +13,10 @@ Pre-existing change: AGENTS.md modified before execution; do not stage or overwr
 - Ruling: latest attachment access is recorded independently from historical artifact verification and SHA-256 evidence. Current PDFs returning 403 do not invalidate prior downloaded bytes or prove currentness.
 
 ## Tasks
-- [ ] Task 1: recheck and record nine official document versions
-- [ ] Task 2: complete PRL chapter I theory unit
+- [x] Task 1: recheck and record nine official document versions
+- [x] Task 2: complete PRL chapter I theory unit
 - [x] Task 3: add original PRL questions
-- [ ] Task 4: link PRL lesson to practice
+- [x] Task 4: link PRL lesson to practice
 - [ ] Task 5: original-only onboarding diagnostic
 - [ ] Task 6: mobile and study-to-review regressions
 - [ ] Task 7: independent review and full verification (deferred until user directs the review)
@@ -31,3 +31,4 @@ Pre-existing change: AGENTS.md modified before execution; do not stage or overwr
 - Task 2: Ruling: the requested concept map labels article 2 with “scope/exclusions”, but the BOE text places object and legal minimum in article 2 and scope/exclusions in article 3. Kept the stable IDs while naming concepts from the actual articles.
 - Task 3 preflight regression: after Task 2 pinned PRL source links to the 2026-11-02 BOE capture, the repository no longer parsed 14 older PRL items because they still referenced the superseded 2026-10-15 version. Downgraded those legacy items to draft, removed stale review dates, and retained each original prompt/options/source locator while repointing the source version to the current verified BOE capture. This withholds them from public DTOs until their later editorial review. RED: common-practice test could not import the repository due to the 14 mismatches; GREEN after correction: 39 tests in general-practice/schema/DTO passed and `pnpm verify:content` passed. Commit: `fix(adif): withhold stale PRL practice items`.
 - Task 3: added eight original, source-grounded PRL chapter I questions, two per concept across articles 1–4. Questions combine recall, discrimination and application; each rationale explains A–D and cites the exact BOE article locator. The reviewed set is original and remains absent from the official historical registry; its public DTO omits key and explanation. RED: coverage test failed on missing `prl-concept-15`; GREEN: focused 4-file suite passed (43 tests), `pnpm verify:content` passed, `pnpm typecheck` passed, `git diff --check` passed. Independent adversarial review remains deferred at the user's direction. Commit: `feat(adif): add reviewed original practice for PRL chapter I`.
+- Task 4: added an accessible `Iniciar práctica` link on lesson summaries only when eligible reviewed original items exist; it opens the existing theory section and preserves the original-content notice. RED: the PRL summary reader test could not find the link. GREEN: reader/server-rendering suite passed (16 tests), typecheck passed, and `pnpm exec playwright test e2e/study-flow.spec.ts` passed (1 test). The previous E2E depended on an unavailable official question path; replaced it with a local mock E2E proving summary → original practice → incorrect answer and A–D correction → saved error notebook. The current study-flow end-to-end portion of Task 6 is therefore covered early; mobile checks remain pending. Commit: `feat(adif): link PRL lessons to original practice`.

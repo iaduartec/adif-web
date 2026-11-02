@@ -124,6 +124,27 @@ describe("course reader provenance and notes", () => {
     expect(container.querySelectorAll(".course-summary__section").length).toBeGreaterThan(0);
   });
 
+  it("links the PRL summary directly to its eligible original practice section", async () => {
+    render(await CourseTheoryReader({
+      lesson: getLesson("prevencion-riesgos-laborales")!,
+      progress: 0,
+    }));
+
+    expect(screen.getByRole("link", { name: "Iniciar práctica" })).toHaveAttribute(
+      "href",
+      "/curso/prevencion-riesgos-laborales?view=theory#course-practice-questions",
+    );
+  });
+
+  it("does not offer a practice link when a lesson has no eligible original questions", async () => {
+    render(await CourseTheoryReader({
+      lesson: getLesson("declaracion-red-2027")!,
+      progress: 0,
+    }));
+
+    expect(screen.queryByRole("link", { name: "Iniciar práctica" })).not.toBeInTheDocument();
+  });
+
   it("keeps legal anchors and article blocks visually distinguishable across views", async () => {
     const { container, rerender } = render(await CourseTheoryReader({ lesson: getLesson("igualdad")!, progress: 0, view: "theory" }));
 

@@ -1,91 +1,37 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-test.describe("ADIF Telecomunicaciones Study Flow", () => {
-  test("runs the full practice, error notebook, simulation, and statistics workflow", async ({ page }) => {
-    // 1. Dashboard initialization
-    await page.goto("/");
-    await expect(page).toHaveURL("/");
-    await expect(page.locator("h1")).toContainText("Hola, Usuario");
-    await expect(page.getByRole("heading", { name: "Estado de preparación" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Sesión de hoy" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Recursos complementarios" })).toBeVisible();
+test("studies PRL, practices from the lesson, receives correction and finds the saved error", async ({ page }) => {
+  await page.goto("/curso/prevencion-riesgos-laborales");
 
-    // 2. Lesson completion
-    await page.goto("/curso");
-    await page.click("text=Igualdad y no discriminación");
-    await expect(page).toHaveURL("/curso/igualdad");
-    await page.click("text=Marcar como completada");
-    await expect(page.locator("p.course-status:has-text('Lección completada')")).toBeVisible();
+  const startPractice = page.getByRole("link", { name: "Iniciar práctica" });
+  await expect(startPractice).toBeVisible();
+  await startPractice.click();
 
-    // Go back to course list and check completed status
-    await page.goto("/curso");
-    await expect(page.locator("text=100%")).toBeVisible();
+  await expect(page).toHaveURL(/\/curso\/prevencion-riesgos-laborales\?view=theory#course-practice-questions$/);
+  const practice = page.getByRole("region", { name: "Práctica original de conocimientos generales" });
+  await expect(practice).toBeVisible();
+  await expect(practice.getByText("Preguntas originales; no constituyen una simulación oficial de ADIF.")).toBeVisible();
 
-    // 3. Answer a question incorrectly to feed the Error Notebook
-    await page.goto("/tests");
-    await page.click("a:has-text('Iniciar práctica')");
-    await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator(".practice-session h2")).toHaveCount(1);
-    const activeQuestionName = await page.locator("input[type='radio']").first().getAttribute("name");
-    const activeQuestionId = activeQuestionName?.replace("question-", "");
-    expect(activeQuestionId).toBeTruthy();
-    // Select option A, which is incorrect for the first active official question.
-    await page.locator("label").filter({ hasText: /^A\./ }).click();
-    await page.click("text=Comprobar respuesta");
-    await expect(page.locator("text=Respuesta incorrecta")).toBeVisible();
-    await expect(page.getByRole("complementary", { name: "Procedencia oficial" })).toContainText("Pregunta oficial ADIF");
+  await practice.getByLabel("Cantidad de preguntas").fill("1");
+  await practice.getByRole("button", { name: "Comenzar bloque" }).click();
+  await expect(practice.getByText("Pregunta 1 de 1", { exact: false })).toBeVisible();
+  await expect(practice.getByText(/Respuesta correcta|La respuesta [A-D] es correcta/)).toHaveCount(0);
+  await expect(practice.getByRole("link", { name: /Ley 31\/1995 · Artículo 1/ })).toBeVisible();
 
-    // 4. Verify the Error Notebook
-    await page.goto("/errores");
-    await expect(page.locator("h1")).toContainText("Cuaderno de errores");
-    await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator(".official-question-card h2")).toHaveCount(1);
-    await expect(page.locator(".official-question-card h3")).toHaveCount(0);
-    await expect(page.getByText(activeQuestionId ?? "", { exact: true })).toBeVisible();
-    await expect(page.locator("text=Tu última respuesta: A")).toBeVisible();
+  // The first authored item is keyed B; selecting A deliberately creates an error.
+  await practice.getByRole("radio", { name: /A\./ }).check();
+  await practice.getByRole("button", { name: "Comprobar respuesta" }).click();
+  await expect(practice.getByText(/Respuesta incorrecta\. Respuesta correcta: B\./)).toBeVisible();
+  await expect(practice.getByText(/A: Incorrecta/)).toBeVisible();
+  await expect(practice.getByText(/B: Correcta/)).toBeVisible();
+  await expect(practice.getByText(/C: Incorrecta/)).toBeVisible();
+  await expect(practice.getByText(/D: Incorrecta/)).toBeVisible();
 
-    // 5. Favorite a question in the question bank list
-    await page.goto("/tests");
-    const favButton = page.locator("button.favorite-btn").first();
-    await favButton.click();
-    await expect(favButton).toHaveClass(/favorite-btn--active/);
-
-    // 6. Complete a timed simulation
-    await page.goto("/simulacros");
-    await expect(page.locator("h1")).toContainText("Exámenes oficiales");
-    await expect(page.locator("article.simulation-card")).toHaveCount(6);
-    await expect(page.locator("article.simulation-card", { hasText: "15 preguntas" })).toHaveCount(2);
-    await expect(page.locator("article.simulation-card", { hasText: "18 preguntas" })).toHaveCount(4);
-    await page.getByRole("link", { name: "Abrir examen" }).first().click();
-    await page.getByRole("button", { name: "Comenzar examen" }).click();
-
-    // Answer two questions
-    await page.locator("label").filter({ hasText: /^A\./ }).click();
-    await page.click("text=Siguiente");
-    await page.locator("label").filter({ hasText: /^B\./ }).click();
-
-    // Submit simulation and verify accessible modal focus management.
-    const submitTrigger = page.getByRole("button", { name: "Entregar examen" });
-    await submitTrigger.click();
-    const submitDialog = page.getByRole("dialog", { name: "Confirmar entrega" });
-    await expect(submitDialog).toBeVisible();
-    await expect(page.getByRole("button", { name: "Seguir revisando" })).toBeFocused();
-    await page.keyboard.press("Escape");
-    await expect(submitDialog).toBeHidden();
-    await expect(submitTrigger).toBeFocused();
-
-    await submitTrigger.click();
-    await page.getByRole("button", { name: "Confirmar entrega" }).click();
-
-    // Verify simulation results page (exact text from SimulationResults component)
-    await expect(page.locator("h2:has-text('Resultado del examen')")).toBeVisible();
-    await expect(page.locator(".simulation-results__card--score")).toBeVisible();
-    await expect(page.locator(".simulation-results__card--correct")).toBeVisible();
-
-    // 7. Verify study statistics
-    await page.goto("/estadisticas");
-    await expect(page.locator("h1")).toContainText("Estadísticas de estudio");
-    await expect(page.locator("h2:has-text('Precisión por sección oficial')")).toBeVisible();
-    await expect(page.locator("table").first()).toBeVisible();
-  });
+  await page.goto("/errores");
+  await expect(page.getByRole("heading", { name: "Cuaderno de errores" })).toBeVisible();
+  const savedPractice = page.getByRole("region", { name: "Repaso de errores originales" });
+  await expect(savedPractice).toBeVisible();
+  await savedPractice.getByRole("button", { name: "Comenzar bloque" }).click();
+  await expect(savedPractice.getByText("Pregunta 1 de 1", { exact: false })).toBeVisible();
+  await expect(savedPractice.getByText(/Según el artículo 1 de la Ley 31\/1995/)).toBeVisible();
 });

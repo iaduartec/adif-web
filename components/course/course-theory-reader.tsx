@@ -142,7 +142,8 @@ export async function CourseTheoryReader({
   const officialNorm = isSupplementaryGuide ? undefined : officialTexts[lesson.slug];
   const theory = lessonTheories[lesson.slug];
   const summary = lessonSummaries[lesson.slug];
-  const modulePracticeQuestions = view === "theory" ? listModulePracticeQuestions(lesson.slug) : [];
+  const eligiblePracticeQuestions = view === "official" ? [] : listModulePracticeQuestions(lesson.slug);
+  const modulePracticeQuestions = view === "theory" ? eligiblePracticeQuestions : [];
   const practiceByDomain = modulePracticeQuestions.reduce((groups, question) => {
     (groups[question.domain] ??= []).push(question);
     return groups;
@@ -208,6 +209,19 @@ export async function CourseTheoryReader({
                   </section>
                 ))}
               </div>
+              {eligiblePracticeQuestions.length > 0 && (
+                <div className="flex flex-wrap items-center justify-between gap-4 border-t border-rail pt-5">
+                  <p className="text-sm text-gray-600">
+                    {eligiblePracticeQuestions.length} preguntas originales revisadas disponibles para practicar.
+                  </p>
+                  <Link
+                    className="ui-button"
+                    href={`${viewHref(lesson.slug, "theory")}#course-practice-questions`}
+                  >
+                    Iniciar práctica
+                  </Link>
+                </div>
+              )}
             </section>
           ) : <p className="empty-state">No hay resumen estructurado disponible para esta lección todavía.</p>}
         </div>
