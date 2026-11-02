@@ -1859,60 +1859,68 @@
       }
     },
     "ingles-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-c1-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-c2-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ingles-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico A2)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c34-1": {
       "status": "reviewed",
