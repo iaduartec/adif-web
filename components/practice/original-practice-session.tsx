@@ -6,6 +6,12 @@ import { Button } from "../ui/button";
 
 type AnswerKey = "A" | "B" | "C" | "D";
 type Mode = "training" | "practice";
+export type OriginalPracticeSessionPreset = {
+  mode: Mode;
+  questionCount: number;
+  autoStart?: boolean;
+  hideConfiguration?: boolean;
+};
 type Envelope = { body: string };
 type Result = { isCorrect: boolean; correctAnswer: AnswerKey; explanation?: string };
 
@@ -24,14 +30,17 @@ function nowMs() {
 export function OriginalPracticeSession({
   questions,
   title = "Práctica original",
+  preset,
 }: {
   questions: readonly OriginalPracticeQuestionDto[];
   title?: string;
+  preset?: OriginalPracticeSessionPreset;
 }) {
-  const [mode, setMode] = useState<Mode>("training");
+  const [mode, setMode] = useState<Mode>(preset?.mode ?? "training");
   const [topicId, setTopicId] = useState("all");
-  const [questionCount, setQuestionCount] = useState(Math.min(10, questions.length));
-  const [started, setStarted] = useState(false);
+  const initialQuestionCount = preset?.questionCount ?? Math.min(10, questions.length);
+  const [questionCount, setQuestionCount] = useState(Math.min(Math.max(1, initialQuestionCount), Math.max(1, questions.length)));
+  const [started, setStarted] = useState(Boolean(preset?.autoStart && questions.length > 0));
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Partial<Record<string, AnswerKey>>>({});
   const [results, setResults] = useState<Record<string, Result>>({});
@@ -51,6 +60,7 @@ export function OriginalPracticeSession({
   const questionId = question?.id;
   const complete = mode === "training" ? Object.keys(results).length === activeQuestions.length : practiceComplete;
   const hasUnfinishedWork = started && !complete && Object.keys(answers).length > 0;
+  const showConfiguration = !started && (!preset?.hideConfiguration || !preset.autoStart);
   useEffect(() => {
     if (questionId) questionStartedAt.current[questionId] = nowMs();
   }, [questionId]);
@@ -233,7 +243,7 @@ export function OriginalPracticeSession({
         <p className="text-sm text-gray-600">Preguntas originales; no constituyen una simulación oficial de ADIF.</p>
       </header>
 
-      {!started && (
+      {showConfiguration && (
         <div className="p-5 border border-rail bg-white space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>

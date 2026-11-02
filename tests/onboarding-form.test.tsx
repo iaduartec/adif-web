@@ -23,6 +23,7 @@ describe("OnboardingForm", () => {
     expect(screen.getByRole("radio", { name: "45 minutos" })).toBeChecked();
     expect(screen.getByLabelText("Fecha de examen (opcional)")).toHaveValue("2026-08-10");
     expect(screen.getByRole("checkbox", { name: "Quiero hacer un diagnóstico inicial" })).not.toBeChecked();
+    expect(screen.getByText(/15 preguntas originales.*no equivale a un examen oficial/i)).toBeVisible();
     expect(screen.getByRole("button", { name: "Guardar preparación" })).toBeVisible();
   });
 });

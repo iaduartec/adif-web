@@ -4,8 +4,17 @@ import {
   ONBOARDING_SESSION_MINUTES,
   getMadridDate,
   parseOnboardingInput,
-  selectBalancedDiagnosticQuestionIds,
 } from "../lib/onboarding";
+import type { OriginalPracticeQuestionDto } from "../lib/content/original-practice-public-dto";
+import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
+import { listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
+import { selectBalancedOriginalDiagnosticQuestions } from "../lib/onboarding-diagnostic";
+
+const diagnosticDomains = ["general-knowledge", "psychometric", "english-a2", "telecom"] as const;
+
+const eligibleOriginals = listOriginalPracticeQuestions({ status: "reviewed" })
+  .map(toPublicPracticeQuestion)
+  .filter((question) => question !== null);
 
 describe("onboarding contract", () => {
   it("accepts a complete preparation profile and retains optional choices", () => {
@@ -69,20 +78,39 @@ describe("onboarding contract", () => {
     expect(getMadridDate(new Date("2026-08-10T22:30:00.000Z"))).toBe("2026-08-11");
   });
 
-  it("selects fifteen diagnostic questions evenly across available official sections", () => {
-    const selected = selectBalancedDiagnosticQuestionIds([
-      { id: "g-1", source: { section: "general" } },
-      { id: "g-2", source: { section: "general" } },
-      { id: "g-3", source: { section: "general" } },
-      { id: "s-1", source: { section: "specific" } },
-      { id: "s-2", source: { section: "specific" } },
-      { id: "s-3", source: { section: "specific" } },
-      { id: "p-1", source: { section: "psychotechnical" } },
-      { id: "p-2", source: { section: "psychotechnical" } },
-      { id: "p-3", source: { section: "psychotechnical" } },
+  it("selects fifteen unique public originals in deterministic round-robin domain order", () => {
+    const selected = selectBalancedOriginalDiagnosticQuestions(eligibleOriginals);
+    const repeated = selectBalancedOriginalDiagnosticQuestions(eligibleOriginals);
+    const counts = Object.fromEntries(diagnosticDomains.map((domain) => [
+      domain,
+      selected.filter((question) => question.domain === domain).length,
+    ]));
+
+    expect(selected).toHaveLength(15);
+    expect(selected.map((question) => question.id)).toEqual(repeated.map((question) => question.id));
+    expect(selected.map((question) => question.domain).slice(0, 8)).toEqual([
+      "general-knowledge", "psychometric", "english-a2", "telecom",
+      "general-knowledge", "psychometric", "english-a2", "telecom",
+    ]);
+    expect(new Set(selected.map((question) => question.id)).size).toBe(15);
+    expect(counts).toEqual({ "general-knowledge": 4, psychometric: 4, "english-a2": 4, telecom: 3 });
+    expect(selected.every((question) => question.origin === "original")).toBe(true);
+  });
+
+  it("deduplicates ids, ignores invalid public DTOs and returns the available unique originals when fewer than fifteen exist", () => {
+    const available = diagnosticDomains.flatMap((domain) => eligibleOriginals.filter((question) => question.domain === domain).slice(0, 2));
+    const duplicate = { ...available[0]!, answer: "A" } as unknown as OriginalPracticeQuestionDto;
+    const wrongDomain = { ...available[0]!, id: "invalid-domain", domain: "official" } as unknown as OriginalPracticeQuestionDto;
+    const selected = selectBalancedOriginalDiagnosticQuestions([
+      ...available,
+      available[0]!,
+      duplicate,
+      wrongDomain,
     ]);
 
-    expect(selected).toHaveLength(9);
-    expect(selected).toEqual(["g-1", "s-1", "p-1", "g-2", "s-2", "p-2", "g-3", "s-3", "p-3"]);
+    expect(selected).toHaveLength(8);
+    expect(new Set(selected.map((question) => question.id)).size).toBe(8);
+    expect(selected.some((question) => question.id === "invalid-domain")).toBe(false);
+    expect(selected.some((question) => question.id === available[0]!.id && "answer" in question)).toBe(false);
   });
 });

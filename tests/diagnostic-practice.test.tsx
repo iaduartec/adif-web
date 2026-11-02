@@ -1,46 +1,33 @@
 import { render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 
-const { createServerClient, redirect } = vi.hoisted(() => ({
-  createServerClient: vi.fn(),
-  redirect: vi.fn(),
-}));
+import DiagnosticPage from "../app/(dashboard)/diagnostico/page";
+import { getOriginalPracticeQuestion, listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
+import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
+import { selectBalancedOriginalDiagnosticQuestions } from "../lib/onboarding-diagnostic";
 
-vi.mock("next/navigation", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("next/navigation")>()),
-  redirect,
-}));
-vi.mock("../lib/supabase/server", () => ({ createServerClient }));
-vi.mock("../lib/content/official-publication", () => ({
-  getOfficialPublicationDecision: () => ({ status: "approved_for_publication", evidenceValid: true, errors: [] }),
-  isOfficialQuestionPracticeEligible: () => true,
-  isOfficialExamPracticeEligible: () => true,
-  validateOfficialPublicationData: () => [],
-}));
+describe("original-only onboarding diagnostic", () => {
+  it("starts fifteen eligible answer-free original questions and labels the set as formative", async () => {
+    const publicPool = listOriginalPracticeQuestions({ status: "reviewed" })
+      .map(toPublicPracticeQuestion)
+      .filter((question) => question !== null);
+    const selected = selectBalancedOriginalDiagnosticQuestions(publicPool);
+    const withheldLegacyQuestion = getOriginalPracticeQuestion("orig-gen-prl-001");
 
-import TestsPage from "../app/(dashboard)/tests/page";
-import { listOfficialQuestions } from "../lib/content/repository";
+    expect(publicPool.length).toBeGreaterThanOrEqual(15);
+    expect(withheldLegacyQuestion?.status).toBe("draft");
+    expect(selected).toHaveLength(15);
+    expect(selected.every((question) => question.origin === "original")).toBe(true);
+    expect(selected.some((question) => question.id === withheldLegacyQuestion?.id)).toBe(false);
+    expect(selected.every((question) => !("answer" in question) && !("explanation" in question))).toBe(true);
 
-describe("diagnostic practice", () => {
-  beforeEach(() => {
-    createServerClient.mockResolvedValue({
-      auth: { getUser: vi.fn(async () => ({ data: { user: { id: "user-1" } } })) },
-      from: vi.fn(() => {
-        const query = { select: vi.fn(), eq: vi.fn(), order: vi.fn() };
-        query.select.mockReturnValue(query);
-        query.eq.mockReturnValue(query);
-        query.order.mockReturnValue(Promise.resolve({ data: [] }));
-        return query;
-      }),
-    });
-  });
+    render(await DiagnosticPage());
 
-  it("uses only the diagnostic question ids instead of the whole official bank", async () => {
-    const questions = listOfficialQuestions();
-    const ids = [questions[0]!.id, questions[1]!.id].join(",");
-
-    render(await TestsPage({ searchParams: Promise.resolve({ practice: "true", diagnostic: ids }) }));
-
-    expect(screen.getByText("Pregunta 1 de 2")).toBeVisible();
+    expect(screen.getByRole("heading", { level: 1, name: "Diagnóstico inicial" })).toBeVisible();
+    expect(screen.getByText(/diagnóstico formativo de preguntas originales, no equivalente a un examen oficial/i)).toBeVisible();
+    expect(screen.getByText(/Pregunta 1 de 15/)).toBeVisible();
+    expect(screen.getAllByRole("radio")).toHaveLength(4);
+    expect(screen.queryByText(/Respuesta correcta|La respuesta [A-D] es correcta/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("spinbutton", { name: "Cantidad de preguntas" })).not.toBeInTheDocument();
   });
 });

@@ -3,8 +3,7 @@
 import { redirect } from "next/navigation";
 import { getSafeRedirectPath } from "../../lib/auth/redirect";
 import { initialOnboardingFormState, type OnboardingFormState } from "../../lib/onboarding-form-state";
-import { parseOnboardingInput, selectBalancedDiagnosticQuestionIds } from "../../lib/onboarding";
-import { listOfficialQuestions } from "../../lib/content/repository";
+import { parseOnboardingInput } from "../../lib/onboarding";
 import { createServerClient } from "../../lib/supabase/server";
 
 function formValues(formData: FormData): OnboardingFormState["values"] {
@@ -60,8 +59,7 @@ export async function saveOnboarding(
   }
 
   if (parsed.data.diagnostic) {
-    const ids = selectBalancedDiagnosticQuestionIds(listOfficialQuestions());
-    redirect(`/tests?practice=true&diagnostic=${encodeURIComponent(ids.join(","))}`);
+    redirect("/diagnostico");
   }
 
   redirect(getSafeRedirectPath(next) ?? "/");

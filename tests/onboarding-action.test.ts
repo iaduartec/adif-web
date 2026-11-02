@@ -60,6 +60,17 @@ describe("saveOnboarding", () => {
     }, { onConflict: "user_id" });
   });
 
+  it("routes an opted-in diagnostic to the original-only diagnostic page", async () => {
+    const formData = new FormData();
+    formData.set("weekly_target_minutes", "180");
+    formData.append("preferred_days", "1");
+    formData.set("session_minutes", "30");
+    formData.set("diagnostic", "true");
+
+    await expect(saveOnboarding("/curso", initialOnboardingFormState, formData)).rejects.toThrow("redirect:/diagnostico");
+    expect(upsert).toHaveBeenCalledOnce();
+  });
+
   it("keeps values accessible and avoids writes when the original completion timestamp cannot be read", async () => {
     goalRead.current = { data: null, error: new Error("read failed") };
     const formData = new FormData();

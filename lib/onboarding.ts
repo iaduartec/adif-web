@@ -65,28 +65,3 @@ function isCalendarDate(value: string) {
   const date = new Date(`${value}T00:00:00.000Z`);
   return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
 }
-
-type DiagnosticQuestion = { id: string; source: { section: string } };
-
-export function selectBalancedDiagnosticQuestionIds(
-  questions: readonly DiagnosticQuestion[],
-  limit = 15,
-) {
-  const sections = new Map<string, string[]>();
-  for (const question of questions) {
-    const bucket = sections.get(question.source.section) ?? [];
-    bucket.push(question.id);
-    sections.set(question.source.section, bucket);
-  }
-
-  const buckets = [...sections.values()];
-  const selected: string[] = [];
-  while (selected.length < limit && buckets.some((bucket) => bucket.length > 0)) {
-    for (const bucket of buckets) {
-      const questionId = bucket.shift();
-      if (questionId) selected.push(questionId);
-      if (selected.length === limit) break;
-    }
-  }
-  return selected;
-}

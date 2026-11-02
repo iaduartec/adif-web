@@ -68,7 +68,7 @@ export function OnboardingForm({
         <input defaultChecked={values.diagnostic} name="diagnostic" type="checkbox" value="true" />
         Quiero hacer un diagnóstico inicial
       </label>
-      <p className="onboarding-diagnostic__hint">Prepararemos una práctica de 15 preguntas oficiales repartidas entre las secciones disponibles.</p>
+      <p className="onboarding-diagnostic__hint">Prepararemos 15 preguntas originales repartidas entre las materias disponibles. Es un diagnóstico formativo, no equivale a un examen oficial.</p>
 
       <button className="ui-button" disabled={isPending} type="submit">
         {isPending ? "Guardando…" : "Guardar preparación"}

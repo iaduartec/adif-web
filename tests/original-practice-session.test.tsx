@@ -2,6 +2,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/re
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { OriginalPracticeSession } from "../components/practice/original-practice-session";
+import { selectBalancedOriginalDiagnosticQuestions } from "../lib/onboarding-diagnostic";
 import { listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
 import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
 
@@ -9,6 +10,10 @@ const questions = listOriginalPracticeQuestions({ domain: "psychometric", status
   .map(toPublicPracticeQuestion).filter((question) => question !== null)
   .filter((question, index, all) => all.findIndex((candidate) => candidate.topicId === question.topicId) === index)
   .slice(0, 2);
+const diagnosticQuestions = selectBalancedOriginalDiagnosticQuestions(
+  listOriginalPracticeQuestions({ status: "reviewed" })
+    .map(toPublicPracticeQuestion).filter((question) => question !== null),
+);
 
 afterEach(() => {
   cleanup();
@@ -92,5 +97,20 @@ describe("OriginalPracticeSession", () => {
 
     expect(screen.getByText(`Pregunta 1 de 1 · ${questions[1]!.topic}`)).toBeVisible();
     expect(screen.getByText(questions[1]!.prompt)).toBeVisible();
+  });
+
+  it("starts a hidden-configuration diagnostic preset at question 1 of 15 without exposing answers", () => {
+    render(<OriginalPracticeSession
+      questions={diagnosticQuestions}
+      title="Diagnóstico inicial"
+      preset={{ mode: "practice", questionCount: 15, autoStart: true, hideConfiguration: true }}
+    />);
+
+    expect(screen.getByRole("region", { name: "Diagnóstico inicial" })).toBeVisible();
+    expect(screen.getByText(/Pregunta 1 de 15/)).toBeVisible();
+    expect(screen.getAllByRole("radio")).toHaveLength(4);
+    expect(screen.queryByRole("spinbutton", { name: "Cantidad de preguntas" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Comenzar bloque" })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Respuesta correcta|La respuesta [A-D] es correcta/)).not.toBeInTheDocument();
   });
 });
