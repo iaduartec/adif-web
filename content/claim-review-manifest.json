@@ -3,39 +3,44 @@
   "updatedAt": "2026-10-16",
   "reviews": {
     "igualdad-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-intro-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-intro-2b": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-intro-3": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-intro-4": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c1-1": {
       "status": "reviewed",
@@ -134,11 +139,12 @@
       "reviewedAt": "2026-11-02"
     },
     "igualdad-c6-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c7-1": {
       "status": "reviewed",
@@ -196,11 +202,12 @@
       "reviewedAt": "2026-11-02"
     },
     "igualdad-c11-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c12-1": {
       "status": "reviewed",
@@ -211,11 +218,12 @@
       "reviewedAt": "2026-11-02"
     },
     "igualdad-c13-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c14-1": {
       "status": "reviewed",
@@ -234,67 +242,76 @@
       "reviewedAt": "2026-11-02"
     },
     "igualdad-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-ex-2-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-ex-3-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-ex-4-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-takeaway-1b": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-takeaway-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-takeaway-3": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-takeaway-4": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado. Ver docs/ADIF_AUDIT_IGUALDAD_FINAL.md."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "prl-intro-1": {
       "status": "needs_review",
