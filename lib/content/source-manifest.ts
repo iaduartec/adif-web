@@ -10,6 +10,14 @@ export const sourceVersionStatusSchema = z.enum([
   "unavailable",
 ]);
 
+const latestAccessCheckSchema = z
+  .object({
+    checkedAt: z.iso.date(),
+    outcome: z.enum(["available", "forbidden", "unreachable"]),
+    httpStatus: z.number().int().min(100).max(599).nullable(),
+  })
+  .strict();
+
 export const sourceManifestEntrySchema = z
   .object({
     sourceId: z.string().trim().min(1),
@@ -40,6 +48,7 @@ export const sourceManifestEntrySchema = z
     status: sourceVersionStatusSchema,
     downloadedAt: z.iso.date().nullable(),
     verifiedAt: z.iso.date().nullable(),
+    latestAccessCheck: latestAccessCheckSchema.optional(),
     consultedLocator: z.string().trim().min(1),
     editorialConfidence: z
       .object({
@@ -155,6 +164,14 @@ export const sourceManifestSchema = z
           code: "custom",
           path: ["sources", index, "verifiedAt"],
           message: "Source verification date is later than manifest snapshot date.",
+        });
+      }
+
+      if (source.latestAccessCheck && source.latestAccessCheck.checkedAt > manifest.generatedAt) {
+        context.addIssue({
+          code: "custom",
+          path: ["sources", index, "latestAccessCheck", "checkedAt"],
+          message: "Source access check date is later than manifest snapshot date.",
         });
       }
     });

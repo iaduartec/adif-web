@@ -133,6 +133,71 @@ describe("versioned official source manifest", () => {
     }
   });
 
+  it("records the latest ADIF attachment access separately from its verified artifact version", () => {
+    const raw = readJson("content/source-manifest.json") as {
+      generatedAt: string;
+      schemaVersion: number;
+      sources: Array<Record<string, unknown>>;
+    };
+    const adifLiveDocuments = raw.sources.filter((source) =>
+      source.sourceVersion === "adif-live-2026-10-15" &&
+      (String(source.sourceId).startsWith("PNI26-COMMON-") || String(source.sourceId).startsWith("PNI26-12PO-SPECIFIC-")),
+    );
+
+    expect(adifLiveDocuments).toHaveLength(9);
+    for (const source of adifLiveDocuments) {
+      expect(source.latestAccessCheck).toEqual({
+        checkedAt: "2026-11-02",
+        outcome: "forbidden",
+        httpStatus: 403,
+      });
+    }
+    expect(adifLiveDocuments.every((source) =>
+      source.status === "verified" &&
+      source.verifiedAt === "2026-10-15" &&
+      source.downloadedAt === "2026-10-15" &&
+      source.hashTarget === "downloaded-file" &&
+      typeof source.sha256 === "string",
+    )).toBe(true);
+    expect(() => parseSourceManifest(raw, "2026-11-02")).not.toThrow();
+  });
+
+  it("accepts a valid access-check record and rejects unsupported statuses or future check dates", () => {
+    const raw = readJson("content/source-manifest.json") as {
+      generatedAt: string;
+      schemaVersion: number;
+      sources: Array<Record<string, unknown>>;
+    };
+    const target = raw.sources.find((source) => source.sourceVersion === "adif-live-2026-10-15");
+    expect(target).toBeDefined();
+    const valid = {
+      ...raw,
+      generatedAt: "2026-11-02",
+      sources: raw.sources.map((source) => source === target
+        ? { ...source, latestAccessCheck: { checkedAt: "2026-11-02", outcome: "available", httpStatus: 200 } }
+        : source),
+    };
+    expect(() => parseSourceManifest(valid, "2026-11-02")).not.toThrow();
+
+    const isTarget = (source: Record<string, unknown>) =>
+      source.sourceId === target?.sourceId && source.sourceVersion === target?.sourceVersion;
+    const invalidOutcome = {
+      ...valid,
+      sources: valid.sources.map((source) => isTarget(source)
+        ? { ...source, latestAccessCheck: { checkedAt: "2026-11-02", outcome: "maybe", httpStatus: 200 } }
+        : source),
+    };
+    expect(() => parseSourceManifest(invalidOutcome, "2026-11-02")).toThrow();
+
+    const futureCheck = {
+      ...valid,
+      sources: valid.sources.map((source) => isTarget(source)
+        ? { ...source, latestAccessCheck: { checkedAt: "2026-11-03", outcome: "available", httpStatus: 200 } }
+        : source),
+    };
+    expect(() => parseSourceManifest(futureCheck, "2026-11-03")).toThrow(/access check date is later than manifest snapshot/i);
+  });
+
   it("records the current 2027 network declaration PDF independently of the older PNI attachment", () => {
     expect(
       manifest.sources.find(
@@ -191,7 +256,7 @@ describe("versioned official source manifest", () => {
     const invalid = {
       ...raw,
       sources: raw.sources.map((entry) => entry === verified
-        ? { ...entry, verifiedAt: "2026-10-16" }
+        ? { ...entry, verifiedAt: "2026-11-03" }
         : entry),
     };
 
@@ -244,11 +309,11 @@ describe("versioned official source manifest", () => {
     const invalid = {
       ...raw,
       sources: raw.sources.map((entry) => entry === unchecked
-        ? { ...entry, downloadedAt: "2026-10-16" }
+        ? { ...entry, downloadedAt: "2026-11-03" }
         : entry),
     };
 
-    expect(() => parseSourceManifest(invalid, "2026-10-16")).toThrow(/download date is later than manifest snapshot/i);
+    expect(() => parseSourceManifest(invalid, "2026-11-03")).toThrow(/download date is later than manifest snapshot/i);
   });
 
   it("rejects duplicate source versions", () => {
