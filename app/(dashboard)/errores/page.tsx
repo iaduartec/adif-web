@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FavoriteButton } from "../../../components/practice/favorite-button";
+import { OriginalPracticeSession } from "../../../components/practice/original-practice-session";
 import { listOfficialQuestionRecords, listOfficialQuestions } from "../../../lib/content/repository";
+import { listOriginalPracticeQuestions } from "../../../lib/content/original-practice-repository";
+import { toPublicPracticeQuestion } from "../../../lib/content/original-practice-public-dto";
 import { deriveErrorNotebook } from "../../../lib/practice/error-notebook";
 import { calculateMetrics, displayModuleName } from "../../../lib/progress/metrics";
 import { createServerClient } from "../../../lib/supabase/server";
@@ -44,6 +47,10 @@ export default async function ErrorNotebookPage() {
     !attempt.is_correct && officialQuestionIds.has(questionId) && !activeQuestionIds.has(questionId),
   ).length;
   const errorQuestions = deriveErrorNotebook(allQuestions, attemptRows ?? []);
+  const originalQuestions = listOriginalPracticeQuestions({ status: "reviewed" })
+    .map(toPublicPracticeQuestion)
+    .filter((question) => question !== null);
+  const originalErrors = deriveErrorNotebook(originalQuestions, attemptRows ?? []);
   const metrics = calculateMetrics(attemptRows ?? [], [], allQuestions, new Date());
   const weakestModuleLabel = displayModuleName(metrics.weakestModule);
 
@@ -66,12 +73,20 @@ export default async function ErrorNotebookPage() {
         <h2 id="notebook-guide-title">Funcionamiento del cuaderno</h2>
         <ul>
           <li><strong>Estado pendiente:</strong> preguntas cuyo último intento registrado es incorrecto; aparecen listadas a continuación.</li>
-          <li><strong>Estado dominado:</strong> preguntas anteriormente falladas que has vuelto a responder correctamente; se archivan y desaparecen de esta lista automáticamente.</li>
+          <li><strong>Última respuesta correcta:</strong> una pregunta anteriormente fallada desaparece de esta lista. Un acierto no demuestra dominio duradero.</li>
         </ul>
         <p>
           <em>El estado se deriva de tu historial de respuestas. Los intentos de preguntas que no están disponibles para práctica se conservan; si su enunciado está retenido y el último intento fue incorrecto, el cuaderno lo indica sin mostrar el texto.</em>
         </p>
       </section>
+
+      {originalErrors.length > 0 && (
+        <section aria-labelledby="original-errors-title" className="quiet-panel">
+          <h2 id="original-errors-title">Repetir errores de preguntas originales</h2>
+          <p>{originalErrors.length} pregunta{originalErrors.length === 1 ? "" : "s"} con el último intento incorrecto.</p>
+          <OriginalPracticeSession questions={originalErrors} title="Repaso de errores originales" />
+        </section>
+      )}
 
       <div className="metadata-row question-index-summary">
         <div>

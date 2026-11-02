@@ -2,6 +2,10 @@
 
 Fecha: 2 de noviembre de 2026. Esta matriz inventaría los datos y etiquetas del repositorio; **no es una revisión académica concepto por concepto**, ni certifica vigencia, exhaustividad, corrección de respuestas o dominio del estudiante. La prioridad expresa necesidad de revisión y estudio, no predice preguntas ni frecuencia de examen.
 
+## Muestra contrastada el 2 de noviembre de 2026
+
+Se contrastaron las claves de `orig-tel-ict-002`, `-029` y `-033` con el [RD 346/2011, artículo 2.1 y anexo I, apartados 4.2.1 y 2.3.1](https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834), y las de `orig-gen-prl-001`, `-002` y `-004` con la [Ley 31/1995, artículos 14.1, 15.1.a y 21.2](https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292). Las seis claves eran compatibles con los textos consultados. En `orig-gen-prl-004` se ha precisado que el abandono del lugar procede **en caso necesario**, matiz omitido en la opción y explicación originales. Esta muestra no verifica el resto de preguntas, distractores, temario ni las versiones concretas de los documentos de examen.
+
 ## Cobertura de los documentos del temario
 
 El inventario local `content/syllabus.ts`, basado en capturas identificadas como octubre de 2026, clasifica nueve documentos padres: ocho parciales y uno sin cobertura del material oficial. El validador pasa porque verifica consistencia del inventario, no porque garantice cobertura completa. La actualización actual de cada texto y su cotejo con el documento de ADIF y BOE siguen pendientes.

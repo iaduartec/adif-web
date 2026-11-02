@@ -2,10 +2,12 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getOfficialQuestion } from "../../../lib/content/repository";
 import { officialQuestionIdSchema } from "../../../lib/content/schema";
+import { getOriginalPracticeQuestion } from "../../../lib/content/original-practice-repository";
+import { toPublicPracticeQuestion } from "../../../lib/content/original-practice-public-dto";
 import { createServerClient } from "../../../lib/supabase/server";
 
 const rawAttemptSchema = z.object({
-  questionId: officialQuestionIdSchema,
+  questionId: z.union([officialQuestionIdSchema, z.string().regex(/^orig-[a-z0-9-]+$/)]),
   answer: z.enum(["A", "B", "C", "D"]).optional(),
   selectedAnswer: z.enum(["A", "B", "C", "D"]).optional(),
   mode: z.enum(["practice", "simulation"]).optional(),
@@ -51,7 +53,20 @@ export async function POST(request: Request) {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Debes iniciar sesión para registrar respuestas.", retryable: false }, { status: 401 });
 
-    const question = getOfficialQuestion(input.questionId);
+    const originalQuestion = input.questionId.startsWith("orig-")
+      ? getOriginalPracticeQuestion(input.questionId)
+      : undefined;
+    if (input.questionId.startsWith("orig-") && originalQuestion?.status !== "reviewed") {
+      return NextResponse.json({ error: "La pregunta solicitada no existe.", retryable: false }, { status: 404 });
+    }
+    if (originalQuestion && input.mode === "simulation") {
+      return NextResponse.json({
+        error: "Las preguntas originales solo están disponibles en práctica individual.",
+        retryable: false,
+      }, { status: 400 });
+    }
+    const officialQuestion = originalQuestion ? undefined : getOfficialQuestion(input.questionId);
+    const question = originalQuestion ?? officialQuestion;
     if (!question) return NextResponse.json({ error: "La pregunta solicitada no existe.", retryable: false }, { status: 404 });
 
     const { data, error } = await supabase.rpc("record_practice_attempt", {
@@ -77,10 +92,19 @@ export async function POST(request: Request) {
       || typeof data.is_correct !== "boolean"
     ) return NextResponse.json({ error: "No se ha podido guardar el intento.", retryable: true }, { status: 503 });
 
+    const originalPublicQuestion = originalQuestion
+      ? toPublicPracticeQuestion(originalQuestion)
+      : null;
     return NextResponse.json({
       attemptId: data.attempt_id,
       isCorrect: data.is_correct,
       correctAnswer: question.answer,
+      ...(originalQuestion ? {
+        explanation: originalQuestion.explanation,
+        ...(originalPublicQuestion?.answerGrounding
+          ? { answerGrounding: originalPublicQuestion.answerGrounding }
+          : {}),
+      } : {}),
     }, { status: 201 });
   } catch {
     return NextResponse.json({ error: "El servicio de práctica no está disponible.", retryable: true }, { status: 503 });

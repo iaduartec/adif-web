@@ -2,6 +2,14 @@
 
 Fecha: 2 de noviembre de 2026. Estado parcial y verificable; no es una certificación de la plataforma.
 
+## Continuación: circuito original
+
+En la rama de auditoría se ha añadido práctica para preguntas originales revisadas: selección de tema y cantidad, entrenamiento con corrección por pregunta y práctica con entrega al final. La API autentica y utiliza el RPC privado de intentos para corregir y registrar; el cuaderno puede repetir preguntas originales cuyo último intento guardado fue incorrecto. Las preguntas históricas continúan bloqueadas según sus contratos.
+
+El circuito aún es parcial: un bloque abierto no se reanuda al recargar; la interfaz lo advierte. La práctica en bloque envía intentos individuales al entregar y no es una sesión de examen protegida por servidor; un cliente que invoque directamente el endpoint de entrenamiento puede obtener la corrección de una pregunta. No se presenta como simulacro oficial ni se ha validado la persistencia en un Supabase completo. La migración existe en Git pero **no se ha aplicado a producción**.
+
+Véase [IMPLEMENTATION_EVIDENCE.md](IMPLEMENTATION_EVIDENCE.md) para pruebas y límites. El estado de la auditoría original se conserva a continuación como registro histórico; las frases sobre ausencia de interacción o API solo para originales describen el estado anterior a esta continuación.
+
 ## Versiones y entornos
 
 - Checkout principal: `/home/kiri_/projects/adif-web`, `main` en `a8b544cf814bded0998a19e7b994fff03659b850`. Existe un cambio previo en `.codex/config.toml`, conservado. Tras consultar GitHub, `origin/main` está siete commits por delante.
