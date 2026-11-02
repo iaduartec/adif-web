@@ -31,6 +31,8 @@ test("studies PRL, practices from the lesson, receives correction and finds the 
   await expect(page.getByRole("heading", { name: "Cuaderno de errores" })).toBeVisible();
   const savedPractice = page.getByRole("region", { name: "Repaso de errores originales" });
   await expect(savedPractice).toBeVisible();
+  await savedPractice.getByLabel("Tema").selectOption("prl-capitulo-i");
+  await savedPractice.getByLabel("Cantidad de preguntas").fill("1");
   await savedPractice.getByRole("button", { name: "Comenzar bloque" }).click();
   await expect(savedPractice.getByText("Pregunta 1 de 1", { exact: false })).toBeVisible();
   await expect(savedPractice.getByText(/Según el artículo 1 de la Ley 31\/1995/)).toBeVisible();
