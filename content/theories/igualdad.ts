@@ -252,7 +252,12 @@ export const igualdadTheory: TheorySection = {
           reviewedAt: "2026-11-02"
         },
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-2",
@@ -275,7 +280,12 @@ export const igualdadTheory: TheorySection = {
           reviewedAt: "2026-11-02"
         },
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-3",
@@ -298,7 +308,12 @@ export const igualdadTheory: TheorySection = {
           reviewedAt: "2026-11-02"
         },
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-4",
@@ -325,7 +340,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c4-3",
           text: "Las empresas deberán promover condiciones de trabajo que eviten la comisión de delitos y otras conductas contra la libertad sexual y la integridad moral en el trabajo, incidiendo especialmente en el acoso sexual y el acoso por razón de sexo, incluidos los cometidos en el ámbito digital.",
           kind: "normative",
-          legalBasis: ["lo3-2007-art48"]
+          legalBasis: ["lo3-2007-art48"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -350,7 +370,12 @@ export const igualdadTheory: TheorySection = {
           reviewedAt: "2026-11-02"
         },
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-6",
@@ -366,7 +391,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c6-2",
           text: "La protección frente a represalias alcanza a la persona que presenta la queja, reclamación, denuncia, demanda o recurso para exigir el cumplimiento del principio de igualdad de trato.",
           kind: "interpretative",
-          legalBasis: ["lo3-2007-art9"]
+          legalBasis: ["lo3-2007-art9"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -384,7 +414,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c7-2",
           text: "Deben ser aplicadas con criterios de proporcionalidad y razonabilidad, y son de carácter temporal (deben cesar una vez corregida la desigualdad originaria).",
           kind: "interpretative",
-          legalBasis: ["lo3-2007-art11"]
+          legalBasis: ["lo3-2007-art11"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -398,7 +433,12 @@ export const igualdadTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["lo3-2007-art13"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-9",
@@ -414,7 +454,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c9-2",
           text: "El plan consiste en un conjunto ordenado de medidas, adoptadas tras un diagnóstico de situación, dirigidas a asegurar la igualdad real y eliminar discriminaciones.",
           kind: "normative",
-          legalBasis: ["lo3-2007-art46"]
+          legalBasis: ["lo3-2007-art46"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -444,7 +489,12 @@ export const igualdadTheory: TheorySection = {
           id: "igualdad-c11-2",
           text: "La aplicación a los tribunales y órganos de selección de personal responde al principio de presencia equilibrada de mujeres y hombres, salvo por razones fundadas y objetivas, debidamente motivadas.",
           kind: "normative",
-          legalBasis: ["lo3-2007-da1", "lo3-2007-art53"]
+          legalBasis: ["lo3-2007-da1", "lo3-2007-art53"],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
         }
       ]
     },
@@ -458,7 +508,12 @@ export const igualdadTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["lo3-2007-art8"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-13",
@@ -482,7 +537,12 @@ export const igualdadTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["lo3-2007-art51"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "igualdad-concept-15",
@@ -494,7 +554,12 @@ export const igualdadTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["lo3-2007-art77"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
+          reviewedAt: "2026-11-02"
+        },
     }
   ],
 
