@@ -1,7 +1,12 @@
 -- Preserve historical attempts for the former item while preventing its reuse.
-update private.learning_questions
-set active = false
-where question_id in ('orig-tel-ict-006', 'orig-tel-ict-017');
+-- The rows are inserted when absent so the tombstone survives a registry
+-- regeneration that no longer lists the superseded IDs as active questions.
+insert into private.learning_questions (question_id, correct_answer, concept_ids, simulation_id, active)
+values
+  ('orig-tel-ict-006', 'B', array['ict-concept-9'], 'practice:original:telecom', false),
+  ('orig-tel-ict-017', 'A', array['ict-concept-10'], 'practice:original:telecom', false)
+on conflict (question_id) do update
+set active = false;
 
 -- The corrected wording has a new ID so old answers retain their meaning.
 insert into private.learning_questions (question_id, correct_answer, concept_ids, simulation_id, active)
