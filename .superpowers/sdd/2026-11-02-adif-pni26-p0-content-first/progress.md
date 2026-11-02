@@ -1,0 +1,32 @@
+# SDD ledger — plan: docs/superpowers/plans/2026-11-02-adif-pni26-p0-content-first.md
+
+Base: 28659b361e77b2772df701f16e05855fb6b8113a (approved design and plan commit; parent audit base 24176b16c404310c105266027d1cee5af462957a)
+Branch: codex/auditoria-adif-26
+Pre-existing change: AGENTS.md modified before execution; do not stage or overwrite.
+
+## Pre-flight interfaces and rulings
+- Task 1 -> Task 2: Task 1 establishes whether exact ADIF chapter I scope is currently verifiable; Task 2 may teach against BOE articles 1–4 but must leave the syllabus node partial if ADIF scope remains blocked.
+- Task 2 -> Task 3: four stable PRL concept IDs and the `prl-capitulo-i` node feed eligible original questions and coverage assertions.
+- Task 3 -> Task 4: reviewed original PRL questions feed the course reader's existing practice section and CTA eligibility.
+- Task 5 -> Task 6: the answer-free selected original DTOs and session preset feed mobile active-choice and end-to-end regression coverage.
+- Ruling: current official question inventory is empty (0 active/102 records), while the planning snapshot found 158 reviewed original DTOs. The diagnostic remains explicitly original-only; no historical question is reactivated.
+- Ruling: latest attachment access is recorded independently from historical artifact verification and SHA-256 evidence. Current PDFs returning 403 do not invalidate prior downloaded bytes or prove currentness.
+
+## Tasks
+- [ ] Task 1: recheck and record nine official document versions
+- [ ] Task 2: complete PRL chapter I theory unit
+- [ ] Task 3: add original PRL questions
+- [ ] Task 4: link PRL lesson to practice
+- [ ] Task 5: original-only onboarding diagnostic
+- [ ] Task 6: mobile and study-to-review regressions
+- [ ] Task 7: independent review and full verification (deferred until user directs the review)
+
+- [x] Task 1: recheck and record nine official document versions. RED observed in `tests/source-manifest.test.ts` before schema support (strict schema rejected `latestAccessCheck`; missing manifest check asserted false). GREEN: 48 tests passed across source manifest, syllabus coverage, and source update checks; `pnpm verify:content` passed; `git diff --check` passed. Source evidence: ADIF PNI26/01 scope page accessible on 2026-11-02; all nine current attachment URLs returned HTTP 403 via direct GET on 2026-11-02; BOE consolidated texts checked for applicable primary material. Prior 2026-10-15 artifact hashes/statuses retained. Commit: `docs(adif): recheck PNI26 syllabus source versions`.
+- Task 1: Ruling: BOE texts are usable for the underlying legal content, but cannot certify the unobserved content/version of ADIF's current linked PDF extracts. The assignment scope remains evidenced by the current ADIF page; each PDF's currentness remains unresolved where direct access returned 403.
+- Task 1: Ruling: the CEM attachment is secondary technical material; the associated EU directive and Spanish transposition are listed separately as regulatory sources. Access, currency, and rights for the assigned article remain unresolved.
+
+- [x] Task 2: complete the PRL chapter I unit. RED observed in `tests/prl-study-unit.test.ts` before implementation: the dated BOE capture, articles 1–4, summary, example, flashcards, and partial syllabus state were missing. GREEN: 132 focused tests passed (PRL unit, syllabus, theory validators, source manifest, source update checks, original-practice schema/DTO); `pnpm verify:content` passed; `pnpm typecheck` passed; `git diff --check` passed. The ADIF PDF currentness remains blocked (403); the official page confirms scope. Commit: `feat(adif): teach PRL chapter I with traceable theory`.
+- Task 2: Ruling: the primary BOE consolidated HTML was re-downloaded and hashed on 2026-11-02 (HTTP 200; SHA-256 recorded), so I added `consolidated-page-2026-11-02`, kept the 2026-10-15 artifact/hash as superseded, and pinned theory references to the current capture. Updated the source observation and its test fixture because the old source version is now inactive.
+- Task 2: Ruling: `claim-review-manifest.json` is treated by existing tests and loader as the registry of inherited claims pending review. New claim metadata is attached inline to each claim so inherited pending reviews remain intact; all new claims say that independent review is pending. `reviewed` means source-checked here, not independently reviewed.
+- Task 2: Ruling: the requested concept map labels article 2 with “scope/exclusions”, but the BOE text places object and legal minimum in article 2 and scope/exclusions in article 3. Kept the stable IDs while naming concepts from the actual articles.
+- Task 3 preflight regression: after Task 2 pinned PRL source links to the 2026-11-02 BOE capture, the repository no longer parsed 14 older PRL items because they still referenced the superseded 2026-10-15 version. Downgraded those legacy items to draft, removed stale review dates, and retained each original prompt/options/source locator while repointing the source version to the current verified BOE capture. This withholds them from public DTOs until their later editorial review. RED: common-practice test could not import the repository due to the 14 mismatches; GREEN after correction: 39 tests in general-practice/schema/DTO passed and `pnpm verify:content` passed. Commit: `fix(adif): withhold stale PRL practice items`.
