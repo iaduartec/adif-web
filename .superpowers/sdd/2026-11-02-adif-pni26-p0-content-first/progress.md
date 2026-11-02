@@ -15,7 +15,7 @@ Pre-existing change: AGENTS.md modified before execution; do not stage or overwr
 ## Tasks
 - [ ] Task 1: recheck and record nine official document versions
 - [ ] Task 2: complete PRL chapter I theory unit
-- [ ] Task 3: add original PRL questions
+- [x] Task 3: add original PRL questions
 - [ ] Task 4: link PRL lesson to practice
 - [ ] Task 5: original-only onboarding diagnostic
 - [ ] Task 6: mobile and study-to-review regressions
@@ -30,3 +30,4 @@ Pre-existing change: AGENTS.md modified before execution; do not stage or overwr
 - Task 2: Ruling: `claim-review-manifest.json` is treated by existing tests and loader as the registry of inherited claims pending review. New claim metadata is attached inline to each claim so inherited pending reviews remain intact; all new claims say that independent review is pending. `reviewed` means source-checked here, not independently reviewed.
 - Task 2: Ruling: the requested concept map labels article 2 with “scope/exclusions”, but the BOE text places object and legal minimum in article 2 and scope/exclusions in article 3. Kept the stable IDs while naming concepts from the actual articles.
 - Task 3 preflight regression: after Task 2 pinned PRL source links to the 2026-11-02 BOE capture, the repository no longer parsed 14 older PRL items because they still referenced the superseded 2026-10-15 version. Downgraded those legacy items to draft, removed stale review dates, and retained each original prompt/options/source locator while repointing the source version to the current verified BOE capture. This withholds them from public DTOs until their later editorial review. RED: common-practice test could not import the repository due to the 14 mismatches; GREEN after correction: 39 tests in general-practice/schema/DTO passed and `pnpm verify:content` passed. Commit: `fix(adif): withhold stale PRL practice items`.
+- Task 3: added eight original, source-grounded PRL chapter I questions, two per concept across articles 1–4. Questions combine recall, discrimination and application; each rationale explains A–D and cites the exact BOE article locator. The reviewed set is original and remains absent from the official historical registry; its public DTO omits key and explanation. RED: coverage test failed on missing `prl-concept-15`; GREEN: focused 4-file suite passed (43 tests), `pnpm verify:content` passed, `pnpm typecheck` passed, `git diff --check` passed. Independent adversarial review remains deferred at the user's direction. Commit: `feat(adif): add reviewed original practice for PRL chapter I`.

@@ -129,7 +129,9 @@ describe("original common-law practice", () => {
   });
 
   it("withholds legacy PRL questions pending re-review against the current source version", () => {
-    const legacyPrlItems = questions.filter((question) => question.id.startsWith("orig-gen-prl-"));
+    const legacyPrlItems = questions.filter((question) =>
+      question.id.startsWith("orig-gen-prl-") && question.topicId !== "prl-capitulo-i",
+    );
 
     expect(legacyPrlItems.length).toBeGreaterThan(0);
     expect(legacyPrlItems.every((question) => question.status === "draft")).toBe(true);

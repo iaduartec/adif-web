@@ -4,6 +4,11 @@ import { flashcards } from "../content/flashcards";
 import { lessonSummaries } from "../content/lesson-summaries";
 import { lessonTheories } from "../content/lesson-theory";
 import { officialItems } from "../content/syllabus";
+import { questionContentFingerprint } from "../lib/content/question-content-fingerprint";
+import { listOriginalPracticeQuestions } from "../lib/content/original-practice-repository";
+import { toPublicPracticeQuestion } from "../lib/content/original-practice-public-dto";
+import questionsJson from "../content/questions.json";
+import { officialQuestionsSchema } from "../lib/content/schema";
 import { sourceManifest } from "../lib/content/source-manifest";
 
 const sourceVersion = "consolidated-page-2026-11-02";
@@ -74,5 +79,53 @@ describe("PRL chapter I study unit", () => {
       linkedModules: ["prevencion-riesgos-laborales"],
     });
     expect(chapter?.rationale).toMatch(/403|current.*attachment|adjunto.*actual/i);
+  });
+
+  it("provides original, source-grounded practice for all four chapter-I concepts and cognitive demands", () => {
+    const chapterQuestions = listOriginalPracticeQuestions({
+      domain: "general-knowledge",
+      topicId: "prl-capitulo-i",
+      status: "reviewed",
+    });
+    const expectedConceptIds = articles.map((article) => `prl-concept-${14 + article}`);
+    const cognitiveTags = ["recall", "discrimination", "application"];
+    const officialQuestions = officialQuestionsSchema.parse(questionsJson);
+    const officialFingerprints = new Set(officialQuestions.map((question) => question.source.fingerprint));
+
+    for (const conceptId of expectedConceptIds) {
+      expect(
+        chapterQuestions.filter((question) => question.conceptIds.includes(conceptId)).length,
+        conceptId,
+      ).toBeGreaterThanOrEqual(2);
+    }
+    for (const article of articles) {
+      expect(chapterQuestions.some((question) =>
+        question.sourceLocator?.startsWith(`Artículo ${article}`),
+      ), `article ${article}`).toBe(true);
+    }
+    for (const tag of cognitiveTags) {
+      expect(chapterQuestions.some((question) => question.tags.includes(tag)), tag).toBe(true);
+    }
+
+    for (const question of chapterQuestions) {
+      expect(question.origin, question.id).toBe("original");
+      expect(question.sourceId, question.id).toBe("Ley 31/1995");
+      expect(question.sourceVersion, question.id).toBe(sourceVersion);
+      expect(question.options, question.id).toHaveLength(4);
+      expect(new Set(question.options.map((option) => option.text)).size, question.id).toBe(4);
+      expect(question.conceptIds.length, question.id).toBeGreaterThan(0);
+      expect(question.tags, question.id).toContain("original-comun");
+      expect(question.tags, question.id).toContain("prl");
+      expect(question.explanation, question.id).toMatch(new RegExp(`La respuesta ${question.answer} es correcta`, "i"));
+      for (const option of ["A", "B", "C", "D"]) {
+        expect(question.explanation, `${question.id}/${option}`).toMatch(new RegExp(`(?:^|\\s)${option}:`, "m"));
+      }
+
+      expect(officialFingerprints.has(questionContentFingerprint(question)), question.id).toBe(false);
+      const publicDto = toPublicPracticeQuestion(question);
+      expect(publicDto, question.id).not.toBeNull();
+      expect(publicDto, question.id).not.toHaveProperty("answer");
+      expect(publicDto, question.id).not.toHaveProperty("explanation");
+    }
   });
 });

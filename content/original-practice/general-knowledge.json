@@ -2650,5 +2650,365 @@
     "sourceLocator": "Capítulo I, 1.4 Los agentes del sector ferroviario",
     "status": "draft",
     "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-001",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · identificar el ámbito de la normativa",
+    "prompt": "Según el artículo 1 de la Ley 31/1995, ¿qué conjunto integra la normativa sobre prevención de riesgos laborales?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente la propia Ley 31/1995 y sus normas reglamentarias de desarrollo."
+      },
+      {
+        "key": "B",
+        "text": "La Ley, sus disposiciones de desarrollo o complementarias y otras normas legales o convencionales con prescripciones preventivas o capaces de producirlas."
+      },
+      {
+        "key": "C",
+        "text": "Solo los convenios colectivos que regulen expresamente la seguridad laboral."
+      },
+      {
+        "key": "D",
+        "text": "La Ley 31/1995 junto con las instrucciones internas que cada empresa decida adoptar."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La respuesta B es correcta: el artículo 1 incluye la Ley, sus disposiciones de desarrollo o complementarias y otras normas legales o convencionales que contengan prescripciones preventivas o puedan producirlas. A: Incorrecta, porque limita el conjunto a la Ley y sus reglamentos. B: Correcta, porque recoge los tres grupos previstos en el artículo 1. C: Incorrecta, porque el artículo incluye otras normas y no solo convenios colectivos. D: Incorrecta, porque una instrucción empresarial interna no integra por ese solo hecho las categorías normativas descritas en el artículo 1.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "recall"
+    ],
+    "conceptIds": [
+      "prl-concept-15"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-002",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · distinguir ley preventiva y normas incluidas",
+    "prompt": "Una norma convencional contiene una prescripción concreta para adoptar una medida preventiva en el ámbito laboral. ¿Cómo la trata el artículo 1 de la Ley 31/1995?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Puede formar parte de la normativa preventiva en los términos del artículo 1."
+      },
+      {
+        "key": "B",
+        "text": "Queda fuera de la normativa porque no tiene rango de ley."
+      },
+      {
+        "key": "C",
+        "text": "Solo se incorpora si reproduce literalmente un artículo de la Ley 31/1995."
+      },
+      {
+        "key": "D",
+        "text": "Sustituye a las disposiciones legales y reglamentarias preventivas."
+      }
+    ],
+    "answer": "A",
+    "explanation": "La respuesta A es correcta: el artículo 1 incluye otras normas convencionales que contengan prescripciones relativas a la adopción de medidas preventivas o puedan producirlas. A: Correcta, porque el artículo 1 menciona expresamente normas convencionales con ese contenido. B: Incorrecta, porque la inclusión no se limita a normas con rango de ley. C: Incorrecta, porque no exige reproducir literalmente la Ley. D: Incorrecta, porque la inclusión no concede a la norma convencional capacidad para sustituir o desplazar el marco legal preventivo.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "discrimination"
+    ],
+    "conceptIds": [
+      "prl-concept-15"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-003",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · mínimo de derecho necesario",
+    "prompt": "¿Qué carácter atribuye el artículo 2.2 de la Ley 31/1995 a las disposiciones laborales de la Ley y de sus normas reglamentarias?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Son recomendaciones que solo obligan si las incorpora un convenio colectivo."
+      },
+      {
+        "key": "B",
+        "text": "Son un máximo que la negociación colectiva no puede superar."
+      },
+      {
+        "key": "C",
+        "text": "Constituyen un mínimo de derecho necesario indisponible que puede mejorarse y desarrollarse por negociación colectiva."
+      },
+      {
+        "key": "D",
+        "text": "Pueden rebajarse por acuerdo individual cuando la persona trabajadora lo acepte."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La respuesta C es correcta: el artículo 2.2 fija un mínimo de derecho necesario indisponible y permite que la negociación colectiva mejore y desarrolle sus disposiciones. A: Incorrecta, porque la ley no queda reducida a recomendación ni depende de su incorporación al convenio. B: Incorrecta, porque el mínimo puede mejorarse; no es un máximo. C: Correcta, porque expresa el carácter indisponible y mejorable que establece el artículo 2.2. D: Incorrecta, porque una aceptación individual no convierte ese mínimo legal indisponible en renunciable.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "discrimination"
+    ],
+    "conceptIds": [
+      "prl-concept-16"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 2.1 y 2.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-004",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · aplicar el mínimo legal a un convenio",
+    "prompt": "Un convenio colectivo reduce una garantía preventiva reconocida por la Ley 31/1995 y la sustituye por otra inferior. A la luz del artículo 2.2, ¿qué criterio corresponde?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El convenio prevalece siempre en prevención por ser una norma negociada."
+      },
+      {
+        "key": "B",
+        "text": "La reducción es válida si la aprueba la mayoría de la plantilla."
+      },
+      {
+        "key": "C",
+        "text": "La reducción es válida si se compensa con una mejora salarial."
+      },
+      {
+        "key": "D",
+        "text": "El convenio puede desarrollar o mejorar el mínimo legal, pero no rebajarlo."
+      }
+    ],
+    "answer": "D",
+    "explanation": "La respuesta D es correcta: conforme al artículo 2.2, las disposiciones laborales fijan un mínimo indisponible susceptible de mejora y desarrollo por convenio colectivo, no de rebaja. A: Incorrecta, porque la negociación colectiva no puede desplazar a la baja ese mínimo. B: Incorrecta, porque una votación no vuelve disponible una garantía que la ley declara indisponible. C: Incorrecta, porque una compensación salarial no autoriza a reducir el mínimo preventivo. D: Correcta, porque distingue la mejora permitida de la rebaja prohibida por el artículo 2.2.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "application"
+    ],
+    "conceptIds": [
+      "prl-concept-16"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 2.1 y 2.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-005",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · determinar el ámbito de aplicación",
+    "prompt": "Una persona empleada pública realiza tareas administrativas ordinarias en una oficina. Según el artículo 3.1, ¿qué criterio general se aplica a la Ley 31/1995?",
+    "options": [
+      {
+        "key": "A",
+        "text": "La Ley solo se aplica a personas con relación laboral privada."
+      },
+      {
+        "key": "B",
+        "text": "La Ley incluye las relaciones administrativas o estatutarias, con las particularidades previstas para ellas."
+      },
+      {
+        "key": "C",
+        "text": "La Ley solo se aplica al personal funcionario si lo establece un convenio colectivo."
+      },
+      {
+        "key": "D",
+        "text": "La Ley excluye por completo a toda persona que trabaje para una Administración pública."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La respuesta B es correcta: el artículo 3.1 incluye las relaciones laborales y las administrativas o estatutarias al establecer su ámbito de aplicación. A: Incorrecta, porque reduce el ámbito a relaciones laborales privadas. B: Correcta, porque recoge la inclusión de las relaciones administrativas o estatutarias conforme al artículo 3.1. C: Incorrecta, porque la aplicación no depende de que un convenio la incorpore. D: Incorrecta, porque el artículo 3.1 no excluye en bloque a quienes trabajan para una Administración.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "application"
+    ],
+    "conceptIds": [
+      "prl-concept-17"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 3.1, 3.2 y 3.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-006",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · distinguir inclusión y exclusiones funcionales",
+    "prompt": "¿Cuándo opera la exclusión del ámbito de la Ley 31/1995 para determinadas actividades de las funciones públicas mencionadas en el artículo 3.2?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Siempre que las tareas las realice personal funcionario, con independencia de su contenido."
+      },
+      {
+        "key": "B",
+        "text": "En todos los servicios de seguridad, protección civil y peritaje forense, sin excepción."
+      },
+      {
+        "key": "C",
+        "text": "Cuando las características de una actividad pública determinada impidan aplicar la Ley, en los términos del artículo 3.2."
+      },
+      {
+        "key": "D",
+        "text": "Siempre que exista una norma interna de la Administración que declare la exclusión."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La respuesta C es correcta: el artículo 3.2 limita la exclusión a actividades cuyas particularidades lo impidan, dentro de las funciones públicas que enumera. A: Incorrecta, porque el carácter funcionarial por sí solo no activa la exclusión. B: Incorrecta, porque transforma una exclusión condicionada en una exención general de colectivos y actividades. C: Correcta, porque conserva la condición funcional expresada en el artículo 3.2. D: Incorrecta, porque una declaración interna no sustituye la condición legal del artículo 3.2.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "discrimination"
+    ],
+    "conceptIds": [
+      "prl-concept-17"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 3.1, 3.2 y 3.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-007",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · diferenciar peligro, riesgo y daño",
+    "prompt": "Un agente peligroso puede causar una lesión, pero en una situación concreta la probabilidad de que ocurra es muy baja. Según el artículo 4, ¿qué afirmación distingue correctamente riesgo y daño derivado del trabajo?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El riesgo es la posibilidad de que el trabajador sufra un daño; el daño es la lesión, patología o enfermedad ya sufrida con motivo u ocasión del trabajo."
+      },
+      {
+        "key": "B",
+        "text": "El riesgo es la lesión ya producida y el daño es la probabilidad de que se produzca."
+      },
+      {
+        "key": "C",
+        "text": "Riesgo y daño son sinónimos y solo se diferencian por su duración."
+      },
+      {
+        "key": "D",
+        "text": "Existe daño derivado del trabajo aunque no haya lesión, enfermedad o patología causada o agravada por el trabajo."
+      }
+    ],
+    "answer": "A",
+    "explanation": "La respuesta A es correcta: el artículo 4.2 define riesgo laboral como la posibilidad de que la persona trabajadora sufra un daño, y el artículo 4.3 define daño derivado del trabajo como lesiones, enfermedades o patologías sufridas con motivo u ocasión del trabajo. A: Correcta, porque separa posibilidad y resultado lesivo conforme a los artículos 4.2 y 4.3. B: Incorrecta, porque intercambia ambas definiciones. C: Incorrecta, porque la ley define conceptos distintos, no sinónimos. D: Incorrecta, porque elimina del daño el elemento de lesión, enfermedad o patología que establece el artículo 4.3.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "discrimination"
+    ],
+    "conceptIds": [
+      "prl-concept-18"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 4; ordinales 1.º–8.º",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-c1-008",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-i",
+    "syllabusNodeId": "prl-capitulo-i",
+    "topic": "Capítulo I: objeto, ámbito y definiciones (artículos 1–4)",
+    "skill": "PRL · identificar condiciones de trabajo",
+    "prompt": "En una instalación de telecomunicaciones ferroviarias se modifican un equipo y el procedimiento para usarlo. ¿Qué criterio del artículo 4.7 permite valorar si esos elementos son condiciones de trabajo?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Que los elementos puedan influir significativamente en la generación de riesgos para la seguridad y salud."
+      },
+      {
+        "key": "B",
+        "text": "Que el cambio haya producido ya un accidente con baja laboral."
+      },
+      {
+        "key": "C",
+        "text": "Que el equipo pertenezca a una categoría administrativa de riesgo alto."
+      },
+      {
+        "key": "D",
+        "text": "Que el procedimiento esté incorporado en un convenio colectivo."
+      }
+    ],
+    "answer": "A",
+    "explanation": "La respuesta A es correcta: el artículo 4.7 incluye características del trabajo, equipos, agentes y procedimientos que influyan significativamente en la generación de riesgos para la seguridad y salud. A: Correcta, porque expresa el criterio de influencia significativa del artículo 4.7. B: Incorrecta, porque la definición no exige que el riesgo ya se haya materializado en un accidente. C: Incorrecta, porque no depende de una clasificación administrativa con ese nombre. D: Incorrecta, porque la inclusión como condición de trabajo depende de sus características e influencia, no de estar en un convenio.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl",
+      "prl-capitulo-i",
+      "application"
+    ],
+    "conceptIds": [
+      "prl-concept-18"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "sourceLocator": "Artículo 4; ordinales 1.º–8.º",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
   }
 ]
