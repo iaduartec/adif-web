@@ -96,8 +96,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0014",
     module: "E2 Compatibilidad electromagnetica",
-    front: "¿Qué marcado acredita el cumplimiento de la Directiva CEM para comercializar equipos?",
-    back: "El marcado 'CE', colocado de forma visible, legible e indeleble en el equipo o en su placa de características, que acredita la conformidad con los requisitos esenciales de la Directiva CEM (2004/108/CE y su sucesora 2014/30/UE, transpuesta en España por el RD 1580/2006). En el sector ferroviario, las pruebas de emisión e inmunidad se realizan conforme a la norma EN 50121.",
+    front: "¿Qué significa el marcado CE en los aparatos sujetos al RD 186/2016?",
+    back: "El fabricante indica mediante el marcado CE que el aparato es conforme con la legislación de armonización de la Unión aplicable que prevé su colocación. Véanse el RD 186/2016, artículos 3.x, 7.2, 16 y 17, y su preámbulo sobre la transposición de la Directiva 2014/30/UE.",
   },
   {
     id: "F0015",

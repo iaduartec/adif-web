@@ -169,7 +169,7 @@
       "status": "verified",
       "downloadedAt": "2026-10-15",
       "verifiedAt": "2026-10-15",
-      "consultedLocator": "Página consolidada consultada el 2026-10-15; localizador interno por artículo.",
+      "consultedLocator": "Texto original publicado en el DOUE, alojado en BOE; captura del 15-10-2026. El identificador de versión histórico no acredita texto consolidado ni vigencia; cotejar EUR-Lex por separado.",
       "editorialConfidence": {
         "level": "high",
         "reason": "Se obtuvo la página oficial por HTTPS y se calculó SHA-256 sobre los bytes recibidos."

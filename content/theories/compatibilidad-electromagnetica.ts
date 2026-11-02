@@ -8,9 +8,33 @@ export const cemTheory: TheorySection = {
       sourceTitle:
         "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
       sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
-      locator: "Artículo 3, definiciones",
+      locator: "Artículo 3.1.4",
       excerpt:
-        "Compatibilidad electromagnética: la capacidad de un equipo para funcionar satisfactoriamente en su entorno electromagnético sin introducir perturbaciones electromagnéticas intolerables para otros equipos y sin sufrir él mismo degradación inaceptable."
+        "Compatibilidad electromagnética: la capacidad de un equipo para funcionar satisfactoriamente en su entorno electromagnético sin introducir perturbaciones electromagnéticas intolerables para otros equipos en ese entorno."
+    },
+    {
+      id: "dir-cem-definition",
+      sourceId: "Directiva 2014/30/UE",
+      sourceTitle: "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
+      locator: "Artículo 3.1.4",
+      excerpt: "Capacidad de un equipo de funcionar satisfactoriamente en su entorno sin introducir perturbaciones intolerables para otros equipos."
+    },
+    {
+      id: "dir-immunity-definition",
+      sourceId: "Directiva 2014/30/UE",
+      sourceTitle: "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
+      locator: "Artículo 3.1.6",
+      excerpt: "Capacidad de un equipo para funcionar tal como está previsto sin experimentar una degradación en presencia de una perturbación electromagnética."
+    },
+    {
+      id: "dir-cem-scope",
+      sourceId: "Directiva 2014/30/UE",
+      sourceTitle: "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
+      locator: "Artículo 2.2.a",
+      excerpt: "Exclusión de los equipos regulados por la legislación específica de equipos radioeléctricos; comprobar la evolución de las referencias normativas."
     },
     {
       id: "rd186-2016",
@@ -18,8 +42,8 @@ export const cemTheory: TheorySection = {
       sourceTitle:
         "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
-      locator: "Artículo 3",
-      excerpt: "Los equipos deberán cumplir los requisitos esenciales de protección..."
+      locator: "Artículo 6 y anexo I.1",
+      excerpt: "Los equipos incluidos en el ámbito de aplicación de este real decreto cumplirán los requisitos esenciales establecidos en el anexo I."
     },
     {
       id: "en50121",
@@ -64,7 +88,7 @@ export const cemTheory: TheorySection = {
   introduction: [
     {
       id: "cem-intro-1",
-      text: "La compatibilidad electromagnética (CEM) es la capacidad de un equipo para funcionar satisfactoriamente sin introducir perturbaciones electromagnéticas intolerables y sin sufrir degradaciones inaceptables.",
+      text: "La compatibilidad electromagnética (CEM) es la capacidad de un equipo de funcionar satisfactoriamente en su entorno sin introducir perturbaciones intolerables para otros equipos de ese entorno.",
       kind: "normative",
       legalBasis: ["dir-2014-30-ue"]
     },
@@ -78,12 +102,34 @@ export const cemTheory: TheorySection = {
 
   concepts: [
     {
+      id: "cem-scope",
+      title: "Ámbito y exclusiones: cuidado con las generalizaciones",
+      claims: [{
+        id: "cem-scope-radio",
+        text: "El artículo 2.2.a excluye de la Directiva los equipos sujetos a la normativa específica de equipos radioeléctricos; la exclusión no significa que carezcan de requisitos de CEM.",
+        kind: "normative",
+        legalBasis: ["dir-cem-scope"],
+        review: { status: "needs_review", confidence: { level: "medium", reason: "Cotejo normativo preliminar; revisión independiente de esta redacción pendiente." } }
+      }]
+    },
+    {
+      id: "cem-immunity",
+      title: "Inmunidad: no es la definición legal de CEM",
+      claims: [{
+        id: "cem-immunity-definition",
+        text: "La inmunidad es la capacidad de funcionar como está previsto sin experimentar una degradación en presencia de una perturbación electromagnética; se define por separado de la CEM.",
+        kind: "normative",
+        legalBasis: ["dir-immunity-definition", "dir-cem-definition"],
+        review: { status: "needs_review", confidence: { level: "medium", reason: "Cotejo normativo preliminar; revisión independiente de esta redacción pendiente." } }
+      }]
+    },
+    {
       id: "cem-concept-1",
       title: "Emisión e Inmunidad",
       claims: [
         {
           id: "cem-c1-1",
-          text: "Un equipo es compatible electromagnéticamente cuando su nivel de emisión se sitúa por debajo de los límites normativos y su nivel de inmunidad por encima de los umbrales exigidos.",
+          text: "Los requisitos esenciales combinan la limitación de perturbaciones generadas con un nivel adecuado de inmunidad frente a las perturbaciones previsibles durante el uso previsto.",
           kind: "normative",
           legalBasis: ["rd186-2016"]
         }
@@ -95,7 +141,7 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c2-1",
-          text: "Directiva europea transpuesta en España mediante el Real Decreto 186/2016. Define los requisitos esenciales de protección para aparatos comercializados en la UE.",
+          text: "Directiva europea transpuesta en España mediante el Real Decreto 186/2016. Define requisitos esenciales para los equipos comprendidos en su ámbito de aplicación.",
           kind: "normative",
           legalBasis: ["dir-2014-30-ue", "rd186-2016"]
         }
@@ -131,7 +177,7 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c5-1",
-          text: "Los ensayos de emisión radiada de material rodante en prueba estacionaria se miden por norma armonizada a una distancia de 10 metros utilizando detector de cuasi-pico.",
+          text: "Las distancias, detectores y condiciones de ensayo dependen del procedimiento y de la edición aplicable; su cotejo documental está pendiente de verificación.",
           kind: "didactic",
           legalBasis: ["en50121"]
         }
@@ -215,9 +261,9 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c12-1",
-          text: "En el temario evaluado por ADIF, la Directiva de compatibilidad electromagnética se presenta como aplicable a todos los equipos electrónicos y la directiva vigente se publicó en marzo de 2014.",
-          kind: "didactic",
-          legalBasis: ["adif-pni25-cem-questions"]
+          text: "La Directiva se aplica a equipos según su definición y con sus exclusiones y reglas de legislación específica; su ámbito no comprende indiscriminadamente todos los equipos electrónicos.",
+          kind: "normative",
+          legalBasis: ["dir-cem-scope"]
         }
       ]
     },

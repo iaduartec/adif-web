@@ -115,7 +115,9 @@ describe("active official course content", () => {
     expect(parsed.success).toBe(true);
     if (!parsed.success) return;
 
-    expect(activeTheoryConceptRegistry.size).toBe(205);
+    expect(activeTheoryConceptRegistry.size).toBe(
+      Object.values(lessonTheories).reduce((total, theory) => total + theory.concepts.length, 0),
+    );
     expect(parsed.data).toHaveLength(102);
     for (const question of parsed.data) {
       expect(question.conceptIds.length, question.id).toBeGreaterThan(0);
@@ -149,7 +151,7 @@ describe("active official course content", () => {
       { conceptId: "ict-concept-14", claimPattern: /unión.*redes de distribución.*dispersión/i, questionIds: ["ADIF-2023-1433-Q10", "ADIF-2023-4101-Q04"] },
       { conceptId: "rcf-concept-8", claimPattern: /Sistema de protección.*Dispositivo de vigilancia.*Radiotelefonía/i, questionIds: ["ADIF-2023-1433-Q11", "ADIF-2023-4101-Q01"] },
       { conceptId: "cem-concept-6", claimPattern: /modo diferencial.*conductores activos/i, questionIds: ["ADIF-2023-1433-Q12", "ADIF-2023-4101-Q13"] },
-      { conceptId: "cem-concept-1", claimPattern: /emisión.*inmunidad/i, questionIds: ["ADIF-2023-1433-Q13", "ADIF-2023-1433-Q15", "ADIF-2023-4101-Q12", "ADIF-2023-4101-Q14"] },
+      { conceptId: "cem-concept-1", claimPattern: /perturbaciones.*inmunidad/i, questionIds: ["ADIF-2023-1433-Q13", "ADIF-2023-1433-Q15", "ADIF-2023-4101-Q12", "ADIF-2023-4101-Q14"] },
       { conceptId: "cem-concept-7", claimPattern: /acoplamiento inductivo.*área.*bucle/i, questionIds: ["ADIF-2023-1433-Q14", "ADIF-2023-4101-Q15"] },
       { conceptId: "ict-concept-15", claimPattern: /Punto de interconexión.*redes de alimentación.*redes de distribución.*RITI/i, questionIds: ["ADIF-2024-3403-Q01", "ADIF-2024-3413-Q05", "ADIF-2025-1131-Q02", "ADIF-2025-4104-Q01"] },
       { conceptId: "ict-concept-16", claimPattern: /proyecto técnico.*planos.*pliego de condiciones/i, questionIds: ["ADIF-2024-3403-Q02", "ADIF-2024-3403-Q11", "ADIF-2024-3413-Q07", "ADIF-2024-3413-Q08", "ADIF-2025-1131-Q06", "ADIF-2025-4104-Q09"] },
@@ -175,7 +177,7 @@ describe("active official course content", () => {
       { conceptId: "ict-concept-30", claimPattern: /red mallada de equipotencialidad.*anillo de tierra/i, questionIds: ["ADIF-2025-1131-Q10", "ADIF-2025-4104-Q11"] },
       { conceptId: "ict-concept-31", claimPattern: /roseta hembra miniatura de ocho vías.*RJ45/i, questionIds: ["ADIF-2025-1131-Q11", "ADIF-2025-4104-Q06"] },
       { conceptId: "ict-concept-32", claimPattern: /5 MHz.*2\.150 MHz/i, questionIds: ["ADIF-2025-1131-Q12", "ADIF-2025-4104-Q10"] },
-      { conceptId: "cem-concept-12", claimPattern: /todos los equipos electrónicos.*marzo de 2014/i, questionIds: ["ADIF-2025-1131-Q13", "ADIF-2025-1131-Q16", "ADIF-2025-4104-Q15", "ADIF-2025-4104-Q16"] },
+      { conceptId: "cem-concept-12", claimPattern: /exclusiones.*no comprende indiscriminadamente todos los equipos electrónicos/i, questionIds: ["ADIF-2025-1131-Q13", "ADIF-2025-1131-Q16", "ADIF-2025-4104-Q15", "ADIF-2025-4104-Q16"] },
       { conceptId: "cem-concept-13", claimPattern: /convertidores de potencia.*dos o más.*líneas de suministro/i, questionIds: ["ADIF-2025-1131-Q14", "ADIF-2025-4104-Q13"] },
       { conceptId: "cem-concept-14", claimPattern: /varias antenas.*ancho de banda/i, questionIds: ["ADIF-2025-1131-Q15", "ADIF-2025-4104-Q14"] },
       { conceptId: "ict-concept-33", claimPattern: /equipo de cabecera.*red de dispersión/i, questionIds: ["ADIF-2025-1131-Q17", "ADIF-2025-4104-Q17"] },
