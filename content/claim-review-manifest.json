@@ -1532,67 +1532,76 @@
       "reviewedAt": "2026-11-02"
     },
     "psico-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "psico-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado (contenido didáctico, sin fuente normativa)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "dr-intro-1": {
       "status": "needs_review",
