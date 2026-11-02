@@ -114,7 +114,7 @@ const existingConcepts: TheoryConcept[] = [
   {
     id: "estatuto-concept-9",
     title: "Régimen de personal",
-    claims: [normativeClaim("estatuto-c9-1", "El personal laboral de ADIF y su contratación se rigen por el Derecho laboral, los contratos, los convenios colectivos y las demás normas aplicables.", "Artículo 27")],
+    claims: [normativeClaim("estatuto-c9-1", "El personal laboral de ADIF y su contratación se rigen por el Derecho laboral, los contratos, los convenios colectivos y las demás normas aplicables.", "Artículo 27", true)],
   },
   {
     id: "estatuto-concept-10",
