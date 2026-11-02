@@ -178,7 +178,12 @@ export const incompatibilidadesTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["l53-1984-art14"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra Ley 53/1984 (BOE-A-1985-151). Ver docs/ADIF_AUDIT_ICT_INCOMP.md." },
+          reviewedAt: "2026-11-02"
+        },
     },
     {
       id: "incomp-concept-7",
@@ -190,7 +195,12 @@ export const incompatibilidadesTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["l53-1984-art19"]
         }
-      ]
+      ],
+        review: {
+          status: "reviewed",
+          confidence: { level: "high", reason: "Verificado contra Ley 53/1984 (BOE-A-1985-151). Ver docs/ADIF_AUDIT_ICT_INCOMP.md." },
+          reviewedAt: "2026-11-02"
+        },
     }
   ],
 
