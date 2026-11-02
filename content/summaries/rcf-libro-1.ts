@@ -31,12 +31,12 @@ export const rcfLibro1Summary: LessonSummary = {
       ]
     },
     {
-      title: "Errores típicos y repaso final",
+      title: "Distribución de documentos y útiles de servicio (cap. 3)",
       points: [
-        "No confundir seguridad con regularidad: la primera manda siempre.",
-        "No mezclar una consigna del Administrador con un documento interno de la Empresa Ferroviaria.",
-        "No olvidar que la maniobra exige prudencia y límites propios.",
-        "Checklist: seguridad, documentación, orden de marcha, maniobra y señalización.",
+        "La entidad que publica un documento reglamentario garantiza su publicidad y difusión a los destinatarios afectados.",
+        "Las EF y los AI deben asegurar, en todo momento, la actualización y distribución de los documentos a su personal afectado.",
+        "El personal que recibe una modificación de su documentación de seguridad a título personal debe acusar recibo y acreditar conocimiento conforme a su SGS.",
+        "Los colectivos de personal que intervienen en la circulación reciben, a título individual, los útiles de servicio necesarios.",
       ]
     }
   ]

@@ -2312,5 +2312,177 @@
     "status": "reviewed",
     "reviewedAt": "2026-10-17",
     "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-001",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-3",
+    "syllabusNodeId": "rcf-capitulo-3",
+    "topic": "Capítulo 3. Distribución de documentos y útiles de servicio",
+    "skill": "RCF",
+    "prompt": "Según el Reglamento de Circulación Ferroviaria (RD 664/2015), ¿quién garantiza la adecuada publicidad y difusión de un documento reglamentario a los destinatarios afectados?",
+    "options": [
+      {
+        "key": "A",
+        "text": "La entidad responsable de la publicación del documento reglamentario."
+      },
+      {
+        "key": "B",
+        "text": "Exclusivamente la Agencia Estatal de Seguridad Ferroviaria."
+      },
+      {
+        "key": "C",
+        "text": "El Ministerio de Transportes y Movilidad Sostenible."
+      },
+      {
+        "key": "D",
+        "text": "El personal afectado por el documento."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 1.3.1.1.1 establece que cada entidad responsable de la publicación de un documento reglamentario garantizará la adecuada publicidad y difusión del mismo a los destinatarios afectados. La AESF, el Ministerio y el personal afectado no asumen esa obligación de publicación.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-cap3-distribucion-documentos"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "BOE-consolidado-2023-07-12",
+    "sourceLocator": "Libro Primero, Capítulo 3, 1.3.1.1.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-002",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-3",
+    "syllabusNodeId": "rcf-capitulo-3",
+    "topic": "Capítulo 3. Distribución de documentos y útiles de servicio",
+    "skill": "RCF",
+    "prompt": "¿A quién corresponde asegurar, en todo momento, la actualización y distribución de los documentos a su personal afectado?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A las empresas ferroviarias y a los administradores de infraestructuras."
+      },
+      {
+        "key": "B",
+        "text": "Solo a los administradores de infraestructuras."
+      },
+      {
+        "key": "C",
+        "text": "Solo a las empresas ferroviarias."
+      },
+      {
+        "key": "D",
+        "text": "Al personal afectado, de forma individual."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 1.3.1.1.2 atribuye la obligación conjunta a las EF y a los AI. No es exclusiva de uno solo ni trasladable al personal afectado.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-cap3-distribucion-documentos"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "BOE-consolidado-2023-07-12",
+    "sourceLocator": "Libro Primero, Capítulo 3, 1.3.1.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-003",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-3",
+    "syllabusNodeId": "rcf-capitulo-3",
+    "topic": "Capítulo 3. Distribución de documentos y útiles de servicio",
+    "skill": "RCF",
+    "prompt": "Un maquinista recibe a título personal una modificación de su documentación de seguridad. ¿Qué debe hacer?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Acusar recibo y acreditar conocimiento de su contenido conforme al SGS de su empresa."
+      },
+      {
+        "key": "B",
+        "text": "Archivarla sin acuse de recibo, ya que es informativa."
+      },
+      {
+        "key": "C",
+        "text": "Comunicarla al sindicato antes de acusar recibo."
+      },
+      {
+        "key": "D",
+        "text": "Devolverla al administrador de infraestructuras."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 1.3.1.1.3 obliga al personal que recibe una modificación de su documentación de seguridad a título personal a acusar recibo y a acreditar conocimiento de su contenido conforme a lo establecido en el SGS de su empresa.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-cap3-distribucion-documentos"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "BOE-consolidado-2023-07-12",
+    "sourceLocator": "Libro Primero, Capítulo 3, 1.3.1.1.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-rcf-004",
+    "domain": "telecom",
+    "topicId": "rcf-capitulo-3",
+    "syllabusNodeId": "rcf-capitulo-3",
+    "topic": "Capítulo 3. Distribución de documentos y útiles de servicio",
+    "skill": "RCF",
+    "prompt": "¿Qué establece el RCF sobre los útiles de servicio?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los colectivos de personal que intervienen en la circulación reciben, a título individual, los útiles de servicio necesarios para desarrollar su función."
+      },
+      {
+        "key": "B",
+        "text": "Los útiles de servicio se entregan únicamente a los responsables de circulación."
+      },
+      {
+        "key": "C",
+        "text": "Los útiles de servicio son propiedad del personal y no se reponen."
+      },
+      {
+        "key": "D",
+        "text": "La entrega de útiles de servicio es potestativa para el administrador."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El apartado 1.3.1.2.1 establece que los colectivos de personal que intervienen en la circulación reciben de su AI o EF, a título individual, los útiles de servicio necesarios para desarrollar su función. No es potestativa ni se limita a los responsables de circulación.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "rcf"
+    ],
+    "conceptIds": [
+      "rcf-cap3-utiles-servicio"
+    ],
+    "sourceId": "RD 664/2015",
+    "sourceVersion": "BOE-consolidado-2023-07-12",
+    "sourceLocator": "Libro Primero, Capítulo 3, 1.3.1.2.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
   }
 ]

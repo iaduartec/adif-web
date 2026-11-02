@@ -1793,6 +1793,55 @@
         "level": "low",
         "reason": "Definición añadida desde el artículo 2.5.4 consolidado; requiere cotejo con el PDF oficial de la convocatoria y revisión editorial final."
       }
+    },
+    "rcf-cap3-dist-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "rcf-cap3-dist-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "rcf-cap3-dist-3": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "rcf-cap3-utiles-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "rcf-ex-cap3-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "rcf-takeaway-cap3-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "rcf-takeaway-cap3-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
     }
   }
 }

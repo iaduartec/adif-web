@@ -214,4 +214,16 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué incluye el artículo 4 en «condición de trabajo», «equipo de trabajo» y «EPI»?",
     back: "Condición de trabajo: característica que influye significativamente en la generación de riesgos, incluidos locales, agentes, equipos, procedimientos y organización. Equipo de trabajo: máquina, aparato, instrumento o instalación utilizada en el trabajo. EPI: equipo llevado o sujetado para proteger de riesgos, incluidos complementos y accesorios.",
   },
+  {
+    id: "F0033",
+    module: "RCF Libro 1",
+    front: "¿Qué obligación tiene el personal que recibe una modificación de su documentación de seguridad a título personal?",
+    back: "Debe acusar recibo y acreditar conocimiento de su contenido conforme a lo establecido en el sistema de gestión de la seguridad (SGS) de su empresa. Fuente: RD 664/2015, Libro Primero, Capítulo 3, apartado 1.3.1.1.3 (BOE consolidado 12/07/2023).",
+  },
+  {
+    id: "F0034",
+    module: "RCF Libro 1",
+    front: "¿Qué establece el RCF sobre los útiles de servicio?",
+    back: "Los colectivos de personal que intervienen en la circulación reciben de su administrador de infraestructuras o empresa ferroviaria, a título individual, los útiles de servicio necesarios para desarrollar su función. Fuente: RD 664/2015, Libro Primero, Capítulo 3, apartado 1.3.1.2.1 (BOE consolidado 12/07/2023).",
+  },
 ];

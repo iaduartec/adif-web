@@ -106,6 +106,26 @@ export const rcfLibro1Theory: TheorySection = {
       locator: "Capítulo 1, 1.5.1.21 Pruebas de frenado",
       excerpt:
         "La prueba parcial se realiza antes de la salida del tren de una estación o dependencia en la que se agreguen vehículos a la composición."
+    },
+    {
+      id: "rd664-2015-1-3-1-1",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Libro Primero, Capítulo 3, 1.3.1.1 Distribución de documentos",
+      excerpt:
+        "1. Cada entidad responsable de la publicación de un documento reglamentario, garantizará la adecuada publicidad y difusión del mismo a los destinatarios afectados. 2. Corresponde a las EF y a los AI asegurar, en todo momento, la actualización y distribución de los documentos a su personal afectado. 3. El personal que reciba una modificación de su documentación de seguridad a título personal, estará obligado a acusar recibo, y acreditará conocimiento de su contenido conforme a lo establecido en el SGS de su empresa."
+    },
+    {
+      id: "rd664-2015-1-3-1-2",
+      sourceId: "RD 664/2015",
+      sourceTitle:
+        "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
+      locator: "Libro Primero, Capítulo 3, 1.3.1.2 Útiles de servicio",
+      excerpt:
+        "1. Los colectivos de personal que intervienen en la circulación recibirán de su AI o EF, a título individual, los útiles de servicio necesarios para desarrollar su función."
     }
   ],
 
@@ -280,10 +300,60 @@ export const rcfLibro1Theory: TheorySection = {
           legalBasis: ["rd664-2015-1-5-1-9"]
         }
       ]
-    }
+    },
+
+    {
+      id: "rcf-cap3-distribucion-documentos",
+      title: "Distribución de documentos reglamentarios",
+      claims: [
+        {
+          id: "rcf-cap3-dist-1",
+          text: "Cada entidad responsable de la publicación de un documento reglamentario garantizará la adecuada publicidad y difusión del mismo a los destinatarios afectados.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-3-1-1"]
+        },
+        {
+          id: "rcf-cap3-dist-2",
+          text: "Corresponde a las empresas ferroviarias y a los administradores de infraestructuras asegurar, en todo momento, la actualización y distribución de los documentos a su personal afectado.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-3-1-1"]
+        },
+        {
+          id: "rcf-cap3-dist-3",
+          text: "El personal que reciba una modificación de su documentación de seguridad a título personal estará obligado a acusar recibo y acreditará conocimiento de su contenido conforme a lo establecido en el sistema de gestión de la seguridad de su empresa.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-3-1-1"]
+        }
+      ]
+    },
+    {
+      id: "rcf-cap3-utiles-servicio",
+      title: "Útiles de servicio",
+      claims: [
+        {
+          id: "rcf-cap3-utiles-1",
+          text: "Los colectivos de personal que intervienen en la circulación recibirán de su administrador de infraestructuras o empresa ferroviaria, a título individual, los útiles de servicio necesarios para desarrollar su función.",
+          kind: "normative",
+          legalBasis: ["rd664-2015-1-3-1-2"]
+        }
+      ]
+    },
+
   ],
 
   examples: [
+    {
+      id: "rcf-ex-cap3",
+      situation: "Un administrador de infraestructuras publica una modificación de la documentación de seguridad y la envía a título personal a un maquinista.",
+      application: [
+        {
+          id: "rcf-ex-cap3-app-1",
+          text: "El maquinista estará obligado a acusar recibo y a acreditar conocimiento de su contenido conforme al sistema de gestión de la seguridad de su empresa. La entidad responsable de la publicación garantiza la adecuada publicidad y difusión del documento a los destinatarios afectados.",
+          kind: "example",
+          legalBasis: ["rd664-2015-1-3-1-1"]
+        }
+      ]
+    },
     {
       id: "rcf-ex-1",
       situation: "Un responsable de circulación dicta a un maquinista por telefonema una orden y se la identifica con su número correlativo, hora y emisor, quedando registrada.",
@@ -299,6 +369,18 @@ export const rcfLibro1Theory: TheorySection = {
   ],
 
   reviewTakeaways: [
+    {
+      id: "rcf-takeaway-cap3-1",
+      text: "La distribución de la documentación reglamentaria es obligación de la entidad que la publica (publicidad y difusión) y de las EF y AI (actualización y distribución a su personal); el personal que recibe una modificación a título personal debe acusar recibo y acreditar conocimiento conforme a su SGS.",
+      kind: "normative",
+      legalBasis: ["rd664-2015-1-3-1-1"]
+    },
+    {
+      id: "rcf-takeaway-cap3-2",
+      text: "Los colectivos de personal que intervienen en la circulación reciben, a título individual, los útiles de servicio necesarios para desarrollar su función.",
+      kind: "normative",
+      legalBasis: ["rd664-2015-1-3-1-2"]
+    },
     {
       id: "rcf-takeaway-1",
       text: "La marcha de maniobras limita a 30 km/h al tirar del convoy, y a 20 km/h cuando la locomotora va empujando.",
