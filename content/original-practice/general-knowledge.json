@@ -2871,7 +2871,7 @@
     ],
     "sourceId": "Ley 31/1995",
     "sourceVersion": "consolidated-page-2026-11-02",
-    "sourceLocator": "Artículo 3.1, 3.2 y 3.3",
+    "sourceLocator": "Artículo 3.1",
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
@@ -2916,7 +2916,7 @@
     ],
     "sourceId": "Ley 31/1995",
     "sourceVersion": "consolidated-page-2026-11-02",
-    "sourceLocator": "Artículo 3.1, 3.2 y 3.3",
+    "sourceLocator": "Artículo 3.2",
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
@@ -2961,7 +2961,7 @@
     ],
     "sourceId": "Ley 31/1995",
     "sourceVersion": "consolidated-page-2026-11-02",
-    "sourceLocator": "Artículo 4; ordinales 1.º–8.º",
+    "sourceLocator": "Artículo 4, ordinales 2.º y 3.º",
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
@@ -3006,7 +3006,7 @@
     ],
     "sourceId": "Ley 31/1995",
     "sourceVersion": "consolidated-page-2026-11-02",
-    "sourceLocator": "Artículo 4; ordinales 1.º–8.º",
+    "sourceLocator": "Artículo 4, ordinal 7.º",
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
@@ -3098,5 +3098,306 @@
     ],
     "answer": "C",
     "explanation": "A) Incorrecta: las condiciones de la disposición vigente no se desplazan por la descripción del preámbulo. B) Incorrecta: el preámbulo no sustituye la consulta del artículo aplicable. C) Correcta: el preámbulo aporta contexto y la excepción se comprueba en la disposición vigente. D) Incorrecta: el objetivo general ayuda a interpretar, pero por sí solo no concreta las condiciones de una excepción."
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "PRL: derechos y obligaciones, artículos 14–21",
+    "skill": "PRL",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original",
+    "id": "orig-gen-prl-14-21-001",
+    "conceptIds": [
+      "prl-art14-proteccion"
+    ],
+    "sourceLocator": "Artículo 14.4 y 14.5",
+    "prompt": "¿Quién asume el coste de las medidas de seguridad y salud laboral?",
+    "options": [
+      {
+        "key": "A",
+        "text": "El empresario; el coste no puede recaer sobre los trabajadores."
+      },
+      {
+        "key": "B",
+        "text": "La persona trabajadora, si la medida mejora su protección individual."
+      },
+      {
+        "key": "C",
+        "text": "Empresa y trabajador por partes iguales en los equipos de protección."
+      },
+      {
+        "key": "D",
+        "text": "La representación de los trabajadores cuando aprueba la medida."
+      }
+    ],
+    "answer": "A",
+    "explanation": "A) Correcta: el coste de las medidas de seguridad y salud no recae sobre los trabajadores. B) Incorrecta: la protección individual no crea una excepción. C) Incorrecta: no se establece reparto del coste con la plantilla. D) Incorrecta: la consulta o participación no traslada ese coste."
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "PRL: derechos y obligaciones, artículos 14–21",
+    "skill": "PRL",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original",
+    "id": "orig-gen-prl-14-21-002",
+    "conceptIds": [
+      "prl-art17-equipment-protection"
+    ],
+    "sourceLocator": "Artículo 17.2",
+    "prompt": "¿Cuándo deben utilizarse equipos de protección individual según la Ley 31/1995?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Siempre antes de examinar medidas colectivas."
+      },
+      {
+        "key": "B",
+        "text": "Cuando los riesgos no puedan evitarse o limitarse suficientemente mediante protección colectiva u organización del trabajo."
+      },
+      {
+        "key": "C",
+        "text": "Cuando los riesgos se hayan limitado suficientemente con medidas colectivas, aunque no se hayan eliminado por completo."
+      },
+      {
+        "key": "D",
+        "text": "Cuando se haya impartido formación preventiva, sin valorar otras medidas de protección."
+      }
+    ],
+    "answer": "B",
+    "explanation": "A) Incorrecta: la ley exige valorar si la protección colectiva u organizativa evita o limita suficientemente los riesgos. B) Correcta: esa es la condición del artículo 17.2. C) Incorrecta: si esas medidas limitan suficientemente el riesgo, no se cumple por ese motivo la condición de uso de EPI del artículo. D) Incorrecta: la formación no sustituye el análisis de los medios de protección."
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "PRL: derechos y obligaciones, artículos 14–21",
+    "skill": "PRL",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original",
+    "id": "orig-gen-prl-14-21-003",
+    "conceptIds": [
+      "prl-art18-information-consultation"
+    ],
+    "sourceLocator": "Artículo 18.1, regla de comunicación a través de representantes y comunicación directa",
+    "prompt": "En una empresa con representantes de los trabajadores, ¿qué información preventiva recibe cada trabajador directamente?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Solo la información general de toda la empresa."
+      },
+      {
+        "key": "B",
+        "text": "La información únicamente cuando no haya representantes."
+      },
+      {
+        "key": "C",
+        "text": "Los riesgos específicos de su puesto o función y las medidas de protección y prevención aplicables."
+      },
+      {
+        "key": "D",
+        "text": "Los riesgos específicos, pero solo después de que se produzca un daño para la salud."
+      }
+    ],
+    "answer": "C",
+    "explanation": "A) Incorrecta: la información general se facilita mediante representantes cuando existen. B) Incorrecta: la información específica individual también debe comunicarse directamente cuando hay representantes. C) Correcta: corresponde a los riesgos específicos del puesto o función y las medidas aplicables. D) Incorrecta: la información preventiva no exige que se haya producido un daño."
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "PRL: derechos y obligaciones, artículos 14–21",
+    "skill": "PRL",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "prl"
+    ],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-11-02",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original",
+    "id": "orig-gen-prl-14-21-004",
+    "conceptIds": [
+      "prl-art21-serious-imminent-risk"
+    ],
+    "sourceLocator": "Artículo 21.3",
+    "prompt": "Ante exposición o posible exposición a riesgo grave e inminente, si el empresario no adopta o no permite las medidas necesarias, ¿quién puede acordar la paralización colectiva?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Solo el trabajador afectado mediante decisión individual que vincule a toda la plantilla."
+      },
+      {
+        "key": "B",
+        "text": "Cualquier delegado de prevención por decisión individual en todo caso."
+      },
+      {
+        "key": "C",
+        "text": "La autoridad laboral antes de que puedan intervenir los representantes."
+      },
+      {
+        "key": "D",
+        "text": "Los representantes legales por mayoría de sus miembros, con la vía prevista para los delegados si el órgano no puede reunirse con urgencia."
+      }
+    ],
+    "answer": "D",
+    "explanation": "A) Incorrecta: el derecho individual de interrupción es distinto de la decisión colectiva de los representantes. B) Incorrecta: la vía urgente exige decisión mayoritaria de los delegados cuando no puede reunirse el órgano representativo con la urgencia requerida. C) Incorrecta: el acuerdo se comunica de inmediato a la autoridad laboral, que lo anula o ratifica en 24 horas. D) Correcta: el artículo 21.3 prevé esas dos vías bajo las condiciones indicadas."
+  },
+  {
+    "id": "orig-gen-dr-001",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION-RED",
+    "prompt": "¿De qué se compone la infraestructura ferroviaria según el artículo 3 de la Ley del Sector Ferroviario?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Terrenos, obras de explotación y plataformas, obras civiles, pasos a nivel, superestructuras, calzadas de patios, instalaciones de seguridad, señalización y telecomunicaciones, alumbrado, instalaciones de transformación y conducción de corriente eléctrica para la tracción, edificios del servicio de infraestructuras y cambiadores de ancho."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente las vías y las estaciones de viajeros."
+      },
+      {
+        "key": "C",
+        "text": "Solo el material rodante y las instalaciones de señalización."
+      },
+      {
+        "key": "D",
+        "text": "Los terrenos y las obras civiles, excluidas las instalaciones eléctricas."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 3 de la LSF y su anexo IV enumeran los elementos que componen la infraestructura ferroviaria, incluidas las instalaciones de transformación y conducción de corriente eléctrica para la tracción y los cambiadores de ancho.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red"
+    ],
+    "conceptIds": [
+      "dr-cap2-infraestructura-ferroviaria"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edicion-disponible-V0-ED-27-02-2026",
+    "sourceLocator": "Capítulo II, 2.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-dr-002",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION-RED",
+    "prompt": "¿De cuántos anchos de vía consta la red gestionada por Adif?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tres: ancho ibérico, ancho mixto (tercer carril) y ancho métrico."
+      },
+      {
+        "key": "B",
+        "text": "Dos: ancho ibérico y ancho estándar europeo."
+      },
+      {
+        "key": "C",
+        "text": "Únicamente ancho ibérico."
+      },
+      {
+        "key": "D",
+        "text": "Cuatro: ibérico, estándar, métrico y de vía estrecha industrial."
+      }
+    ],
+    "answer": "A",
+    "explanation": "La red gestionada por Adif consta de líneas de tres anchos de vía diferentes: ancho ibérico (1668 mm), ancho mixto (tercer carril) y ancho métrico (1000 mm).",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red"
+    ],
+    "conceptIds": [
+      "dr-cap2-red-gestionada-adif"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edicion-disponible-V0-ED-27-02-2026",
+    "sourceLocator": "Capítulo II, 2.2 y 2.3.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-dr-003",
+    "domain": "general-knowledge",
+    "topicId": "declaracion-red-capitulo-ii",
+    "syllabusNodeId": "declaracion-red-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura",
+    "skill": "DECLARACION-RED",
+    "prompt": "¿Qué aspectos describe el capítulo II de la Declaración sobre la Red, además de la descripción de la red?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Restricciones de tráfico, disponibilidad de la infraestructura y desarrollo de la infraestructura."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente los cánones ferroviarios."
+      },
+      {
+        "key": "C",
+        "text": "Solo el procedimiento de adjudicación de capacidad."
+      },
+      {
+        "key": "D",
+        "text": "Exclusivamente las condiciones de acceso de las empresas ferroviarias."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El capítulo II incluye, además de la descripción de la red, las restricciones de tráfico, la disponibilidad de la infraestructura y el desarrollo de la infraestructura (actuaciones previstas y actualización de activos de la RFIG).",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "declaracion-red"
+    ],
+    "conceptIds": [
+      "dr-cap2-restricciones-disponibilidad"
+    ],
+    "sourceId": "DR 2027",
+    "sourceVersion": "edicion-disponible-V0-ED-27-02-2026",
+    "sourceLocator": "Capítulo II, 2.4, 2.5 y 2.6",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-02",
+    "origin": "original"
   }
 ]

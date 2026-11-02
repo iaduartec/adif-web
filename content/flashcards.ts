@@ -226,4 +226,16 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué establece el RCF sobre los útiles de servicio?",
     back: "Los colectivos de personal que intervienen en la circulación reciben de su administrador de infraestructuras o empresa ferroviaria, a título individual, los útiles de servicio necesarios para desarrollar su función. Fuente: RD 664/2015, Libro Primero, Capítulo 3, apartado 1.3.1.2.1 (BOE consolidado 12/07/2023).",
   },
+  {
+    id: "F0035",
+    module: "Declaración sobre la Red",
+    front: "¿De qué se compone la infraestructura ferroviaria según el artículo 3 de la LSF?",
+    back: "Terrenos, obras de explotación y plataformas, obras civiles, pasos a nivel, superestructuras, calzadas de patios, instalaciones de seguridad, señalización y telecomunicaciones, alumbrado, instalaciones de transformación y conducción de corriente eléctrica para la tracción, edificios del servicio de infraestructuras y cambiadores de ancho. Fuente: DR 2027, Capítulo II, 2.1 (edición disponible V.0 ED 27/02/2026).",
+  },
+  {
+    id: "F0036",
+    module: "Declaración sobre la Red",
+    front: "¿De cuántos anchos de vía consta la red gestionada por Adif?",
+    back: "Tres: ancho ibérico (1668 mm), ancho mixto (tercer carril) y ancho métrico (1000 mm). Fuente: DR 2027, Capítulo II, 2.3.2 (edición disponible V.0 ED 27/02/2026).",
+  },
 ];

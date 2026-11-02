@@ -41,6 +41,15 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
       locator: "Capítulo I, 1.4 Los agentes del sector ferroviario",
       excerpt: "El Ministerio de Transportes y Movilidad Sostenible es responsable de proponer y ejecutar la política del ferrocarril... La CNMC supervisará y controlará el correcto funcionamiento del sector ferroviario y la competencia en los mercados de servicios."
+    },
+    {
+      id: "dr-adif-2027-cap2",
+      sourceId: "DR 2027",
+      sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
+      sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
+      locator: "Capítulo II, 2.1 Introducción; 2.2 Ámbito de la red gestionada por Adif; 2.3 Descripción de la red (2.3.1 tipología de vías, 2.3.2 ancho, 2.3.3 estaciones y terminales, 2.3.4 gálibo, 2.3.5 límite de carga, 2.3.6 rampas, 2.3.7 velocidades máximas, 2.3.8 longitud máxima de trenes, 2.3.9 suministro de energía eléctrica, 2.3.10 sistemas de seguridad y señalización, 2.3.11 control y gestión del tráfico, 2.3.12 comunicaciones, 2.3.13 control y protección del tren, 2.3.14 autopistas ferroviarias, 2.3.15 protección y seguridad); 2.4 restricciones; 2.5 disponibilidad; 2.6 desarrollo",
+      excerpt:
+        "La infraestructura ferroviaria, conforme a la Ley del Sector Ferroviario y su anexo IV, se compone de terrenos, obras de explotación y plataformas, obras civiles, pasos a nivel, superestructuras, calzadas de patios, instalaciones de seguridad, señalización y telecomunicaciones, instalaciones de alumbrado, instalaciones de transformación y conducción de corriente eléctrica para la tracción, edificios del servicio de infraestructuras y cambiadores de ancho. La red gestionada por Adif está compuesta por líneas principalmente de tráfico mixto y consta de líneas de tres anchos de vía diferentes."
     }
   ],
 
@@ -137,10 +146,83 @@ export const declaracionRed2027Theory: TheorySection = {
           legalBasis: ["dr-adif-2027-c2"]
         }
       ]
-    }
+    },
+
+    {
+      id: "dr-cap2-infraestructura-ferroviaria",
+      title: "Infraestructura ferroviaria (art. 3 LSF)",
+      claims: [
+        {
+          id: "dr-cap2-infra-1",
+          text: "La infraestructura ferroviaria, conforme a la Ley del Sector Ferroviario y su anexo IV, se compone de terrenos, obras de explotación y plataformas, obras civiles, pasos a nivel, superestructuras, calzadas de patios, instalaciones de seguridad, señalización y telecomunicaciones, instalaciones de alumbrado, instalaciones de transformación y conducción de corriente eléctrica para la tracción, edificios del servicio de infraestructuras y cambiadores de ancho.",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-cap2", "lsf-38-2015-art4"]
+        }
+      ]
+    },
+    {
+      id: "dr-cap2-red-gestionada-adif",
+      title: "Red gestionada por Adif",
+      claims: [
+        {
+          id: "dr-cap2-red-1",
+          text: "La red gestionada por Adif está compuesta por líneas principalmente de tráfico mixto (mercancías y viajeros) y consta de líneas de tres anchos de vía diferentes: ancho ibérico, ancho mixto (tercer carril) y ancho métrico.",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-cap2"]
+        }
+      ]
+    },
+    {
+      id: "dr-cap2-sistemas-seguridad",
+      title: "Sistemas de seguridad, señalización y control",
+      claims: [
+        {
+          id: "dr-cap2-sistemas-1",
+          text: "El capítulo II describe, entre otros, los sistemas de seguridad y señalización, los sistemas de control y gestión del tráfico, los sistemas de comunicación y los sistemas de control y protección del tren, así como el suministro de energía eléctrica.",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-cap2"]
+        }
+      ]
+    },
+    {
+      id: "dr-cap2-estaciones-terminales",
+      title: "Estaciones de viajeros y terminales de mercancías",
+      claims: [
+        {
+          id: "dr-cap2-estaciones-1",
+          text: "El capítulo II describe las estaciones de viajeros y las terminales de transporte de mercancías, con sus correspondientes catálogos, mapas y fichas descriptivas.",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-cap2"]
+        }
+      ]
+    },
+    {
+      id: "dr-cap2-restricciones-disponibilidad",
+      title: "Restricciones, disponibilidad y desarrollo",
+      claims: [
+        {
+          id: "dr-cap2-restr-1",
+          text: "El capítulo II incluye las restricciones de tráfico, la disponibilidad de la infraestructura y el desarrollo de la infraestructura (actuaciones previstas y actualización de activos de la RFIG).",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-cap2"]
+        }
+      ]
+    },
   ],
 
   examples: [
+    {
+      id: "dr-ex-cap2",
+      situation: "Una empresa ferroviaria solicita capacidad de infraestructura para circular por la RFIG.",
+      application: [
+        {
+          id: "dr-ex-cap2-app-1",
+          text: "La solicitud se tramita conforme a la DR, que expone las características de la infraestructura puesta a disposición, la capacidad y las condiciones técnicas de cada tramo, así como las condiciones de acceso.",
+          kind: "example",
+          legalBasis: ["dr-adif-2027-cap2", "lsf-38-2015-art32"]
+        }
+      ]
+    },
     {
       id: "dr-ex-1",
       situation: "Una operadora internacional solicita circular en la RFIG. ADIF tramita la petición siguiendo el procedimiento de la DR.",
@@ -156,6 +238,18 @@ export const declaracionRed2027Theory: TheorySection = {
   ],
 
   reviewTakeaways: [
+    {
+      id: "dr-takeaway-cap2-1",
+      text: "La infraestructura ferroviaria se compone de los elementos de la Ley del Sector Ferroviario y su anexo IV; la red gestionada por Adif consta de líneas de tres anchos de vía y es principalmente de tráfico mixto.",
+      kind: "normative",
+      legalBasis: ["dr-adif-2027-cap2", "lsf-38-2015-art4"]
+    },
+    {
+      id: "dr-takeaway-cap2-2",
+      text: "El capítulo II de la DR describe estaciones, terminales, sistemas de seguridad y señalización, control y gestión del tráfico, comunicaciones, protección del tren, restricciones, disponibilidad y desarrollo de la infraestructura.",
+      kind: "normative",
+      legalBasis: ["dr-adif-2027-cap2"]
+    },
     {
       id: "dr-takeaway-1",
       text: "La DR, aprobada por el Consejo de Administración del administrador de infraestructuras, entra en vigor tras su publicación y puede ser actualizada por el propio administrador cuando sus contenidos lo requieran.",

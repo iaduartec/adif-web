@@ -1842,6 +1842,62 @@
         "level": "low",
         "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
       }
+    },
+    "dr-cap2-infra-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-cap2-red-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-cap2-sistemas-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-cap2-estaciones-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-cap2-restr-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-ex-cap2-app-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-takeaway-cap2-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
+    },
+    "dr-takeaway-cap2-2": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
+      }
     }
   }
 }
