@@ -50,6 +50,8 @@ export function OriginalPracticeSession({
   const [messageIsError, setMessageIsError] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [now, setNow] = useState(nowMs());
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const questionStartedAt = useRef<Record<string, number>>({});
   const questionElapsedMs = useRef<Record<string, number>>({});
   const topics = [...new Map(questions.map((item) => [item.topicId, item.topic])).entries()]
@@ -107,12 +109,54 @@ export function OriginalPracticeSession({
     setPracticeComplete(false);
     setMessage("");
     setStarted(true);
+    setSaveStatus("idle");
+    setSessionId(null);
+    // Create session on server
+    const clientEventId = crypto.randomUUID();
+    void fetch("/api/practice-sessions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        domain: "psychometric",
+        topicId: topicId === "all" ? null : topicId,
+        mode,
+        questionIds: activeQuestions.map((q) => q.id),
+        clientEventId,
+      }),
+    }).then(async (res) => {
+      if (res.ok) {
+        const data = await res.json();
+        setSessionId(data.sessionId);
+        setSaveStatus("saved");
+      } else {
+        setSaveStatus("error");
+      }
+    }).catch(() => setSaveStatus("error"));
   }
 
   function choose(key: AnswerKey) {
     setAnswers((current) => ({ ...current, [question.id]: key }));
     setMessage("");
     setMessageIsError(false);
+    // Save answer to server if session exists
+    if (sessionId && question) {
+      setSaveStatus("saving");
+      const clientEventId = crypto.randomUUID();
+      void fetch(`/api/practice-sessions/${sessionId}/answers`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          questionId: question.id,
+          selectedAnswer: key,
+          elapsedMs: Math.round(elapsedFor(question.id, nowMs())),
+          clientEventId,
+          expectedVersion: 1,
+        }),
+      }).then((res) => {
+        if (res.ok) setSaveStatus("saved");
+        else setSaveStatus("error");
+      }).catch(() => setSaveStatus("error"));
+    }
   }
 
   function finish() {
@@ -308,7 +352,11 @@ export function OriginalPracticeSession({
 
       {started && question && <div className="p-5 border border-rail bg-white space-y-4">
         {!complete && <p role="note">Al recargar o salir se pierde el bloque en curso. Los intentos ya confirmados siguen guardados; la sesión no se reanuda automáticamente.</p>}
-        <p className="course-eyebrow">Pregunta {index + 1} de {activeQuestions.length} · {question.topic} · Tiempo: {Math.round(elapsedFor(question.id, now) / 1000)}s</p>
+        <p className="course-eyebrow">Pregunta {index + 1} de {activeQuestions.length} · {question.topic} · Tiempo: {Math.round(elapsedFor(question.id, now) / 1000)}s
+          {saveStatus === "saving" && " · Guardando…"}
+          {saveStatus === "saved" && " · Guardado"}
+          {saveStatus === "error" && " · Error al guardar"}
+        </p>
         <h3 className="font-bold text-ink">{question.prompt}</h3>
         {question.answerGrounding && (
           <p className="text-sm text-gray-600">
