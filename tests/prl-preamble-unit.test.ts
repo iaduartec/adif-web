@@ -59,3 +59,8 @@ it("uses non-absolute alternatives when testing how to consult the preamble", as
   const question = getOriginalPracticeQuestion("orig-gen-prl-expo-002");
   expect(question?.options.every((option) => !/cualquier artículo|todos los reglamentos|automáticamente/i.test(option.text))).toBe(true);
 });
+
+it("does not describe all preventive principles as a strict legal hierarchy", () => {
+  const claim = lessonTheories["prevencion-riesgos-laborales"].concepts.find((item) => item.id === "prl-concept-2")?.claims[0];
+  expect(claim?.text).not.toMatch(/orden jerárquico establecido por ley/i);
+});

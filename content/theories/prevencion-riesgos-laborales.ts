@@ -263,7 +263,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c2-1",
-          text: "Las medidas preventivas deben regirse por un orden jerárquico establecido por ley, priorizando evitar los riesgos antes de evaluarlos o mitigarlos.",
+          text: "El empresario aplica las medidas preventivas con arreglo a los principios generales de la ley, entre ellos evitar los riesgos y evaluar los que no se puedan evitar.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art15"]
         },
