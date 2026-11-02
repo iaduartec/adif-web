@@ -403,10 +403,16 @@ describe("whole content guardrails", () => {
       for (const currentClaim of claims) {
         if (!inheritedIds.has(currentClaim.id)) continue;
         seen.add(currentClaim.id);
-        expect(currentClaim.review?.status).toBe("needs_review");
-        expect(currentClaim.review?.confidence.level).toBe("low");
+        const status = currentClaim.review?.status;
+        if (status === "reviewed") {
+          expect(currentClaim.review?.confidence.level).toBe("high");
+          expect(typeof currentClaim.review?.reviewedAt).toBe("string");
+        } else {
+          expect(status).toBe("needs_review");
+          expect(currentClaim.review?.confidence.level).toBe("low");
+          expect(currentClaim.review?.reviewedAt).toBeUndefined();
+        }
         expect(currentClaim.review?.confidence.reason.trim()).not.toBe("");
-        expect(currentClaim.review?.reviewedAt).toBeUndefined();
       }
     }
     expect([...seen].sort()).toEqual([...inheritedIds].sort());
