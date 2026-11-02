@@ -5,4 +5,10 @@
 command = "sh"
 args = ["-c", "exec \"$(git rev-parse --show-toplevel)/.agents/scripts/bridge\" mcp"]
 env = { PROJECT_BRIDGE_AGENT = "codex" }
+
+[mcp_servers.project-bridge.tools.record_change]
+approval_mode = "approve"
+
+[mcp_servers.project-bridge.tools.release_task]
+approval_mode = "approve"
 # <<< project-bridge <<<
