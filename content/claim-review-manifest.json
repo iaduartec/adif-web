@@ -187,11 +187,12 @@
       "reviewedAt": "2026-11-02"
     },
     "igualdad-c10-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 902/2020 Art. 7 (BOE-A-2020-12215) y LO 3/2007 Art. 46.2.e."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c11-1": {
       "status": "reviewed",
