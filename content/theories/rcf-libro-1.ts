@@ -215,7 +215,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-3"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-7",
@@ -227,7 +227,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-2"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-8",
@@ -239,7 +239,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-7"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-9",
@@ -251,7 +251,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-7"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-10",
@@ -263,7 +263,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-5-1-6"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-11",
@@ -275,7 +275,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-1-1-3-zona-riesgo"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-12",
@@ -287,7 +287,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-5-1-21"]
         }
-      ]
+      ],
     },
     {
       id: "rcf-concept-13",
@@ -299,7 +299,7 @@ export const rcfLibro1Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["rd664-2015-1-5-1-9"]
         }
-      ]
+      ],
     },
 
     {

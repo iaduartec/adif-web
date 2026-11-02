@@ -1424,60 +1424,68 @@
       "reviewedAt": "2026-11-02"
     },
     "rcf-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c8-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c9-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c10-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c11-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c12-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c13-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra RD 664/2015 (BOE-A-2015-8042)."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-ex-1-app-1": {
       "status": "needs_review",
