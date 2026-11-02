@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T21:17:12.565Z",
+  "generatedAt": "2026-11-02T13:44:37Z",
   "observations": [
     {
       "sourceId": "ADIF PNI23/01",
@@ -89,12 +89,12 @@
     },
     {
       "sourceId": "Ley 31/1995",
-      "sourceVersion": "consolidated-page-2026-10-15",
+      "sourceVersion": "consolidated-page-2026-11-02",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       "httpStatus": 200,
-      "checkedAt": "2026-10-15T21:17:10.350Z",
+      "checkedAt": "2026-11-02T13:44:37Z",
       "contentLength": 439265,
-      "sha256": "2ba0028cb3ab46347e5f5c827b35172ecd8b111997aa30e2e926aa46df269725"
+      "sha256": "c8230982b6a48fe1029548789de695076e9575dcbcc175e908f27959604c10e7"
     },
     {
       "sourceId": "Ley 38/2015",

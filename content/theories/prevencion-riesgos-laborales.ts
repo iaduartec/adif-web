@@ -1,7 +1,58 @@
 import type { TheorySection } from "../lesson-theory";
 
+function reviewedAgainst(article: number) {
+  return {
+    status: "reviewed" as const,
+    confidence: {
+      level: "high" as const,
+      reason: `Cotejado con el artículo ${article} de BOE-A-1995-24292, texto consolidado cuya última actualización se publicó el 09-04-2026; revisión independiente pendiente.`,
+    },
+    reviewedAt: "2026-11-02",
+  };
+}
+
 export const prlTheory: TheorySection = {
   sources: [
+    {
+      id: "lprl-31-1995-art1",
+      sourceId: "Ley 31/1995",
+      sourceVersion: "consolidated-page-2026-11-02",
+      verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 1",
+      excerpt: "La normativa preventiva incluye disposiciones legales y convencionales con prescripciones preventivas.",
+    },
+    {
+      id: "lprl-31-1995-art2",
+      sourceId: "Ley 31/1995",
+      sourceVersion: "consolidated-page-2026-11-02",
+      verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 2.1 y 2.2",
+      excerpt: "Promover la seguridad y salud; las disposiciones laborales son un mínimo indisponible mejorable por convenio.",
+    },
+    {
+      id: "lprl-31-1995-art3",
+      sourceId: "Ley 31/1995",
+      sourceVersion: "consolidated-page-2026-11-02",
+      verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 3.1, 3.2 y 3.3",
+      excerpt: "Ámbito laboral y administrativo/estatutario, con exclusiones funcionales limitadas y peculiaridades expresas.",
+    },
+    {
+      id: "lprl-31-1995-art4",
+      sourceId: "Ley 31/1995",
+      sourceVersion: "consolidated-page-2026-11-02",
+      verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 4; ordinales 1.º–8.º",
+      excerpt: "Definiciones legales de prevención, riesgos, daños, equipos y condiciones de trabajo.",
+    },
     {
       id: "lprl-31-1995-art14",
       sourceId: "Ley 31/1995",
@@ -125,6 +176,20 @@ export const prlTheory: TheorySection = {
   ],
 
   introduction: [
+    {
+      id: "prl-chapter-i-intro",
+      text: "El capítulo I fija el vocabulario y los límites de aplicación de la LPRL: qué integra la normativa preventiva, a quién se aplica y qué significan sus conceptos básicos. Fuente legal consultada en el BOE consolidado con última actualización publicada el 9 de abril de 2026.",
+      kind: "didactic",
+      legalBasis: [],
+      review: {
+        status: "reviewed",
+        confidence: {
+          level: "high",
+          reason: "Introducción didáctica cotejada con la organización y los artículos 1–4 de BOE-A-1995-24292; revisión independiente pendiente.",
+        },
+        reviewedAt: "2026-11-02",
+      },
+    },
     {
       id: "prl-intro-1",
       text: "La Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales (LPRL) transpone la Directiva Marco 89/391/CEE y constituye la norma básica de referencia en materia de seguridad y salud en el trabajo.",
@@ -331,6 +396,100 @@ export const prlTheory: TheorySection = {
           legalBasis: ["lprl-31-1995-art24"]
         }
       ]
+    },
+    {
+      id: "prl-concept-15",
+      title: "Qué integra la normativa de prevención (artículo 1)",
+      claims: [
+        {
+          id: "prl-c15-1",
+          text: "La normativa de prevención no se limita a la Ley 31/1995: incluye sus disposiciones de desarrollo o complementarias y otras normas legales o convencionales que contengan prescripciones para adoptar medidas preventivas en el ámbito laboral o puedan producirlas.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art1"],
+          review: reviewedAgainst(1),
+        },
+      ],
+    },
+    {
+      id: "prl-concept-16",
+      title: "Finalidad y carácter de la ley (artículo 2)",
+      claims: [
+        {
+          id: "prl-c16-1",
+          text: "La Ley persigue promover la seguridad y salud de las personas trabajadoras mediante medidas y actividades para prevenir riesgos laborales; establece principios generales para proteger, eliminar o reducir riesgos y para articular información, consulta, participación y formación.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art2"],
+          review: reviewedAgainst(2),
+        },
+        {
+          id: "prl-c16-2",
+          text: "Las disposiciones laborales de la Ley y de sus normas reglamentarias son un mínimo de derecho necesario indisponible: la negociación colectiva puede mejorarlas y desarrollarlas, no rebajar ese mínimo.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art2"],
+          review: reviewedAgainst(2),
+        },
+      ],
+    },
+    {
+      id: "prl-concept-17",
+      title: "Ámbito de aplicación y excepciones funcionales (artículo 3)",
+      claims: [
+        {
+          id: "prl-c17-1",
+          text: "La Ley se aplica a relaciones laborales y a relaciones administrativas o estatutarias del personal al servicio de las Administraciones públicas, con sus peculiaridades; también establece previsiones para obligaciones de fabricantes, importadores y suministradores, trabajo autónomo y cooperativas con actividad de trabajo personal.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art3"],
+          review: reviewedAgainst(3),
+        },
+        {
+          id: "prl-c17-2",
+          text: "El artículo 3.2 dispone que la Ley no se aplica a las actividades cuyas particularidades lo impidan dentro de las funciones públicas de policía, seguridad y resguardo aduanero; de servicios operativos de protección civil y peritaje forense en casos de grave riesgo, catástrofe o calamidad pública; y de las Fuerzas Armadas y actividades militares de la Guardia Civil. La Ley inspirará la normativa específica que se dicte para salvaguardar la seguridad y salud de quienes trabajan en esas actividades.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art3"],
+          review: reviewedAgainst(3),
+        },
+        {
+          id: "prl-c17-3",
+          text: "En centros y establecimientos militares se aplica la Ley con las peculiaridades de su normativa específica. En centros penitenciarios se adaptan las actividades cuyas características justifiquen una regulación especial.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art3"],
+          review: reviewedAgainst(3),
+        },
+      ],
+    },
+    {
+      id: "prl-concept-18",
+      title: "Definiciones legales que organizan la prevención (artículo 4)",
+      claims: [
+        {
+          id: "prl-c18-1",
+          text: "El artículo 4 distingue prevención (actividades o medidas en todas las fases de actividad para evitar o disminuir riesgos), riesgo laboral (posibilidad de daño derivado del trabajo) y daño derivado del trabajo (enfermedad, patología o lesión sufrida con motivo u ocasión del trabajo). La gravedad del riesgo valora conjuntamente probabilidad y severidad.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art4"],
+          review: reviewedAgainst(4),
+        },
+        {
+          id: "prl-c18-2",
+          text: "El riesgo grave e inminente es el probable racionalmente en un futuro inmediato que pueda causar un daño grave a la salud. Si hay exposición a agentes que pueden causar daños graves, basta la probabilidad racional de una exposición inmediata peligrosa aunque el daño no se manifieste de inmediato.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art4"],
+          review: reviewedAgainst(4),
+        },
+        {
+          id: "prl-c18-3",
+          text: "Son potencialmente peligrosos los procesos, actividades, operaciones, equipos o productos que, sin medidas preventivas específicas, originen riesgos. Equipo de trabajo es toda máquina, aparato, instrumento o instalación utilizada en el trabajo.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art4"],
+          review: reviewedAgainst(4),
+        },
+        {
+          id: "prl-c18-4",
+          text: "Condición de trabajo es cualquier característica del trabajo que pueda influir significativamente en la generación de riesgos; incluye locales, instalaciones, equipos, productos, agentes, procedimientos y organización del trabajo. EPI es el equipo llevado o sujetado para proteger frente a uno o varios riesgos, incluidos sus complementos o accesorios.",
+          kind: "normative",
+          legalBasis: ["lprl-31-1995-art4"],
+          review: reviewedAgainst(4),
+        },
+      ],
     }
   ],
 
@@ -364,10 +523,51 @@ export const prlTheory: TheorySection = {
           legalBasis: ["lprl-31-1995-art21"]
         }
       ]
+    },
+    {
+      id: "prl-capitulo-i-example-1",
+      situation: "En una intervención en un cuarto de comunicaciones, el equipo analiza el local, una instalación y el procedimiento de trabajo antes de comenzar. Durante el estudio separa la posibilidad de sufrir un daño de una lesión efectivamente producida.",
+      application: [
+        {
+          id: "prl-capitulo-i-example-1-app-1",
+          text: "El artículo 4 permite clasificar las características del local, la instalación y el procedimiento como condiciones de trabajo; la posibilidad de lesión como riesgo laboral; y una lesión producida con motivo u ocasión del trabajo como daño derivado del trabajo. Es una explicación de las definiciones, no una evaluación técnica de esa intervención.",
+          kind: "example",
+          legalBasis: ["lprl-31-1995-art4"],
+          review: reviewedAgainst(4),
+        },
+      ],
     }
   ],
 
   reviewTakeaways: [
+    {
+      id: "prl-chapter-i-takeaway-art1",
+      text: "Artículo 1: la normativa preventiva reúne la LPRL, sus normas de desarrollo o complemento y otras reglas legales o convencionales con prescripciones preventivas.",
+      kind: "normative",
+      legalBasis: ["lprl-31-1995-art1"],
+      review: reviewedAgainst(1),
+    },
+    {
+      id: "prl-chapter-i-takeaway-art2",
+      text: "Artículos 2.1 y 2.2: finalidad preventiva y mínimo laboral indisponible que la negociación colectiva puede mejorar y desarrollar.",
+      kind: "normative",
+      legalBasis: ["lprl-31-1995-art2"],
+      review: reviewedAgainst(2),
+    },
+    {
+      id: "prl-chapter-i-takeaway-art3",
+      text: "Artículos 3.1, 3.2 y 3.3: se aplica a relaciones laborales y públicas; las exclusiones funcionales solo operan cuando las particularidades impiden aplicar la Ley.",
+      kind: "normative",
+      legalBasis: ["lprl-31-1995-art3"],
+      review: reviewedAgainst(3),
+    },
+    {
+      id: "prl-chapter-i-takeaway-art4",
+      text: "Artículo 4: distingue prevención, riesgo, daño y sus características, y define los conceptos de riesgo grave e inminente, equipo y condición de trabajo y EPI.",
+      kind: "normative",
+      legalBasis: ["lprl-31-1995-art4"],
+      review: reviewedAgainst(4),
+    },
     {
       id: "prl-takeaway-1",
       text: "La prevención de riesgos laborales es un deber del empresario que exige la integración de un plan formal en el sistema general de gestión.",

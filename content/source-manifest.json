@@ -233,7 +233,7 @@
       "title": "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
       "scope": "supplemental",
-      "status": "verified",
+      "status": "superseded",
       "downloadedAt": "2026-10-15",
       "verifiedAt": "2026-10-15",
       "consultedLocator": "Página consolidada consultada el 2026-10-15; localizador interno por artículo.",
@@ -1171,6 +1171,28 @@
       "hashTarget": null,
       "locatorPolicy": "section",
       "purpose": "Alegaciones y clave definitiva; bytes no verificados en esta revisión."
+    },
+    {
+      "sourceId": "Ley 31/1995",
+      "sourceVersion": "consolidated-page-2026-11-02",
+      "sourceType": "primary",
+      "sourceKind": "legislation",
+      "authority": "A",
+      "organization": "Boletín Oficial del Estado",
+      "title": "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      "scope": "supplemental",
+      "status": "verified",
+      "downloadedAt": "2026-11-02",
+      "verifiedAt": "2026-11-02",
+      "consultedLocator": "Página oficial consolidada, artículos 1–4; última actualización publicada el 09-04-2026; HTML íntegro descargado el 02-11-2026.",
+      "editorialConfidence": {
+        "level": "high",
+        "reason": "Respuesta HTTPS de la página BOE descargada y hasheada íntegramente el 02-11-2026; artículos 1–4 cotejados. La consolidación es informativa y la publicación oficial conserva valor jurídico."
+      },
+      "sha256": "c8230982b6a48fe1029548789de695076e9575dcbcc175e908f27959604c10e7",
+      "hashTarget": "downloaded-page",
+      "locatorPolicy": "exact"
     }
   ]
 }

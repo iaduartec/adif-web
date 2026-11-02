@@ -165,4 +165,53 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué diferencia gramatical existe entre 'must' y 'have to'?",
     back: "'Must' suele expresar una obligación interna o personal impuesta por el hablante, mientras que 'have to' denota una obligación externa impuesta por normas o circunstancias de la situación.",
   },
+  // G2 PRL — capítulo I (arts. 1–4), BOE-A-1995-24292
+  {
+    id: "F0025",
+    module: "G2 PRL",
+    front: "Según el artículo 1 de la LPRL, ¿qué integra la normativa sobre prevención de riesgos laborales?",
+    back: "La Ley 31/1995, sus disposiciones de desarrollo o complementarias y otras normas legales o convencionales con prescripciones sobre medidas preventivas en el ámbito laboral o susceptibles de producirlas.",
+  },
+  {
+    id: "F0026",
+    module: "G2 PRL",
+    front: "¿Cuál es la finalidad de la Ley 31/1995 según su artículo 2.1?",
+    back: "Promover la seguridad y la salud mediante medidas y actividades para prevenir riesgos derivados del trabajo; establece principios para proteger, eliminar o reducir riesgos y articular información, consulta, participación equilibrada y formación.",
+  },
+  {
+    id: "F0027",
+    module: "G2 PRL",
+    front: "¿Puede un convenio colectivo rebajar el mínimo laboral preventivo del artículo 2.2?",
+    back: "No. Es un mínimo de derecho necesario indisponible. La negociación colectiva puede mejorarlo y desarrollarlo.",
+  },
+  {
+    id: "F0028",
+    module: "G2 PRL",
+    front: "¿Qué relaciones incluye el ámbito general del artículo 3.1 de la LPRL?",
+    back: "Relaciones laborales y administrativas o estatutarias del personal al servicio de las Administraciones públicas, con las peculiaridades legales; también contempla obligaciones de fabricantes, importadores y suministradores, trabajo autónomo y cooperativas con personas socias que trabajen personalmente.",
+  },
+  {
+    id: "F0029",
+    module: "G2 PRL",
+    front: "¿Cuándo se aplican las exclusiones funcionales del artículo 3.2?",
+    back: "Solo a actividades de funciones públicas cuyas particularidades impidan aplicar la Ley: policía, seguridad y resguardo aduanero; servicios operativos de protección civil y peritaje forense en casos de grave riesgo, catástrofe o calamidad; Fuerzas Armadas y actividades militares de la Guardia Civil. La Ley inspira la normativa específica protectora.",
+  },
+  {
+    id: "F0030",
+    module: "G2 PRL",
+    front: "Según el artículo 4, ¿qué diferencia hay entre riesgo laboral y daño derivado del trabajo?",
+    back: "Riesgo laboral es la posibilidad de sufrir un daño derivado del trabajo; el daño es la enfermedad, patología o lesión efectivamente sufrida con motivo u ocasión del trabajo. La gravedad del riesgo valora probabilidad y severidad conjuntamente.",
+  },
+  {
+    id: "F0031",
+    module: "G2 PRL",
+    front: "¿Qué caracteriza el riesgo laboral grave e inminente del artículo 4.4?",
+    back: "Que resulte racionalmente probable que se materialice en un futuro inmediato y pueda causar un daño grave a la salud. Si se trata de agentes capaces de causar daños graves, puede existir aunque el daño no se manifieste de inmediato.",
+  },
+  {
+    id: "F0032",
+    module: "G2 PRL",
+    front: "¿Qué incluye el artículo 4 en «condición de trabajo», «equipo de trabajo» y «EPI»?",
+    back: "Condición de trabajo: característica que influye significativamente en la generación de riesgos, incluidos locales, agentes, equipos, procedimientos y organización. Equipo de trabajo: máquina, aparato, instrumento o instalación utilizada en el trabajo. EPI: equipo llevado o sujetado para proteger de riesgos, incluidos complementos y accesorios.",
+  },
 ];

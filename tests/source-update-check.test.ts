@@ -14,7 +14,9 @@ import { sourceManifest } from "../lib/content/source-manifest";
 
 afterEach(() => vi.unstubAllGlobals());
 
-const previous = sourceManifest.sources.find((source) => source.sourceId === "Ley 31/1995")!;
+const previous = sourceManifest.sources.find(
+  (source) => source.sourceId === "Ley 31/1995" && source.status === "verified",
+)!;
 
 function observation(overrides: Partial<SourceObservation> = {}): SourceObservation {
   return {
