@@ -290,7 +290,20 @@ export const cemTheory: TheorySection = {
           legalBasis: ["adif-pni25-cem-questions"]
         }
       ]
-    }
+    },
+
+    {
+      id: "cem-documento-pendiente-verificacion",
+      title: "Documento asignado por ADIF: pendiente de verificación",
+      claims: [
+        {
+          id: "cem-doc-pendiente-1",
+          text: "ADIF asigna como documento del temario un artículo de la revista REE (mayo de 2015, pp. 80-86), cedido por Cemdal. El PDF de ADIF (pp. 1-7) es inaccesible en esta consulta (403). La transcripción local disponible es una copia no verificada y no sustituye al documento original.",
+          kind: "didactic",
+          legalBasis: []
+        }
+      ]
+    },
   ],
 
   examples: [

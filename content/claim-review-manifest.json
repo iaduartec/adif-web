@@ -1898,6 +1898,13 @@
         "level": "low",
         "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
       }
+    },
+    "cem-doc-pendiente-1": {
+      "status": "needs_review",
+      "confidence": {
+        "level": "low",
+        "reason": "Pendiente de verificación del documento original (ADIF 403)."
+      }
     }
   }
 }
