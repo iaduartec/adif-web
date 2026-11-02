@@ -229,13 +229,25 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0035",
     module: "Declaración sobre la Red",
-    front: "¿De qué se compone la infraestructura ferroviaria según el artículo 3 de la LSF?",
-    back: "Terrenos, obras de explotación y plataformas, obras civiles, pasos a nivel, superestructuras, calzadas de patios, instalaciones de seguridad, señalización y telecomunicaciones, alumbrado, instalaciones de transformación y conducción de corriente eléctrica para la tracción, edificios del servicio de infraestructuras y cambiadores de ancho. Fuente: DR 2027, Capítulo II, 2.1 (edición disponible V.0 ED 27/02/2026).",
+    front: "Según el art. 3 de la LSF, ¿cuáles son los elementos estructurales de la infraestructura ferroviaria (1/3)?",
+    back: "Terrenos, obras de explotación y plataformas, obras civiles y pasos a nivel. Fuente: DR 2027, Cap. II, 2.1 (V.0 ED 27/02/2026).",
+  },
+  {
+    id: "F0035b",
+    module: "Declaración sobre la Red",
+    front: "Según el art. 3 de la LSF, ¿cuáles son los elementos de superestructura e instalaciones (2/3)?",
+    back: "Superestructuras, calzadas de patios, instalaciones de seguridad, señalización y telecomunicaciones, instalaciones de alumbrado. Fuente: DR 2027, Cap. II, 2.1 (V.0 ED 27/02/2026).",
+  },
+  {
+    id: "F0035c",
+    module: "Declaración sobre la Red",
+    front: "Según el art. 3 de la LSF, ¿qué elementos de tracción y servicio completan la infraestructura (3/3)?",
+    back: "Instalaciones de transformación y conducción de corriente eléctrica para la tracción, edificios del servicio de infraestructuras y cambiadores de ancho. Fuente: DR 2027, Cap. II, 2.1 (V.0 ED 27/02/2026).",
   },
   {
     id: "F0036",
     module: "Declaración sobre la Red",
-    front: "¿De cuántos anchos de vía consta la red gestionada por Adif?",
-    back: "Tres: ancho ibérico (1668 mm), ancho mixto (tercer carril) y ancho métrico (1000 mm). Fuente: DR 2027, Capítulo II, 2.3.2 (edición disponible V.0 ED 27/02/2026).",
+    front: "¿Dónde describe el capítulo II los tipos de vía existentes en la red titularidad de Adif?",
+    back: "En el Anexo F (Catálogo de Ejes y Líneas de la RFIG) y en los mapas anexos. La enumeración de los tres anchos (ibérico, mixto/tercer carril, métrico) y su extensión por red figura en el capítulo I, apartado 1.2. Fuente: DR 2027, Cap. II, 2.3.2 (V.0 ED 27/02/2026).",
   },
 ];

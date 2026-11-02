@@ -166,7 +166,7 @@ export const declaracionRed2027Theory: TheorySection = {
       claims: [
         {
           id: "dr-cap2-red-1",
-          text: "La red gestionada por Adif está compuesta por líneas principalmente de tráfico mixto (mercancías y viajeros) y consta de líneas de tres anchos de vía diferentes: ancho ibérico, ancho mixto (tercer carril) y ancho métrico.",
+          text: "El capítulo II (apartado 2.3.2) remite al Anexo F (Catálogo de Ejes y Líneas de la RFIG) y a los mapas anexos para la representación de los tipos de vía existentes en la red titularidad del administrador de infraestructuras. La enumeración de los tres anchos de vía (ibérico, mixto/tercer carril, métrico) y su extensión por red se describe en el capítulo I de la misma Declaración (apartado sobre la estructura organizativa de la RFIG), no en el capítulo II.",
           kind: "normative",
           legalBasis: ["dr-adif-2027-cap2"]
         }

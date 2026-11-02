@@ -22,7 +22,7 @@ export const declaracionRed2027Summary: LessonSummary = {
     {
       title: "Características de la Red y Capacidad (Capítulo II)",
       points: [
-        "Clasificación de líneas por ancho de vía (Ibérico 1668 mm, Estándar/Internacional 1435 mm, Métrico) y tipo de electrificación (3 kV CC, 25 kV CA).",
+        "Clasificación de líneas por ancho de vía (ibérico 1668 mm, estándar/internacional 1435 mm, métrico 1000 mm) y electrificación (3 kV CC, 25 kV CA); los datos figuran en el capítulo I (1.2) y en el Anexo F de la DR, no en el capítulo II.",
         "Procedimiento de solicitud de surcos: Calendario oficial de solicitudes ordinarias, adjudicación y solicitudes de último minuto.",
         "Gestión de la saturación de líneas: Criterios de prioridad basados en el tipo de servicio (transporte de viajeros de servicio público, mercancías, alta velocidad)."
       ]

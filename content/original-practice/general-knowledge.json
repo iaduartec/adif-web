@@ -3321,27 +3321,27 @@
     "syllabusNodeId": "declaracion-red-capitulo-ii",
     "topic": "Capítulo II. Infraestructura",
     "skill": "DECLARACION-RED",
-    "prompt": "¿De cuántos anchos de vía consta la red gestionada por Adif?",
+    "prompt": "Según el capítulo II de la Declaración sobre la Red 2027, ¿dónde se representan los tipos de vía existentes en la red titularidad del administrador de infraestructuras?",
     "options": [
       {
         "key": "A",
-        "text": "Tres: ancho ibérico, ancho mixto (tercer carril) y ancho métrico."
+        "text": "En el Anexo F (Catálogo de Ejes y Líneas de la RFIG) y en los mapas anexos a la DR."
       },
       {
         "key": "B",
-        "text": "Dos: ancho ibérico y ancho estándar europeo."
+        "text": "En el capítulo I, apartado 1.2, junto con la extensión por red."
       },
       {
         "key": "C",
-        "text": "Únicamente ancho ibérico."
+        "text": "En el Anexo de cánones ferroviarios."
       },
       {
         "key": "D",
-        "text": "Cuatro: ibérico, estándar, métrico y de vía estrecha industrial."
+        "text": "En el índice general del documento."
       }
     ],
     "answer": "A",
-    "explanation": "La red gestionada por Adif consta de líneas de tres anchos de vía diferentes: ancho ibérico (1668 mm), ancho mixto (tercer carril) y ancho métrico (1000 mm).",
+    "explanation": "El apartado 2.3.2 del capítulo II remite al Anexo F (Catálogo de Ejes y Líneas de la RFIG) y a los mapas anexos para la representación de los tipos de vía existentes en la red titularidad del administrador de infraestructuras. La enumeración de los tres anchos de vía y su extensión por red se describe en el capítulo I, apartado 1.2.",
     "difficulty": 2,
     "tags": [
       "original-comun",
@@ -3352,7 +3352,7 @@
     ],
     "sourceId": "DR 2027",
     "sourceVersion": "edicion-disponible-V0-ED-27-02-2026",
-    "sourceLocator": "Capítulo II, 2.2 y 2.3.2",
+    "sourceLocator": "Capítulo II, 2.3.2",
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
