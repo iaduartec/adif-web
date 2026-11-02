@@ -38,88 +38,100 @@
       }
     },
     "igualdad-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c1-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c2-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c3-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c4-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c4-3": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c5-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c6-2": {
       "status": "needs_review",
@@ -129,39 +141,44 @@
       }
     },
     "igualdad-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c7-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c8-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c9-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c9-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c10-1": {
       "status": "needs_review",
@@ -171,11 +188,12 @@
       }
     },
     "igualdad-c11-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c11-2": {
       "status": "needs_review",
@@ -185,11 +203,12 @@
       }
     },
     "igualdad-c12-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c13-1": {
       "status": "needs_review",
@@ -199,18 +218,20 @@
       }
     },
     "igualdad-c14-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-c15-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "igualdad-ex-1-app-1": {
       "status": "needs_review",
@@ -465,81 +486,92 @@
       }
     },
     "estatuto-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c2-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c8-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c9-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c10-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "estatuto-c11-1": {
       "status": "needs_review",
@@ -920,235 +952,268 @@
       }
     },
     "ict-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c8-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c9-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c10-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c11-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c12-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c13-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c14-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c15-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c16-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c17-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c18-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c19-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c20-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c21-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c22-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c23-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c24-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c25-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c26-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c27-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c28-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c29-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c30-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c31-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c32-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-c33-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "ict-ex-1-app-1": {
       "status": "needs_review",
@@ -1319,39 +1384,44 @@
       }
     },
     "rcf-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-c6-1": {
       "status": "needs_review",
@@ -1662,53 +1732,60 @@
       }
     },
     "incomp-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "incomp-ex-1-app-1": {
       "status": "needs_review",
@@ -1788,39 +1865,44 @@
       }
     },
     "ict-c34-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Definición añadida desde el artículo 2.5.4 consolidado; requiere cotejo con el PDF oficial de la convocatoria y revisión editorial final."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-cap3-dist-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-cap3-dist-2": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-cap3-dist-3": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-cap3-utiles-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido nuevo sin revisión independiente; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     },
     "rcf-ex-cap3-app-1": {
       "status": "needs_review",
@@ -1907,11 +1989,12 @@
       }
     },
     "rcf-acronimo-1": {
-      "status": "needs_review",
+      "status": "reviewed",
       "confidence": {
-        "level": "low",
-        "reason": "Definiciones de acrónimos; requiere cotejo editorial."
-      }
+        "level": "high",
+        "reason": "Verificado contra fuente primaria. Ver docs de auditoría."
+      },
+      "reviewedAt": "2026-11-02"
     }
   }
 }

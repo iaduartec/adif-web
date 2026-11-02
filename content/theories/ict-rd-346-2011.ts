@@ -277,11 +277,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-art1"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-2",
@@ -294,11 +289,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-feeding"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-3",
@@ -311,11 +301,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-distribution"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-4",
@@ -328,11 +313,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-dispersion"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-5",
@@ -345,11 +325,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-user-network"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-6",
@@ -362,11 +337,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-7",
@@ -379,11 +349,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-infrastructure"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-8",
@@ -396,11 +361,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-infrastructure"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-9",
@@ -413,11 +373,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex3-canalizacion-principal"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-10",
@@ -430,11 +385,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex3-tierra-local"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-11",
@@ -447,11 +397,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-safety"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-12",
@@ -464,11 +409,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-cem"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-13",
@@ -481,11 +421,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-cabling"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-14",
@@ -498,11 +433,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-connection-points"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-15",
@@ -515,11 +445,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-connection-points"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-16",
@@ -532,11 +457,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-art9-project"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-17",
@@ -549,11 +469,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex5-framework"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-18",
@@ -566,11 +481,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex5-services"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-19",
@@ -583,11 +493,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-fiber"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-20",
@@ -600,11 +505,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex1-scope"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-21",
@@ -617,11 +517,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-network-definition"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-22",
@@ -634,11 +529,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-safety"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-23",
@@ -651,11 +541,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-network-definition"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-24",
@@ -668,11 +553,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-fiber"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-25",
@@ -685,11 +565,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-network-definition"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-26",
@@ -702,11 +577,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex1-cables"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-27",
@@ -719,11 +589,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-art2-services"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-28",
@@ -736,11 +601,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex1-masts"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-29",
@@ -753,11 +613,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex1-network"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-30",
@@ -770,11 +625,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-safety"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-31",
@@ -787,11 +637,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-connection-points"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-32",
@@ -804,11 +649,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex1-network"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-33",
@@ -821,11 +661,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex1-scope"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "ict-concept-34",
@@ -838,11 +673,6 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-bat"],
         },
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra RD 346/2011 (BOE-A-2011-5834). Ver docs/ADIF_AUDIT_ICT_FINAL.md." },
-          reviewedAt: "2026-11-02"
-        },
     }
   ],
 

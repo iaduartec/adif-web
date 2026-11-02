@@ -246,18 +246,8 @@ export const igualdadTheory: TheorySection = {
           text: "La igualdad de trato prohíbe las diferencias injustificadas, mientras que la igualdad de oportunidades promueve medidas activas para corregir los desequilibrios existentes de partida.",
           kind: "didactic",
           legalBasis: [],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-2",
@@ -274,18 +264,8 @@ export const igualdadTheory: TheorySection = {
           text: "No requiere acreditar intención discriminatoria por parte del sujeto y, por regla general, no admite justificaciones objetivas de licitud en la normativa ordinaria.",
           kind: "interpretative",
           legalBasis: ["lo3-2007-art6-1"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-3",
@@ -302,18 +282,8 @@ export const igualdadTheory: TheorySection = {
           text: "Esta conducta es lícita únicamente si se justifica de forma objetiva en atención a una finalidad legítima y los medios empleados son necesarios y adecuados.",
           kind: "interpretative",
           legalBasis: ["lo3-2007-art6-2"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-4",
@@ -330,22 +300,12 @@ export const igualdadTheory: TheorySection = {
           text: "El acoso sexual y el acoso por razón de sexo se consideran en todo caso discriminatorios.",
           kind: "normative",
           legalBasis: ["lo3-2007-art7"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
         },
         {
           id: "igualdad-c4-3",
           text: "Las empresas deberán promover condiciones de trabajo que eviten la comisión de delitos y otras conductas contra la libertad sexual y la integridad moral en el trabajo, incidiendo especialmente en el acoso sexual y el acoso por razón de sexo, incluidos los cometidos en el ámbito digital.",
           kind: "normative",
           legalBasis: ["lo3-2007-art48"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ]
     },
@@ -364,18 +324,8 @@ export const igualdadTheory: TheorySection = {
           text: "Se diferencia del acoso sexual en que la motivación se fundamenta en el género o sexo de la víctima, y no en la naturaleza sexual de la conducta.",
           kind: "didactic",
           legalBasis: [],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-6",
@@ -392,11 +342,6 @@ export const igualdadTheory: TheorySection = {
           text: "La protección frente a represalias alcanza a la persona que presenta la queja, reclamación, denuncia, demanda o recurso para exigir el cumplimiento del principio de igualdad de trato.",
           kind: "interpretative",
           legalBasis: ["lo3-2007-art9"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ]
     },
@@ -415,11 +360,6 @@ export const igualdadTheory: TheorySection = {
           text: "Deben ser aplicadas con criterios de proporcionalidad y razonabilidad, y son de carácter temporal (deben cesar una vez corregida la desigualdad originaria).",
           kind: "interpretative",
           legalBasis: ["lo3-2007-art11"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ]
     },
@@ -434,11 +374,6 @@ export const igualdadTheory: TheorySection = {
           legalBasis: ["lo3-2007-art13"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-9",
@@ -455,11 +390,6 @@ export const igualdadTheory: TheorySection = {
           text: "El plan consiste en un conjunto ordenado de medidas, adoptadas tras un diagnóstico de situación, dirigidas a asegurar la igualdad real y eliminar discriminaciones.",
           kind: "normative",
           legalBasis: ["lo3-2007-art46"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ]
     },
@@ -490,11 +420,6 @@ export const igualdadTheory: TheorySection = {
           text: "La aplicación a los tribunales y órganos de selección de personal responde al principio de presencia equilibrada de mujeres y hombres, salvo por razones fundadas y objetivas, debidamente motivadas.",
           kind: "normative",
           legalBasis: ["lo3-2007-da1", "lo3-2007-art53"],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
         }
       ]
     },
@@ -509,11 +434,6 @@ export const igualdadTheory: TheorySection = {
           legalBasis: ["lo3-2007-art8"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-13",
@@ -538,11 +458,6 @@ export const igualdadTheory: TheorySection = {
           legalBasis: ["lo3-2007-art51"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "igualdad-concept-15",
@@ -555,11 +470,6 @@ export const igualdadTheory: TheorySection = {
           legalBasis: ["lo3-2007-art77"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra LO 3/2007 (BOE-A-2007-6115). Ver docs/ADIF_RECONCILIATION_IGUALDAD.md." },
-          reviewedAt: "2026-11-02"
-        },
     }
   ],
 

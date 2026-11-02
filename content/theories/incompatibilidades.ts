@@ -94,11 +94,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art1"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "incomp-concept-2",
@@ -111,11 +106,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art2"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "incomp-concept-3",
@@ -128,11 +118,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art3"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "incomp-concept-4",
@@ -145,11 +130,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art7"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "incomp-concept-5",
@@ -162,11 +142,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art11"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "incomp-concept-6",
@@ -179,11 +154,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art14"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra Ley 53/1984 (BOE-A-1985-151). Ver docs/ADIF_AUDIT_ICT_INCOMP.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "incomp-concept-7",
@@ -196,11 +166,6 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art19"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra Ley 53/1984 (BOE-A-1985-151). Ver docs/ADIF_AUDIT_ICT_INCOMP.md." },
-          reviewedAt: "2026-11-02"
-        },
     }
   ],
 

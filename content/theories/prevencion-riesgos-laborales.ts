@@ -1,4 +1,8 @@
 import type { TheorySection } from "../lesson-theory";
+import { prlArt14to17Concepts, prlArt14to17Sources } from "./prl-art14-17";
+import { prlArt18To21Concepts, prlArt18To21Sources } from "./prl-art18-21";
+import { prlArt22to29Concepts, prlArt22to29Sources } from "./prl-art22-29";
+import { prlArt33To40Concepts, prlArt33To40Sources } from "./prl-art33-40";
 
 function reviewedAgainst(article: number) {
   return {
@@ -13,6 +17,34 @@ function reviewedAgainst(article: number) {
 
 export const prlTheory: TheorySection = {
   sources: [
+    {
+      id: "lprl-art3-1", sourceId: "Ley 31/1995", sourceVersion: "consolidated-page-2026-11-02", verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 3.1", excerpt: "Ámbito laboral, administrativo y estatutario."
+    },
+    {
+      id: "lprl-art3-2", sourceId: "Ley 31/1995", sourceVersion: "consolidated-page-2026-11-02", verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 3.2", excerpt: "Exclusiones funcionales condicionadas y normativa específica."
+    },
+    {
+      id: "lprl-art4-2-3", sourceId: "Ley 31/1995", sourceVersion: "consolidated-page-2026-11-02", verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 4, ordinales 2.º y 3.º", excerpt: "Definiciones de riesgo laboral y daños derivados del trabajo."
+    },
+    {
+      id: "lprl-art4-7", sourceId: "Ley 31/1995", sourceVersion: "consolidated-page-2026-11-02", verifiedAt: "2026-11-02",
+      sourceTitle: "Ley 31/1995, de 8 de noviembre, de prevención de riesgos laborales",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292",
+      locator: "Artículo 4, ordinal 7.º", excerpt: "Definición y categorías de condición de trabajo."
+    },
+    ...prlArt14to17Sources,
+    ...prlArt18To21Sources,
+    ...prlArt22to29Sources,
+    ...prlArt33To40Sources,
     {
       id: "lprl-exposicion-1",
       sourceId: "Ley 31/1995",
@@ -225,6 +257,10 @@ export const prlTheory: TheorySection = {
   ],
 
   concepts: [
+    ...prlArt14to17Concepts,
+    ...prlArt18To21Concepts,
+    ...prlArt22to29Concepts,
+    ...prlArt33To40Concepts,
     {
       id: "prl-exposicion-fundamentos",
       title: "Exposición de motivos: mapa para recordar",
@@ -347,7 +383,7 @@ export const prlTheory: TheorySection = {
         },
         {
           id: "prl-c8-2",
-          text: "Los representantes legales de los trabajadores podrán acordar, por mayoría de sus miembros, la paralización de la actividad cuando el empresario no adopte o no permita la adopción de las medidas necesarias; si no resulta posible reunir con la urgencia requerida al órgano de representación del personal, el acuerdo podrá ser adoptado por decisión mayoritaria de los Delegados de Prevención.",
+          text: "Cuando exista exposición o posible exposición a un riesgo grave e inminente y el empresario no adopte o no permita las medidas necesarias, los representantes legales de los trabajadores podrán acordar, por mayoría de sus miembros, la paralización de la actividad; si no resulta posible reunir con la urgencia requerida al órgano de representación del personal, el acuerdo podrá ser adoptado por decisión mayoritaria de los Delegados de Prevención.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art21"]
         }
@@ -478,14 +514,14 @@ export const prlTheory: TheorySection = {
           id: "prl-c17-1",
           text: "La Ley se aplica a relaciones laborales y a relaciones administrativas o estatutarias del personal al servicio de las Administraciones públicas, con sus peculiaridades; también establece previsiones para obligaciones de fabricantes, importadores y suministradores, trabajo autónomo y cooperativas con actividad de trabajo personal.",
           kind: "normative",
-          legalBasis: ["lprl-31-1995-art3"],
+          legalBasis: ["lprl-31-1995-art3", "lprl-art3-1"],
           review: reviewedAgainst(3),
         },
         {
           id: "prl-c17-2",
           text: "El artículo 3.2 dispone que la Ley no se aplica a las actividades cuyas particularidades lo impidan dentro de las funciones públicas de policía, seguridad y resguardo aduanero; de servicios operativos de protección civil y peritaje forense en casos de grave riesgo, catástrofe o calamidad pública; y de las Fuerzas Armadas y actividades militares de la Guardia Civil. La Ley inspirará la normativa específica que se dicte para salvaguardar la seguridad y salud de quienes trabajan en esas actividades.",
           kind: "normative",
-          legalBasis: ["lprl-31-1995-art3"],
+          legalBasis: ["lprl-31-1995-art3", "lprl-art3-2"],
           review: reviewedAgainst(3),
         },
         {
@@ -505,7 +541,7 @@ export const prlTheory: TheorySection = {
           id: "prl-c18-1",
           text: "El artículo 4 distingue prevención (actividades o medidas en todas las fases de actividad para evitar o disminuir riesgos), riesgo laboral (posibilidad de daño derivado del trabajo) y daño derivado del trabajo (enfermedad, patología o lesión sufrida con motivo u ocasión del trabajo). La gravedad del riesgo valora conjuntamente probabilidad y severidad.",
           kind: "normative",
-          legalBasis: ["lprl-31-1995-art4"],
+          legalBasis: ["lprl-31-1995-art4", "lprl-art4-2-3"],
           review: reviewedAgainst(4),
         },
         {
@@ -526,7 +562,7 @@ export const prlTheory: TheorySection = {
           id: "prl-c18-4",
           text: "Condición de trabajo es cualquier característica del trabajo que pueda influir significativamente en la generación de riesgos; incluye locales, instalaciones, equipos, productos, agentes, procedimientos y organización del trabajo. EPI es el equipo llevado o sujetado para proteger frente a uno o varios riesgos, incluidos sus complementos o accesorios.",
           kind: "normative",
-          legalBasis: ["lprl-31-1995-art4"],
+          legalBasis: ["lprl-31-1995-art4", "lprl-art4-7"],
           review: reviewedAgainst(4),
         },
       ],

@@ -156,11 +156,6 @@ export const rcfLibro1Theory: TheorySection = {
           legalBasis: ["rd664-2015-1-1-1-1"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "rcf-concept-2",
@@ -173,11 +168,6 @@ export const rcfLibro1Theory: TheorySection = {
           legalBasis: ["rd664-2015-1-2-1-1"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "rcf-concept-3",
@@ -190,11 +180,6 @@ export const rcfLibro1Theory: TheorySection = {
           legalBasis: ["rd664-2015-1-1-1-3"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "rcf-concept-4",
@@ -207,11 +192,6 @@ export const rcfLibro1Theory: TheorySection = {
           legalBasis: ["rd664-2015-1-5-1-4"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "rcf-concept-5",
@@ -224,11 +204,6 @@ export const rcfLibro1Theory: TheorySection = {
           legalBasis: ["rd664-2015-1-5-1-4"]
         }
       ],
-        review: {
-          status: "reviewed",
-          confidence: { level: "high", reason: "Verificado contra fuente primaria (BOE consolidado). Ver docs/ADIF_CLAIMS_AUDIT_PILOT_RESULT.md." },
-          reviewedAt: "2026-11-02"
-        },
     },
     {
       id: "rcf-concept-6",
