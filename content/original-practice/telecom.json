@@ -2484,5 +2484,365 @@
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anexo3-001",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "En un edificio de 4 plantas y 8 viviendas, ¿qué tipo de recinto de telecomunicación corresponde?",
+    "options": [
+      {
+        "key": "A",
+        "text": "RITU simple, porque tiene hasta 16 PAU."
+      },
+      {
+        "key": "B",
+        "text": "RITU-A o recintos independientes RITI y RITS, porque supera las tres alturas."
+      },
+      {
+        "key": "C",
+        "text": "RITM modular, por tener menos de 45 PAU."
+      },
+      {
+        "key": "D",
+        "text": "No se requiere recinto, basta con canalizaciones."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El RITU simple solo se admite para edificios de hasta tres alturas y planta baja con un máximo de 16 PAU. Un edificio de 4 plantas supera esa condición, por lo que corresponde el RITU-A (si cumple condiciones) o los recintos independientes RITI y RITS.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iii",
+      "recintos"
+    ],
+    "conceptIds": [
+      "ict-concept-35"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo III, apartados 4.5 y 5.5",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anexo3-002",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "En un recinto de telecomunicación no modular, el sistema de tierra local debe incluir:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un anillo de cobre de 25 mm² con barra colectora, conectado al sistema general de tierra de la edificación."
+      },
+      {
+        "key": "B",
+        "text": "Un único conductor de 6 mm² aislado."
+      },
+      {
+        "key": "C",
+        "text": "Una toma de tierra independiente desconectada del edificio."
+      },
+      {
+        "key": "D",
+        "text": "No se requiere tierra local en recintos modulares ni no modulares."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El Anexo III, apartado 7.1, exige un anillo interior y cerrado de cobre de mínimo 25 mm² con barra colectora, conectado directamente al sistema general de tierra de la edificación (resistencia ≤ 10 Ω). Los elementos metálicos se unen a la tierra local.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iii",
+      "tierra"
+    ],
+    "conceptIds": [
+      "ict-concept-37"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo III, apartado 7.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anexo3-003",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "Una canalización principal construida con conductos de obra de fábrica debe tener, como mínimo:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Resistencia al fuego EI 60 y cortafuegos cada planta."
+      },
+      {
+        "key": "B",
+        "text": "Resistencia al fuego EI 120 y cortafuegos cada tres plantas como mínimo."
+      },
+      {
+        "key": "C",
+        "text": "Resistencia al fuego EI 90 sin cortafuegos."
+      },
+      {
+        "key": "D",
+        "text": "No se exige resistencia al fuego en canalizaciones principales."
+      }
+    ],
+    "answer": "B",
+    "explanation": "Según el Anexo III, apartado 5.7, la canalización principal construida mediante conductos de obra de fábrica debe tener resistencia al fuego EI 120 y disponer de elementos cortafuegos como mínimo cada tres plantas. Los pasos por elementos de compartimentación deben mantener la resistencia exigible según SI 1-3 del DB SI del CTE.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iii",
+      "incendios"
+    ],
+    "conceptIds": [
+      "ict-concept-38"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo III, apartados 5.5.2, 5.7 y 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anexo3-004",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "En los recintos de telecomunicación, la separación mínima entre canalizaciones de telecomunicación y otros servicios en trazados paralelos es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "30 mm."
+      },
+      {
+        "key": "B",
+        "text": "100 mm."
+      },
+      {
+        "key": "C",
+        "text": "200 mm."
+      },
+      {
+        "key": "D",
+        "text": "No se establece separación mínima."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El Anexo III, apartado 8, establece una separación mínima de 100 mm para trazados paralelos y 30 mm para cruces entre canalizaciones de telecomunicación y otros servicios. La rigidez dieléctrica de los tabiques de separación en canalizaciones secundarias conjuntas debe ser mínimo 1500 V.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iii",
+      "seguridad"
+    ],
+    "conceptIds": [
+      "ict-concept-39"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo III, apartado 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anexo3-005",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "¿A partir de qué número de puntos de acceso al usuario (PAU) un recinto de telecomunicación puede realizarse mediante armarios modulares (RITM) en una edificación de pisos?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hasta 16 PAU."
+      },
+      {
+        "key": "B",
+        "text": "Hasta 20 PAU."
+      },
+      {
+        "key": "C",
+        "text": "Hasta 45 PAU."
+      },
+      {
+        "key": "D",
+        "text": "Más de 74 PAU."
+      }
+    ],
+    "answer": "C",
+    "explanation": "Según el Anexo III, apartado 4.5.4, para edificaciones de pisos de hasta 45 PAU (y conjuntos unifamiliares de hasta 20 PAU) los recintos superior, inferior y único pueden realizarse mediante armarios modulares no propagadores de la llama (RITM).",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iii",
+      "recintos"
+    ],
+    "conceptIds": [
+      "ict-concept-36"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo III, apartados 4.5 y 5.5",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-cycle2-001",
+    "domain": "telecom",
+    "topicId": "ict-anexo-i",
+    "syllabusNodeId": "ict-anexo-i",
+    "topic": "Anexo I. Captación, adaptación y distribución de RTV",
+    "skill": "ICT",
+    "prompt": "En la ICT de radiodifusión y televisión, la red de distribución, la red de dispersión y la red interior transmiten de forma transparente en la banda:",
+    "options": [
+      {
+        "key": "A",
+        "text": "5 MHz a 65 MHz."
+      },
+      {
+        "key": "B",
+        "text": "5 MHz a 2.150 MHz."
+      },
+      {
+        "key": "C",
+        "text": "694 MHz a 862 MHz."
+      },
+      {
+        "key": "D",
+        "text": "87,5 MHz a 108 MHz."
+      }
+    ],
+    "answer": "B",
+    "explanation": "Según el Anexo I, apartado 4.1.2, la red de distribución, dispersión e interior transmiten de forma transparente entre 5 MHz y 2.150 MHz. El canal de retorno, si existe, se sitúa entre 5 MHz y 65 MHz.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-i",
+      "redes"
+    ],
+    "conceptIds": [
+      "ict-concept-40"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo I, apartados 2.3 y 4.1.2",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-cycle2-002",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iv",
+    "syllabusNodeId": "ict-anexo-iv",
+    "topic": "Anexo IV. Inspección y mantenimiento de la ICT",
+    "skill": "ICT",
+    "prompt": "El Anexo IV del RD 346/2011 se compone de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Inspección técnica, documento de mantenimiento y documentación de análisis o estudio técnico."
+      },
+      {
+        "key": "B",
+        "text": "Captación, cabecera y distribución."
+      },
+      {
+        "key": "C",
+        "text": "RITI, RITS y RITU."
+      },
+      {
+        "key": "D",
+        "text": "Red de alimentación, distribución y dispersión."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El Anexo IV establece tres secciones: inspección técnica de la ICT, documento de mantenimiento y documentación de análisis o estudio técnico.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iv",
+      "mantenimiento"
+    ],
+    "conceptIds": [
+      "ict-concept-41"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo IV, secciones 1, 2 y 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-cycle2-003",
+    "domain": "telecom",
+    "topicId": "ict-anexo-v",
+    "syllabusNodeId": "ict-anexo-v",
+    "topic": "Anexo V. Hogar digital",
+    "skill": "ICT",
+    "prompt": "Según el RD 346/2011, el hogar digital es:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un edificio con más de 45 PAU."
+      },
+      {
+        "key": "B",
+        "text": "El lugar donde las necesidades de los habitantes en seguridad, comunicaciones, ocio, confort, integración medioambiental y accesibilidad se atienden mediante la convergencia de servicios, infraestructuras y equipamientos."
+      },
+      {
+        "key": "C",
+        "text": "Una red de fibra óptica de alta velocidad."
+      },
+      {
+        "key": "D",
+        "text": "Un sistema de domótica exclusivamente energético."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El Art. 2.5 define el hogar digital como el lugar donde las necesidades de los habitantes en materia de seguridad y control, comunicaciones, ocio y confort, integración medioambiental y accesibilidad se atienden mediante la convergencia de servicios, infraestructuras y equipamientos. El Anexo V clasifica los servicios y equipamientos por categorías.",
+    "difficulty": 1,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-v",
+      "hogar-digital"
+    ],
+    "conceptIds": [
+      "ict-concept-42"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo V",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
   }
 ]

@@ -106,6 +106,7 @@ export const originalPracticeQuestionSchema = z.object({
   topic: z.string().trim().min(1),
   skill: z.string().trim().min(1),
   prompt: z.string().trim().min(1),
+  figure: z.string().trim().min(1).optional(),
   options: z.array(originalPracticeOptionSchema).length(4),
   answer: originalPracticeAnswerKeySchema,
   explanation: z.string().trim().min(1),

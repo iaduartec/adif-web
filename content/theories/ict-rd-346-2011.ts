@@ -40,10 +40,74 @@ export const ictTheory: TheorySection = {
     {
       id: "rd346-2011-anex3-tierra-local",
       sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
       sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       locator: "Anexo III, apartado 7.1",
       excerpt: "El sistema de tierra del recinto incluye un anillo interior de cobre aplicable solo a recintos no modulares y una barra colectora conectada al sistema general de tierra.",
+    },
+    {
+      id: "rd346-2011-anex3-recintos",
+      sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo III, apartados 4.5 y 5.5",
+      excerpt: "Define los recintos RITI, RITS, RITU, RITU-A y RITM, sus dimensiones y características constructivas.",
+    },
+    {
+      id: "rd346-2011-anex3-incendios",
+      sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo III, apartados 5.5.2, 5.7 y 8",
+      excerpt: "Los recintos tienen la misma consideración que los locales de contadores eléctricos a efectos del DB-SI; la canalización principal con conductos de obra de fábrica requiere resistencia al fuego EI 120 y cortafuegos cada tres plantas.",
+    },
+    {
+      id: "rd346-2011-anex3-cem",
+      sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo III, apartado 7",
+      excerpt: "El ambiente electromagnético de los recintos es categoría ambiental clase 2; la interconexión equipotencial se supone mallada y unida a la puesta a tierra de la edificación.",
+    },
+    {
+      id: "rd346-2011-anex3-seguridad-instalaciones",
+      sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo III, apartado 8",
+      excerpt: "Separación mínima de 100 mm en trazados paralelos y 30 mm en cruces entre canalizaciones de telecomunicación y otros servicios; rigidez dieléctrica mínima de 1500 V en tabiques de separación.",
+    },
+    {
+      id: "rd346-2011-anex1",
+      sourceId: "RD 346/2011",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      sourceVersion: "consolidated-page-2026-10-15",
+      locator: "Anexo I, apartados 2, 3, 4 y 5",
+      excerpt: "Norma técnica de ICT para captación, adaptación y distribución de señales de radiodifusión sonora y televisión terrestres y por satélite: elementos, dimensiones mínimas, características técnicas, impedancia 75 Ω, banda 5-2.150 MHz.",
+    },
+    {
+      id: "rd346-2011-anex4",
+      sourceId: "RD 346/2011",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      sourceVersion: "consolidated-page-2026-10-15",
+      locator: "Anexo IV, secciones 1, 2 y 3",
+      excerpt: "Inspección y mantenimiento de la ICT: inspección técnica, documento de mantenimiento y documentación de análisis o estudio técnico.",
+    },
+    {
+      id: "rd346-2011-anex5",
+      sourceId: "RD 346/2011",
+      sourceTitle: "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      sourceVersion: "consolidated-page-2026-10-15",
+      locator: "Anexo V",
+      excerpt: "Hogar digital: categorías, servicios, equipamientos, niveles y tabla comparativa de equipamientos.",
     },
     {
       id: "rd346-2011-anex2-feeding",
@@ -89,24 +153,6 @@ export const ictTheory: TheorySection = {
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
       locator: "Anexo II, apartado 2.5.4",
       excerpt: "Define las bases de acceso terminal como acceso de los equipos del usuario a la red interior multiservicio.",
-    },
-    {
-      id: "rd346-2011-anex4",
-      sourceId: "RD 346/2011",
-      sourceTitle:
-        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
-      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
-      locator: "Anexo IV, secciones 1–3",
-      excerpt: "Incluye protocolos y documentos normalizados para inspección técnica, mantenimiento y estudio de infraestructuras de telecomunicaciones.",
-    },
-    {
-      id: "rd346-2011-anex5",
-      sourceId: "RD 346/2011",
-      sourceTitle:
-        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
-      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
-      locator: "Anexo V",
-      excerpt: "Clasifica las viviendas y edificaciones que incorporan funcionalidades de hogar digital.",
     },
     {
       id: "rd346-2011-art2-services",
@@ -404,9 +450,10 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c12-1",
-          text: "Para acreditar los requisitos de compatibilidad electromagnética de la ICT pueden utilizarse normas armonizadas publicadas en el Diario Oficial de la Unión Europea, que proporcionan presunción de conformidad.",
+          text: "Para acreditar los requisitos de compatibilidad electromagnética de la ICT pueden utilizarse normas armonizadas publicadas en el Diario Oficial de la Unión Europea, que proporcionan presunción de conformidad. El Anexo II del RD 346/2011 remite al régimen detallado de CEM, que se desarrolla en normativa complementaria específica.",
           kind: "normative",
-          legalBasis: ["rd346-2011-anex2-cem"]
+          legalBasis: ["rd346-2011-anex2-cem"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo II (consolidado 26/03/2025) y BOE-A-2016-4442 RD 186/2016" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
         }
       ],
     },
@@ -476,9 +523,10 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c18-1",
-          text: "El grupo Control del Entorno incluye automatización de toldos y persianas, ambientes, temperatura y telecontrol; el Control de iluminación pertenece al grupo de Eficiencia Energética.",
+          text: "El grupo Control del Entorno incluye automatización de toldos y persianas, ambientes, temperatura y telecontrol; el Control de iluminación pertenece al grupo de Eficiencia Energética. El Anexo V clasifica los servicios del hogar digital por categorías (seguridad y control, comunicaciones, ocio y confort, integración medioambiental, accesibilidad, eficiencia energética) y define los equipamientos mínimos por nivel.",
           kind: "normative",
-          legalBasis: ["rd346-2011-anex5-services"]
+          legalBasis: ["rd346-2011-anex5"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo V (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
         }
       ],
     },
@@ -572,9 +620,10 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c26-1",
-          text: "La impedancia característica media de los cables coaxiales de acometida exterior que operan entre 5 MHz y 3 GHz es de 75 ± 3 Ω.",
+          text: "La impedancia característica de los cables coaxiales de acometida exterior para radiodifusión y televisión es de 75 Ω. La desadaptación de impedancias provoca reflexiones y pérdidas de retorno, degradando la calidad de la señal; por ello la red debe mantener la adaptación en toda la banda de 5 MHz a 2.150 MHz.",
           kind: "normative",
-          legalBasis: ["rd346-2011-anex1-cables"]
+          legalBasis: ["rd346-2011-anex1"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo I apartados 4.1.2 y 5.4 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
         }
       ],
     },
@@ -644,9 +693,10 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c32-1",
-          text: "La red de distribución, la red de dispersión y la red interior de usuario permiten distribuir transparentemente la señal entre la cabecera y la toma de usuario en la banda de 5 MHz a 2.150 MHz.",
+          text: "La ICT de RTV se estructura en red de distribución (cabecera a derivadores), red de dispersión (derivadores a PAU) y red interior de usuario (PAU a tomas). La red de distribución, la red de dispersión y la red interior transmiten de forma transparente en la banda de 5 MHz a 2.150 MHz; el canal de retorno, si existe, se sitúa entre 5 MHz y 65 MHz. El punto de interconexión une la red de alimentación del operador con la ICT; el punto de distribución enlaza distribución con dispersión; el PAU delimita la responsabilidad entre ICT común e interior de usuario.",
           kind: "normative",
-          legalBasis: ["rd346-2011-anex1-network"]
+          legalBasis: ["rd346-2011-anex1"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo I apartados 2.3 y 4.1.2 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
         }
       ],
     },
@@ -673,6 +723,124 @@ export const ictTheory: TheorySection = {
           legalBasis: ["rd346-2011-anex2-bat"],
         },
       ],
+    },
+    {
+      id: "ict-concept-35",
+      title: "Recinto Único (RITU) y Recinto Único Ampliado (RITU-A)",
+      claims: [
+        {
+          id: "ict-c35-1",
+          text: "El RITU unifica RITI y RITS y se permite para edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja con un máximo de 16 PAU, y para conjuntos de viviendas unifamiliares sin limitación de PAU. El RITU-A se admite para edificios de más de tres alturas y planta baja con hasta 16 PAU, o de 17 a 30 PAU en cualquier altura, siempre que su anchura accesible sea el doble de la de uno de los recintos sustituidos.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex3-recintos"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartados 4.5 y 5.5 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-36",
+      title: "Recinto Modular (RITM) y Recinto Inferior/Superior (RITI/RITS)",
+      claims: [
+        {
+          id: "ict-c36-1",
+          text: "El RITI aloja los registros principales de telefonía y banda ancha y el arranque de la canalización principal; el RITS aloja los elementos de radiodifusión y televisión y, en su caso, de acceso inalámbrico. Para edificaciones de hasta 45 PAU (o conjuntos unifamiliares de hasta 20 PAU) los recintos pueden realizarse mediante armarios modulares no propagadores de la llama (RITM).",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex3-recintos"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartados 4.5 y 5.5 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-37",
+      title: "Tierra Local en Recintos de Telecomunicación",
+      claims: [
+        {
+          id: "ict-c37-1",
+          text: "En recintos no modulares, el sistema de tierra consiste en un anillo interior y cerrado de cobre con una barra colectora de cobre sólida, conectado directamente al sistema general de tierra de la edificación en uno o más puntos; el anillo y el cable de conexión tienen sección mínima de 25 mm² de cobre flexible. El sistema general de tierra de la edificación debe tener resistencia eléctrica no superior a 10 Ω respecto de la tierra lejana.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex3-tierra-local"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartado 7.1 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-38",
+      title: "Compartimentación contra Incendios en ICT",
+      claims: [
+        {
+          id: "ict-c38-1",
+          text: "Los recintos de telecomunicación tienen la misma consideración que los locales de contadores eléctricos y los cuadros generales de distribución a efectos del DB-SI. Los pasos de canalizaciones por elementos de compartimentación frente a incendios deben mantener la resistencia al fuego exigible según SI 1-3 del DB SI del CTE. La canalización principal construida mediante conductos de obra de fábrica debe tener resistencia al fuego EI 120 y disponer de elementos cortafuegos como mínimo cada tres plantas.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex3-incendios"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartados 5.5.2, 5.7 y 8 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-39",
+      title: "Compatibilidad Electromagnética y Apantallamiento en Recintos",
+      claims: [
+        {
+          id: "ict-c39-1",
+          text: "En los recintos, el ambiente electromagnético se considera categoría ambiental clase 2 (ETSI/UIT). La interconexión equipotencial se supone mallada y unida a la puesta a tierra de la edificación. Los elementos metálicos de los recintos (soportes, herrajes, bandejas) se unen a la tierra local; si existen varias tomas de tierra de protección, deben estar eléctricamente unidas. Las canalizaciones metálicas accesibles a partes metálicas de otras instalaciones se conectan a la red de equipotencialidad.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex3-cem"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartado 7 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        },
+        {
+          id: "ict-c39-2",
+          text: "Los recintos disponen de bandejas o canales en todo el perímetro interior a 300 mm del techo para el tendido de cables, y las canalizaciones de telecomunicación deben separarse al menos 100 mm en trazados paralelos y 30 mm en cruces respecto de otros servicios; la rigidez dieléctrica de los tabiques de separación en canalizaciones secundarias conjuntas debe ser mínimo 1500 V.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex3-seguridad-instalaciones"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartado 8 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-40",
+      title: "Anexo I — Captación, Cabecera y Distribución de RTV",
+      claims: [
+        {
+          id: "ict-c40-1",
+          text: "La ICT de radiodifusión sonora y televisión se estructura en tres tramos: red de distribución (cabecera a derivadores), red de dispersión (derivadores a PAU) y red interior de usuario (PAU a tomas). La red de distribución y dispersión deben estar preparadas para transmitir de forma transparente en la banda 5 MHz a 2.150 MHz; el canal de retorno, si existe, se sitúa entre 5 MHz y 65 MHz.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex1"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo I apartados 2.3 y 4.1.2 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
+        },
+        {
+          id: "ict-c40-2",
+          text: "La impedancia característica de la ICT de RTV es de 75 Ω. La red debe garantizar los niveles de calidad en toma establecidos en el Anexo I; el número mínimo de tomas en viviendas es de una por estancia (excluidos baños y trasteros), con un mínimo de dos.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex1"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo I apartados 3.5.1 y 4 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-41",
+      title: "Anexo IV — Inspección y Mantenimiento de la ICT",
+      claims: [
+        {
+          id: "ict-c41-1",
+          text: "El Anexo IV se compone de tres secciones: (1) inspección técnica de la ICT, (2) documento de mantenimiento y (3) documentación de análisis o estudio técnico. Distinguen entre la verificación del cumplimiento normativo, el plan de mantenimiento preventivo y los estudios técnicos de soporte.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex4"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo IV (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
+        }
+      ],
+    },
+    {
+      id: "ict-concept-42",
+      title: "Anexo V — Hogar Digital",
+      claims: [
+        {
+          id: "ict-c42-1",
+          text: "El hogar digital se define como el lugar donde las necesidades de sus habitantes en materia de seguridad y control, comunicaciones, ocio y confort, integración medioambiental y accesibilidad se atienden mediante la convergencia de servicios, infraestructuras y equipamientos. El Anexo V clasifica los servicios y equipamientos por categorías (seguridad, comunicaciones, ocio, confort, accesibilidad, eficiencia energética).",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex5"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo V y Art. 2.5 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-cycle2" }
+        }
+      ],
     }
   ],
 
@@ -686,6 +854,32 @@ export const ictTheory: TheorySection = {
           text: "El RITU simple no resulta aplicable a un edificio de más de tres alturas; para esos casos la norma prevé un recinto único ampliado (RITU-A) bajo determinadas condiciones o, en su defecto, los recintos independientes RITI y RITS.",
           kind: "example",
           legalBasis: ["rd346-2011-anex2-infrastructure"]
+        }
+      ]
+    },
+    {
+      id: "ict-ex-2",
+      situation: "Recinto de telecomunicaciones de un edificio de 30 PAU: se proyecta el sistema de tierra.",
+      application: [
+        {
+          id: "ict-ex-2-app-1",
+          text: "Como el recinto no es modular, se instala un anillo interior cerrado de cobre de 25 mm² con barra colectora, conectado al sistema general de tierra de la edificación (resistencia ≤ 10 Ω). Los soportes y bandejas metálicas se unen a la tierra local; si existen varias tomas de tierra de protección, se unen eléctricamente.",
+          kind: "example",
+          legalBasis: ["rd346-2011-anex3-tierra-local", "rd346-2011-anex3-cem"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartados 7.1 y 7.3 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+        }
+      ]
+    },
+    {
+      id: "ict-ex-3",
+      situation: "Paso de canalizaciones de telecomunicación por un elemento de compartimentación frente a incendios en un edificio en altura.",
+      application: [
+        {
+          id: "ict-ex-3-app-1",
+          text: "Debe mantenerse la resistencia al fuego exigible según SI 1-3 del DB SI del CTE. Si la canalización principal se construye con conductos de obra de fábrica, la resistencia al fuego será EI 120 y se dispondrán elementos cortafuegos cada tres plantas como mínimo.",
+          kind: "example",
+          legalBasis: ["rd346-2011-anex3-incendios"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartados 5.7 y 8 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
         }
       ]
     }
@@ -703,6 +897,20 @@ export const ictTheory: TheorySection = {
       text: "En viviendas unifamiliares, la canalización principal discurre por zona común siempre que sea razonable y, en todo caso, por zonas accesibles.",
       kind: "interpretative",
       legalBasis: ["rd346-2011-anex3-canalizacion-principal"]
+    },
+    {
+      id: "ict-takeaway-3",
+      text: "La tierra local de los recintos no modulares exige anillo de cobre de 25 mm² con barra colectora, conectado al sistema general de tierra (≤ 10 Ω); los elementos metálicos se unen a la tierra local.",
+      kind: "normative",
+      legalBasis: ["rd346-2011-anex3-tierra-local"],
+      review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartado 7.1 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
+    },
+    {
+      id: "ict-takeaway-4",
+      text: "Los recintos de telecomunicación tienen la misma consideración que los locales de contadores eléctricos a efectos del DB-SI; la canalización principal con conductos de obra de fábrica requiere EI 120 y cortafuegos cada 3 plantas.",
+      kind: "normative",
+      legalBasis: ["rd346-2011-anex3-incendios"],
+      review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-2011-5834 Anexo III apartados 5.7 y 8 (consolidado 26/03/2025)" }, reviewedAt: "2026-11-03", reviewedBy: "ict-anexo-iii-cycle" }
     }
   ]
 };

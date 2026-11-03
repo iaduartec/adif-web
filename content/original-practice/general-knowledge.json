@@ -3399,5 +3399,93 @@
     "status": "reviewed",
     "reviewedAt": "2026-11-02",
     "origin": "original"
+  },
+  {
+    "id": "orig-gen-igualdad-art44-001",
+    "domain": "general-knowledge",
+    "topicId": "igualdad-ley-completa",
+    "syllabusNodeId": "igualdad-ley-completa",
+    "topic": "LO 3/2007 - Igualdad (art. 44)",
+    "skill": "Igualdad",
+    "prompt": "Según el artículo 44.1 de la LO 3/2007, los derechos de conciliación de la vida personal, familiar y laboral se reconocerán de forma que fomenten:",
+    "options": [
+      {
+        "key": "A",
+        "text": "La asunción corresponsable de las obligaciones familiares."
+      },
+      {
+        "key": "B",
+        "text": "La asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio."
+      },
+      {
+        "key": "C",
+        "text": "La igualdad salarial entre mujeres y hombres."
+      },
+      {
+        "key": "D",
+        "text": "La presencia equilibrada en los tribunales de selección."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El art. 44.1 utiliza la expresión literal «asunción equilibrada de las responsabilidades familiares». La corresponsabilidad es un concepto didáctico que describe ese objetivo, pero no es la redacción legal.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "igualdad",
+      "art44"
+    ],
+    "conceptIds": [
+      "igualdad-concept-13"
+    ],
+    "sourceId": "LO 3/2007",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 44",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompatibilidades-art3-001",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley 53/1984 - Incompatibilidades (art. 3)",
+    "skill": "Incompatibilidades",
+    "prompt": "Según el artículo 3.1 de la Ley 53/1984, ¿en qué supuestos se permite desempeñar un segundo puesto en el sector público?",
+    "options": [
+      {
+        "key": "A",
+        "text": "En todos los casos con autorización del superior jerárquico."
+      },
+      {
+        "key": "B",
+        "text": "Solo para funciones docente y sanitaria, cargos electivos (arts. 5 y 6) y los que por razón de interés público determine el Consejo de Ministros u órgano de gobierno de la CCAA."
+      },
+      {
+        "key": "C",
+        "text": "Para cualquier actividad privada compatible."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente para personal sanitario."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El art. 3.1 limita el doble puesto público a los supuestos previstos por la Ley (funciones docente y sanitaria, arts. 5 y 6, e interés público determinado por el Consejo de Ministros u órgano de gobierno de la CCAA). En todo caso se requiere previa y expresa autorización de compatibilidad.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "incompatibilidades",
+      "art3"
+    ],
+    "conceptIds": [
+      "incomp-concept-3"
+    ],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
   }
 ]

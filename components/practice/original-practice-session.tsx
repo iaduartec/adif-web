@@ -370,6 +370,13 @@ export function OriginalPracticeSession({
           {saveStatus === "error" && " · Error al guardar"}
         </p>
         <h3 className="font-bold text-ink">{question.prompt}</h3>
+        {question.figure && (
+          <div
+            aria-label="Figura del ejercicio"
+            className="my-3 flex justify-center"
+            dangerouslySetInnerHTML={{ __html: question.figure }}
+          />
+        )}
         {question.answerGrounding && (
           <p className="text-sm text-gray-600">
             Referencia para estudiar: {" "}

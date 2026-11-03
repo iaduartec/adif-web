@@ -208,7 +208,7 @@ export const igualdadTheory: TheorySection = {
       id: "igualdad-intro-2",
       text: "El artículo 81.1 de la Constitución determina las materias reservadas a ley orgánica.",
       kind: "normative",
-      legalBasis: ["ce-art81"]
+      legalBasis: ["ce-art81"],
     },
     {
       id: "igualdad-intro-2b",
@@ -220,7 +220,7 @@ export const igualdadTheory: TheorySection = {
       id: "igualdad-intro-3",
       text: "Se fundamenta en el artículo 14 (derecho a la igualdad) y en el artículo 9.2 (obligación de los poderes públicos de promover condiciones de igualdad efectiva) de la Constitución Española.",
       kind: "normative",
-      legalBasis: ["ce-art14", "ce-art9-2"]
+      legalBasis: ["ce-art14", "ce-art9-2"],
     },
     {
       id: "igualdad-intro-4",
@@ -343,7 +343,7 @@ export const igualdadTheory: TheorySection = {
           kind: "interpretative",
           legalBasis: ["lo3-2007-art9"],
         }
-      ]
+      ],
     },
     {
       id: "igualdad-concept-7",
@@ -421,7 +421,7 @@ export const igualdadTheory: TheorySection = {
           kind: "normative",
           legalBasis: ["lo3-2007-da1", "lo3-2007-art53"],
         }
-      ]
+      ],
     },
     {
       id: "igualdad-concept-12",
@@ -441,11 +441,12 @@ export const igualdadTheory: TheorySection = {
       claims: [
         {
           id: "igualdad-c13-1",
-          text: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y a las trabajadoras de forma que fomenten la asunción corresponsable de las obligaciones familiares.",
+          text: "Los derechos de conciliación de la vida personal, familiar y laboral se reconocerán a los trabajadores y a las trabajadoras de forma que fomenten la asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio.",
           kind: "normative",
-          legalBasis: ["lo3-2007-art44"]
+          legalBasis: ["lo3-2007-art44"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Literal verificado contra BOE-A-2007-6115 Art. 44.1 (consolidado 02/08/2024)" }, reviewedAt: "2026-11-03", reviewedBy: "igualdad-cycle3" }
         }
-      ]
+      ],
     },
     {
       id: "igualdad-concept-14",
@@ -484,7 +485,7 @@ export const igualdadTheory: TheorySection = {
           kind: "example",
           legalBasis: ["lo3-2007-art6-2", "lo3-2007-art13"]
         }
-      ]
+      ],
     },
     {
       id: "igualdad-ex-2",
@@ -496,7 +497,7 @@ export const igualdadTheory: TheorySection = {
           kind: "example",
           legalBasis: ["lo3-2007-art8"]
         }
-      ]
+      ],
     },
     {
       id: "igualdad-ex-3",
@@ -508,7 +509,7 @@ export const igualdadTheory: TheorySection = {
           kind: "interpretative",
           legalBasis: ["lo3-2007-art53", "lo3-2007-da1"]
         }
-      ]
+      ],
     },
     {
       id: "igualdad-ex-4",
@@ -520,10 +521,22 @@ export const igualdadTheory: TheorySection = {
           kind: "interpretative",
           legalBasis: ["lo3-2007-art45"]
         }
-      ]
+      ],
+    },
+    {
+      id: "igualdad-ex-5",
+      situation: "Una empresa deniega a un trabajador la reducción de jornada por cuidado de un hijo, alegando que la medida solo se concede a las madres, y el trabajador alega discriminación por razón de sexo.",
+      application: [
+        {
+          id: "igualdad-ex-5-app-1",
+          text: "El art. 44 exige que los derechos de conciliación se reconozcan de forma que fomenten la asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio. La corresponsabilidad es un concepto didáctico que describe ese objetivo, pero la expresión literal del artículo es «asunción equilibrada».",
+          kind: "interpretative",
+          legalBasis: ["lo3-2007-art44"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Literal verificado contra BOE-A-2007-6115 Art. 44 (consolidado 02/08/2024)" }, reviewedAt: "2026-11-03", reviewedBy: "igualdad-cycle3" }
+        }
+      ],
     }
   ],
-
   reviewTakeaways: [
     {
       id: "igualdad-takeaway-1",
@@ -535,7 +548,7 @@ export const igualdadTheory: TheorySection = {
       id: "igualdad-takeaway-1b",
       text: "Las Administraciones Públicas, en el ámbito de sus respectivas competencias, deben remover los obstáculos que impidan la igualdad efectiva entre mujeres y hombres en el acceso al empleo público y en el desarrollo de la carrera profesional.",
       kind: "normative",
-      legalBasis: ["lo3-2007-art51"]
+      legalBasis: ["lo3-2007-art51"],
     },
     {
       id: "igualdad-takeaway-2",
@@ -547,13 +560,20 @@ export const igualdadTheory: TheorySection = {
       id: "igualdad-takeaway-3",
       text: "La discriminación indirecta sí admite justificación si se acredita idoneidad, necesidad y proporcionalidad de la medida neutra.",
       kind: "interpretative",
-      legalBasis: ["lo3-2007-art6-2"]
+      legalBasis: ["lo3-2007-art6-2"],
     },
     {
       id: "igualdad-takeaway-4",
       text: "La composición equilibrada (mínimo 40% y máximo 60% de cada sexo) se aplica a los tribunales y órganos de selección del personal, salvo por razones fundadas y objetivas debidamente motivadas.",
       kind: "normative",
       legalBasis: ["lo3-2007-da1", "lo3-2007-art53"]
-    }
-  ]
+    },
+    {
+      id: "igualdad-takeaway-5",
+      text: "Art. 44 LO 3/2007: los derechos de conciliación de la vida personal, familiar y laboral se reconocerán de forma que fomenten la asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio. La expresión literal es «equilibrada», no «corresponsable».",
+      kind: "normative",
+      legalBasis: ["lo3-2007-art44"],
+      review: { status: "reviewed", confidence: { level: "high", reason: "Literal verificado contra BOE-A-2007-6115 Art. 44 (consolidado 02/08/2024)" }, reviewedAt: "2026-11-03", reviewedBy: "igualdad-cycle3" },
+    },
+  ],
 };

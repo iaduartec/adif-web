@@ -113,9 +113,10 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c3-1",
-          text: "Solo se permite el doble puesto para la docencia universitaria a tiempo parcial, la sanidad a tiempo parcial, o cargos electivos sin exclusividad.",
+          text: "El personal comprendido en el ámbito de la Ley solo podrá desempeñar un segundo puesto en el sector público en los supuestos previstos por la misma: funciones docente y sanitaria, los casos de los arts. 5.º y 6.º (cargos electivos; investigación/asesoramiento), y los que por razón de interés público se determinen por el Consejo de Ministros o el órgano de gobierno de la Comunidad Autónoma. En todo caso se requiere previa y expresa autorización de compatibilidad, que no modifica la jornada ni el horario de los dos puestos y se condiciona a su estricto cumplimiento en ambos.",
           kind: "normative",
-          legalBasis: ["l53-1984-art3"]
+          legalBasis: ["l53-1984-art3"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-1985-151 Art. 3.1 (consolidado 08/06/2024)" }, reviewedAt: "2026-11-03", reviewedBy: "incompatibilidades-cycle3" }
         }
       ],
     },
@@ -181,15 +182,34 @@ export const incompatibilidadesTheory: TheorySection = {
           legalBasis: ["l53-1984-art11"]
         }
       ]
+    },
+    {
+      id: "incomp-ex-2",
+      situation: "Un funcionario de ADIF que es también profesor universitario a tiempo parcial solicita compatibilidad para desempeñar ambos puestos.",
+      application: [
+        {
+          id: "incomp-ex-2-app-1",
+          text: "El art. 3 permite el doble puesto en el sector público cuando se trata de funciones docentes universitarias a tiempo parcial, previa y expresa autorización de compatibilidad que no modifica la jornada ni el horario de ambos puestos y que se condiciona a su estricto cumplimiento. La autorización se efectúa en razón del interés público.",
+          kind: "interpretative",
+          legalBasis: ["l53-1984-art3"],
+          review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-1985-151 Art. 3 y 4 (consolidado 08/06/2024)" }, reviewedAt: "2026-11-03", reviewedBy: "incompatibilidades-cycle3" }
+        }
+      ]
     }
   ],
-
   reviewTakeaways: [
     {
       id: "incomp-takeaway-1",
       text: "Las solicitudes de compatibilidad para actividades privadas deben resolverse mediante resolución motivada en el plazo de dos meses.",
       kind: "interpretative",
       legalBasis: ["l53-1984-art14"]
+    },
+    {
+      id: "incomp-takeaway-3",
+      text: "Art. 3 Ley 53/1984: solo se permite doble puesto público para funciones docente y sanitaria, cargos electivos (arts. 5 y 6) y los que por razón de interés público determine el Consejo de Ministros o el órgano de gobierno de la CCAA. En todo caso se requiere previa y expresa autorización de compatibilidad, sin modificar jornada ni horario, condicionada a su estricto cumplimiento en ambos puestos.",
+      kind: "normative",
+      legalBasis: ["l53-1984-art3"],
+      review: { status: "reviewed", confidence: { level: "high", reason: "Verificado contra BOE-A-1985-151 Art. 3 (consolidado 08/06/2024)" }, reviewedAt: "2026-11-03", reviewedBy: "incompatibilidades-cycle3" }
     },
     {
       id: "incomp-takeaway-2",
