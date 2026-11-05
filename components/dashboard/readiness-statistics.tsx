@@ -11,14 +11,15 @@ export function ReadinessStatistics({ snapshot }: { snapshot: ReadinessSnapshot 
         <h2 className="sr-only" id="readiness-summary-title">Resumen de preparación</h2>
         <dl className="progress-summary__row">
           <div className="progress-metric"><dt className="progress-metric__label">Racha actual</dt><dd className="progress-metric__value">{snapshot.streak} {snapshot.streak === 1 ? "día" : "días"}</dd><dd className="progress-metric__detail">Actividad en días consecutivos de Madrid</dd></div>
-          <div className="progress-metric"><dt className="progress-metric__label">Precisión reciente</dt><dd className="progress-metric__value">{percent(snapshot.accuracy.recent.percentage)}</dd><dd className="progress-metric__detail">Últimos 14 días</dd></div>
-          <div className="progress-metric"><dt className="progress-metric__label">Precisión histórica</dt><dd className="progress-metric__value">{percent(snapshot.accuracy.historical.percentage)}</dd><dd className="progress-metric__detail">Todo el contenido activo</dd></div>
+          <div className="progress-metric"><dt className="progress-metric__label">Precisión reciente oficial</dt><dd className="progress-metric__value">{percent(snapshot.accuracy.recent.percentage)}</dd><dd className="progress-metric__detail">Preguntas oficiales y simulacros · últimos 14 días</dd></div>
+          <div className="progress-metric"><dt className="progress-metric__label">Precisión histórica oficial</dt><dd className="progress-metric__value">{percent(snapshot.accuracy.historical.percentage)}</dd><dd className="progress-metric__detail">Preguntas oficiales activas y simulacros</dd></div>
           <div className="progress-metric"><dt className="progress-metric__label">Dominio vigente</dt><dd className="progress-metric__value">{snapshot.currentDomain.percentage}%</dd><dd className="progress-metric__detail">{snapshot.currentDomain.current}/{snapshot.currentDomain.total} conceptos</dd></div>
         </dl>
       </section>
 
       <section aria-labelledby="lesson-metrics-title" className="data-panel">
         <h2 id="lesson-metrics-title">Rendimiento por lección</h2>
+        <p>Estas cifras de práctica por concepto incluyen preguntas oficiales y preguntas originales revisadas de la plataforma. La tabla de práctica original muestra estas últimas por separado.</p>
         <div className="data-table-wrap">
           <table aria-label="Rendimiento por lección" className="data-table">
             <thead><tr><th>Lección</th><th>Dominio vigente</th><th>Precisión 14 días</th><th>Precisión histórica</th><th>Respuestas</th></tr></thead>

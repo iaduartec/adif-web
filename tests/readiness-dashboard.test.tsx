@@ -88,6 +88,34 @@ describe("adaptive dashboard", () => {
     ]);
   });
 
+  it("uses original-practice evidence to inspect concepts without inflating official readiness", () => {
+    const originalSnapshot = calculateReadiness({
+      now: new Date("2026-08-11T10:00:00Z"),
+      concepts: [{ id: "concept-a", title: "Concepto A", lessonId: "lesson-a", lessonTitle: "Lección A" }],
+      questions: [
+        { id: "official-a", conceptIds: ["concept-a"] },
+        { id: "original-a", conceptIds: ["concept-a"], origin: "original", domain: "english-a2" },
+        { id: "original-b", conceptIds: ["concept-a"], origin: "original", domain: "english-a2" },
+      ],
+      mastery: [],
+      questionAttempts: [
+        { questionId: "official-a", isCorrect: true, elapsedMs: 30_000, mode: "practice", createdAt: "2026-08-11T09:00:00Z" },
+        { questionId: "original-a", isCorrect: false, elapsedMs: 30_000, mode: "practice", createdAt: "2026-08-11T09:00:00Z" },
+        { questionId: "original-b", isCorrect: true, elapsedMs: 30_000, mode: "practice", createdAt: "2026-08-11T09:00:00Z" },
+      ],
+      reviewEvents: [],
+      simulations: [],
+      simulationAttempts: [],
+      simulationAnswers: [],
+      lessonActivity: [],
+    });
+
+    render(<ReadinessStatistics snapshot={originalSnapshot} />);
+
+    expect(screen.getByText("Precisión histórica oficial").parentElement).toHaveTextContent("100%");
+    expect(within(screen.getByRole("table", { name: "Rendimiento por concepto" })).getAllByText("66.67%")).toHaveLength(2);
+  });
+
   it("states insufficient evidence plainly, exposes the first obstacle, and keeps useful empty/action states accessible", () => {
     const { container } = render(
       <AdaptiveDashboard

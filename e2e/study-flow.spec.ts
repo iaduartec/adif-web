@@ -53,6 +53,8 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     await page.goto("/estadisticas");
     await expect(page.locator("h1")).toContainText("Estadísticas de estudio");
     await expect(page.locator("h2:has-text('Precisión por sección oficial')")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Práctica de preguntas originales" })).toBeVisible();
+    await expect(page.getByRole("link", { name: /Practicar Inglés A2/ })).toBeVisible();
     await expect(page.locator("table").first()).toBeVisible();
   });
 });

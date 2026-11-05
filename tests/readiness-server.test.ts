@@ -6,6 +6,7 @@ import {
   ReadinessUnavailableError,
   readReadinessHistory,
 } from "../lib/adaptive/readiness-server";
+import { listOfficialQuestions } from "../lib/content/repository";
 
 describe("readiness server assembly", () => {
   it("maps active content and authenticated history into the pure readiness contract", () => {
@@ -140,6 +141,32 @@ describe("readiness server assembly", () => {
     expect(history.questionAttempts).toHaveLength(501);
     expect(ranges.get("question_attempts")).toEqual([[0, 499], [500, 999]]);
     expect([...ranges.keys()].sort()).toEqual(Object.keys(tableRows).sort());
+  });
+
+  it("includes only reviewed original items in concept practice without reclassifying them as official", async () => {
+    const supabase = {
+      from: vi.fn(() => {
+        const query = {
+          select: vi.fn(),
+          eq: vi.fn(),
+          order: vi.fn(),
+          range: vi.fn(async () => ({ data: [], error: null })),
+        };
+        query.select.mockReturnValue(query);
+        query.eq.mockReturnValue(query);
+        query.order.mockReturnValue(query);
+        return query;
+      }),
+    };
+
+    const result = await assembleReadinessInput(supabase as never, "user-1", new Date("2026-08-11T10:00:00Z"));
+    const originalQuestions = result.questions.filter((question) => question.origin === "original");
+    const officialQuestions = result.questions.filter((question) => question.origin !== "original");
+
+    expect(originalQuestions.length).toBeGreaterThan(0);
+    expect(originalQuestions.every((question) => question.domain && question.conceptIds.length > 0)).toBe(true);
+    expect(officialQuestions).toHaveLength(listOfficialQuestions().length);
+    expect(officialQuestions.every((question) => question.origin === "official")).toBe(true);
   });
 
   it("wraps database failures in a typed safe readiness error", async () => {

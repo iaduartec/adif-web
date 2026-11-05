@@ -1,7 +1,7 @@
-# Diseño pendiente: progreso adaptativo y práctica original
+# Progreso adaptativo y práctica original
 
-**Base revisada:** `bf7148a`
-**Estado:** propuesta; no se modificó implementación ni contenido académico.
+**Base de la auditoría:** `bf7148a`; actualización de implementación: 5 de noviembre de 2026.
+**Estado:** las métricas de preparación ya separan resultados oficiales y práctica original revisada. El plan diario aún no selecciona preguntas originales.
 
 ## Revisión pedagógica por documento del temario
 
@@ -38,40 +38,38 @@ La escala prevista es 0–5, pero solo tendría sentido asignarla después de ev
 
 La codificación de penalización y duración en modelos de 2023–2025 puede seguir describiendo esos modelos cuando sus fuentes y elegibilidad de publicación lo permitan. No debe citarse como regla PNI26/01. Las pruebas de práctica original de inglés y psicometría tampoco acreditan oficialidad, aunque sus etiquetas curriculares coincidan con los nombres y nivel orientativo de las pruebas de las bases. Para una futura simulación integral 2026 se necesitaría la distribución publicada por perfil, reglas específicas de cálculo y tiempos para cada test, y autorización/elegibilidad del material; las bases citadas en V.1 por sí solas no proporcionan esos detalles.
 
-## Hallazgo
+## Hallazgo e implementación
 
 La práctica original revisada persiste intentos en `question_attempts`, pero el catálogo activo para readiness y plan diario se obtiene solo de `listOfficialQuestions()`:
 
 - `lib/adaptive/readiness-server.ts`, función `activeContent()`.
 - `lib/adaptive/daily-plan-server.ts`, función `activeContent()`.
 
-Los intentos originales se excluyen así de evidencia, cobertura y selección de práctica, aunque sus IDs y mapeos de conceptos están disponibles en el repositorio de contenido. En el estado revisado, las correcciones 2023, 2024 y 2025 tienen `publicationStatus: "link_only"`; por tanto, los exámenes históricos no constituyen una alternativa jugable para este universo adaptativo.
+Los intentos originales se registran en `question_attempts`. Antes de esta corrección, el catálogo activo de readiness solo incluía preguntas oficiales, por lo que sus resultados no informaban qué conceptos convenía repasar. Las correcciones 2023, 2024 y 2025 tienen `publicationStatus: "link_only"`; los exámenes históricos no son alternativa jugable para este universo adaptativo.
 
 La persistencia ya dispone de una frontera útil: `app/api/attempts/route.ts` valida que la pregunta original exista y esté revisada, autentica al usuario y registra mediante `record_practice_attempt`. El RPC guarda `auth.uid()` como propietario. La acción de bloques originales también persiste intentos como `practice`; la base rechaza explícitamente `orig-*` con modo `simulation`. No se necesita una tabla de intentos nueva para admitir evidencia adaptativa de originales.
 
-## Diseño propuesto
+Se implementó lo siguiente:
 
-1. Construir un catálogo de aprendizaje con preguntas oficiales elegibles y preguntas originales con `status: "reviewed"`. Cada entrada debe conservar `id`, `conceptIds`, procedencia y dominio. Los originales `draft`, desconocidos, sin conceptos activos o con mapeos retirados quedan fuera.
-2. Reutilizar `question_attempts` y `collectActiveEvidence` para contar IDs activos intentados una sola vez. Mantener las consultas del historial restringidas al `user_id` autenticado; no añadir respuestas correctas ni explicaciones al DTO público.
-3. Mantener los simulacros en su catálogo actual de exámenes oficiales. Una sesión por bloques de preguntas originales continúa siendo práctica individual, no `simulation_attempts` ni un examen oficial.
-4. Conservar explícitamente las estadísticas oficiales actuales: numerador y denominador basados solo en preguntas oficiales elegibles. Añadir métricas propias para originales (por dominio) y una señal de evidencia de estudio global. La pantalla debe etiquetar por separado “oficial” y “original”; no reutilizar una cobertura combinada bajo el rótulo de cobertura oficial.
-5. El plan diario puede proponer práctica de IDs originales revisados además de oficiales. El destino debe resolver los IDs `orig-*` a rutas de práctica original y mantener intacto el destino `/simulacros/{examId}` para simulaciones oficiales.
+- `readiness-server.ts` incorpora solo preguntas originales `reviewed`, conservando su procedencia, dominio e IDs de conceptos.
+- Los resultados originales contribuyen a la precisión de concepto y lección para orientar el repaso.
+- Cobertura, muestra, precisión global oficial, simulacros y ritmo usan exclusivamente preguntas oficiales. La tabla original muestra métricas por modalidad y enlaces de práctica independientes.
+- La pantalla explica que las cifras por concepto y lección combinan práctica oficial y original revisada. La práctica original no se presenta como resultado del examen.
+- Se añadieron regresiones para comprobar que originales no alteran los indicadores oficiales y sí aparecen en sus métricas separadas.
 
-## Riesgos y límites
+## Riesgos y límites pendientes
 
-- **Significado de readiness:** hoy `coverage` divide por `input.questions.length` y las métricas de precisión usan ese mismo universo. Añadir originales directamente a `input.questions` cambia el significado histórico de esas cifras. La implementación requiere separar métricas oficiales de la señal unificada de evidencia antes de ampliar el catálogo.
+- **Plan diario:** su conjunto de práctica y el umbral de evidencia siguen usando preguntas oficiales. Antes de incluir IDs originales se requieren destinos correctos, claves estables y compatibilidad con acciones ya guardadas.
 - **Compatibilidad de tareas:** las claves de tareas diarias, acciones de posponer/reemplazar y enlaces están persistidos. Las claves para originales deben ser estables e incorporar el ID de la pregunta; las acciones antiguas han de seguir resolviéndose igual.
 - **Modo de intento:** los bloques originales guardan `mode: "practice"`, incluso cuando la interfaz entrega un bloque al final. No se deben inferir simulacros oficiales del modo ni de la cantidad de preguntas.
 - **Proveniencia:** solo originales revisados pueden entrar. No inferir que “revisado” equivale a contenido oficial: sus métricas siguen marcadas como originales.
 - **Migración del registro privado:** las claves de respuesta originales también están representadas en registros SQL generados. Si cambian IDs o claves de respuesta académicas, hay que regenerar/revisar el registro y sus contratos. Esta propuesta no autoriza cambios en esos datos.
 
-## Pruebas de integración necesarias
+## Pruebas que siguen pendientes
 
-- Una pregunta original revisada intentada por el usuario aumenta la evidencia adaptativa y el progreso original, pero no cambia numerador ni denominador de las estadísticas oficiales.
+- Verificar datos y persistencia con Supabase real y dos usuarios; las pruebas actuales cubren lógica y catálogo, no RLS remoto.
 - Originales `draft`, IDs desconocidos, mapeos a conceptos retirados e intentos de otro usuario no cuentan.
 - La deduplicación por ID se mantiene si una pregunta tiene varios intentos o aparece en más de una fuente de evidencia.
-- El plan puede seleccionar preguntas originales revisadas no intentadas; sus enlaces siguen el flujo original y los simulacros siguen apuntando solo a exámenes oficiales elegibles.
+- Añadir originales al plan diario con enlaces al flujo original y mantener los simulacros separados.
 - Los bloques originales continúan persistiendo como `practice`; ningún intento original crea `simulation_attempts`.
 - Las pruebas existentes de aislamiento/RLS, DTO público y acceso al corrector continúan cubriendo sus límites: `supabase/tests/original_practice_isolation.sql`, `tests/original-practice-attempt.test.ts`, `tests/original-practice-session.test.tsx`.
-
-No se implementó la integración en esta revisión: el modelo actual de `ReadinessSnapshot` expone cobertura y precisión sin procedencia, así que ampliar el catálogo antes de añadir esas fronteras haría parecer estadísticas oficiales unas métricas que incluirían preguntas originales.

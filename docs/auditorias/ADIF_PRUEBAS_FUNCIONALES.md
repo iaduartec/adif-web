@@ -20,9 +20,10 @@ Producción respondió en `/login` con HTTP 200; la API de Vercel identificó el
 
 - `pnpm typecheck` y `pnpm verify:content`: correctos.
 - `pnpm lint`: correcto, con tres avisos y ningún error.
-- `pnpm test`: 126 archivos y 825 pruebas correctas.
+- `pnpm test`: 126 archivos y 828 pruebas correctas. Se añadió una regresión para asegurar que la práctica original aporta señales por concepto sin cambiar la cobertura, muestra, precisión ni ritmo oficiales.
 - Playwright dirigido a simulacros y concurrencia: 13 pruebas correctas. La batería completa con un servidor simulado recién iniciado terminó con **37/37** pruebas correctas; incluye teclado, vista de 320 px y móvil de 390 px. Sigue sin acreditar backend real.
 - Después de añadir el estado editorial por afirmación se repitió `e2e/academic-visible-content.spec.ts`: 3/3 pruebas correctas con Chromium y mocks. La batería completa de 37 se había ejecutado antes de ese último cambio.
+- Tras integrar la práctica original en readiness y añadir enlaces por modalidad en estadísticas, `e2e/study-flow.spec.ts`: 1/1 prueba correcta con Chromium y mocks.
 - `pnpm build` con URL y clave públicas ficticias: correcto; no verifica la configuración de un entorno real.
 
 La página de la convocatoria en ADIF respondió HTTP 403 a la consulta directa, pero Firecrawl pudo leer el 5 de noviembre la [página de PNI26/01](https://www.adif.es/w/pni26-01-personal-operativo), sus bases y los adjuntos de CEM y Declaración sobre la Red. Se obtuvieron extracciones textuales, no hashes de los binarios. La [versión consolidada del RD 346/2011 en el BOE](https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834) respondió HTTP 200 y se consultó el anexo III, apartado 4.5.3.i para la corrección del RITU.

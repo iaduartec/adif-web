@@ -1,5 +1,6 @@
 import { lessonTheories } from "../../content/lesson-theory";
 import { listLessons, listOfficialExams, listOfficialQuestions } from "../content/repository";
+import { listOriginalPracticeQuestions } from "../content/original-practice-repository";
 import type { createServerClient } from "../supabase/server";
 import { fetchPaginatedRows } from "../supabase/paginated-query";
 import type {
@@ -119,6 +120,9 @@ export function assembleReadinessInputFromRows({
 
 function activeContent(): ReadinessContentRows {
   const lessonTitleById = new Map(listLessons().map((lesson) => [lesson.slug, lesson.title]));
+  const activeConceptIds = new Set(Object.values(lessonTheories).flatMap((theory) => (
+    theory.concepts.map((concept) => concept.id)
+  )));
   return {
     concepts: Object.entries(lessonTheories).flatMap(([lessonId, theory]) => (
       theory.concepts.map((concept) => ({
@@ -128,10 +132,21 @@ function activeContent(): ReadinessContentRows {
         lessonTitle: lessonTitleById.get(lessonId) ?? lessonId,
       }))
     )),
-    questions: listOfficialQuestions().map((question) => ({
-      id: question.id,
-      conceptIds: question.conceptIds,
-    })),
+    questions: [
+      ...listOfficialQuestions().map((question) => ({
+        id: question.id,
+        conceptIds: question.conceptIds,
+        origin: "official" as const,
+      })),
+      ...listOriginalPracticeQuestions({ status: "reviewed" })
+        .filter((question) => question.conceptIds.some((conceptId) => activeConceptIds.has(conceptId)))
+        .map((question) => ({
+          id: question.id,
+          conceptIds: question.conceptIds,
+          origin: "original" as const,
+          domain: question.domain,
+        })),
+    ],
     simulations: listOfficialExams().map((exam) => ({
       id: exam.id,
       title: exam.title,
