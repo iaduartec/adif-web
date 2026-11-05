@@ -69,6 +69,13 @@ function ClaimWithTraceability({
   const basis = claim.legalBasis
     .map((id) => sources.find((source) => source.id === id))
     .filter((source): source is LegalReference => Boolean(source));
+  const editorialReviewLabel = claim.review?.status === "reviewed"
+    ? `Revisión editorial registrada${claim.review.reviewedAt ? ` · ${claim.review.reviewedAt}` : ""}`
+    : claim.review?.status === "draft"
+      ? "Contenido en borrador"
+      : claim.review?.status === "needs_review"
+        ? "Revisión editorial pendiente"
+        : "Sin dato de revisión editorial";
 
   return (
     <div
@@ -96,6 +103,7 @@ function ClaimWithTraceability({
         </p>
       )}
       <p className="text-sm text-gray-700 leading-relaxed">{claim.text}</p>
+      <p className="text-xs text-gray-600">{editorialReviewLabel}</p>
       {claim.kind === "interpretative" && (
         <p className="text-xs italic text-gray-500">
           Esta interpretación resume el efecto práctico del precepto.
