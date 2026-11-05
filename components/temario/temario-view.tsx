@@ -36,7 +36,7 @@ const scopeLabels: Record<Scope, { title: string; hint: string }> = {
 };
 
 const nodeStatusLabels: Record<SyllabusNode["status"], { label: string; tone: string }> = {
-  covered: { label: "Cubierto", tone: "bg-emerald-50 text-emerald-800 border-emerald-200" },
+  covered: { label: "Cobertura declarada", tone: "bg-emerald-50 text-emerald-800 border-emerald-200" },
   partial: { label: "Parcial", tone: "bg-amber-50 text-amber-800 border-amber-200" },
   missing: { label: "Sin cubrir", tone: "bg-rose-50 text-rose-800 border-rose-200" },
   "reference-only": { label: "Referencia", tone: "bg-gray-50 text-gray-700 border-gray-200" },
@@ -231,10 +231,13 @@ export function TemarioView() {
     <div className="temario-page space-y-8">
       <header className="space-y-3 border-b border-rail pb-6">
         <p className="text-xs font-bold uppercase tracking-widest text-accent">PNI26/01 · Itinerario 26/12PO</p>
-        <h1 className="text-3xl font-bold leading-tight text-ink md:text-4xl">Temario oficial completo</h1>
+        <h1 className="text-3xl font-bold leading-tight text-ink md:text-4xl">Temario de la convocatoria</h1>
         <p className="max-w-4xl text-base leading-relaxed text-gray-700">
-          Los {officialItems.length} documentos que ADIF publica para la convocatoria, condensados en una sola lectura.
-          Cada documento resume lo esencial, sus conceptos clave y en qué unidades se divide.
+          Los {officialItems.length} documentos identificados por ADIF para esta convocatoria están organizados por materia.
+          La teoría y los resúmenes están en revisión: consulta los documentos oficiales y el estado de cada unidad para completar tu estudio.
+        </p>
+        <p className="max-w-4xl text-sm leading-relaxed text-gray-700">
+          Los estados indican la cobertura declarada del material; no acreditan por sí solos su exactitud ni una revisión independiente.
         </p>
         <dl className="flex flex-wrap gap-x-8 gap-y-3 pt-1">
           <div>
