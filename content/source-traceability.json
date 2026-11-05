@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-05",
+  "purpose": "Separa tres estados que antes se confundian en un unico campo: (1) la integridad del artefacto descargado, (2) la validez academica de las afirmaciones trazadas a una fuente y (3) la identidad de una edicion documental. Este fichero es aditivo: no modifica content/source-manifest.json ni relaja ningun validador.",
+  "policy": {
+    "academicStatus": "content/source-manifest.json -> sources[].status. Describe la validez academica de la version de la fuente. Una discrepancia de SHA-256 NO la rebaja de forma automatica: la literalidad de un claim solo se revisa contra el texto, no contra un hash.",
+    "artifactIntegrity": "Este fichero -> artifactIntegrity[]. 'pending' significa que el SHA-256 guardado no se reproduce entre el manifiesto y la observacion de 2026-10-15, o que la pagina es mutable y ha cambiado despues; 'confirmed' significa que ambos registros coinciden.",
+    "academicStatusAction": "Siempre 'unchanged' en este volcado. Cualquier cambio de status debe hacerse en el manifiesto, por decision academica explicita y con su propia evidencia.",
+    "literalness": "'reverified' solo cuando se ha contrastado el texto de los articulos citados contra una descarga fechada; 'not_rechecked' cuando esta pasada no lo ha hecho. No es un juicio de validez, es el alcance de la comprobacion realizada."
+  },
+  "artifactIntegrity": [
+    {
+      "sourceId": "CE",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "5eea3f3ea72505efda06a1ee79adc7ba4cfe1e33701a22f113e384345cf092e7",
+      "observedSha256": "3b7d76b5016c694a987d1a0e5b7eb6756dafc28eaaa08b7b6b9e1b9c42bb8253",
+      "observedContentLength": 294770,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "Directiva 2014/30/UE",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "8e448cc712aefedff6ac6ac97b83af88d7b1fa8d7b059c06846ad89ca79aaee3",
+      "observedAt": "2026-10-15",
+      "note": "Manifiesto y observacion coinciden."
+    },
+    {
+      "sourceId": "LO 3/2007",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "8ed83a0542dc970eb27461f68eba4e73cb8577552594878a7966b07d61869b85",
+      "observedSha256": "0e36e6190232a6b7698f15c75959c6d1be4b02d6b19a9e2390cbb62ab242314d",
+      "observedContentLength": 417987,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "Ley 31/1995",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "b7726f10a62ef4ec591bec6b1c383878c71ea5db9d1ff1c610ad5b23ce186d51",
+      "observedSha256": "2ba0028cb3ab46347e5f5c827b35172ecd8b111997aa30e2e926aa46df269725",
+      "observedContentLength": 439265,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "Ley 38/2015",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "5c5574a71c8b1716cde16e68f4cedd9f5da0b7ec124d8433978baf490d43ba30",
+      "observedSha256": "11d668978465b37fd4c409e6e3387bb8861ebe8f6fa5148540b6cc37544e3c2b",
+      "observedContentLength": 777355,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "Ley 53/1984",
+      "sourceVersion": "consolidated-page-2026-10-15-current",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "34f97d4930df3cb6a4a0bb1e9f061e346d793beb6d7890d5474c7a6d122a2d86",
+      "observedAt": "2026-10-15",
+      "note": "Manifiesto y observacion coinciden."
+    },
+    {
+      "sourceId": "RD 2395/2004",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "38a1a754580bf3768843f43847175dfbae3e76ad39afafaa07a3985e55c73719",
+      "observedSha256": "932cc7e156d9fbac44e2d5ffb47dde8efe6296df1fc15e7261cc2ac1fa17206f",
+      "observedContentLength": 178311,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "RD 346/2011",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "2140d0ef0de61d69ba1824f8b73be6006b15460263dc0071a6e0b5e477cefbe4",
+      "observedSha256": "cacb9bd1ad115161a6cea695cfd00a87c8d168cb60c8bf96b26f1b741749c00e",
+      "observedContentLength": 509095,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "RD 664/2015",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "6e5ded12129553a78a8bb307467da73b7160e10b8b8a0beda4141ce3a0262a1b",
+      "observedSha256": "119dae6fa158b769b1ab8a3a66d669482e1b268977b659f6f070c87ab804668a",
+      "observedContentLength": 971114,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "RD 773/1997",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "cbeb25062025e0a9365d29807b5ecbef5a1f894f0ae8e06e87328abdfd8beda9",
+      "observedSha256": "a93407f7dd3f33a09c86bcfd0b7f6c77722bc4fd5a44b5169a3ea1bb70d2cc7f",
+      "observedContentLength": 151571,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "RD 902/2020",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "845aa157ee45fa651f0687de5138f83eb5761a0b1a97d2be21464dacadda7342",
+      "observedSha256": "5a5ce51af476ae794e946f7825bf5170a7e5f860aa24f34397b46aa11b85ccd7",
+      "observedContentLength": 92746,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "Real Decreto 186/2016",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "2d89d75c003b130bfeed1498af2cb7a2c881f2c2d79ef4fc228f7e120e3a8000",
+      "observedSha256": "391ec2f3f0ed31cdf31f4d05560dc40e8edecc3dc7c6e5e4f86884efa024d3eb",
+      "observedContentLength": 183813,
+      "observedAt": "2026-10-15",
+      "literalness": "not_rechecked",
+      "note": "Pagina consolidada del BOE: artefacto mutable. El hash del manifiesto y el de la observacion no coinciden."
+    },
+    {
+      "sourceId": "TREBEP",
+      "sourceVersion": "consolidated-page-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "pending",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "manifestSha256": "87b07fe3501aef3274a478f9e9771a1a9a358680755f32df399eeb618d0938ed",
+      "observedSha256": "59613fcca234f3f5d5160055caf84a78b3971ab3919e243f6fe0fcdeb9ae9c20",
+      "observedContentLength": 523730,
+      "observedAt": "2026-10-15",
+      "literalness": "reverified",
+      "literalnessEvidence": "El 2026-11-04 se cotejaron los articulos 2, 7, 52, 53, 54, 93 y 94 contra el PDF consolidado oficial del BOE (59 paginas, SHA-256 11cfda7fd4cbcb38193199c24af00d2e8538ac4897d4d8c73fff11cbaa5671cb). El 2026-11-05 se repitio la comprobacion sobre tres descargas consecutivas de la pagina (523671 bytes, SHA-256 a0549642ef72da2d35a0af54db751d1e1c6fb232fa3a2b0b970ac8661add7c24, identicas entre si): 53.12, 54.3 y 54.5 siguen literales. La validez academica no se rebaja; el ancla de identidad estable es el PDF inmutable, no la pagina.",
+      "recheck": {
+        "checkedAt": "2026-11-05",
+        "sha256": "a0549642ef72da2d35a0af54db751d1e1c6fb232fa3a2b0b970ac8661add7c24",
+        "contentLength": 523671,
+        "deterministicFetches": 3
+      },
+      "note": "Caso que origino el diagnostico: la pagina es determinista por descarga pero cambia entre semanas. Integridad del artefacto pendiente; literalidad reverificada."
+    },
+    {
+      "sourceId": "PNI26-COMMON-01",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "48d693e56648ea0684aba74f8655b8b3c3c58bd339d6f0c24ca3c54c1d168804",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-COMMON-02",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "9c183272237594b170297b2290cad6d7157547a8f2b0aa5f710d210c85d0db04",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-COMMON-03",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "e88d928cb3ccc90622e8accc9f7a6ede4f0ec0e5cf61e37617fe3231bda6fd0c",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-COMMON-04",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "362a3f68b7b81c0464515cf1ee026c785e6b1594395042d3e1d69c9255a4b080",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-COMMON-05",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "dd083f554a10d264053ba324ecead1f1fee931dae9830cb3c27db3a9b43a1997",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-COMMON-06",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "e3f3629222f466b80f9e5e00c7529a4e0ca586ee719d9ba2b045b9f470f8aced",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-12PO-SPECIFIC-01",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "3d1a475459d64a06d66dc6516d1710449dc287d270f3a02c70ab48e043e3c053",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-12PO-SPECIFIC-02",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "2697bebd7bac056f669fd575b7e84a057c658628ef30568fe9dba034cc9f015e",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "PNI26-12PO-SPECIFIC-03",
+      "sourceVersion": "adif-live-2026-10-15",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "6acd35c6778bd1f01118d9630b4724ee1b9b1ff2c060547b15ee7dda1643c45e",
+      "observedAt": "2026-10-15",
+      "note": "PDF de ADIF: manifiesto y observacion coinciden. Clasificacion conservada."
+    },
+    {
+      "sourceId": "ADIF PNI26/01",
+      "sourceVersion": "page-capture-2026-10-15",
+      "hashTarget": "downloaded-page",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "needs_check",
+      "academicStatusAction": "unchanged",
+      "sha256": "82bada645897d3d2a2d9ee4ef29615ff5604bb960948cec2b94dbb7daaeea0f3",
+      "observedAt": "2026-10-15",
+      "note": "Manifiesto y observacion coinciden. La integridad del artefacto dice 'confirmed'; el status academico 'needs_check' se conserva por separado, sin mezclar los dos estados."
+    },
+    {
+      "sourceId": "DR 2027 Libro 2027",
+      "sourceVersion": "edition-2027-2026-07-31",
+      "hashTarget": "downloaded-file",
+      "artifactIntegrity": "confirmed",
+      "academicStatus": "verified",
+      "academicStatusAction": "unchanged",
+      "sha256": "0c9d55a6dd82ffd5884f6425479be1d8ba9dcd40f1f2fc26e03fc6eb81649a62",
+      "observedAt": "2026-10-15",
+      "note": "PDF de la edicion 31-07-2026: manifiesto y observacion coinciden. No sustituye la copia preservada V.0 ED 27/02/2026, que sigue pendiente de cotejo."
+    }
+  ],
+  "auxiliaryArtifacts": [
+    {
+      "id": "dr-adif-av-2027-libro-pdf",
+      "role": "auxiliary-corroboration",
+      "versioned": false,
+      "path": "pdf/20251212_01_DR Adif_AV_2027_Libro.pdf",
+      "sha256": "37f3fa56a645917ad20b2363e9e3c8256754f812c4ac8f116ffdb429545b1a7c",
+      "sizeBytes": 12706190,
+      "pageCount": 457,
+      "entity": "ADIF-Alta Velocidad",
+      "edition": "V.0 (ED 12/12/2025)",
+      "document": "Declaracion sobre la Red 2027, libro completo (diez apartados)",
+      "pdfCreated": "D:20251212094230+01'00'",
+      "provenance": "Aportado por el usuario el 2026-11-05 en pdf/. El pie de pagina ADIF-AV_DECLARACION SOBRE LA RED 2027_ V.0 (ED 12/12/2025) aparece en 443 de las 457 paginas.",
+      "notVersionedReason": "Es material auxiliar de corroboracion, no temario: el programa (content/syllabus.ts:192) exige la DR de ADIF, capitulos I y II, y este es el documento completo de otra entidad y otra edicion. Se conserva en disco y se excluye del repositorio mediante .gitignore; solo se versionan estos metadatos.",
+      "supersedes": []
+    },
+    {
+      "id": "dr-adif-av-2027-libro-txt",
+      "role": "derived-text",
+      "versioned": false,
+      "path": "pdf/txt/20251212_01_DR Adif_AV_2027_Libro.txt",
+      "sha256": "c799311f2e6802c57206fbeca2ab0a518f39e5f9b45865f6a30ba3619e133a96",
+      "sizeBytes": 1280737,
+      "derivedFrom": "dr-adif-av-2027-libro-pdf",
+      "extractor": "pypdf, 457 paginas, 1 247 873 caracteres normalizados",
+      "provenance": "Extraccion local del PDF anterior siguiendo la convencion de pdf/txt/.",
+      "notVersionedReason": "Artefacto derivado del PDF auxiliar; se conserva en disco para consultas de cotejo pero no entra en el repositorio principal.",
+      "supersedes": []
+    }
+  ],
+  "openDiscrepancies": [
+    {
+      "id": "ertms-2027-national-total-gap",
+      "state": "pending",
+      "type": "numeric",
+      "causeDemonstrated": false,
+      "cause": null,
+      "summary": "3.121,1 km declarados como total de lineas con ERTMS en Espana menos 384,5 km atribuidos a Adif y 2.736,2 km atribuidos a ADIF-Alta Velocidad dejan 0,4 km sin atribuir. La causa no esta demostrada.",
+      "demonstratedFacts": [
+        {
+          "document": "DR 2027 de ADIF, V.0 (ED 27/02/2026), capitulos I y II",
+          "locator": "1.2.2 Grandes Cifras (p. 21) y 2.2 (p. 35)",
+          "fact": "Líneas Equipadas con ERTMS 384,5 Km. El bloque (*) de infraestructura se remite a «*1ª versión trimestral 2026 de Tramificación Común Adif. Cirtra - 1 de enero 2026». El texto de 2.2 dice: «En España existen actualmente 3.121,1 Km. de líneas que operan con ERTMS, de las cuales 384,5 Km. corresponden a infraestructuras titularidad de Adif»."
+        },
+        {
+          "document": "DR 2027 de ADIF-Alta Velocidad, V.0 (ED 12/12/2025), libro completo",
+          "locator": "1.2.2 Grandes Cifras (p. 21) y 2.2 (p. 35)",
+          "fact": "Líneas Equipadas con ERTMS 2.736,2 Km. El bloque (*) se remite a «*4ª versión trimestral 2025 de Tramificación Común / Citra - 1 de octubre 2025». El texto de 2.2 dice: «En España existen actualmente 3.121,1 Km. de líneas que operan con ERTMS, de los cuales 2.736,2 Km. corresponden a infraestructura titularidad de ADIF- Alta Velocidad»."
+        },
+        {
+          "document": "Ambos documentos",
+          "locator": "1.2.2 y 2.2",
+          "fact": "Las dos cifras por red proceden de versiones trimestrales distintas de CIRTRA/Tramificación Común (1 de enero de 2026 frente a 1 de octubre de 2025), con tres meses de diferencia en la fecha de computo. El total nacional 3.121,1 km se reproduce identico en ambos sin indicar fuente, fecha de computo, criterio de medida (km de linea frente a km de via) ni desglose por administrador."
+        }
+      ],
+      "excludedExplanations": [
+        "Redondeo decimal: no se puede demostrar que explique 0,4 km. La suma de dos valores con un decimal solo admite un error de +-0,1 km por operando, y ninguno de los dos documentos describe el calculo del total. Se retira la atribucion anterior «0,4 km sin atribuir por redondeo».",
+        "Complementariedad demostrada de las dos redes: cada documento atribuye su propia cifra a su propia titularidad, pero ninguno afirma que el resto del total corresponda al otro administrador ni lo concilia aritmeticamente."
+      ],
+      "notDemonstrated": [
+        "Que el total nacional incluya o no infraestructura de otros administradores (2.2.2 cita a Línea Figueras Perpignan, S.A., sin detallar su dotacion ERTMS).",
+        "Que la diferencia de fechas de computo explique exactamente 0,4 km.",
+        "El criterio de medida y la fecha de computo del total de 3.121,1 km."
+      ],
+      "nextStep": "Contrastar el total con una fuente que explicite su fecha y su desglose por administrador, o con el Anexo G / catalogo de ejes y lineas de ambas DR. Hasta entonces, registrar como discrepancia pendiente y no usar la suma como prueba de que la cifra de 384,5 km de la teoria esta bien atribuida."
+    }
+  ],
+  "pendingSourceIdentities": [
+    {
+      "id": "dr-adif-2027-v0-2026-02-27",
+      "state": "pending",
+      "entity": "ADIF",
+      "edition": "V.0 (ED 27/02/2026)",
+      "document": "Declaracion sobre la Red 2027, capitulos I y II",
+      "artifactPath": "pdf/4. Declaración sobre la Red Adif 2027. Capítulos I y II.pdf",
+      "sha256": "796b26bdd38957ba31663b56dcda259d36de199c3cf1b537cfa3111d0cd029f2",
+      "manifestVersion": "preserved-pdf-v0-ed-2026-02-27",
+      "manifestStatus": "needs_check",
+      "reason": "El enlace oficial de ADIF responde HTTP 403 desde este entorno, incluso con un navegador real, por lo que no se ha podido acreditar la identidad byte a byte con la edicion vigente de 31-07-2026. El contenido del capitulo II si esta cotejado contra la copia preservada.",
+      "notSupersededBy": [
+        "dr-adif-av-2027-libro-pdf"
+      ],
+      "notSupersededReason": "El documento de ADIF-Alta Velocidad V.0 (ED 12/12/2025) pertenece a otra entidad y otra edicion; sirve como corroboracion cruzada del regimen de canones, no como sustitucion de la fuente del temario."
+    }
+  ]
+}

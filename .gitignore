@@ -45,3 +45,13 @@ __pycache__/
 !.opencode/
 !opencode.json
 # <<< project-bridge <<<
+
+# >>> auxiliary source artifacts >>>
+# ADIF-Alta Velocidad DR 2027 "Libro": corroboracion auxiliar, NO temario.
+# Se conserva en disco; solo se versionan sus metadatos de procedencia en
+# content/source-traceability.json. El temario exige la DR de ADIF cap. I-II.
+/pdf/20251212_01_DR Adif_AV_2027_Libro.pdf
+/pdf/txt/20251212_01_DR Adif_AV_2027_Libro.txt
+# Sidecar NTFS de descarga desde Windows, no es contenido del documento.
+/pdf/*:Zone.Identifier
+# <<< auxiliary source artifacts <<<
