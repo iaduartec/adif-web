@@ -878,5 +878,1040 @@
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
+  },
+  {
+    "id": "orig-a2-present-simple-002",
+    "domain": "english-a2",
+    "topicId": "present-simple",
+    "topic": "Present Simple",
+    "skill": "GRAMMAR",
+    "prompt": "Every weekday, the station ___ at six in the morning.",
+    "options": [
+      {
+        "key": "A",
+        "text": "open"
+      },
+      {
+        "key": "B",
+        "text": "opens"
+      },
+      {
+        "key": "C",
+        "text": "opening"
+      },
+      {
+        "key": "D",
+        "text": "opened"
+      }
+    ],
+    "answer": "B",
+    "explanation": "Every weekday expresa una rutina; con the station, tercera persona singular, corresponde opens. Open no concuerda; opening necesita auxiliar y opened es pasado.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "present-simple"
+    ],
+    "conceptIds": [
+      "ingles-topic-present-simple"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-past-simple-002",
+    "domain": "english-a2",
+    "topicId": "past-simple",
+    "topic": "Past Simple",
+    "skill": "GRAMMAR",
+    "prompt": "Yesterday, we ___ the train because we arrived late.",
+    "options": [
+      {
+        "key": "A",
+        "text": "miss"
+      },
+      {
+        "key": "B",
+        "text": "missing"
+      },
+      {
+        "key": "C",
+        "text": "missed"
+      },
+      {
+        "key": "D",
+        "text": "misses"
+      }
+    ],
+    "answer": "C",
+    "explanation": "Yesterday sitúa el hecho en pasado: missed es el pasado regular de miss. Las otras formas no expresan aquí una acción terminada en pasado.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "past-simple"
+    ],
+    "conceptIds": [
+      "ingles-concept-1"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-signs-notices-002",
+    "domain": "english-a2",
+    "topicId": "signs-notices",
+    "topic": "Signs and notices",
+    "skill": "SIGN",
+    "prompt": "The notice says: “Staff only”. Who may enter?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only employees"
+      },
+      {
+        "key": "B",
+        "text": "All passengers"
+      },
+      {
+        "key": "C",
+        "text": "Only children"
+      },
+      {
+        "key": "D",
+        "text": "Nobody"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Staff significa personal: el aviso reserva la entrada a empleados. No autoriza a todos los pasajeros ni indica que nadie pueda entrar.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "signs-notices"
+    ],
+    "conceptIds": [
+      "ingles-topic-signs-notices"
+    ],
+    "errorCategory": "SIGN",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-comprehension-002",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "The 10:15 bus is cancelled. A replacement bus leaves at 10:45 from stop B. Where should passengers wait for the replacement?",
+    "options": [
+      {
+        "key": "A",
+        "text": "At stop A"
+      },
+      {
+        "key": "B",
+        "text": "At stop B"
+      },
+      {
+        "key": "C",
+        "text": "At the railway ticket office"
+      },
+      {
+        "key": "D",
+        "text": "At the airport"
+      }
+    ],
+    "answer": "B",
+    "explanation": "El aviso dice que el autobús de sustitución sale de stop B. La hora y la cancelación aportan contexto; ninguna de las otras ubicaciones aparece como parada de salida.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-station-001",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Read the notice.\n\nRIVER PARK STATION\nThe lift is out of service until Friday and will reopen on Friday. Passengers with heavy bags can use the ramp beside Platform 2. For help, speak to a member of staff.\n\nOn which day will the lift reopen?",
+    "options": [
+      {
+        "key": "A",
+        "text": "On Friday"
+      },
+      {
+        "key": "B",
+        "text": "On Saturday"
+      },
+      {
+        "key": "C",
+        "text": "On Thursday"
+      },
+      {
+        "key": "D",
+        "text": "The notice gives no day"
+      }
+    ],
+    "answer": "A",
+    "explanation": "El aviso indica que el ascensor volverá a funcionar el viernes. El jueves es antes de la reapertura, el sábado es un día después y el texto sí especifica la fecha.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-station-002",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Read the notice.\n\nRIVER PARK STATION\nThe lift is out of service until Friday and will reopen on Friday. Passengers with heavy bags can use the ramp beside Platform 2. For help, speak to a member of staff.\n\nWhy might a passenger with heavy bags use the ramp?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It leads directly to the ticket office."
+      },
+      {
+        "key": "B",
+        "text": "It is an alternative while the lift is unavailable."
+      },
+      {
+        "key": "C",
+        "text": "A member of staff will carry every bag there."
+      },
+      {
+        "key": "D",
+        "text": "It is the only route open on Friday."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El ascensor está fuera de servicio y el aviso recomienda la rampa a quienes llevan equipaje pesado: es la alternativa disponible. No dice que lleve a taquilla, que el personal cargue las bolsas ni que sea la única ruta el viernes.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-station-003",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Read the notice.\n\nRIVER PARK STATION\nThe lift is out of service until Friday and will reopen on Friday. Passengers with heavy bags can use the ramp beside Platform 2. For help, speak to a member of staff.\n\nWhich is the best summary of the notice?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Train times have changed, so passengers should wait outside."
+      },
+      {
+        "key": "B",
+        "text": "Only station staff may use Platform 2."
+      },
+      {
+        "key": "C",
+        "text": "The lift is unavailable until Friday; passengers can use the nearby ramp or ask staff for help."
+      },
+      {
+        "key": "D",
+        "text": "The ramp will close when the lift reopens."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La opción correcta reúne los datos principales: cuándo vuelve el ascensor, qué alternativa se ofrece y a quién pedir ayuda. El aviso no cambia horarios, no restringe el andén al personal ni dice que la rampa vaya a cerrar.",
+    "difficulty": 3,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-email-001",
+    "domain": "english-a2",
+    "topicId": "emails",
+    "topic": "Short emails",
+    "skill": "READING",
+    "prompt": "Read the email.\n\nHi Leo,\nI have booked a table for four at Green Café for 7:30 tonight. My bus arrives at 7:20, so please order some water if you get there first. The café is opposite the library.\nSee you,\nNina\n\nWhat is Nina mainly doing in this email?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Asking Leo to cancel a table."
+      },
+      {
+        "key": "B",
+        "text": "Telling Leo that she cannot come tonight."
+      },
+      {
+        "key": "C",
+        "text": "Giving Leo directions to the bus station."
+      },
+      {
+        "key": "D",
+        "text": "Confirming their café plan and explaining what to do if Leo arrives first."
+      }
+    ],
+    "answer": "D",
+    "explanation": "Nina confirma la cena y añade una instrucción por si Leo llega antes. No cancela la reserva, no dice que falte a la cita ni le da indicaciones para ir a la estación de autobuses.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "emails"
+    ],
+    "conceptIds": [
+      "ingles-topic-emails"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-email-002",
+    "domain": "english-a2",
+    "topicId": "emails",
+    "topic": "Short emails",
+    "skill": "READING",
+    "prompt": "Read the email.\n\nHi Leo,\nI have booked a table for four at Green Café for 7:30 tonight. My bus arrives at 7:20, so please order some water if you get there first. The café is opposite the library.\nSee you,\nNina\n\nNina’s bus is due at 7:20 and the table is booked for 7:30. What should Leo do if he gets to the café before her?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Wait at the bus station until 7:30."
+      },
+      {
+        "key": "B",
+        "text": "Order a coffee for everyone."
+      },
+      {
+        "key": "C",
+        "text": "Order some water."
+      },
+      {
+        "key": "D",
+        "text": "Go into the library to find Nina."
+      }
+    ],
+    "answer": "C",
+    "explanation": "Nina pide a Leo que encargue agua si llega primero. No le pide esperar en la estación, pedir café ni buscarla dentro de la biblioteca.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "emails"
+    ],
+    "conceptIds": [
+      "ingles-topic-emails"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-email-003",
+    "domain": "english-a2",
+    "topicId": "emails",
+    "topic": "Short emails",
+    "skill": "READING",
+    "prompt": "Read the email.\n\nHi Leo,\nI have booked a table for four at Green Café for 7:30 tonight. My bus arrives at 7:20, so please order some water if you get there first. The café is opposite the library.\nSee you,\nNina\n\nLeo knows where the library is. Which direction in the email will help him find Green Café?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It is behind the library."
+      },
+      {
+        "key": "B",
+        "text": "It is opposite the library."
+      },
+      {
+        "key": "C",
+        "text": "It is inside the library."
+      },
+      {
+        "key": "D",
+        "text": "It is next to the bus station."
+      }
+    ],
+    "answer": "B",
+    "explanation": "Opposite significa enfrente de: el café está frente a la biblioteca. No está detrás ni dentro de ella, y el correo no lo sitúa junto a la estación.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "emails"
+    ],
+    "conceptIds": [
+      "ingles-topic-emails"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-message-001",
+    "domain": "english-a2",
+    "topicId": "short-messages",
+    "topic": "Short messages",
+    "skill": "READING",
+    "prompt": "Read the message.\n\nHi Sam,\nI left your red umbrella with the receptionist at the sports centre. I will be there again on Wednesday after 5, but you can collect it any time before then.\nMia\n\nWhat is Mia mainly telling Sam?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Where his umbrella is and when he can collect it."
+      },
+      {
+        "key": "B",
+        "text": "That she has bought him a new umbrella."
+      },
+      {
+        "key": "C",
+        "text": "That the sports centre is closed on Wednesday."
+      },
+      {
+        "key": "D",
+        "text": "That he must meet her at the bus stop."
+      }
+    ],
+    "answer": "A",
+    "explanation": "Mia explica dónde dejó el paraguas y hasta cuándo puede recogerlo. No dice que haya comprado otro, que el centro cierre el miércoles ni que Sam deba ir a una parada.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "short-messages"
+    ],
+    "conceptIds": [
+      "ingles-topic-short-messages"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-message-002",
+    "domain": "english-a2",
+    "topicId": "short-messages",
+    "topic": "Short messages",
+    "skill": "READING",
+    "prompt": "Read the message.\n\nHi Sam,\nI left your red umbrella with the receptionist at the sports centre. I will be there again on Wednesday after 5, but you can collect it any time before then.\nMia\n\nDoes Sam have to wait until Mia returns on Wednesday after 5 to get the umbrella?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Yes, Mia must hand it to him herself."
+      },
+      {
+        "key": "B",
+        "text": "Yes, the receptionist is there only after 5."
+      },
+      {
+        "key": "C",
+        "text": "No, but he can collect it only on Thursday."
+      },
+      {
+        "key": "D",
+        "text": "No, he can collect it at any time before Mia returns."
+      }
+    ],
+    "answer": "D",
+    "explanation": "“Any time before then” permite recogerlo antes de que Mia vuelva el miércoles después de las cinco. No hace falta que Mia esté presente; tampoco se restringe la recogida al jueves ni se dice que recepción abra solo después de las cinco.",
+    "difficulty": 3,
+    "tags": [
+      "original-a2",
+      "short-messages"
+    ],
+    "conceptIds": [
+      "ingles-topic-short-messages"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-message-003",
+    "domain": "english-a2",
+    "topicId": "short-messages",
+    "topic": "Short messages",
+    "skill": "READING",
+    "prompt": "Read the message.\n\nHi Sam,\nI left your red umbrella with the receptionist at the sports centre. I will be there again on Wednesday after 5, but you can collect it any time before then.\nMia\n\nIn “I will be there again”, what place does “there” refer to?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sam’s home."
+      },
+      {
+        "key": "B",
+        "text": "The bus stop."
+      },
+      {
+        "key": "C",
+        "text": "The sports centre."
+      },
+      {
+        "key": "D",
+        "text": "Mia’s school."
+      }
+    ],
+    "answer": "C",
+    "explanation": "There retoma el lugar que Mia acaba de mencionar: el centro deportivo, donde dejó el paraguas. No se ha mencionado la casa de Sam, una parada de autobús ni una escuela.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "short-messages"
+    ],
+    "conceptIds": [
+      "ingles-topic-short-messages"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-cafe-001",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Read the café information.\n\nHILLTOP CAFÉ\nBreakfast: 8:00–10:30\nLunch: 12:00–14:00\nSoup is available every day. On Mondays, the café closes at 3:00 for cleaning.\n\nAt what time does breakfast finish?",
+    "options": [
+      {
+        "key": "A",
+        "text": "At 8:00."
+      },
+      {
+        "key": "B",
+        "text": "At 10:30."
+      },
+      {
+        "key": "C",
+        "text": "At 12:00."
+      },
+      {
+        "key": "D",
+        "text": "At 14:00."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El horario marca las 10:30 como fin del desayuno. Las 8:00 son el inicio, las 12:00 inicia la comida y las 14:00 termina ese servicio.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-cafe-002",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Read the café information.\n\nHILLTOP CAFÉ\nBreakfast: 8:00–10:30\nLunch: 12:00–14:00\nSoup is available every day. On Mondays, the café closes at 3:00 for cleaning.\n\nA visitor asks whether soup is served on Sunday. What does the notice tell them?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Yes. Soup is available every day."
+      },
+      {
+        "key": "B",
+        "text": "No. Soup is available only on Monday."
+      },
+      {
+        "key": "C",
+        "text": "No. The café is closed every Sunday."
+      },
+      {
+        "key": "D",
+        "text": "It does not say whether soup is available."
+      }
+    ],
+    "answer": "A",
+    "explanation": "Every day incluye el domingo, así que sí hay sopa. El aviso no la limita al lunes, no dice que el café cierre los domingos y sí responde a la pregunta.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-reading-cafe-003",
+    "domain": "english-a2",
+    "topicId": "reading-comprehension",
+    "topic": "Reading comprehension",
+    "skill": "READING",
+    "prompt": "Read the café information.\n\nHILLTOP CAFÉ\nBreakfast: 8:00–10:30\nLunch: 12:00–14:00\nSoup is available every day. On Mondays, the café closes at 3:00 for cleaning.\n\nA customer arrives at 14:30 on Monday. Which conclusion follows from the notice?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The café has not opened yet."
+      },
+      {
+        "key": "B",
+        "text": "The café is already closed for the day."
+      },
+      {
+        "key": "C",
+        "text": "Lunch has just started."
+      },
+      {
+        "key": "D",
+        "text": "The café is still open, but the lunch period has ended."
+      }
+    ],
+    "answer": "D",
+    "explanation": "A las 14:30 ya terminó la comida, que va hasta las 14:00, pero el café no cierra los lunes hasta las 15:00. Por eso aún está abierto, aunque ya no sea horario de comida.",
+    "difficulty": 3,
+    "tags": [
+      "original-a2",
+      "reading-comprehension"
+    ],
+    "conceptIds": [
+      "ingles-topic-reading-comprehension"
+    ],
+    "errorCategory": "READING",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-present-continuous-002",
+    "domain": "english-a2",
+    "topicId": "present-continuous",
+    "topic": "Present Continuous",
+    "skill": "GRAMMAR",
+    "prompt": "Listen! The children ___ a song in the next room.",
+    "options": [
+      {
+        "key": "A",
+        "text": "are singing"
+      },
+      {
+        "key": "B",
+        "text": "sing"
+      },
+      {
+        "key": "C",
+        "text": "sang"
+      },
+      {
+        "key": "D",
+        "text": "sings"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Listen! indica que la acción ocurre ahora, por eso se usa are singing. Sing y sings son presente simple, y sang es pasado.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "present-continuous"
+    ],
+    "conceptIds": [
+      "ingles-topic-present-continuous"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-there-is-are-002",
+    "domain": "english-a2",
+    "topicId": "there-is-are",
+    "topic": "There is / There are",
+    "skill": "GRAMMAR",
+    "prompt": "There ___ a small pharmacy opposite the station.",
+    "options": [
+      {
+        "key": "A",
+        "text": "are"
+      },
+      {
+        "key": "B",
+        "text": "is"
+      },
+      {
+        "key": "C",
+        "text": "were"
+      },
+      {
+        "key": "D",
+        "text": "be"
+      }
+    ],
+    "answer": "B",
+    "explanation": "El sujeto es singular: a small pharmacy, así que corresponde there is. Are se usa con plural; were es pasado y be no puede aparecer solo en esta estructura.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "there-is-are"
+    ],
+    "conceptIds": [
+      "ingles-topic-there-is-are"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-modal-verbs-002",
+    "domain": "english-a2",
+    "topicId": "modal-verbs",
+    "topic": "Modal verbs",
+    "skill": "GRAMMAR",
+    "prompt": "You ___ show your ticket before you get on the train; it is a rule.",
+    "options": [
+      {
+        "key": "A",
+        "text": "can"
+      },
+      {
+        "key": "B",
+        "text": "might"
+      },
+      {
+        "key": "C",
+        "text": "must"
+      },
+      {
+        "key": "D",
+        "text": "would"
+      }
+    ],
+    "answer": "C",
+    "explanation": "La frase dice que es una norma: must expresa obligación. Can habla de capacidad o permiso, might de posibilidad y would no comunica aquí una obligación.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "modal-verbs"
+    ],
+    "conceptIds": [
+      "ingles-concept-2"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-comparatives-002",
+    "domain": "english-a2",
+    "topicId": "comparatives",
+    "topic": "Comparatives",
+    "skill": "GRAMMAR",
+    "prompt": "The blue route is ___ than the red route; it is 2 km, not 5 km.",
+    "options": [
+      {
+        "key": "A",
+        "text": "shortest"
+      },
+      {
+        "key": "B",
+        "text": "more short"
+      },
+      {
+        "key": "C",
+        "text": "the shorter"
+      },
+      {
+        "key": "D",
+        "text": "shorter"
+      }
+    ],
+    "answer": "D",
+    "explanation": "Se comparan dos rutas: shorter than es la forma comparativa correcta. Shortest es superlativo, more short no es la forma habitual y the shorter no encaja aquí.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "comparatives"
+    ],
+    "conceptIds": [
+      "ingles-topic-comparatives"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-prepositions-002",
+    "domain": "english-a2",
+    "topicId": "prepositions",
+    "topic": "Prepositions",
+    "skill": "GRAMMAR",
+    "prompt": "Our train leaves ___ Monday morning.",
+    "options": [
+      {
+        "key": "A",
+        "text": "on"
+      },
+      {
+        "key": "B",
+        "text": "at"
+      },
+      {
+        "key": "C",
+        "text": "in"
+      },
+      {
+        "key": "D",
+        "text": "by"
+      }
+    ],
+    "answer": "A",
+    "explanation": "Se usa on con días y partes concretas del día: on Monday morning. At se usa con horas, in con periodos más amplios y by significa “como máximo para”.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "prepositions"
+    ],
+    "conceptIds": [
+      "ingles-topic-prepositions"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-shops-002",
+    "domain": "english-a2",
+    "topicId": "shops",
+    "topic": "Shops",
+    "skill": "CONTEXT",
+    "prompt": "You are looking for a jacket in a larger size. Which question asks whether the shop has one?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Where can I catch the train?"
+      },
+      {
+        "key": "B",
+        "text": "Do you have this jacket in a larger size?"
+      },
+      {
+        "key": "C",
+        "text": "How long is the lesson?"
+      },
+      {
+        "key": "D",
+        "text": "Can I book a room?"
+      }
+    ],
+    "answer": "B",
+    "explanation": "La primera pregunta consulta si tienen esa chaqueta en una talla mayor. Las demás preguntan por un tren, la duración de una clase y una reserva de habitación.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "shops"
+    ],
+    "conceptIds": [
+      "ingles-topic-shops"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-health-002",
+    "domain": "english-a2",
+    "topicId": "health",
+    "topic": "Health",
+    "skill": "CONTEXT",
+    "prompt": "You have a bad toothache. Where should you make an appointment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "At a post office."
+      },
+      {
+        "key": "B",
+        "text": "At a bakery."
+      },
+      {
+        "key": "C",
+        "text": "At a dentist’s."
+      },
+      {
+        "key": "D",
+        "text": "At a railway station."
+      }
+    ],
+    "answer": "C",
+    "explanation": "Un dentista atiende problemas de dientes, así que la cita debe ser en una clínica dental. La oficina de correos, la panadería y la estación no ofrecen atención dental.",
+    "difficulty": 1,
+    "tags": [
+      "original-a2",
+      "health"
+    ],
+    "conceptIds": [
+      "ingles-topic-health"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-airports-002",
+    "domain": "english-a2",
+    "topicId": "airports",
+    "topic": "Airports",
+    "skill": "CONTEXT",
+    "prompt": "Your flight was planned to leave at 18:10. At 18:20 the airport screen says “Delayed — new departure 18:40”. What should you understand?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The plane left before 18:10."
+      },
+      {
+        "key": "B",
+        "text": "The flight has arrived at 18:20."
+      },
+      {
+        "key": "C",
+        "text": "Passengers must go to another airport."
+      },
+      {
+        "key": "D",
+        "text": "The new departure time is later than the original one."
+      }
+    ],
+    "answer": "D",
+    "explanation": "Delayed indica un retraso: la nueva salida será a las 18:40, después de la hora prevista, 18:10. El mensaje no dice que el avión ya haya salido o llegado ni que cambie de aeropuerto.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "airports"
+    ],
+    "conceptIds": [
+      "ingles-topic-airports"
+    ],
+    "errorCategory": "CONTEXT",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-03",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-superlatives-001",
+    "domain": "english-a2",
+    "topicId": "comparatives",
+    "topic": "Comparatives",
+    "skill": "GRAMMAR",
+    "prompt": "The routes are 2 km, 5 km and 8 km. To name the route with the minimum distance, use a superlative: the ___ of the three.",
+    "options": [
+      { "key": "A", "text": "shortest" },
+      { "key": "B", "text": "shorter" },
+      { "key": "C", "text": "most short" },
+      { "key": "D", "text": "short" }
+    ],
+    "answer": "A",
+    "explanation": "Las longitudes son distintas y se pide expresamente el extremo de menor distancia entre tres rutas: después del the que ya aparece en la frase, la forma superlativa es shortest. Shorter es comparativo y no expresa aquí la forma superlativa solicitada; most short no es la formación usual de short, y short no indica el extremo del grupo.",
+    "difficulty": 2,
+    "tags": [
+      "original-a2",
+      "comparatives",
+      "superlatives"
+    ],
+    "conceptIds": [
+      "ingles-topic-comparatives"
+    ],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-future-will-offer-001",
+    "domain": "english-a2",
+    "topicId": "future",
+    "topic": "Future forms",
+    "skill": "GRAMMAR",
+    "prompt": "A traveller asks you to hold her bag while she checks her ticket. You agree: “Of course, I will ___ it.”",
+    "options": [
+      { "key": "A", "text": "to hold" },
+      { "key": "B", "text": "hold" },
+      { "key": "C", "text": "holding" },
+      { "key": "D", "text": "holds" }
+    ],
+    "answer": "B",
+    "explanation": "You agree expresa una oferta en el momento; will + verbo base da I will hold. Tras will no se usa to (will to hold), la forma -ing (will holding) ni la terminación -s (will holds).",
+    "difficulty": 2,
+    "tags": ["original-a2", "future", "will"],
+    "conceptIds": ["ingles-topic-future"],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-a2-countable-information-002",
+    "domain": "english-a2",
+    "topicId": "countable-uncountable",
+    "topic": "Countable / uncountable nouns",
+    "skill": "GRAMMAR",
+    "prompt": "I would like ___ about the timetable.",
+    "options": [
+      { "key": "A", "text": "an information" },
+      { "key": "B", "text": "many information" },
+      { "key": "C", "text": "two informations" },
+      { "key": "D", "text": "some information" }
+    ],
+    "answer": "D",
+    "explanation": "Information es incontable: puede ir con some, pero no con an, many ni plural -s. Si quieres contar unidades, di two pieces of information.",
+    "difficulty": 1,
+    "tags": ["original-a2", "countable-uncountable", "information"],
+    "conceptIds": ["ingles-topic-countable-uncountable"],
+    "errorCategory": "GRAMMAR",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
   }
 ]

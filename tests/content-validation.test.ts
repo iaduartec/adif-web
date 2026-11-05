@@ -115,7 +115,11 @@ describe("active official course content", () => {
     expect(parsed.success).toBe(true);
     if (!parsed.success) return;
 
-    expect(activeTheoryConceptRegistry.size).toBe(296);
+    // Los dos conceptos de 8C y los dos nuevos de 8A se añadieron después
+    // del inventario de 315. Su presencia no implica aprobación de sus claims.
+    expect(activeTheoryConceptRegistry.has("conducta-concept-6")).toBe(true);
+    expect(activeTheoryConceptRegistry.has("conducta-concept-7")).toBe(true);
+    expect(activeTheoryConceptRegistry.size).toBe(349);
     expect(parsed.data).toHaveLength(102);
     for (const question of parsed.data) {
       expect(question.conceptIds.length, question.id).toBeGreaterThan(0);
@@ -340,9 +344,9 @@ describe("lesson content", () => {
   it("keeps structured summaries for the highest-yield lessons", () => {
     expect(lessonSummaries.psicometria.overview).toMatch(/psicométrica/i);
     expect(lessonSummaries["ingles-a2"].sections).toHaveLength(3);
-    expect(lessonSummaries["ict-rd-346-2011"].sections).toHaveLength(3);
+    expect(lessonSummaries["ict-rd-346-2011"].sections).toHaveLength(5);
     expect(lessonSummaries["compatibilidad-electromagnetica"].sections).toHaveLength(3);
-    expect(lessonSummaries["rcf-libro-1"].sections).toHaveLength(3);
+    expect(lessonSummaries["rcf-libro-1"].sections).toHaveLength(4);
   });
 
   it("uses the Personal Operativo PNI26/01 source for psychometric practice", () => {

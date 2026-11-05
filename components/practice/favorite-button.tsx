@@ -6,9 +6,11 @@ import { toggleFavorite } from "../../app/actions/favorites";
 export function FavoriteButton({
   questionId,
   initialIsFavorite,
+  disabled = false,
 }: {
   questionId: string;
   initialIsFavorite: boolean;
+  disabled?: boolean;
 }) {
   const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
   const [isPending, startTransition] = useTransition();
@@ -29,9 +31,9 @@ export function FavoriteButton({
   return (
     <div className="flex flex-col items-center">
       <button
-        aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
+        aria-label={disabled ? "Favorito no disponible para pregunta retenida" : isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
         className={`favorite-btn ${isFavorite ? "favorite-btn--active" : ""} ${isPending ? "opacity-50 cursor-not-allowed" : ""}`}
-        disabled={isPending}
+        disabled={disabled || isPending}
         onClick={handleToggle}
         type="button"
       >

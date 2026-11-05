@@ -3,6 +3,13 @@ import type { TheorySection } from "../lesson-theory";
 export const igualdadTheory: TheorySection = {
   sources: [
     {
+      id: "ce-art53-2",
+      sourceId: "CE",
+      sourceTitle: "Constitución Española",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
+      locator: "Artículo 53.2"
+    },
+    {
       id: "ce-art14",
       sourceId: "CE",
       sourceTitle: "Constitución Española",
@@ -98,6 +105,51 @@ export const igualdadTheory: TheorySection = {
       excerpt: "También se considerará discriminación por razón de sexo cualquier trato adverso o efecto negativo que se produzca en una persona como consecuencia de la presentación por su parte de una queja, reclamación..."
     },
     {
+      id: "lo3-2007-art2",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 2",
+      excerpt: "Todas las personas gozarán de los derechos derivados del principio de igualdad de trato y de la prohibición de discriminación por razón de sexo. Las obligaciones establecidas en esta Ley serán de aplicación a toda persona, física o jurídica, que se encuentre o actúe en territorio español, cualquiera que fuese su nacionalidad, domicilio o residencia."
+    },
+    {
+      id: "lo3-2007-art4",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 4",
+      excerpt: "La igualdad de trato y de oportunidades entre mujeres y hombres es un principio informador del ordenamiento jurídico y, como tal, se integrará y observará en la interpretación y aplicación de las normas jurídicas."
+    },
+    {
+      id: "lo3-2007-art5",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 5",
+      excerpt: "El principio de igualdad de trato y de oportunidades entre mujeres y hombres, aplicable en el ámbito del empleo privado y en el del empleo público, se garantizará, en los términos previstos en la normativa aplicable, en el acceso al empleo, incluso al trabajo por cuenta propia, en la formación profesional, en la promoción profesional, en las condiciones de trabajo, incluidas las retributivas y las de despido, y en la afiliación y participación en las organizaciones sindicales y empresariales, o en cualquier organización cuyos miembros ejerzan una profesión concreta, incluidas las prestaciones concedidas por las mismas. No constituirá discriminación en el acceso al empleo, incluida la formación necesaria, una diferencia de trato basada en una característica relacionada con el sexo cuando, debido a la naturaleza de las actividades profesionales concretas o al contexto en el que se lleven a cabo, dicha característica constituya un requisito profesional esencial y determinante, siempre y cuando el objetivo sea legítimo y el requisito proporcionado."
+    },
+    {
+      id: "lo3-2007-art10",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 10",
+      excerpt: "Los actos y las cláusulas de los negocios jurídicos que constituyan o causen discriminación por razón de sexo se considerarán nulos y sin efecto, y darán lugar a responsabilidad a través de un sistema de reparaciones o indemnizaciones que sean reales, efectivas y proporcionadas al perjuicio sufrido, así como, en su caso, a través de un sistema eficaz y disuasorio de sanciones que prevenga la realización de conductas discriminatorias."
+    },
+    {
+      id: "lo3-2007-art12",
+      sourceId: "LO 3/2007",
+      sourceTitle:
+        "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
+      locator: "Artículo 12",
+      excerpt: "Cualquier persona podrá recabar de los tribunales la tutela del derecho a la igualdad entre mujeres y hombres, de acuerdo con lo establecido en el artículo 53.2 de la Constitución, incluso tras la terminación de la relación en la que supuestamente se ha producido la discriminación. La capacidad y legitimación para intervenir en los procesos civiles, sociales y contencioso-administrativos que versen sobre la defensa de este derecho corresponden a las personas físicas y jurídicas con interés legítimo, determinadas en las Leyes reguladoras de estos procesos. La persona acosada será la única legitimada en los litigios sobre acoso sexual y acoso por razón de sexo."
+    },
+    {
       id: "lo3-2007-art11",
       sourceId: "LO 3/2007",
       sourceTitle:
@@ -113,7 +165,7 @@ export const igualdadTheory: TheorySection = {
         "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115",
       locator: "Artículo 13",
-      excerpt: "...en aquellos procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias, correspondera al demandado probar la ausencia de discriminación..."
+      excerpt: "De acuerdo con las Leyes procesales, en aquellos procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, corresponderá a la persona demandada probar la ausencia de discriminación en las medidas adoptadas y su proporcionalidad. A instancia de parte, el órgano judicial podrá recabar informe o dictamen de organismos públicos competentes si lo estima útil y pertinente. Esta regla probatoria no se aplica a los procesos penales."
     },
     {
       id: "lo3-2007-art44",
@@ -246,6 +298,20 @@ export const igualdadTheory: TheorySection = {
           text: "La igualdad de trato prohíbe las diferencias injustificadas, mientras que la igualdad de oportunidades promueve medidas activas para corregir los desequilibrios existentes de partida.",
           kind: "didactic",
           legalBasis: []
+        },
+        {
+          id: "igualdad-c1-3",
+          text: "Todas las personas gozan de los derechos derivados de la igualdad de trato y de la prohibición de discriminación por razón de sexo. Las obligaciones de la Ley se aplican a toda persona física o jurídica que se encuentre o actúe en territorio español, con independencia de su nacionalidad, domicilio o residencia.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art2"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el artículo 2 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        },
+        {
+          id: "igualdad-c1-4",
+          text: "La igualdad de trato y de oportunidades informa el ordenamiento jurídico y debe integrarse y observarse al interpretar y aplicar las normas jurídicas.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art4"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el artículo 4 del texto consolidado BOE, actualizado a 02/08/2024." } }
         }
       ]
     },
@@ -279,7 +345,7 @@ export const igualdadTheory: TheorySection = {
         },
         {
           id: "igualdad-c3-2",
-          text: "Esta conducta es lícita únicamente si se justifica de forma objetiva en atención a una finalidad legítima y los medios empleados son necesarios y adecuados.",
+          text: "La medida aparentemente neutra no constituye discriminación indirecta si se justifica objetivamente por una finalidad legítima y los medios empleados para alcanzarla son necesarios y adecuados; deben concurrir ambas condiciones.",
           kind: "interpretative",
           legalBasis: ["lo3-2007-art6-2"]
         }
@@ -365,13 +431,42 @@ export const igualdadTheory: TheorySection = {
     },
     {
       id: "igualdad-concept-8",
-      title: "Inversión de la Carga de la Prueba",
+      title: "Tutela contra la discriminación y carga de la prueba",
       claims: [
         {
           id: "igualdad-c8-1",
-          text: "De acuerdo con las leyes procesales, en los procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, corresponderá a la persona demandada probar la ausencia de discriminación en las medidas adoptadas y su proporcionalidad.",
+          text: "De acuerdo con las leyes procesales, cuando las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, corresponde a la persona demandada probar la ausencia de discriminación en las medidas adoptadas y su proporcionalidad; esta regla no se aplica a los procesos penales.",
           kind: "normative",
-          legalBasis: ["lo3-2007-art13"]
+          legalBasis: ["lo3-2007-art13"],
+          review: { status: "needs_review", reviewedBy: "codex", confidence: { level: "low", reason: "Claim heredado marcado needs_review en el manifiesto; esta ampliación de los límites de carga probatoria se cotejó con los apartados 1 y 2 del artículo 13 del texto consolidado BOE (actualizado a 02/08/2024), pero la revisión individual completa del claim sigue pendiente." } }
+        },
+        {
+          id: "igualdad-c8-5",
+          text: "A instancia de parte, el órgano judicial puede recabar informe o dictamen de los organismos públicos competentes si lo estima útil y pertinente; no es una actuación automática ni obligatoria en todo proceso.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art13"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el párrafo segundo del apartado 1 del artículo 13 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        },
+        {
+          id: "igualdad-c8-2",
+          text: "Los actos y cláusulas de negocios jurídicos que constituyan o causen discriminación por razón de sexo son nulos y sin efecto; generan responsabilidad mediante reparaciones o indemnizaciones reales, efectivas y proporcionadas al perjuicio y, en su caso, sanciones eficaces y disuasorias.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art10"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el artículo 10 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        },
+        {
+          id: "igualdad-c8-3",
+          text: "Cualquier persona puede solicitar tutela judicial del derecho de igualdad conforme al artículo 53.2 de la Constitución, incluso después de terminada la relación en la que presuntamente se produjo la discriminación. En procesos civiles, sociales y contencioso-administrativos, la intervención corresponde a personas físicas o jurídicas con interés legítimo según las leyes procesales; deben respetarse los plazos procesales aplicables.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art12", "ce-art53-2"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con los apartados 1 y 2 del artículo 12 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        },
+        {
+          id: "igualdad-c8-4",
+          text: "En litigios sobre acoso sexual o acoso por razón de sexo, la persona acosada es la única legitimada.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art12"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el apartado 3 del artículo 12 del texto consolidado BOE, actualizado a 02/08/2024." } }
         }
       ]
     },
@@ -449,13 +544,27 @@ export const igualdadTheory: TheorySection = {
     },
     {
       id: "igualdad-concept-14",
-      title: "Igualdad en el Empleo Público",
+      title: "Igualdad en el Empleo Público y Privado",
       claims: [
         {
           id: "igualdad-c14-1",
           text: "Las Administraciones Públicas y las entidades instrumentales equivalentes están obligadas a integrar el principio de igualdad en sus políticas de selección, formación, promoción y condiciones de trabajo.",
           kind: "normative",
           legalBasis: ["lo3-2007-art51"]
+        },
+        {
+          id: "igualdad-c14-2",
+          text: "En el empleo público y privado, la igualdad de trato y de oportunidades se garantiza, conforme a la normativa aplicable, en el acceso al empleo —también por cuenta propia—, la formación y promoción profesionales, las condiciones de trabajo incluidas retribución y despido, y la afiliación y participación en organizaciones profesionales y las prestaciones que concedan.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art5"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el párrafo primero del artículo 5 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        },
+        {
+          id: "igualdad-c14-3",
+          text: "En el acceso al empleo, incluida la formación necesaria, una diferencia de trato basada en una característica relacionada con el sexo no constituye discriminación solo si la característica es un requisito profesional esencial y determinante por la naturaleza de la actividad o su contexto, y el objetivo es legítimo y el requisito proporcionado.",
+          kind: "normative",
+          legalBasis: ["lo3-2007-art5"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con el párrafo segundo del artículo 5 del texto consolidado BOE, actualizado a 02/08/2024." } }
         }
       ]
     },
@@ -521,6 +630,26 @@ export const igualdadTheory: TheorySection = {
           legalBasis: ["lo3-2007-art45"]
         }
       ]
+    },
+    {
+      id: "igualdad-ex-5",
+      situation: "Una trabajadora demanda en el orden social por discriminación por razón de sexo en una decisión de promoción; en paralelo, los mismos hechos son objeto de un proceso penal.",
+      application: [
+        {
+          id: "igualdad-ex-5-app-1",
+          text: "En el proceso social, si la demanda se fundamenta en actuaciones discriminatorias, la regla del artículo 13.1 atribuye a la parte demandada probar la ausencia de discriminación y la proporcionalidad de las medidas. A instancia de parte, el órgano judicial puede pedir informe de un organismo público competente si lo considera útil y pertinente.",
+          kind: "example",
+          legalBasis: ["lo3-2007-art13"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Aplicación cotejada con el artículo 13.1 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        },
+        {
+          id: "igualdad-ex-5-app-2",
+          text: "En el proceso penal no opera esa regla específica de distribución de la carga probatoria: el artículo 13.2 excluye expresamente los procesos penales. La exclusión se refiere a esta regla del artículo 13.1.",
+          kind: "example",
+          legalBasis: ["lo3-2007-art13"],
+          review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Aplicación cotejada con el apartado 2 del artículo 13 del texto consolidado BOE, actualizado a 02/08/2024." } }
+        }
+      ]
     }
   ],
 
@@ -539,13 +668,13 @@ export const igualdadTheory: TheorySection = {
     },
     {
       id: "igualdad-takeaway-2",
-      text: "La discriminación directa por embarazo o maternidad es de carácter especialmente grave y no admite justificación ordinaria; la indirecta sí puede justificarse si la medida neutra responde a una finalidad legítima y es necesaria y proporcionada.",
+      text: "El trato desfavorable a las mujeres relacionado con el embarazo o la maternidad constituye discriminación directa. Una medida aparentemente neutra que cause desventaja particular no constituye discriminación indirecta si está objetivamente justificada por una finalidad legítima y los medios para alcanzarla son necesarios y adecuados.",
       kind: "interpretative",
       legalBasis: ["lo3-2007-art6-1", "lo3-2007-art6-2", "lo3-2007-art8"]
     },
     {
       id: "igualdad-takeaway-3",
-      text: "La discriminación indirecta sí admite justificación si se acredita idoneidad, necesidad y proporcionalidad de la medida neutra.",
+      text: "La medida aparentemente neutra que causa una desventaja particular queda fuera de la discriminación indirecta si se justifica objetivamente por una finalidad legítima y los medios para alcanzarla son necesarios y adecuados.",
       kind: "interpretative",
       legalBasis: ["lo3-2007-art6-2"]
     },

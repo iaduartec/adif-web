@@ -341,7 +341,7 @@ export default async function TestsPage({
                     <p>El texto de esta pregunta no está disponible mientras se verifican las fuentes, la vigencia y los derechos de uso.</p>
                     <OfficialSource source={metadata.source} questionStatus={metadata} />
                   </div>
-                  <div className="flex-shrink-0"><FavoriteButton initialIsFavorite={isFavorite} questionId={question.id} /></div>
+                  <div className="flex-shrink-0"><FavoriteButton disabled initialIsFavorite={isFavorite} questionId={question.id} /></div>
                 </article>
               );
             }

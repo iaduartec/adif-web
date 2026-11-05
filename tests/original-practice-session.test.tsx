@@ -45,7 +45,7 @@ describe("OriginalPracticeSession", () => {
     expect(sent[0]).toMatchObject({ questionId: questions[0]!.id, selectedAnswer: "C", mode: "practice", clientEventId: expect.any(String) });
     expect(sent[1]).toMatchObject({ questionId: questions[1]!.id, selectedAnswer: "B", mode: "practice", clientEventId: expect.any(String) });
 
-    fireEvent.click(screen.getByRole("button", { name: "Anterior" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Anterior" }));
     expect(screen.getByRole("radio", { name: /^A\./i })).toBeDisabled();
     expect(screen.getByRole("radio", { name: /^C\./i })).toBeChecked();
     fireEvent.click(screen.getByRole("button", { name: "Siguiente pregunta" }));

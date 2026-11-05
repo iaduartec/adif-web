@@ -548,6 +548,7 @@ button:focus-visible,
 .practice-session__module { margin: 0 0 .5rem; color: color-mix(in srgb, var(--ink) 62%, var(--paper)); font-size: .8125rem; }
 .practice-option { display: flex; align-items: baseline; gap: .75rem; border: 1px solid var(--rail); padding: 1rem 1.25rem; margin-top: .5rem; cursor: pointer; transition: border-color 160ms ease, background-color 160ms ease; }
 .practice-option:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.practice-option:focus-within { border-color: var(--accent); outline: 3px solid var(--ink); outline-offset: 3px; }
 .practice-option input[type="radio"] { flex: 0 0 auto; accent-color: var(--accent); }
 .practice-feedback { margin-top: 1.5rem; border-left: 2px solid var(--accent); padding: 1rem 0 1rem 1.125rem; }
 .practice-feedback p { margin: .5rem 0 0; line-height: 1.6; }

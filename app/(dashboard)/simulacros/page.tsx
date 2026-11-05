@@ -55,6 +55,12 @@ export default async function SimulacrosPage() {
         </p>
       </header>
 
+      <section className="simulation-card mb-8" aria-labelledby="original-simulations-title">
+        <h2 id="original-simulations-title">Practicar con preguntas originales</h2>
+        <p>Elige una modalidad y completa el banco revisado disponible sin preguntas históricas retenidas.</p>
+        <Link className="ui-button self-start" href="/simulacros/original">Ver simulacros originales</Link>
+      </section>
+
       {[...examsByYear.entries()].sort(([a], [b]) => b - a).map(([year, yearExams]) => (
         <section aria-labelledby={`exam-year-${year}`} className="simulation-year" key={year}>
           <h2 id={`exam-year-${year}`}>{year}</h2>

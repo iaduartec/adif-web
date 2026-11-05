@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("ADIF Telecomunicaciones Study Flow", () => {
-  test("runs the full practice, error notebook, simulation, and statistics workflow", async ({ page }) => {
+  test("keeps withheld official prompts gated while the official exam and statistics flows remain usable", async ({ page }) => {
     // 1. Dashboard initialization
     await page.goto("/");
     await expect(page).toHaveURL("/");
@@ -21,66 +21,33 @@ test.describe("ADIF Telecomunicaciones Study Flow", () => {
     await page.goto("/curso");
     await expect(page.locator("text=100%")).toBeVisible();
 
-    // 3. Answer a question incorrectly to feed the Error Notebook
+    // 3. The retained official question bank must not expose prompts or a practice session.
     await page.goto("/tests");
-    await page.click("a:has-text('Iniciar práctica')");
-    await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator(".practice-session h2")).toHaveCount(1);
-    const activeQuestionName = await page.locator("input[type='radio']").first().getAttribute("name");
-    const activeQuestionId = activeQuestionName?.replace("question-", "");
-    expect(activeQuestionId).toBeTruthy();
-    // Select option A, which is incorrect for the first active official question.
-    await page.locator("label").filter({ hasText: /^A\./ }).click();
-    await page.click("text=Comprobar respuesta");
-    await expect(page.locator("text=Respuesta incorrecta")).toBeVisible();
-    await expect(page.getByRole("complementary", { name: "Procedencia oficial" })).toContainText("Pregunta oficial ADIF");
+    await expect(page.locator(".empty-state[role='alert']")).toContainText("102 preguntas oficiales tienen los enunciados retenidos");
+    await expect(page.getByText("Práctica no disponible")).toBeVisible();
+    await expect(page.locator("input[type='radio']")).toHaveCount(0);
+    await expect(page.locator(".official-question-card--withheld")).toHaveCount(25);
 
-    // 4. Verify the Error Notebook
+    // 4. The error notebook remains available and does not reveal held prompt text.
     await page.goto("/errores");
     await expect(page.locator("h1")).toContainText("Cuaderno de errores");
     await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator(".official-question-card h2")).toHaveCount(1);
-    await expect(page.locator(".official-question-card h3")).toHaveCount(0);
-    await expect(page.getByText(activeQuestionId ?? "", { exact: true })).toBeVisible();
-    await expect(page.locator("text=Tu última respuesta: A")).toBeVisible();
+    await expect(page.getByText(/Los intentos de preguntas que no están disponibles para práctica siguen guardados/)).toBeVisible();
+    await expect(page.locator(".official-question-card h2")).toHaveCount(0);
 
     // 5. Favorite a question in the question bank list
     await page.goto("/tests");
-    const favButton = page.locator("button.favorite-btn").first();
-    await favButton.click();
-    await expect(favButton).toHaveClass(/favorite-btn--active/);
+    const heldQuestionFavorite = page.getByRole("button", { name: "Favorito no disponible para pregunta retenida" }).first();
+    await expect(heldQuestionFavorite).toBeDisabled();
 
-    // 6. Complete a timed simulation
+    // 6. Historical official forms remain unavailable; original simulations have their own route.
     await page.goto("/simulacros");
     await expect(page.locator("h1")).toContainText("Exámenes oficiales");
-    await expect(page.locator("article.simulation-card")).toHaveCount(6);
-    await expect(page.locator("article.simulation-card", { hasText: "15 preguntas" })).toHaveCount(2);
-    await expect(page.locator("article.simulation-card", { hasText: "18 preguntas" })).toHaveCount(4);
-    await page.getByRole("link", { name: "Abrir examen" }).first().click();
-    await page.getByRole("button", { name: "Comenzar examen" }).click();
-
-    // Answer two questions
-    await page.locator("label").filter({ hasText: /^A\./ }).click();
-    await page.click("text=Siguiente");
-    await page.locator("label").filter({ hasText: /^B\./ }).click();
-
-    // Submit simulation and verify accessible modal focus management.
-    const submitTrigger = page.getByRole("button", { name: "Entregar examen" });
-    await submitTrigger.click();
-    const submitDialog = page.getByRole("dialog", { name: "Confirmar entrega" });
-    await expect(submitDialog).toBeVisible();
-    await expect(page.getByRole("button", { name: "Seguir revisando" })).toBeFocused();
-    await page.keyboard.press("Escape");
-    await expect(submitDialog).toBeHidden();
-    await expect(submitTrigger).toBeFocused();
-
-    await submitTrigger.click();
-    await page.getByRole("button", { name: "Confirmar entrega" }).click();
-
-    // Verify simulation results page (exact text from SimulationResults component)
-    await expect(page.locator("h2:has-text('Resultado del examen')")).toBeVisible();
-    await expect(page.locator(".simulation-results__card--score")).toBeVisible();
-    await expect(page.locator(".simulation-results__card--correct")).toBeVisible();
+    await expect(page.locator("article.simulation-card")).toHaveCount(8);
+    await expect(page.locator("article.simulation-card", { hasText: "18 preguntas declaradas" })).toHaveCount(8);
+    await expect(page.getByRole("link", { name: "Abrir examen" })).toHaveCount(0);
+    await expect(page.locator("article.simulation-card").filter({ hasText: "Pendiente de verificación" })).toHaveCount(8);
+    await expect(page.getByRole("link", { name: "Ver simulacros originales" })).toBeVisible();
 
     // 7. Verify study statistics
     await page.goto("/estadisticas");

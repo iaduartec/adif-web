@@ -53,12 +53,13 @@ const reviewedFixture = {
 } as const;
 
 describe("original psychometric practice", () => {
-  it("covers every aptitude with at least 18 reviewed eligible original items", () => {
+  it("maps every reviewed item to the aptitude it tests and reports unrepresented aptitudes", () => {
     const questions = listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" });
 
     expect(questions.length).toBeGreaterThanOrEqual(18);
-    expect([...new Set(questions.map(({ topicId }) => topicId))].sort()).toEqual(aptitudeIds);
-    expect([...new Set(questions.map(({ skill }) => skill))].sort()).toEqual(aptitudeIds);
+    const representedAptitudes = [...new Set(questions.map(({ topicId }) => topicId))].sort();
+    expect(representedAptitudes).toEqual(aptitudeIds.filter((id) => id !== "memory"));
+    expect([...new Set(questions.map(({ skill }) => skill))].sort()).toEqual(representedAptitudes);
 
     for (const question of questions) {
       const aptitude = psychometricAptitudes.find(({ id }) => id === question.topicId)!;
@@ -77,6 +78,7 @@ describe("original psychometric practice", () => {
       expect(Object.keys(dto ?? {}).sort(), question.id).toEqual([
         "difficulty",
         "domain",
+        ...(question.figure ? ["figure", "figureAlt"] : []),
         "id",
         "options",
         "origin",

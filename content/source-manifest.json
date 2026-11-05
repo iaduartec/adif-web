@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15",
+  "generatedAt": "2026-11-04",
   "sources": [
     {
       "sourceId": "ADIF PNI23/01",
@@ -13,7 +13,7 @@
       "url": "https://www.adif.es/documents/20124/17165113/%2807.11.2023%29%20-%20Plantillas%20correctoras%20y%20cuadernillos%20de%20examen.pdf/dce76c5e-ae60-a0d0-568e-4f4db30c3823",
       "scope": "historical-exam",
       "status": "needs_check",
-      "downloadedAt": null,
+      "downloadedAt": "2026-11-04",
       "verifiedAt": null,
       "consultedLocator": "Documento oficial referenciado por el registro histórico; los bytes actuales de ADIF no se pudieron cotejar.",
       "editorialConfidence": {
@@ -135,6 +135,28 @@
       "locatorPolicy": "exact"
     },
     {
+      "sourceId": "Directiva 2004/108/CE",
+      "sourceVersion": "official-record-2026-11-04",
+      "sourceType": "primary",
+      "sourceKind": "legislation",
+      "authority": "A",
+      "organization": "Diario Oficial de la Unión Europea / Boletín Oficial del Estado",
+      "title": "Directiva 2004/108/CE del Parlamento Europeo y del Consejo, de 15 de diciembre de 2004, relativa a la aproximación de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética y por la que se deroga la Directiva 89/336/CEE",
+      "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2004-83048",
+      "scope": "supplemental",
+      "status": "verified",
+      "downloadedAt": "2026-11-04",
+      "verifiedAt": "2026-11-04",
+      "consultedLocator": "Ficha y texto oficial BOE consultados el 2026-11-04: fecha de la Directiva 15-12-2004; publicación en DOUE L 390, 31-12-2004; ámbito incluye aparatos e instalaciones fijas sujeto a sus términos y exclusiones.",
+      "editorialConfidence": {
+        "level": "high",
+        "reason": "Datos bibliográficos y alcance cotejados en el texto oficial publicado en el DOUE y reproducido por BOE."
+      },
+      "sha256": "12d763e608ffb81b913698494645d90ea880796811875af3718950f8e717cf65",
+      "hashTarget": "downloaded-page",
+      "locatorPolicy": "exact"
+    },
+    {
       "sourceId": "DR 2027",
       "sourceVersion": "edition-2027-page-candidate",
       "sourceType": "primary",
@@ -147,14 +169,38 @@
       "status": "needs_check",
       "downloadedAt": null,
       "verifiedAt": null,
-      "consultedLocator": "Referencia institucional localizada; contenido/bytes exactos pendientes de cotejo.",
+      "consultedLocator": "Reconsulta 2026-11-04: la página oficial lista la edición general 31-07-2026 y se confirma su enlace; el enlace directo devuelve HTTP 403. La página no sustituye el cotejo de bytes ni el contraste con el adjunto PNI26/01.",
       "editorialConfidence": {
         "level": "low",
-        "reason": "La identidad procede de una referencia oficial, pero la versión o los bytes no se verificaron directamente."
+        "reason": "La página oficial confirma la edición publicada, pero el PDF enlazado responde HTTP 403 en la reconsulta y no se han cotejado sus bytes ni las diferencias con el adjunto PNI26/01."
       },
       "sha256": null,
       "hashTarget": null,
       "locatorPolicy": "document-level"
+    },
+    {
+      "sourceId": "DR 2027",
+      "sourceVersion": "preserved-pdf-v0-ed-2026-02-27",
+      "sourceType": "primary",
+      "sourceKind": "official-document",
+      "authority": "A",
+      "organization": "Administrador de Infraestructuras Ferroviarias (ADIF)",
+      "title": "Declaración sobre la Red de Adif (Edición 2027). Capítulos I y II. V.0 (ED 27/02/2026)",
+      "url": "https://www.adif.es/documents/20124/55031380/4.+Declaraci%C3%B3n+sobre+la+Red+Adif+2027.+Cap%C3%ADtulos+I+y+II.pdf/4a6acc23-e409-9dd8-ad1e-305d7f6e7b01",
+      "scope": "supplemental",
+      "status": "needs_check",
+      "downloadedAt": null,
+      "verifiedAt": null,
+      "consultedLocator": "Copia preservada en el repositorio (70 páginas, 177 857 caracteres extraídos). Cotejo de contenido el 2026-11-04 contra esa copia. El enlace directo de ADIF responde HTTP 403 desde este entorno, por lo que no se ha podido demostrar identidad byte a byte con la edición vigente de 31-07-2026.",
+      "editorialConfidence": {
+        "level": "medium",
+        "reason": "El contenido técnico del capítulo II coincide con la copia preservada (cifras de la RFIG, gálibo, límite de carga, velocidades, longitud de trenes, electrificación, señalización y túneles); la identidad del archivo con la edición publicada no está acreditada porque el enlace oficial devuelve HTTP 403."
+      },
+      "sha256": "796b26bdd38957ba31663b56dcda259d36de199c3cf1b537cfa3111d0cd029f2",
+      "hashTarget": "local-snapshot",
+      "locatorPolicy": "exact",
+      "artifactPath": "pdf/4. Declaración sobre la Red Adif 2027. Capítulos I y II.pdf",
+      "snapshotCommit": "b93baed"
     },
     {
       "sourceId": "Directiva 2014/30/UE",
@@ -617,6 +663,28 @@
       "locatorPolicy": "exact"
     },
     {
+      "sourceId": "Orden ITC/1644/2011",
+      "sourceVersion": "consolidated-page-2026-11-04",
+      "sourceType": "primary",
+      "sourceKind": "legislation",
+      "authority": "A",
+      "organization": "Boletín Oficial del Estado",
+      "title": "Orden ITC/1644/2011, de 10 de junio, por la que se desarrolla el Reglamento regulador de las infraestructuras comunes de telecomunicaciones",
+      "url": "https://www.boe.es/eli/es/o/2011/06/10/itc1644/con",
+      "scope": "supplemental",
+      "status": "verified",
+      "downloadedAt": "2026-11-04",
+      "verifiedAt": "2026-11-04",
+      "consultedLocator": "Página consolidada oficial descargada el 2026-11-04; artículos 6.4 y 6.5.",
+      "editorialConfidence": {
+        "level": "high",
+        "reason": "Texto consolidado oficial del BOE consultado directamente por HTTPS; la referencia identifica artículo y apartados."
+      },
+      "sha256": "fec485d2277ffbcdb738acd7bfb80d60beca5bc005b3124643efea90b465ad26",
+      "hashTarget": "downloaded-page",
+      "locatorPolicy": "exact"
+    },
+    {
       "sourceId": "RD 664/2015",
       "sourceVersion": "consolidated-page-2026-10-15",
       "sourceType": "primary",
@@ -657,6 +725,28 @@
         "reason": "Se obtuvo la página oficial por HTTPS y se calculó SHA-256 sobre los bytes recibidos."
       },
       "sha256": "cbeb25062025e0a9365d29807b5ecbef5a1f894f0ae8e06e87328abdfd8beda9",
+      "hashTarget": "downloaded-page",
+      "locatorPolicy": "exact"
+    },
+    {
+      "sourceId": "RD 39/1997",
+      "sourceVersion": "consolidated-page-2026-11-04",
+      "sourceType": "primary",
+      "sourceKind": "legislation",
+      "authority": "A",
+      "organization": "Boletín Oficial del Estado",
+      "title": "Real Decreto 39/1997, de 17 de enero, por el que se aprueba el Reglamento de los Servicios de Prevención",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-1853",
+      "scope": "supplemental",
+      "status": "verified",
+      "downloadedAt": "2026-11-04",
+      "verifiedAt": "2026-11-04",
+      "consultedLocator": "Texto consolidado BOE consultado el 2026-11-04; última actualización publicada el 2025-10-17; localizador interno por artículo.",
+      "editorialConfidence": {
+        "level": "high",
+        "reason": "Se obtuvo el texto consolidado desde BOE por HTTPS, se cotejó el artículo 11 y se calculó SHA-256 sobre la página descargada."
+      },
+      "sha256": "72f3df9d34e8d0e1b1874f2d318efc949c14c6321b5a35cad8f345e79903712e",
       "hashTarget": "downloaded-page",
       "locatorPolicy": "exact"
     },
@@ -724,6 +814,28 @@
       },
       "sha256": "87b07fe3501aef3274a478f9e9771a1a9a358680755f32df399eeb618d0938ed",
       "hashTarget": "downloaded-page",
+      "locatorPolicy": "exact"
+    },
+    {
+      "sourceId": "TREBEP",
+      "sourceVersion": "consolidated-pdf-2026-11-04",
+      "sourceType": "primary",
+      "sourceKind": "legislation",
+      "authority": "A",
+      "organization": "Boletín Oficial del Estado",
+      "title": "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público",
+      "url": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-11719-consolidado.pdf",
+      "scope": "supplemental",
+      "status": "verified",
+      "downloadedAt": "2026-11-04",
+      "verifiedAt": "2026-11-04",
+      "consultedLocator": "PDF oficial consolidado descargado el 2026-11-04 (59 páginas, 218 138 caracteres extraídos). Cotejo literal de los artículos 2, 7, 52, 53, 54, 93 y 94 contra los fragmentos citados en la teoría.",
+      "editorialConfidence": {
+        "level": "high",
+        "reason": "Descarga completa del PDF oficial del BOE por HTTPS; SHA-256 calculado sobre el archivo íntegro y cada fragmento citado comparado carácter a carácter tras normalizar el texto extraído."
+      },
+      "sha256": "11cfda7fd4cbcb38193199c24af00d2e8538ac4897d4d8c73fff11cbaa5671cb",
+      "hashTarget": "downloaded-file",
       "locatorPolicy": "exact"
     },
     {
@@ -811,7 +923,7 @@
       "status": "verified",
       "downloadedAt": "2026-10-15",
       "verifiedAt": "2026-10-15",
-      "consultedLocator": "PDF ADIF enlazado desde PNI26/01; Last-Modified Wed, 30 Sep 2026 11:22:37 GMT; 11192712 bytes descargados y SHA-256 calculado sobre el archivo completo.",
+      "consultedLocator": "Descarga histórica 2026-10-15 del PDF enlazado en PNI26/01: Last-Modified Wed, 30 Sep 2026 11:22:37 GMT; 11192712 bytes y SHA-256 registrado. Reconsulta 2026-11-04 del mismo enlace: HTTP 403. El snapshot local de agosto (SHA-256 796b26bdd38957ba31663b56dcda259d36de199c3cf1b537cfa3111d0cd029f2) no coincide con el SHA-256 histórico descargado: 362a3f68b7b81c0464515cf1ee026c785e6b1594395042d3e1d69c9255a4b080.",
       "editorialConfidence": {
         "level": "high",
         "reason": "Descarga completa del enlace ADIF vigente, cotejada con el tipo de documento y su índice o portada; SHA-256 calculado sobre todos los bytes."
@@ -907,7 +1019,7 @@
       "status": "verified",
       "downloadedAt": "2026-10-15",
       "verifiedAt": "2026-10-15",
-      "consultedLocator": "PDF ADIF enlazado desde PNI26/01; Last-Modified Wed, 30 Sep 2026 11:38:04 GMT; 1264893 bytes descargados y SHA-256 calculado sobre el archivo completo.",
+      "consultedLocator": "Descarga histórica 2026-10-15: Last-Modified Wed, 30 Sep 2026 11:38:04 GMT; 1264893 bytes y SHA-256 sobre el archivo completo. Reconsulta 2026-11-04 del mismo enlace: HTTP 403. El snapshot local de agosto (1190700 bytes, SHA-256 01ff8ed87e08c16f4f1335ac368d8ada5e7a19444337c1de837d58ed983f850b) no coincide con el SHA-256 descargado el 15-10-2026: 2697bebd7bac056f669fd575b7e84a057c658628ef30568fe9dba034cc9f015e.",
       "editorialConfidence": {
         "level": "medium",
         "reason": "ADIF es fuente primaria para confirmar que este PDF se asignó al temario; el artículo de REE cedido por Cemdal es fuente secundaria para sus afirmaciones técnicas."
@@ -978,7 +1090,7 @@
       "status": "verified",
       "downloadedAt": "2026-10-15",
       "verifiedAt": "2026-10-15",
-      "consultedLocator": "PDF oficial completo, portada e índice de capítulos I y II; edición 31-07-2026 según ficha de ADIF. La paginación interior conserva la leyenda V.0 (ED 27/02/2026).",
+      "consultedLocator": "Descarga histórica 2026-10-15 del enlace de edición general: 15531546 bytes y SHA-256 registrado; la ficha ADIF identifica edición 31-07-2026 y la paginación interior conserva la leyenda V.0 (ED 27/02/2026). Reconsulta 2026-11-04 del enlace directo: HTTP 403.",
       "editorialConfidence": {
         "level": "high",
         "reason": "La página oficial de ADIF identifica esta descarga como edición 31-07-2026; se descargaron 15,531,546 bytes desde su enlace y se verificó el SHA-256. Se registra la diferencia entre la ficha externa y la leyenda interior."

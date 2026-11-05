@@ -1,0 +1,17 @@
+# 01 — Matriz de cobertura documental
+
+Fuente de alcance: [PNI26/01, temario común y específico 26/12PO](https://www.adif.es/w/pni26-01-personal-operativo). ADIF enumera seis documentos comunes y tres específicos. Esta matriz es exploratoria: «parcial» describe las partes comprobadas o las lagunas detectadas; no certifica cada artículo. `covered` es un estado interno, no un juicio académico independiente. Fecha de consulta: 2026-11-04. Las normas BOE actuales pueden diferir del PDF preciso de la convocatoria.
+
+| Documento y alcance ADIF | Teoría | Cobertura / exactitud de la muestra | Preguntas revisadas disponibles / tarjetas | Riesgo y acción |
+|---|---|---|---|---|
+| LO 3/2007, ley completa | `content/theories/igualdad.ts` | Parcial: conceptos centrales, faltan apartados por cotejar; exactitud global N/E | 14 / 3 | P1: inventario por título, artículos, disposiciones y excepciones |
+| Ley 31/1995, exposición y caps. I, III, V | `content/theories/prevencion-riesgos-laborales.ts` | Parcial en muestra; no se acredita cada excepción; BOE actual accesible | 26 caps III/V, recuento por etiquetas / 11 | P1: contrastar sistemáticamente arts. 1–4, 14–29 y 33–40 y exposición |
+| RD 2395/2004, Estatuto ADIF | `content/theories/estatuto-adif.ts` | Parcial; hay nociones y organización, no se demuestra cobertura artículo a artículo | 23 por etiquetas estatutarias / 9 | P1: confrontar funciones, competencias y excepciones con artículos completos |
+| Declaración sobre la Red 2027, caps. I–II | `content/theories/declaracion-red-2027.ts` | N/E edición exacta; materiales contienen fuentes de varias fechas | 0 elegibles bajo etiqueta DR; 12 borrador separado / 28 tarjetas entre dos módulos | BLOQUEADO: obtener y cotejar adjunto exacto y versión julio 2026 |
+| TREBEP, título III capítulo VI, arts. 52–54 | `content/theories/codigo-conducta.ts` | Muestra consistente con BOE; equivalencia íntegra con PDF ADIF no verificada | 8 / 6 | P1 documental: cotejar adjunto completo, no equiparar extracto y hash |
+| Ley 53/1984, ley completa | `content/theories/incompatibilidades.ts` | Parcial; existen nociones y excepciones pero falta cotejo íntegro | 8 / 3 | P1: verificar ámbito, excepciones, límites y plazos artículo a artículo |
+| RD 346/2011, reglamento y anexos I–V | `content/theories/ict-rd-346-2011.ts` | Parcial: muestreo de 4 cifras consistente con BOE; muchos apartados sin cotejo | 61 por etiquetas ICT / 42 | P1: cuantificar lagunas en los cinco anexos antes de considerar completa la cobertura |
+| Artículo CEM y seguridad ferroviaria | `content/theories/compatibilidad-electromagnetica.ts` | N/E documental: el artículo exacto no se ha cotejado; la teoría general existe | 0 elegibles CEM; 12 borrador / 24 | BLOQUEADO: conseguir adjunto exacto y validar contenido y fecha |
+| RCF Libro 1 caps. 1–5 | `content/theories/rcf-libro-1.ts` | Parcial: capítulo 5 amplía temas, pero no se ha cotejado íntegramente; definiciones incompletas | 47 por etiquetas RCF / 33 | P1: comparar definiciones y apartados 1.1–1.5 con edición exigida |
+
+Recuentos de preguntas por etiqueta de tema, no son garantía de cobertura ni revisión de calidad. Cifras de tarjetas obtenidas del módulo declarativo: las dos etiquetas DR suman 28; ICT incluye tarjetas asignadas al módulo. Los títulos con ley completa requieren verificar las disposiciones relevantes de la edición exacta: esta tabla no presenta una enumeración completa de cada una.

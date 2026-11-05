@@ -10,6 +10,16 @@ const reviewedCemPrimary = {
   },
 } as const;
 
+const reviewedCemCodex = {
+  status: "reviewed",
+  reviewedAt: "2026-11-04",
+  reviewedBy: "codex",
+  confidence: {
+    level: "high",
+    reason: "Cotejado con el precepto oficial concreto de la Directiva 2014/30/UE, del RD 186/2016 o de la fuente BOE indicada.",
+  },
+} as const;
+
 const pendingCemSyllabus = {
   status: "needs_review",
   confidence: {
@@ -22,12 +32,27 @@ const reviewedCemArticle = {
   status: "needs_review",
   confidence: {
     level: "medium",
-    reason: "Contenido trazado al artículo asignado \"Compatibilidad electromagnética y seguridad en los ferrocarriles\" (REE, mayo de 2015, cedido por Cemdal), conservado en el repositorio (pdf/02, manifest PNI26-12PO-SPECIFIC-02). El marco legal (Directiva 2014/30/UE y RD 186/2016) está verificado en manifest; la verificación byte a byte del artículo REE se mantiene como fuente oficial pendiente.",
+    reason: "Las afirmaciones editoriales se cotejaron con el artículo REE de mayo de 2015 (pp. 80–86) en su publicación independiente de Redeweb. Esto no demuestra identidad binaria con el PDF enlazado por ADIF ni convierte el contenido técnico secundario e histórico en normativa vigente; la norma y la vigencia aplicables requieren fuentes primarias.",
   },
 } as const;
 
 export const cemTheory: TheorySection = {
   sources: [
+    {
+      id: "dir-2004-108-ce",
+      sourceId: "Directiva 2004/108/CE",
+      sourceTitle: "Directiva 2004/108/CE del Parlamento Europeo y del Consejo, de 15 de diciembre de 2004, relativa a la aproximación de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética y por la que se deroga la Directiva 89/336/CEE",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2004-83048",
+      locator: "Ficha BOE: datos de publicación en el DOUE",
+      excerpt: "Directiva de 15 de diciembre de 2004, publicada en el DOUE L 390 de 31 de diciembre de 2004.",
+    },
+    {
+      id: "dir-2014-30-ue-art2-13",
+      sourceId: "Directiva 2014/30/UE",
+      sourceTitle: "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
+      locator: "Artículos 2 y 13",
+    },
     {
       id: "dir-2014-30-ue",
       sourceId: "Directiva 2014/30/UE",
@@ -36,17 +61,24 @@ export const cemTheory: TheorySection = {
       sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
       locator: "Artículo 3, definiciones",
       excerpt:
-        "Compatibilidad electromagnética: la capacidad de un equipo para funcionar satisfactoriamente en su entorno electromagnético sin introducir perturbaciones electromagnéticas intolerables para otros equipos y sin sufrir él mismo degradación inaceptable.",
+        "Compatibilidad electromagnética: capacidad de que un equipo funcione de forma satisfactoria en su entorno electromagnético sin introducir perturbaciones electromagnéticas intolerables para otros equipos en ese entorno.",
     },
     {
-      id: "dir-2014-30-ue-art4",
+      id: "dir-2014-30-ue-art6-anexo1",
       sourceId: "Directiva 2014/30/UE",
       sourceTitle:
         "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
       sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
-      locator: "Artículo 4",
+      locator: "Artículo 6 y anexo I, apartado 1",
       excerpt:
-        "Los equipos deberán estar diseñados y fabricados de forma que garanticen, en condiciones de funcionamiento normales, que las perturbaciones electromagnéticas que generan no superen un nivel que permita a los equipos de telecomunicaciones y de radiodifusión funcionar según lo previsto.",
+        "Los equipos cumplirán los requisitos esenciales establecidos en el anexo I. Su diseño y fabricación garantizarán límites a las perturbaciones generadas y protección frente a las perturbaciones previsibles.",
+    },
+    {
+      id: "dir-2014-30-ue-art46",
+      sourceId: "Directiva 2014/30/UE",
+      sourceTitle: "Directiva 2014/30/UE del Parlamento Europeo y del Consejo, de 26 de febrero de 2014, sobre la armonización de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética",
+      sourceUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623",
+      locator: "Artículo 46",
     },
     {
       id: "rd186-2016",
@@ -55,17 +87,38 @@ export const cemTheory: TheorySection = {
         "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
       locator: "Artículo 3",
-      excerpt: "Los equipos deberán cumplir los requisitos esenciales de protección...",
+      excerpt: "Compatibilidad electromagnética: capacidad de que un equipo funcione de forma satisfactoria en su entorno electromagnético sin introducir perturbaciones electromagnéticas intolerables para otros equipos en ese entorno.",
     },
     {
-      id: "rd186-2016-art5",
+      id: "rd186-2016-art7",
       sourceId: "Real Decreto 186/2016",
       sourceTitle:
         "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
-      locator: "Artículo 5",
+      locator: "Artículo 7",
       excerpt:
-        "Los fabricantes deberán asegurar que los equipos que introduzcan en el mercado cumplan los requisitos esenciales; deberán elaborar la documentación técnica y realizar el procedimiento de evaluación de la conformidad aplicable.",
+        "Los fabricantes elaborarán la documentación técnica y llevarán a cabo el correspondiente procedimiento de evaluación de la conformidad o velarán por que se lleve a cabo; cuando se haya demostrado el cumplimiento, formularán una declaración UE de conformidad y colocarán el marcado CE.",
+    },
+    {
+      id: "rd186-2016-anexo1",
+      sourceId: "Real Decreto 186/2016",
+      sourceTitle: "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
+      locator: "Anexo I, apartado 1",
+    },
+    {
+      id: "rd186-2016-art17",
+      sourceId: "Real Decreto 186/2016",
+      sourceTitle: "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
+      locator: "Artículo 17",
+    },
+    {
+      id: "rd186-2016-art19",
+      sourceId: "Real Decreto 186/2016",
+      sourceTitle: "Real Decreto 186/2016, de 6 de mayo, por el que se regula la compatibilidad electromagnética de los equipos eléctricos y electrónicos",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442",
+      locator: "Artículo 19",
     },
     {
       id: "cem-ree-2015",
@@ -75,7 +128,7 @@ export const cemTheory: TheorySection = {
         "https://www.adif.es/documents/20124/55031380/02%2BCompatibilidad%2Belectromagn%C3%A9tica%2By%2Bseguridad%2Ben%2Blos%2Bferrocarriles.pdf/66b0c76b-4910-3415-fd83-0672ec9a3068",
       locator: "Artículo REE, mayo de 2015, pp. 80–86 (cedido por Cemdal)",
       excerpt:
-        "Artículo asignado por ADIF al temario de la parte específica 26/12PO (PNI26/01): desarrolla la CEM en el entorno ferroviario, la Directiva de CEM, la norma EN 50121, las instalaciones fijas, el material rodante, la gestión de la CEM y su gestión en España.",
+        "ADIF asigna este artículo al temario de la parte específica 26/12PO (PNI26/01). El texto editorial se cotejó con la publicación independiente de REE, pp. 80–86 (https://www.redeweb.com/ficheros/articulos/cemdal_870487183.pdf); esta referencia independiente no demuestra identidad binaria con el PDF enlazado por ADIF. El contenido técnico del artículo es secundario e histórico, no normativa vigente.",
     },
     {
       id: "en50121",
@@ -92,16 +145,16 @@ export const cemTheory: TheorySection = {
       sourceUrl: "https://www.adif.es/w/pni26-01-personal-operativo",
       locator: "Parte 2, emisión",
       excerpt:
-        "Fija los límites de emisión radiada y conducida para el material rodante en condiciones de prueba estacionaria y en movimiento.",
+        "Parte relativa a la emisión del sistema ferroviario completo hacia el exterior; el texto íntegro y la edición vigente no se han cotejado aquí.",
     },
     {
       id: "en50121-p3",
       sourceId: "EN 50121",
       sourceTitle: "Norma armonizada europea de compatibilidad electromagnética en aplicaciones ferroviarias",
       sourceUrl: "https://www.adif.es/w/pni26-01-personal-operativo",
-      locator: "Parte 3, inmunidad",
+      locator: "Parte 3-2, material rodante: aparatos",
       excerpt:
-        "Define los niveles de inmunidad exigidos a los equipos de señalización, telecomunicación y control embarcados.",
+        "Parte relativa a los aparatos del material rodante; el texto íntegro y la edición vigente no se han cotejado aquí.",
     },
     {
       id: "adif-pni23-cem-questions",
@@ -138,7 +191,7 @@ export const cemTheory: TheorySection = {
   introduction: [
     {
       id: "cem-intro-1",
-      text: "La compatibilidad electromagnética (CEM) es la capacidad de un equipo para funcionar satisfactoriamente sin introducir perturbaciones electromagnéticas intolerables y sin sufrir degradaciones inaceptables.",
+      text: "La compatibilidad electromagnética es la capacidad de un equipo para funcionar satisfactoriamente en su entorno sin introducir perturbaciones electromagnéticas intolerables para otros equipos. La inmunidad es un concepto distinto: la aptitud para funcionar sin degradación ante perturbaciones electromagnéticas.",
       kind: "normative",
       legalBasis: ["dir-2014-30-ue"],
       review: reviewedCemPrimary,
@@ -159,7 +212,7 @@ export const cemTheory: TheorySection = {
     },
     {
       id: "cem-intro-4",
-      text: "El documento asignado por ADIF para esta unidad es el artículo \"Compatibilidad electromagnética y seguridad en los ferrocarriles\" (Revista Española de Electrónica, mayo de 2015, cedido por Cemdal, autoría de Francesc Daura Luna); su contenido forma la base de esta teoría, complementada con la Directiva 2014/30/UE y el RD 186/2016 verificables en el BOE.",
+      text: "ADIF asigna a esta unidad el artículo \"Compatibilidad electromagnética y seguridad en los ferrocarriles\" (Revista Española de Electrónica, mayo de 2015, pp. 80–86, cedido por Cemdal, autoría de Francesc Daura Luna). Su texto se ha cotejado con la publicación editorial independiente de REE en Redeweb (https://www.redeweb.com/ficheros/articulos/cemdal_870487183.pdf); esto no acredita identidad binaria con el PDF enlazado por ADIF. El artículo es una fuente secundaria e histórica: los requisitos legales se contrastan por separado con la Directiva 2014/30/UE y el RD 186/2016 del BOE.",
       kind: "didactic",
       legalBasis: ["cem-ree-2015"],
       review: reviewedCemArticle,
@@ -180,10 +233,10 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c1-1",
-          text: "Un equipo es compatible electromagnéticamente cuando su nivel de emisión se sitúa por debajo de los límites normativos y su nivel de inmunidad por encima de los umbrales exigidos.",
+          text: "Los requisitos esenciales combinan dos objetivos: limitar la emisión de perturbaciones para permitir el funcionamiento previsto de otros equipos y proporcionar inmunidad suficiente frente a perturbaciones previsibles para evitar una degradación inaceptable en el uso previsto.",
           kind: "normative",
-          legalBasis: ["rd186-2016"],
-          review: reviewedCemPrimary,
+          legalBasis: ["rd186-2016-anexo1"],
+          review: reviewedCemCodex,
         },
       ],
     },
@@ -200,10 +253,10 @@ export const cemTheory: TheorySection = {
         },
         {
           id: "cem-c2-2",
-          text: "Los equipos deberán estar diseñados y fabricados de forma que las perturbaciones electromagnéticas que generan no superen un nivel que impida el funcionamiento previsto de los equipos de telecomunicaciones y radiodifusión.",
+          text: "El anexo I de la Directiva exige que el diseño y la fabricación limiten las perturbaciones generadas a un nivel que permita funcionar a los equipos de radio, telecomunicaciones y demás equipos según su finalidad; también exige protección ante perturbaciones previsibles.",
           kind: "normative",
-          legalBasis: ["dir-2014-30-ue-art4"],
-          review: reviewedCemPrimary,
+          legalBasis: ["dir-2014-30-ue-art6-anexo1"],
+          review: reviewedCemCodex,
         },
       ],
     },
@@ -246,9 +299,9 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c5-1",
-          text: "Los ensayos de emisión radiada de material rodante en prueba estacionaria se miden por norma armonizada a una distancia de 10 metros utilizando detector de cuasi-pico.",
+          text: "La figura 6 del artículo REE de 2015 presenta límites de cuasi-pico de emisiones radiadas a 10 metros para prueba estacionaria e identifica EN 50121-3-1. Es una descripción de esa fuente histórica, no un cotejo de la edición vigente de la norma.",
           kind: "didactic",
-          legalBasis: ["en50121-p2"],
+          legalBasis: ["cem-ree-2015"],
           review: pendingCemSyllabus,
         },
         {
@@ -383,10 +436,10 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c15-1",
-          text: "El fabricante debe elaborar la documentación técnica, realizar el procedimiento de evaluación de la conformidad aplicable y colocar el marcado CE de forma visible, legible e indeleble.",
+          text: "El fabricante debe elaborar la documentación técnica y llevar a cabo el procedimiento de evaluación de la conformidad aplicable o velar por que se lleve a cabo. Una vez demostrada la conformidad, formulará la declaración UE de conformidad y colocará el marcado CE, visible, legible e indeleble sobre el aparato o su placa; si esto no fuera posible o no pudiera garantizarse por la naturaleza del aparato, se colocará en el embalaje y los documentos adjuntos.",
           kind: "normative",
-          legalBasis: ["rd186-2016-art5"],
-          review: reviewedCemPrimary,
+          legalBasis: ["rd186-2016-art7", "rd186-2016-art17"],
+          review: reviewedCemCodex,
         },
       ],
     },
@@ -396,9 +449,9 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c16-1",
-          text: "Los equipos de señalización, telecomunicación y control embarcados deben cumplir los niveles de inmunidad definidos por la norma armonizada para evitar fallos de seguridad por perturbaciones externas.",
+          text: "La parte 3-2 de EN 50121 trata los aparatos del material rodante; la parte 4 aborda los aparatos de señalización y telecomunicaciones. El artículo REE explica esta división, pero aquí no se ha cotejado el texto íntegro ni la edición vigente de esas normas.",
           kind: "didactic",
-          legalBasis: ["en50121-p3"],
+          legalBasis: ["cem-ree-2015", "en50121-p3"],
           review: pendingCemSyllabus,
         },
       ],
@@ -469,14 +522,14 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c20-1",
-          text: "Un tren puede consumir varios MW de potencia (algunos miles de amperios); la conmutación entre sistemas de alimentación se realiza en pocos nanosegundos y genera niveles muy importantes de interferencias electromagnéticas (EMI), parcialmente radiadas directamente y parcialmente inducidas por el cableado del convertidor de potencia.",
+          text: "El artículo de 2015 describe cómo las conmutaciones de convertidores de tracción pueden generar interferencias radiadas y perturbaciones acopladas al cableado y a la alimentación. La lectura que distingue esa conmutación electrónica del cambio del tren entre redes de alimentación es una interpretación del contexto: la formulación del artículo puede resultar ambigua.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
         },
         {
           id: "cem-c20-2",
-          text: "Las EMIs debidas a las transiciones de las conmutaciones tienen una amplitud que puede variar en varios miles de amperios en pocos nanosegundos, lo que produce perturbaciones con un espectro muy rico que alcanza el rango de los GHz.",
+          text: "El artículo REE de 2015 indica que el cambio entre sistemas de alimentación puede ocurrir en unos pocos nanosegundos y, después, describe emisiones de las conmutaciones de convertidores. Esa secuencia no demuestra que el tiempo citado sea el de conmutación de los convertidores ni un valor representativo general; cualquier parámetro de equipo requiere verificación técnica específica.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -577,14 +630,14 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c24-1",
-          text: "Dado que el nivel de EMI conducidas hacia la alimentación de la línea aérea (catenaria) podría ser catastrófico, a todos los convertidores se les añaden filtros para atenuarlas.",
+          text: "El artículo de 2015 afirma que se añaden filtros a los convertidores para atenuar las EMI que pueden conducirse hacia la catenaria. Se recoge como explicación técnica de esa fuente histórica, no como obligación legal ni regla universal de diseño aplicable a todo convertidor.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
         },
         {
           id: "cem-c24-2",
-          text: "El diseño de estos filtros no es sencillo, debido a la naturaleza de las EMIs generadas por las conmutaciones, cuya amplitud puede variar en varios miles de amperios en pocos nanosegundos y cuyo espectro alcanza el rango de los GHz.",
+          text: "El artículo REE de 2015 relaciona el diseño de filtros con las transiciones rápidas y el espectro de las perturbaciones de convertidores. Sus cifras de corriente, tiempo y frecuencia deben cotejarse para el equipo y ensayo concretos antes de tratarlas como magnitudes generales.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -597,24 +650,24 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c25-1",
-          text: "La Directiva de CEM 2004/108/CE se publicó en el DOUE de 15 de diciembre de 2004 y fue transpuesta por el RD 1580/2006 (BOE de 22 de diciembre de 2006), entrando en vigor el régimen regulatorio de las instalaciones fijas que también afecta a todos los ferrocarriles, sus sistemas de señalización y sus instalaciones.",
-          kind: "didactic",
-          legalBasis: ["cem-ree-2015"],
-          review: reviewedCemArticle,
+          text: "La Directiva 2004/108/CE, fechada el 15 de diciembre de 2004, se publicó en el DOUE L 390 el 31 de diciembre de 2004. Incluía aparatos e instalaciones fijas dentro de su ámbito; su aplicación a equipos ferroviarios depende de que estén comprendidos en ese ámbito y de sus exclusiones.",
+          kind: "normative",
+          legalBasis: ["dir-2004-108-ce"],
+          review: reviewedCemCodex,
         },
         {
           id: "cem-c25-2",
-          text: "La nueva Directiva de compatibilidad electromagnética 2014/30/UE se publicó el 29 de marzo de 2014 y entró en vigor el 20 de abril de 2016; a nivel técnico no aporta cambios respecto a la Directiva anterior.",
+          text: "La Directiva 2014/30/UE se publicó el 29 de marzo de 2014. Su artículo 46 distingue la entrada en vigor, veinte días después de su publicación, de la aplicación desde el 20 de abril de 2016 de los preceptos que enumera.",
           kind: "normative",
-          legalBasis: ["cem-ree-2015", "dir-2014-30-ue"],
-          review: reviewedCemArticle,
+          legalBasis: ["dir-2014-30-ue-art46"],
+          review: reviewedCemCodex,
         },
         {
           id: "cem-c25-3",
-          text: "Según la Directiva de CEM, el ferrocarril se define como una \"instalación fija\"; todo equipo está obligado a llevar el Marcado CE para poder ser vendido en la UE y requiere \"documentación técnica\", equivalente al expediente técnico de construcción; el fabricante puede elegir voluntariamente la evaluación por un Organismo Notificado o autocertificar si dispone de los instrumentos adecuados.",
+          text: "La normativa distingue aparatos e instalaciones fijas. El régimen de marcado y evaluación depende del supuesto: el artículo 19 del RD 186/2016 contempla, bajo sus condiciones, aparatos destinados a una instalación fija concreta que de otra manera no se comercializarían. Los procedimientos de evaluación deben determinarse conforme al régimen aplicable.",
           kind: "normative",
-          legalBasis: ["cem-ree-2015", "dir-2014-30-ue", "rd186-2016"],
-          review: reviewedCemArticle,
+          legalBasis: ["rd186-2016", "rd186-2016-art19"],
+          review: reviewedCemCodex,
         },
       ],
     },
@@ -624,14 +677,14 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c26-1",
-          text: "La Directiva de CEM es jurídicamente vinculante y obliga a los sectores de la industria eléctrica y electrónica a garantizar la CEM en sus sistemas y productos; su cumplimiento se demuestra mediante los requisitos esenciales de protección, mientras que las normas armonizadas son instrumentos técnicos voluntarios cuya aplicación facilita y presume la conformidad.",
+          text: "La Directiva obliga a que los equipos comprendidos en su ámbito cumplan los requisitos esenciales aplicables; contempla aparatos e instalaciones fijas y establece exclusiones. Las normas armonizadas son voluntarias: su aplicación da presunción de conformidad únicamente respecto de los requisitos que cubren.",
           kind: "normative",
-          legalBasis: ["dir-2014-30-ue", "rd186-2016", "cem-ree-2015"],
-          review: reviewedCemArticle,
+          legalBasis: ["dir-2014-30-ue-art2-13", "rd186-2016-anexo1"],
+          review: reviewedCemCodex,
         },
         {
           id: "cem-c26-2",
-          text: "La norma EN 50121 incluye la advertencia de que es probable lograr la conformidad CEM si se cumple la norma, pero, debido a la complejidad del entorno ferroviario, no se puede garantizar la CEM al 100 %; las normas ferroviarias de CEM representan un requisito técnico mínimo y pueden necesitar complementarse a partir de la identificación de peligros y riesgos.",
+          text: "El artículo REE de 2015 atribuye a la edición de EN 50121 que cita una advertencia: cumplir la norma hace probable la conformidad CEM, pero la complejidad ferroviaria impide garantizarla al 100 %. También presenta las normas ferroviarias como mínimos técnicos que pueden requerir complementarse mediante identificación de peligros y riesgos; esta descripción histórica no fija por sí sola la edición ni los requisitos vigentes.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -644,10 +697,10 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c27-1",
-          text: "Las instalaciones fijas (IF) son montajes de diversos aparatos y dispositivos, que llevan el Marcado CE, instalados aplicando las \"buenas prácticas de ingeniería\" y destinados a un uso permanente en un lugar previamente definido (por ejemplo, redes de distribución de electricidad, redes de telecomunicaciones, grandes máquinas y conjuntos de máquinas en centros de fabricación).",
-          kind: "didactic",
-          legalBasis: ["cem-ree-2015"],
-          review: reviewedCemArticle,
+          text: "Una instalación fija combina aparatos y, en su caso, otros dispositivos, ensamblados e instalados para uso permanente en un sitio predefinido. Debe instalarse conforme a buenas prácticas de ingeniería. Un aparato comercializado que pueda incorporarse a ella debe cumplir todos los requisitos del real decreto; hay una excepción específica para el destinado a una instalación fija concreta que de otra manera no se comercializaría.",
+          kind: "normative",
+          legalBasis: ["rd186-2016", "rd186-2016-art19", "rd186-2016-anexo1"],
+          review: reviewedCemCodex,
         },
         {
           id: "cem-c27-2",
@@ -658,14 +711,14 @@ export const cemTheory: TheorySection = {
         },
         {
           id: "cem-c27-3",
-          text: "Los aparatos diseñados y fabricados para su incorporación en una IF específica y no disponibles en el mercado fuera de esa IF no están obligados a someterse a los procedimientos formales de evaluación de la conformidad de la Directiva; el fabricante puede optar entre seguir dichos procedimientos o documentar el nombre y lugar de la IF y las precauciones de CEM tomadas para mantener la conformidad.",
+          text: "Para un aparato destinado a incorporarse en una instalación fija concreta y que de otra manera no se comercializaría, el artículo 19 exceptúa los requisitos de los artículos 6 a 12 y 14 a 18. La documentación adjunta identifica la instalación y sus características CEM, indica las precauciones para no comprometer su conformidad e incluye la información a la que remite el artículo 19: identificación del aparato y datos del fabricante e importador conforme a los preceptos señalados.",
           kind: "normative",
-          legalBasis: ["cem-ree-2015", "dir-2014-30-ue"],
-          review: reviewedCemArticle,
+          legalBasis: ["rd186-2016-art19"],
+          review: reviewedCemCodex,
         },
         {
           id: "cem-c27-4",
-          text: "La Directiva de CEM no es retroactiva para las instalaciones ferroviarias ya construidas; la documentación de CEM es \"viva\" (debe reflejar las actualizaciones) y puede ir acumulándose con el tiempo mediante la actualización de la documentación del proyecto y los datos existentes. En la construcción de una nueva línea, la \"persona responsable\" es el contratista principal, que supervisa y coordina la documentación de colaboradores y proveedores; tras la puesta en marcha, el controlador de la infraestructura se convierte en la persona responsable.",
+          text: "El artículo de 2015 describe la documentación CEM de instalaciones ferroviarias existentes como documentación que puede actualizarse con el tiempo y expone un reparto de responsabilidades durante la construcción y explotación. Sus afirmaciones sobre retroactividad y responsables no sustituyen la normativa aplicable a cada instalación.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -739,7 +792,7 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c30-1",
-          text: "Las normas EN 50121-2 y EN 50121-3-1 establecen las emisiones que se deben medir a partir de los movimientos de los trenes desde un único punto de observación situado a 10 metros al lado de la vía férrea.",
+          text: "El artículo de 2015 describe mediciones de emisiones con puntos de observación situados a 10 metros de la vía. Distingue la parte 2, relativa al sistema ferroviario hacia el exterior, y la parte 3-1, relativa al tren y vehículo completo; debe verificarse la edición aplicable para cada ensayo.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015", "en50121"],
           review: reviewedCemArticle,
@@ -800,14 +853,14 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c32-1",
-          text: "La evaluación de la CEM en los ferrocarriles españoles es doble: la primera parte la realiza el Ministerio de Fomento (Ministerio de Obras Públicas, la NSA), que expide la autorización de puesta en servicio, y la segunda parte la lleva a cabo el Administrador de Infraestructuras Ferroviarias (ADIF), que emite la autorización de funcionamiento al confirmar la compatibilidad con la red; la documentación que detalla el proceso también es doble.",
+          text: "El artículo de 2015 describía una evaluación en dos partes atribuida al entonces Ministerio de Fomento y a ADIF. Es una descripción histórica del artículo, no una identificación del procedimiento vigente de autorización, que requiere consultar la normativa ferroviaria aplicable.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
         },
         {
           id: "cem-c32-2",
-          text: "Los procesos legales españoles se establecen mediante las Órdenes Ministeriales de materiales y las especificaciones técnicas de las homologaciones (ETH); la evaluación la realiza un panel externo formado por organismos de certificación y organismos notificados, que proporciona un certificado basado en las normas TSI (Especificaciones Técnicas de Interoperabilidad) y las ETH.",
+          text: "El artículo de 2015 describía los procesos españoles mediante órdenes de materiales y especificaciones técnicas de homologación y mencionaba la intervención de organismos de certificación y notificados. Para conocer las exigencias actuales hay que comprobar la normativa y las especificaciones aplicables al caso.",
           kind: "didactic",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -850,7 +903,7 @@ export const cemTheory: TheorySection = {
       application: [
         {
           id: "cem-ex-1-app-1",
-          text: "Requiere verificar si el tren cumple con los límites de emisión marcados por la EN 50121-3-1 y si los equipos de señalización cumplen con la inmunidad de la EN 50121-4.",
+      text: "Puede investigarse la posible relación entre las emisiones del tren y las anomalías de los circuitos de vía, y entre las perturbaciones y las caídas de radio. Las partes EN 50121-3-1 y -4 son referencias que cita el material; antes de usarlas como criterio hay que comprobar su edición, ámbito y aplicabilidad al equipo.",
           kind: "example",
           legalBasis: ["en50121"],
           review: pendingCemSyllabus,
@@ -863,10 +916,10 @@ export const cemTheory: TheorySection = {
       application: [
         {
           id: "cem-ex-2-app-1",
-          text: "Es necesario verificar el marcado CE y la documentación técnica del convertidor, así como medir las emisiones conducidas y radiadas conforme a la EN 50121 antes de su aceptación.",
+          text: "Documenta los síntomas y encarga una evaluación técnica de la compatibilidad del equipo y la instalación conforme a su régimen y configuración. Selecciona las mediciones y normas pertinentes para el caso y verifica su edición y aplicabilidad; la aparición de interferencias no impone por sí sola una prueba universal de aceptación EN 50121.",
           kind: "example",
-          legalBasis: ["rd186-2016", "en50121"],
-          review: reviewedCemPrimary,
+          legalBasis: ["rd186-2016-art19", "en50121"],
+          review: pendingCemSyllabus,
         },
       ],
     },
@@ -876,7 +929,7 @@ export const cemTheory: TheorySection = {
       application: [
         {
           id: "cem-ex-3-app-1",
-          text: "Las buenas prácticas de ingeniería CEM del artículo asignado exigen separar los cables de señal de los de potencia, usar cables apantallados y asegurar la conexión a tierra y la unión equipotencial de chasis y armarios, reduciendo el área de bucle de la víctima y la capacidad parásita hacia la fuente de perturbación.",
+          text: "Como opciones de diseño, el artículo asignado describe separar los cables de señal y potencia, apantallar, unir equipotencialmente chasis y armarios y reducir el área de bucle. La selección depende del análisis de acoplamiento y del diseño de la instalación.",
           kind: "example",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -889,7 +942,7 @@ export const cemTheory: TheorySection = {
       application: [
         {
           id: "cem-ex-4-app-1",
-          text: "El carril es a la vez conductor de retorno de tracción y canal de las señales codificadas de los circuitos de vía; la compatibilidad entre material rodante y detección de trenes se verifica con la familia EN 50238 (circuitos de vía y contadores de ejes) y los límites de interferencia del CLC/TR 50507 citados en el artículo asignado.",
+          text: "El carril puede servir de retorno de tracción y participar en los circuitos de vía. Para investigar las anomalías, identifica primero el sistema de detección y las perturbaciones observadas; el artículo asignado cita EN 50238 y CLC/TR 50507 como referencias posibles, pero su edición y aplicabilidad deben comprobarse para el caso.",
           kind: "example",
           legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
@@ -922,28 +975,28 @@ export const cemTheory: TheorySection = {
     },
     {
       id: "cem-takeaway-4",
-      text: "Cifras y hechos memorizables del artículo asignado: la conmutación de conversión se realiza en nanosegundos con corrientes de miles de amperios y espectro hasta los GHz; las mediciones de emisión de material rodante se hacen desde un punto único a 10 m; se usan de 2 a 3 antenas simultáneas; la EN 50121 se adoptó definitivamente en 2000 (versión 2006 en vigor desde julio de 2009) y se subdivide en 6 partes; la Directiva 2014/30/UE se publicó el 29 de marzo de 2014 y entró en vigor el 20 de abril de 2016 sin cambios técnicos respecto a la anterior.",
-      kind: "didactic",
-      legalBasis: ["cem-ree-2015", "en50121"],
-      review: reviewedCemArticle,
+      text: "Las cifras y descripciones de conmutación, medición y EN 50121 se cotejaron con una publicación editorial independiente del artículo REE (mayo de 2015, pp. 80–86); esto no acredita identidad binaria con el PDF asignado por ADIF. Se mantienen como contenido histórico, no como valores generales ni datos vigentes; la edición normativa aplicable debe comprobarse aparte. La Directiva 2014/30/UE se publicó el 29 de marzo de 2014; su artículo 46 distingue su entrada en vigor de las fechas de aplicación de determinados preceptos, entre ellas el 20 de abril de 2016.",
+      kind: "normative",
+      legalBasis: ["cem-ree-2015", "en50121", "dir-2014-30-ue-art46"],
+      review: pendingCemSyllabus,
     },
     {
       id: "cem-takeaway-5",
-      text: "Las seis partes de la EN 50121 según el artículo asignado: -1 Generalidades; -2 Emisión del sistema ferroviario completo al mundo exterior; -3-1 Material rodante (tren y vehículo completo); -3-2 Material rodante (aparatos); -4 Emisión e inmunidad de aparatos de señalización y telecomunicaciones; -5 Emisión e inmunidad de instalaciones fijas de suministro de energía y equipos asociados. Las partes 2, 3-1 y 5 exigen pruebas \"in situ\".",
+      text: "El artículo REE de 2015 expone una estructura y unos ensayos de la familia EN 50121 propios de la edición que describe. La vigencia, armonización y alcance de cada parte deben comprobarse en la edición aplicable; este resumen histórico no basta para fijar requisitos de ensayo actuales.",
       kind: "didactic",
       legalBasis: ["cem-ree-2015", "en50121"],
-      review: reviewedCemArticle,
+      review: pendingCemSyllabus,
     },
     {
       id: "cem-takeaway-6",
-      text: "En las instalaciones fijas, la documentación de \"buenas prácticas de ingeniería CEM\" debe custodiarla una \"persona responsable\" durante toda la vida de la instalación; la Directiva de CEM no es retroactiva y su documentación es \"viva\". En España la evaluación es doble: autorización de puesta en servicio (Ministerio) y autorización de funcionamiento por compatibilidad con la red (ADIF).",
+      text: "El artículo REE de 2015 describe la gestión documental y el reparto de responsabilidades en instalaciones ferroviarias conforme al marco que expone. No establece por sí solo una regla general de irretroactividad ni el procedimiento vigente de autorización; ambos extremos deben determinarse con la normativa aplicable al caso.",
       kind: "didactic",
       legalBasis: ["cem-ree-2015"],
       review: reviewedCemArticle,
     },
     {
       id: "cem-takeaway-7",
-      text: "Medidas prácticas de inmunidad y mitigación: filtros en los convertidores para atenuar las EMIs conducidas hacia la catenaria, cables apantallados, separación de cables, conexión a tierra y buenas uniones equipotenciales de chasis y armarios, y reducción del área de bucle de los circuitos víctima.",
+      text: "El artículo REE de 2015 propone filtros, apantallamiento, separación de cables, conexión equipotencial y reducción del área de bucle como medidas de mitigación. Son opciones de diseño que deben seleccionarse según el análisis del acoplamiento y las condiciones de la instalación; no son una lista universal de obligaciones legales.",
       kind: "didactic",
       legalBasis: ["cem-ree-2015"],
       review: reviewedCemArticle,

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isSafePracticeSvg } from "./practice-svg";
 
 import {
   type OriginalPracticeQuestion,
@@ -30,6 +31,8 @@ export const originalPracticePublicQuestionSchema = z.object({
   topic: z.string().trim().min(1),
   skill: z.string().trim().min(1),
   prompt: z.string().trim().min(1),
+  figure: z.string().refine(isSafePracticeSvg).optional(),
+  figureAlt: z.string().trim().min(1).optional(),
   options: z.array(originalPracticeOptionSchema).length(4),
   difficulty: z.number().int().min(1).max(3),
   tags: z.array(z.string().trim().min(1)),
@@ -101,6 +104,7 @@ export function toPublicPracticeQuestion(questionInput: unknown): OriginalPracti
     topic: parsed.data.topic,
     skill: parsed.data.skill,
     prompt: parsed.data.prompt,
+    ...(parsed.data.figure ? { figure: parsed.data.figure, figureAlt: parsed.data.figureAlt } : {}),
     options: parsed.data.options,
     difficulty: parsed.data.difficulty,
     tags: parsed.data.tags,

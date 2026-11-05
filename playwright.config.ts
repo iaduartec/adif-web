@@ -23,6 +23,7 @@ export default defineConfig({
     stderr: "pipe",
     env: {
       PLAYWRIGHT_TEST: "true",
+      VERCEL_ENV: "preview",
       PORT: "3000",
     },
   },

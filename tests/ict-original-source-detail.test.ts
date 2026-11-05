@@ -21,3 +21,16 @@ it("locates ICT infrastructure items in the correct annex and avoids unsupported
   expect(earthing.sourceLocator).toBe("Anexo III, apartado 7.1");
   expect(earthing.prompt).toMatch(/no modular/i);
 });
+
+it("covers Article 11 equipment and material conformity with its official locator", () => {
+  const theory = lessonTheories["ict-rd-346-2011"]!;
+  const concept = theory.concepts.find((item) => item.id === "ict-concept-10")!;
+  const claim = concept.claims.find((item) => item.id === "ict-c10-2")!;
+  expect(concept.title).toMatch(/conformidad de materiales/i);
+  expect(claim.text).toMatch(/equipos.*proyecto técnico.*materiales/i);
+  expect(claim.text).toMatch(/seguridad contra incendios y resistencia al fuego/i);
+  expect(claim.legalBasis).toContain("rd346-2011-art11-materials");
+  const source = theory.sources.find((item) => item.id === "rd346-2011-art11-materials")!;
+  expect(source.locator).toBe("Artículo 11");
+  expect(source.sourceUrl).toBe("https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834");
+});

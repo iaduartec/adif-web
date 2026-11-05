@@ -92,7 +92,7 @@ describe("course reader provenance and notes", () => {
     expect(screen.getByRole("heading", { name: "Supuestos Prácticos Tipo Test" })).toBeVisible();
     expect(screen.getByText(/un puesto operativo se establece una prueba de esfuerzo físico/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Reglas Nemotécnicas y Tips" })).toBeVisible();
-    expect(screen.getByText(/no admite justificación ordinaria/i)).toBeVisible();
+    expect(screen.getByText(/El trato desfavorable a las mujeres relacionado con el embarazo o la maternidad constituye discriminación directa/i)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Errores frecuentes en examen" })).toBeVisible();
     expect(screen.getByRole("heading", { name: /Preguntas Originales del Tema/i })).toBeVisible();
     expect(screen.getByRole("radio", { name: /Entrenamiento/ })).toBeVisible();

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isSafePracticeSvg } from "./practice-svg";
 
 import { getEnglishCurriculum, englishKnowledgeErrorSchema } from "./english-a2-curriculum";
 import {
@@ -27,10 +28,16 @@ export const originalPracticeStatusSchema = z.enum(["draft", "reviewed"]);
 export const originalPracticeProvenanceSchema = z.literal("original");
 export const originalPracticeAnswerKeySchema = z.enum(["A", "B", "C", "D"]);
 
+const figureFields = {
+  figure: z.string().refine(isSafePracticeSvg, "Invalid static SVG").optional(),
+  figureAlt: z.string().trim().min(1).optional(),
+};
+
 export const originalPracticeOptionSchema = z.object({
   key: originalPracticeAnswerKeySchema,
   text: z.string().trim().min(1),
-}).strict();
+  ...figureFields,
+}).strict().refine((option) => Boolean(option.figure) === Boolean(option.figureAlt), "Figure and description must be supplied together");
 
 export { originalPsychometricTopicIds };
 
@@ -106,6 +113,7 @@ export const originalPracticeQuestionSchema = z.object({
   topic: z.string().trim().min(1),
   skill: z.string().trim().min(1),
   prompt: z.string().trim().min(1),
+  ...figureFields,
   options: z.array(originalPracticeOptionSchema).length(4),
   answer: originalPracticeAnswerKeySchema,
   explanation: z.string().trim().min(1),
@@ -119,6 +127,7 @@ export const originalPracticeQuestionSchema = z.object({
   reviewedAt: z.iso.date().optional(),
   origin: originalPracticeProvenanceSchema,
 }).strict().superRefine((question, context) => {
+  if (Boolean(question.figure) !== Boolean(question.figureAlt)) context.addIssue({ code: "custom", path: ["figure"], message: "Figure and description must be supplied together." });
   const optionKeys = question.options.map((option) => option.key);
   if (new Set(optionKeys).size !== 4 || ["A", "B", "C", "D"].some((key) => !optionKeys.includes(key as typeof optionKeys[number]))) {
     context.addIssue({

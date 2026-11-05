@@ -72,4 +72,38 @@ describe("Supabase configuration boundary", { concurrent: false }, () => {
       data: { user: { id: "test-user-id" } },
     });
   });
+
+  it("never activates Playwright mock clients in production even if the test flag leaks", async () => {
+    vi.stubEnv("PLAYWRIGHT_TEST", "true");
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://real-project.supabase.co");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "sb_publishable_real-project");
+    vi.resetModules();
+
+    const { getSupabaseRuntimeConfig } = await import("../lib/supabase/config");
+
+    expect(getSupabaseRuntimeConfig()).toEqual({
+      mode: "supabase",
+      url: "https://real-project.supabase.co",
+      anonKey: "sb_publishable_real-project",
+    });
+  });
+
+  it("keeps preview deployments on Supabase when the Playwright flag leaks", async () => {
+    vi.stubEnv("PLAYWRIGHT_TEST", "true");
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "preview");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://preview-project.supabase.co");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "sb_publishable_preview-project");
+    vi.resetModules();
+
+    const { getSupabaseRuntimeConfig } = await import("../lib/supabase/config");
+
+    expect(getSupabaseRuntimeConfig()).toEqual({
+      mode: "supabase",
+      url: "https://preview-project.supabase.co",
+      anonKey: "sb_publishable_preview-project",
+    });
+  });
 });

@@ -228,7 +228,7 @@ describe("authenticated navigation", () => {
     const table = screen.getByRole("table", { name: "Progreso por materia de preguntas originales" });
     const row = within(table).getByRole("row", { name: /Inglés A2/ });
     expect(row).toHaveTextContent("50% (1/2)");
-    expect(row).toHaveTextContent("1 de 22 revisadas");
+    expect(row).toHaveTextContent("1 de 49 revisadas");
     expect(screen.getByRole("heading", { name: "Precisión por sección oficial" })).toBeVisible();
   });
 

@@ -47,7 +47,18 @@ const ABSOLUTE_WHITELIST: Array<{
   claimId: string;
   expression: string;
   reason: string;
-}> = [];
+}> = [
+  {
+    claimId: "incomp-c11-1",
+    expression: "automáticamente",
+    reason: "Reproduce el efecto condicionado del artículo 14 de la Ley 53/1984 al cambiar el puesto público.",
+  },
+  {
+    claimId: "incomp-c16-1",
+    expression: "automáticamente",
+    reason: "Reproduce el artículo 20 de la Ley 53/1984: la revocación opera si la resolución califica la falta como grave o muy grave.",
+  },
+];
 
 function checkText(moduleName: string, location: string, claimId: string, text: string) {
   if (!text) return;

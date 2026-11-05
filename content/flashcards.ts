@@ -6,6 +6,56 @@ export interface Flashcard {
 }
 
 export const flashcards: readonly Flashcard[] = [
+  {
+    id: "ict-fc-ritu-eligibilidad",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Cuándo contempla el anexo III un RITU ordinario o un RITU-A?",
+    back: "El RITU es posible en edificios de hasta tres alturas y planta baja con hasta 16 PAU y en conjuntos de viviendas unifamiliares sin límite de PAU. El RITU-A es posible con más de tres alturas y planta baja hasta 16 PAU, o con 17–30 PAU sin límite de alturas; debe cumplir sus condiciones de dimensiones y ubicación (apartado 4.5.3).",
+  },
+  {
+    id: "incomp-fc-art1-3",
+    module: "E4 Incompatibilidades",
+    front: "¿Qué límite general establece el artículo 1.3 de la Ley 53/1984 para una actividad pública o privada?",
+    back: "Para el personal incluido en la Ley, es incompatible si puede impedir o menoscabar el cumplimiento estricto de los deberes del puesto, o comprometer la imparcialidad o independencia de quien lo desempeña. El límite se aplica a actividades tanto públicas como privadas.",
+  },
+  // TREBEP, título III, capítulo VI
+  {
+    id: "conducta-fc-1",
+    module: "G4 Código de conducta",
+    front: "¿Cómo se relacionan los principios del Código de Conducta con el régimen disciplinario según el artículo 52 del TREBEP?",
+    back: "Informan la interpretación y aplicación del régimen disciplinario de los empleados públicos. El artículo 52 no tipifica por sí solo una falta ni fija una sanción; hay que examinar el régimen aplicable.",
+  },
+  {
+    id: "conducta-fc-2",
+    module: "G4 Código de conducta",
+    front: "¿Qué distingue el artículo 53.12 del TREBEP entre secreto y discreción?",
+    back: "Exige secreto sobre materias clasificadas u otras cuya difusión esté legalmente prohibida y discreción sobre asuntos conocidos por razón del cargo. Prohíbe usar la información para beneficio propio o de terceros o en perjuicio del interés público.",
+  },
+  {
+    id: "conducta-fc-3",
+    module: "G4 Código de conducta",
+    front: "Según el artículo 54.3 del TREBEP, ¿qué hacer ante una orden profesional que constituye una infracción manifiesta del ordenamiento?",
+    back: "La regla de obediencia tiene esa excepción: la orden debe ponerse inmediatamente en conocimiento de los órganos de inspección procedentes.",
+  },
+  {
+    id: "conducta-fc-4",
+    module: "G4 Código de conducta",
+    front: "¿Qué matiz exige el artículo 54.6 del TREBEP para rechazar regalos, favores o servicios?",
+    back: "Se rechazan los regalos, favores o servicios en condiciones ventajosas que vayan más allá de los usos habituales, sociales y de cortesía, sin perjuicio de lo establecido en el Código Penal.",
+  },
+  {
+    id: "conducta-fc-5",
+    module: "G4 Código de conducta",
+    front: "Según el artículo 53.3 del TREBEP, ¿con quiénes se exige lealtad y buena fe?",
+    back: "Con la Administración en la que se presten servicios, los superiores, compañeros, subordinados y ciudadanos.",
+  },
+  {
+    id: "conducta-fc-6",
+    module: "G4 Código de conducta",
+    front: "¿Qué condición establece el artículo 54.11 del TREBEP para atender al ciudadano en la lengua que solicite?",
+    back: "Que la lengua solicitada sea oficial en el territorio.",
+  },
+
   // G1 Igualdad
   {
     id: "F0001",
@@ -17,7 +67,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0002",
     module: "G1 Igualdad",
     front: "¿Qué se entiende por 'discriminación indirecta' según la Ley Orgánica 3/2007?",
-    back: "La situación en que una disposición, criterio o práctica aparentemente neutros pone a personas de un sexo en desventaja particular respecto de las del otro, salvo que pueda justificarse objetivamente con una finalidad legítima.",
+    back: "La situación en que una disposición, criterio o práctica aparentemente neutros pone a personas de un sexo en desventaja particular respecto de las del otro, salvo que se justifique objetivamente por una finalidad legítima y los medios para alcanzarla sean necesarios y adecuados (artículo 6.2 de la LO 3/2007).",
   },
   {
     id: "F0003",
@@ -27,6 +77,18 @@ export const flashcards: readonly Flashcard[] = [
   },
 
   // G2 PRL
+  {
+    id: "prl-fc-art22-excepciones",
+    module: "G2 PRL",
+    front: "¿Cuándo puede exceptuarse el consentimiento en la vigilancia de la salud del artículo 22 LPRL?",
+    back: "Previo informe de los representantes, cuando el reconocimiento sea imprescindible para evaluar los efectos de las condiciones de trabajo sobre la salud o verificar si el estado del trabajador puede suponer peligro para él u otras personas relacionadas con la empresa; o cuando una disposición legal lo establezca respecto de riesgos específicos y actividades de especial peligrosidad. Las pruebas serán proporcionales al riesgo y causarán las menores molestias.",
+  },
+  {
+    id: "prl-fc-art22-confidencialidad",
+    module: "G2 PRL",
+    front: "¿Puede el empresario acceder a los datos médicos personales de la vigilancia de salud?",
+    back: "Sin consentimiento expreso, no. El acceso de terceros corresponde al personal médico y a las autoridades sanitarias que realizan la vigilancia. El empresario y los responsables preventivos reciben las conclusiones sobre aptitud o necesidad de mejorar la protección; los resultados se comunican al trabajador (art. 22.3–4 LPRL).",
+  },
   {
     id: "F0004",
     module: "G2 PRL",
@@ -44,6 +106,54 @@ export const flashcards: readonly Flashcard[] = [
     module: "G2 PRL",
     front: "¿Qué diferencia hay entre EPI y protección colectiva?",
     back: "La protección colectiva protege a varios trabajadores simultáneamente (ej. barandillas, redes) y debe priorizarse por ley frente a los Equipos de Protección Individual (EPI), que solo protegen a un usuario particular.",
+  },
+  {
+    id: "prl-fc-1",
+    module: "G2 PRL",
+    front: "¿Delegar o concertar actividades preventivas libera al empresario de su deber de protección?",
+    back: "No. Conforme al artículo 14.4 LPRL, la asignación de funciones a trabajadores o servicios y el concierto con entidades especializadas complementan la acción empresarial, pero no eximen al empresario de cumplir su deber.",
+  },
+  {
+    id: "prl-fc-2",
+    module: "G2 PRL",
+    front: "¿Cómo se reparte la información preventiva entre representantes y cada trabajador?",
+    back: "Si hay representantes, la información general prevista en el artículo 18.1 se facilita a través de ellos. Además, cada trabajador debe recibir directamente la información sobre los riesgos específicos de su puesto y las medidas aplicables.",
+  },
+  {
+    id: "prl-fc-3",
+    module: "G2 PRL",
+    front: "Menciona cuatro materias que el empresario debe someter a consulta preventiva con antelación.",
+    back: "Entre otras: organización del trabajo y nuevas tecnologías con efectos preventivos; organización de la prevención o recurso a servicio externo; designación del personal de emergencia; procedimientos de información/documentación; y proyecto y organización de la formación. Si existen representantes, la consulta se realiza con ellos.",
+  },
+  {
+    id: "prl-fc-4",
+    module: "G2 PRL",
+    front: "¿Cuántos Delegados de Prevención corresponden a una plantilla de 50 a 100 personas y cómo se designan?",
+    back: "Corresponden dos y se designan por y entre los representantes del personal, según el artículo 35.2 LPRL. La Ley prevé reglas específicas para plantillas de hasta 49 y permite adaptaciones por convenio y en el empleo público.",
+  },
+  {
+    id: "prl-fc-5",
+    module: "G2 PRL",
+    front: "¿Cuándo puede el empresario asumir personalmente la prevención y qué queda fuera de esa modalidad?",
+    back: "Como contexto complementario (art. 11 RD 39/1997), se exige plantilla de hasta 10 personas o de hasta 25 en un solo centro, actividad ajena al anexo I, presencia habitual del empresario y capacidad preventiva adecuada. La vigilancia de la salud y otras actividades no asumidas deben cubrirse mediante otra modalidad.",
+  },
+  {
+    id: "prl-fc-6",
+    module: "G2 PRL",
+    front: "¿Qué exige el artículo 17 LPRL sobre equipos de trabajo y equipos de protección individual?",
+    back: "Los equipos de trabajo deben ser adecuados y adaptados, y su uso se reserva a los encargados cuando exista riesgo específico; la reparación y el mantenimiento corresponden a trabajadores específicamente capacitados. Los EPI se facilitan y se vigila su uso efectivo cuando la naturaleza del trabajo lo exige, y solo se usan si el riesgo no puede evitarse o limitarse suficientemente con protección colectiva u organización del trabajo.",
+  },
+  {
+    id: "prl-fc-7",
+    module: "G2 PRL",
+    front: "¿Qué medidas prevé la LPRL para el embarazo, el parto reciente y la lactancia?",
+    back: "La evaluación determina la exposición y, si hay riesgo, se adaptan condiciones o tiempo de trabajo, incluida la no realización de trabajo nocturno o a turnos cuando sea necesario. Si la adaptación no es posible y lo certifican los servicios médicos, se pasa a un puesto compatible; si no existe, cabe la suspensión del contrato por riesgo durante el embarazo o la lactancia de hijos menores de nueve meses. También hay derecho remunerado a exámenes prenatales.",
+  },
+  {
+    id: "prl-fc-8",
+    module: "G2 PRL",
+    front: "¿Qué puede hacer el Comité de Seguridad y Salud y cómo colabora la Inspección de Trabajo?",
+    back: "El Comité participa en los planes y programas de prevención, promueve iniciativas y puede conocer directamente la situación del centro con visitas, documentos e informes, analizar daños a la salud y conocer e informar la memoria y programación anual del servicio de prevención. Los trabajadores y sus representantes pueden acudir a la Inspección; el Inspector comunica su presencia al Comité o al Delegado para que le acompañen, salvo que perjudique el éxito de la visita.",
   },
 
   // G3 Estatuto ADIF
@@ -64,6 +174,42 @@ export const flashcards: readonly Flashcard[] = [
     module: "G3 Estatuto ADIF",
     front: "¿Cuál es el objeto de ADIF según el RD 2395/2004?",
     back: "La administración de las infraestructuras ferroviarias y su construcción cuando le sea encomendada, así como la gestión de los servicios de regulación y seguridad del tráfico.",
+  },
+  {
+    id: "estatuto-fc-1",
+    module: "G3 Estatuto ADIF",
+    front: "¿Cuáles son los tres límites y los cuatro criterios del artículo 2 del Estatuto de ADIF?",
+    back: "Límites de la autonomía de gestión: la Ley del Sector Ferroviario, el propio Estatuto y demás legislación aplicable. Criterios que deben tenerse en cuenta en todo caso: garantía del interés público, satisfacción de las necesidades sociales con la máxima calidad, seguridad de los usuarios y eficacia global del sistema ferroviario.",
+  },
+  {
+    id: "estatuto-fc-2",
+    module: "G3 Estatuto ADIF",
+    front: "¿Qué apartado del artículo 4 del Estatuto de ADIF suprimió la reforma de 2013?",
+    back: "El antiguo apartado 1, que regulaba los convenios o contratos-programa por los que los Ministerios de Economía y Hacienda y de Fomento encomendaban a ADIF la administración de infraestructuras de titularidad estatal. La disposición final primera, apartado cinco, del RD 1044/2013 lo eliminó y renumeró los apartados 2, 3 y 4 como 1, 2 y 3.",
+  },
+  {
+    id: "estatuto-fc-3",
+    module: "G3 Estatuto ADIF",
+    front: "En la redacción vigente, ¿qué regula cada apartado del artículo 4 del Estatuto de ADIF?",
+    back: "Apartado 1: convenios con las comunidades autónomas para la construcción y administración de sus redes ferroviarias. Apartado 2: convenios con la Administración General del Estado u otras Administraciones Públicas. Apartado 3: convenios de colaboración con RENFE-Operadora, empresas ferroviarias o entidades públicas y privadas, incluido el uso de instalaciones de interés común.",
+  },
+  {
+    id: "estatuto-fc-4",
+    module: "G3 Estatuto ADIF",
+    front: "¿Por qué el artículo 4 del Estatuto de ADIF se sigue titulando «Convenios o contratos-programa»?",
+    back: "Porque el epígrafe no se modificó al suprimirse en 2013 el apartado que regulaba el contrato-programa. El rótulo se mantiene en el texto consolidado, pero la figura ya no tiene apartado propio: no debe deducirse del título que siga regulada.",
+  },
+  {
+    id: "estatuto-fc-5",
+    module: "G3 Estatuto ADIF",
+    front: "¿Qué comprende la administración de infraestructuras de la RFIG según el artículo 9 y qué comprende el mantenimiento según el artículo 10?",
+    back: "Artículo 9: mantenimiento y explotación de las infraestructuras, más la gestión de sus sistemas de control, circulación y seguridad. Artículo 10: conservación, reparación, reposición y actualización tecnológica de elementos. El artículo 3.2 prohíbe a ADIF prestar transporte ferroviario salvo el inherente a su propia actividad.",
+  },
+  {
+    id: "estatuto-fc-6",
+    module: "G3 Estatuto ADIF",
+    front: "¿Cuántos órganos de gobierno tiene ADIF y cuáles son?",
+    back: "Dos, según el artículo 14: el Consejo de Administración y el Presidente. El Consejo asume la superior dirección de la administración y gestión y lo forman el Presidente y entre nueve y diez vocales nombrados por el Ministerio de Fomento. Los Directores Generales, Gerentes de Unidad de negocio y Corporativos son personal directivo, no órganos de gobierno.",
   },
 
   // E1 ICT
@@ -89,7 +235,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "ict-fc-4",
     module: "E1 ICT RD 346/2011",
     front: "¿Cuándo es obligatoria la ICT según el RD 346/2011?",
-    back: "Es obligatoria en edificios de nueva planta que requieran licencia de obra y en rehabilitaciones integrales cuando el presupuesto supere el 50% del valor de la edificación.",
+    back: "Por dos vías: los edificios en régimen de propiedad horizontal, de uso residencial o no y sean o no de nueva construcción, y los edificios arrendados en todo o en parte por más de un año, salvo los que alberguen una sola vivienda. El artículo 3 no contiene ningún umbral del 50 % del valor de la edificación.",
   },
   {
     id: "ict-fc-5",
@@ -100,8 +246,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "ict-fc-6",
     module: "E1 ICT RD 346/2011",
-    front: "¿Cuáles son los requisitos para usar un RITU en lugar de RITI + RITS?",
-    back: "El edificio debe tener como máximo tres alturas más planta baja y un máximo de 16 Puntos de Acceso al Usuario (PAU).",
+    front: "¿Cuándo contempla el anexo III un RITU simple y cuándo un RITU ampliado (RITU-A)?",
+    back: "RITU simple: en edificios de hasta tres alturas más planta baja y hasta 16 PAU, y en conjuntos de viviendas unifamiliares. RITU-A: en edificios de más de tres alturas más planta baja y hasta 16 PAU, o con 17–30 PAU sin límite de alturas, con las condiciones dimensionales del anexo III.",
   },
   {
     id: "ict-fc-7",
@@ -137,7 +283,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "ict-fc-12",
     module: "E1 ICT RD 346/2011",
     front: "¿En qué banda trabaja la TDT (televisión digital terrestre) en la ICT?",
-    back: "En la banda UHF, entre 470 y 790 MHz.",
+    back: "470–694 MHz (canales 21–48), según el artículo 1 del Plan Técnico Nacional de la TDT aprobado por RD 250/2025. Es distinto de los intervalos de respuesta de red del anexo I del RD 346/2011, que incluyen otros servicios y la FI de satélite.",
   },
   {
     id: "ict-fc-13",
@@ -149,19 +295,19 @@ export const flashcards: readonly Flashcard[] = [
     id: "ict-fc-14",
     module: "E1 ICT RD 346/2011",
     front: "¿Cuáles son los niveles de señal exigidos en la toma de usuario para TDT y satélite?",
-    back: "Entre 47 y 77 dBμV para TDT (señal digital terrestre) y para señal de satélite en FI. Para FM analógica, el mínimo es 40 dBμV.",
+    back: "El anexo I, apartado 4.5, indica 47–70 dBμV para COFDM-TV, 47–77 dBμV para QPSK-TV y 40–70 dBμV para FM radio. En modulaciones digitales el nivel se refiere a la potencia en todo el ancho del canal.",
   },
   {
     id: "ict-fc-15",
     module: "E1 ICT RD 346/2011",
     front: "¿Qué categoría mínima exige la ICT para los cables de pares trenzados de la red de distribución?",
-    back: "Categoría 6 (conforme a UNE-EN 50288) para la red de distribución. La red de dispersión admite categoría 5e como mínimo.",
+    back: "Clase E, categoría 6 o superior, para el cableado de pares trenzados de distribución y dispersión conforme al anexo II, apartado 5.1.1. No se establece una rebaja general a categoría 5e para la dispersión.",
   },
   {
     id: "ict-fc-16",
     module: "E1 ICT RD 346/2011",
     front: "¿Qué separación mínima debe haber entre canalizaciones ICT y canalizaciones eléctricas de baja tensión?",
-    back: "10 cm cuando discurren en paralelo y 3 cm cuando se cruzan.",
+    back: "Como regla general, 100 mm en paralelo y 30 mm en cruces. En la canalización interior de usuario son válidos 30 mm en ambos casos (anexo III, apartado 8).",
   },
   {
     id: "ict-fc-17",
@@ -172,8 +318,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "ict-fc-18",
     module: "E1 ICT RD 346/2011",
-    front: "¿A qué distancia máxima del punto de entrada al recinto deben conectarse a tierra los cables exteriores con portadores metálicos?",
-    back: "A no más de 2 metros del punto de entrada al recinto, para reducir el riesgo de sobretensión.",
+    front: "¿Qué exige el apartado 7.2.3 para los cables de telecomunicación con portadores metálicos que llegan del exterior?",
+    back: "Deben estar apantallados y el extremo de la pantalla se conecta a tierra local tan cerca como sea posible de su entrada al recinto del punto de interconexión, nunca a más de 2 m. Es una regla distinta de la instalación de protectores contra sobretensiones del apartado 7.2.4.",
   },
   {
     id: "ict-fc-19",
@@ -196,14 +342,14 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "ict-fc-22",
     module: "E1 ICT RD 346/2011",
-    front: "¿Con qué periodicidad máxima deben realizarse las inspecciones obligatorias de la ICT?",
-    back: "Como máximo cada 15 años. La primera inspección es previa a la puesta en servicio.",
+    front: "¿Qué establece el RD 346/2011 sobre la inspección técnica de la ICT?",
+    back: "El artículo 13.3 incluye en el anexo IV un protocolo de pruebas orientativo para facilitar la inspección de las infraestructuras de telecomunicaciones. Los plazos de la inspección del edificio requieren consultar la normativa aplicable; no existe una regla general de inspección ICT cada 15 años en ese artículo.",
   },
   {
     id: "ict-fc-23",
     module: "E1 ICT RD 346/2011",
     front: "¿Cuáles son los tres niveles del Hogar Digital según el Anexo V?",
-    back: "Nivel 1: telecomunicaciones básicas interiores. Nivel 2: añade control del entorno y eficiencia energética. Nivel 3: automatización plena con gestión remota.",
+    back: "Básico, medio y alto. La clasificación se determina por la puntuación y ponderación de servicios de las distintas áreas del anexo V; no se reduce a una prestación única por nivel.",
   },
   {
     id: "ict-fc-24",
@@ -247,6 +393,78 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué contempla el Anexo I del RD 346/2011?",
     back: "La norma técnica ICT para la captación, adaptación y distribución de señales de radiodifusión sonora y televisión terrestres y por satélite (RTV), incluyendo especificaciones de red, niveles de señal y características de cables y equipos.",
   },
+  {
+    id: "ict-fc-31",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué dos supuestos delimitan el ámbito del RD 346/2011 según su artículo 3?",
+    back: "Primero, los edificios y conjuntos inmobiliarios con continuidad en la edificación, de uso residencial o no y sean o no de nueva construcción, acogidos o que deban acogerse a propiedad horizontal. Segundo, los edificios arrendados en todo o en parte por plazo superior a un año, salvo los que alberguen una sola vivienda.",
+  },
+  {
+    id: "ict-fc-32",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Existe en el artículo 3 un umbral económico de rehabilitación (por ejemplo, el 50 % del valor de la edificación)?",
+    back: "No. El artículo 3 no contiene ningún porcentaje ni usa la «rehabilitación integral» como criterio de aplicación. El ámbito depende del régimen jurídico del inmueble (propiedad horizontal) o de su arrendamiento por más de un año, no del coste de la obra.",
+  },
+  {
+    id: "ict-fc-33",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué anexo rige cada parte de la ICT según el artículo 4.1?",
+    back: "Anexo I: captación, adaptación y distribución de radiodifusión sonora y televisión. Anexo II: acceso a telefonía disponible al público y telecomunicaciones de banda ancha. Anexo III: especificaciones mínimas de la obra civil, recogidas por la norma técnica básica de edificación; en su ausencia, se aplica directamente el anexo III.",
+  },
+  {
+    id: "ict-fc-34",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué efecto tiene el resultado de la consulta a operadores y qué no puede alterar?",
+    back: "Solo decide la ejecución o no de la instalación inicial de las redes interiores. No afecta al diseño, dimensionado ni instalación de los elementos soporte de obra civil, con la única excepción de la ubicación de la arqueta de entrada. La regla está en el párrafo final del artículo 8.1, no en el 8.2.",
+  },
+  {
+    id: "ict-fc-35",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Cuánto tiempo tienen los operadores para responder a la consulta del proyectista?",
+    back: "Un máximo de 30 días desde que se realiza la consulta. Si no contestan, el proyectista proyecta la ICT conforme al reglamento.",
+  },
+  {
+    id: "ict-fc-36",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué cuatro documentos integran como mínimo el proyecto técnico de ejecución?",
+    back: "Memoria, planos, pliego de condiciones y presupuesto. El acta de replanteo, el boletín de instalación y el manual de usuario son documentos posteriores o complementarios, no parte de esa lista.",
+  },
+  {
+    id: "ict-fc-37",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué plazo hay para presentar el acta de replanteo y desde cuándo se cuenta?",
+    back: "Quince días naturales desde su redacción y firma, mediante presentación electrónica en el Registro electrónico del Ministerio. No se cuenta desde el inicio de las obras ni desde su finalización.",
+  },
+  {
+    id: "ict-fc-38",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué anuló exactamente el Tribunal Supremo en 2012 del Reglamento ICT?",
+    back: "El inciso que situaba la titulación exigida en el artículo 3 del RD-Ley 1/1998 (artículos 8.2.a, 9.1, 10.1, 10.2 y sección 3 del anexo IV) y el inciso que exigía que el proyecto «debe ser verificado por una entidad» independiente. El resto de los preceptos, incluido el plazo de 15 días, sigue vigente.",
+  },
+  {
+    id: "ict-fc-39",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Es obligatorio instalar siempre protectores contra sobretensiones en portadores metálicos exteriores?",
+    back: "No. Según el nivel ceráunico y el apantallamiento de la zona, puede ser conveniente. El operador determina la necesidad y es responsable del diseño, suministro e instalación (anexo II, apartado 7.2.4).",
+  },
+  {
+    id: "ict-fc-40",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué diferencia hay entre la respuesta amplitud/frecuencia en canal y en banda de la red?",
+    back: "Son parámetros distintos. El anexo I, apartado 4.4.2, da 47–694 MHz y 950–2.150 MHz para la respuesta en canal. El apartado 4.4.3 trata la respuesta en banda de la red y usa 47–862 MHz y 950–2.150 MHz.",
+  },
+  {
+    id: "ict-fc-41",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué cableado mínimo se exige para pares trenzados de distribución y dispersión?",
+    back: "Como mínimo, cuatro pares de cobre con aislamiento individual sin apantallar y clase E (categoría 6), según el anexo II, apartado 5.1.1.a. La cubierta de la red interior de usuario se especifica por separado en el apartado 5.1.2.a.",
+  },
+  {
+    id: "ict-fc-42",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué documento entrega a la propiedad la empresa instaladora tras el mantenimiento de una ICT?",
+    back: "El protocolo de pruebas de mantenimiento, ajustado a los trabajos contratados y con las comprobaciones realizadas (anexo IV, sección 2).",
+  },
 
   // E2 CEM
   {
@@ -258,8 +476,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0014",
     module: "E2 Compatibilidad electromagnetica",
-    front: "¿Qué marcado acredita el cumplimiento de la Directiva CEM para comercializar equipos?",
-    back: "El marcado 'CE', colocado de forma visible, legible e indeleble en el equipo o en su placa de características, que acredita la conformidad con los requisitos esenciales de la Directiva CEM (2004/108/CE y su sucesora 2014/30/UE, transpuesta en España por el RD 1580/2006). En el sector ferroviario, las pruebas de emisión e inmunidad se realizan conforme a la norma EN 50121.",
+    front: "¿Qué declara el marcado CE de un aparato sujeto a la normativa de CEM?",
+    back: "Mediante el marcado CE el fabricante indica que asume la responsabilidad de la conformidad aplicable; no es una certificación independiente automática. La Directiva 2014/30/UE se incorpora en España por el RD 186/2016; el RD 1580/2006 correspondía a la Directiva anterior 2004/108/CE.",
   },
   {
     id: "F0015",
@@ -287,6 +505,114 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué es un 'puesto de mando' según las definiciones del Libro Primero?",
     back: "Centro específico del Administrador de Infraestructuras (AI) encargado de la gestión y regulación del tráfico ferroviario en tiempo real.",
   },
+  {
+    id: "rcf-fc-1",
+    module: "E3 RCF Libro 1",
+    front: "¿En qué tres supuestos del Reglamento de Circulación Ferroviaria queda invalidada la orden de marcha de un tren?",
+    back: "1. Tren directo que quede detenido en una estación. 2. Tren parado que no pueda salir inmediatamente después de haber recibido la orden de marcha. 3. Tren directo que se detiene por falta de la señal de paso, por cambio intempestivo de la indicación de la señal de salida o por otra causa relacionada con la orden de marcha.",
+  },
+  {
+    id: "rcf-fc-2",
+    module: "E3 RCF Libro 1",
+    front: "Invalidada la orden de marcha, ¿qué distingue el Reglamento según el tren haya rebasado o no la señal de salida?",
+    back: "Si no ha rebasado la señal de salida o el piquete de la vía, se le da nuevamente la orden de marcha si procede. Si lo ha rebasado, se le notifica la reanudación de la marcha cuando proceda o se ordena el retroceso a una vía de la estación. Además, no se autoriza la salida de la estación colateral de un tren en sentido contrario por la misma vía sin comunicación previa con el maquinista afectado.",
+  },
+  {
+    id: "rcf-fc-3",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué velocidad no puede exceder la marcha de maniobras según el Reglamento de Circulación Ferroviaria?",
+    back: "30 km/h si la locomotora va tirando del tren y 20 km/h si va empujándolo, debiendo poder detener el tren ante cualquier obstáculo visible desde el puesto de conducción o ante una señal de parada.",
+  },
+  {
+    id: "rcf-fc-4",
+    module: "E3 RCF Libro 1",
+    front: "¿Quién responde de la explotación segura y del control de riesgos ferroviarios, y qué función cumplen los SGS?",
+    back: "Los administradores de infraestructuras (AI) y las empresas ferroviarias (EF) responden de la explotación segura y del control de riesgos asociado. Definen y aplican medidas, cooperan cuando procede y recogen en sus SGS las reglas internas y procedimientos para cumplir el RCF y las demás normas de seguridad.",
+  },
+  {
+    id: "rcf-fc-5",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué debe comprobar el personal que toma un servicio ferroviario relacionado con la seguridad?",
+    back: "Debe hacerse cargo de la documentación, impresos, registros informáticos y útiles; conocer la información de seguridad que transmite quien sale y resolver con esa persona las dudas que surjan.",
+  },
+  {
+    id: "rcf-fc-6",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué reglas básicas rigen una comunicación verbal entre Maquinista y Responsable de Circulación?",
+    back: "Se utiliza preferentemente la radiotelefonía disponible; el emisor comprueba que se ha entendido y ambas partes se identifican por teléfono, radio u otro medio disponible. Si el Maquinista debe registrar un telefonema, lo hace con el tren parado.",
+  },
+  {
+    id: "rcf-fc-7",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué objetivo del RCF recoge el artículo 1.1.1.1.2 además de establecer reglas de circulación?",
+    back: "El artículo 1.1.1.1, párrafo 2, establece un marco regulador único para los procesos operativos con interfaz directa entre AI y EF y unifica criterios de operación entre los distintos AI y anchos de la Red.",
+  },
+  {
+    id: "rcf-fc-8",
+    module: "E3 RCF Libro 1",
+    front: "¿Cómo se clasifican las paradas prescritas por su función y por su duración o periodicidad?",
+    back: "Por su función: comercial (subida y bajada de viajeros), restringida (solo bajada de viajeros, con salida posible al terminar las operaciones, incluso con adelanto) y técnica (cruce, adelantamiento, operaciones de la EF u otra causa de explotación). Por su duración o periodicidad: momentánea (tiempo indispensable para las operaciones) u ocasional (solo los días o períodos indicados en la marcha).",
+  },
+  {
+    id: "rcf-fc-9",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué sistemas de bloqueo son nominales y cuál es supletorio?",
+    back: "Nominales: Telefónico (BT); Liberación automática (BLA, BLAU, BLAD, BLAB); Automático (BA, BAU, BAD, BAB); Señalización lateral (BSL); y Control automático (BCA). El BT se emplea con carácter supletorio cuando no funcionan los sistemas nominales. BLA y BA pueden ser con y sin CTC.",
+  },
+  {
+    id: "rcf-fc-10",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué significan el número y la letra del código de tipo de tren?",
+    back: "El número es la velocidad máxima en km/h en las condiciones más favorables de trazado y clase de vía, en múltiplos de 10. La letra expresa el tipo por la aceleración centrífuga no compensada admitida en curva: N hasta 0,65 m/s², A hasta 1, B hasta 1,2, C hasta 1,5 y D hasta 1,8 m/s². Un tren con solo número o con letra N es de tipo normal.",
+  },
+  {
+    id: "rcf-fc-11",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué velocidades máximas corresponden a cada sistema de protección cuando son compatibles y están operativos?",
+    back: "350 km/h con ERTMS Nivel 2, 300 km/h con ERTMS Nivel 1 o LZB, 220 km/h con EBICAB y 200 km/h con ASFA. Si los sistemas son incompatibles, alguno no está operativo o falta el sistema en la infraestructura, la velocidad máxima es 120 km/h.",
+  },
+  {
+    id: "rcf-fc-12",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué diferencia una estación de servicio intermitente AC de una NC?",
+    back: "Las AC permiten la circulación mientras están cerradas si las señales permiten el paso en ambos sentidos en vía única y en el sentido normal en vía doble, las agujas están encerrojadas y existe comunicación directa entre las estaciones colaterales abiertas. Las NC no permiten circulación ni trabajos mientras están cerradas.",
+  },
+  {
+    id: "rcf-fc-13",
+    module: "E3 RCF Libro 1",
+    front: "¿En qué tres supuestos debe inmovilizarse el tren con los frenos de estacionamiento?",
+    back: "Cuando se separa la locomotora de la composición, cuando no es posible asegurar su inmovilidad mediante el freno automático y cuando queda un corte de material fraccionado en plena vía. El freno de estacionamiento asegura la inmovilidad si el freno automático pierde eficacia.",
+  },
+  {
+    id: "rcf-fc-14",
+    module: "E3 RCF Libro 1",
+    front: "¿Cuándo se complementa la orden de marcha con la señal de paso o con la señal «marche el tren»?",
+    back: "Con la señal de paso para los trenes directos y con «marche el tren» para los trenes parados cuando el trayecto tenga BT, cuando se circule a contravía con BTV o cuando la señal de salida afecte a más de una vía. Si no existe señal de salida, la orden la constituye «marche el tren»; en BCA basta una Velocidad Límite superior a 0.",
+  },
+  {
+    id: "rcf-fc-15",
+    module: "E3 RCF Libro 1",
+    front: "¿Qué régimen legal tienen las mercancías peligrosas y los transportes excepcionales?",
+    back: "Las mercancías peligrosas se rigen por el RID en vigor, sin perjuicio de los reglamentos nacionales y de la UE, con procedimientos en los SGS de AI y EF. Los transportes excepcionales, por sus dimensiones, peso o acondicionamiento, necesitan una autorización del AI que regule condiciones y prescripciones de circulación, y la EF garantiza su cumplimiento.",
+  },
+  {
+    id: "incomp-fc-1",
+    module: "E4 Incompatibilidades",
+    front: "¿Qué condiciones se exigen para compatibilizar dos puestos públicos por interés público?",
+    back: "Debe existir autorización previa y expresa. En los supuestos establecidos por el órgano de gobierno autonómico, la actividad será laboral, a tiempo parcial y de duración determinada. No se modifican las jornadas u horarios y deben cumplirse estrictamente ambos puestos.",
+  },
+  {
+    id: "incomp-fc-2",
+    module: "E4 Incompatibilidades",
+    front: "¿Qué supuesto docente específico contempla el artículo 4.1 de la Ley 53/1984?",
+    back: "Puede autorizarse al personal incluido en el ámbito de la Ley un puesto de Profesor universitario asociado, con dedicación no superior a la de tiempo parcial y sujeto a las restantes exigencias legales.",
+  },
+  {
+    id: "incomp-fc-3",
+    module: "E4 Incompatibilidades",
+    front: "¿La excepción de administrar el patrimonio personal o familiar permite actuar en cualquier asunto privado?",
+    back: "No. El artículo 19.a exceptúa esa administración sin perjuicio de las limitaciones del artículo 12, que prohíbe, entre otros casos, actividades privadas en asuntos en los que la persona interviene o debe intervenir por su puesto.",
+  },
 
   // P Psicotecnicos
   {
@@ -313,7 +639,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0022",
     module: "I Ingles A2",
     front: "¿Cuándo se utiliza el 'Present Perfect Simple' frente al 'Past Simple'?",
-    back: "El 'Present Perfect' se usa para acciones pasadas con relevancia en el presente o sin especificar tiempo (ej: 'I have visited Madrid'). El 'Past Simple' exige un tiempo finalizado (ej: 'I visited Madrid yesterday').",
+    back: "El Present Perfect relaciona una experiencia o resultado pasado con el presente: I have visited Madrid. El Past Simple presenta la acción como terminada en un periodo pasado, explícito o entendido: I visited Madrid yesterday.",
   },
   {
     id: "F0023",
@@ -325,7 +651,79 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0024",
     module: "I Ingles A2",
     front: "¿Qué diferencia gramatical existe entre 'must' y 'have to'?",
-    back: "'Must' suele expresar una obligación interna o personal impuesta por el hablante, mientras que 'have to' denota una obligación externa impuesta por normas o circunstancias de la situación.",
+    back: "Ambos expresan obligación. Must no cambia con la persona; have to se conjuga: she has to. Mustn't expresa prohibición; don't have to expresa ausencia de obligación.",
+  },
+  {
+    id: "F0089",
+    module: "I Ingles A2",
+    front: "Completa: She ___ (work) near the station.",
+    back: "works. En presente simple, he/she/it suele añadir -s al verbo.",
+  },
+  {
+    id: "F0090",
+    module: "I Ingles A2",
+    front: "Haz una pregunta: They live in Madrid.",
+    back: "Do they live in Madrid? Con do/does, el verbo principal queda en forma base.",
+  },
+  {
+    id: "F0091",
+    module: "I Ingles A2",
+    front: "Pasa al pasado y añade yesterday: I go to work by train.",
+    back: "I went to work by train yesterday. Go es irregular: go → went.",
+  },
+  {
+    id: "F0092",
+    module: "I Ingles A2",
+    front: "Recuerda tres formas pasadas: buy, see, take.",
+    back: "buy → bought; see → saw; take → took.",
+  },
+  {
+    id: "F0093",
+    module: "I Ingles A2",
+    front: "Completa: We ___ (visit) the museum last Sunday.",
+    back: "visited. 'Last Sunday' marca un tiempo pasado terminado: usa past simple.",
+  },
+  {
+    id: "F0094",
+    module: "I Ingles A2",
+    front: "Elige: The train leaves ___ 8:30 ___ Monday.",
+    back: "at 8:30 on Monday. Usa at con horas y on con días.",
+  },
+  {
+    id: "F0095",
+    module: "I Ingles A2",
+    front: "Completa: My birthday is ___ July; I get up ___ seven.",
+    back: "in July; at seven. Usa in con meses y at con horas.",
+  },
+  {
+    id: "F0096",
+    module: "I Ingles A2",
+    front: "Completa: The passengers are waiting ___ the platform.",
+    back: "on the platform. Es una combinación habitual para personas que esperan en el andén; at the platform también puede usarse según el contexto.",
+  },
+  {
+    id: "F0097",
+    module: "I Ingles A2",
+    front: "¿Cómo se dice 'andén' y 'billete de ida y vuelta' en inglés?",
+    back: "platform; return ticket (también round-trip ticket en inglés estadounidense).",
+  },
+  {
+    id: "F0098",
+    module: "I Ingles A2",
+    front: "¿Qué significan 'delay' y 'to miss a train'?",
+    back: "delay = retraso; to miss a train = perder el tren por llegar tarde.",
+  },
+  {
+    id: "F0099",
+    module: "I Ingles A2",
+    front: "Corrige: There are much people at the station.",
+    back: "There are many people at the station. People es contable plural; usa many.",
+  },
+  {
+    id: "F0100",
+    module: "I Ingles A2",
+    front: "Corrige: He don't have a ticket.",
+    back: "He doesn't have a ticket. Con he/she/it usa doesn't + verbo en forma base.",
   },
 
   // E3 RCF Libro 1 — Recuperación activa avanzada
@@ -369,13 +767,13 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0031",
     module: "E3 RCF Libro 1",
     front: "¿Qué elementos identifican preceptivamente a un telefonema reglamentario?",
-    back: "Formato preestablecido, número secuencial correlativo anual, hora exacta de transmisión, identificación de emisor y receptor, colacionado obligatorio y registro en soporte reglamentario.",
+    back: "Formato preestablecido, número secuencial, hora de transmisión e identificación del emisor; queda registrado en uno de los soportes contemplados en el Reglamento. En comunicaciones por teléfono, radio u otro medio disponible, emisor y receptor se identifican mutuamente.",
   },
   {
     id: "F0032",
     module: "E3 RCF Libro 1",
     front: "¿Cómo se clasifican las paradas prescritas según su función?",
-    back: "1. Comercial: para subida o bajada de viajeros.\n2. Restringida: para personal de servicio o técnico.\n3. Técnica: por necesidades de la gestión del tráfico, cruces o rebase.",
+    back: "1. Comercial: subida y bajada de viajeros.\n2. Restringida: parada comercial para bajada de viajeros; puede salir al acabar las operaciones incluso con adelanto.\n3. Técnica: cruce, adelantamiento, operaciones de la empresa ferroviaria u otras causas de explotación.",
   },
   {
     id: "F0033",
@@ -425,7 +823,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "F0040",
     module: "E2 Compatibilidad electromagnetica",
     front: "¿Qué exige el Real Decreto 186/2016 al fabricante de un equipo?",
-    back: "Elaborar la documentación técnica, realizar el procedimiento de evaluación de la conformidad aplicable y colocar el marcado CE de forma visible, legible e indeleble.",
+    back: "Elaborar la documentación técnica y realizar o garantizar el procedimiento aplicable de evaluación; demostrada la conformidad, formular la declaración UE de conformidad y colocar el marcado CE. El artículo 17 regula su ubicación y la alternativa de embalaje y documentos cuando corresponda.",
   },
   {
     id: "F0041",
@@ -436,8 +834,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0042",
     module: "E2 Compatibilidad electromagnetica",
-    front: "¿A qué distancia y con qué detector se miden las emisiones radiadas del material rodante en prueba estacionaria?",
-    back: "A 10 metros de distancia, utilizando detector de cuasi-pico, conforme a la norma armonizada EN 50121.",
+    front: "¿Qué representa la figura 6 del artículo REE de 2015 sobre CEM ferroviaria?",
+    back: "El artículo identifica límites de cuasi-pico de emisiones radiadas a 10 metros para una prueba estacionaria conforme a la EN 50121-3-1 de su contexto. La figura no acredita por sí sola los requisitos de una edición posterior de la norma.",
   },
   {
     id: "F0043",
@@ -598,8 +996,8 @@ export const flashcards: readonly Flashcard[] = [
   {
     id: "F0068",
     module: "E2 Compatibilidad electromagnetica",
-    front: "¿A qué distancia y con qué detector se miden las emisiones radiadas del material rodante en prueba estacionaria (EN 50121-2 / -3-1)?",
-    back: "A 10 metros de distancia al lado de la vía, utilizando detector de cuasi-pico; los límites representados son límites de cuasi-pico a 10 metros.",
+    front: "¿Qué diferencia hay entre las partes 2 y 3-1 de EN 50121 en el artículo REE de 2015?",
+    back: "La parte 2 aborda emisiones del sistema ferroviario completo hacia el exterior; la 3-1 se refiere al tren y al vehículo completo. Para ensayos concretos se debe consultar la edición aplicable de cada norma.",
   },
   {
     id: "F0069",
@@ -624,5 +1022,105 @@ export const flashcards: readonly Flashcard[] = [
     module: "E2 Compatibilidad electromagnetica",
     front: "¿Por qué el carril es una fuente de acoplamiento relevante en el ferrocarril (multi-uso del carril)?",
     back: "En el entorno ferroviario el carril se emplea como conductor de retorno de corriente y como vía de circulación a la vez, lo que favorece el acoplamiento conductivo/inductivo de las perturbaciones hacia los equipos vecinos.",
+  },
+
+  // G4 DR 2027 — Capítulo II
+  {
+    id: "F0073",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué elementos componen la infraestructura ferroviaria según el artículo 3 de la LSF y su anexo IV?",
+    back: "Terrenos, obras de explotación y plataforma, obras civiles, pasos a nivel, superestructura (carriles, traviesas, balasto, aparatos de vía), calzadas de patios, instalaciones de seguridad/señalización/telecomunicaciones, alumbrado, instalaciones de tracción eléctrica (subestaciones, catenarias, tercer carril), edificios de servicio y cambiadores de ancho.",
+  },
+  {
+    id: "F0074",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cuántos kilómetros totales tiene la Red Ferroviaria de Interés General titularidad de Adif?",
+    back: "11.675,9 km: 10.212,5 km de ancho ibérico puro, 126,8 km de red mixta (tercer carril) y 1.195,3 km de ancho métrico.",
+  },
+  {
+    id: "F0075",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué tensiones de electrificación se usan en la red de Adif?",
+    back: "3 kV CC en red convencional, 1,5 kV CC en red de ancho métrico y 25 kV 50 Hz CA en alta velocidad. Total electrificado: 6.761,6 km.",
+  },
+  {
+    id: "F0076",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cuáles son las nueve categorías de límite de carga en ancho ibérico?",
+    back: "A (16,0/5,0 t), B1 (18,0/5,0), B2 (18,0/6,4), C2 (20,0/6,4), C3 (20,0/7,2), C4 (20,0/8,0), D2 (22,5/6,4), D3 (22,5/7,2) y D4 (22,5/8,0). En ancho métrico: 15,0 t por eje y 8,0 t por metro lineal.",
+  },
+  {
+    id: "F0077",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué tipos de material rodante se definen por aceleración sin compensar?",
+    back: "Tipo N (0,65 m/s²), A (1), B (1,2), C (1,5) y D (1,8 m/s²). El tipo del tren es el más desfavorable de sus vehículos.",
+  },
+  {
+    id: "F0078",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué bloqueos existen en la red de Adif?",
+    back: "BCA, BSL, BLA, BA (BAU/BAD/BAB), BEM y BT.",
+  },
+  {
+    id: "F0079",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Cuál es la jerarquía de control del tráfico?",
+    back: "CTC (primer nivel) → PRO (segundo nivel, zona) → PLO (tercer nivel, mando local del enclavamiento), coordinados por el CRC/PM y la plataforma Da Vinci.",
+  },
+  {
+    id: "F0080",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué sistemas protegen el tren y cuál es la diferencia entre ERTMS/LZB y ASFA?",
+    back: "ERTMS y LZB son sistemas de protección automática con señalización en cabina y supervisión continua de la velocidad. El ASFA supervisa la velocidad de forma puntual mediante balizas y está instalado en todas las líneas principales de la RFIG.",
+  },
+  {
+    id: "F0081",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué restricciones se aplican a las mercancías peligrosas en túneles?",
+    back: "No pueden programarse paradas en túneles de más de 100 m; deben usarse líneas de circunvalación y no estacionar en núcleos habitados. En túneles de 20.000 m o más, las locomotoras requieren equipamiento de Categoría B con autorescate.",
+  },
+  {
+    id: "F0082",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué corredores admiten autopista ferroviaria con semirremolques de hasta 4,00 m?",
+    back: "Madrid–Valencia, Huelva–Sevilla–Córdoba y Madrid/Valencia–Alcázar de San Juan–Manzanares–Puertollano–Mérida–Badajoz–Badajoz Frontera. El corredor Zaragoza–Madrid–Algeciras se acondiciona para gálibo AF4.2 (hasta 4,20 m).",
+  },
+  {
+    id: "F0083",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué gálibos define la Instrucción Ferroviaria de Gálibos (Orden FOM/1630/2015)?",
+    back: "Gálibo del material rodante, gálibo de implantación de obstáculos y gálibo de cargamento. Coherente con EN 15273:2013 y las ETI.",
+  },
+  {
+    id: "F0084",
+    module: "DR 2027 Declaracion sobre la Red",
+    front: "¿Qué determina la disponibilidad de la infraestructura (apartado 2.5)?",
+    back: "Apertura y cierre de estaciones (Documento de Tren), telemando por CTC, estaciones en servicio intermitente (AC) y catálogo de restricciones de capacidad anexo conforme a la Decisión Delegada (UE) 2017/2075.",
+  },
+
+  // CEM — ampliación
+  {
+    id: "F0085",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué es el apantallamiento y cuándo se prefiere el magnético?",
+    back: "El apantallamiento reduce la propagación de campos electromagnéticos; el apantallamiento magnético se emplea cuando predominan los campos magnéticos de baja frecuencia, típicos en instalaciones ferroviarias de tracción.",
+  },
+  {
+    id: "F0086",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué diferencia hay entre interferencia conducida y radiada?",
+    back: "La conducida se transmite por los conductores (catenaria, raíles, cableado) y puede recorrer kilómetros; la radiada se propaga por el espacio como onda electromagnética.",
+  },
+  {
+    id: "F0087",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué es la puesta a tierra y la equipotencialidad en CEM?",
+    back: "La puesta a tierra conecta las masas metálicas a un potencial de referencia; la equipotencialidad iguala potenciales entre partes para evitar corrientes de bucle y mejorar la inmunidad.",
+  },
+  {
+    id: "F0088",
+    module: "E2 Compatibilidad electromagnetica",
+    front: "¿Qué diferencia hay entre requisitos legales y normas técnicas en CEM?",
+    back: "La Directiva 2014/30/UE y el RD 186/2016 establecen obligaciones legales (marcado CE, documentación, evaluación de conformidad); las normas armonizadas (EN 50121) son vías técnicas para presumir conformidad.",
   },
 ];

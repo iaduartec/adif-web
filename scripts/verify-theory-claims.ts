@@ -96,6 +96,7 @@ export const INSTRUMENTS: InstrumentDef[] = [
   { id: "rd773-1997", label: "RD 773/1997", mention: /RD 773\/1997|Real Decreto 773\/1997/, sourceIds: ["RD 773/1997"] },
   { id: "rd186-2016", label: "Real Decreto 186/2016", mention: /RD 186\/2016|Real Decreto 186\/2016/, sourceIds: ["RD 186/2016", "Real Decreto 186/2016"] },
   { id: "directiva-2014-30-ue", label: "Directiva 2014/30/UE", mention: /Directiva 2014\/30\/UE/, sourceIds: ["Directiva 2014/30/UE"] },
+  { id: "directiva-2004-108-ce", label: "Directiva 2004/108/CE", mention: /Directiva 2004\/108\/CE/, sourceIds: ["Directiva 2004/108/CE"] },
   { id: "en50121", label: "EN 50121", mention: /EN 50121/, sourceIds: ["EN 50121"] },
   { id: "dr-2027", label: "Declaración sobre la Red", mention: /Declaración sobre la Red|\bDR\b/, sourceIds: ["DR 2027"] },
   { id: "ley53-1984", label: "Ley 53/1984", mention: /Ley 53\/1984/, sourceIds: ["Ley 53/1984"] },

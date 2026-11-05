@@ -52,6 +52,13 @@ const aptitudeConcepts: TheorySection["concepts"] = [
         legalBasis: ["guia-aptitudes-cognitivas"],
         review: reviewedOriginalAptitude,
       },
+      {
+        id: "psico-topic-numerical-percent-method",
+        text: "Para calcular mentalmente un porcentaje sencillo, descompónlo en partes fáciles de obtener sobre la cantidad inicial (por ejemplo, 15 % = 10 % + 5 %). Calcula primero la parte porcentual y después súmala o réstala según indique el problema.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
     ],
   },
   {
@@ -99,7 +106,27 @@ const aptitudeConcepts: TheorySection["concepts"] = [
     claims: [
       {
         id: "psico-topic-matrices-rule",
-        text: "Resuelve cuadrículas en las que una regla de fila o columna determina el valor ausente.",
+        text: "En una matriz, compara filas y columnas y sigue una sola característica cada vez (por ejemplo, el tono de relleno). Comprueba que la regla se repite en más de una línea antes de completar la casilla; así evitas elegir por semejanza visual aislada.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+    ],
+  },
+  {
+    id: "psico-topic-spatial",
+    title: "Razonamiento espacial",
+    claims: [
+      {
+        id: "psico-topic-spatial-rule",
+        text: "Razonar sobre plegado, orientación y rotación de cuerpos requiere mantener relaciones entre caras y posiciones al cambiar el punto de vista.",
+        kind: "didactic",
+        legalBasis: ["guia-aptitudes-cognitivas"],
+        review: reviewedOriginalAptitude,
+      },
+      {
+        id: "psico-topic-spatial-rotation-method",
+        text: "Para resolver una rotación, fija primero una marca asimétrica (punto, borde sombreado o esquina), registra dónde está y gira mentalmente el objeto completo en pasos de 90° o 180°. La marca debe acompañar el giro: una rotación conserva el orden de los rasgos, mientras que un reflejo invierte su orientación. Comprueba el resultado con un segundo rasgo antes de elegir; no deduzcas la respuesta solo por la silueta general.",
         kind: "didactic",
         legalBasis: ["guia-aptitudes-cognitivas"],
         review: reviewedOriginalAptitude,
@@ -294,6 +321,69 @@ export const psicometriaTheory: TheorySection = {
           kind: "example",
           legalBasis: ["guia-aptitudes-cognitivas"]
         }
+      ]
+    },
+    {
+      id: "psico-ex-2",
+      situation: "En una matriz de tres por tres, las filas visibles son gris–blanco–gris; blanco–gris–blanco; gris–blanco–casilla vacía.",
+      application: [
+        {
+          id: "psico-ex-2-app-1",
+          text: "Aísla el tono y lee la última fila: gris, blanco, por lo que alterna y falta gris. Compruébalo también en la tercera columna: gris, blanco, gris. La opción correcta es la muestra gris; el patrón queda confirmado tanto en fila como en columna.",
+          kind: "example",
+          legalBasis: ["guia-aptitudes-cognitivas"],
+          review: {
+            status: "reviewed",
+            reviewedAt: "2026-11-04",
+            reviewedBy: "codex-editorial",
+            confidence: {
+              level: "high",
+              reason: "Comprobación didáctica directa: la alternancia de tonos produce gris tanto en la fila como en la columna.",
+            },
+          }
+        }
+      ]
+    },
+    {
+      id: "psico-ex-3",
+      situation: "Una cantidad de 360 se reduce un 15 %. ¿Cuál es el resultado?",
+      application: [
+        {
+          id: "psico-ex-3-app-1",
+          text: "Descompón el 15 % en 10 % + 5 %. El 10 % de 360 es 36 y el 5 % es la mitad, 18; la reducción total es 54. Como el enunciado pide reducir, resta ese importe a la cantidad inicial: 360 − 54 = 306.",
+          kind: "example",
+          legalBasis: ["guia-aptitudes-cognitivas"],
+          review: {
+            status: "reviewed",
+            reviewedAt: "2026-11-04",
+            reviewedBy: "codex-editorial",
+            confidence: {
+              level: "high",
+              reason: "Operación aritmética comprobable: 10 % y 5 % de 360 suman 54; 360 menos 54 es 306.",
+            },
+          }
+        }
+      ]
+    },
+    {
+      id: "psico-ex-spatial-rotation",
+      situation: "Ejemplo geométrico resuelto, sin figura dibujada: una pieza cuadrada tiene un punto en la esquina superior izquierda y una franja horizontal. Se gira 90° en sentido horario.",
+      application: [
+        {
+          id: "psico-ex-spatial-rotation-app",
+          text: "Gira el objeto entero, no sus rasgos por separado: la esquina superior izquierda pasa a la superior derecha; la franja horizontal queda vertical. La comprobación con ambos rasgos confirma el giro horario. Si el punto pasara a la esquina superior derecha pero la franja siguiera horizontal, se habría movido una marca sin rotar el objeto; si se invirtiera el orden como en un espejo, sería una reflexión, no una rotación.",
+          kind: "example",
+          legalBasis: ["guia-aptitudes-cognitivas"],
+          review: {
+            status: "reviewed",
+            reviewedAt: "2026-11-04",
+            reviewedBy: "codex-editorial",
+            confidence: {
+              level: "high",
+              reason: "Verificación geométrica: un giro horario de 90° lleva la esquina superior izquierda a la superior derecha y transforma una orientación horizontal en vertical; se etiqueta expresamente como ejemplo textual, no como figura presentada.",
+            },
+          },
+        },
       ]
     }
   ],

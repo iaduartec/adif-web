@@ -13,6 +13,12 @@ function readJson(path: string): unknown {
   return JSON.parse(readFileSync(resolve(process.cwd(), path), "utf8"));
 }
 
+function dayAfter(isoDate: string): string {
+  const date = new Date(`${isoDate}T00:00:00.000Z`);
+  date.setUTCDate(date.getUTCDate() + 1);
+  return date.toISOString().slice(0, 10);
+}
+
 const manifest = parseSourceManifest(readJson("content/source-manifest.json"));
 const convocation = parseConvocationRecord(
   readJson("content/convocation/PNI26-01.json"),
@@ -191,7 +197,7 @@ describe("versioned official source manifest", () => {
     const invalid = {
       ...raw,
       sources: raw.sources.map((entry) => entry === verified
-        ? { ...entry, verifiedAt: "2026-10-16" }
+        ? { ...entry, verifiedAt: dayAfter(raw.generatedAt) }
         : entry),
     };
 
@@ -244,11 +250,11 @@ describe("versioned official source manifest", () => {
     const invalid = {
       ...raw,
       sources: raw.sources.map((entry) => entry === unchecked
-        ? { ...entry, downloadedAt: "2026-10-16" }
+        ? { ...entry, downloadedAt: dayAfter(raw.generatedAt) }
         : entry),
     };
 
-    expect(() => parseSourceManifest(invalid, "2026-10-16")).toThrow(/download date is later than manifest snapshot/i);
+    expect(() => parseSourceManifest(invalid, dayAfter(raw.generatedAt))).toThrow(/download date is later than manifest snapshot/i);
   });
 
   it("rejects duplicate source versions", () => {

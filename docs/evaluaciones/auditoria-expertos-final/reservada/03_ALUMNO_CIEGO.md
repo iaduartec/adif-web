@@ -1,0 +1,14 @@
+1. **B** — `content/theories/igualdad.ts:276,282`. Evidencia: “disposición, criterio o práctica aparentemente neutros” que “ponen a personas de un sexo en desventaja particular”; admite justificación objetiva por finalidad legítima y medios necesarios y adecuados.
+2. **A** — `content/theories/igualdad.ts:294`. Evidencia: “comportamiento, verbal o físico, de naturaleza sexual” con propósito o efecto de atentar contra la dignidad, en particular creando un entorno intimidatorio, degradante u ofensivo.
+3. **B** — `content/theories/prevencion-riesgos-laborales.ts:498`. Evidencia: “Se adoptarán medidas que antepongan la protección colectiva a la individual.”
+4. **B** — `content/theories/prevencion-riesgos-laborales.ts:576`. Evidencia: derecho a “interrumpir su actividad y abandonar el lugar de trabajo” ante riesgo grave e inminente para vida o salud.
+5. **Blanco** — Sin soporte localizado en la teoría publicada ni en el material de lecciones consultado para el descanso mínimo entre jornadas.
+6. **Blanco** — Sin soporte localizado en la teoría publicada ni en el material de lecciones consultado para la duración mínima de vacaciones.
+7. **Blanco** — Sin soporte localizado en la teoría publicada ni en el material de lecciones consultado para el derecho individual de inamovilidad del TREBEP.
+8. **A** — `content/theories/codigo-conducta.ts:187`. Evidencia: actuación basada en “consideraciones objetivas orientadas a la imparcialidad y al interés común”.
+9. **B** — `content/theories/incompatibilidades.ts:31`. Evidencia: incompatibilidad con actividad pública o privada que pueda “impedir o menoscabar el estricto cumplimiento” de deberes o “comprometer su imparcialidad o independencia”.
+10. **B** — `content/theories/incompatibilidades.ts:184`. Evidencia: queda exceptuada “la colaboración y la asistencia ocasional a Congresos, seminarios, conferencias o cursos de carácter profesional”.
+11. **B** — `content/theories/ict-rd-346-2011.ts:901,524,537`. Evidencia: la distribución enlaza cabecera y dispersión; la dispersión conecta registros secundarios con el PAU; la red interior discurre dentro del domicilio desde el PAU hasta las BAT. Secuencia: distribución → dispersión → interior de usuario.
+12. **A** — `content/theories/ict-rd-346-2011.ts:1330`. Evidencia: proyecto técnico de ejecución: “memoria, planos, pliego de condiciones y presupuesto”.
+13. **B** — `content/theories/rcf-libro-1.ts:11`. Evidencia: quien toma el servicio “se hace cargo” de documentación, impresos, registros, útiles e información necesaria, conoce la información de seguridad y resuelve dudas con quien sale.
+14. **C** — `content/theories/rcf-libro-1.ts:674,681`. Evidencia: los administradores de infraestructuras elaboran Consignas; estas regulan casos específicos del RCF, instalaciones de seguridad, perturbaciones, transportes excepcionales y prescripciones temporales.

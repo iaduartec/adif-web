@@ -33,7 +33,7 @@ export default async function FichasPage() {
 
       <div className="mt-10 pt-6 border-t border-rail">
         <p className="text-xs text-gray-500 text-center">
-          {flashcards.length} fichas disponibles · 8 módulos · Las fichas marcadas con ★ se guardan en tu perfil.
+          {flashcards.length} fichas disponibles · {new Set(flashcards.map((card) => card.module)).size} módulos · Las fichas marcadas con ★ se guardan en tu perfil.
         </p>
       </div>
     </section>

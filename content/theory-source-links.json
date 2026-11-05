@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lockedAt": "2026-10-15",
+  "lockedAt": "2026-11-04",
   "sources": [
     {
       "sourceId": "ADIF PNI23/01",
@@ -21,6 +21,11 @@
       "sourceId": "CE",
       "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
       "sourceVersion": "consolidated-page-2026-10-15"
+    },
+    {
+      "sourceId": "Directiva 2004/108/CE",
+      "sourceUrl": "https://www.boe.es/buscar/doc.php?id=DOUE-L-2004-83048",
+      "sourceVersion": "official-record-2026-11-04"
     },
     {
       "sourceId": "Directiva 2014/30/UE",
@@ -78,6 +83,11 @@
       "sourceVersion": "consolidated-page-2026-10-15"
     },
     {
+      "sourceId": "Orden ITC/1644/2011",
+      "sourceUrl": "https://www.boe.es/eli/es/o/2011/06/10/itc1644/con",
+      "sourceVersion": "consolidated-page-2026-11-04"
+    },
+    {
       "sourceId": "RD 664/2015",
       "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042",
       "sourceVersion": "consolidated-page-2026-10-15"
@@ -86,6 +96,11 @@
       "sourceId": "RD 773/1997",
       "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735",
       "sourceVersion": "consolidated-page-2026-10-15"
+    },
+    {
+      "sourceId": "RD 39/1997",
+      "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-1853",
+      "sourceVersion": "consolidated-page-2026-11-04"
     },
     {
       "sourceId": "RD 902/2020",

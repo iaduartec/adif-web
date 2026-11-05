@@ -6,7 +6,11 @@ export type SupabaseRuntimeConfig =
   | { mode: "supabase"; url: string; anonKey: string };
 
 export function getSupabaseRuntimeConfig(): SupabaseRuntimeConfig {
-  if (process.env.PLAYWRIGHT_TEST === "true") {
+  if (
+    process.env.PLAYWRIGHT_TEST === "true"
+    && process.env.NODE_ENV !== "production"
+    && process.env.VERCEL_ENV !== "production"
+  ) {
     return { mode: "mock" };
   }
 

@@ -225,15 +225,15 @@
     "topicId": "logic",
     "topic": "Razonamiento lógico",
     "skill": "logic",
-    "prompt": "Si todo operador de mantenimiento ha realizado el curso de seguridad, ¿qué afirmación es necesariamente cierta?",
+    "prompt": "Hay operadores de mantenimiento y todos han realizado el curso de seguridad. ¿Qué afirmación es necesariamente cierta?",
     "options": [
-      { "key": "A", "text": "Solo algunos operadores lo realizaron." },
-      { "key": "B", "text": "Todos los que realizaron el curso son operadores de mantenimiento." },
-      { "key": "C", "text": "Ningún operador realizó el curso." },
+      { "key": "A", "text": "Todo el personal ferroviario ha realizado el curso." },
+      { "key": "B", "text": "Solo las personas operadoras de mantenimiento han realizado el curso." },
+      { "key": "C", "text": "Algunos operadores de mantenimiento no lo han realizado." },
       { "key": "D", "text": "Cada operador de mantenimiento realizó el curso de seguridad." }
     ],
     "answer": "D",
-    "explanation": "La premisa afirma que la condición se cumple para todos los operadores; la opción que la reformula sin invertirla es la D.",
+    "explanation": "La premisa incluye que existe al menos un operador de mantenimiento y que todos han realizado el curso. No permite concluir que todo el personal ferroviario lo haya realizado ni que solo ese grupo lo haya hecho.",
     "difficulty": 2,
     "tags": ["original-psicometrico", "logic"],
     "conceptIds": ["psico-topic-logic"],
@@ -266,9 +266,9 @@
   {
     "id": "orig-psico-matrices-001",
     "domain": "psychometric",
-    "topicId": "matrices",
-    "topic": "Matrices",
-    "skill": "matrices",
+    "topicId": "calculation",
+    "topic": "Cálculo mental",
+    "skill": "calculation",
     "prompt": "En una matriz de 3 × 3 cada fila suma 12. Si dos celdas de una misma fila valen 3 y 5, ¿cuánto vale la tercera?",
     "options": [
       { "key": "A", "text": "4" },
@@ -280,7 +280,7 @@
     "explanation": "La tercera celda completa la suma de la fila: 12 − 3 − 5 es igual a 4.",
     "difficulty": 1,
     "tags": ["original-psicometrico", "matrices"],
-    "conceptIds": ["psico-topic-matrices"],
+    "conceptIds": ["psico-topic-calculation"],
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -288,9 +288,9 @@
   {
     "id": "orig-psico-matrices-002",
     "domain": "psychometric",
-    "topicId": "matrices",
-    "topic": "Matrices",
-    "skill": "matrices",
+    "topicId": "sequences",
+    "topic": "Secuencias",
+    "skill": "sequences",
     "prompt": "En una matriz de 2 × 2 los valores aumentan de 2 en 2 al leer en orden (izquierda a derecha y de arriba abajo). Si empieza en 1, ¿qué valor ocupa la cuarta casilla?",
     "options": [
       { "key": "A", "text": "5" },
@@ -302,7 +302,7 @@
     "explanation": "La serie es 1, 3, 5 y 7; la cuarta casilla toma el valor 7.",
     "difficulty": 2,
     "tags": ["original-psicometrico", "matrices"],
-    "conceptIds": ["psico-topic-matrices"],
+    "conceptIds": ["psico-topic-sequences"],
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -442,10 +442,10 @@
   {
     "id": "orig-psico-memory-001",
     "domain": "psychometric",
-    "topicId": "memory",
-    "topic": "Memoria",
-    "skill": "memory",
-    "prompt": "Memoriza la clave «P-14-Q2». ¿Cuál de estas opciones la reproduce exactamente?",
+    "topicId": "attention",
+    "topic": "Atención",
+    "skill": "attention",
+    "prompt": "Compara la clave visible «P-14-Q2». ¿Cuál de estas opciones la reproduce exactamente?",
     "options": [
       { "key": "A", "text": "P-41-Q2" },
       { "key": "B", "text": "P-14-O2" },
@@ -456,7 +456,7 @@
     "explanation": "La clave original es P-14-Q2; solo la opción C conserva todos los caracteres y su orden.",
     "difficulty": 1,
     "tags": ["original-psicometrico", "memory"],
-    "conceptIds": ["psico-topic-memory"],
+    "conceptIds": ["psico-topic-attention"],
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -464,10 +464,10 @@
   {
     "id": "orig-psico-memory-002",
     "domain": "psychometric",
-    "topicId": "memory",
-    "topic": "Memoria",
-    "skill": "memory",
-    "prompt": "Se te muestra la lista «lunes, jueves, sábado». ¿Qué elemento ocupaba la segunda posición?",
+    "topicId": "attention",
+    "topic": "Atención",
+    "skill": "attention",
+    "prompt": "En la lista visible «lunes, jueves, sábado», ¿qué elemento ocupa la segunda posición?",
     "options": [
       { "key": "A", "text": "Lunes" },
       { "key": "B", "text": "Jueves" },
@@ -475,10 +475,10 @@
       { "key": "D", "text": "Viernes" }
     ],
     "answer": "B",
-    "explanation": "En la lista mostrada, el segundo elemento es «jueves».",
+    "explanation": "Al leer la lista visible de izquierda a derecha, «jueves» ocupa la segunda posición.",
     "difficulty": 1,
     "tags": ["original-psicometrico", "memory"],
-    "conceptIds": ["psico-topic-memory"],
+    "conceptIds": ["psico-topic-attention"],
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -570,5 +570,611 @@
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
-  }
+  },
+    {
+      "id": "orig-psico-visual-cube-fold-001",
+      "domain": "psychometric",
+      "topicId": "spatial",
+      "topic": "Razonamiento espacial",
+      "skill": "spatial",
+      "prompt": "El dibujo es el desarrollo plano de un cubo. Al plegarlo, ¿qué cara queda opuesta a la cara 2?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 180\"><rect x=\"120\" y=\"15\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"143\" y=\"38\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">1</text><rect x=\"120\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"143\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">2</text><rect x=\"120\" y=\"115\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"143\" y=\"138\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">3</text><rect x=\"70\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"93\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">4</text><rect x=\"170\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"193\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">5</text><rect x=\"220\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"243\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">6</text></svg>",
+      "figureAlt": "Red de seis caras: 1 encima de 2, 3 debajo de 2; 4 a la izquierda de 2; 5 a la derecha de 2 y 6 a la derecha de 5.",
+      "options": [
+        {
+          "key": "A",
+          "text": "La cara 1",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">1</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta 1"
+        },
+        {
+          "key": "B",
+          "text": "La cara 3",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">3</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta 3"
+        },
+        {
+          "key": "C",
+          "text": "La cara 5",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">5</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta 5"
+        },
+        {
+          "key": "D",
+          "text": "La cara 6",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">6</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta 6"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Al plegar la tira 4–2–5–6 alrededor del cubo, las caras 2 y 6 quedan enfrentadas. Las caras 1 y 3 son tapas opuestas; 5 queda junto a 2.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "spatial"
+      ],
+      "conceptIds": [
+        "psico-topic-spatial"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-cube-fold-002",
+      "domain": "psychometric",
+      "topicId": "spatial",
+      "topic": "Razonamiento espacial",
+      "skill": "spatial",
+      "prompt": "Se pliega el desarrollo del cubo. ¿Qué cara queda opuesta a D?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 180\"><rect x=\"120\" y=\"15\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"143\" y=\"38\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">B</text><rect x=\"120\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"143\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">A</text><rect x=\"120\" y=\"115\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"143\" y=\"138\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">C</text><rect x=\"70\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"93\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">D</text><rect x=\"170\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"193\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">E</text><rect x=\"220\" y=\"65\" width=\"46\" height=\"46\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"243\" y=\"88\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"20\" fill=\"#111827\">F</text></svg>",
+      "figureAlt": "Red de seis caras: B encima de A, C debajo de A; D a la izquierda de A; E a la derecha de A y F a la derecha de E.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cara A",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">A</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta A"
+        },
+        {
+          "key": "B",
+          "text": "Cara B",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">B</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta B"
+        },
+        {
+          "key": "C",
+          "text": "Cara E",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">E</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta E"
+        },
+        {
+          "key": "D",
+          "text": "Cara F",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"8\" y=\"4\" width=\"44\" height=\"40\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">F</text></svg>",
+          "figureAlt": "Cara de cubo con etiqueta F"
+        }
+      ],
+      "answer": "C",
+      "explanation": "En la banda D–A–E–F, las caras separadas por dos posiciones se oponen: D queda frente a E. A y F forman la otra pareja; B y C son tapas.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "spatial"
+      ],
+      "conceptIds": [
+        "psico-topic-spatial"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-cube-rotation-001",
+      "domain": "psychometric",
+      "topicId": "spatial",
+      "topic": "Razonamiento espacial",
+      "skill": "spatial",
+      "prompt": "Vistas desde arriba, el cubo gira 90° en sentido horario alrededor del eje vertical en cada paso. ¿Qué número queda al frente tras 270° desde el inicio?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 100\"><polygon points=\"58,18 86,34 58,50 30,34\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"30,34 58,50 58,82 30,66\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"58,50 86,34 86,66 58,82\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"58\" y=\"36\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">1</text><text x=\"44\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">2</text><text x=\"72\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">3</text><polygon points=\"160,18 188,34 160,50 132,34\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"132,34 160,50 160,82 132,66\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"160,50 188,34 188,66 160,82\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"160\" y=\"36\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">1</text><text x=\"146\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">3</text><text x=\"174\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">5</text><polygon points=\"262,18 290,34 262,50 234,34\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"234,34 262,50 262,82 234,66\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"262,50 290,34 290,66 262,82\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"262\" y=\"36\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">1</text><text x=\"248\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">5</text><text x=\"276\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#111827\">4</text></svg>",
+      "figureAlt": "Tres vistas: arriba 1, frente 2, derecha 3; arriba 1, frente 3, derecha 5; arriba 1, frente 5, derecha 4.",
+      "options": [
+        {
+          "key": "A",
+          "text": "2",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,2 56,16 30,30 4,16\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"4,16 30,30 30,46 4,32\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"30,30 56,16 56,32 30,46\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">2</text></svg>",
+          "figureAlt": "Cubo con la cara frontal etiquetada 2"
+        },
+        {
+          "key": "B",
+          "text": "3",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,2 56,16 30,30 4,16\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"4,16 30,30 30,46 4,32\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"30,30 56,16 56,32 30,46\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">3</text></svg>",
+          "figureAlt": "Cubo con la cara frontal etiquetada 3"
+        },
+        {
+          "key": "C",
+          "text": "4",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,2 56,16 30,30 4,16\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"4,16 30,30 30,46 4,32\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"30,30 56,16 56,32 30,46\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">4</text></svg>",
+          "figureAlt": "Cubo con la cara frontal etiquetada 4"
+        },
+        {
+          "key": "D",
+          "text": "5",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,2 56,16 30,30 4,16\" fill=\"#e5e7eb\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"4,16 30,30 30,46 4,32\" fill=\"#bfdbfe\" stroke=\"#111827\" stroke-width=\"2\"/><polygon points=\"30,30 56,16 56,32 30,46\" fill=\"#bbf7d0\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"30\" y=\"26\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"19\" fill=\"#111827\">5</text></svg>",
+          "figureAlt": "Cubo con la cara frontal etiquetada 5"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Con la convención indicada (vistas desde arriba), la cara derecha pasa al frente en cada giro horario. La secuencia frontal es 2, 3, 5 y 4; tras 270° queda al frente 4. A, B y D corresponden al inicio o a vistas intermedias.",
+      "difficulty": 3,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "spatial"
+      ],
+      "conceptIds": [
+        "psico-topic-spatial"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-domino-001",
+      "domain": "psychometric",
+      "topicId": "sequences",
+      "topic": "Secuencias",
+      "skill": "sequences",
+      "prompt": "La secuencia aumenta un punto en cada lado de una ficha. ¿Cuántos puntos van en la mitad vacía?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 90\"><rect x=\"15\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"65\" y1=\"20\" x2=\"65\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"77\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"103\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><rect x=\"125\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"175\" y1=\"20\" x2=\"175\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"137\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"163\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"187\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"200\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"213\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><rect x=\"235\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"285\" y1=\"20\" x2=\"285\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"247\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"260\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"273\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"297\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"323\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"297\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"323\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><rect x=\"345\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"395\" y1=\"20\" x2=\"395\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"357\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"383\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"357\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"383\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/></svg>",
+      "figureAlt": "Fichas: 1|2, 2|3, 3|4, 4|vacía.",
+      "options": [
+        {
+          "key": "A",
+          "text": "3",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"30\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 3 puntos"
+        },
+        {
+          "key": "B",
+          "text": "4",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"18\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 4 puntos"
+        },
+        {
+          "key": "C",
+          "text": "5",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"30\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"18\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 5 puntos"
+        },
+        {
+          "key": "D",
+          "text": "6",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"10\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"18\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"18\" cy=\"38\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"10\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"38\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 6 puntos"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Los lados aumentan por separado: izquierda 1, 2, 3, 4; derecha 2, 3, 4, 5. Falta 5. A, B y D se desvían del incremento unitario.",
+      "difficulty": 1,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "sequences"
+      ],
+      "conceptIds": [
+        "psico-topic-sequences"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-domino-002",
+      "domain": "psychometric",
+      "topicId": "sequences",
+      "topic": "Secuencias",
+      "skill": "sequences",
+      "prompt": "¿Cuántos puntos faltan en la mitad izquierda de la última ficha?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 470 90\"><rect x=\"25\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"75\" y1=\"20\" x2=\"75\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"37\" cy=\"28\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"37\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"37\" cy=\"56\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"63\" cy=\"28\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"63\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"63\" cy=\"56\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"100\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><rect x=\"135\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"185\" y1=\"20\" x2=\"185\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"147\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"173\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"160\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"147\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"173\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"197\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"223\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><rect x=\"245\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"295\" y1=\"20\" x2=\"295\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"257\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"283\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"257\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"283\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"307\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"320\" cy=\"42\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"333\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><rect x=\"355\" y=\"20\" width=\"100\" height=\"44\" rx=\"5\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><line x1=\"405\" y1=\"20\" x2=\"405\" y2=\"64\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"417\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"443\" cy=\"30\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"417\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/><circle cx=\"443\" cy=\"54\" r=\"3.2\" fill=\"#111827\"/></svg>",
+      "figureAlt": "Fichas: 6|1, 5|2, 4|3, vacía|4.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"30\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 1 punto"
+        },
+        {
+          "key": "B",
+          "text": "2",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 2 puntos"
+        },
+        {
+          "key": "C",
+          "text": "3",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"30\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 3 puntos"
+        },
+        {
+          "key": "D",
+          "text": "4",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"3\" width=\"52\" height=\"42\" rx=\"4\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"18\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Ficha con 4 puntos"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Las mitades izquierdas decrecen 6, 5, 4, 3; las derechas crecen 1, 2, 3, 4. Falta 3. A, B y D no mantienen las dos progresiones.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "sequences"
+      ],
+      "conceptIds": [
+        "psico-topic-sequences"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-pattern-002",
+      "domain": "psychometric",
+      "topicId": "abstract-patterns",
+      "topic": "Patrones abstractos",
+      "skill": "abstract-patterns",
+      "prompt": "¿Qué cantidad de puntos sigue en la secuencia?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 90\"><text x=\"45\" y=\"45\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#111827\">●</text><text x=\"115\" y=\"45\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#111827\">●●</text><text x=\"185\" y=\"45\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#111827\">●●●</text><text x=\"255\" y=\"45\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#111827\">?</text></svg>",
+      "figureAlt": "Tres grupos muestran uno, dos y tres puntos; el cuarto grupo es desconocido.",
+      "options": [
+        {
+          "key": "A",
+          "text": "2",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70 48\"><circle cx=\"10\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"22\" cy=\"24\" r=\"4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Grupo de 2 puntos"
+        },
+        {
+          "key": "B",
+          "text": "3",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70 48\"><circle cx=\"10\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"22\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"34\" cy=\"24\" r=\"4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Grupo de 3 puntos"
+        },
+        {
+          "key": "C",
+          "text": "4",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70 48\"><circle cx=\"10\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"22\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"34\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"46\" cy=\"24\" r=\"4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Grupo de 4 puntos"
+        },
+        {
+          "key": "D",
+          "text": "5",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70 48\"><circle cx=\"10\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"22\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"34\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"46\" cy=\"24\" r=\"4\" fill=\"#111827\"/><circle cx=\"58\" cy=\"24\" r=\"4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "Grupo de 5 puntos"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Se añade un punto en cada paso: 1, 2, 3, así que sigue 4. A repite el segundo, B el tercero y D añade dos puntos.",
+      "difficulty": 1,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "abstract-patterns"
+      ],
+      "conceptIds": [
+        "psico-topic-abstract-patterns"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-attention-001",
+      "domain": "psychometric",
+      "topicId": "attention",
+      "topic": "Atención",
+      "skill": "attention",
+      "prompt": "Cuenta cuántos círculos aparecen en la cuadrícula.",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 115\"><text x=\"25\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"60\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">△</text><text x=\"95\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">□</text><text x=\"130\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"165\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">◇</text><text x=\"200\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">△</text><text x=\"235\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"270\" y=\"24\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">□</text><text x=\"25\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">△</text><text x=\"60\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"95\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">◇</text><text x=\"130\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">□</text><text x=\"165\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">△</text><text x=\"200\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"235\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">□</text><text x=\"270\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">◇</text><text x=\"25\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">□</text><text x=\"60\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">△</text><text x=\"95\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"130\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">◇</text><text x=\"165\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text><text x=\"200\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">△</text><text x=\"235\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">□</text><text x=\"270\" y=\"92\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">○</text></svg>",
+      "figureAlt": "Fila 1: círculo, triángulo, cuadrado, círculo, rombo, triángulo, círculo, cuadrado. Fila 2: triángulo, círculo, rombo, cuadrado, triángulo, círculo, cuadrado, rombo. Fila 3: cuadrado, triángulo, círculo, rombo, círculo, triángulo, cuadrado, círculo.",
+      "options": [
+        {
+          "key": "A",
+          "text": "6"
+        },
+        {
+          "key": "B",
+          "text": "7"
+        },
+        {
+          "key": "C",
+          "text": "8"
+        },
+        {
+          "key": "D",
+          "text": "9"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Hay 3 círculos en la primera fila, 2 en la segunda y 3 en la tercera: 8. A omite dos, B uno y D cuenta uno de más.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "attention"
+      ],
+      "conceptIds": [
+        "psico-topic-attention"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-attention-002",
+      "domain": "psychometric",
+      "topicId": "attention",
+      "topic": "Atención",
+      "skill": "attention",
+      "prompt": "¿Cuántas veces aparece el dígito 4 en la cuadrícula?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 110\"><text x=\"30\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">7</text><text x=\"66\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">2</text><text x=\"102\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">9</text><text x=\"138\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">4</text><text x=\"174\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">1</text><text x=\"210\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">6</text><text x=\"246\" y=\"25\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">3</text><text x=\"30\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">5</text><text x=\"66\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">8</text><text x=\"102\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">2</text><text x=\"138\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">7</text><text x=\"174\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">4</text><text x=\"210\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">9</text><text x=\"246\" y=\"57\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">6</text><text x=\"30\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">3</text><text x=\"66\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">1</text><text x=\"102\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">8</text><text x=\"138\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">2</text><text x=\"174\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">5</text><text x=\"210\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">4</text><text x=\"246\" y=\"89\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">7</text></svg>",
+      "figureAlt": "Fila 1: 7, 2, 9, 4, 1, 6, 3. Fila 2: 5, 8, 2, 7, 4, 9, 6. Fila 3: 3, 1, 8, 2, 5, 4, 7.",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "3"
+        },
+        {
+          "key": "C",
+          "text": "4"
+        },
+        {
+          "key": "D",
+          "text": "5"
+        }
+      ],
+      "answer": "B",
+      "explanation": "El dígito 4 aparece una vez en cada fila: 3 veces. A cuenta dos, C añade una aparición y D añade dos.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "attention"
+      ],
+      "conceptIds": [
+        "psico-topic-attention"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-matrix-001",
+      "domain": "psychometric",
+      "topicId": "matrices",
+      "topic": "Matrices",
+      "skill": "matrices",
+      "prompt": "Observa la matriz. ¿Qué figura completa la casilla vacía?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 150\"><rect x=\"45\" y=\"25\" width=\"44\" height=\"44\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"175\" y=\"25\" width=\"44\" height=\"44\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"45\" y=\"85\" width=\"44\" height=\"44\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"175\" y=\"85\" width=\"44\" height=\"44\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"55\" y=\"35\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"197\" cy=\"47\" r=\"12\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"55\" y=\"95\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"197\" y=\"115\" text-anchor=\"middle\" font-size=\"22\" fill=\"#111827\">?</text></svg>",
+      "figureAlt": "Matriz: fila 1, cuadrado y círculo; fila 2, cuadrado e interrogación.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Círculo",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><circle cx=\"30\" cy=\"24\" r=\"17\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\"/></svg>",
+          "figureAlt": "Círculo sin relleno"
+        },
+        {
+          "key": "B",
+          "text": "Triángulo",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,5 54,43 6,43\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\"/></svg>",
+          "figureAlt": "Triángulo sin relleno"
+        },
+        {
+          "key": "C",
+          "text": "Cuadrado",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"10\" y=\"4\" width=\"40\" height=\"40\" fill=\"none\" stroke=\"#111827\" stroke-width=\"2\"/></svg>",
+          "figureAlt": "Cuadrado sin relleno"
+        },
+        {
+          "key": "D",
+          "text": "Rombo",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,3 56,24 30,45 4,24\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\"/></svg>",
+          "figureAlt": "Rombo sin relleno"
+        }
+      ],
+      "answer": "A",
+      "explanation": "La primera columna muestra cuadrados y la segunda círculos; falta un círculo. B y D introducen figuras sin apoyo en la regla; C repetiría la figura de la primera columna.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "matrices"
+      ],
+      "conceptIds": [
+        "psico-topic-matrices"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-pattern-001",
+      "domain": "psychometric",
+      "topicId": "abstract-patterns",
+      "topic": "Patrones abstractos",
+      "skill": "abstract-patterns",
+      "prompt": "Observa la secuencia. ¿Qué transformación lleva cada figura a la siguiente?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 150\"><polygon points=\"55,35 73,70 42,67\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\" transform=\"rotate(0 55 55)\"/><polygon points=\"155,35 173,70 142,67\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\" transform=\"rotate(90 155 55)\"/><polygon points=\"255,35 273,70 242,67\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\" transform=\"rotate(180 255 55)\"/><text x=\"305\" y=\"55\" text-anchor=\"middle\" font-size=\"24\" fill=\"#111827\">?</text></svg>",
+      "figureAlt": "Tres triángulos asimétricos: el primero apunta hacia arriba, el segundo hacia la derecha y el tercero hacia abajo. Sigue un interrogante.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Giro de 90° horario",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,4 48,39 17,36\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\" transform=\"rotate(90 30 24)\"/></svg>",
+          "figureAlt": "Triángulo asimétrico girado 90 grados"
+        },
+        {
+          "key": "B",
+          "text": "Giro de 180°",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,4 48,39 17,36\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\" transform=\"rotate(180 30 24)\"/></svg>",
+          "figureAlt": "Triángulo asimétrico girado 180 grados"
+        },
+        {
+          "key": "C",
+          "text": "Reflexión de izquierda a derecha",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,4 48,39 17,36\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\" transform=\"translate(60 0) scale(-1 1)\"/></svg>",
+          "figureAlt": "Triángulo asimétrico reflejado de izquierda a derecha"
+        },
+        {
+          "key": "D",
+          "text": "Sin transformación",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><polygon points=\"30,4 48,39 17,36\" fill=\"none\" stroke=\"#111827\" stroke-width=\"3\"/></svg>",
+          "figureAlt": "Triángulo asimétrico sin giro ni reflexión"
+        }
+      ],
+      "answer": "A",
+      "explanation": "El triángulo asimétrico gira 90° en sentido horario en cada paso: 0°, 90°, 180° y después 270°. La opción A representa un giro de 90° desde la orientación inicial. B gira 180°, C refleja la figura de izquierda a derecha y D la deja en la orientación inicial.",
+      "difficulty": 2,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "abstract-patterns"
+      ],
+      "conceptIds": [
+        "psico-topic-abstract-patterns"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-matrix-002",
+      "domain": "psychometric",
+      "topicId": "matrices",
+      "topic": "Matrices",
+      "skill": "matrices",
+      "prompt": "La cuadrícula alterna dos tonos como un tablero. ¿Qué tono falta en la esquina inferior derecha?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 155\"><rect x=\"28\" y=\"8\" width=\"38\" height=\"38\" fill=\"#737b88\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"100\" y=\"8\" width=\"38\" height=\"38\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"172\" y=\"8\" width=\"38\" height=\"38\" fill=\"#737b88\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"28\" y=\"54\" width=\"38\" height=\"38\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"100\" y=\"54\" width=\"38\" height=\"38\" fill=\"#737b88\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"172\" y=\"54\" width=\"38\" height=\"38\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"28\" y=\"100\" width=\"38\" height=\"38\" fill=\"#737b88\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"100\" y=\"100\" width=\"38\" height=\"38\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><rect x=\"172\" y=\"100\" width=\"38\" height=\"38\" fill=\"#737b88\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"191\" y=\"120\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"sans-serif\" font-size=\"22\" fill=\"#111827\">?</text></svg>",
+      "figureAlt": "Cuadrícula: fila 1, gris, blanco, gris; fila 2, blanco, gris, blanco; fila 3, gris, blanco, casilla vacía.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Gris",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"4\" width=\"52\" height=\"40\" fill=\"#737b88\" stroke=\"#111827\" stroke-width=\"2\"/></svg>",
+          "figureAlt": "Muestra de tono gris"
+        },
+        {
+          "key": "B",
+          "text": "Blanco",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"4\" width=\"52\" height=\"40\" fill=\"#ffffff\" stroke=\"#111827\" stroke-width=\"2\"/></svg>",
+          "figureAlt": "Muestra de tono blanco"
+        },
+        {
+          "key": "C",
+          "text": "Negro",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"4\" width=\"52\" height=\"40\" fill=\"#111827\" stroke=\"#111827\" stroke-width=\"2\"/></svg>",
+          "figureAlt": "Muestra de tono negro"
+        },
+        {
+          "key": "D",
+          "text": "Azul",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><rect x=\"4\" y=\"4\" width=\"52\" height=\"40\" fill=\"#2563eb\" stroke=\"#111827\" stroke-width=\"2\"/></svg>",
+          "figureAlt": "Muestra de tono azul"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Los tonos alternan en filas y columnas; la esquina inferior derecha es gris. B rompe la alternancia; C y D no aparecen en la cuadrícula.",
+      "difficulty": 1,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "matrices"
+      ],
+      "conceptIds": [
+        "psico-topic-matrices"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-visual-matrix-003",
+      "domain": "psychometric",
+      "topicId": "matrices",
+      "topic": "Matrices",
+      "skill": "matrices",
+      "prompt": "En cada casilla hay tantas marcas como indica su fila. ¿Cuántos círculos faltan en la última casilla?",
+      "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 230 180\"><rect x=\"10\" y=\"10\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"42.0\" cy=\"34\" r=\"5\" fill=\"#111827\"/><rect x=\"82\" y=\"10\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"114.0\" cy=\"34\" r=\"5\" fill=\"#111827\"/><rect x=\"154\" y=\"10\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"186.0\" cy=\"34\" r=\"5\" fill=\"#111827\"/><rect x=\"10\" y=\"65\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"34.5\" cy=\"89\" r=\"5\" fill=\"#111827\"/><circle cx=\"49.5\" cy=\"89\" r=\"5\" fill=\"#111827\"/><rect x=\"82\" y=\"65\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"106.5\" cy=\"89\" r=\"5\" fill=\"#111827\"/><circle cx=\"121.5\" cy=\"89\" r=\"5\" fill=\"#111827\"/><rect x=\"154\" y=\"65\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"178.5\" cy=\"89\" r=\"5\" fill=\"#111827\"/><circle cx=\"193.5\" cy=\"89\" r=\"5\" fill=\"#111827\"/><rect x=\"10\" y=\"120\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"27.0\" cy=\"144\" r=\"5\" fill=\"#111827\"/><circle cx=\"42.0\" cy=\"144\" r=\"5\" fill=\"#111827\"/><circle cx=\"57.0\" cy=\"144\" r=\"5\" fill=\"#111827\"/><rect x=\"82\" y=\"120\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><circle cx=\"99.0\" cy=\"144\" r=\"5\" fill=\"#111827\"/><circle cx=\"114.0\" cy=\"144\" r=\"5\" fill=\"#111827\"/><circle cx=\"129.0\" cy=\"144\" r=\"5\" fill=\"#111827\"/><rect x=\"154\" y=\"120\" width=\"64\" height=\"48\" fill=\"white\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"186\" y=\"145\" text-anchor=\"middle\" font-size=\"22\" fill=\"#111827\">?</text></svg>",
+      "figureAlt": "Matriz: fila 1, una marca, una marca, una marca; fila 2, dos marcas, dos marcas, dos marcas; fila 3, tres marcas, tres marcas, casilla vacía.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 círculo",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><circle cx=\"30\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "1 círculo"
+        },
+        {
+          "key": "B",
+          "text": "2 círculos",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "2 círculos"
+        },
+        {
+          "key": "C",
+          "text": "3 círculos",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"30\" cy=\"24\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "3 círculos"
+        },
+        {
+          "key": "D",
+          "text": "4 círculos",
+          "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 48\"><circle cx=\"18\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"12\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"18\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/><circle cx=\"42\" cy=\"36\" r=\"3.4\" fill=\"#111827\"/></svg>",
+          "figureAlt": "4 círculos"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Cada fila mantiene su cantidad de círculos en las tres columnas. La tercera fila tiene tres círculos en las casillas ya visibles, así que faltan tres. A y B copian cantidades de filas anteriores; D añade una marca extra.",
+      "difficulty": 1,
+      "tags": [
+        "original-psicometrico",
+        "visual",
+        "matrices"
+      ],
+      "conceptIds": [
+        "psico-topic-matrices"
+      ],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-03",
+      "origin": "original"
+    },
+    {
+      "id": "orig-psico-numerical-003",
+      "domain": "psychometric",
+      "topicId": "numerical",
+      "topic": "Aptitud numérica",
+      "skill": "numerical",
+      "prompt": "Una cantidad de 480 se reduce un 15 %. ¿Cuál es el resultado?",
+      "options": [
+        { "key": "A", "text": "408" },
+        { "key": "B", "text": "420" },
+        { "key": "C", "text": "552" },
+        { "key": "D", "text": "72" }
+      ],
+      "answer": "A",
+      "explanation": "El 15 % de 480 es 72: el 10 % son 48 y el 5 % son 24. Al reducir, se resta a la cantidad inicial: 480 − 72 = 408.",
+      "difficulty": 2,
+      "tags": ["original-psicometrico", "numerical", "porcentajes"],
+      "conceptIds": ["psico-topic-numerical"],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-04",
+      "origin": "original"
+    }
 ]

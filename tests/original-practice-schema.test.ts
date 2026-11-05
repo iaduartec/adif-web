@@ -199,7 +199,7 @@ describe("original practice question schema", () => {
     })).success).toBe(false);
 
     const node = officialSpecificNode("rcf-capitulo-5");
-    expect(node.status).toBe("partial");
+    expect(node.status).toBe("covered");
     expect(originalPracticeQuestionSchema.safeParse(question({
       domain: "telecom",
       topicId: node.id,

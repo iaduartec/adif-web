@@ -26,7 +26,7 @@ test("responde, corrige, guarda y recupera un fallo original", async ({ page }, 
   const englishProgress = testInfo.project.name === "mobile"
     ? progress.getByRole("listitem").filter({ hasText: "Inglés A2" })
     : progress.getByRole("row", { name: /Inglés A2/ });
-  await expect(englishProgress).toContainText("1 de 22 revisadas");
+  await expect(englishProgress).toContainText("1 de 49 revisadas");
   await progress.scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath("estadisticas.png") });
 });

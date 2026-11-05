@@ -28,6 +28,7 @@ export function FlashcardDeck({
   const [flipped, setFlipped] = useState(false);
   const [favSet, setFavSet] = useState(favoriteIds);
   const [isPending, startTransition] = useTransition();
+  const modules = [...new Set([...MODULES, ...cards.map((card) => card.module)])];
 
   const filtered = selectedModule === "Todos"
     ? cards
@@ -75,7 +76,7 @@ export function FlashcardDeck({
   if (filtered.length === 0) {
     return (
       <div className="space-y-6">
-        <ModuleFilter modules={MODULES} selected={selectedModule} onChange={handleModuleChange} />
+        <ModuleFilter modules={modules} selected={selectedModule} onChange={handleModuleChange} />
         <div className="py-16 text-center border border-dashed border-rail text-gray-500">
           No hay fichas para este módulo.
         </div>
@@ -87,7 +88,7 @@ export function FlashcardDeck({
 
   return (
     <div className="space-y-6">
-      <ModuleFilter modules={MODULES} selected={selectedModule} onChange={handleModuleChange} />
+      <ModuleFilter modules={modules} selected={selectedModule} onChange={handleModuleChange} />
 
       {/* Card */}
       <div className="flashcard-perspective" style={{ perspective: "1200px" }}>

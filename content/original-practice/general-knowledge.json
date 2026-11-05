@@ -92,7 +92,7 @@
     "syllabusNodeId": "igualdad-ley-completa",
     "topic": "Texto completo: preámbulo, título preliminar y títulos I–VIII",
     "skill": "IGUALDAD",
-    "prompt": "Una disposición, criterio o práctica aparentemente neutros que sitúan a personas de un sexo en desventaja particular respecto del otro constituye:",
+    "prompt": "Una disposición, criterio o práctica aparentemente neutros sitúa a personas de un sexo en desventaja particular respecto del otro y no puede justificarse objetivamente por una finalidad legítima con medios necesarios y adecuados. ¿Qué constituye?",
     "options": [
       {
         "key": "A",
@@ -112,7 +112,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "El artículo 6.2 tipifica la discriminación indirecta, que solo es lícita si se justifica objetivamente en una finalidad legítima con medios necesarios y adecuados.",
+    "explanation": "Es discriminación indirecta conforme al artículo 6.2: existe una desventaja particular causada por una medida aparentemente neutra y no concurre la justificación objetiva exigida. La excepción requiere una finalidad legítima y medios necesarios y adecuados. No es discriminación directa, acción positiva ni acoso sexual.",
     "difficulty": 2,
     "tags": [
       "original-comun",
@@ -698,7 +698,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Aceptar regalos de empresas colaboradoras cuando sean de escaso valor."
+        "text": "Garantizar la atención al ciudadano en la lengua solicitada, si es oficial en el territorio."
       },
       {
         "key": "B",
@@ -714,7 +714,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "El artículo 53 incluye entre los principios éticos la abstención en los asuntos con interés personal y la no aceptación de tratos de favor o ventajas injustificadas.",
+    "explanation": "B corresponde al artículo 53.5. A es un principio de conducta del artículo 54.11, no de la lista del artículo 53. C contradice la imparcialidad y D desconoce el deber de secreto o discreción que corresponda a la información.",
     "difficulty": 2,
     "tags": [
       "original-comun",
@@ -823,7 +823,7 @@
     "syllabusNodeId": "incompatibilidades-ley-completa",
     "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
     "skill": "INCOMPATIBILIDADES",
-    "prompt": "¿Cuál de los siguientes supuestos permite, como excepción, compatibilizar dos puestos públicos según el artículo 3 de la Ley 53/1984?",
+    "prompt": "¿Cuál de estos supuestos docentes específicos puede autorizarse conforme a los artículos 3 y 4.1 de la Ley 53/1984, si se cumplen las restantes condiciones legales?",
     "options": [
       {
         "key": "A",
@@ -831,7 +831,7 @@
       },
       {
         "key": "B",
-        "text": "La docencia universitaria a tiempo parcial."
+        "text": "Un puesto de Profesor universitario asociado con dedicación no superior a la de tiempo parcial."
       },
       {
         "key": "C",
@@ -843,7 +843,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "El artículo 3 admite como excepciones la docencia universitaria a tiempo parcial, la sanidad a tiempo parcial y los cargos electivos sin exclusividad.",
+    "explanation": "El artículo 3 remite a los supuestos legales de compatibilidad y exige autorización previa y expresa. El artículo 4.1 concreta que puede autorizarse el puesto de Profesor universitario asociado con dedicación no superior a la de tiempo parcial, sin perjuicio de las restantes exigencias de la Ley.",
     "difficulty": 3,
     "tags": [
       "original-comun",
@@ -854,7 +854,7 @@
     ],
     "sourceId": "Ley 53/1984",
     "sourceVersion": "consolidated-page-2026-10-15-current",
-    "sourceLocator": "Artículo 3",
+    "sourceLocator": "Artículo 4.1",
     "status": "reviewed",
     "reviewedAt": "2026-10-16",
     "origin": "original"
@@ -866,7 +866,7 @@
     "syllabusNodeId": "incompatibilidades-ley-completa",
     "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
     "skill": "INCOMPATIBILIDADES",
-    "prompt": "Según el artículo 11 de la Ley 53/1984, se prohíbe con carácter absoluto ejercer actividades privadas:",
+    "prompt": "Según el artículo 11 de la Ley 53/1984, con carácter general no pueden ejercerse actividades privadas:",
     "options": [
       {
         "key": "A",
@@ -886,14 +886,14 @@
       }
     ],
     "answer": "A",
-    "explanation": "El artículo 11 prohíbe las actividades privadas, por cuenta propia o ajena, relacionadas directamente con las del organismo de destino, como asesorar a contratistas.",
+    "explanation": "El artículo 11 prohíbe las actividades privadas, por cuenta propia o ajena, relacionadas directamente con las del organismo de destino, como asesorar a contratistas. La ley exceptúa las actividades particulares que los interesados realicen para sí en ejercicio de un derecho legalmente reconocido.",
     "difficulty": 3,
     "tags": [
       "original-comun",
       "incompatibilidades"
     ],
     "conceptIds": [
-      "incomp-concept-5"
+      "incomp-concept-8"
     ],
     "sourceId": "Ley 53/1984",
     "sourceVersion": "consolidated-page-2026-10-15-current",
@@ -936,7 +936,7 @@
       "incompatibilidades"
     ],
     "conceptIds": [
-      "incomp-concept-6"
+      "incomp-concept-11"
     ],
     "sourceId": "Ley 53/1984",
     "sourceVersion": "consolidated-page-2026-10-15-current",
@@ -972,7 +972,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "El artículo 7.1 y 7.3 de la Ley Orgánica 3/2007 define como acoso sexual cualquier comportamiento verbal o físico de naturaleza sexual que atente contra la dignidad de una persona y lo califica en todo caso como discriminatorio.",
+    "explanation": "Los artículos 7.1 y 7.3 de la Ley Orgánica 3/2007 definen el acoso sexual por un comportamiento verbal o físico de naturaleza sexual que tenga el propósito o produzca el efecto de atentar contra la dignidad, y lo consideran en todo caso discriminatorio. No exige que concurran propósito y efecto a la vez.",
     "difficulty": 1,
     "tags": [
       "original-comun",
@@ -1574,7 +1574,7 @@
       }
     ],
     "answer": "C",
-    "explanation": "El artículo 22.1 configura la vigilancia de la salud como voluntaria para el trabajador, exceptuándose únicamente, previo informe de los representantes de los trabajadores, cuando sea imprescindible por riesgo propio o de terceros o esté fijado en una disposición legal.",
+    "explanation": "El artículo 22.1 exige como regla general el consentimiento. Previo informe de los representantes, contempla excepciones cuando los reconocimientos sean imprescindibles para evaluar los efectos de las condiciones de trabajo sobre la salud, para verificar si el estado de salud puede constituir un peligro para el propio trabajador, otros trabajadores u otras personas relacionadas con la empresa, o cuando lo establezca una disposición legal para proteger frente a riesgos específicos y actividades de especial peligrosidad.",
     "difficulty": 2,
     "tags": [
       "original-comun",
@@ -1760,6 +1760,110 @@
     "sourceLocator": "Artículo 38",
     "status": "reviewed",
     "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-015",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "El empresario concierta con un servicio de prevención ajeno la evaluación de riesgos y parte de la actividad preventiva. Según el artículo 14.4 de la Ley 31/1995, ¿qué efecto tiene esa organización sobre su deber de protección?",
+    "options": [
+      { "key": "A", "text": "Exime al empresario de responder por incumplimientos en las actividades incluidas en el concierto." },
+      { "key": "B", "text": "Complementa la actuación empresarial, pero no exime al empresario de cumplir su deber." },
+      { "key": "C", "text": "Traslada al servicio de prevención el deber empresarial respecto de los riesgos que este evalúe." },
+      { "key": "D", "text": "Divide el deber legal de protección entre empresario y servicio externo según el contrato." }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 14.4 establece que las funciones preventivas atribuidas a trabajadores o servicios y el concierto con entidades especializadas complementan la acción empresarial, sin eximir al empresario de su deber de protección.",
+    "difficulty": 2,
+    "tags": ["original-comun", "prl"],
+    "conceptIds": ["prl-concept-15"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 14",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-016",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "En un centro con representantes, ¿cómo debe facilitarse la información preventiva según el artículo 18 de la Ley 31/1995?",
+    "options": [
+      { "key": "A", "text": "La información general se facilita a través de los representantes y cada trabajador recibe directamente la relativa a los riesgos específicos de su puesto y sus medidas." },
+      { "key": "B", "text": "Toda información se entrega exclusivamente a los representantes, sin comunicación directa a los trabajadores." },
+      { "key": "C", "text": "Solo se informa directamente a quienes hayan solicitado evaluación médica." },
+      { "key": "D", "text": "La información general se facilita únicamente a través del servicio de prevención ajeno." }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 18.1 establece el canal representativo para la información prevista en ese apartado cuando existen representantes, pero exige informar directamente a cada trabajador de los riesgos específicos de su puesto y de las medidas aplicables.",
+    "difficulty": 2,
+    "tags": ["original-comun", "prl"],
+    "conceptIds": ["prl-concept-16"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 18",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-017",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-v",
+    "syllabusNodeId": "prl-capitulo-v",
+    "topic": "Capítulo V (artículos 33–40)",
+    "skill": "PRL",
+    "prompt": "En una empresa que cuenta con representantes de los trabajadores, ¿con quién debe realizar el empresario la consulta preventiva del artículo 33.2 de la Ley 31/1995?",
+    "options": [
+      { "key": "A", "text": "Exclusivamente con el servicio de prevención externo, aunque haya representantes." },
+      { "key": "B", "text": "Directamente con cada trabajador afectado, aunque exista representación." },
+      { "key": "C", "text": "Con los representantes de los trabajadores." },
+      { "key": "D", "text": "Con la Inspección de Trabajo antes de cada decisión preventiva." }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 33.2 establece que, cuando la empresa cuenta con representantes de los trabajadores, la consulta sobre las decisiones del apartado 1 se realiza con dichos representantes; no se sustituye por consultar solo al servicio externo ni individualmente a cada trabajador.",
+    "difficulty": 2,
+    "tags": ["original-comun", "prl"],
+    "conceptIds": ["prl-concept-16"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 33",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-prl-018",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-v",
+    "syllabusNodeId": "prl-capitulo-v",
+    "topic": "Capítulo V (artículos 33–40)",
+    "skill": "PRL",
+    "prompt": "En una empresa con 80 trabajadores, ¿quién designa a los Delegados de Prevención y cuántos corresponden, conforme al artículo 35 de la Ley 31/1995?",
+    "options": [
+      { "key": "A", "text": "Los elige directamente la autoridad laboral; corresponde uno." },
+      { "key": "B", "text": "Los nombra el empresario; corresponden tres." },
+      { "key": "C", "text": "Se designan por y entre los representantes del personal; corresponden tres." },
+      { "key": "D", "text": "Se designan por y entre los representantes del personal; corresponden dos." }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 35.2 dispone que los Delegados de Prevención se designan por y entre los representantes del personal. Para una plantilla de 50 a 100 trabajadores corresponden dos Delegados de Prevención.",
+    "difficulty": 2,
+    "tags": ["original-comun", "prl"],
+    "conceptIds": ["prl-concept-13"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 35",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
     "origin": "original"
   },
   {
@@ -2484,13 +2588,39 @@
       "incompatibilidades"
     ],
     "conceptIds": [
-      "incomp-concept-7"
+      "incomp-concept-15"
     ],
     "sourceId": "Ley 53/1984",
     "sourceVersion": "consolidated-page-2026-10-15-current",
     "sourceLocator": "Artículo 19",
     "status": "reviewed",
     "reviewedAt": "2026-10-17",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-incompat-008",
+    "domain": "general-knowledge",
+    "topicId": "incompatibilidades-ley-completa",
+    "syllabusNodeId": "incompatibilidades-ley-completa",
+    "topic": "Ley completa (preámbulo, capítulos I–V y disposiciones)",
+    "skill": "INCOMPATIBILIDADES",
+    "prompt": "Una empleada pública participa en la tramitación de un expediente de contratación y una empresa licitadora le ofrece una actividad privada remunerada para asesorarla sobre ese mismo expediente. ¿Puede obtener el reconocimiento de compatibilidad del artículo 14 para ejercerla?",
+    "options": [
+      { "key": "A", "text": "Sí, si la actividad se realiza fuera de su horario público." },
+      { "key": "B", "text": "Sí, si limita la actividad a una colaboración ocasional." },
+      { "key": "C", "text": "Sí, si la empresa no mantiene actualmente contratos con su organismo." },
+      { "key": "D", "text": "No; el artículo 12.1.a prohíbe la actividad privada en un asunto en el que interviene o debe intervenir por su puesto." }
+    ],
+    "answer": "D",
+    "explanation": "El reconocimiento previo del artículo 14 no elimina la prohibición del artículo 12.1.a: no cabe ejercer actividad privada en asuntos en que la persona interviene, haya intervenido en los dos últimos años o deba intervenir por razón del puesto.",
+    "difficulty": 3,
+    "tags": ["original-comun", "incompatibilidades"],
+    "conceptIds": ["incomp-concept-9"],
+    "sourceId": "Ley 53/1984",
+    "sourceVersion": "consolidated-page-2026-10-15-current",
+    "sourceLocator": "Artículo 12",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
     "origin": "original"
   },
   {
@@ -3738,6 +3868,587 @@
     "sourceVersion": "edition-2027-page-candidate",
     "sourceLocator": "Capítulo II, 2.6 Desarrollo de la Infraestructura (pp. 52–69)",
     "status": "draft",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-019",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "Conforme a la redacción vigente del artículo 4 del Estatuto de ADIF, el apartado primero se refiere a los convenios que la entidad puede celebrar:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Con los Ministerios de Economía y Hacienda y de Fomento para la encomienda de administración de infraestructuras de titularidad estatal mediante contrato-programa."
+      },
+      {
+        "key": "B",
+        "text": "Con las comunidades autónomas para la construcción y la administración de las redes ferroviarias de éstas o de tramos de las mismas."
+      },
+      {
+        "key": "C",
+        "text": "Con RENFE-Operadora, empresas ferroviarias o entidades públicas y privadas para el uso de instalaciones de interés común."
+      },
+      {
+        "key": "D",
+        "text": "Con la Administración General del Estado u otras Administraciones Públicas para el mejor cumplimiento de sus fines."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El Real Decreto 1044/2013 suprimió el antiguo apartado primero, relativo a los convenios o contratos-programa de encomienda de infraestructuras de titularidad estatal, y renumeró los apartados 2, 3 y 4 como 1, 2 y 3. Por tanto, el apartado primero vigente es el de los convenios con las comunidades autónomas, el segundo el de la Administración General del Estado u otras Administraciones Públicas y el tercero el de RENFE-Operadora y demás entidades.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-102",
+      "estatuto-concept-23"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 4",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-020",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "¿Qué contenido del artículo 4 del Estatuto de ADIF fue suprimido por la reforma de 2013?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Los convenios con las comunidades autónomas para construir y administrar sus redes ferroviarias."
+      },
+      {
+        "key": "B",
+        "text": "Los convenios con la Administración General del Estado u otras Administraciones Públicas."
+      },
+      {
+        "key": "C",
+        "text": "Los convenios o contratos-programa por los que los Ministerios de Economía y Hacienda y de Fomento encomendaban a ADIF la administración de infraestructuras de titularidad estatal."
+      },
+      {
+        "key": "D",
+        "text": "Los convenios de colaboración con RENFE-Operadora, empresas ferroviarias y entidades públicas o privadas."
+      }
+    ],
+    "answer": "C",
+    "explanation": "La disposición final primera, apartado cinco, del Real Decreto 1044/2013 eliminó el apartado 1 del artículo 4 y renumeró el resto. Lo suprimido fue el régimen de encomienda mediante convenio o contrato-programa de infraestructuras de titularidad estatal, con el informe de control financiero de la Intervención General. La habilitación para convenir con comunidades autónomas no desapareció: pasó del apartado 2 al apartado 1. El epígrafe del artículo sigue titulándose «Convenios o contratos-programa» pese a la supresión.",
+    "difficulty": 3,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-102"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 4",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-021",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "Según el artículo 9 del Estatuto de ADIF, la administración de las infraestructuras ferroviarias integradas en la Red Ferroviaria de Interés General tiene por objeto:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El mantenimiento y la explotación de aquéllas, así como la gestión de sus sistemas de control, de circulación y de seguridad."
+      },
+      {
+        "key": "B",
+        "text": "Únicamente el mantenimiento y la conservación de la superestructura y la infraestructura."
+      },
+      {
+        "key": "C",
+        "text": "La prestación del servicio de transporte ferroviario de viajeros y mercancías."
+      },
+      {
+        "key": "D",
+        "text": "La construcción de nuevas líneas y la explotación comercial de las estaciones."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 9.1 identifica el objeto de la administración: mantenimiento y explotación y gestión de los sistemas de control, circulación y seguridad. El apartado 2 atribuye a ADIF esas competencias sobre sus infraestructuras. Las demás opciones incorporan actividades distintas que el artículo 9.1 no enumera como objeto de esa administración.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-103",
+      "estatuto-concept-28"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 9",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-022",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-ii",
+    "syllabusNodeId": "estatuto-capitulo-ii",
+    "topic": "Capítulo II. Funciones de ADIF (artículos 3–13)",
+    "skill": "ESTATUTO",
+    "prompt": "A efectos del Estatuto de ADIF, el mantenimiento de infraestructura ferroviaria se define en el artículo 10 como el conjunto de operaciones de:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Conservación y reparación de elementos, sin incluir la actualización tecnológica."
+      },
+      {
+        "key": "B",
+        "text": "Vigilancia, seguridad y control de accesos a las instalaciones."
+      },
+      {
+        "key": "C",
+        "text": "Construcción, renovación integral y explotación de la infraestructura."
+      },
+      {
+        "key": "D",
+        "text": "Conservación, reparación, reposición y actualización tecnológica de elementos."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 10, apartado 1, define el mantenimiento como el conjunto de operaciones de conservación, reparación, reposición y actualización tecnológica que permite preservar las infraestructuras en condiciones de operatividad y seguridad adecuadas. El apartado 2 atribuye a ADIF los estudios, la aprobación y el replanteo de los proyectos y sus modificaciones, pudiendo encargar la redacción material a terceros.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-104",
+      "estatuto-concept-29"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 10",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "id": "orig-gen-estatuto-023",
+    "domain": "general-knowledge",
+    "topicId": "estatuto-capitulo-iii",
+    "syllabusNodeId": "estatuto-capitulo-iii",
+    "topic": "Capítulo III. Organización (artículos 14–26)",
+    "skill": "ESTATUTO",
+    "prompt": "Conforme al artículo 14 del Estatuto de ADIF, los órganos de gobierno de la entidad son:",
+    "options": [
+      {
+        "key": "A",
+        "text": "El Consejo de Administración y el Presidente."
+      },
+      {
+        "key": "B",
+        "text": "El Consejo de Administración, el Presidente y los Directores Generales."
+      },
+      {
+        "key": "C",
+        "text": "El Presidente, el Secretario del Consejo y el Comité de Auditoría."
+      },
+      {
+        "key": "D",
+        "text": "El Consejo de Administración y sus Comisiones Delegadas."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 14 enumera dos órganos de gobierno: el Consejo de Administración y el Presidente. Los Directores Generales, Directores Gerentes de las Unidades de negocio y Directores Corporativos son personal directivo (artículo 27). Las Comisiones Delegadas del Consejo (artículo 18) no figuran entre los dos órganos enumerados en el artículo 14.",
+    "difficulty": 2,
+    "tags": [
+      "original-comun",
+      "estatuto-adif"
+    ],
+    "conceptIds": [
+      "estatuto-concept-105"
+    ],
+    "sourceId": "RD 2395/2004",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 14",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-conducta-006",
+    "prompt": "¿Cuántos principios enumera el artículo 52 del TREBEP que inspiran el Código de Conducta de los empleados públicos?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Diez principios."
+      },
+      {
+        "key": "B",
+        "text": "Doce principios."
+      },
+      {
+        "key": "C",
+        "text": "Quince principios."
+      },
+      {
+        "key": "D",
+        "text": "Veinte principios."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 52 enumera quince principios: objetividad, integridad, neutralidad, responsabilidad, imparcialidad, confidencialidad, dedicación al servicio público, transparencia, ejemplaridad, austeridad, accesibilidad, eficacia, honradez, promoción del entorno cultural y medioambiental e igualdad entre mujeres y hombres. Diez, doce y veinte no corresponden a esa enumeración.",
+    "difficulty": 3,
+    "conceptIds": [
+      "conducta-concept-1"
+    ],
+    "sourceLocator": "Artículo 52"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-conducta-007",
+    "prompt": "¿En qué precepto del TREBEP se regula el deber de rechazar regalos, favores o servicios en condiciones ventajosas que vayan más allá de los usos habituales, sociales y de cortesía?",
+    "options": [
+      {
+        "key": "A",
+        "text": "En el artículo 55 (principios rectores)."
+      },
+      {
+        "key": "B",
+        "text": "En el artículo 52 (principios generales)."
+      },
+      {
+        "key": "C",
+        "text": "En el artículo 53 (principios éticos)."
+      },
+      {
+        "key": "D",
+        "text": "En el artículo 54 (principios de conducta)."
+      }
+    ],
+    "answer": "D",
+    "explanation": "La regla de rechazo de regalos está en el artículo 54 del TREBEP (principios de conducta), no en el artículo 53. El artículo 54 dispone que se rechazará cualquier regalo, favor o servicio en condiciones ventajosas que vaya más allá de los usos habituales, sociales y de cortesía, sin perjuicio de lo establecido en el Código Penal.",
+    "difficulty": 2,
+    "conceptIds": [
+      "conducta-concept-3"
+    ],
+    "sourceLocator": "Artículo 54"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "ebep-capitulo-vi-titulo-iii",
+    "syllabusNodeId": "ebep-capitulo-vi-titulo-iii",
+    "topic": "Capítulo VI, título III (artículos 52–54)",
+    "skill": "CONDUCTA",
+    "tags": [
+      "original-comun",
+      "codigo-conducta"
+    ],
+    "sourceId": "TREBEP",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-conducta-008",
+    "prompt": "Según el último párrafo del artículo 52 del TREBEP, ¿qué relación guardan los principios y reglas del capítulo con el régimen disciplinario?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sustituyen el régimen disciplinario por una amonestación privada."
+      },
+      {
+        "key": "B",
+        "text": "Informan la interpretación y aplicación del régimen disciplinario de los empleados públicos."
+      },
+      {
+        "key": "C",
+        "text": "Determinan por sí solos la rescisión del contrato de trabajo."
+      },
+      {
+        "key": "D",
+        "text": "Excluyen la aplicación de las normas disciplinarias."
+      }
+    ],
+    "answer": "B",
+    "explanation": "La opción B reproduce la relación prevista en el artículo 52. A y D son incorrectas porque el precepto no sustituye ni excluye el régimen disciplinario; C es incorrecta porque no establece por sí mismo una rescisión ni una sanción concreta.",
+    "difficulty": 2,
+    "conceptIds": [
+      "conducta-concept-6"
+    ],
+    "sourceLocator": "Artículo 52"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-019",
+    "prompt": "Cuando la utilización de un equipo de trabajo puede presentar un riesgo específico para la seguridad o la salud, el empresario debe:",
+    "options": [
+      { "key": "A", "text": "Reservar su utilización a los encargados de dicha utilización y encomendar la reparación, transformación, mantenimiento o conservación a trabajadores específicamente capacitados." },
+      { "key": "B", "text": "Permitir su uso a cualquier trabajador que acredite experiencia previa." },
+      { "key": "C", "text": "Sustituir el equipo por otro de alquiler sin evaluar el riesgo." },
+      { "key": "D", "text": "Delegar la decisión en la empresa de trabajo temporal." }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 17.1 exige que, ante un riesgo específico, la utilización quede reservada a los encargados de dicha utilización y que la reparación, transformación, mantenimiento o conservación la realicen trabajadores específicamente capacitados.",
+    "difficulty": 2,
+    "conceptIds": ["prl-concept-17"],
+    "sourceLocator": "Artículo 17"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-020",
+    "prompt": "Según la Ley 31/1995, los equipos de protección individual deben utilizarse:",
+    "options": [
+      { "key": "A", "text": "Cuando los riesgos no se puedan evitar o no se puedan limitar suficientemente mediante medios técnicos de protección colectiva o mediante medidas, métodos o procedimientos de organización del trabajo." },
+      { "key": "B", "text": "Siempre, como primera medida de prevención frente a cualquier riesgo." },
+      { "key": "C", "text": "Solo cuando lo solicite el Delegado de Prevención." },
+      { "key": "D", "text": "Cuando el trabajador renuncie a la protección colectiva." }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 17.2 subordina el uso de los equipos de protección individual a que los riesgos no puedan evitarse o limitarse suficientemente por protección colectiva o por organización del trabajo; es la última barrera, no la primera medida.",
+    "difficulty": 2,
+    "conceptIds": ["prl-concept-17"],
+    "sourceLocator": "Artículo 17"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-021",
+    "prompt": "La protección específica de los trabajadores especialmente sensibles exige que el empresario:",
+    "options": [
+      { "key": "A", "text": "Los aparte del trabajo remunerado mientras persista su sensibilidad." },
+      { "key": "B", "text": "Tenga en cuenta sus características personales o estado biológico conocido en la evaluación de riesgos y adopte las medidas preventivas y de protección necesarias." },
+      { "key": "C", "text": "Exija una autorización de la Inspección de Trabajo para cada puesto." },
+      { "key": "D", "text": "Los adscriba siempre a tareas administrativas." }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 25.1 obliga a garantizar de manera específica la protección de quienes, por características personales o estado biológico conocido —incluida la discapacidad reconocida—, sean especialmente sensibles, considerándolo en la evaluación de riesgos y adoptando las medidas necesarias.",
+    "difficulty": 2,
+    "conceptIds": ["prl-concept-18"],
+    "sourceLocator": "Artículo 25"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-022",
+    "prompt": "Si la adaptación de las condiciones o del tiempo de trabajo de una trabajadora embarazada no resulta posible y existe riesgo certificado para ella o el feto, la Ley 31/1995 prevé:",
+    "options": [
+      { "key": "A", "text": "La extinción automática del contrato por parte del empresario." },
+      { "key": "B", "text": "El paso a un puesto o función diferente y compatible y, si no existe puesto compatible, la posible suspensión del contrato por riesgo durante el embarazo." },
+      { "key": "C", "text": "La reducción obligatoria de la jornada a la mitad sin informe médico." },
+      { "key": "D", "text": "La continuación en el mismo puesto con equipos de protección individual." }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 26.2 y 26.3 prevé el cambio a un puesto compatible, con certificación de los servicios médicos del INSS o de las mutuas y el informe del médico del Servicio Nacional de Salud, y, si no es posible, la suspensión del contrato por riesgo durante el embarazo. La relación se suspende, no se extingue.",
+    "difficulty": 3,
+    "conceptIds": ["prl-concept-19"],
+    "sourceLocator": "Artículo 26"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-023",
+    "prompt": "Respecto a los trabajadores con relaciones temporales o de duración determinada y a los contratados por empresas de trabajo temporal, la Ley 31/1995 establece que:",
+    "options": [
+      { "key": "A", "text": "Solo les protege la normativa de la empresa de trabajo temporal." },
+      { "key": "B", "text": "Pueden recibir un nivel de protección inferior si la duración del contrato es muy breve." },
+      { "key": "C", "text": "Deben disfrutar del mismo nivel de protección que los restantes trabajadores de la empresa en la que prestan servicios, sin diferencias de trato en esta materia." },
+      { "key": "D", "text": "Quedan excluidos de la vigilancia periódica de la salud." }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 28.1 iguala el nivel de protección de estos trabajadores al del resto de la plantilla y prohíbe diferencias de trato en la protección de la seguridad y la salud; la Ley y sus normas de desarrollo se les aplican plenamente.",
+    "difficulty": 2,
+    "conceptIds": ["prl-concept-21"],
+    "sourceLocator": "Artículo 28"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-024",
+    "prompt": "En las relaciones de trabajo a través de empresas de trabajo temporal, la Ley 31/1995 atribuye:",
+    "options": [
+      { "key": "A", "text": "Toda la responsabilidad preventiva a la empresa de trabajo temporal." },
+      { "key": "B", "text": "Toda la responsabilidad preventiva a la empresa usuaria, incluida la formación." },
+      { "key": "C", "text": "A la empresa usuaria la responsabilidad de las condiciones de ejecución del trabajo y de la información, y a la empresa de trabajo temporal la de la formación y la vigilancia de la salud." },
+      { "key": "D", "text": "La responsabilidad exclusiva de los representantes de los trabajadores." }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 28.5 distribuye las obligaciones: la empresa usuaria responde de las condiciones de ejecución del trabajo en materia de seguridad y salud y de la información de los apartados 2 y 4, mientras que la empresa de trabajo temporal responde de la formación y de la vigilancia de la salud.",
+    "difficulty": 3,
+    "conceptIds": ["prl-concept-21"],
+    "sourceLocator": "Artículo 28"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-v",
+    "syllabusNodeId": "prl-capitulo-v",
+    "topic": "Capítulo V (artículos 33–40)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-025",
+    "prompt": "Entre las facultades del Comité de Seguridad y Salud se encuentra:",
+    "options": [
+      { "key": "A", "text": "Imponer sanciones a los trabajadores que incumplan las medidas preventivas." },
+      { "key": "B", "text": "Sustituir al empresario en la evaluación de riesgos." },
+      { "key": "C", "text": "Aprobar la memoria anual de cuentas de la empresa." },
+      { "key": "D", "text": "Conocer directamente la situación preventiva del centro mediante visitas, conocer documentos e informes, analizar los daños a la salud y conocer e informar la memoria y programación anual del servicio de prevención." }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 39.2 faculta al Comité para conocer directamente la situación preventiva con las visitas que estime oportunas, conocer documentos e informes sobre condiciones de trabajo y del servicio de prevención, analizar los daños a la salud y conocer e informar la memoria y programación anual de prevención.",
+    "difficulty": 2,
+    "conceptIds": ["prl-concept-23"],
+    "sourceLocator": "Artículo 39"
+  },
+  {
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-v",
+    "syllabusNodeId": "prl-capitulo-v",
+    "topic": "Capítulo V (artículos 33–40)",
+    "skill": "PRL",
+    "tags": ["original-comun", "prl"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
+    "origin": "original",
+    "id": "orig-gen-prl-026",
+    "prompt": "El tiempo que los Delegados de Prevención dedican a la formación preventiva:",
+    "options": [
+      { "key": "A", "text": "Se descuenta de sus vacaciones anuales." },
+      { "key": "B", "text": "Corre a cargo del Delegado, salvo pacto en contrario." },
+      { "key": "C", "text": "No computa a ningún efecto laboral." },
+      { "key": "D", "text": "Se considera tiempo de trabajo a todos los efectos y su coste no puede recaer sobre los Delegados." }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 37.2 obliga al empresario a facilitar medios y formación a los Delegados de Prevención, considera la formación tiempo de trabajo a todos los efectos y prohíbe que su coste recaiga sobre ellos.",
+    "difficulty": 2,
+    "conceptIds": ["prl-concept-22"],
+    "sourceLocator": "Artículo 37"
+  },
+  {
+    "id": "orig-gen-prl-confidencialidad-001",
+    "domain": "general-knowledge",
+    "topicId": "prl-capitulo-iii",
+    "syllabusNodeId": "prl-capitulo-iii",
+    "topic": "Capítulo III (artículos 14–29)",
+    "skill": "PRL",
+    "prompt": "En la vigilancia de la salud, ¿qué puede recibir el empresario sin consentimiento expreso del trabajador para acceder a sus datos médicos personales?",
+    "options": [
+      { "key": "A", "text": "El historial clínico completo del trabajador." },
+      { "key": "B", "text": "Las conclusiones sobre aptitud para el puesto y necesidad de introducir o mejorar medidas preventivas." },
+      { "key": "C", "text": "Todos los diagnósticos, siempre que los conserve en un archivo privado." },
+      { "key": "D", "text": "Ninguna conclusión relacionada con la prevención." }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 22.4 reserva los datos médicos personales al personal médico y autoridades sanitarias que realizan la vigilancia y exige consentimiento expreso para facilitarlos al empresario u otras personas. El empresario y quienes tienen responsabilidades preventivas sí reciben las conclusiones sobre aptitud y medidas de protección o prevención para ejercer sus funciones.",
+    "difficulty": 2,
+    "tags": ["original-comun", "prl"],
+    "conceptIds": ["prl-concept-9"],
+    "sourceId": "Ley 31/1995",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Artículo 22.4",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-04",
     "origin": "original"
   }
 ]

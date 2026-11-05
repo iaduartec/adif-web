@@ -74,6 +74,12 @@ export type OfficialSourceIdentity = {
  * classified as `syllabus-reference`, never as primary legal sources.
  */
 export const OFFICIAL_SOURCE_REGISTRY: Record<string, OfficialSourceIdentity> = {
+  "Directiva 2004/108/CE": {
+    canonicalTitle:
+      "Directiva 2004/108/CE del Parlamento Europeo y del Consejo, de 15 de diciembre de 2004, relativa a la aproximación de las legislaciones de los Estados miembros en materia de compatibilidad electromagnética y por la que se deroga la Directiva 89/336/CEE",
+    canonicalUrl: "https://www.boe.es/buscar/doc.php?id=DOUE-L-2004-83048",
+    kind: "legislation",
+  },
   "CE": {
     canonicalTitle: "Constitución Española",
     canonicalUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229",
@@ -113,6 +119,12 @@ export const OFFICIAL_SOURCE_REGISTRY: Record<string, OfficialSourceIdentity> = 
     canonicalUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
     kind: "legislation",
   },
+  "Orden ITC/1644/2011": {
+    canonicalTitle:
+      "Orden ITC/1644/2011, de 10 de junio, por la que se desarrolla el Reglamento regulador de las infraestructuras comunes de telecomunicaciones",
+    canonicalUrl: "https://www.boe.es/eli/es/o/2011/06/10/itc1644/con",
+    kind: "legislation",
+  },
   "RD 664/2015": {
     canonicalTitle:
       "Real Decreto 664/2015, de 17 de julio, por el que se aprueba el Reglamento de Circulación Ferroviaria",
@@ -123,6 +135,12 @@ export const OFFICIAL_SOURCE_REGISTRY: Record<string, OfficialSourceIdentity> = 
     canonicalTitle:
       "Real Decreto 773/1997, de 30 de mayo, sobre disposiciones mínimas de seguridad y salud relativas a la utilización por los trabajadores de equipos de protección individual",
     canonicalUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735",
+    kind: "legislation",
+  },
+  "RD 39/1997": {
+    canonicalTitle:
+      "Real Decreto 39/1997, de 17 de enero, por el que se aprueba el Reglamento de los Servicios de Prevención",
+    canonicalUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-1997-1853",
     kind: "legislation",
   },
   "RD 902/2020": {
