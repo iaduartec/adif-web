@@ -202,8 +202,8 @@ describe("ICT annex references", () => {
 
     expect(reference).toMatchObject({
       sourceId: "RD 346/2011",
-      locator: "Anexo III, apartados 4.5.1–4.5.4 y 4.6",
     });
+    expect(reference.locator).toBe("Anexo III, apartados 4.5.1, 4.5.2, 4.5.3, 4.5.4 y 4.6");
   });
 
   it("cites the local earthing of recintos in Anexo III", () => {

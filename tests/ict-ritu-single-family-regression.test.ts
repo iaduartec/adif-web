@@ -13,7 +13,7 @@ it("includes the unbounded single-family exception in the RITU claim and cites A
   expect(claim.text).toMatch(/hasta tres alturas y planta baja.*máximo de 16 PAU/i);
   expect(claim.text).toMatch(/conjuntos de viviendas unifamiliares sin límite de PAU/i);
   expect(claim.legalBasis).toContain(source.id);
-  expect(source.locator).toContain("Anexo III, apartados 4.5.1–4.5.4");
+  expect(source.locator).toContain("4.5.3");
   expect(source.excerpt).toMatch(/viviendas unifamiliares sin límite de PAU/i);
 
   const normalizedOfficialText = officialText.replace(/\s+/g, " ");

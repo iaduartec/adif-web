@@ -141,7 +141,7 @@ export const ictTheory: TheorySection = {
       sourceTitle:
         "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
       sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
-      locator: "Anexo III, apartados 4.5.1–4.5.4 y 4.6",
+      locator: "Anexo III, apartados 4.5.1, 4.5.2, 4.5.3, 4.5.4 y 4.6",
       excerpt: "El apartado 4.5.3 permite RITU para edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja con un máximo de 16 PAU, y para conjuntos de viviendas unifamiliares sin límite de PAU. Permite RITU-A para edificios de más de tres alturas y planta baja con hasta 16 PAU, o con 17–30 PAU sin límite de alturas; su anchura accesible es el doble que la de uno de los recintos sustituidos, conserva las demás dimensiones y se sitúa donde cualquiera de ellos.",
     },
     {
