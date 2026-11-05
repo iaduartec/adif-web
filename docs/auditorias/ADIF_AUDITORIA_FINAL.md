@@ -27,4 +27,4 @@ Se utilizaron subagentes GPT-6 Luna para revisiones separadas y GPT-6.1 Sol para
 
 ## Estado de publicación
 
-No se han aplicado migraciones ni se ha publicado producción. La preview y su comparación con producción quedan pendientes mientras no se completen los controles exigidos de código y verificación.
+La [PR #21](https://github.com/iaduartec/adif-web/pull/21) genera una preview `READY` para `ce03f51`. Las rutas públicas comparadas respondieron HTTP 200: la preview muestra el texto corregido de acceso y no aplica el mínimo de seis caracteres al inicio de sesión; producción sigue en `bf7148a` con el texto anterior. `/estadisticas` redirige a `/login` en ambas versiones sin una sesión válida, así que esa comparación privada se limita al recorrido E2E con mocks. No se han aplicado migraciones ni se ha promovido producción.
