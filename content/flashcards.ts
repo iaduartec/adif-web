@@ -337,7 +337,7 @@ export const flashcards: readonly Flashcard[] = [
     id: "ict-fc-21",
     module: "E1 ICT RD 346/2011",
     front: "¿Quién es responsable del mantenimiento de la ICT tras su puesta en servicio?",
-    back: "La comunidad de propietarios, que puede contratar a una empresa instaladora habilitada para realizar el mantenimiento preventivo y las inspecciones periódicas.",
+    back: "El operador conserva la obligación sobre la infraestructura hasta el punto de terminación de red (art. 5.1); la propiedad del edificio, sobre la infraestructura común desde ese punto hasta el PAU (art. 5.2). En propiedad horizontal, las obligaciones sobre elementos comunes se articulan conforme al art. 10 de la Ley de Propiedad Horizontal (art. 13.1). En edificios arrendados se aplica el art. 21 de la Ley de Arrendamientos Urbanos; si la instalación la solicitó el arrendatario, este asume su coste (art. 13.2). El protocolo del anexo IV es orientativo, no impone por sí mismo inspecciones periódicas (art. 13.3).",
   },
   {
     id: "ict-fc-22",
