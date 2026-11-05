@@ -11,4 +11,10 @@ approval_mode = "approve"
 
 [mcp_servers.project-bridge.tools.release_task]
 approval_mode = "approve"
+
+[mcp_servers.project-bridge.tools.claim_task]
+approval_mode = "approve"
+
+[mcp_servers.project-bridge.tools.project_status]
+approval_mode = "approve"
 # <<< project-bridge <<<
