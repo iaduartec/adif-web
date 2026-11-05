@@ -390,7 +390,7 @@ describe("whole content guardrails", () => {
     }
   });
 
-  it("keeps inherited claim reviews pending with an explicit confidence reason", () => {
+  it("preserves inherited review decisions and their evidence", () => {
     const inheritedIds = new Set(Object.keys(inheritedClaimReviews.reviews));
     const seen = new Set<string>();
     for (const theory of Object.values(lessonTheories)) {
@@ -403,15 +403,54 @@ describe("whole content guardrails", () => {
       for (const currentClaim of claims) {
         if (!inheritedIds.has(currentClaim.id)) continue;
         seen.add(currentClaim.id);
-        expect(currentClaim.review?.status).toBe("needs_review");
-        // Una revisión pendiente puede conservar confianza media cuando el texto
-        // está trazado a una edición oficial pero falta el cotejo byte a byte.
-        expect(["low", "medium"]).toContain(currentClaim.review?.confidence.level);
+        const recorded = inheritedClaimReviews.reviews[currentClaim.id as keyof typeof inheritedClaimReviews.reviews];
+        expect(currentClaim.review?.status).toBe(recorded.status);
         expect(currentClaim.review?.confidence.reason.trim()).not.toBe("");
-        expect(currentClaim.review?.reviewedAt).toBeUndefined();
+        if (recorded.status === "reviewed") {
+          expect(currentClaim.review?.reviewedAt).toBeTruthy();
+          expect(currentClaim.review?.reviewedBy).toBeTruthy();
+          expect(currentClaim.review?.confidence.reason).toContain("https://");
+        } else {
+          expect(["low", "medium"]).toContain(currentClaim.review?.confidence.level);
+          expect(currentClaim.review?.reviewedAt).toBeUndefined();
+        }
       }
     }
     expect([...seen].sort()).toEqual([...inheritedIds].sort());
+  });
+
+  it("preserves the adjudicated review state of the 45 disputed claims", () => {
+    // This independent inventory also catches accidental deletion from the manifest.
+    const ids = [
+      "prl-intro-1", "prl-intro-2", "prl-c1-1", "prl-c2-1", "prl-c2-2",
+      "prl-c3-1", "prl-c4-1", "prl-c5-1", "prl-c6-1", "prl-c7-1",
+      "prl-c8-1", "prl-c8-2", "prl-c9-1", "prl-c10-1", "prl-c11-1",
+      "prl-c12-1", "prl-c12-2", "prl-c13-1", "prl-c13-2", "prl-c14-1",
+      "prl-ex-1-app-1", "prl-ex-2-app-1", "prl-ex-2-app-2", "prl-takeaway-1", "prl-takeaway-2",
+      "ict-c1-1", "ict-takeaway-1", "cem-intro-1", "cem-c1-1", "cem-c2-1",
+      "cem-takeaway-1", "rcf-c10-1", "dr-intro-2", "dr-c2-1", "conducta-c3-1",
+      "incomp-c1-1", "incomp-c2-1", "incomp-c3-1", "incomp-c4-1", "incomp-c5-1",
+      "incomp-c6-1", "incomp-c7-1", "incomp-ex-1-app-1", "incomp-takeaway-1", "incomp-takeaway-2",
+    ];
+    const claims = Object.values(lessonTheories).flatMap((theory) => [
+      ...theory.introduction,
+      ...theory.concepts.flatMap((concept) => concept.claims),
+      ...theory.examples.flatMap((example) => example.application),
+      ...theory.reviewTakeaways,
+    ]);
+    expect(new Set(ids).size).toBe(45);
+    for (const id of ids) {
+      const claim = claims.find((item) => item.id === id);
+      expect(claim, id).toBeDefined();
+      expect(claim?.review, id).toBeDefined();
+      expect(claim?.review?.confidence.reason.trim(), id).toBeTruthy();
+      expect(claim?.review?.status, id).toBe("reviewed");
+      expect(claim?.review?.confidence.reason, id).toContain("https://www.boe.es/");
+      if (claim?.review?.status === "reviewed") {
+        expect(claim.review.reviewedAt, id).toBeTruthy();
+        expect(claim.review.reviewedBy, id).toBeTruthy();
+      }
+    }
   });
 });
 

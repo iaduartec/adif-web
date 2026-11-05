@@ -246,9 +246,9 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c2-1",
-          text: "Directiva europea transpuesta en España mediante el Real Decreto 186/2016. Define los requisitos esenciales de protección para aparatos comercializados en la UE.",
+          text: "La Directiva 2014/30/UE, incorporada en España mediante el Real Decreto 186/2016, establece requisitos esenciales de protección para los equipos comprendidos en su ámbito de aplicación. Su artículo 2 contempla exclusiones y la prevalencia de legislación europea más específica para los requisitos que esta regule.",
           kind: "normative",
-          legalBasis: ["dir-2014-30-ue", "rd186-2016"],
+          legalBasis: ["dir-2014-30-ue-art2-13", "dir-2014-30-ue-art6-anexo1", "rd186-2016"],
           review: reviewedCemPrimary,
         },
         {
@@ -266,7 +266,7 @@ export const cemTheory: TheorySection = {
       claims: [
         {
           id: "cem-c3-1",
-          text: "Es la norma armonizada de CENELEC específica para la CEM en ferrocarriles, que prescribe los ensayos y límites de emisión e inmunidad de material e instalaciones.",
+          text: "La serie EN 50121 aborda la compatibilidad electromagnética en aplicaciones ferroviarias mediante distintas partes para sistemas, material e instalaciones. La condición de norma armonizada vigente depende de la parte, edición, alcance y referencia publicada, que deben comprobarse antes de aplicarla.",
           kind: "didactic",
           legalBasis: ["en50121"],
           review: pendingCemSyllabus,
@@ -704,9 +704,9 @@ export const cemTheory: TheorySection = {
         },
         {
           id: "cem-c27-2",
-          text: "De una IF debe documentarse las \"buenas prácticas de ingeniería de CEM\" utilizadas para instalar sus equipos, y esa documentación debe estar en poder de una \"persona responsable\": la persona que, en virtud de su control de la instalación fija, es capaz de determinar que la configuración de la instalación cumple los requisitos esenciales cuando se usa. Esta responsabilidad debe quedar clara en los contratos y en la documentación de entrega.",
-          kind: "normative",
-          legalBasis: ["cem-ree-2015", "dir-2014-30-ue"],
+          text: "El artículo técnico REE de 2015 explica la documentación de buenas prácticas de ingeniería y describe una persona responsable capaz de determinar la conformidad de la configuración de la instalación fija; también recomienda aclarar responsabilidades en contratos y documentación de entrega. Esta descripción del artículo no sustituye la comprobación de las obligaciones legales aplicables a cada instalación.",
+          kind: "didactic",
+          legalBasis: ["cem-ree-2015"],
           review: reviewedCemArticle,
         },
         {
@@ -954,21 +954,21 @@ export const cemTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "cem-takeaway-1",
-      text: "La Directiva 2014/30/UE se transpone en España mediante el Real Decreto 186/2016, que regula las obligaciones de marcado CE y conformidad técnica.",
+      text: "La Directiva 2014/30/UE se incorpora en España mediante el Real Decreto 186/2016, que regula la evaluación de conformidad y las obligaciones de los agentes económicos, incluido el marcado CE de los aparatos comprendidos en su ámbito.",
       kind: "normative",
       legalBasis: ["dir-2014-30-ue", "rd186-2016"],
       review: reviewedCemPrimary,
     },
     {
       id: "cem-takeaway-2",
-      text: "La familia de normas EN 50121 es el estándar técnico armonizado que detalla los métodos de ensayo de CEM en el ámbito ferroviario.",
+      text: "La serie EN 50121 reúne normas técnicas de CEM ferroviaria. La condición de armonizada y la presunción de conformidad deben comprobarse para cada parte, edición y requisito cubierto, a partir de las referencias publicadas aplicables.",
       kind: "didactic",
       legalBasis: ["en50121"],
       review: pendingCemSyllabus,
     },
     {
       id: "cem-takeaway-3",
-      text: "El artículo REE de mayo de 2015 asignado por ADIF sigue pendiente de verificación de derechos de cesión (Cemdal); el temario técnico se desarrolla con fuentes complementarias verificadas.",
+      text: "La identidad del ejemplar exacto del artículo REE de mayo de 2015 enlazado por ADIF y las condiciones de uso siguen pendientes de cotejo; las fuentes técnicas y normativas complementarias se identifican por separado.",
       kind: "didactic",
       legalBasis: [],
       review: pendingCemSyllabus,

@@ -236,7 +236,7 @@ export const codigoConductaTheory: TheorySection = {
         {
           id: "conducta-c3-1",
           text:
-            "El artículo 54 del TREBEP enumera once principios de conducta del servicio diario: trato respetuoso, diligencia y cumplimiento de jornada, obediencia a las instrucciones de los superiores salvo infracción manifiesta, información a los ciudadanos, austeridad en el uso de recursos públicos, rechazo de regalos y favores, constancia y conservación de documentos, actualización de la formación, observancia de la seguridad y salud laboral, formulación de propuestas de mejora y atención al ciudadano en la lengua solicitada cuando sea oficial en el territorio.",
+            "El artículo 54 del TREBEP enumera once principios de conducta del servicio diario: trato respetuoso, diligencia y cumplimiento de jornada, obediencia a las instrucciones de los superiores salvo infracción manifiesta, información a los ciudadanos sobre las materias o asuntos que tengan derecho a conocer, austeridad en el uso de recursos públicos, rechazo de regalos y favores, constancia y permanencia de documentos para su transmisión y entrega, actualización de la formación, observancia de la seguridad y salud laboral, formulación de propuestas de mejora y atención al ciudadano en la lengua solicitada cuando sea oficial en el territorio.",
           kind: "normative",
           legalBasis: ["rdleg-5-2015-art54"],
           review: verifiedConducta

@@ -369,7 +369,7 @@ export const declaracionRed2027Theory: TheorySection = {
       claims: [
         {
           id: "dr-c2-1",
-          text: "Integrada por las líneas, estaciones y terminales esenciales para el transporte ferroviario, recogidas oficialmente en el Catálogo de la RFIG.",
+          text: "La RFIG comprende las infraestructuras ferroviarias, estaciones de viajeros y terminales de mercancías que son esenciales para un sistema común de transporte ferroviario estatal o cuya administración conjunta es necesaria para su correcto funcionamiento. Sus elementos se incluyen en el Catálogo oficial de la RFIG.",
           kind: "normative",
           legalBasis: ["lsf-38-2015-art4"],
           review: reviewedDrPrimary,
@@ -1390,14 +1390,14 @@ export const declaracionRed2027Theory: TheorySection = {
         },
         {
           id: "dr-c38-3",
-          text: "El apartado 2.6.1 de la DR relaciona las actuaciones más significativas en ejecución y en redacción de proyecto a la fecha de aprobación de la Declaración, organizadas por corredores y líneas: Corredor Mediterráneo (Castellbisbal–Vilaseca, Valencia Font Sant Lluis–Almussafes, La Encina–Bif. Alicante con tercer carril, accesos a los puertos de Castellón y Sagunto), Corredor Cantábrico Mediterráneo (electrificación a 25 kV CA de Zaragoza–Teruel–Sagunto), corredores de Autopista Ferroviaria, actuaciones en Cantabria y Asturias (BAB, supresión de bloqueo telefónico, soterramiento de Torrelavega), Madrid (Cercanías: esquema 4+4+2 en Atocha, ERTMS N2 en Aranjuez–Villalba), Andalucía (ampliaciones a 750 m, electrificaciones Bobadilla–Algeciras, BAB Herrera de la Mancha–Manzanares), Levante y Cataluña (ERTMS N2 en Rodalíes de Barcelona, supresión de bloqueo telefónico Figueres–Portbou), Galicia y el noroeste (transformación 3 kV CC a 25 kV CA en Ourense–Monforte de Lemos, renovación del eje Ourense–Vigo) y despliegues de GSM-R en numerosos tramos.",
+          text: "La copia preservada, identificada en su pie como DR ADIF 2027 V.0 (27/02/2026), relaciona en el apartado 2.6.1 las actuaciones previstas más significativas en ejecución o redacción a la fecha de aprobación; no pretende enumerar todas las actuaciones. Su identidad con el adjunto exacto de la convocatoria está pendiente de cotejo; son previsiones de esa edición, no una constatación de las obras actuales. Las actuaciones se organizan por corredores y líneas: Corredor Mediterráneo (Castellbisbal–Vilaseca, Valencia Font Sant Lluis–Almussafes, La Encina–Bif. Alicante con tercer carril, accesos a los puertos de Castellón y Sagunto), Corredor Cantábrico Mediterráneo (electrificación a 25 kV CA de Zaragoza–Teruel–Sagunto), corredores de Autopista Ferroviaria, actuaciones en Cantabria y Asturias (BAB, supresión de bloqueo telefónico, soterramiento de Torrelavega), Madrid (Cercanías: esquema 4+4+2 en Atocha, ERTMS N2 en Aranjuez–Villalba), Andalucía (ampliaciones a 750 m, electrificaciones Bobadilla–Algeciras, BAB Herrera de la Mancha–Manzanares), Levante y Cataluña (ERTMS N2 en Rodalíes de Barcelona, supresión de bloqueo telefónico Figueres–Portbou), Galicia y el noroeste (transformación 3 kV CC a 25 kV CA en Ourense–Monforte de Lemos, renovación del eje Ourense–Vigo) y despliegues de GSM-R en numerosos tramos.",
           kind: "didactic",
           legalBasis: ["dr-2027-cap2-26"],
           review: reviewedDrChapter2,
         },
         {
           id: "dr-c38-4",
-          text: "Cada actuación del apartado 2.6.1 indica su estado por año (2026 y 2027): obras en curso, expediente de puesta en servicio, en servicio, licitación o redacción de proyecto, lo que permite conocer el calendario previsto de las principales mejoras de la Red.",
+          text: "La copia preservada presenta previsiones para 2026 y 2027, como redacción, licitación, obras o puesta en servicio. Son estados previstos en la fecha del documento; no prueban que las actuaciones se hayan ejecutado en esas fechas y no sustituyen el cotejo con el adjunto de la convocatoria.",
           kind: "didactic",
           legalBasis: ["dr-2027-cap2-26"],
           review: reviewedDrChapter2,

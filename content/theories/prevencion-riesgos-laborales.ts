@@ -515,7 +515,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c3-1",
-          text: "La evaluación es el instrumento previo y básico para identificar peligros y estimar la probabilidad y gravedad de los daños derivados del trabajo.",
+          text: "El empresario debe realizar una evaluación inicial de los riesgos para la seguridad y salud, teniendo en cuenta con carácter general la naturaleza de la actividad, las características de los puestos y de los trabajadores que deban desempeñarlos. La evaluación se actualiza cuando cambien las condiciones de trabajo y se revisa, si es necesario, cuando se hayan producido daños para la salud.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art16"],
         review: reviewedPrl,
@@ -541,7 +541,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c5-1",
-          text: "El empresario debe informar directamente a cada trabajador sobre los riesgos de su puesto, medidas de protección y planes de emergencia.",
+          text: "El empresario debe informar sobre los riesgos de la empresa y del puesto, las medidas de protección y prevención y las medidas de emergencia. En empresas con representación, la información se facilita a través de los representantes, sin perjuicio de informar directamente a cada trabajador de los riesgos específicos de su puesto o función y de las medidas aplicables a ellos.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art18"],
         review: reviewedPrl,
@@ -554,7 +554,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c6-1",
-          text: "El empresario garantizará formación teórica y práctica, suficiente y adecuada, en el momento de la contratación y ante cambios de funciones o introducción de nuevas tecnologías, impartida, siempre que sea posible, dentro de la jornada de trabajo y sin coste para el trabajador.",
+          text: "El empresario garantizará formación teórica y práctica, suficiente y adecuada, en el momento de la contratación y ante cambios de funciones, introducción de nuevas tecnologías o cambios en los equipos de trabajo. Se adaptará a la evolución de los riesgos y se repetirá periódicamente si fuera necesario; se impartirá, siempre que sea posible, dentro de la jornada y no supondrá coste para el trabajador.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art19"],
         review: reviewedPrl,
@@ -567,7 +567,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c7-1",
-          text: "El empresario analizará emergencias potenciales y designará al personal encargado de primeros auxilios, lucha contra incendios y evacuación.",
+          text: "El empresario analizará las posibles emergencias teniendo en cuenta el tamaño y la actividad de la empresa y la posible presencia de personas ajenas; adoptará medidas de primeros auxilios, lucha contra incendios y evacuación, designará al personal encargado y comprobará periódicamente su correcto funcionamiento.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art20"],
         review: reviewedPrl,
@@ -580,7 +580,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c8-1",
-          text: "El trabajador tiene derecho a interrumpir su actividad y abandonar el lugar de trabajo cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud.",
+          text: "El trabajador tiene derecho a interrumpir su actividad y, si fuera necesario, abandonar de inmediato el lugar de trabajo cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art21"],
         review: reviewedPrl,
@@ -627,9 +627,9 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c10-1",
-          text: "El empresario mantendrá documentados el Plan de prevención, la Evaluación de riesgos, la Planificación, los controles de salud y la relación de accidentes con IT superior a un día.",
+          text: "El empresario elaborará y conservará a disposición de la autoridad laboral el plan de prevención, la evaluación de riesgos, la planificación preventiva, la práctica de los controles del estado de salud y las conclusiones obtenidas en los términos del artículo 22.4, y la relación de accidentes de trabajo y enfermedades profesionales que hayan causado incapacidad laboral superior a un día de trabajo.",
           kind: "normative",
-          legalBasis: ["lprl-31-1995-art23"],
+          legalBasis: ["lprl-31-1995-art23", "lprl-31-1995-art22-4"],
         review: reviewedPrl,
         }
       ]
@@ -680,7 +680,7 @@ export const prlTheory: TheorySection = {
         },
         {
           id: "prl-c13-2",
-          text: "El Comité de Seguridad y Salud es obligatorio en centros de 50 o más trabajadores, reuniéndose trimestralmente como órgano paritario consultivo.",
+          text: "El Comité de Seguridad y Salud se constituye en toda empresa o centro de trabajo con 50 o más trabajadores. Es un órgano paritario y colegiado de participación destinado a la consulta periódica; se reúne trimestralmente y cuando lo solicite alguna de sus representaciones.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art38"],
         review: reviewedPrl,
@@ -721,7 +721,7 @@ export const prlTheory: TheorySection = {
       claims: [
         {
           id: "prl-c14-1",
-          text: "Obliga a cooperar e informar recíprocamente cuando coincidan trabajadores de distintas empresas en un mismo centro de trabajo.",
+          text: "Cuando trabajadores de dos o más empresas concurran en un mismo centro, aquellas deben cooperar en la aplicación de la normativa de prevención y establecer medios de coordinación e información sobre los riesgos. El empresario titular adoptará las medidas necesarias para que los otros empresarios reciban información e instrucciones adecuadas sobre los riesgos propios del centro, las medidas de protección y prevención y las medidas de emergencia aplicables, para que estos informen a sus trabajadores.",
           kind: "normative",
           legalBasis: ["lprl-31-1995-art24"],
         review: reviewedPrl,
@@ -965,9 +965,9 @@ export const prlTheory: TheorySection = {
       application: [
         {
           id: "prl-ex-1-app-1",
-          text: "Supone un incumplimiento de la prioridad de protección colectiva frente a la individual.",
+          text: "Si la protección colectiva era posible y adecuada para ese riesgo, sustituirla sin justificación por protección individual incumple la prioridad de las medidas colectivas; el equipo individual puede complementar la protección cuando subsista riesgo.",
           kind: "example",
-          legalBasis: ["lprl-31-1995-art15"],
+          legalBasis: ["lprl-31-1995-art15", "lprl-31-1995-art17", "rd773-1997-art4"],
         review: reviewedPrl,
         }
       ]
@@ -985,7 +985,7 @@ export const prlTheory: TheorySection = {
         },
         {
           id: "prl-ex-2-app-2",
-          text: "Si el empresario no adopta o no permite adoptar las medidas necesarias, los representantes del personal o los Delegados de Prevención podrían acordar la paralización de los trabajos por riesgo grave e inminente.",
+          text: "Si el empresario no adopta o no permite adoptar las medidas necesarias ante riesgo grave e inminente, los representantes legales pueden acordar la paralización por mayoría de sus miembros; si no es posible reunir con la urgencia requerida al órgano de representación, pueden acordarla por mayoría los Delegados de Prevención.",
           kind: "example",
           legalBasis: ["lprl-31-1995-art21"],
         review: reviewedPrl,
@@ -1038,12 +1038,12 @@ export const prlTheory: TheorySection = {
       id: "prl-takeaway-1",
       text: "La prevención de riesgos laborales es un deber del empresario que exige la integración de un plan formal en el sistema general de gestión.",
       kind: "normative",
-      legalBasis: ["lprl-31-1995-art16"],
+      legalBasis: ["lprl-31-1995-art14", "lprl-31-1995-art16"],
     review: reviewedPrl,
     },
     {
       id: "prl-takeaway-2",
-      text: "El Comité de Seguridad y Salud es un órgano colegiado paritario de carácter consultivo que se constituye obligatoriamente a partir de 50 trabajadores.",
+      text: "El Comité de Seguridad y Salud es un órgano colegiado paritario de participación y consulta que se constituye en toda empresa o centro de trabajo con 50 o más trabajadores.",
       kind: "normative",
       legalBasis: ["lprl-31-1995-art38"],
     review: reviewedPrl,

@@ -86,7 +86,11 @@ function resolveSourceVersion(source: TheorySection["sources"][number]) {
 function withManifestEvidence(theory: TheorySection): TheorySection {
   const withReview = (claim: TheorySection["introduction"][number]) => ({
     ...claim,
-    ...(claim.review || !reviewManifest.reviews[claim.id] ? {} : { review: reviewManifest.reviews[claim.id] }),
+    // A pending inherited review must not be silently overridden by a broader
+    // inline approval; remove it only after documenting a claim-specific review.
+    ...(reviewManifest.reviews[claim.id] && (!claim.review || claim.review.status === "reviewed")
+      ? { review: reviewManifest.reviews[claim.id] }
+      : {}),
   });
 
   return {

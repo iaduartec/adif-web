@@ -249,7 +249,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c2-1",
-          text: "Abarca, entre otros, al personal de las Administraciones estatal, autonómicas y locales, de entidades públicas empresariales y de empresas con participación pública superior al 50 %; la Ley incluye los grupos detallados en su artículo 2 y alcanza al personal cualquiera que sea la naturaleza jurídica de su relación de empleo.",
+          text: "Abarca, entre otros, al personal de las Administraciones estatal, autonómicas y locales y de sus organismos. Incluye asimismo a entidades, corporaciones de derecho público, fundaciones y consorcios cuyos presupuestos se doten ordinariamente en más de un 50 % con subvenciones u otros ingresos de Administraciones públicas, y a empresas con participación pública directa o indirecta en su capital superior al 50 %. El artículo 2 enumera otros colectivos y alcanza al personal incluido cualquiera que sea la naturaleza jurídica de su relación de empleo.",
           kind: "normative",
           legalBasis: ["l53-1984-art2"],
           review: reviewedIncompatibilidades
@@ -262,7 +262,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c3-1",
-          text: "El apartado primero del artículo 3 contempla las funciones docente y sanitaria, los supuestos de los artículos 5 y 6 y otros determinados por interés público por el Consejo de Ministros mediante real decreto o por el órgano de gobierno autonómico. En este último supuesto la actividad será laboral, a tiempo parcial y de duración determinada. La autorización previa y expresa se concede por interés público, no modifica jornada ni horario y exige cumplir estrictamente ambos puestos. Como supuesto docente específico, el artículo 4.1 permite autorizar el puesto de Profesor universitario asociado con dedicación no superior a la de tiempo parcial, cumplidas las restantes exigencias de la Ley.",
+          text: "El apartado primero del artículo 3 contempla las funciones docente y sanitaria, los supuestos de los artículos 5 y 6 y otros que se determinen por razón de interés público por el Consejo de Ministros mediante real decreto o por el órgano de gobierno autonómico, en sus respectivas competencias. El artículo añade que, en este último supuesto, la actividad solo podrá prestarse en régimen laboral, a tiempo parcial y de duración determinada. La autorización previa y expresa se concede por interés público, no modifica la jornada ni el horario de los dos puestos y exige cumplirlos estrictamente en ambos. Como supuesto docente específico, el artículo 4.1 permite autorizar el puesto de Profesor universitario asociado con dedicación no superior a la de tiempo parcial, cumplidas las restantes exigencias de la Ley.",
           kind: "normative",
           legalBasis: ["l53-1984-art3", "l53-1984-art4", "l53-1984-art5", "l53-1984-art6"],
           review: { status: "reviewed", reviewedAt: "2026-11-04", reviewedBy: "codex", confidence: { level: "high", reason: "Cotejado con los artículos 3 a 6 de la Ley 53/1984; los supuestos y condiciones específicos se mantienen separados." } }
@@ -288,7 +288,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c5-1",
-          text: "El personal que en representación del sector público pertenezca a Consejos de Administración u órganos de gobierno de entidades o empresas públicas o privadas solo podrá percibir dietas o indemnizaciones por asistencia, y no podrá pertenecer a más de dos, salvo autorización excepcional.",
+          text: "El personal que represente al sector público en Consejos de Administración u órganos de gobierno de entidades o empresas públicas o privadas solo podrá percibir dietas o indemnizaciones por asistencia, conforme al régimen general; las cantidades devengadas por otros conceptos se ingresan directamente por la entidad o empresa en la Tesorería pública correspondiente. No podrá pertenecer a más de dos de esos órganos, salvo acuerdo excepcional para casos concretos del Gobierno, órgano autonómico competente o Pleno de la corporación local correspondiente.",
           kind: "normative",
           legalBasis: ["l53-1984-art8"],
           review: reviewedIncompatibilidades
@@ -301,7 +301,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c6-1",
-          text: "La autorización o denegación de compatibilidad para un segundo puesto o actividad del sector público corresponde al Ministerio de la Presidencia (a propuesta de la Subsecretaría del Departamento correspondiente), al órgano competente de la Comunidad Autónoma o al Pleno de la Corporación Local a que figure adscrito el puesto principal, previo informe favorable del órgano competente de la segunda adscripción.",
+          text: "La autorización o denegación de compatibilidad para un segundo puesto o actividad del sector público corresponde al Ministerio de la Presidencia, a propuesta de la Subsecretaría correspondiente, al órgano competente autonómico o al Pleno de la corporación local a que se adscriba el puesto principal, previo informe, en su caso, de los directores de organismos, entes y empresas públicas. La autorización requiere además informe previo favorable según la adscripción del segundo puesto; si ambos corresponden a la Administración del Estado, lo emite la Subsecretaría del departamento del segundo puesto.",
           kind: "normative",
           legalBasis: ["l53-1984-art9"],
           review: reviewedIncompatibilidades
@@ -314,7 +314,7 @@ export const incompatibilidadesTheory: TheorySection = {
       claims: [
         {
           id: "incomp-c7-1",
-          text: "Quienes accedan por cualquier título a un nuevo puesto del sector público que resulte incompatible con el que vinieran desempeñando habrán de optar por uno de ellos dentro del plazo de toma de posesión; a falta de opción se entenderá que optan por el nuevo puesto, pasando a la situación de excedencia voluntaria en el anterior.",
+          text: "Quienes accedan a un nuevo puesto público incompatible con el anterior deben optar dentro del plazo de toma de posesión; si no optan, se entiende elegido el nuevo y pasan a excedencia voluntaria en el anterior. Si los puestos son susceptibles de compatibilidad, previa autorización, deberán solicitarla en los diez primeros días de ese plazo, que se entiende prorrogado hasta que recaiga resolución.",
           kind: "normative",
           legalBasis: ["l53-1984-art10"],
           review: reviewedIncompatibilidades
@@ -446,9 +446,9 @@ export const incompatibilidadesTheory: TheorySection = {
       application: [
         {
           id: "incomp-ex-1-app-1",
-          text: "Para valorar la solicitud hay que examinar la relación de la actividad privada con las funciones de ADIF y si afecta a asuntos en que interviene, ha intervenido en los dos últimos años o deba intervenir por su puesto. El mero dato de que la empresa contrate con el Ministerio no basta por sí solo para resolver el caso.",
+          text: "Para valorar la solicitud hay que examinar la relación directa de la actividad privada con las actividades de la entidad de destino y si afecta a asuntos en que la persona interviene, ha intervenido en los dos últimos años o deba intervenir por su puesto. Que la empresa contrate con el Ministerio no basta por sí solo para decidir: también deben comprobarse, según el caso, las demás prohibiciones del artículo 12 y el reconocimiento previo de compatibilidad.",
           kind: "example",
-          legalBasis: ["l53-1984-art11", "l53-1984-art12"],
+          legalBasis: ["l53-1984-art11", "l53-1984-art12", "l53-1984-art14"],
           review: reviewedIncompatibilidades
         }
       ]
@@ -457,7 +457,7 @@ export const incompatibilidadesTheory: TheorySection = {
   reviewTakeaways: [
     {
       id: "incomp-takeaway-1",
-      text: "Las solicitudes de compatibilidad para actividades privadas deben resolverse mediante resolución motivada en el plazo de dos meses.",
+      text: "Las solicitudes de compatibilidad para actividades privadas deben resolverse en el plazo de dos meses mediante resolución motivada que reconozca la compatibilidad o declare la incompatibilidad.",
       kind: "interpretative",
       legalBasis: ["l53-1984-art14"],
       review: reviewedIncompatibilidades

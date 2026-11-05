@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-16",
+  "updatedAt": "2026-11-05",
   "reviews": {
     "igualdad-intro-1": {
       "status": "needs_review",
@@ -276,178 +276,228 @@
       }
     },
     "prl-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Exposición de motivos, apartado 1: incorporación al derecho español de la Directiva 89/391/CEE y función estructural de la ley; «norma básica de referencia» es síntesis didáctica. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-intro-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 14.1: derecho de protección, deber empresarial y deber de las Administraciones respecto del personal a su servicio. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 14.2: garantía empresarial de seguridad y salud en todos los aspectos relacionados con el trabajo. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 15.1.a–c: evitar riesgos, evaluar los que no se puedan evitar y combatirlos en su origen. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c2-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 15.1.h: prioridad de las medidas de protección colectiva sobre las individuales. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c3-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Corregido a artículo 16.2.a: evaluación inicial, circunstancias, actualización por cambio y revisión, si necesaria, tras daños. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c4-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 16.2.b: planificación preventiva y plazo, responsables y recursos humanos y materiales. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Corregido a artículo 18.1.a–c y párrafo final: información por representantes cuando existan, más información directa de riesgos específicos y medidas aplicables. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Ampliado con artículo 19.1–2: formación, cambios de equipos, adaptación y periodicidad cuando sea necesaria, jornada y gratuidad. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Ampliado con artículo 20: tamaño, actividad y presencia de personas ajenas, medidas, designación y comprobación periódica. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c8-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 21.2: interrupción y abandono inmediato si fuera necesario cuando considere riesgo grave e inminente; corregido el matiz. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c8-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 21.3: acuerdo mayoritario de representantes y, si no pueden reunirse con urgencia, decisión mayoritaria de delegados de prevención. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c9-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 22.1: vigilancia en función de riesgos, consentimiento, tres excepciones previo informe de representantes y pruebas proporcionales de menores molestias. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c10-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 23.1.a–e: documentación, controles y conclusiones según art. 22.4; corregida inclusión de enfermedades profesionales con incapacidad superior a un día. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c11-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 29.1–2: deber de velar por seguridad propia y de otras personas y uso adecuado de equipos y medios de protección conforme a formación e instrucciones; síntesis no exhaustiva. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c12-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "RD 773/1997, Artículo 4: EPI cuando el riesgo no se haya podido evitar o limitar suficientemente mediante protección colectiva u organización. https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735 (texto consolidado BOE)."
       }
     },
     "prl-c12-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "RD 773/1997, Artículo 3.c: entrega gratuita y reposición cuando sea necesario. https://www.boe.es/buscar/act.php?id=BOE-A-1997-12735 (texto consolidado BOE)."
       }
     },
     "prl-c13-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 35.1–2: representantes con funciones específicas y escala según número de trabajadores; síntesis. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c13-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 38.1–3: órgano paritario y colegiado de participación, en empresas o centros de 50 o más trabajadores y reuniones trimestrales o a solicitud. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-c14-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 24.1–2: concurrencia, cooperación, coordinación, deber informativo del empresario titular para los demás empresarios y sus trabajadores. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 15.1.h y 17.2: prioridad de medidas colectivas y uso de EPI ante riesgo no evitado o limitado suficientemente; ejemplo condicionado a su viabilidad. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-ex-2-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 21.2: el trabajador puede interrumpir y, si necesario, abandonar el lugar ante riesgo grave e inminente que considere existente. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-ex-2-app-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 21.3: paralización por mayoría de representantes; solo si no pueden reunirse con urgencia, por mayoría de delegados de prevención. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículos 14.2 y 16.1: deber empresarial e integración de prevención mediante plan en gestión general; añadida cita del artículo 14. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "prl-takeaway-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 31/1995, Artículo 38.1–2: órgano paritario y colegiado y constitución en empresa o centro con 50 o más trabajadores. https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292 (texto consolidado BOE)."
       }
     },
     "estatuto-intro-1": {
@@ -919,13 +969,6 @@
         "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
       }
     },
-    "ict-c1-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
     "ict-c2-1": {
       "status": "needs_review",
       "confidence": {
@@ -1157,13 +1200,6 @@
         "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
       }
     },
-    "ict-takeaway-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
     "ict-takeaway-2": {
       "status": "needs_review",
       "confidence": {
@@ -1172,10 +1208,12 @@
       }
     },
     "cem-intro-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Directiva 2014/30/UE, art. 3.1, puntos 4 y 6: definición de CEM e inmunidad; BOE DOUE-L-2014-80623, https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623. Cotejo del texto normativo, no identidad del artículo REE."
       }
     },
     "cem-intro-2": {
@@ -1186,17 +1224,21 @@
       }
     },
     "cem-c1-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "RD 186/2016, anexo I.1.a y b: límites de perturbaciones emitidas y protección ante perturbaciones previsibles; https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442. Con legislación UE más específica rige la excepción del mismo anexo."
       }
     },
     "cem-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Directiva 2014/30/UE art. 6 y anexo I, y RD 186/2016 disposición final segunda: requisitos esenciales y transposición; https://www.boe.es/buscar/doc.php?id=DOUE-L-2014-80623 y https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442. Alcance sujeto a excepciones de la directiva, art. 2."
       }
     },
     "cem-c3-1": {
@@ -1291,10 +1333,12 @@
       }
     },
     "cem-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "RD 186/2016 disposición final segunda y arts. 14–17: transposición, procedimientos de evaluación de conformidad y reglas de marcado CE; https://www.boe.es/buscar/act.php?id=BOE-A-2016-4442."
       }
     },
     "cem-takeaway-2": {
@@ -1375,13 +1419,6 @@
       }
     },
     "rcf-c9-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
-    "rcf-c10-1": {
       "status": "needs_review",
       "confidence": {
         "level": "low",
@@ -1501,10 +1538,12 @@
       }
     },
     "dr-intro-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ley 38/2015 art. 32.2, redacción BOE 20-12-2022: consulta previa, elaboración, aprobación y publicación por administradores y sus actualizaciones; https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440. No acredita identidad del PDF DR 2027."
       }
     },
     "dr-c1-1": {
@@ -1515,10 +1554,12 @@
       }
     },
     "dr-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Corregido tras cotejo Ley 38/2015 art. 4.1 y 4.4, redacción BOE 20-12-2022: criterio alternativo de administración conjunta y catálogo; https://www.boe.es/buscar/act.php?id=BOE-A-2015-10440. No acredita identidad del PDF DR 2027."
       }
     },
     "dr-c3-1": {
@@ -1605,13 +1646,6 @@
         "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
       }
     },
-    "conducta-c3-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
     "conducta-c4-1": {
       "status": "needs_review",
       "confidence": {
@@ -1661,74 +1695,67 @@
         "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
       }
     },
-    "incomp-c1-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
     "incomp-c2-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
-    "incomp-c3-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
-      }
-    },
-    "incomp-c4-1": {
-      "status": "needs_review",
-      "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Corregido y cotejado Ley 53/1984 art. 2.1.a–j y 2.2: se distinguen presupuestos de entidades y participación de capital en empresas, ambos superiores al 50 %; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "incomp-c5-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ampliado y cotejado Ley 53/1984 art. 8: dietas, ingreso en Tesorería y autorización excepcional por órgano competente para supuestos concretos; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "incomp-c6-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ampliado y cotejado Ley 53/1984 art. 9: órgano del puesto principal, informe de directores en su caso e informe previo favorable relativo al segundo puesto; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "incomp-c7-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ampliado y cotejado Ley 53/1984 art. 10: opción, excedencia y solicitud en diez primeros días cuando los puestos sean compatibles previa autorización; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "incomp-ex-1-app-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Ejemplo precisado y cotejado con Ley 53/1984 arts. 11.1, 12.1 y 14: relación directa, asuntos de intervención, demás prohibiciones y reconocimiento previo; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "incomp-takeaway-1": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Cotejado Ley 53/1984 art. 14: resolución motivada sobre compatibilidad privada en plazo de dos meses; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "incomp-takeaway-2": {
-      "status": "needs_review",
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
       "confidence": {
-        "level": "low",
-        "reason": "Contenido heredado sin revisión individual contra la versión documental enlazada; requiere cotejo editorial."
+        "level": "high",
+        "reason": "Cotejado Ley 53/1984 art. 19.f: creación y producción y publicaciones derivadas, salvo origen en relación de empleo o prestación de servicios; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     },
     "ingles-intro-1": {
@@ -1792,6 +1819,69 @@
       "confidence": {
         "level": "low",
         "reason": "Definición añadida desde el artículo 2.5.4 consolidado; requiere cotejo con el PDF oficial de la convocatoria y revisión editorial final."
+      }
+    },
+    "incomp-c3-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "Cotejado Ley 53/1984 arts. 3.1 y 4.1: excepciones, autorización, jornada y horario y profesor asociado; se conserva el singular del inciso laboral sin extenderlo por inferencia. https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
+      }
+    },
+    "ict-c1-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "RD 346/2011 arts. 1 y 3: objeto y ámbito, nueva edificación o existente según los supuestos establecidos; https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834."
+      }
+    },
+    "ict-takeaway-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "RD 346/2011 anexo III, apartado 4.5.3.i–ii: opciones RITU y RITU-A, límites de altura y PAU, anchura y ubicación; https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834."
+      }
+    },
+    "rcf-c10-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "RD 664/2015, RCF Libro Primero 1.5.1.6: paradas prescritas por función, comercial, restringida y técnica; https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042."
+      }
+    },
+    "conducta-c3-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "TREBEP art. 54.1–11: once principios de conducta; síntesis, incluida obediencia salvo infracción manifiesta y lengua oficial solicitada; https://www.boe.es/buscar/act.php?id=BOE-A-2015-11719."
+      }
+    },
+    "incomp-c1-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "Ley 53/1984 art. 1.1–2: regla general para segundo puesto público y remuneración con excepciones; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
+      }
+    },
+    "incomp-c4-1": {
+      "status": "reviewed",
+      "reviewedAt": "2026-11-05",
+      "reviewedBy": "codex",
+      "confidence": {
+        "level": "high",
+        "reason": "Ley 53/1984 art. 7.1: dos límites retributivos acumulativos y superación excepcional en cómputo anual mediante acuerdo por especial interés; https://www.boe.es/buscar/act.php?id=BOE-A-1985-151."
       }
     }
   }
