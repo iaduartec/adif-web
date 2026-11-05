@@ -1,4 +1,7 @@
 import type { TheorySection } from "../lesson-theory";
+import { theoryArticulos } from "./ict-articulos-adicional";
+import * as annex345 from "./ict-anexos-345-adicional";
+import { ictAnexos12Adicional } from "./ict-anexos-12-adicional";
 
 /**
  * Estado editorial del módulo tras el Ciclo 7 (04/11/2026).
@@ -31,8 +34,21 @@ const verifiedIct = {
   },
 } as const;
 
+const reviewedIctSupplement = {
+  status: "reviewed",
+  reviewedAt: "2026-11-05",
+  reviewedBy: "codex",
+  confidence: {
+    level: "high",
+    reason: "Síntesis contrastada con los apartados indicados del BOE y revisión independiente; la identidad del PDF ADIF posterior no se ha cotejado byte a byte.",
+  },
+} as const;
+
 export const ictTheory: TheorySection = {
   sources: [
+    ...theoryArticulos.sources,
+    ...annex345.sources,
+    ...ictAnexos12Adicional.sources,
     {
       id: "rd346-2011-art1",
       sourceId: "RD 346/2011",
@@ -487,6 +503,38 @@ export const ictTheory: TheorySection = {
       locator: "Anexo V, apartados 4.2 y 4.3",
       excerpt:
         "Control de iluminación pertenece a Eficiencia Energética, no al grupo Control del Entorno."
+    },
+    {
+      id: "rd346-2011-anex5-level-thresholds",
+      sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo V, apartado 5, tabla Puntuación niveles Hogar Digital",
+      excerpt:
+        "La tabla fija dos umbrales de puntuación para cada nivel e indica mínimos por cada una de las seis áreas; para el nivel medio, el umbral inferior es 130 puntos, con mínimos de 35 en Seguridad, 30 en Control del Entorno, 30 en Eficiencia Energética, 10 en Ocio y Entretenimiento, 20 en Comunicaciones y 5 en Acceso Interactivo a Contenidos Multimedia."
+    },
+    {
+      id: "rd346-2011-anex5-level-criteria",
+      sourceId: "RD 346/2011",
+      sourceVersion: "consolidated-page-2026-10-15",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo V, apartado 5, criterios previos a la tabla y puntos 5.3–5.5",
+      excerpt:
+        "Para alcanzar los niveles se requiere un número mínimo de servicios y cubrir todas las áreas; el apartado 5.3 recoge condiciones de canalización y cableado, y el 5.5 establece los niveles y sus puntuaciones."
+    },
+    {
+      id: "rd346-2011-anex5-digital-home-infrastructure",
+      sourceId: "RD 346/2011",
+      sourceTitle:
+        "Real Decreto 346/2011, de 11 de marzo, por el que se aprueba el Reglamento regulador de las infraestructuras comunes de telecomunicaciones para el acceso a los servicios de telecomunicación en el interior de las edificaciones",
+      sourceUrl: "https://www.boe.es/buscar/act.php?id=BOE-A-2011-5834",
+      locator: "Anexo V, apartados 3 y 5.1–5.5",
+      excerpt:
+        "El hogar digital dispone de acceso de banda ancha hasta el PAU y cableado estructurado categoría 6 o superior; para su clasificación se añaden una red doméstica ampliada con más BAT RJ45 que las previstas en la ICT y pasarela residencial, red de gestión, control y seguridad y canalizaciones adicionales: en el nivel básico, el videoportero pasa por el PAU o dispone de una canalización hasta él, y hay un conducto adicional del PAU al cuadro eléctrico principal. La caja ciega de la RGCS solo se coloca si la pasarela la requiere."
     }
   ],
 
@@ -508,6 +556,12 @@ export const ictTheory: TheorySection = {
   ],
 
   concepts: [
+    ...theoryArticulos.concepts,
+    ...annex345.concepts.map((concept) => ({
+      ...concept,
+      claims: concept.claims.map((claim) => ({ ...claim, review: reviewedIctSupplement })),
+    })),
+    ...ictAnexos12Adicional.concepts,
     {
       id: "ict-concept-1",
       title: "Definición y Ámbito de la ICT",
@@ -1220,7 +1274,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c50-1",
-          text: "El anexo IV contiene tres bloques de documentos normalizados: los de la inspección técnica (sección 1), el protocolo de pruebas para el mantenimiento que entrega la empresa instaladora a la propiedad (sección 2) y los modelos de Análisis Documentado —a realizar por la empresa instaladora— y Estudio Técnico —a realizar por ingeniero o ingeniero técnico de telecomunicación— (sección 3).",
+          text: "El anexo IV contiene documentos de inspección técnica (sección 1), un protocolo de pruebas de mantenimiento (sección 2) y modelos de Análisis Documentado —a realizar por la empresa instaladora— y Estudio Técnico (sección 3). La sentencia del Tribunal Supremo de 17 de octubre de 2012 anuló el inciso que atribuía en exclusiva el Estudio Técnico a ingenieros de telecomunicación o ingenieros técnicos de telecomunicación; no debe estudiarse esa reserva como vigente.",
           kind: "normative",
           legalBasis: ["rd346-2011-anex4"],
         review: verifiedIct,
@@ -1461,7 +1515,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c61-1",
-          text: "La Sentencia del Tribunal Supremo de 17 de octubre de 2012 anuló únicamente el inciso que situaba la titulación exigida en el Real Decreto-ley 1/1998, en el artículo 8.2.a), en el artículo 9, apartado primero, en el artículo 10.1 y en el artículo 10.2, y en la sección 3 del anexo IV. El resto de esos apartados —incluido el plazo de 15 días naturales del acta de replanteo— sigue vigente.",
+          text: "La sentencia del Tribunal Supremo de 17 de octubre de 2012 anuló en los artículos 8, 9 y 10 el inciso que remitía la titulación al Real Decreto-ley 1/1998. En la sección 3 del anexo IV anuló, además, la atribución exclusiva del Estudio Técnico a ingenieros de telecomunicación o ingenieros técnicos de telecomunicación. El fallo deja vigente el resto de los apartados afectados, incluido el plazo de 15 días naturales del acta de replanteo.",
           kind: "normative",
           legalBasis: ["rd346-2011-art10-replanteo", "rd346-2011-art8-operators", "rd346-2011-art9-project"],
         review: verifiedIct,
@@ -1502,9 +1556,40 @@ export const ictTheory: TheorySection = {
         },
       ],
     },
+    {
+      id: "ict-concept-63",
+      title: "Umbrales y mínimos por área de los niveles del Hogar Digital",
+      claims: [
+        {
+          id: "ict-c63-1",
+          text: "La tabla del apartado 5 del anexo V establece bandas de puntuación total y mínimos simultáneos por área: nivel básico, 80–100 puntos (mínimos 15 Seguridad, 15 Control del Entorno, 15 Eficiencia Energética, 10 Ocio y Entretenimiento, 20 Comunicaciones y 5 Acceso Interactivo a Contenidos Multimedia); nivel medio, 130–150 (35, 30, 30, 10, 20 y 5, respectivamente); y nivel alto, 180–200 (45, 40, 45, 15, 25 y 10, respectivamente). Además del total, hay que respetar los mínimos por área, cubrir todas las áreas y alcanzar el número mínimo de servicios; el anexo fija también condiciones de infraestructura y cableado. Una suma total suficiente por sí sola no acredita el nivel.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex5-level-thresholds", "rd346-2011-anex5-level-criteria"],
+          review: verifiedIct,
+        },
+      ],
+    },
+    {
+      id: "ict-concept-64",
+      title: "Infraestructura necesaria para clasificar una vivienda como Hogar Digital",
+      claims: [
+        {
+          id: "ict-c64-1",
+          text: "El anexo V distingue la infraestructura ICT de las dotaciones adicionales necesarias para clasificar una vivienda como Hogar Digital. La ICT lleva el acceso de banda ancha hasta el PAU y dispone de cableado estructurado de categoría 6 o superior en la vivienda; además, el Hogar Digital requiere una Red de Área Doméstica ampliada con más BAT RJ45 que las contempladas en la ICT y una pasarela residencial que interconecte las redes interiores con las exteriores. También incorpora una red de gestión, control y seguridad (RGCS), que puede apoyarse parcialmente en otros medios de transmisión y cuya terminación, si la pasarela lo requiere, se lleva a una caja ciega junto al BAT de conexión. En el hogar digital básico debe existir una canalización de videoportero que pase por el PAU o, alternativamente, una canalización desde el videoportero hasta el PAU; además se requiere cableado adecuado. Para facilitar la instalación, la RGCS debe estar conectada con el PAU y con los cuadros eléctricos; el hogar digital básico debe contar con un conducto adicional desde el PAU hasta el cuadro eléctrico principal. Las condiciones de infraestructura son adicionales a los criterios de servicios y puntuación que clasifican el nivel.",
+          kind: "normative",
+          legalBasis: ["rd346-2011-anex5-digital-home-infrastructure"],
+          review: verifiedIct,
+        },
+      ],
+    },
   ],
 
   examples: [
+    ...annex345.examples.map((example) => ({
+      ...example,
+      application: example.application.map((claim) => ({ ...claim, review: reviewedIctSupplement })),
+    })),
+    ...ictAnexos12Adicional.examples,
     {
       id: "ict-ex-1",
       situation: "Un promotor proyecta una ICT para un edificio de cuatro alturas más planta baja, con 8 PAU, y propone un único recinto de telecomunicación.",
@@ -1634,6 +1719,7 @@ export const ictTheory: TheorySection = {
   ],
 
   reviewTakeaways: [
+    ...ictAnexos12Adicional.reviewTakeaways,
     {
       id: "ict-takeaway-1",
       text: "El RITU unifica RITI y RITS y puede instalarse en edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja con máximo 16 PAU, y en conjuntos de viviendas unifamiliares sin límite de PAU. El RITU-A puede instalarse en edificios de más de tres alturas y planta baja con hasta 16 PAU, o con 17–30 PAU sin límite de alturas; su anchura accesible es doble y conserva las demás dimensiones y ubicación del recinto sustituido.",
@@ -1692,17 +1778,24 @@ export const ictTheory: TheorySection = {
     },
     {
       id: "ict-takeaway-9",
-      text: "Acta de replanteo: se redacta al inicio de las obras, la firma el director de obra con la propiedad, recoge el resultado de la consulta y se presenta electrónicamente en 15 días naturales desde su firma.",
+      text: "Acta de replanteo: se redacta al inicio de las obras; la firma con la propiedad el director de obra de la ICT si existe o, en caso contrario, el profesional competente encargado. Recoge el resultado de la consulta y se presenta electrónicamente en 15 días naturales desde su firma.",
       kind: "normative",
       legalBasis: ["rd346-2011-art10-replanteo"],
     review: verifiedIct,
     },
     {
       id: "ict-takeaway-10",
-      text: "La Sentencia del Tribunal Supremo de 17 de octubre de 2012 anuló solo la atribución de la titulación al Real Decreto-ley 1/1998 y la verificación obligatoria por entidad. El plazo de 15 días del acta y el resto de los preceptos siguen vigentes.",
+      text: "La sentencia del Tribunal Supremo de 9 de octubre de 2012 y la sentencia del Tribunal Supremo de 17 de octubre de 2012 anularon determinados incisos sobre titulación, la atribución exclusiva del Estudio Técnico del anexo IV a titulaciones de telecomunicación y la obligación de verificación por entidad. El plazo de 15 días del acta de replanteo permanece vigente.",
       kind: "normative",
       legalBasis: ["rd346-2011-art10-replanteo", "rd346-2011-art9-project"],
     review: verifiedIct,
+    },
+    {
+      id: "ict-takeaway-11",
+      text: "Los niveles básico, medio y alto requieren tanto alcanzar la banda de puntos como respetar mínimos en las seis áreas del anexo V: 80/130/180 puntos son los umbrales inferiores, respectivamente, y una puntuación total por sí sola no acredita el nivel.",
+      kind: "normative",
+      legalBasis: ["rd346-2011-anex5-level-thresholds"],
+      review: verifiedIct,
     }
   ]
 };

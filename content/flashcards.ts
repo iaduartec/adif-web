@@ -465,6 +465,49 @@ export const flashcards: readonly Flashcard[] = [
     front: "¿Qué documento entrega a la propiedad la empresa instaladora tras el mantenimiento de una ICT?",
     back: "El protocolo de pruebas de mantenimiento, ajustado a los trabajos contratados y con las comprobaciones realizadas (anexo IV, sección 2).",
   },
+  {
+    id: "ict-fc-43",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué puntuación total y mínimos por área exige el umbral inferior del Hogar Digital medio?",
+    back: "130 puntos: al menos 35 en Seguridad, 30 en Control del Entorno, 30 en Eficiencia Energética, 10 en Ocio y Entretenimiento, 20 en Comunicaciones y 5 en Acceso Interactivo a Contenidos Multimedia. Además, deben cubrirse todas las áreas y el mínimo de servicios, junto con las condiciones de infraestructura y cableado del anexo V, apartado 5.",
+  },
+
+  {
+    id: "ict-fc-44",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Cuándo se coloca la caja ciega con terminación de la RGCS junto a la BAT de la pasarela residencial?",
+    back: "Cuando la pasarela residencial lo requiera. El anexo V, apartado 5.2, establece expresamente esa condición.",
+  },
+
+  {
+    id: "ict-fc-45",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué debe hacer la propiedad para proteger los servicios antes de sustituir una ICT?",
+    back: "Consultar por escrito a titulares y, en su caso, arrendatarios para que declaren por escrito los servicios recibidos; la consulta se efectúa en el plazo de dos meses. Mantener el uso normal de las instalaciones existentes hasta que la nueva o modificada funcione correctamente. RD 346/2011, artículo 7.",
+  },
+
+  {
+    id: "ict-fc-46",
+    module: "E1 ICT RD 346/2011",
+    front: "¿Qué reserva se aplica a la demanda para dimensionar una vertical de distribución de pares?",
+    back: "La demanda prevista se multiplica por 1,2. Para pares se elige después un cable normalizado de capacidad igual o superior, o una combinación adecuada. RD 346/2011, anexo II, apartado 3.3.2.",
+  },
+
+  {
+    id: "ict-fc-47", module: "E1 ICT RD 346/2011",
+    front: "¿Qué diferencia existe entre el MER mínimo COFDM-TV y el aconsejable para COFDM-64QAM TVE?",
+    back: "El anexo I, apartado 4.5, fija 21 dB como mínimo en toma para COFDM-TV; su nota (2) aconseja 22 dB en toma para COFDM-64QAM TVE. No son la misma clase de valor.",
+  },
+  {
+    id: "ict-fc-48", module: "E1 ICT RD 346/2011",
+    front: "¿Qué velocidades de viento indica el anexo I según la altura del sistema captador?",
+    back: "130 km/h a menos de 20 m del suelo y 150 km/h a más de 20 m. La redacción no asigna expresamente un valor al caso exactamente a 20 m.",
+  },
+  {
+    id: "ict-fc-49", module: "E1 ICT RD 346/2011",
+    front: "Con operadores de pares trenzados, ¿cuál es la previsión mínima para viviendas y estancias comunes?",
+    back: "Una acometida por vivienda y dos para las estancias o instalaciones comunes del edificio. El ascensor tiene tratamiento específico en el anexo II, apartado 3.1.5.",
+  },
 
   // E2 CEM
   {

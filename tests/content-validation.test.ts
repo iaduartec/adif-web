@@ -119,7 +119,9 @@ describe("active official course content", () => {
     // del inventario de 315. Su presencia no implica aprobación de sus claims.
     expect(activeTheoryConceptRegistry.has("conducta-concept-6")).toBe(true);
     expect(activeTheoryConceptRegistry.has("conducta-concept-7")).toBe(true);
-    expect(activeTheoryConceptRegistry.size).toBe(349);
+    expect(activeTheoryConceptRegistry.has("ict-concept-63")).toBe(true);
+    expect(activeTheoryConceptRegistry.has("ict-concept-64")).toBe(true);
+    expect(activeTheoryConceptRegistry.size).toBe(373);
     expect(parsed.data).toHaveLength(102);
     for (const question of parsed.data) {
       expect(question.conceptIds.length, question.id).toBeGreaterThan(0);

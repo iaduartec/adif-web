@@ -76,7 +76,7 @@ export const ictRd3462011Summary: LessonSummary = {
         "La red de dispersión llega al PAU, no a la BAT: después viene la red interior de usuario.",
         "El resultado de la consulta a operadores no permite tocar la obra civil, salvo la ubicación de la arqueta de entrada.",
         "El plazo del acta de replanteo son 15 días naturales desde la firma, no desde el inicio de la obra.",
-        "El Supremo anuló en 2012 la atribución de titulación al RD-Ley 1/1998 y la verificación obligatoria por entidad; el resto sigue vigente.",
+        "En 2012 el Supremo anuló incisos sobre titulación, la reserva exclusiva del Estudio Técnico del anexo IV a titulaciones de telecomunicación y la verificación obligatoria por entidad. El plazo de 15 días del acta permanece vigente.",
         "Repaso final: define en voz alta RITI, RITS, RITU, RITU-A, PAU, BAT, punto de interconexión y punto de distribución.",
       ]
     }

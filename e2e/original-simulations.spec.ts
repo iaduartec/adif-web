@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 const simulations = [
-  { domain: "telecom", title: "Conocimientos específicos", bankCount: 110, examCount: 4 },
+  { domain: "telecom", title: "Conocimientos específicos", bankCount: 134, examCount: 4 },
   { domain: "general-knowledge", title: "Conocimientos generales", bankCount: 80, examCount: 4 },
   { domain: "english-a2", title: "Inglés A2", bankCount: 49, examCount: 49 },
   { domain: "psychometric", title: "Psicotécnicos", bankCount: 39, examCount: 39 },

@@ -5,9 +5,21 @@ import { ictTheory } from "../content/theories/ict-rd-346-2011";
 import { estatutoAdifTheory } from "../content/theories/estatuto-adif";
 import { cemTheory } from "../content/theories/compatibilidad-electromagnetica";
 import { codigoConductaTheory } from "../content/theories/codigo-conducta";
+import { incompatibilidadesTheory } from "../content/theories/incompatibilidades";
+import { declaracionRed2027Theory } from "../content/theories/declaracion-red-2027";
 import telecomPractice from "../content/original-practice/telecom.json";
 
 describe("regresiones académicas cotejadas contra BOE", () => {
+  it("conserva las condiciones de la RFIG y los matices de incompatibilidades", () => {
+    const network = declaracionRed2027Theory.concepts.flatMap((c) => c.claims).find((c) => c.id === "dr-c2-1")!;
+    expect(network.text).toMatch(/o cuya administración conjunta es necesaria/i);
+    const claims = incompatibilidadesTheory.concepts.flatMap((c) => c.claims);
+    const scope = claims.find((c) => c.id === "incomp-c2-1")!.text;
+    expect(scope).toMatch(/presupuestos.*más de un 50 %/i);
+    expect(scope).toMatch(/participación pública.*capital superior al 50 %/i);
+    expect(claims.find((c) => c.id === "incomp-c5-1")!.text).toMatch(/Tesorería pública.*acuerdo excepcional/i);
+    expect(claims.find((c) => c.id === "incomp-c7-1")!.text).toMatch(/diez primeros días.*prorrogado/i);
+  });
   it("mantiene la excepción del art. 3.2 del Estatuto en teoría y tarjeta", () => {
     const claim = estatutoAdifTheory.concepts.find((item) => item.id === "estatuto-concept-103")!.claims.find((item) => item.id === "estatuto-c103-3")!;
     expect(claim.text).toMatch(/salvo los inherentes a su propia actividad/i);
@@ -30,6 +42,37 @@ describe("regresiones académicas cotejadas contra BOE", () => {
     const inspection = ictTheory.concepts.find((item) => item.id === "ict-concept-49")!.claims[0]!;
     expect(inspection.text).toMatch(/no debe tomarse.*plazo universal vigente/i);
     expect(inspection.review?.status).toBe("needs_review");
+  });
+
+  it("cubre los umbrales por área del nivel medio de Hogar Digital desde el Anexo V", () => {
+    const thresholds = ictTheory.concepts.find((item) => item.id === "ict-concept-63")!.claims[0]!;
+    expect(thresholds.text).toContain("nivel medio, 130–150");
+    expect(thresholds.text).toContain("35, 30, 30, 10, 20 y 5");
+    expect(thresholds.legalBasis).toContain("rd346-2011-anex5-level-thresholds");
+    expect(thresholds.review?.status).toBe("reviewed");
+
+    const question = telecomPractice.find((item) => item.id === "orig-tel-ict-063")!;
+    expect(question.sourceLocator).toBe("Anexo V, apartado 5, tabla Puntuación niveles Hogar Digital");
+    expect(question.conceptIds).toContain("ict-concept-63");
+    expect(question.options.find((option) => option.key === question.answer)?.text).toContain("130 puntos");
+    expect(flashcards.find((item) => item.id === "ict-fc-43")!.back).toContain("130 puntos");
+  });
+
+  it("mantiene la condición de la caja RGCS y las alternativas del videoportero", () => {
+    const infrastructure = ictTheory.concepts.find((item) => item.id === "ict-concept-64")!.claims[0]!;
+    expect(infrastructure.text).toMatch(/si la pasarela lo requiere/i);
+    expect(infrastructure.text).toMatch(/canalización de videoportero que pase por el PAU o, alternativamente, una canalización desde el videoportero hasta el PAU/i);
+    const question = telecomPractice.find((item) => item.id === "orig-tel-ict-064")!;
+    expect(question.options.find((option) => option.key === question.answer)?.text).toMatch(/solo si la pasarela residencial lo requiere/i);
+    expect(flashcards.find((item) => item.id === "ict-fc-44")!.back).toMatch(/cuando la pasarela residencial lo requiera/i);
+  });
+
+  it("evita enseñar una reserva profesional anulada por el Supremo en el Anexo IV", () => {
+    const claims = ictTheory.concepts.flatMap((concept) => concept.claims);
+    expect(claims.find((claim) => claim.id === "ict-c50-1")!.text).toMatch(/anuló el inciso.*atribuía en exclusiva/i);
+    expect(claims.find((claim) => claim.id === "ict-c61-1")!.text).toMatch(/sección 3 del anexo IV.*anuló/i);
+    expect(claims.find((claim) => claim.id === "ict-anex345-c-documentation-1")!.text).toMatch(/anuló el inciso que atribuía exclusivamente/i);
+    expect(ictTheory.reviewTakeaways.find((claim) => claim.id === "ict-takeaway-9")!.text).toMatch(/si existe.*en caso contrario/i);
   });
 
   it("no atribuye la enumeración del art. 52 a la reforma de 2023 ni le añade una sanción", () => {
@@ -55,6 +98,13 @@ describe("regresiones académicas cotejadas contra BOE", () => {
     const locators = claim.legalBasis.map((id) => cemTheory.sources.find((source) => source.id === id)?.locator);
     expect(locators).toEqual(expect.arrayContaining(["Artículo 7", "Artículo 17"]));
     expect(locators).not.toContain("Artículo 5");
+  });
+
+  it("no presenta toda edición EN 50121 como armonizada ni las previsiones DR como obras terminadas", () => {
+    const standard = cemTheory.concepts.find((item) => item.id === "cem-concept-3")!.claims[0]!;
+    expect(standard.text).toMatch(/depende de la parte, edición, alcance y referencia publicada/i);
+    const works = declaracionRed2027Theory.concepts.find((item) => item.id === "dr-concept-38")!.claims.find((item) => item.id === "dr-c38-3")!;
+    expect(works.text).toMatch(/más significativas.*identidad.*pendiente.*previsiones/i);
   });
 
   it("does not present historical CEM article claims as current universal requirements", () => {

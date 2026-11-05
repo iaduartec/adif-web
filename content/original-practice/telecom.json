@@ -3798,6 +3798,884 @@
     "origin": "original"
   },
   {
+    "id": "orig-tel-ict-063",
+    "domain": "telecom",
+    "topicId": "ict-anexo-v",
+    "syllabusNodeId": "ict-anexo-v",
+    "topic": "Anexo V. Hogar Digital",
+    "skill": "ICT",
+    "prompt": "Según la tabla del apartado 5 del Anexo V, ¿qué mínimos por área y puntuación total corresponden al umbral inferior del nivel medio?",
+    "options": [
+      { "key": "A", "text": "130 puntos: 35 en Seguridad, 30 en Control del Entorno, 30 en Eficiencia Energética, 10 en Ocio y Entretenimiento, 15 en Comunicaciones y 10 en Acceso Interactivo a Contenidos Multimedia." },
+      { "key": "B", "text": "130 puntos: 35 en Seguridad, 30 en Control del Entorno, 30 en Eficiencia Energética, 10 en Ocio y Entretenimiento, 20 en Comunicaciones y 10 en Acceso Interactivo a Contenidos Multimedia." },
+      { "key": "C", "text": "150 puntos: 40 en Seguridad, 35 en Control del Entorno, 40 en Eficiencia Energética, 10 en Ocio y Entretenimiento, 20 en Comunicaciones y 5 en Acceso Interactivo a Contenidos Multimedia." },
+      { "key": "D", "text": "130 puntos: 35 en Seguridad, 30 en Control del Entorno, 30 en Eficiencia Energética, 10 en Ocio y Entretenimiento, 20 en Comunicaciones y 5 en Acceso Interactivo a Contenidos Multimedia." }
+    ],
+    "answer": "D",
+    "explanation": "La fila de umbral inferior para el Hogar Digital medio establece un total de 130 y mínimos por área de 35, 30, 30, 10, 20 y 5 puntos, respectivamente. También se exige cubrir todas las áreas y alcanzar el mínimo de servicios; el anexo incluye condiciones de infraestructura y cableado. No basta con sumar 130 si se incumple alguno de estos criterios. La fila superior del nivel medio es 150 puntos.",
+    "difficulty": 3,
+    "tags": ["original-especifico", "ict"],
+    "conceptIds": ["ict-concept-63"],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo V, apartado 5, tabla Puntuación niveles Hogar Digital",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-064",
+    "domain": "telecom",
+    "topicId": "ict-anexo-v",
+    "syllabusNodeId": "ict-anexo-v",
+    "topic": "Anexo V. Hogar Digital",
+    "skill": "ICT",
+    "prompt": "En una vivienda que se quiere clasificar como Hogar Digital, ¿cuándo se coloca una caja ciega con terminación de la red de gestión, control y seguridad junto a la BAT de conexión de la pasarela residencial?",
+    "options": [
+      { "key": "A", "text": "Siempre, aunque la pasarela residencial no lo requiera." },
+      { "key": "B", "text": "Solo si la pasarela residencial lo requiere." },
+      { "key": "C", "text": "Únicamente si la vivienda no dispone de red de área doméstica." },
+      { "key": "D", "text": "Solo cuando el operador sustituye el PAU por un recinto RITS." }
+    ],
+    "answer": "B",
+    "explanation": "El anexo V, apartado 5.2, condiciona esa caja ciega a que la pasarela residencial la requiera. No la impone incondicionalmente ni establece las excepciones propuestas para la red doméstica o el RITS.",
+    "difficulty": 2,
+    "tags": ["original-especifico", "ict"],
+    "conceptIds": ["ict-concept-64"],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo V, apartados 3 y 5.1–5.5",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-065",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "Antes de sustituir una instalación existente, ¿cómo protege la propiedad la continuidad de los servicios según el artículo 7 del Reglamento ICT?",
+    "options": [
+      { "key": "A", "text": "Interrumpe todos los servicios al comenzar los trabajos y consulta solo al operador principal." },
+      { "key": "B", "text": "Consulta únicamente después de finalizar la instalación y conserva solo la televisión terrestre." },
+      { "key": "C", "text": "Consulta por escrito los servicios recibidos y mantiene el uso normal de la instalación existente hasta que la nueva o modificada funcione correctamente." },
+      { "key": "D", "text": "Sustituye la consulta por una lista general sin preguntar a los titulares ni, en su caso, a los arrendatarios." }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 7 exige consulta escrita previa a los titulares y, en su caso, a los arrendatarios, para que declaren por escrito los servicios recibidos; dicha consulta se efectúa en el plazo de dos meses. La propiedad mantiene el uso normal de las instalaciones existentes hasta que la modificada o nueva funcione correctamente.",
+    "difficulty": 2,
+    "tags": ["original-especifico", "ict"],
+    "conceptIds": ["ict-a07-concept"],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 7",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-066",
+    "domain": "telecom",
+    "topicId": "ict-anexo-ii",
+    "syllabusNodeId": "ict-anexo-ii",
+    "topic": "Anexo II. Telefonía disponible al público y banda ancha",
+    "skill": "ICT",
+    "prompt": "En una red de distribución de pares de una sola vertical se estima una demanda de 50 pares. Según el factor de reserva del anexo II, ¿cuál es el número teórico antes de elegir el cable normalizado?",
+    "options": [
+      { "key": "A", "text": "50 pares." },
+      { "key": "B", "text": "52 pares." },
+      { "key": "C", "text": "70 pares." },
+      { "key": "D", "text": "60 pares." }
+    ],
+    "answer": "D",
+    "explanation": "Se multiplica la demanda prevista por 1,2: 50 × 1,2 = 60 pares teóricos. Después se selecciona cable normalizado de capacidad igual o superior, o combinaciones admitidas; 60 no tiene por qué ser una capacidad comercial normalizada.",
+    "difficulty": 2,
+    "tags": ["original-especifico", "ict"],
+    "conceptIds": ["ict-anex12-concept-ii-reserve-and-user"],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo II, apartados 3.3.1, 3.3.2 y 3.5.1–3.5.3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-067",
+    "domain": "telecom", "topicId": "ict-anexo-i", "syllabusNodeId": "ict-anexo-i", "topic": "Anexo I. Radiodifusión sonora y televisión", "skill": "ICT",
+    "prompt": "¿Qué distingue la tabla del anexo I entre el MER mínimo en toma para COFDM-TV y el valor aconsejable para COFDM-64QAM TVE?",
+    "options": [
+      { "key": "A", "text": "Ambos son mínimos obligatorios de 22 dB." },
+      { "key": "B", "text": "El mínimo es 21 dB y la nota aconseja 22 dB en toma para COFDM-64QAM TVE." },
+      { "key": "C", "text": "El mínimo es 22 dB y la nota aconseja 21 dB." },
+      { "key": "D", "text": "La tabla no establece ningún valor para el MER." }
+    ],
+    "answer": "B", "explanation": "La tabla fija un MER mínimo de 21 dB para COFDM-TV. Su nota (2) aconseja 22 dB en toma para COFDM-64QAM TVE; confundir una recomendación con el mínimo cambia la exigencia.", "difficulty": 3,
+    "tags": ["original-especifico", "ict"], "conceptIds": ["ict-anex12-concept-i-quality-current"], "sourceId": "RD 346/2011", "sourceVersion": "consolidated-page-2026-10-15", "sourceLocator": "Anexo I, apartados 4.4.2 y 4.5; texto modificado por Real Decreto 250/2025, disposición final primera", "status": "reviewed", "reviewedAt": "2026-11-05", "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-068",
+    "domain": "telecom", "topicId": "ict-anexo-i", "syllabusNodeId": "ict-anexo-i", "topic": "Anexo I. Radiodifusión sonora y televisión", "skill": "ICT",
+    "prompt": "Según el texto del anexo I sobre resistencia al viento, ¿qué velocidades se indican para sistemas captadores situados a menos y a más de 20 m del suelo?",
+    "options": [
+      { "key": "A", "text": "100 km/h por debajo y 130 km/h por encima." },
+      { "key": "B", "text": "150 km/h por debajo y 130 km/h por encima." },
+      { "key": "C", "text": "130 km/h por debajo y 150 km/h por encima." },
+      { "key": "D", "text": "130 km/h con independencia de la altura." }
+    ],
+    "answer": "C", "explanation": "Los apartados 4.2.1 y 4.2.2 indican 130 km/h a menos de 20 m y 150 km/h a más de 20 m. Esa formulación no asigna expresamente un valor al caso situado exactamente a 20 m.", "difficulty": 2,
+    "tags": ["original-especifico", "ict"], "conceptIds": ["ict-anex12-concept-i-wind"], "sourceId": "RD 346/2011", "sourceVersion": "consolidated-page-2026-10-15", "sourceLocator": "Anexo I, apartado 4.2.1, letra a), y 4.2.2, letra a)", "status": "reviewed", "reviewedAt": "2026-11-05", "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-069",
+    "domain": "telecom", "topicId": "ict-anexo-ii", "syllabusNodeId": "ict-anexo-ii", "topic": "Anexo II. Telefonía disponible al público y banda ancha", "skill": "ICT",
+    "prompt": "Con operadores de servicio y acceso basado en pares trenzados, ¿qué previsión mínima se aplica a las viviendas y a las estancias o instalaciones comunes del edificio, excluido el ascensor?",
+    "options": [
+      { "key": "A", "text": "Dos acometidas por vivienda y ninguna para estancias comunes." },
+      { "key": "B", "text": "Una acometida por vivienda y dos para las estancias o instalaciones comunes del edificio." },
+      { "key": "C", "text": "Una acometida por cada dos viviendas y una común." },
+      { "key": "D", "text": "Una acometida por vivienda, sin previsión para estancias comunes." }
+    ],
+    "answer": "B", "explanation": "El apartado 3.1.1 prevé una acometida por vivienda y dos para dar servicio a estancias o instalaciones comunes. La previsión del ascensor se trata específicamente en el apartado 3.1.5.", "difficulty": 2,
+    "tags": ["original-especifico", "ict"], "conceptIds": ["ict-anex12-concept-ii-demand-minima"], "sourceId": "RD 346/2011", "sourceVersion": "consolidated-page-2026-10-15", "sourceLocator": "Anexo II, apartado 3.1 y apartados 3.1.1–3.1.4 y 3.1.5", "status": "reviewed", "reviewedAt": "2026-11-05", "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-01",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-i",
+    "syllabusNodeId": "ict-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–3)",
+    "skill": "ICT",
+    "prompt": "Si un tercero instala o gestiona una ICT y conserva su titularidad, ¿qué principio establece el artículo 1?",
+    "options": [
+      {
+        "key": "A",
+        "text": "La infraestructura debe poder ser utilizada por cualquier entidad u operador habilitado para prestar los servicios correspondientes."
+      },
+      {
+        "key": "B",
+        "text": "Solo el tercero titular puede usarla, aunque otros operadores estén habilitados."
+      },
+      {
+        "key": "C",
+        "text": "La propiedad debe transferir gratuitamente la titularidad a cada operador que la utilice."
+      },
+      {
+        "key": "D",
+        "text": "El acceso de otros operadores depende exclusivamente de que el tercero lo autorice caso por caso."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 1 exige respetar el uso de la infraestructura por cualquier entidad u operador habilitado mientras el tercero conserve su titularidad; no convierte la titularidad en un derecho de uso exclusivo.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a01-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-02",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-i",
+    "syllabusNodeId": "ict-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–3)",
+    "skill": "ICT",
+    "prompt": "¿Cuál de estas afirmaciones sobre una infraestructura preexistente es correcta a efectos del artículo 2?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Nunca puede considerarse ICT, aunque se adapte para cumplir las funciones reglamentarias."
+      },
+      {
+        "key": "B",
+        "text": "Puede tener la consideración de ICT si se adapta para cumplir sus funciones; la adaptación puede incluir infraestructura adicional en lo indispensable."
+      },
+      {
+        "key": "C",
+        "text": "Solo se considera ICT si todas sus redes son de nueva construcción y propiedad de un operador."
+      },
+      {
+        "key": "D",
+        "text": "La adaptación la convierte automáticamente en un sistema individual de acceso del usuario."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 2.2 también considera ICT la infraestructura que inicialmente no cumplía las funciones del apartado 1, pero se adapta para cumplirlas. La adaptación puede requerir infraestructura adicional en la medida indispensable.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a02-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 2 y apartado 2.4",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-03",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-i",
+    "syllabusNodeId": "ict-capitulo-i",
+    "topic": "Capítulo I. Disposiciones generales (artículos 1–3)",
+    "skill": "ICT",
+    "prompt": "¿Qué supuesto queda dentro del ámbito de aplicación del artículo 3 por razón del arrendamiento?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Un edificio alquilado durante once meses, aunque incluya varias viviendas."
+      },
+      {
+        "key": "B",
+        "text": "Una vivienda única arrendada durante dos años: el artículo 3.2 la incluye expresamente sin excepción."
+      },
+      {
+        "key": "C",
+        "text": "Un edificio no sujeto a propiedad horizontal, alquilado parcialmente durante más de un año y que no alberga una sola vivienda."
+      },
+      {
+        "key": "D",
+        "text": "Solo se aplica si más de la mitad de las unidades del edificio están arrendadas por más de un año."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 3.2 incluye edificios total o parcialmente arrendados por plazo superior a un año, salvo los que alberguen una sola vivienda. No establece un umbral porcentual de unidades arrendadas.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a03-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-04",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿Qué correspondencia entre tipo de ICT y anexo técnico establece el artículo 4?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Radiodifusión y televisión: anexo II; telefonía y banda ancha: anexo I."
+      },
+      {
+        "key": "B",
+        "text": "Toda obra civil: anexo I; todas las redes de telecomunicación: anexo III."
+      },
+      {
+        "key": "C",
+        "text": "Radiodifusión y televisión: anexo III; telefonía y banda ancha: anexo II."
+      },
+      {
+        "key": "D",
+        "text": "Radiodifusión y televisión: anexo I; telefonía y banda ancha: anexo II; obra civil soporte: norma básica de edificación aplicable o, si falta, anexo III."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 4.1 asigna el anexo I a radiodifusión sonora y televisión, el II a telefonía disponible al público y banda ancha, y para obra civil remite a la norma básica de edificación aplicable, con las especificaciones del anexo III; en ausencia de aquella, se aplica el anexo III.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a04-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 4",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-05",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "Según el artículo 5.5, ¿cuándo pueden copropietarios o arrendatarios acceder a su costa a otros servicios mediante un sistema individual?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cuando no exista ICT común, no se instale una nueva o no se adapte la preexistente, siguiendo el procedimiento remitido al Real Decreto-ley 1/1998."
+      },
+      {
+        "key": "B",
+        "text": "Siempre que prefieran evitar la ICT común, sin seguir procedimiento alguno."
+      },
+      {
+        "key": "C",
+        "text": "Solo cuando ya exista una ICT operativa y la comunidad autorice al operador a sustituirla."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente para los servicios de radiodifusión y telefonía enumerados como funciones mínimas en el artículo 2.1."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 5.5 se refiere a servicios distintos de los del artículo 2.1 y permite el acceso individual a costa de copropietarios o arrendatarios en las circunstancias indicadas, con arreglo al procedimiento del artículo 9.2 del Real Decreto-ley 1/1998.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a05-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 5 y apartado 5.5, con remisión al artículo 2.1",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-06",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "Antes de ejecutar una instalación individual, ¿qué debe acompañar el promotor a su comunicación escrita a la propiedad o comunidad?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Solo el nombre del operador y la fecha prevista, dejando para después la descripción y el uso de elementos comunes."
+      },
+      {
+        "key": "B",
+        "text": "Descripción suficiente, acreditación de los requisitos legales aplicables, detalle del uso previsto de elementos comunes y declaración expresa de exención de obligaciones de la propiedad sobre esa instalación."
+      },
+      {
+        "key": "C",
+        "text": "La aprobación municipal definitiva, que sustituye la comunicación a la propiedad y la declaración sobre mantenimiento."
+      },
+      {
+        "key": "D",
+        "text": "Un certificado de que la comunidad asumirá el mantenimiento, seguridad y vigilancia de la instalación individual."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 6.2 exige que la comunicación incluya documentación suficiente para describir la instalación, acreditar sus requisitos legales, detallar el uso pretendido de elementos comunes y declarar expresamente que la propiedad queda exenta de obligaciones de mantenimiento, seguridad y vigilancia relativas a ella.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a06-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 6",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-08",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "En el procedimiento de consulta del artículo 8, ¿qué procede si transcurren 30 días sin respuesta de un operador de red consultado?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Se paraliza necesariamente el proyecto hasta que el operador conteste."
+      },
+      {
+        "key": "B",
+        "text": "La propiedad puede descartar todos los requisitos técnicos del Reglamento."
+      },
+      {
+        "key": "C",
+        "text": "El proyectista procede a proyectar la ICT conforme a las disposiciones del Reglamento."
+      },
+      {
+        "key": "D",
+        "text": "El proyectista debe esperar otros 30 días naturales antes de iniciar el diseño."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 8.5 concede a los operadores un plazo máximo de 30 días para responder. Transcurrido sin respuesta, el proyectista procede conforme al Reglamento; no queda dispensado de sus requisitos técnicos.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a08-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-09",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿Qué documentos debe incluir como mínimo el proyecto técnico de ejecución de una ICT según el artículo 9.1?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Acta de replanteo, boletín de instalación, manual de usuario y licencia de primera ocupación."
+      },
+      {
+        "key": "B",
+        "text": "Solo memoria y presupuesto; los planos y el pliego son opcionales en todos los casos."
+      },
+      {
+        "key": "C",
+        "text": "Memoria, proyecto de arquitectura y certificado de inspección periódica."
+      },
+      {
+        "key": "D",
+        "text": "Memoria, planos, pliego de condiciones y presupuesto."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 9.1 enumera como contenido mínimo del proyecto de ejecución la memoria, los planos, el pliego de condiciones y el presupuesto. No deben confundirse con documentos de ejecución y cierre regulados en el artículo 10.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a09-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 9, apartado 1 y remisión al artículo 8",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-10",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿En qué plazo se presenta electrónicamente el acta de replanteo una vez redactada y firmada?",
+    "options": [
+      {
+        "key": "A",
+        "text": "En un máximo de 15 días naturales desde su redacción y firma."
+      },
+      {
+        "key": "B",
+        "text": "En un máximo de 15 días hábiles desde la finalización de la instalación."
+      },
+      {
+        "key": "C",
+        "text": "En un máximo de 30 días naturales desde el inicio de las obras."
+      },
+      {
+        "key": "D",
+        "text": "En un plazo de dos meses desde la consulta a operadores."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 10.1 exige presentar el acta electrónicamente en un plazo no superior a 15 días naturales tras su redacción y firma. La sentencia del Tribunal Supremo de 17 de octubre de 2012 anuló incisos concretos sobre titulaciones, pero dejó vigente el resto del apartado, incluido este plazo.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a10-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 10",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-11",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿Qué condición de conformidad impone el artículo 11 a equipos y materiales de una instalación ICT?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Solo los equipos incluidos en el proyecto deben cumplir el Reglamento; los materiales quedan exentos."
+      },
+      {
+        "key": "B",
+        "text": "Tanto los equipos del proyecto como los materiales de ejecución deben cumplir las especificaciones del Reglamento y demás normas aplicables, especialmente las del CTE sobre incendios y resistencia al fuego."
+      },
+      {
+        "key": "C",
+        "text": "La conformidad se limita a materiales eléctricos y no incluye equipos de telecomunicación."
+      },
+      {
+        "key": "D",
+        "text": "Basta con que el operador certifique los equipos; el cumplimiento del CTE es voluntario."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 11 incluye los equipos contemplados en el proyecto y los materiales usados durante la ejecución. Ambos han de ajustarse al Reglamento y al resto de normas vigentes aplicables, con especial mención del CTE en seguridad contra incendios y resistencia al fuego.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a11-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 11",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-12",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿Quiénes están obligados a colaborar con la Administración competente en inspección de una ICT?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Únicamente el operador que suministra el servicio principal."
+      },
+      {
+        "key": "B",
+        "text": "Solo el proyectista, y únicamente si la Administración detecta una avería."
+      },
+      {
+        "key": "C",
+        "text": "La comunidad o propiedad, la empresa instaladora, el proyectista y, cuando exista, el director de obra; deben facilitar acceso e información requerida."
+      },
+      {
+        "key": "D",
+        "text": "Solo los usuarios finales, que deben aportar las claves de sus equipos particulares."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El artículo 12 obliga a colaborar a la comunidad o propiedad, la empresa instaladora, el proyectista y, en su caso, el director de obra responsable; la colaboración incluye facilitar el acceso y la información solicitada. El artículo también permite requerir subsanaciones documentales.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a12-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 12",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-13",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "En un edificio arrendado, ¿quién asume los gastos de conservación de la ICT si la instalación fue solicitada por los arrendatarios?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Siempre el propietario, sin excepción prevista."
+      },
+      {
+        "key": "B",
+        "text": "Los operadores, por el solo hecho de prestar servicios en el edificio."
+      },
+      {
+        "key": "C",
+        "text": "La Administración local, como parte de la inspección técnica del edificio."
+      },
+      {
+        "key": "D",
+        "text": "Los arrendatarios que solicitaron la instalación, conforme a la excepción del artículo 13.2."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El artículo 13.2 remite para edificios arrendados al artículo 21 de la Ley de Arrendamientos Urbanos, pero establece expresamente que si la instalación fue solicitada por los arrendatarios, los gastos serán a cuenta de estos.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a13-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 13 y sus remisiones a los artículos 10 de la Ley de Propiedad Horizontal y 21 de la Ley de Arrendamientos Urbanos",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-14",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿Cuándo se aplica la clasificación de hogar digital del anexo V conforme al artículo 14?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cuando el promotor decide incorporar funcionalidades de hogar digital a las viviendas de la edificación."
+      },
+      {
+        "key": "B",
+        "text": "A todas las viviendas, aunque el promotor no incorpore esas funcionalidades."
+      },
+      {
+        "key": "C",
+        "text": "Solo a edificios de uso no residencial y con decisión de la comunidad."
+      },
+      {
+        "key": "D",
+        "text": "Únicamente cuando todos los usuarios contratan una conexión de banda ancha."
+      }
+    ],
+    "answer": "A",
+    "explanation": "El artículo 14 aplica la clasificación del anexo V a las edificaciones cuyas viviendas incorporen funciones de hogar digital por decisión del promotor. No obliga a que toda vivienda tenga esas funcionalidades.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a14-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 14",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-art-15",
+    "domain": "telecom",
+    "topicId": "ict-capitulo-ii",
+    "syllabusNodeId": "ict-capitulo-ii",
+    "topic": "Capítulo II. Infraestructura común de telecomunicaciones (artículos 4–15)",
+    "skill": "ICT",
+    "prompt": "¿A qué normas remite el artículo 15 para sancionar el incumplimiento del Reglamento ICT y de sus normas técnicas?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Exclusivamente al Código Técnico de la Edificación y a la Ley de Propiedad Horizontal."
+      },
+      {
+        "key": "B",
+        "text": "Al artículo 11 del Real Decreto-ley 1/1998 y a la Ley 32/2003 General de Telecomunicaciones, citados expresamente en el texto del artículo."
+      },
+      {
+        "key": "C",
+        "text": "Únicamente a las ordenanzas municipales del lugar del edificio."
+      },
+      {
+        "key": "D",
+        "text": "A una multa fija que el propio artículo 15 cuantifica para cualquier incumplimiento."
+      }
+    ],
+    "answer": "B",
+    "explanation": "El artículo 15 remite literalmente al artículo 11 del Real Decreto-ley 1/1998 y a la Ley 32/2003 General de Telecomunicaciones. El artículo no fija por sí solo una sanción concreta ni su cuantía; esta pregunta recoge la remisión tal como aparece en el texto consolidado.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict"
+    ],
+    "conceptIds": [
+      "ict-a15-concept"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Reglamento, artículo 15 y su remisión al artículo 11 del Real Decreto-ley 1/1998",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anex345-01",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iii",
+    "syllabusNodeId": "ict-anexo-iii",
+    "topic": "Anexo III. Especificaciones técnicas mínimas de las edificaciones",
+    "skill": "ICT",
+    "prompt": "Según el anexo III, apartado 5.5.5, ¿cómo debe ser la canalización eléctrica directa desde el Cuadro de Servicios Generales hasta cada recinto ICT?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Con conductores de aluminio de sección mínima 2 × 4 + T mm², en tubo de diámetro exterior mínimo de 25 mm, solo hasta el RITI."
+      },
+      {
+        "key": "B",
+        "text": "Desde el contador de cada operador, con conductores de cobre de sección mínima 3 × 2,5 mm², en tubo de diámetro interior mínimo de 20 mm."
+      },
+      {
+        "key": "C",
+        "text": "Con conductores de cobre de 450/750 V y sección mínima 2 × 6 + T mm², en tubo de diámetro exterior mínimo de 32 mm o canal de sección equivalente."
+      },
+      {
+        "key": "D",
+        "text": "Desde el cuadro eléctrico de cada vivienda, con conductores de cobre de 2 × 6 mm² sin conductor de tierra, en tubo de diámetro exterior mínimo de 32 mm."
+      }
+    ],
+    "answer": "C",
+    "explanation": "El apartado 5.5.5 prescribe para cada recinto una canalización directa desde el Cuadro de Servicios Generales, con cobre aislado a 450/750 V, sección mínima 2 × 6 + T mm² y tubo de 32 mm de diámetro exterior mínimo o canal equivalente. La ventilación mecánica es un requisito distinto del apartado 5.5.4: debe renovar totalmente el aire al menos dos veces por hora.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iii"
+    ],
+    "conceptIds": [
+      "ict-anex345-concept-rit-conditions"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo III, apartados 5.5.2–5.5.5",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anex345-02",
+    "domain": "telecom",
+    "topicId": "ict-anexo-iv",
+    "syllabusNodeId": "ict-anexo-iv",
+    "topic": "Anexo IV. Inspección y mantenimiento de las infraestructuras de telecomunicaciones",
+    "skill": "ICT",
+    "prompt": "¿Qué inciso de autoría del Estudio Técnico en el anexo IV dejó de estar vigente tras la Sentencia del Tribunal Supremo de 17 de octubre de 2012?",
+    "options": [
+      {
+        "key": "A",
+        "text": "La atribución del Análisis Documentado a la empresa instaladora de telecomunicaciones."
+      },
+      {
+        "key": "B",
+        "text": "La exigencia de que el Estudio Técnico incluya una propuesta de modificación cuando proceda."
+      },
+      {
+        "key": "C",
+        "text": "La existencia de los modelos de Análisis Documentado y Estudio Técnico en la sección 3."
+      },
+      {
+        "key": "D",
+        "text": "La atribución exclusiva de su realización a un Ingeniero de Telecomunicación o a un Ingeniero Técnico de Telecomunicación."
+      }
+    ],
+    "answer": "D",
+    "explanation": "La Sentencia BOE-A-2012-13774 anuló expresamente el inciso «a realizar por un Ingeniero de Telecomunicación o un Ingeniero Técnico de Telecomunicación» de la sección 3 del anexo IV, en cuanto reservaba en exclusiva esa realización a esas titulaciones. El fallo deja vigente el resto de los apartados afectados; no suprime los modelos ni la función de Análisis Documentado atribuida a la empresa instaladora en la introducción del anexo.",
+    "difficulty": 3,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-iv",
+      "nulidad-jurisprudencial"
+    ],
+    "conceptIds": [
+      "ict-anex345-concept-documentation"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo IV, introducción y sección 3",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
+    "id": "orig-tel-ict-anex345-03",
+    "domain": "telecom",
+    "topicId": "ict-anexo-v",
+    "syllabusNodeId": "ict-anexo-v",
+    "topic": "Anexo V. Hogar Digital",
+    "skill": "ICT",
+    "prompt": "Al asignar los servicios individualizados del Hogar Digital a los grupos del anexo V, ¿qué criterio de agrupación establece el apartado 4?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cada servicio se asigna por igual a todos los grupos con los que pueda tener alguna relación."
+      },
+      {
+        "key": "B",
+        "text": "El promotor decide libremente el grupo de cada servicio, sin referencia a las áreas enumeradas."
+      },
+      {
+        "key": "C",
+        "text": "El grupo se determina por la puntuación total del nivel y no por la relación del servicio con un área."
+      },
+      {
+        "key": "D",
+        "text": "Cada servicio se sitúa en el grupo que guarda más relación con él, aunque también pueda tener significado en otros."
+      }
+    ],
+    "answer": "D",
+    "explanation": "El apartado 4 enumera individualmente los servicios dentro de los grupos definidos y aclara que cada uno se mantiene en el grupo con el que se considera que guarda mayor relación, aunque también pueda tener significación en otros. La agrupación no se decide según el nivel ni duplica automáticamente cada servicio en todas las áreas relacionadas.",
+    "difficulty": 2,
+    "tags": [
+      "original-especifico",
+      "ict",
+      "anexo-v"
+    ],
+    "conceptIds": [
+      "ict-anex345-concept-service-areas"
+    ],
+    "sourceId": "RD 346/2011",
+    "sourceVersion": "consolidated-page-2026-10-15",
+    "sourceLocator": "Anexo V, apartados 4 y 5",
+    "status": "reviewed",
+    "reviewedAt": "2026-11-05",
+    "origin": "original"
+  },
+  {
     "id": "orig-tel-rcf-telefonemas-001",
     "domain": "telecom",
     "topicId": "rcf-capitulo-4",

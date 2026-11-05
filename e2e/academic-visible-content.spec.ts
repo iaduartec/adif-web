@@ -21,8 +21,13 @@ for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 
     await expect(page.getByText(/Los cambiadores de ancho y las bases de mantenimiento cuentan como estación/)).toBeVisible();
     await page.goto("/curso/prevencion-riesgos-laborales?view=theory");
     await expect(page.getByText(/El acceso de terceros a los datos médicos personales se limita/)).toBeVisible();
+    await expect(page.locator("#concept-prl-concept-13").getByText(/toda empresa o centro de trabajo con 50 o más trabajadores/)).toBeVisible();
     await page.goto("/curso/ict-rd-346-2011?view=theory");
     await expect(page.locator("#concept-ict-concept-62").getByText(/El RITU-A puede instalarse en edificios/)).toBeVisible();
+    await expect(page.locator("#concept-ict-concept-64").getByText(/si la pasarela lo requiere/)).toBeVisible();
+    await expect(page.locator("#concept-ict-a07-concept").getByText(/consulta se efectúa en el plazo de dos meses/)).toBeVisible();
+    await expect(page.locator("#concept-ict-anex345-concept-documentation").getByText(/atribución exclusiva|atribuía exclusivamente/)).toBeVisible();
+    await expect(page.locator("#concept-ict-anex12-concept-ii-reserve-and-user").getByText(/multiplicando por 1,2/)).toBeVisible();
     await page.goto("/fichas");
     await page.getByRole("button", { name: "E4 Incompatibilidades" }).click();
     await expect(page.getByText(/Qué límite general establece el artículo 1.3/)).toBeVisible();
