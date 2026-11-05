@@ -95,7 +95,7 @@ export function EmailPasswordSignIn({
           type="password"
           autoComplete={mode === "signup" ? "new-password" : "current-password"}
           required
-          minLength={6}
+          minLength={mode === "signup" ? 6 : undefined}
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
