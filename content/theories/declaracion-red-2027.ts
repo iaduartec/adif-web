@@ -22,7 +22,7 @@ const reviewedDrChapter2 = {
   status: "needs_review",
   confidence: {
     level: "medium",
-    reason: "Trazado al texto del capítulo II de la edición V.0 (ED 27/02/2026) conservada en el repositorio (pdf/4. Declaración sobre la Red Adif 2027. Capítulos I y II.pdf). Edición candidata: verificación byte a byte frente a la edición de julio de 2026 pendiente; no se atribuyen diferencias respecto a ésta.",
+    reason: "Trazado al texto del capítulo II de la edición V.0 (ED 27/02/2026) conservada en el repositorio (pdf/4. Declaración sobre la Red Adif 2027. Capítulos I y II.pdf). Cotejo de contenido repetido el 2026-11-04 contra el texto extraído de esa copia: las cifras de la RFIG, gálibo, límite de carga, velocidades, longitud de trenes, electrificación, señalización y túneles coinciden, y se corrigió una afirmación sobre cánones que no figuraba en el documento. Edición candidata: la verificación byte a byte frente a la edición de julio de 2026 sigue pendiente porque el enlace de ADIF responde HTTP 403; no se atribuyen diferencias respecto a ésta.",
   },
 } as const;
 
@@ -114,7 +114,17 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
       locator: "Capítulo II — Cánones de acceso",
-      excerpt: "Los cánones de acceso a la infraestructura se fijan conforme a la normativa europea y nacional, incluyendo canon de reserva de capacidad y canon de utilización.",
+      excerpt: "De conformidad con la vigente redacción de los artículos 96 y siguientes las tarifas de los cánones ferroviarios se determinarán por los administradores de infraestructuras Ferroviarias, aprobando un Reglamento adoptado por su Consejo de Administración que deberá ser publicado en el Boletín Oficial del Estado y sus valores se incluirán en la Declaración sobre la Red.",
+    },
+    {
+      id: "dr-adif-2027-c1-152",
+      sourceId: "PNI26-COMMON-04",
+      sourceTitle: "Declaración sobre la Red Adif 2027. Capítulos I y II",
+      sourceUrl: "https://www.adif.es/documents/20124/55031380/4.%2BDeclaraci%C3%B3n%2Bsobre%2Bla%2BRed%2BAdif%2B2027.%2BCap%C3%ADtulos%2BI%2By%2BII.pdf/4a6acc23-e409-9dd8-ad1e-305d7f6e7b01",
+      sourceVersion: "adif-live-2026-10-15",
+      verifiedAt: "2026-10-15",
+      locator: "Capítulo I, apartado 1.5.2, Proceso de actualización (p. 25)",
+      excerpt: "La DR se actualiza cuando cambian las condiciones de uso de la infraestructura, de las instalaciones de servicio o la prestación de servicios. Las modificaciones no deben restringir la capacidad adjudicada, salvo circunstancias extraordinarias acreditadas, consentimiento de los adjudicatarios afectados o actuaciones eventuales necesarias para la explotación; en este último supuesto basta comunicarlo a los afectados y ponerlo a disposición de cualquier candidato hasta su incorporación a la publicación ordinaria anual. Las modificaciones de información técnica regular producen efectos desde su publicación o desde la fecha que ellas indiquen.",
     },
     {
       id: "dr-adif-2027-edicion",
@@ -511,7 +521,7 @@ export const declaracionRed2027Theory: TheorySection = {
       claims: [
         {
           id: "dr-c11-1",
-          text: "Los cánones de acceso a la infraestructura se fijan conforme a la normativa europea y nacional, incluyendo canon de reserva de capacidad y canon de utilización.",
+          text: "Las tarifas de los cánones ferroviarios se determinan por los administradores de infraestructuras mediante un Reglamento aprobado por su Consejo de Administración y publicado en el Boletín Oficial del Estado, y sus valores se incluyen en la Declaración sobre la Red. Para el ejercicio 2027 se aplican las tarifas de los Reglamentos publicados en el BOE que estén en vigor.",
           kind: "didactic",
           legalBasis: ["dr-adif-2027-cap2-canon"],
           review: pendingDrEdition,
@@ -979,7 +989,7 @@ export const declaracionRed2027Theory: TheorySection = {
         },
         {
           id: "dr-c26-3",
-          text: "El enclavamiento es un conjunto de elementos físicos y lógicos que, en el ámbito geográfico de una estación o dependencia de circulación, efectúa automáticamente las órdenes, supervisión y comprobaciones de las maniobras, inmovilizaciones, liberaciones y demás acciones imprescindibles para el correcto funcionamiento de los elementos de señalización bajo su control, en cumplimiento del Programa de Explotación correspondiente.",
+          text: "El enclavamiento es un conjunto de elementos físicos y lógicos que, en el ámbito geográfico de una estación o dependencia de circulación, materializa las órdenes, la supervisión y las comprobaciones de las maniobras, inmovilizaciones, liberaciones y demás acciones imprescindibles para el correcto funcionamiento de los elementos de señalización bajo su control, en cumplimiento del Programa de Explotación correspondiente.",
           kind: "normative",
           legalBasis: ["dr-2027-cap2-2310"],
           review: reviewedDrChapter2,
@@ -1398,6 +1408,19 @@ export const declaracionRed2027Theory: TheorySection = {
           kind: "normative",
           legalBasis: ["dr-2027-cap2-26"],
           review: reviewedDrChapter2,
+        },
+      ],
+    },
+    {
+      id: "dr-concept-39",
+      title: "Actualización de la Declaración sobre la Red (1.5.2)",
+      claims: [
+        {
+          id: "dr-c39-1",
+          text: "La DR se modifica cuando cambian las condiciones de uso de la infraestructura, las instalaciones de servicio o la prestación de sus servicios. Como regla, la modificación no puede restringir la capacidad ya adjudicada; solo cabe hacerlo si concurren circunstancias extraordinarias debidamente acreditadas, si consienten los adjudicatarios afectados o si se trata de una actuación eventual necesaria para la explotación. En este último caso, basta comunicarla a los adjudicatarios afectados y ponerla a disposición de cualquier candidato hasta su incorporación a la publicación anual. Los cambios de información técnica sujetos a variación regular surten efecto desde su publicación o desde la fecha que indique la propia modificación.",
+          kind: "normative",
+          legalBasis: ["dr-adif-2027-c1-152", "dr-adif-2027-c1"],
+          review: pendingDrEdition,
         },
       ],
     },
