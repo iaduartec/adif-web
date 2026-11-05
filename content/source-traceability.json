@@ -391,9 +391,7 @@
       "document": "Declaracion sobre la Red 2027, capitulos I y II",
       "artifactPath": "pdf/4. Declaración sobre la Red Adif 2027. Capítulos I y II.pdf",
       "sha256": "796b26bdd38957ba31663b56dcda259d36de199c3cf1b537cfa3111d0cd029f2",
-      "manifestVersion": "preserved-pdf-v0-ed-2026-02-27",
-      "manifestStatus": "needs_check",
-      "reason": "El enlace oficial de ADIF responde HTTP 403 desde este entorno, incluso con un navegador real, por lo que no se ha podido acreditar la identidad byte a byte con la edicion vigente de 31-07-2026. El contenido del capitulo II si esta cotejado contra la copia preservada.",
+      "reason": "El enlace oficial de ADIF responde HTTP 403 desde este entorno, incluso con un navegador real, por lo que no se ha podido acreditar la identidad byte a byte con la edicion vigente de 31-07-2026. El contenido del capitulo II si esta cotejado contra la copia preservada. Este registro describe el artefacto fisico y es autonomo: no depende de que exista una entrada concreta en el manifiesto, cuya version local aun no esta incorporada al repositorio.",
       "notSupersededBy": [
         "dr-adif-av-2027-libro-pdf"
       ],

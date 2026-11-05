@@ -132,8 +132,6 @@ export const pendingSourceIdentitySchema = z
     document: z.string().trim().min(1),
     artifactPath: z.string().trim().min(1),
     sha256: sha256DigestSchema,
-    manifestVersion: z.string().trim().min(1),
-    manifestStatus: z.enum(["verified", "needs_check", "superseded", "unavailable"]),
     reason: z.string().trim().min(1),
     notSupersededBy: z.array(z.string().trim().min(1)).min(1),
     notSupersededReason: z.string().trim().min(1),

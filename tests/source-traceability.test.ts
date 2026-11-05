@@ -132,10 +132,12 @@ describe("auxiliary ADIF-Alta Velocidad material", () => {
     expect(adif.entity).toBe("ADIF");
     expect(adif.edition).toBe("V.0 (ED 27/02/2026)");
     expect(adif.state).toBe("pending");
+    expect(adif.artifactPath).toContain("Capítulos I y II.pdf");
+    expect(adif.sha256).toMatch(/^[a-f0-9]{64}$/i);
     expect(adif.notSupersededBy).toEqual(["dr-adif-av-2027-libro-pdf"]);
-    const manifestEntry = sourceManifest.sources.find((source) => source.sourceVersion === adif.manifestVersion);
-    expect(manifestEntry?.status).toBe(adif.manifestStatus);
-    expect(manifestEntry?.sha256).toBe(adif.sha256);
+    expect(adif.notSupersededReason).toContain("otra entidad");
+    // Self-contained: the record must not require an (uncommitted) manifest row.
+    expect("manifestVersion" in adif).toBe(false);
   });
 });
 
