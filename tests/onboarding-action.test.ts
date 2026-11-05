@@ -1,14 +1,16 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { createServerClient, goalRead, redirect, upsert } = vi.hoisted(() => ({
+const { createServerClient, goalRead, listOfficialQuestions, redirect, upsert } = vi.hoisted(() => ({
   createServerClient: vi.fn(),
   goalRead: { current: { data: { onboarding_completed_at: "2026-08-01T10:00:00.000Z" }, error: null } as any },
+  listOfficialQuestions: vi.fn(() => [] as { id: string; source: { section: string } }[]),
   redirect: vi.fn((url: string) => { throw new Error(`redirect:${url}`); }),
   upsert: vi.fn(),
 }));
 
 vi.mock("next/navigation", () => ({ redirect }));
 vi.mock("../lib/supabase/server", () => ({ createServerClient }));
+vi.mock("../lib/content/repository", () => ({ listOfficialQuestions }));
 
 import { saveOnboarding } from "../app/onboarding/actions";
 import { initialOnboardingFormState } from "../lib/onboarding-form-state";
@@ -17,6 +19,7 @@ describe("saveOnboarding", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     goalRead.current = { data: { onboarding_completed_at: "2026-08-01T10:00:00.000Z" }, error: null };
+    listOfficialQuestions.mockReturnValue([]);
     upsert.mockResolvedValue({ error: null });
     createServerClient.mockResolvedValue({
       auth: { getUser: vi.fn(async () => ({ data: { user: { id: "user-1" } } })) },
@@ -58,6 +61,37 @@ describe("saveOnboarding", () => {
       exam_date: null,
       onboarding_completed_at: "2026-08-01T10:00:00.000Z",
     }, { onConflict: "user_id" });
+  });
+
+  it("does not open an empty diagnostic when fewer than fifteen questions are eligible", async () => {
+    const formData = new FormData();
+    formData.set("weekly_target_minutes", "180");
+    formData.append("preferred_days", "1");
+    formData.set("session_minutes", "30");
+    formData.set("diagnostic", "true");
+
+    const result = await saveOnboarding("/curso", initialOnboardingFormState, formData);
+
+    expect(result.errors.form).toMatch(/se necesitan 15 preguntas oficiales elegibles y ahora hay 0/i);
+    expect(result.values.diagnostic).toBe(true);
+    expect(upsert).toHaveBeenCalledOnce();
+    expect(redirect).not.toHaveBeenCalled();
+  });
+
+  it("starts the diagnostic with fifteen eligible questions", async () => {
+    listOfficialQuestions.mockReturnValue(Array.from({ length: 15 }, (_, index) => ({
+      id: `official-${index + 1}`,
+      source: { section: index % 2 === 0 ? "general" : "specific" },
+    })));
+    const formData = new FormData();
+    formData.set("weekly_target_minutes", "180");
+    formData.append("preferred_days", "1");
+    formData.set("session_minutes", "30");
+    formData.set("diagnostic", "true");
+
+    await expect(saveOnboarding("/curso", initialOnboardingFormState, formData)).rejects.toThrow(
+      "redirect:/tests?practice=true&diagnostic=official-1%2Cofficial-2%2Cofficial-3%2Cofficial-4%2Cofficial-5%2Cofficial-6%2Cofficial-7%2Cofficial-8%2Cofficial-9%2Cofficial-10%2Cofficial-11%2Cofficial-12%2Cofficial-13%2Cofficial-14%2Cofficial-15",
+    );
   });
 
   it("keeps values accessible and avoids writes when the original completion timestamp cannot be read", async () => {

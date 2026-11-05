@@ -61,6 +61,14 @@ export async function saveOnboarding(
 
   if (parsed.data.diagnostic) {
     const ids = selectBalancedDiagnosticQuestionIds(listOfficialQuestions());
+    if (ids.length < 15) {
+      return {
+        errors: {
+          form: `Tu preparación se guardó, pero no se inició el diagnóstico: se necesitan 15 preguntas oficiales elegibles y ahora hay ${ids.length}. Puedes desmarcar el diagnóstico y guardar de nuevo.`,
+        },
+        values,
+      };
+    }
     redirect(`/tests?practice=true&diagnostic=${encodeURIComponent(ids.join(","))}`);
   }
 
