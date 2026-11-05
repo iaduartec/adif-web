@@ -1,4 +1,5 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { StrictMode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const { submitOriginalSimulation } = vi.hoisted(() => ({ submitOriginalSimulation: vi.fn() }));
@@ -12,6 +13,19 @@ import { toPublicPracticeQuestion } from "../lib/content/original-practice-publi
 const sourceQuestions = listOriginalPracticeQuestions({ domain: "psychometric", status: "reviewed" }).slice(0, 3);
 const questions = sourceQuestions.map(toPublicPracticeQuestion).filter((question) => question !== null);
 const testRecoveryScope = "000000000000000000000000";
+
+function mockWebLocks() {
+  let held = false;
+  const request = vi.fn((_name: string, _options: unknown, callback: (lock: object | null) => Promise<void>) => {
+    const acquired = !held;
+    if (acquired) held = true;
+    return Promise.resolve().then(() => callback(acquired ? {} : null)).finally(() => {
+      if (acquired) held = false;
+    });
+  });
+  vi.stubGlobal("navigator", Object.assign(Object.create(navigator), { locks: { request } }));
+  return request;
+}
 
 afterEach(() => {
   cleanup();
@@ -113,6 +127,54 @@ describe("original full-bank simulation", () => {
     fireEvent.click(screen.getByRole("button", { name: "Iniciar simulacro original" }));
 
     expect(screen.getByText("Tiempo restante: 600:00")).toBeVisible();
+  });
+
+  it("recovers answers, position and deadline without competing with its StrictMode lock setup", async () => {
+    const first = render(<OriginalPracticeSession examMode questions={questions} recoveryScope={testRecoveryScope} />);
+    fireEvent.change(screen.getByLabelText("Tiempo límite orientativo en minutos (opcional)"), { target: { value: "2" } });
+    fireEvent.click(screen.getByRole("button", { name: "Iniciar simulacro original" }));
+    fireEvent.click(screen.getByRole("button", { name: "Pregunta 2, en blanco" }));
+    fireEvent.click(screen.getAllByRole("radio")[1]!);
+    const prompt = screen.getByRole("heading", { level: 3 }).textContent;
+    const key = "adif360:original-simulation:v2:psychometric:000000000000000000000000";
+    const saved = window.sessionStorage.getItem(key);
+    first.unmount();
+
+    const request = mockWebLocks();
+    render(<StrictMode><OriginalPracticeSession examMode questions={questions} recoveryScope={testRecoveryScope} /></StrictMode>);
+
+    await waitFor(() => expect(screen.getByRole("button", { name: "Pregunta 2, respondida" })).toBeEnabled());
+    expect(screen.getByRole("heading", { level: 3 })).toHaveTextContent(prompt!);
+    expect(screen.getAllByRole("radio")[1]).toBeChecked();
+    expect(screen.getByRole("timer")).toHaveTextContent(/Tiempo restante: [12]:[0-5][0-9]/);
+    expect(window.sessionStorage.getItem(key)).toBe(saved);
+    expect(request).toHaveBeenCalledTimes(1);
+    expect(submitOriginalSimulation).not.toHaveBeenCalled();
+  });
+
+  it("delivers an expired recovered deadline once after acquiring the Web Lock in StrictMode", async () => {
+    submitOriginalSimulation.mockImplementation(async (submission: { questionIds: string[] }) => ({
+      ok: true,
+      corrections: submission.questionIds.map((questionId) => ({
+        questionId, selectedAnswer: null, correctAnswer: sourceQuestions.find((question) => question.id === questionId)!.answer, isCorrect: false, explanation: "Explicación.",
+      })),
+    }));
+    const first = render(<OriginalPracticeSession examMode questions={questions} recoveryScope={testRecoveryScope} />);
+    fireEvent.change(screen.getByLabelText("Tiempo límite orientativo en minutos (opcional)"), { target: { value: "1" } });
+    fireEvent.click(screen.getByRole("button", { name: "Iniciar simulacro original" }));
+    const key = "adif360:original-simulation:v2:psychometric:000000000000000000000000";
+    const draft = JSON.parse(window.sessionStorage.getItem(key)!);
+    first.unmount();
+    window.sessionStorage.setItem(key, JSON.stringify({ ...draft, deadlineAt: Date.now() - 1 }));
+
+    const request = mockWebLocks();
+    render(<StrictMode><OriginalPracticeSession examMode questions={questions} recoveryScope={testRecoveryScope} /></StrictMode>);
+
+    expect(await screen.findByRole("heading", { name: "Resultados del simulacro original" })).toBeVisible();
+    expect(request).toHaveBeenCalledTimes(1);
+    expect(submitOriginalSimulation).toHaveBeenCalledTimes(1);
+    expect(submitOriginalSimulation).toHaveBeenCalledWith(expect.objectContaining({ questionIds: draft.questionIds, answers: {} }));
+    expect(window.sessionStorage.getItem(key)).toContain('"deliveryState":"delivered"');
   });
 
   it("catches up the countdown after a suspended tab resumes", async () => {
