@@ -659,7 +659,7 @@ export const ictTheory: TheorySection = {
       claims: [
         {
           id: "ict-c8-1",
-          text: "Se permite la instalación de un único recinto de telecomunicaciones (RITU) en edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja y con un máximo de dieciséis puntos de acceso al usuario (PAU).",
+          text: "El anexo III, apartado 4.5.3.i, permite construir un recinto único de instalaciones de telecomunicación (RITU) en edificios o conjuntos inmobiliarios de hasta tres alturas y planta baja con un máximo de 16 PAU, y en conjuntos de viviendas unifamiliares sin límite de PAU.",
           kind: "normative",
           legalBasis: ["rd346-2011-anex2-infrastructure"],
         review: pendingIct,
