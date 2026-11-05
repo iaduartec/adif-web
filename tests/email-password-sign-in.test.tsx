@@ -70,7 +70,7 @@ describe("EmailPasswordSignIn", () => {
   it("registers the account then signs in", async () => {
     renderForm();
 
-    fireEvent.click(screen.getByRole("button", { name: "¿No tenés cuenta? Creá una" }));
+    fireEvent.click(screen.getByRole("button", { name: "¿No tienes cuenta? Crea una" }));
     fillCredentials();
     fireEvent.click(screen.getByRole("button", { name: "Crear cuenta" }));
 
@@ -88,7 +88,7 @@ describe("EmailPasswordSignIn", () => {
     registerUser.mockResolvedValue({ ok: false, error: "boom" });
     renderForm();
 
-    fireEvent.click(screen.getByRole("button", { name: "¿No tenés cuenta? Creá una" }));
+    fireEvent.click(screen.getByRole("button", { name: "¿No tienes cuenta? Crea una" }));
     fillCredentials();
     fireEvent.click(screen.getByRole("button", { name: "Crear cuenta" }));
 
@@ -105,7 +105,7 @@ describe("EmailPasswordSignIn", () => {
     fireEvent.click(screen.getByRole("button", { name: "Iniciar sesión" }));
 
     expect(await screen.findByRole("alert")).toHaveTextContent(
-      "No hemos podido iniciar sesión. Revisá el correo y la contraseña.",
+      "No hemos podido iniciar sesión. Revisa el correo y la contraseña.",
     );
     expect(onAuthenticated).not.toHaveBeenCalled();
   });
@@ -128,10 +128,10 @@ describe("EmailPasswordSignIn", () => {
 
     expect(screen.getByRole("button", { name: "Iniciar sesión" })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "¿No tenés cuenta? Creá una" }));
+    fireEvent.click(screen.getByRole("button", { name: "¿No tienes cuenta? Crea una" }));
     expect(screen.getByRole("button", { name: "Crear cuenta" })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "¿Ya tenés cuenta? Iniciá sesión" }));
+    fireEvent.click(screen.getByRole("button", { name: "¿Ya tienes cuenta? Inicia sesión" }));
     expect(screen.getByRole("button", { name: "Iniciar sesión" })).toBeInTheDocument();
   });
 });

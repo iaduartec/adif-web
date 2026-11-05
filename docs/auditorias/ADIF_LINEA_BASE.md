@@ -1,0 +1,35 @@
+# Línea base de auditoría ADIF
+
+**Corte revisado:** `bf7148a`
+**Estado:** línea base inicial; los estados de verificación indicados corresponden a la evidencia comunicada para este corte.
+**Alcance:** acceso, experiencia de usuario, persistencia Supabase, seguridad, pruebas, despliegue y validación académica.
+
+## Matriz inicial de prioridades
+
+| Prioridad | Área | Evidencia observada | Criterio de aceptación |
+|---|---|---|---|
+| P0 | Validación académica del contenido | La revisión académica sigue pendiente. Hallazgos comunicados para cotejo: claim ICT sobre RITU omite conjuntos unifamiliares sin límite PAU; los informes históricos de RCF y de incompatibilidades deben cotejarse con el código actual; resumen de igualdad omite obligaciones del plan por convenio y sanción. También requieren cotejo las fuentes de DR/CEM y las reglas de examen. La práctica original no alimenta el readiness que se basa en preguntas oficiales elegibles. La presencia de etiquetas o categorías de estado no demuestra que una afirmación, respuesta o explicación haya sido contrastada con una fuente primaria vigente. | Resolver y documentar los hallazgos enumerados; revisar el acople entre práctica original y readiness; cada afirmación y clave de respuesta presentada como oficial debe tener trazabilidad verificable a la fuente primaria aplicable y registrar discrepancias y pendientes de revisión. No publicar como validado aquello que solo tenga una etiqueta o estado declarativo. |
+| P1 | Seguridad del alta | `app/(auth)/login/actions.ts:15-27` permite crear usuarios mediante Admin API con `email_confirm: true`; `lib/supabase/admin.ts:17-24` configura el cliente con `SUPABASE_SERVICE_ROLE_KEY`. No se observa validación server-side de formato/longitud ni control de frecuencia en esa acción. La validación `minLength` del formulario es evadible al invocar directamente la acción. | Validar entrada en servidor; aplicar protección de abuso y límites de frecuencia acordes al alta pública; documentar la decisión sobre preconfirmar emails y prevenir suplantación/errores de dirección. Verificar con pruebas de acción para entradas inválidas y abuso repetido. |
+| P1 | Calidad de lint | Para este corte se informa que lint falla con 7 errores y 7 avisos. | `pnpm lint` termina sin errores; cada aviso restante debe estar identificado, justificado y aceptado explícitamente en la línea base. |
+| P1 | Build con configuración de autenticación | Para este corte, el build sin variables Supabase falla durante prerender de `/temario`. El runtime está diseñado para fallar cerrado fuera de Playwright cuando falta configuración (`lib/supabase/config.ts:8-23`), pero el prerender debería poder completarse o fallar con diagnóstico de configuración claro, sin depender de estado accidental. | `pnpm build` completa con variables Supabase de entorno de build correctamente configuradas; documentar ese requisito. Si se requiere build sin credenciales, las rutas dinámicas no deben inicializar Supabase en prerender. |
+| P2 | Manejo de fallo al leer onboarding | `lib/supabase/middleware.ts:42-48` marca onboarding como completado si falla la lectura de `study_goals`. `tests/middleware-onboarding.test.ts:28-33` codifica este fail-open. | Definir el comportamiento esperado ante error de backend y cubrirlo: mostrar una ruta de recuperación/error o documentar de forma explícita el fail-open y su alcance. No permitir que el fallo cause bucles de redirección. |
+| P2 | UX de acceso | `components/auth/email-password-sign-in.tsx:65-68` mezcla voseo con español peninsular en el mensaje de alta. `components/auth/google-sign-in.tsx:65-105` no mantiene estado pendiente ni deshabilita el botón durante OAuth, lo que admite clics repetidos. | Usar una variante lingüística coherente y ofrecer estado accesible de espera/deshabilitación para OAuth, evitando solicitudes duplicadas. |
+| P2 | Validación de persistencia en entorno real | Hay migraciones con RLS, políticas de propietario y contratos SQL, por ejemplo `supabase/migrations/202608020001_study_schema.sql:124-171` y `supabase/tests/rls.sql`. Para este corte no se han ejecutado pruebas contra un proyecto Supabase real. | Ejecutar migraciones y pruebas SQL/RLS en un entorno Supabase de prueba aislado; verificar aislamiento entre usuarios, permisos RPC, persistencia de escritura/lectura y recuperación de errores. Registrar versión de migraciones y resultados sin usar datos de producción. |
+| P2 | Pruebas de navegador | Playwright se ejecutó con mocks: 32 pruebas pasaron y 5 fallaron al cambiar el componente durante la ejecución; debe repetirse en estado estable. Los mocks ejercitan flujos de interfaz, pero no acreditan integración OAuth, cookies ni persistencia contra Supabase real. | Completar Playwright con mocks y registrar resultados; mantenerlo separado de la evidencia de integración real. Añadir/ejecutar validación de extremo a extremo con backend de prueba para los recorridos críticos de autenticación y persistencia. |
+
+## Evidencia de la línea base
+
+- **HEAD revisado:** `bf7148a`.
+- **Vitest:** 809 pruebas pasan, según el resultado comunicado para este corte. Existen pruebas de login, alta, callback, redirecciones, configuración Supabase y contratos de persistencia, entre ellas `tests/login-page.test.tsx`, `tests/email-password-sign-in.test.tsx`, `tests/register-user.test.ts`, `tests/auth-callback.test.ts`, `tests/auth-redirect.test.ts` y `tests/review-persistence-contract.test.ts`.
+- **TypeScript:** `pnpm typecheck` pasa, según el resultado comunicado.
+- **Contenido:** `pnpm verify:content` pasa, según el resultado comunicado. Esto verifica los validadores automatizados indicados por el proyecto; no sustituye el cotejo académico de cada afirmación con fuentes primarias.
+- **Lint:** falla con 7 errores y 7 avisos, según el resultado comunicado.
+- **Build:** sin variables de Supabase falla durante prerender de `/temario`, según el resultado comunicado.
+- **Playwright:** 32/37 con mocks, 5 fallos de recuperación en ejecución con cambios concurrentes; repetir en estado estable. No equivale a prueba de integración real.
+- **Supabase real:** no se han ejecutado pruebas reales contra Supabase para este corte.
+- **Producción:** Vercel informa estado `READY` para el commit `bf7148a`; `https://adif-web.vercel.app/login` respondió HTTP 200 durante la revisión.
+- **RLS y redirecciones:** el código revisado incluye políticas por propietario y protección de redirecciones externas (`lib/auth/redirect.ts:24-36`). La existencia de tests/SQL no se presenta como evidencia de que hayan sido ejecutados en un backend real.
+
+## Límites de esta línea base
+
+Esta matriz separa evidencia automatizada, revisión estática y validación académica. No atribuye cobertura por etiquetas, nombres de categorías ni estados declarativos. Las pruebas con mocks no prueban configuración de proveedores OAuth, políticas efectivas del proyecto Supabase remoto ni persistencia real. Actualizar esta línea base cuando se completen Playwright, las pruebas Supabase aisladas y la revisión académica con fuentes primarias.

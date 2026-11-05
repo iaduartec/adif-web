@@ -117,10 +117,11 @@ describe("TemarioView", () => {
     render(<TemarioView />);
 
     const totalUnits = officialItems.reduce((sum, item) => sum + item.children.length, 0);
-    const header = screen.getByRole("heading", { name: "Temario oficial completo" }).closest("header");
+    const header = screen.getByRole("heading", { name: "Temario de la convocatoria" }).closest("header");
 
     expect(header?.textContent).toContain(String(officialItems.length));
     expect(header?.textContent).toContain(String(totalUnits));
+    expect(header?.textContent).toContain("están en revisión");
   });
 
   it("still renders CEM in full even though its syllabus nodes link no module", () => {

@@ -11,7 +11,13 @@ export type ReadinessConcept = {
   lessonTitle: string;
 };
 
-export type ReadinessQuestion = { id: string; conceptIds: readonly string[] };
+export type ReadinessQuestion = {
+  id: string;
+  conceptIds: readonly string[];
+  /** Original platform questions inform concept practice, but never official-exam readiness. */
+  origin?: "official" | "original";
+  domain?: string;
+};
 
 export type ReadinessMastery = {
   conceptId: string;
@@ -187,6 +193,9 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
   const accuracyFrom = shiftDay(today, -13);
   const activeConceptIds = new Set(input.concepts.map((concept) => concept.id));
   const activeQuestionById = new Map(input.questions.map((question) => [question.id, question]));
+  const officialQuestionIds = new Set(input.questions
+    .filter((question) => question.origin !== "original")
+    .map((question) => question.id));
   const activeLessonIds = new Set(input.concepts.map((concept) => concept.lessonId));
   const masteryByConcept = new Map(
     input.mastery
@@ -229,10 +238,22 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     isCorrect: attempt.isCorrect,
     occurredAt: attempt.createdAt,
   }));
+  const officialObservations: AnswerObservation[] = practiceAttempts
+    .filter((attempt) => officialQuestionIds.has(attempt.questionId))
+    .map((attempt) => ({
+      questionId: attempt.questionId,
+      isCorrect: attempt.isCorrect,
+      occurredAt: attempt.createdAt,
+    }));
   for (const attempt of activeSimulationAttempts) {
     for (const answer of answersBySimulationAttempt.get(attempt.id) ?? []) {
       if (answer.selectedAnswer === null) continue;
       observations.push({
+        questionId: answer.questionId,
+        isCorrect: answer.isCorrect,
+        occurredAt: attempt.createdAt,
+      });
+      officialObservations.push({
         questionId: answer.questionId,
         isCorrect: answer.isCorrect,
         occurredAt: attempt.createdAt,
@@ -243,9 +264,9 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
   const activeSimulationAnswers = [...answersBySimulationAttempt.values()].flat();
   const evidence = collectActiveEvidence({
     activeConceptIds,
-    activeQuestionIds: new Set(activeQuestionById.keys()),
+    activeQuestionIds: officialQuestionIds,
     mastery: [...masteryByConcept.values()],
-    questionAttempts: practiceAttempts,
+    questionAttempts: practiceAttempts.filter((attempt) => officialQuestionIds.has(attempt.questionId)),
     simulationAnswers: activeSimulationAnswers,
     reviewEvents: activeEvents,
   });
@@ -258,9 +279,9 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     ) currentConceptIds.add(conceptId);
   }
 
-  const coveragePercentage = roundPercentage(evidence.uniqueAttemptedQuestionIds.length, input.questions.length) ?? 0;
+  const coveragePercentage = roundPercentage(evidence.uniqueAttemptedQuestionIds.length, officialQuestionIds.size) ?? 0;
   const domainPercentage = roundPercentage(currentConceptIds.size, input.concepts.length) ?? 0;
-  const recentObservations = observations.filter((observation) => (
+  const recentObservations = officialObservations.filter((observation) => (
     withinWindow(observation.occurredAt, accuracyFrom, today)
   ));
 
@@ -294,14 +315,15 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     withinWindow(attempt.createdAt, readinessFrom, today)
   ));
   const recentPracticeAttempts = practiceAttempts.filter((attempt) => (
-    withinWindow(attempt.createdAt, readinessFrom, today)
+    officialQuestionIds.has(attempt.questionId)
+    && withinWindow(attempt.createdAt, readinessFrom, today)
   ));
   let timely = recentPracticeAttempts.filter((attempt) => attempt.elapsedMs <= 90_000).length;
   let speedTotal = recentPracticeAttempts.length;
   for (const attempt of recentSimulationAttempts) {
     const simulation = activeSimulationById.get(attempt.simulationId)!;
     const activeExamQuestionIds = new Set(
-      simulation.questionIds.filter((questionId) => activeQuestionById.has(questionId)),
+      simulation.questionIds.filter((questionId) => officialQuestionIds.has(questionId)),
     );
     speedTotal += activeExamQuestionIds.size;
     if (attempt.elapsedMs <= simulation.durationMinutes * 60_000) {
@@ -399,7 +421,7 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     .sort((left, right) => right.createdAt.localeCompare(left.createdAt) || left.id.localeCompare(right.id))
     .map((attempt): SimulationScore => {
       const exam = activeSimulationById.get(attempt.simulationId)!;
-      const totalQuestions = exam.questionIds.filter((questionId) => activeQuestionById.has(questionId)).length;
+      const totalQuestions = exam.questionIds.filter((questionId) => officialQuestionIds.has(questionId)).length;
       const activeAnswers = answersBySimulationAttempt.get(attempt.id) ?? [];
       const correctCount = activeAnswers.filter((answer) => answer.selectedAnswer !== null && answer.isCorrect).length;
       const incorrectCount = activeAnswers.filter((answer) => answer.selectedAnswer !== null && !answer.isCorrect).length;
@@ -478,9 +500,9 @@ export function calculateReadiness(input: ReadinessInput): ReadinessSnapshot {
     level,
     label: levelLabel(level),
     sample,
-    coverage: { attempted: evidence.uniqueAttemptedQuestionIds.length, total: input.questions.length, percentage: coveragePercentage },
+    coverage: { attempted: evidence.uniqueAttemptedQuestionIds.length, total: officialQuestionIds.size, percentage: coveragePercentage },
     currentDomain: { current: currentConceptIds.size, total: input.concepts.length, percentage: domainPercentage },
-    accuracy: { recent: rate(recentObservations), historical: rate(observations) },
+    accuracy: { recent: rate(recentObservations), historical: rate(officialObservations) },
     deferredRetention,
     recentSimulations: recentSimulationAttempts.length,
     speed,

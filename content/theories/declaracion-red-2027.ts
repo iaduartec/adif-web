@@ -299,7 +299,7 @@ export const declaracionRed2027Theory: TheorySection = {
       sourceId: "DR 2027",
       sourceTitle: "Declaración sobre la Red de Adif (Edición 2027)",
       sourceUrl: "https://www.adif.es/sobre-adif/declaracion-red",
-      locator: "Capítulo II, 2.6 Desarrollo de la Infraestructura (pp. 52–69)",
+      locator: "Capítulo II, apartados 2.6 Desarrollo de la Infraestructura y 2.6.2 (pp. 52–69)",
       excerpt: "El Ministerio de Transportes y Movilidad Sostenible ha aprobado la Estrategia Indicativa del desarrollo, mantenimiento y renovación de la infraestructura ferroviaria, en cumplimiento de lo previsto en la legislación sectorial. La estrategia, incluida en el Plan de Recuperación, Transformación y Resiliencia (PRTR) como una reforma... Como consecuencia de lo anterior, Adif ha elaborado el correspondiente Programa de Actividad.",
     },
   ],

@@ -63,8 +63,8 @@ export function EmailPasswordSignIn({
       } else {
         setError(
           mode === "signup"
-            ? "No hemos podido completar el alta. Revisá los datos e inténtalo de nuevo."
-            : "No hemos podido iniciar sesión. Revisá el correo y la contraseña.",
+            ? "No hemos podido completar el alta. Revisa los datos e inténtalo de nuevo."
+            : "No hemos podido iniciar sesión. Revisa el correo y la contraseña.",
         );
       }
     } finally {
@@ -95,7 +95,7 @@ export function EmailPasswordSignIn({
           type="password"
           autoComplete={mode === "signup" ? "new-password" : "current-password"}
           required
-          minLength={6}
+          minLength={mode === "signup" ? 6 : undefined}
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
@@ -106,7 +106,7 @@ export function EmailPasswordSignIn({
       </Button>
 
       <button type="button" className="auth-form__switch" onClick={switchMode}>
-        {mode === "signin" ? "¿No tenés cuenta? Creá una" : "¿Ya tenés cuenta? Iniciá sesión"}
+        {mode === "signin" ? "¿No tienes cuenta? Crea una" : "¿Ya tienes cuenta? Inicia sesión"}
       </button>
 
       {error ? (

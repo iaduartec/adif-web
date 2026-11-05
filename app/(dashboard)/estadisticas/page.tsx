@@ -84,7 +84,7 @@ export default async function EstadisticasPage() {
 
       <section aria-labelledby="original-progress-title" className="data-panel">
         <h2 id="original-progress-title">Práctica de preguntas originales</h2>
-        <p>Intentos registrados, incluidos los repetidos. La precisión no mide dominio ni probabilidad de aprobar.</p>
+        <p>Resultados de ejercicios originales revisados, separados de las métricas oficiales. Los intentos repetidos cuentan en la precisión; no mide por sí sola dominio ni probabilidad de aprobar.</p>
         <ul aria-label="Progreso móvil por materia de preguntas originales" className="grid gap-3 md:hidden">
           {originalProgress.map((item) => (
             <li className="border border-rail p-4" key={item.domain}>
@@ -96,12 +96,13 @@ export default async function EstadisticasPage() {
                 <dt>Tiempo registrado</dt><dd>{item.attempts ? `${Math.round(item.elapsedMs / 60000)} min` : "—"}</dd>
                 <dt>Última práctica</dt><dd>{item.latestAt ? new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid", dateStyle: "medium" }).format(new Date(item.latestAt)) : "—"}</dd>
               </dl>
+              <Link className="mt-3 inline-block" href={originalPracticeHref(item.domain)}>Practicar {originalLabels[item.domain] ?? item.domain}</Link>
             </li>
           ))}
         </ul>
         <div className="data-table-wrap hidden md:block">
           <table aria-label="Progreso por materia de preguntas originales" className="data-table">
-            <thead><tr><th>Materia</th><th>Precisión</th><th>Intentos</th><th>Preguntas distintas</th><th>Tiempo registrado</th><th>Última práctica</th></tr></thead>
+            <thead><tr><th>Materia</th><th>Precisión</th><th>Intentos</th><th>Preguntas distintas</th><th>Tiempo registrado</th><th>Última práctica</th><th>Acción</th></tr></thead>
             <tbody>
               {originalProgress.map((item) => (
                 <tr key={item.domain}>
@@ -111,6 +112,7 @@ export default async function EstadisticasPage() {
                   <td>{item.attemptedQuestions} de {item.totalQuestions} revisadas</td>
                   <td>{item.attempts ? `${Math.round(item.elapsedMs / 60000)} min` : "—"}</td>
                   <td>{item.latestAt ? new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid", dateStyle: "medium" }).format(new Date(item.latestAt)) : "—"}</td>
+                  <td><Link href={originalPracticeHref(item.domain)}>Practicar {originalLabels[item.domain] ?? item.domain}</Link></td>
                 </tr>
               ))}
             </tbody>
@@ -158,4 +160,10 @@ export default async function EstadisticasPage() {
       </div>
     </div>
   );
+}
+
+function originalPracticeHref(domain: string) {
+  if (domain === "english-a2") return "/ingles-a2";
+  if (domain === "psychometric") return "/psicotecnicos";
+  return `/simulacros/original/${encodeURIComponent(domain)}`;
 }

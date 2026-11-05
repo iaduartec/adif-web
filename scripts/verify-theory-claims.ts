@@ -124,11 +124,11 @@ function isLegalSource(source: LegalReference | undefined): boolean {
 /**
  * Extracts the exact numeric article/apartado tokens mentioned in a claim
  * text. "Artículo 6.2", "Art. 6.2", "artículo 6.2" and "apartado 5.1" all
- * normalize to a single exact token ("6.2", "5.1").
+ * normalize to an exact token ("6.2", "5.1", "4.5.3").
  */
 export function extractMentionedLocators(text: string): string[] {
   const out: string[] = [];
-  const re = /\b(?:artículo|art\.?|apartado)\s*(\d+(?:\.\d+)?)/gi;
+  const re = /\b(?:artículo|art\.?|apartado)\s*(\d+(?:\.\d+)*)/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text))) out.push(m[1]);
   return out;

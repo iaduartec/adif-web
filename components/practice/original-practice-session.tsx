@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, useTransition } from "react";
 import type { OriginalPracticeQuestionDto } from "../../lib/content/original-practice-public-dto";
 import { isSafePracticeSvg } from "../../lib/content/practice-svg";
 import { selectBalancedOriginalQuestions } from "../../lib/content/original-simulation-selection";
@@ -33,140 +34,183 @@ function nowMs() {
   return Date.now();
 }
 
-/**
- * An answer-free original-practice session. Choices stay in component state
- * until the learner finishes; the attempt API is called only at that point.
- */
-export function OriginalPracticeSession({
-  questions,
-  title = "Práctica original",
-  durationMinutes,
-  examMode = false,
-  recoveryScope,
-}: {
+type SessionProps = {
   questions: readonly OriginalPracticeQuestionDto[];
   title?: string;
   durationMinutes?: number;
   examMode?: boolean;
   recoveryScope?: string;
-}) {
+};
+
+type RecoveryBootstrap = {
+  storage: Storage | null;
+  draft: OriginalSimulationRecoveryDraft | null;
+  remainingSeconds: number | null;
+  notice: string;
+};
+
+// Read and validate browser storage when React subscribes, before mounting the
+// session. The cached snapshot also keeps server rendering free of browser I/O.
+function createRecoveryBootstrap({ examMode, questions, recoveryScope }: SessionProps) {
+  let snapshot: RecoveryBootstrap | null = examMode ? null : { storage: null, draft: null, remainingSeconds: null, notice: "" };
+  return {
+    getSnapshot: () => snapshot,
+    getServerSnapshot: () => examMode ? null : snapshot,
+    subscribe(onReady: () => void) {
+      if (snapshot) return () => {};
+      const recovered: RecoveryBootstrap = { storage: null, draft: null, remainingSeconds: null, notice: "" };
+      if (!recoveryScope) {
+        recovered.notice = "No se pudo vincular la recuperación local con la cuenta actual. El simulacro continúa, pero una recarga puede perderlo.";
+      } else if (questions[0]?.domain) {
+        try { recovered.storage = window.sessionStorage; } catch { /* Storage may be blocked by the browser. */ }
+        if (!recovered.storage) {
+          recovered.notice = "El almacenamiento de esta pestaña no está disponible. El simulacro continúa, pero una recarga puede perder el intento.";
+        } else {
+          const result = loadOriginalSimulationRecovery(recovered.storage, questions[0].domain, recoveryScope, questions);
+          if (result.status === "ready") {
+            recovered.draft = result.draft;
+            recovered.remainingSeconds = result.remainingSeconds;
+            recovered.notice = result.draft.deliveryState === "delivered" && result.draft.corrections
+              ? "Se recuperaron los resultados de un simulacro ya entregado en esta pestaña. La recuperación es local; no sincroniza el intento con una cuenta."
+              : "Se recuperó el simulacro en esta pestaña. Puedes continuar con el mismo orden y respuestas guardadas aquí. Esta recuperación es local: no incluye cambios posteriores realizados en otra pestaña ni sincroniza el intento con una cuenta.";
+          } else if (result.status === "expired") {
+            recovered.notice = "El borrador local superó su periodo de conservación de 24 horas y se eliminó. Inicia un simulacro nuevo.";
+          } else if (result.status === "invalid") {
+            recovered.notice = "El borrador local estaba dañado o las preguntas cambiaron; se eliminó para evitar una recuperación incoherente. Inicia un simulacro nuevo.";
+          } else if (result.status === "unavailable") {
+            recovered.storage = null;
+            recovered.notice = "El almacenamiento de esta pestaña no está disponible. El simulacro continúa, pero una recarga puede perder el intento.";
+          }
+        }
+      }
+      snapshot = recovered;
+      onReady();
+      return () => {};
+    },
+  };
+}
+
+/**
+ * An answer-free original-practice session. Choices stay in component state
+ * until the learner finishes; the attempt API is called only at that point.
+ */
+export function OriginalPracticeSession(props: SessionProps) {
+  const { examMode, questions, recoveryScope } = props;
+  const recovery = useMemo(() => createRecoveryBootstrap({ examMode, questions, recoveryScope }), [examMode, questions, recoveryScope]);
+  const snapshot = useSyncExternalStore(recovery.subscribe, recovery.getSnapshot, recovery.getServerSnapshot);
+  if (!snapshot) return <p role="status">Preparando recuperación local…</p>;
+  return <PracticeSession key={JSON.stringify([examMode, recoveryScope, questions])} {...props} recovery={snapshot} />;
+}
+
+function PracticeSession({
+  questions,
+  title = "Práctica original",
+  durationMinutes,
+  examMode = false,
+  recoveryScope,
+  recovery,
+}: SessionProps & { recovery: RecoveryBootstrap }) {
+  const recoveredDraft = recovery.draft;
+  const recoveredDelivery = recoveredDraft?.deliveryState;
+  const recoveredComplete = recoveredDelivery === "delivered" && Boolean(recoveredDraft?.corrections);
   const [mode, setMode] = useState<Mode>(examMode ? "exam" : "training");
   const [examDurationInput, setExamDurationInput] = useState("");
   const [examQuestionCount, setExamQuestionCount] = useState(questions.length);
-  const [examQuestions, setExamQuestions] = useState<readonly OriginalPracticeQuestionDto[]>(questions);
+  const [examQuestions, setExamQuestions] = useState<readonly OriginalPracticeQuestionDto[]>(() => {
+    if (!recoveredDraft) return questions;
+    const byId = new Map(questions.map((item) => [item.id, item]));
+    return recoveredDraft.questionIds.map((id) => byId.get(id)).filter((item): item is OriginalPracticeQuestionDto => Boolean(item));
+  });
   const [topicId, setTopicId] = useState("all");
   const [questionCount, setQuestionCount] = useState(Math.min(10, questions.length));
-  const [started, setStarted] = useState(false);
-  const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState<Partial<Record<string, AnswerKey>>>({});
-  const [results, setResults] = useState<Record<string, Result>>({});
-  const [practiceComplete, setPracticeComplete] = useState(false);
-  const [remainingSeconds, setRemainingSeconds] = useState(durationMinutes ? durationMinutes * 60 : null);
+  const [started, setStarted] = useState(Boolean(recoveredDraft));
+  const [index, setIndex] = useState(recoveredDraft?.currentIndex ?? 0);
+  const [answers, setAnswers] = useState<Partial<Record<string, AnswerKey>>>(recoveredDraft?.answers ?? {});
+  const [results, setResults] = useState<Record<string, Result>>(() => recoveredComplete ? Object.fromEntries(recoveredDraft!.corrections!.map((result) => [result.questionId, result])) : {});
+  const [practiceComplete, setPracticeComplete] = useState(recoveredComplete);
+  const [remainingSeconds, setRemainingSeconds] = useState(recoveredDraft ? recovery.remainingSeconds : durationMinutes ? durationMinutes * 60 : null);
   const [timerNotice, setTimerNotice] = useState("");
-  const [recoveryNotice, setRecoveryNotice] = useState("");
-  const [deliveryState, setDeliveryState] = useState<DeliveryState>("in_progress");
-  const [coordinatedAttempt, setCoordinatedAttempt] = useState<string | null>(null);
-  const [coordination, setCoordination] = useState<"pending" | "owner" | "blocked" | "unavailable">("unavailable");
-  const coordinationRef = useRef<"pending" | "owner" | "blocked" | "unavailable">("unavailable");
-  const storageRef = useRef<Storage | null>(null);
-  const recoveryDraftRef = useRef<OriginalSimulationRecoveryDraft | null>(null);
-  const recoveryReadyRef = useRef(!examMode);
+  const [recoveryNotice, setRecoveryNotice] = useState(recovery.notice);
+  const [deliveryState, setDeliveryState] = useState<DeliveryState>(recoveredComplete ? "submitted"
+    : recoveredDelivery === "submitting" ? "submission_unknown"
+    : recoveredDelivery && recoveredDelivery !== "delivered" ? recoveredDelivery : "in_progress");
+  const [coordinatedAttempt, setCoordinatedAttempt] = useState<string | null>(recoveredDraft?.attemptId ?? null);
+  const [coordination, setCoordination] = useState<"pending" | "owner" | "blocked" | "unavailable">(() => recoveredDraft && typeof navigator.locks?.request === "function" ? "pending" : "unavailable");
+  const coordinationRef = useRef(coordination);
+  const storageRef = useRef<Storage | null>(recovery.storage);
+  const recoveryDraftRef = useRef<OriginalSimulationRecoveryDraft | null>(recoveredDraft);
   const timerRef = useRef<number | null>(null);
-  const deadlineRef = useRef<number | null>(null);
-  const previousRemainingRef = useRef<number | null>(null);
+  const deadlineRef = useRef<number | null>(recoveredDraft?.deadlineAt ?? null);
+  const previousRemainingRef = useRef<number | null>(recovery.remainingSeconds);
   const questionHeadingRef = useRef<HTMLHeadingElement>(null);
-  const autoSubmittedRef = useRef(false);
+  const autoSubmittedRef = useRef(Boolean(recoveredDelivery && recoveredDelivery !== "in_progress"));
   const deliveryInFlightRef = useRef(false);
-  const deliveryCompleteRef = useRef(false);
+  const deliveryCompleteRef = useRef(recoveredComplete);
   const examSubmission = useRef<{
     accountScope: string;
     questionIds: string[];
     answers: Record<string, AnswerKey>;
     elapsedMsByQuestion: Record<string, number>;
     clientEventIds: Record<string, string>;
-  } | null>(null);
-  function deliveryMarkerKey(attemptId: string) {
-    return `adif360:delivery:${recoveryScope}:${attemptId}`;
-  }
+  } | null>(recoveredDraft && recoveryScope && ["submitting", "submission_unknown", "conflict", "recoverable_error"].includes(recoveredDraft.deliveryState) ? {
+    accountScope: recoveryScope,
+    questionIds: recoveredDraft.questionIds,
+    answers: recoveredDraft.answers,
+    elapsedMsByQuestion: recoveredDraft.elapsedMsByQuestion,
+    clientEventIds: recoveredDraft.clientEventIds,
+  } : null);
+  const deliveryMarkerKey = useCallback((attemptId: string) => `adif360:delivery:${recoveryScope}:${attemptId}`, [recoveryScope]);
   function markDelivery(attemptId: string, state: "submitting" | "delivered" | "conflict") {
     try { window.localStorage.setItem(deliveryMarkerKey(attemptId), JSON.stringify({ state, at: nowMs() })); }
     catch { setRecoveryNotice("No se pudo guardar el aviso compartido de entrega. Evita abrir copias del intento."); }
   }
   useEffect(() => {
     if (!coordinatedAttempt || !recoveryScope) return;
-    if (!navigator.locks?.request) {
-      coordinationRef.current = "unavailable";
-      setCoordination("unavailable");
-      return;
-    }
+    if (!navigator.locks?.request) return;
     let cancelled = false;
     let release: (() => void) | undefined;
-    void navigator.locks.request(`adif360:${recoveryScope}:${coordinatedAttempt}`, { ifAvailable: true }, async (lock) => {
+    // StrictMode can clean up a recovered session before lock acquisition starts.
+    // Skip that cancelled request so the next setup cannot compete with it.
+    void Promise.resolve().then(() => {
       if (cancelled) return;
-      if (!lock) {
-        coordinationRef.current = "blocked";
-        setCoordination("blocked");
-        return;
-      }
-      try {
-        const marker = window.localStorage.getItem(deliveryMarkerKey(coordinatedAttempt));
-        if (marker && recoveryDraftRef.current?.deliveryState === "in_progress") {
-          const value = JSON.parse(marker) as { at?: number };
-          if (!value.at || nowMs() - value.at < 24 * 60 * 60 * 1000) {
-            coordinationRef.current = "blocked";
-            setCoordination("blocked");
-            return;
-          }
-          window.localStorage.removeItem(deliveryMarkerKey(coordinatedAttempt));
+      return navigator.locks.request(`adif360:${recoveryScope}:${coordinatedAttempt}`, { ifAvailable: true }, async (lock) => {
+        if (cancelled) return;
+        if (!lock) {
+          coordinationRef.current = "blocked";
+          setCoordination("blocked");
+          return;
         }
-      } catch {
-        setRecoveryNotice("No se pudo comprobar el aviso compartido de entrega. Evita abrir copias del intento.");
-      }
-      coordinationRef.current = "owner";
-      setCoordination("owner");
-      await new Promise<void>((resolve) => { release = resolve; });
+        try {
+          const marker = window.localStorage.getItem(deliveryMarkerKey(coordinatedAttempt));
+          if (marker && recoveryDraftRef.current?.deliveryState === "in_progress") {
+            const value = JSON.parse(marker) as { at?: number };
+            if (!value.at || nowMs() - value.at < 24 * 60 * 60 * 1000) {
+              coordinationRef.current = "blocked";
+              setCoordination("blocked");
+              return;
+            }
+            window.localStorage.removeItem(deliveryMarkerKey(coordinatedAttempt));
+          }
+        } catch {
+          setRecoveryNotice("No se pudo comprobar el aviso compartido de entrega. Evita abrir copias del intento.");
+        }
+        coordinationRef.current = "owner";
+        setCoordination("owner");
+        await new Promise<void>((resolve) => { release = resolve; });
+      });
     }).catch(() => {
       if (!cancelled) { coordinationRef.current = "unavailable"; setCoordination("unavailable"); }
     });
     return () => { cancelled = true; release?.(); };
-  }, [coordinatedAttempt, recoveryScope]);
-  function refreshCountdown() {
-    const deadline = deadlineRef.current;
-    if (deadline === null) return;
-    const next = Math.max(0, Math.ceil((deadline - nowMs()) / 1000));
-    setRemainingSeconds(next);
-    const message = timerAnnouncement(previousRemainingRef.current, next);
-    previousRemainingRef.current = next;
-    if (message) setTimerNotice(message);
-  }
-  useEffect(() => {
-    if (!started || (mode !== "practice" && mode !== "exam") || practiceComplete || remainingSeconds === null) return;
-    if (remainingSeconds <= 0) {
-      if (!autoSubmittedRef.current) { autoSubmittedRef.current = true; finish(); }
-      return;
-    }
-    if (timerRef.current) return;
-    refreshCountdown();
-    timerRef.current = window.setInterval(refreshCountdown, 1000);
-    document.addEventListener("visibilitychange", refreshCountdown);
-    return () => {
-      document.removeEventListener("visibilitychange", refreshCountdown);
-      if (timerRef.current) { window.clearInterval(timerRef.current); timerRef.current = null; }
-    };
-  }, [started, mode, practiceComplete]);
-  useEffect(() => {
-    if (!started || (mode !== "practice" && mode !== "exam") || practiceComplete || remainingSeconds === null) return;
-    if (remainingSeconds === 0 && !autoSubmittedRef.current) {
-      autoSubmittedRef.current = true;
-      finish();
-    }
-  }, [remainingSeconds, started, mode, practiceComplete]);
+  }, [coordinatedAttempt, recoveryScope, deliveryMarkerKey]);
   const [envelopes, setEnvelopes] = useState<Record<string, Envelope>>({});
   const [message, setMessage] = useState("");
   const [messageIsError, setMessageIsError] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const questionStartedAt = useRef<Record<string, number>>({});
-  const questionElapsedMs = useRef<Record<string, number>>({});
+  const questionStartedAt = useRef<Record<string, number>>(recoveredDraft ? {
+    [recoveredDraft.questionIds[recoveredDraft.currentIndex]]: recoveredDraft.currentQuestionStartedAt,
+  } : {});
+  const questionElapsedMs = useRef<Record<string, number>>(recoveredDraft?.elapsedMsByQuestion ?? {});
   const topics = [...new Map(questions.map((item) => [item.topicId, item.topic])).entries()]
     .sort((left, right) => left[1].localeCompare(right[1]));
   const availableQuestions = topicId === "all" ? questions : questions.filter((item) => item.topicId === topicId);
@@ -176,83 +220,9 @@ export function OriginalPracticeSession({
   const questionId = question?.id;
   const complete = mode === "training" ? Object.keys(results).length === activeQuestions.length : practiceComplete;
   const hasUnfinishedWork = started && !complete && Object.keys(answers).length > 0;
-  useEffect(() => {
-    if (!examMode) return;
-    if (!recoveryScope) {
-      setRecoveryNotice("No se pudo vincular la recuperación local con la cuenta actual. El simulacro continúa, pero una recarga puede perderlo.");
-      recoveryReadyRef.current = true;
-      return;
-    }
-    const domain = questions[0]?.domain;
-    if (!domain) { recoveryReadyRef.current = true; return; }
-    try {
-      storageRef.current = window.sessionStorage;
-    } catch {
-      storageRef.current = null;
-      setRecoveryNotice("El almacenamiento de esta pestaña no está disponible. El simulacro continúa, pero una recarga puede perder el intento.");
-    }
-    if (storageRef.current) {
-      const recovered = loadOriginalSimulationRecovery(storageRef.current, domain, recoveryScope, questions);
-      if (recovered.status === "ready") {
-        const byId = new Map(questions.map((item) => [item.id, item]));
-        const selected = recovered.draft.questionIds.map((id) => byId.get(id)).filter((item): item is OriginalPracticeQuestionDto => Boolean(item));
-        recoveryDraftRef.current = recovered.draft;
-        coordinationRef.current = typeof navigator.locks !== "undefined" ? "pending" : "unavailable";
-        setCoordination(coordinationRef.current);
-        setCoordinatedAttempt(recovered.draft.attemptId);
-        setExamQuestions(selected);
-        setAnswers(recovered.draft.answers);
-        setIndex(recovered.draft.currentIndex);
-        setStarted(true);
-        setRemainingSeconds(recovered.remainingSeconds);
-        previousRemainingRef.current = recovered.remainingSeconds;
-        deadlineRef.current = recovered.draft.deadlineAt;
-        questionElapsedMs.current = recovered.draft.elapsedMsByQuestion;
-        const activeId = recovered.draft.questionIds[recovered.draft.currentIndex];
-        if (activeId) questionStartedAt.current[activeId] = recovered.draft.currentQuestionStartedAt;
-        if (["submitting", "submission_unknown", "conflict", "recoverable_error"].includes(recovered.draft.deliveryState)) {
-          examSubmission.current = {
-            accountScope: recoveryScope,
-            questionIds: recovered.draft.questionIds,
-            answers: recovered.draft.answers,
-            elapsedMsByQuestion: recovered.draft.elapsedMsByQuestion,
-            clientEventIds: recovered.draft.clientEventIds,
-          };
-          const recoveredState = recovered.draft.deliveryState === "submitting" ? "submission_unknown" : recovered.draft.deliveryState;
-          setDeliveryState(recoveredState as DeliveryState);
-          autoSubmittedRef.current = true;
-        }
-        if (recovered.draft.deliveryState === "delivered" && recovered.draft.corrections) {
-          setResults(Object.fromEntries(recovered.draft.corrections.map((result) => [result.questionId, result])));
-          deliveryCompleteRef.current = true;
-          setDeliveryState("submitted");
-          setPracticeComplete(true);
-          setRecoveryNotice("Se recuperaron los resultados de un simulacro ya entregado en esta pestaña. La recuperación es local; no sincroniza el intento con una cuenta.");
-        } else {
-          setRecoveryNotice("Se recuperó el simulacro en esta pestaña. Puedes continuar con el mismo orden y respuestas guardadas aquí. Esta recuperación es local: no incluye cambios posteriores realizados en otra pestaña ni sincroniza el intento con una cuenta.");
-        }
-      } else if (recovered.status === "expired") {
-        setRecoveryNotice("El borrador local superó su periodo de conservación de 24 horas y se eliminó. Inicia un simulacro nuevo.");
-      } else if (recovered.status === "invalid") {
-        setRecoveryNotice("El borrador local estaba dañado o las preguntas cambiaron; se eliminó para evitar una recuperación incoherente. Inicia un simulacro nuevo.");
-      } else if (recovered.status === "unavailable") {
-        storageRef.current = null;
-        setRecoveryNotice("El almacenamiento de esta pestaña no está disponible. El simulacro continúa, pero una recarga puede perder el intento.");
-      }
-    }
-    recoveryReadyRef.current = true;
-  }, [examMode, questions, recoveryScope]);
-
-  useEffect(() => {
-    if (started && mode === "exam" && remainingSeconds === 0 && deliveryState === "in_progress" && (coordination === "owner" || coordination === "unavailable") && !autoSubmittedRef.current) {
-      autoSubmittedRef.current = true;
-      finish();
-    }
-  }, [coordination, started, remainingSeconds, deliveryState, mode]);
-
   function persistRecoveryDraft(draft: OriginalSimulationRecoveryDraft) {
     recoveryDraftRef.current = draft;
-    if (!examMode || !recoveryScope || !recoveryReadyRef.current || !storageRef.current) return;
+    if (!examMode || !recoveryScope || !storageRef.current) return;
     if (!saveOriginalSimulationRecovery(storageRef.current, draft, recoveryScope, questions)) {
       storageRef.current = null;
       setRecoveryNotice("No se pudo guardar la recuperación local. Puedes seguir con el simulacro, pero una recarga puede perder el intento.");
@@ -272,8 +242,6 @@ export function OriginalPracticeSession({
     window.addEventListener("beforeunload", warnOnExit);
     return () => window.removeEventListener("beforeunload", warnOnExit);
   }, [hasUnfinishedWork]);
-
-  if (!questions.length) return <p role="status">No hay preguntas originales disponibles para esta práctica.</p>;
 
   const allAnswered = activeQuestions.every((item) => answers[item.id] !== undefined);
 
@@ -354,7 +322,7 @@ export function OriginalPracticeSession({
         clientEventIds: {},
         deliveryState: "in_progress",
       };
-      coordinationRef.current = typeof navigator.locks !== "undefined" ? "pending" : "unavailable";
+      coordinationRef.current = typeof navigator.locks?.request === "function" ? "pending" : "unavailable";
       setCoordination(coordinationRef.current);
       setCoordinatedAttempt(initialDraft.attemptId);
       persistRecoveryDraft(initialDraft);
@@ -527,6 +495,36 @@ export function OriginalPracticeSession({
     });
   }
 
+  // Synchronize the timer's imperative handler after every committed render so
+  // expiry always submits the latest answers without restarting the interval.
+  const finishRef = useRef(finish);
+  useEffect(() => { finishRef.current = finish; });
+  const timedSession = started && (mode === "practice" || mode === "exam") && !practiceComplete && remainingSeconds !== null;
+  const timerExpired = remainingSeconds === 0;
+  useEffect(() => {
+    if (!timedSession) return;
+    const refreshCountdown = () => {
+      const deadline = deadlineRef.current;
+      if (deadline === null) return;
+      const next = Math.max(0, Math.ceil((deadline - nowMs()) / 1000));
+      setRemainingSeconds(next);
+      const message = timerAnnouncement(previousRemainingRef.current, next);
+      previousRemainingRef.current = next;
+      if (message) setTimerNotice(message);
+    };
+    timerRef.current = window.setInterval(refreshCountdown, 1000);
+    document.addEventListener("visibilitychange", refreshCountdown);
+    return () => {
+      document.removeEventListener("visibilitychange", refreshCountdown);
+      if (timerRef.current) { window.clearInterval(timerRef.current); timerRef.current = null; }
+    };
+  }, [timedSession]);
+  useEffect(() => {
+    if (!timedSession || !timerExpired || autoSubmittedRef.current) return;
+    autoSubmittedRef.current = true;
+    finishRef.current();
+  }, [timedSession, timerExpired, coordination, deliveryState]);
+
   function submitTrainingAnswer() {
     if (!answers[question.id]) {
       setMessage("Selecciona una respuesta antes de comprobar.");
@@ -613,6 +611,8 @@ export function OriginalPracticeSession({
     setRecoveryNotice("");
     setMessage("");
   }
+
+  if (!questions.length) return <p role="status">No hay preguntas originales disponibles para esta práctica.</p>;
 
   return (
     <section aria-labelledby="original-practice-title" className="space-y-5">
@@ -707,7 +707,7 @@ export function OriginalPracticeSession({
         </div>
       )}
 
-      {started && mode === "exam" && coordination === "blocked" && <div role="alert" className="p-5 border border-rail bg-white space-y-3"><p>Este intento está abierto en otra pestaña o podría haberse entregado. Esta copia no puede entregar; vuelve a la pestaña activa. Si cierras la otra pestaña antes de entregar, puedes recargar esta copia, que podría no incluir sus últimos cambios.</p><a href="/simulacros">Volver a simulacros</a>{" "}<Button onClick={() => { if (window.confirm("Se descartará esta copia local. Algunas respuestas pueden haberse guardado. ¿Iniciar otro intento?")) startNewExam(); }} type="button">Iniciar un nuevo intento</Button></div>}
+      {started && mode === "exam" && coordination === "blocked" && <div role="alert" className="p-5 border border-rail bg-white space-y-3"><p>Este intento está abierto en otra pestaña o podría haberse entregado. Esta copia no puede entregar; vuelve a la pestaña activa. Si cierras la otra pestaña antes de entregar, puedes recargar esta copia, que podría no incluir sus últimos cambios.</p><Link href="/simulacros">Volver a simulacros</Link>{" "}<Button onClick={() => { if (window.confirm("Se descartará esta copia local. Algunas respuestas pueden haberse guardado. ¿Iniciar otro intento?")) startNewExam(); }} type="button">Iniciar un nuevo intento</Button></div>}
       {started && question && coordination !== "blocked" && <div className="p-5 border border-rail bg-white space-y-4">
         {mode === "exam" && coordination === "unavailable" && <p role="status">No se pudo coordinar este intento entre pestañas. Evita abrir copias; no se garantiza una entrega única.</p>}
         {!complete && <p role="note">La selección, el orden, las respuestas y el tiempo límite se guardan localmente en esta pestaña para recuperar una recarga. El simulacro completo no se sincroniza con tu cuenta; las respuestas entregadas pueden registrarse individualmente como práctica. Evita duplicar esta pestaña: las dos copias pueden entrar en conflicto al entregar.</p>}
@@ -717,7 +717,7 @@ export function OriginalPracticeSession({
             aria-current={itemIndex === index ? "step" : undefined}
             aria-label={`Pregunta ${itemIndex + 1}${answers[item.id] ? ", respondida" : ", en blanco"}`}
             className={`min-h-11 min-w-11 border px-2 ${itemIndex === index ? "border-accent font-bold" : "border-rail"}`}
-            disabled={coordination === "pending" || Boolean(examSubmission.current)}
+            disabled={coordination === "pending" || (deliveryState !== "in_progress" && deliveryState !== "submitted")}
             key={item.id}
             onClick={() => focusQuestion(itemIndex)}
             type="button"
@@ -739,7 +739,7 @@ export function OriginalPracticeSession({
             </a>
           </p>
         )}
-        <fieldset disabled={isPending || practiceComplete || (mode === "exam" && (coordination === "pending" || Boolean(examSubmission.current))) || (mode === "training" && (Boolean(results[question.id]) || Boolean(envelopes[question.id]))) || (mode === "practice" && Object.keys(envelopes).length > 0)}>
+        <fieldset disabled={isPending || practiceComplete || (mode === "exam" && (coordination === "pending" || (deliveryState !== "in_progress" && deliveryState !== "submitted"))) || (mode === "training" && (Boolean(results[question.id]) || Boolean(envelopes[question.id]))) || (mode === "practice" && Object.keys(envelopes).length > 0)}>
           <legend className="sr-only">Elige una respuesta</legend>
           <div className="space-y-2">
             {question.options.map((option) => (
@@ -757,7 +757,7 @@ export function OriginalPracticeSession({
           <div role="status" className="space-y-2">
             {deliveryState === "conflict" ? <p>Este intento puede haberse entregado desde otra pestaña. No se volverá a enviar automáticamente.</p> : deliveryState === "submission_unknown" ? <p>No sabemos si la entrega se completó. Algunas respuestas pueden haberse guardado; el borrador permanece en esta pestaña. Un reintento explícito usa los mismos identificadores, pero la entrega completa no es atómica.</p> : <p>La entrega se ha detenido. Revisa el mensaje y conserva esta copia si necesitas volver a la cuenta inicial. Algunas respuestas podrían haberse guardado.</p>}
             {deliveryState === "submission_unknown" && <Button onClick={() => finish(true)} type="button">Reintentar el mismo envío</Button>}
-            <a href="/simulacros">Volver a simulacros</a>{" "}
+            <Link href="/simulacros">Volver a simulacros</Link>{" "}
             <Button onClick={() => { if (window.confirm("Se descartará esta copia local. Algunas respuestas pueden haberse guardado; un intento nuevo puede volver a registrar preguntas como práctica. ¿Continuar?")) startNewExam(); }} type="button">Iniciar un nuevo intento</Button>
           </div>
         )}

@@ -195,6 +195,28 @@ describe("calculateReadiness levels", () => {
 });
 
 describe("calculateReadiness metrics", () => {
+  it("uses original practice to inspect concepts while keeping official readiness metrics separate", () => {
+    const snapshot = calculateReadiness(input({
+      questions: [
+        { id: "official-a", conceptIds: ["concept-1"] },
+        { id: "official-b", conceptIds: ["concept-1"] },
+        { id: "original-a", conceptIds: ["concept-1"], origin: "original", domain: "telecom" },
+        { id: "original-b", conceptIds: ["concept-1"], origin: "original", domain: "telecom" },
+      ],
+      questionAttempts: [
+        { questionId: "official-a", isCorrect: true, elapsedMs: 30_000, mode: "practice", createdAt: "2026-08-11T09:00:00Z" },
+        { questionId: "original-a", isCorrect: false, elapsedMs: 120_000, mode: "practice", createdAt: "2026-08-11T09:00:00Z" },
+        { questionId: "original-b", isCorrect: true, elapsedMs: 120_000, mode: "practice", createdAt: "2026-08-11T09:00:00Z" },
+      ],
+    }));
+
+    expect(snapshot.coverage).toEqual({ attempted: 1, total: 2, percentage: 50 });
+    expect(snapshot.sample.uniqueAttemptedQuestions).toBe(1);
+    expect(snapshot.accuracy.historical).toEqual({ correct: 1, total: 1, percentage: 100 });
+    expect(snapshot.speed.total).toBe(1);
+    expect(snapshot.concepts[0]).toMatchObject({ correct: 2, total: 3, percentage: 66.67 });
+  });
+
   it("filters retired content out of every historical and current metric", () => {
     const snapshot = calculateReadiness(input({
       concepts: [{ id: "concept-active", title: "Activo", lessonId: "lesson-a", lessonTitle: "Lección A" }],

@@ -10,7 +10,7 @@ export const igualdadSummary: LessonSummary = {
     "Acoso sexual y por razón de sexo (Art. 7): Comportamientos intimidatorios o degradantes basados en el sexo; se consideran conductas discriminatorias.",
     "Indemnidad (Art. 9): Protección frente a cualquier trato adverso por reclamar contra la discriminación.",
     "Acciones positivas (Art. 11): Medidas temporales para corregir desigualdades de presencia o empleo.",
-    "Empresas obligadas a Plan de Igualdad (Art. 45): Empresas de 50 o más trabajadores.",
+    "Planes de igualdad (Art. 45): Son obligatorios para empresas de cincuenta o más trabajadores; también cuando así lo establezca el convenio colectivo aplicable o la autoridad laboral acuerde, en un procedimiento sancionador, sustituir las sanciones accesorias por la elaboración y aplicación del plan.",
     "Composición equilibrada (Disp. Adicional 1ª): Presencia de cada sexo entre el 40% y el 60% en órganos colegiados y listas."
   ],
   sections: [
